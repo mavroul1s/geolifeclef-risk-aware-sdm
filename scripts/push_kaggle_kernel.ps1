@@ -26,6 +26,17 @@ function Get-KaggleAuthorization {
         $legacy = "{0}:{1}" -f [Environment]::GetEnvironmentVariable("KAGGLE_USERNAME"), [Environment]::GetEnvironmentVariable("KAGGLE_KEY")
         return [pscustomobject]@{ Scheme = "Basic"; Value = [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($legacy)); Username = [Environment]::GetEnvironmentVariable("KAGGLE_USERNAME") }
     }
+    # Explicitly supported repository-local credential supplied by the project
+    # owner. It is Git-ignored and is read in memory only.
+    $repositoryConfigPath = Join-Path $PSScriptRoot "..\api_key\kaggle_2.json"
+    if (Test-Path -LiteralPath $repositoryConfigPath) {
+        $repositoryConfig = Get-Content -LiteralPath $repositoryConfigPath -Raw | ConvertFrom-Json
+        if (-not [string]::IsNullOrWhiteSpace($repositoryConfig.username) -and -not [string]::IsNullOrWhiteSpace($repositoryConfig.key)) {
+            $repositoryPair = "{0}:{1}" -f $repositoryConfig.username, $repositoryConfig.key
+            return [pscustomobject]@{ Scheme = "Basic"; Value = [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($repositoryPair)); Username = $repositoryConfig.username }
+        }
+        throw "The explicitly configured repository-local Kaggle credential is incomplete."
+    }
     $configPath = Join-Path ([Environment]::GetFolderPath("UserProfile")) ".kaggle\kaggle.json"
     if (-not (Test-Path -LiteralPath $configPath)) { throw "No Kaggle authentication is available. Configure KAGGLE_API_TOKEN, legacy environment variables, or ~/.kaggle/kaggle.json." }
     $config = Get-Content -LiteralPath $configPath -Raw | ConvertFrom-Json
