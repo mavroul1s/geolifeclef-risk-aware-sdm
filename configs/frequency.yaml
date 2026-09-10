@@ -1,0 +1,16 @@
+seed: 2025
+run_name: frequency
+data:
+  train_path: data/processed/train.npz
+  val_path: data/processed/val.npz
+model:
+  name: frequency
+training:
+  batch_size: 256
+  epochs: 1
+  lr: 0.001
+  num_workers: 0
+  mixed_precision: true
+evaluation:
+  threshold: 0.5
+

@@ -1,0 +1,12 @@
+.env
+kaggle.json
+data/
+artifacts/
+checkpoints/
+wandb/
+api_key/
+__pycache__/
+.pytest_cache/
+.venv/
+*.py[cod]
+
