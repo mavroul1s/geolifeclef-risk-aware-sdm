@@ -1,0 +1,103 @@
+<#!
+.SYNOPSIS
+Pushes and starts the Phase-1 Kaggle kernel without storing or printing credentials.
+
+.DESCRIPTION
+Uses the official Kaggle REST endpoint behind `kaggle kernels push`. Credentials
+come only from KAGGLE_API_TOKEN, the legacy environment pair, or user-local
+~/.kaggle/kaggle.json. The script never writes, prints, or adds credentials to
+the repository. It sends a Git archive of tracked source only and attaches the
+GeoLifeCLEF 2025 competition as a server-side input.
+#>
+[CmdletBinding()]
+param(
+    [string]$KernelSlug = ""
+)
+
+Set-StrictMode -Version Latest
+$ErrorActionPreference = "Stop"
+
+function Get-KaggleAuthorization {
+    if (-not [string]::IsNullOrWhiteSpace([Environment]::GetEnvironmentVariable("KAGGLE_API_TOKEN"))) {
+        return [pscustomobject]@{ Scheme = "Bearer"; Value = [Environment]::GetEnvironmentVariable("KAGGLE_API_TOKEN"); Username = $null }
+    }
+    if ((-not [string]::IsNullOrWhiteSpace([Environment]::GetEnvironmentVariable("KAGGLE_USERNAME"))) -and
+        (-not [string]::IsNullOrWhiteSpace([Environment]::GetEnvironmentVariable("KAGGLE_KEY")))) {
+        $legacy = "{0}:{1}" -f [Environment]::GetEnvironmentVariable("KAGGLE_USERNAME"), [Environment]::GetEnvironmentVariable("KAGGLE_KEY")
+        return [pscustomobject]@{ Scheme = "Basic"; Value = [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($legacy)); Username = [Environment]::GetEnvironmentVariable("KAGGLE_USERNAME") }
+    }
+    $configPath = Join-Path ([Environment]::GetFolderPath("UserProfile")) ".kaggle\kaggle.json"
+    if (-not (Test-Path -LiteralPath $configPath)) { throw "No Kaggle authentication is available. Configure KAGGLE_API_TOKEN, legacy environment variables, or ~/.kaggle/kaggle.json." }
+    $config = Get-Content -LiteralPath $configPath -Raw | ConvertFrom-Json
+    if ([string]::IsNullOrWhiteSpace($config.username) -or [string]::IsNullOrWhiteSpace($config.key)) { throw "The user-local Kaggle configuration is incomplete." }
+    $pair = "{0}:{1}" -f $config.username, $config.key
+    return [pscustomobject]@{ Scheme = "Basic"; Value = [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($pair)); Username = $config.username }
+}
+
+$auth = Get-KaggleAuthorization
+if ([string]::IsNullOrWhiteSpace($KernelSlug)) {
+    if ([string]::IsNullOrWhiteSpace($auth.Username)) { throw "When using KAGGLE_API_TOKEN, pass -KernelSlug '<username>/geolifeclef-risk-aware-sdm-phase-1'." }
+    $KernelSlug = "$($auth.Username)/geolifeclef-risk-aware-sdm-phase-1"
+}
+
+$temporaryArchive = Join-Path ([IO.Path]::GetTempPath()) ("geolifeclef-source-" + [guid]::NewGuid().ToString() + ".zip")
+try {
+    git -c safe.directory="$PWD" archive --format=zip --output=$temporaryArchive HEAD
+    if (-not (Test-Path -LiteralPath $temporaryArchive)) { throw "Could not create the tracked-source archive." }
+    $encodedSource = [Convert]::ToBase64String([IO.File]::ReadAllBytes($temporaryArchive))
+    $notebookText = @"
+import base64
+import io
+import os
+import subprocess
+import sys
+import zipfile
+from pathlib import Path
+
+SOURCE_ARCHIVE_B64 = '$encodedSource'
+PROJECT = Path('/kaggle/working/geolifeclef-risk-aware-sdm')
+PROJECT.mkdir(parents=True, exist_ok=True)
+with zipfile.ZipFile(io.BytesIO(base64.b64decode(SOURCE_ARCHIVE_B64))) as archive:
+    archive.extractall(PROJECT)
+os.chdir(PROJECT)
+
+# No credentials are required inside the notebook: the Kaggle API attaches the
+# competition source below. --no-deps avoids pulling unrelated packages.
+subprocess.run([sys.executable, '-m', 'pip', 'install', '--no-deps', '-e', '.'], check=True)
+
+import torch
+print({'torch': torch.__version__, 'cuda_available': torch.cuda.is_available(), 'gpu_count': torch.cuda.device_count()})
+
+input_root = Path('/kaggle/input')
+competition_roots = [path for path in input_root.rglob('*') if path.is_dir() and path.name == 'geolifeclef-2025']
+if not competition_roots:
+    raise RuntimeError('GeoLifeCLEF 2025 input was not mounted. Confirm competition rules are accepted, then push again.')
+data_root = competition_roots[0]
+subprocess.run([sys.executable, 'scripts/audit_data.py', '--data-root', str(data_root), '--report-dir', 'data/reports'], check=True)
+subprocess.run([sys.executable, '-m', 'pytest'], check=True)
+
+print('Phase-1 audit and synthetic smoke tests completed.')
+print('Training is intentionally deferred until the audit-derived raw-to-canonical NPZ adapter is recorded.')
+"@
+    $payload = [ordered]@{
+        slug = $KernelSlug
+        newTitle = "GeoLifeCLEF Risk-Aware SDM - Phase 1"
+        text = $notebookText
+        language = "python"
+        kernelType = "script"
+        isPrivate = $true
+        enableInternet = $false
+        competitionDataSources = @("geolifeclef-2025")
+        accelerator = "NvidiaTeslaT4"
+    } | ConvertTo-Json -Depth 5 -Compress
+    $client = [Net.Http.HttpClient]::new()
+    $client.DefaultRequestHeaders.Authorization = [Net.Http.Headers.AuthenticationHeaderValue]::new($auth.Scheme, $auth.Value)
+    $content = [Net.Http.StringContent]::new($payload, [Text.Encoding]::UTF8, "application/json")
+    $response = $client.PostAsync("https://www.kaggle.com/api/v1/kernels/push", $content).GetAwaiter().GetResult()
+    if (-not $response.IsSuccessStatusCode) { throw "Kaggle kernel push failed (HTTP $([int]$response.StatusCode)). Check that competition rules are accepted and that your account has GPU quota." }
+    $result = $response.Content.ReadAsStringAsync().GetAwaiter().GetResult() | ConvertFrom-Json
+    [pscustomobject]@{ Kernel = $KernelSlug; Version = $result.versionNumber; Ref = $result.ref; Status = "submitted" } | ConvertTo-Json -Compress
+}
+finally {
+    if (Test-Path -LiteralPath $temporaryArchive) { Remove-Item -LiteralPath $temporaryArchive -Force }
+}

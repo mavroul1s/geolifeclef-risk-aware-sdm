@@ -33,6 +33,16 @@ python scripts/download_data.py
 
 Files land in ignored `data/raw/`. If access is unavailable, the downloader stops rather than trying to bypass authentication or rules.
 
+### Direct Kaggle execution
+
+To create/update a private Kaggle script kernel and start its Phase-1 audit directly through Kaggle's API (without browser interaction), run:
+
+```powershell
+.\scripts\push_kaggle_kernel.ps1
+```
+
+The script uses the same credential precedence, keeps credentials in memory only, uploads a Git archive of tracked files only, attaches `geolifeclef-2025` as a competition source, requests a T4 accelerator, and runs the audit plus synthetic smoke tests. It fails safely if competition access/rules are unavailable. Its kernel script intentionally defers training until an audit-derived raw-to-canonical adapter is recorded.
+
 ## Audit and canonical data contract
 
 ```powershell
@@ -67,4 +77,3 @@ Runs save their config, epoch CSV, checkpoint, and JSON metrics under ignored `a
 ## Layout
 
 `configs/` holds experimental choices; `docs/` holds the protocol; `scripts/` provides entry points; `src/geolifeclef/` holds reusable code; `tests/` contains synthetic smoke tests; `notebooks/` is reserved for EDA and final figures.
-
