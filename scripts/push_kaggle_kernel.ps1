@@ -90,12 +90,26 @@ print('Training is intentionally deferred until the audit-derived raw-to-canonic
         competitionDataSources = @("geolifeclef-2025")
         accelerator = "NvidiaTeslaT4"
     } | ConvertTo-Json -Depth 5 -Compress
-    $client = [Net.Http.HttpClient]::new()
-    $client.DefaultRequestHeaders.Authorization = [Net.Http.Headers.AuthenticationHeaderValue]::new($auth.Scheme, $auth.Value)
-    $content = [Net.Http.StringContent]::new($payload, [Text.Encoding]::UTF8, "application/json")
-    $response = $client.PostAsync("https://www.kaggle.com/api/v1/kernels/push", $content).GetAwaiter().GetResult()
-    if (-not $response.IsSuccessStatusCode) { throw "Kaggle kernel push failed (HTTP $([int]$response.StatusCode)). Check that competition rules are accepted and that your account has GPU quota." }
-    $result = $response.Content.ReadAsStringAsync().GetAwaiter().GetResult() | ConvertFrom-Json
+    $payloadPath = [IO.Path]::GetTempFileName()
+    $responsePath = [IO.Path]::GetTempFileName()
+    try {
+        [IO.File]::WriteAllText($payloadPath, $payload, [Text.Encoding]::UTF8)
+        # curl uses the platform's network configuration. Authorization lives only
+        # in this process invocation; it is never written to disk or printed.
+        $httpCode = & curl.exe -L --fail --silent --show-error `
+            -X POST "https://www.kaggle.com/api/v1/kernels/push" `
+            -H "Authorization: $($auth.Scheme) $($auth.Value)" `
+            -H "Content-Type: application/json" `
+            --data-binary "@$payloadPath" `
+            -o $responsePath `
+            -w "%{http_code}"
+        if ($LASTEXITCODE -ne 0) { throw "Kaggle kernel push failed (HTTP $httpCode). Check the API token, competition rules, and GPU quota." }
+        $result = Get-Content -LiteralPath $responsePath -Raw | ConvertFrom-Json
+    }
+    finally {
+        if (Test-Path -LiteralPath $payloadPath) { Remove-Item -LiteralPath $payloadPath -Force }
+        if (Test-Path -LiteralPath $responsePath) { Remove-Item -LiteralPath $responsePath -Force }
+    }
     [pscustomobject]@{ Kernel = $KernelSlug; Version = $result.versionNumber; Ref = $result.ref; Status = "submitted" } | ConvertTo-Json -Compress
 }
 finally {
