@@ -74,7 +74,7 @@ os.chdir(PROJECT)
 
 # No credentials are required inside the notebook: the Kaggle API attaches the
 # competition source below. --no-deps avoids pulling unrelated packages.
-subprocess.run([sys.executable, '-m', 'pip', 'install', '--no-deps', '-e', '.'], check=True)
+subprocess.run([sys.executable, '-m', 'pip', 'install', '--no-deps', '--no-build-isolation', '-e', '.'], check=True)
 
 import torch
 print({'torch': torch.__version__, 'cuda_available': torch.cuda.is_available(), 'gpu_count': torch.cuda.device_count()})
