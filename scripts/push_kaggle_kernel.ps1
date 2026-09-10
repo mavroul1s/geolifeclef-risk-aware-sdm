@@ -97,14 +97,16 @@ print('Training is intentionally deferred until the audit-derived raw-to-canonic
         language = "python"
         kernelType = "script"
         isPrivate = $true
+        enableGpu = $true
+        enableTpu = $false
         enableInternet = $false
         competitionDataSources = @("geolifeclef-2025")
-        accelerator = "NvidiaTeslaT4"
+        machineShape = "NvidiaTeslaT4"
     } | ConvertTo-Json -Depth 5 -Compress
     $payloadPath = [IO.Path]::GetTempFileName()
     $responsePath = [IO.Path]::GetTempFileName()
     try {
-        [IO.File]::WriteAllText($payloadPath, $payload, [Text.Encoding]::UTF8)
+        [IO.File]::WriteAllText($payloadPath, $payload, [Text.UTF8Encoding]::new($false))
         # curl uses the platform's network configuration. Authorization lives only
         # in this process invocation; it is never written to disk or printed.
         $httpCode = & curl.exe -L --fail --silent --show-error `
@@ -114,8 +116,22 @@ print('Training is intentionally deferred until the audit-derived raw-to-canonic
             --data-binary "@$payloadPath" `
             -o $responsePath `
             -w "%{http_code}"
-        if ($LASTEXITCODE -ne 0) { throw "Kaggle kernel push failed (HTTP $httpCode). Check the API token, competition rules, and GPU quota." }
+        if ($LASTEXITCODE -ne 0) {
+            $serverDetail = "No response detail was returned."
+            if ((Test-Path -LiteralPath $responsePath) -and ((Get-Item -LiteralPath $responsePath).Length -gt 0)) {
+                $serverDetail = (Get-Content -LiteralPath $responsePath -Raw).Trim()
+                # A Kaggle error must never cause an accidental credential echo.
+                $serverDetail = [regex]::Replace($serverDetail, '(?i)(token|key|password|authorization)\s*[:=]\s*[^,}\s]+', '$1=[redacted]')
+            }
+            throw "Kaggle kernel push failed (HTTP $httpCode): $serverDetail"
+        }
         $result = Get-Content -LiteralPath $responsePath -Raw | ConvertFrom-Json
+        if (-not [string]::IsNullOrWhiteSpace($result.error)) {
+            throw "Kaggle rejected the kernel push: $($result.error)"
+        }
+        if ([int]$result.versionNumber -le 0 -and [string]::IsNullOrWhiteSpace($result.url)) {
+            throw "Kaggle did not return a kernel version or URL; no run was confirmed."
+        }
     }
     finally {
         if (Test-Path -LiteralPath $payloadPath) { Remove-Item -LiteralPath $payloadPath -Force }
