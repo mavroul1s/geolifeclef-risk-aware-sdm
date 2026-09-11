@@ -103,7 +103,9 @@ print('Training remains deferred until the raw-to-canonical adapter is recorded.
         language = "python"
         kernelType = "script"
         isPrivate = $true
-        enableGpu = $true
+        # Audit/schema runs only inspect metadata and are deliberately CPU-only;
+        # this avoids consuming or waiting for a GPU before model training.
+        enableGpu = $false
         enableTpu = $false
         enableInternet = $false
         competitionDataSources = @("geolifeclef-2025")
