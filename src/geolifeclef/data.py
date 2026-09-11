@@ -34,26 +34,27 @@ def inspect_npz(path: str | Path) -> SplitSummary:
 
 
 class CanonicalNPZDataset(Dataset[dict[str, torch.Tensor]]):
-    """Loads the documented raw-schema-independent canonical NPZ split."""
+    """Loads a canonical split once; compressed NPZ members must not be reopened per item."""
     def __init__(self, path: str | Path, required_modality: str | None = None) -> None:
-        self.path = Path(path); self.summary = inspect_npz(self.path); self.archive = np.load(self.path, allow_pickle=False)
-        if required_modality and required_modality not in self.archive.files:
+        self.path = Path(path); self.summary = inspect_npz(self.path)
+        with np.load(self.path, allow_pickle=False) as archive:
+            self.arrays = {name: archive[name] for name in archive.files}
+        if required_modality and required_modality not in self.arrays:
             raise ValueError(f"{self.path} lacks required modality '{required_modality}'")
 
     def __len__(self) -> int:
         return self.summary.samples
 
     def __getitem__(self, index: int) -> dict[str, torch.Tensor]:
-        item = {"labels": torch.from_numpy(np.nan_to_num(self.archive["labels"][index]).astype(np.float32))}
+        item = {"labels": torch.from_numpy(np.nan_to_num(self.arrays["labels"][index]).astype(np.float32))}
         for name in KNOWN_MODALITIES:
-            if name in self.archive.files:
-                item[name] = torch.from_numpy(np.nan_to_num(self.archive[name][index]).astype(np.float32))
+            if name in self.arrays:
+                item[name] = torch.from_numpy(np.nan_to_num(self.arrays[name][index]).astype(np.float32))
         return item
 
     def close(self) -> None:
-        self.archive.close()
+        self.arrays.clear()
 
 
 def collate_modalities(batch: list[dict[str, torch.Tensor]]) -> dict[str, torch.Tensor]:
     return {key: torch.stack([sample[key] for sample in batch]) for key in batch[0]}
-

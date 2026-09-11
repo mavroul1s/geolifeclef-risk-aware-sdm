@@ -18,6 +18,20 @@ def multilabel_f1(targets: np.ndarray, probabilities: np.ndarray, thresholds: fl
     raise ValueError("average must be 'micro' or 'macro'")
 
 
+def top_k_predictions(probabilities: np.ndarray, k: int) -> np.ndarray:
+    probabilities = np.asarray(probabilities)
+    if probabilities.ndim != 2 or not 1 <= k <= probabilities.shape[1]:
+        raise ValueError("probabilities must be [samples, labels] and k must be within its label dimension")
+    indices = np.argpartition(probabilities, -k, axis=1)[:, -k:]
+    predicted = np.zeros_like(probabilities, dtype=np.int8)
+    predicted[np.arange(len(probabilities))[:, None], indices] = 1
+    return predicted
+
+
+def multilabel_top_k_f1(targets: np.ndarray, probabilities: np.ndarray, k: int, average: str = "micro") -> float:
+    return multilabel_f1(targets, top_k_predictions(probabilities, k), average=average)
+
+
 def fit_adaptive_thresholds(targets: np.ndarray, probabilities: np.ndarray, minimum_positives: int = 5, candidates: np.ndarray | None = None, fallback: float = 0.5) -> np.ndarray:
     candidates = np.linspace(.05, .95, 19) if candidates is None else candidates; targets, probabilities = np.asarray(targets), np.asarray(probabilities); thresholds = np.full(targets.shape[1], fallback, dtype=np.float32)
     for label in range(targets.shape[1]):
@@ -29,4 +43,3 @@ def fit_adaptive_thresholds(targets: np.ndarray, probabilities: np.ndarray, mini
 
 def brier_score(targets: np.ndarray, probabilities: np.ndarray) -> float:
     return float(np.mean((np.asarray(targets) - np.asarray(probabilities)) ** 2))
-

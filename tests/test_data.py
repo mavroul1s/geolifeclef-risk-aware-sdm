@@ -9,4 +9,4 @@ def test_canonical_loader(tmp_path):
     summary = inspect_npz(path); dataset = CanonicalNPZDataset(path, "landsat")
     assert (summary.samples, summary.species) == (2, 2)
     assert dataset[0]["landsat"].shape == (4, 3)
-
+    assert dataset.arrays["landsat"].shape == (2, 4, 3)

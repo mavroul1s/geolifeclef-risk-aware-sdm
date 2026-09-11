@@ -16,5 +16,7 @@ training:
   num_workers: 0
   mixed_precision: true
   early_stopping_patience: 3
+  max_pos_weight: 20.0
+  selection_top_k: 16
 evaluation:
   threshold: 0.5

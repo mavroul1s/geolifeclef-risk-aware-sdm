@@ -97,7 +97,7 @@ elif RUN_MODE == 'frequency':
 elif RUN_MODE == 'landsat_smoke':
     subprocess.run([sys.executable, 'scripts/prepare_landsat_pa.py', '--data-root', str(data_root)], check=True)
     subprocess.run([sys.executable, 'scripts/train.py', '--config', 'configs/landsat_tcn_smoke.yaml'], check=True)
-    subprocess.run([sys.executable, 'scripts/evaluate.py', '--checkpoint', 'artifacts/landsat_tcn_smoke/best.pt', '--split', 'data/processed/landsat_pa_smoke_val.npz', '--channels', '32'], check=True)
+    subprocess.run([sys.executable, 'scripts/evaluate.py', '--checkpoint', 'artifacts/landsat_tcn_smoke/best.pt', '--split', 'data/processed/landsat_pa_smoke_val.npz', '--channels', '32', '--top-k', '16'], check=True)
 subprocess.run([sys.executable, '-m', 'pytest'], check=True)
 
 print(f'Phase-1 {RUN_MODE} run and synthetic smoke tests completed.')
