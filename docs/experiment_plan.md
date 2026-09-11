@@ -35,6 +35,12 @@ Smoke v13 showed monotonic fusion learning but underfit after four epochs (Nethe
 same reference learning rate plus a Landsat residual prediction head whose multimodal correction
 starts small and is learned. The holdout, calibration procedure, and promotion rule remain unchanged.
 
+Smoke v14 passed all 12 tests and verified identical split hashes for 12,000 train, 2,000
+calibration, and 3,000 Netherlands surveys. Competitive fusion reached Netherlands sample-F1
+0.2177139 versus 0.1655764 for the Landsat reference, an absolute gain of 0.0521375. Calibration
+performance was still improving at epoch 12, so the promoted full run uses 16 fusion epochs while
+retaining the 10.5-hour total-pipeline guard.
+
 ## Reporting and risks
 
 Fix and save seeds/configs; retain checkpoint, CSV/JSON history, package versions, parameter count, peak GPU memory, throughput, and training time. Report macro/micro F1, prevalence strata, precision/recall, calibration error/Brier score, and candidate-set size. Do not claim conformal guarantees unless assumptions are verified.

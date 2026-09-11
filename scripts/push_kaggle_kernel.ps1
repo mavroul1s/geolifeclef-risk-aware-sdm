@@ -117,7 +117,7 @@ elif RUN_MODE == 'sota_spatial_smoke':
 elif RUN_MODE == 'sota_spatial_full':
     subprocess.run([sys.executable, '-m', 'pytest'], check=True)
     subprocess.run([sys.executable, 'scripts/prepare_spatial_multimodal.py', '--data-root', str(data_root), '--output-dir', 'data/processed/sota_spatial_full', '--holdout-country', 'Netherlands', '--image-size', '32'], check=True)
-    subprocess.run([sys.executable, 'scripts/train_spatial_competition.py', '--data-dir', 'data/processed/sota_spatial_full', '--output-dir', 'artifacts/sota_spatial_full', '--batch-size', '64', '--reference-epochs', '8', '--fusion-epochs', '10', '--model-dim', '192', '--max-hours', '10.5', '--cleanup-cache'], check=True)
+    subprocess.run([sys.executable, 'scripts/train_spatial_competition.py', '--data-dir', 'data/processed/sota_spatial_full', '--output-dir', 'artifacts/sota_spatial_full', '--batch-size', '64', '--reference-epochs', '8', '--fusion-epochs', '16', '--model-dim', '192', '--max-hours', '10.5', '--cleanup-cache'], check=True)
 subprocess.run([sys.executable, '-m', 'pytest'], check=True)
 
 print(f'Phase-1 {RUN_MODE} run and synthetic smoke tests completed.')
