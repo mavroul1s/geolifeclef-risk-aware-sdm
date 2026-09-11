@@ -41,9 +41,10 @@ To create/update a private Kaggle script kernel and start a Phase-1 run directly
 .\scripts\push_kaggle_kernel.ps1
 .\scripts\push_kaggle_kernel.ps1 -RunMode schema
 .\scripts\push_kaggle_kernel.ps1 -RunMode frequency
+.\scripts\push_kaggle_kernel.ps1 -RunMode landsat_smoke
 ```
 
-The script uses the same credential precedence, keeps credentials in memory only, uploads a Git archive of tracked files only, and attaches `geolifeclef-2025` as a competition source. Audit/schema/frequency runs are CPU-only; future neural training will request a T4. It fails safely if competition access/rules are unavailable. The `frequency` mode evaluates the documented PA-survey prevalence baseline and writes its real validation metrics to `artifacts/frequency_pa/metrics.json`.
+The script uses the same credential precedence, keeps credentials in memory only, uploads a Git archive of tracked files only, and attaches `geolifeclef-2025` as a competition source. Audit/schema/frequency runs are CPU-only; `landsat_smoke` requests a T4 and prepares 12,000/3,000 canonical survey splits before six TCN epochs. It fails safely if competition access/rules are unavailable. The `frequency` mode evaluates the documented PA-survey prevalence baseline and writes its real validation metrics to `artifacts/frequency_pa/metrics.json`.
 
 ## Audit and canonical data contract
 

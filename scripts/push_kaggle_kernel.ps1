@@ -12,7 +12,7 @@ GeoLifeCLEF 2025 competition as a server-side input.
 [CmdletBinding()]
 param(
     [string]$KernelSlug = "",
-    [ValidateSet("audit", "schema", "frequency")]
+    [ValidateSet("audit", "schema", "frequency", "landsat_smoke")]
     [string]$RunMode = "schema"
 )
 
@@ -48,6 +48,7 @@ function Get-KaggleAuthorization {
 }
 
 $auth = Get-KaggleAuthorization
+$enableGpu = $RunMode -eq "landsat_smoke"
 if ([string]::IsNullOrWhiteSpace($KernelSlug)) {
     if ([string]::IsNullOrWhiteSpace($auth.Username)) { throw "When using KAGGLE_API_TOKEN, pass -KernelSlug '<username>/geolifeclef-risk-aware-sdm-phase-1'." }
     $KernelSlug = "$($auth.Username)/geolifeclef-risk-aware-sdm-phase-1"
@@ -93,6 +94,10 @@ elif RUN_MODE == 'schema':
     subprocess.run([sys.executable, 'scripts/inspect_schema.py', '--data-root', str(data_root), '--report-path', 'data/reports/schema_report.json'], check=True)
 elif RUN_MODE == 'frequency':
     subprocess.run([sys.executable, 'scripts/run_frequency_baseline.py', '--metadata-path', str(data_root / 'GLC25_PA_metadata_train.csv'), '--report-path', 'artifacts/frequency_pa/metrics.json'], check=True)
+elif RUN_MODE == 'landsat_smoke':
+    subprocess.run([sys.executable, 'scripts/prepare_landsat_pa.py', '--data-root', str(data_root)], check=True)
+    subprocess.run([sys.executable, 'scripts/train.py', '--config', 'configs/landsat_tcn_smoke.yaml'], check=True)
+    subprocess.run([sys.executable, 'scripts/evaluate.py', '--checkpoint', 'artifacts/landsat_tcn_smoke/best.pt', '--split', 'data/processed/landsat_pa_smoke_val.npz', '--channels', '32'], check=True)
 subprocess.run([sys.executable, '-m', 'pytest'], check=True)
 
 print(f'Phase-1 {RUN_MODE} run and synthetic smoke tests completed.')
@@ -105,9 +110,9 @@ print('Training remains deferred until the raw-to-canonical adapter is recorded.
         language = "python"
         kernelType = "script"
         isPrivate = $true
-        # Audit/schema runs only inspect metadata and are deliberately CPU-only;
-        # this avoids consuming or waiting for a GPU before model training.
-        enableGpu = $false
+        # Only neural training requests an accelerator; audit/schema/frequency
+        # runs stay CPU-only and therefore do not consume GPU quota.
+        enableGpu = $enableGpu
         enableTpu = $false
         enableInternet = $false
         competitionDataSources = @("geolifeclef-2025")
