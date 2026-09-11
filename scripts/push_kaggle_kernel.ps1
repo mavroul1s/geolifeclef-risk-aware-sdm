@@ -11,7 +11,9 @@ GeoLifeCLEF 2025 competition as a server-side input.
 #>
 [CmdletBinding()]
 param(
-    [string]$KernelSlug = ""
+    [string]$KernelSlug = "",
+    [ValidateSet("audit", "schema")]
+    [string]$RunMode = "schema"
 )
 
 Set-StrictMode -Version Latest
@@ -66,6 +68,7 @@ import zipfile
 from pathlib import Path
 
 SOURCE_ARCHIVE_B64 = '$encodedSource'
+RUN_MODE = '$RunMode'
 PROJECT = Path('/kaggle/working/geolifeclef-risk-aware-sdm')
 PROJECT.mkdir(parents=True, exist_ok=True)
 with zipfile.ZipFile(io.BytesIO(base64.b64decode(SOURCE_ARCHIVE_B64))) as archive:
@@ -84,11 +87,14 @@ competition_roots = [path for path in input_root.rglob('*') if path.is_dir() and
 if not competition_roots:
     raise RuntimeError('GeoLifeCLEF 2025 input was not mounted. Confirm competition rules are accepted, then push again.')
 data_root = competition_roots[0]
-subprocess.run([sys.executable, 'scripts/audit_data.py', '--data-root', str(data_root), '--report-dir', 'data/reports'], check=True)
+if RUN_MODE == 'audit':
+    subprocess.run([sys.executable, 'scripts/audit_data.py', '--data-root', str(data_root), '--report-dir', 'data/reports'], check=True)
+elif RUN_MODE == 'schema':
+    subprocess.run([sys.executable, 'scripts/inspect_schema.py', '--data-root', str(data_root), '--report-path', 'data/reports/schema_report.json'], check=True)
 subprocess.run([sys.executable, '-m', 'pytest'], check=True)
 
-print('Phase-1 audit and synthetic smoke tests completed.')
-print('Training is intentionally deferred until the audit-derived raw-to-canonical NPZ adapter is recorded.')
+print(f'Phase-1 {RUN_MODE} run and synthetic smoke tests completed.')
+print('Training remains deferred until the raw-to-canonical adapter is recorded.')
 "@
     $payload = [ordered]@{
         slug = $KernelSlug
