@@ -105,7 +105,7 @@ elif RUN_MODE == 'landsat_scale':
     subprocess.run([sys.executable, 'scripts/train.py', '--config', 'configs/landsat_tcn_scale.yaml'], check=True)
     subprocess.run([sys.executable, 'scripts/evaluate.py', '--checkpoint', 'artifacts/landsat_tcn_scale/best.pt', '--split', 'data/processed/landsat_pa_scale_val.npz', '--channels', '32', '--top-k', '16'], check=True)
 elif RUN_MODE == 'landsat_full':
-    subprocess.run([sys.executable, 'scripts/prepare_landsat_pa.py', '--data-root', str(data_root), '--train-output', 'data/processed/landsat_pa_full_train.npz', '--val-output', 'data/processed/landsat_pa_full_val.npz', '--manifest-path', 'data/processed/landsat_pa_full_manifest.json'], check=True)
+    subprocess.run([sys.executable, 'scripts/prepare_landsat_pa.py', '--data-root', str(data_root), '--train-output', 'data/processed/landsat_pa_full_train.npz', '--val-output', 'data/processed/landsat_pa_full_val.npz', '--manifest-path', 'data/processed/landsat_pa_full_manifest.json', '--max-train-surveys', '71190', '--max-validation-surveys', '17797'], check=True)
     subprocess.run([sys.executable, 'scripts/train.py', '--config', 'configs/landsat_tcn_full.yaml'], check=True)
     subprocess.run([sys.executable, 'scripts/evaluate.py', '--checkpoint', 'artifacts/landsat_tcn_full/best.pt', '--split', 'data/processed/landsat_pa_full_val.npz', '--channels', '32', '--top-k', '16'], check=True)
 subprocess.run([sys.executable, '-m', 'pytest'], check=True)
