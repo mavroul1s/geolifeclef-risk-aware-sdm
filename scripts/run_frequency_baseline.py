@@ -55,6 +55,13 @@ def evaluate_frequency_baseline(
     predicted_positives = int(len(validation_ids) * top_k)
     actual_positives = int(len(validation_pairs))
     micro_f1 = 2 * true_positives / max(predicted_positives + actual_positives, 1)
+    sample_scores = []
+    for _, survey_pairs in validation_pairs.groupby("surveyId", sort=False):
+        survey_species = set(survey_pairs["speciesId"].tolist())
+        survey_true_positives = len(survey_species & predicted_species)
+        sample_scores.append(
+            2 * survey_true_positives / max(top_k + len(survey_species), 1)
+        )
     macro_terms = [
         (2 * int(count) / (len(validation_ids) + int(count))) if species_id in predicted_species else 0.0
         for species_id, count in validation_species_counts.items()
@@ -72,6 +79,7 @@ def evaluate_frequency_baseline(
         "train_mean_labels_per_survey": float(mean_cardinality),
         "predicted_species_per_survey": int(top_k),
         "micro_f1": float(micro_f1),
+        "sample_f1_top_k": float(np.mean(sample_scores)),
         "macro_f1_observed_validation_species": float(np.mean(macro_terms)),
         "precision": float(true_positives / max(predicted_positives, 1)),
         "recall": float(true_positives / max(actual_positives, 1)),
@@ -79,6 +87,7 @@ def evaluate_frequency_baseline(
         "predicted_labels": predicted_positives,
         "actual_labels": actual_positives,
         "policy": "Top-k training prevalence; k is rounded train mean labels per survey.",
+        "primary_metric": "sample_f1_top_k (official sample-averaged F1 definition)",
     }
 
 

@@ -34,13 +34,13 @@ def train_temporal(model: nn.Module, train_loader: DataLoader, val_loader: DataL
             with torch.autocast(device_type=device.type, enabled=mixed_precision and device.type == "cuda"):
                 loss = criterion(model(features), labels)
             scaler.scale(loss).backward(); scaler.step(optimizer); scaler.update(); total_loss += loss.item() * len(labels); samples += len(labels)
-        elapsed = time.perf_counter() - started; targets, probabilities = predict(model, val_loader, device, modality); fixed_score = multilabel_f1(targets, probabilities); score = multilabel_top_k_f1(targets, probabilities, selection_top_k) if selection_top_k else fixed_score
-        record = {"epoch": epoch, "train_loss": total_loss / max(samples, 1), "val_micro_f1": fixed_score, "val_selection_f1": score, "seconds": elapsed, "examples_per_second": samples / max(elapsed, 1e-6)}; history.append(record)
+        elapsed = time.perf_counter() - started; targets, probabilities = predict(model, val_loader, device, modality); fixed_micro = multilabel_f1(targets, probabilities); fixed_sample = multilabel_f1(targets, probabilities, average="samples"); score = multilabel_top_k_f1(targets, probabilities, selection_top_k, average="samples") if selection_top_k else fixed_sample
+        record = {"epoch": epoch, "train_loss": total_loss / max(samples, 1), "val_micro_f1": fixed_micro, "val_sample_f1": fixed_sample, "val_selection_sample_f1": score, "seconds": elapsed, "examples_per_second": samples / max(elapsed, 1e-6)}; history.append(record)
         if score > best_f1:
-            best_f1, stale = score, 0; torch.save({"model_state": model.state_dict(), "val_micro_f1": score}, output_dir / "best.pt")
+            best_f1, stale = score, 0; torch.save({"model_state": model.state_dict(), "val_sample_f1": score}, output_dir / "best.pt")
         else:
             stale += 1
             if stale >= patience: break
     with (output_dir / "history.csv").open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=history[0]); writer.writeheader(); writer.writerows(history)
-    return {"best_val_selection_f1": best_f1, "selection_top_k": selection_top_k, "epochs_completed": len(history), "last_epoch": history[-1], "peak_gpu_memory_mb": torch.cuda.max_memory_allocated(device) / 1024**2 if device.type == "cuda" else None}
+    return {"best_val_selection_sample_f1": best_f1, "selection_top_k": selection_top_k, "selection_metric": "sample-averaged F1", "epochs_completed": len(history), "last_epoch": history[-1], "peak_gpu_memory_mb": torch.cuda.max_memory_allocated(device) / 1024**2 if device.type == "cuda" else None}

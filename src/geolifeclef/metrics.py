@@ -15,7 +15,12 @@ def multilabel_f1(targets: np.ndarray, probabilities: np.ndarray, thresholds: fl
     if average == "macro":
         tp, fp, fn = (predicted & truth).sum(0), (predicted & ~truth).sum(0), (~predicted & truth).sum(0)
         return float(np.mean(2 * tp / np.maximum(2 * tp + fp + fn, 1)))
-    raise ValueError("average must be 'micro' or 'macro'")
+    if average == "samples":
+        tp = (predicted & truth).sum(1)
+        fp = (predicted & ~truth).sum(1)
+        fn = (~predicted & truth).sum(1)
+        return float(np.mean(2 * tp / np.maximum(2 * tp + fp + fn, 1)))
+    raise ValueError("average must be 'micro', 'macro', or 'samples'")
 
 
 def top_k_predictions(probabilities: np.ndarray, k: int) -> np.ndarray:

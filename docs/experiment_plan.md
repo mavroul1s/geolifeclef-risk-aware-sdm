@@ -12,7 +12,7 @@
 ## Sequence
 
 1. Audit and raw-schema probe: PA labels are long-format `surveyId`/`speciesId`; Landsat cubes are `[band=6, season=4, year=21]` and bioclimatic cubes are `[variable=4, year=19, month=12]`.
-2. Frequency baseline: deterministic 80/20 survey-level split; rank species by unique training-survey prevalence; predict the top-k species for each validation survey, where k is the rounded mean training label cardinality. Record micro-F1, macro-F1 over observed validation species, precision, recall and unseen validation species. This deliberately has no feature input.
+2. Frequency diagnostic: deterministic 80/20 survey-level split; rank species by unique training-survey prevalence; predict the top-k species for each validation survey, where k is the rounded mean training label cardinality. Record the official sample-averaged F1 first, plus micro-F1, macro-F1 over observed validation species, precision, recall and unseen validation species. This deliberately has no feature input.
 3. Landsat-only temporal CNN.
 4. Climate-only and static-only baselines.
 5. Lightweight gated fusion; optional image patches only as ablation.
@@ -26,9 +26,11 @@ Fix and save seeds/configs; retain checkpoint, CSV/JSON history, package version
 
 Key risks: spatial leakage (use blocks where metadata permits), class imbalance (class-balanced/asymmetric losses plus transparent strata), missing time steps (audit and document imputation/masks), and threshold overfitting (separate calibration set).
 
-## Confirmed full-split result
+## Target and confirmed diagnostic result
 
-With seed 2025, 71,190 training surveys, 17,797 validation surveys, 5,016 species and no missing Landsat cubes, the 169,368-parameter Landsat TCN reached top-16 micro-F1 0.2678696. The matched full frequency baseline was 0.1570004, an absolute gain of 0.1108692. This is an internal random survey-split result; it is not yet evidence of spatial generalization or a standalone paper contribution.
+The primary target is to exceed the GeoLifeCLEF 2025 winning private-leaderboard sample-averaged F1 of 0.2302 under the official evaluation protocol. Internal validation is used to select credible candidates, but only a like-for-like competition submission can establish whether that target has been met.
+
+With seed 2025, 71,190 training surveys, 17,797 validation surveys, 5,016 species and no missing Landsat cubes, the 169,368-parameter Landsat TCN reached top-16 micro-F1 0.2678696. The matched frequency diagnostic was 0.1570004. These historical values use global micro-F1, not the official sample-averaged F1, so they prove only that the pipeline learns useful Landsat signal on an internal random split; they cannot be compared numerically with 0.2302.
 
 Before any further model comparison, select and freeze a country/region holdout using the
 registered spatial-audit rule: 8%-30% of surveys, no more than 20% unseen validation labels,

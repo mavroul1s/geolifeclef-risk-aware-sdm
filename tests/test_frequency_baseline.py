@@ -17,4 +17,5 @@ def test_frequency_baseline_uses_training_prevalence_only(tmp_path):
     assert result["validation_surveys"] == 2
     assert result["predicted_species_per_survey"] >= 1
     assert 0.0 <= result["micro_f1"] <= 1.0
+    assert 0.0 <= result["sample_f1_top_k"] <= 1.0
     assert 0.0 <= result["macro_f1_observed_validation_species"] <= 1.0
