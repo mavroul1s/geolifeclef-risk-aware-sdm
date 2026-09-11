@@ -14,7 +14,8 @@ REQUIRED_COLUMNS = ("surveyId", "speciesId")
 
 
 def evaluate_frequency_baseline(
-    metadata_path: Path, *, seed: int = 2025, validation_fraction: float = 0.2
+    metadata_path: Path, *, seed: int = 2025, validation_fraction: float = 0.2,
+    max_train_surveys: int | None = None, max_validation_surveys: int | None = None,
 ) -> dict[str, int | float]:
     """Use a survey-level split and a train-only, fixed top-k species prior."""
     if not 0 < validation_fraction < 1:
@@ -33,9 +34,13 @@ def evaluate_frequency_baseline(
     rng = np.random.default_rng(seed)
     rng.shuffle(survey_ids)
     validation_count = max(1, int(round(len(survey_ids) * validation_fraction)))
-    validation_ids = survey_ids[:validation_count]
-    is_validation = pairs["surveyId"].isin(validation_ids)
-    train_pairs, validation_pairs = pairs.loc[~is_validation], pairs.loc[is_validation]
+    validation_ids, train_ids = survey_ids[:validation_count], survey_ids[validation_count:]
+    if max_train_surveys is not None:
+        train_ids = train_ids[:max_train_surveys]
+    if max_validation_surveys is not None:
+        validation_ids = validation_ids[:max_validation_surveys]
+    train_pairs = pairs.loc[pairs["surveyId"].isin(train_ids)]
+    validation_pairs = pairs.loc[pairs["surveyId"].isin(validation_ids)]
     if train_pairs.empty or validation_pairs.empty:
         raise ValueError("Survey split produced an empty partition")
 
@@ -83,9 +88,12 @@ def main() -> None:
     parser.add_argument("--report-path", type=Path, default=Path("artifacts/frequency_pa/metrics.json"))
     parser.add_argument("--seed", type=int, default=2025)
     parser.add_argument("--validation-fraction", type=float, default=0.2)
+    parser.add_argument("--max-train-surveys", type=int)
+    parser.add_argument("--max-validation-surveys", type=int)
     args = parser.parse_args()
     result = evaluate_frequency_baseline(
-        args.metadata_path, seed=args.seed, validation_fraction=args.validation_fraction
+        args.metadata_path, seed=args.seed, validation_fraction=args.validation_fraction,
+        max_train_surveys=args.max_train_surveys, max_validation_surveys=args.max_validation_surveys,
     )
     args.report_path.parent.mkdir(parents=True, exist_ok=True)
     args.report_path.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")

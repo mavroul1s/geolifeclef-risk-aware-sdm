@@ -12,7 +12,7 @@ GeoLifeCLEF 2025 competition as a server-side input.
 [CmdletBinding()]
 param(
     [string]$KernelSlug = "",
-    [ValidateSet("audit", "schema", "frequency", "landsat_smoke")]
+    [ValidateSet("audit", "schema", "frequency", "frequency_smoke", "landsat_smoke")]
     [string]$RunMode = "schema"
 )
 
@@ -94,6 +94,8 @@ elif RUN_MODE == 'schema':
     subprocess.run([sys.executable, 'scripts/inspect_schema.py', '--data-root', str(data_root), '--report-path', 'data/reports/schema_report.json'], check=True)
 elif RUN_MODE == 'frequency':
     subprocess.run([sys.executable, 'scripts/run_frequency_baseline.py', '--metadata-path', str(data_root / 'GLC25_PA_metadata_train.csv'), '--report-path', 'artifacts/frequency_pa/metrics.json'], check=True)
+elif RUN_MODE == 'frequency_smoke':
+    subprocess.run([sys.executable, 'scripts/run_frequency_baseline.py', '--metadata-path', str(data_root / 'GLC25_PA_metadata_train.csv'), '--report-path', 'artifacts/frequency_pa_smoke/metrics.json', '--max-train-surveys', '12000', '--max-validation-surveys', '3000'], check=True)
 elif RUN_MODE == 'landsat_smoke':
     subprocess.run([sys.executable, 'scripts/prepare_landsat_pa.py', '--data-root', str(data_root)], check=True)
     subprocess.run([sys.executable, 'scripts/train.py', '--config', 'configs/landsat_tcn_smoke.yaml'], check=True)
