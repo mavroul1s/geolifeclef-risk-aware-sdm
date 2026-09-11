@@ -30,6 +30,11 @@ Landsat encoder, dilated bioclimatic encoder, compact ConvNeXt-style Sentinel en
 geographic/static encoder, and cross-modal Transformer fusion. A smoke run must pass before the
 full run. The full job has a 10.5-hour internal guard inside the 12-hour Kaggle allowance.
 
+Smoke v13 showed monotonic fusion learning but underfit after four epochs (Netherlands sample-F1
+0.1142 versus 0.1656 for the reference). The registered response is longer smoke training at the
+same reference learning rate plus a Landsat residual prediction head whose multimodal correction
+starts small and is learned. The holdout, calibration procedure, and promotion rule remain unchanged.
+
 ## Reporting and risks
 
 Fix and save seeds/configs; retain checkpoint, CSV/JSON history, package versions, parameter count, peak GPU memory, throughput, and training time. Report macro/micro F1, prevalence strata, precision/recall, calibration error/Brier score, and candidate-set size. Do not claim conformal guarantees unless assumptions are verified.

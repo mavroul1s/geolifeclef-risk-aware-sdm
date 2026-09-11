@@ -317,7 +317,7 @@ def main() -> None:
         args.output_dir,
         multimodal=True,
         epochs=args.fusion_epochs,
-        learning_rate=3e-4,
+        learning_rate=8e-4,
         deadline=deadline,
     )
     fusion_result = evaluate_model(

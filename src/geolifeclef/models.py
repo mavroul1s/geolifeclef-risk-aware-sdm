@@ -147,16 +147,24 @@ class CompetitiveFusionSDM(nn.Module):
         )
         self.fusion = nn.TransformerEncoder(layer, num_layers=2)
         self.gate = nn.Sequential(nn.Linear(model_dim, 1), nn.Sigmoid())
+        self.landsat_head = nn.Sequential(
+            nn.LayerNorm(model_dim),
+            nn.Dropout(dropout),
+            nn.Linear(model_dim, num_labels),
+        )
         self.head = nn.Sequential(
             nn.LayerNorm(model_dim),
             nn.Dropout(dropout),
             nn.Linear(model_dim, num_labels),
         )
+        # Start close to a stable Landsat predictor; learn multimodal corrections gradually.
+        self.fusion_logit = nn.Parameter(torch.tensor(-2.0))
 
     def forward(self, batch: dict[str, torch.Tensor]) -> torch.Tensor:
+        landsat_token = self.landsat(batch["landsat"])
         tokens = torch.stack(
             (
-                self.landsat(batch["landsat"]),
+                landsat_token,
                 self.climate(batch["climate"]),
                 self.sentinel(batch["sentinel"]),
                 self.static(batch["static"]),
@@ -166,7 +174,7 @@ class CompetitiveFusionSDM(nn.Module):
         tokens = self.fusion(tokens + self.modality_embeddings)
         weights = self.gate(tokens)
         pooled = (tokens * weights).sum(1) / weights.sum(1).clamp_min(1e-6)
-        return self.head(pooled)
+        return self.landsat_head(landsat_token) + torch.sigmoid(self.fusion_logit) * self.head(pooled)
 
 
 def count_trainable_parameters(model: nn.Module) -> int:

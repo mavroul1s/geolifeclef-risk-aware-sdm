@@ -113,7 +113,7 @@ elif RUN_MODE == 'landsat_full':
 elif RUN_MODE == 'sota_spatial_smoke':
     subprocess.run([sys.executable, '-m', 'pytest'], check=True)
     subprocess.run([sys.executable, 'scripts/prepare_spatial_multimodal.py', '--data-root', str(data_root), '--output-dir', 'data/processed/sota_spatial_smoke', '--holdout-country', 'Netherlands', '--image-size', '32', '--max-train-surveys', '12000', '--max-calibration-surveys', '2000', '--max-validation-surveys', '3000'], check=True)
-    subprocess.run([sys.executable, 'scripts/train_spatial_competition.py', '--data-dir', 'data/processed/sota_spatial_smoke', '--output-dir', 'artifacts/sota_spatial_smoke', '--batch-size', '96', '--reference-epochs', '3', '--fusion-epochs', '4', '--model-dim', '96', '--max-hours', '3.0', '--cleanup-cache'], check=True)
+    subprocess.run([sys.executable, 'scripts/train_spatial_competition.py', '--data-dir', 'data/processed/sota_spatial_smoke', '--output-dir', 'artifacts/sota_spatial_smoke', '--batch-size', '96', '--reference-epochs', '3', '--fusion-epochs', '12', '--model-dim', '96', '--max-hours', '3.0', '--cleanup-cache'], check=True)
 elif RUN_MODE == 'sota_spatial_full':
     subprocess.run([sys.executable, '-m', 'pytest'], check=True)
     subprocess.run([sys.executable, 'scripts/prepare_spatial_multimodal.py', '--data-root', str(data_root), '--output-dir', 'data/processed/sota_spatial_full', '--holdout-country', 'Netherlands', '--image-size', '32'], check=True)
