@@ -38,6 +38,136 @@ class GatedFusion(nn.Module):
         return self.classifier(fused)
 
 
+class ResidualTemporalEncoder(nn.Module):
+    """Dilated temporal encoder for compact environmental time-series cubes."""
+
+    def __init__(self, input_features: int, width: int = 96, output_dim: int = 192):
+        super().__init__()
+        self.stem = nn.Sequential(
+            nn.Conv1d(input_features, width, 5, padding=2),
+            nn.BatchNorm1d(width),
+            nn.GELU(),
+        )
+        self.blocks = nn.ModuleList(
+            [
+                nn.Sequential(
+                    nn.Conv1d(
+                        width, width, 3, padding=dilation, dilation=dilation, groups=width
+                    ),
+                    nn.BatchNorm1d(width),
+                    nn.GELU(),
+                    nn.Conv1d(width, width, 1),
+                    nn.Dropout(0.1),
+                )
+                for dilation in (1, 2, 4, 8)
+            ]
+        )
+        self.projection = nn.Sequential(nn.Linear(width * 2, output_dim), nn.LayerNorm(output_dim))
+
+    def forward(self, sequence: torch.Tensor) -> torch.Tensor:
+        values = self.stem(sequence.transpose(1, 2))
+        for block in self.blocks:
+            values = values + block(values)
+        pooled = torch.cat((values.mean(-1), values.amax(-1)), dim=-1)
+        return self.projection(pooled)
+
+
+class ConvNeXtBlock(nn.Module):
+    def __init__(self, channels: int, expansion: int = 3):
+        super().__init__()
+        self.depthwise = nn.Conv2d(channels, channels, 7, padding=3, groups=channels)
+        self.norm = nn.GroupNorm(1, channels)
+        self.pointwise = nn.Sequential(
+            nn.Conv2d(channels, channels * expansion, 1),
+            nn.GELU(),
+            nn.Conv2d(channels * expansion, channels, 1),
+        )
+        self.scale = nn.Parameter(torch.full((1, channels, 1, 1), 1e-6))
+
+    def forward(self, image: torch.Tensor) -> torch.Tensor:
+        update = self.pointwise(self.norm(self.depthwise(image)))
+        return image + self.scale * update
+
+
+class SentinelEncoder(nn.Module):
+    """Small ConvNeXt-style encoder sized for 4x32x32 Sentinel patches."""
+
+    def __init__(self, output_dim: int = 192):
+        super().__init__()
+        self.network = nn.Sequential(
+            nn.Conv2d(4, 64, 3, stride=2, padding=1),
+            nn.GroupNorm(1, 64),
+            nn.GELU(),
+            ConvNeXtBlock(64),
+            ConvNeXtBlock(64),
+            nn.Conv2d(64, 128, 2, stride=2),
+            ConvNeXtBlock(128),
+            ConvNeXtBlock(128),
+            nn.Conv2d(128, output_dim, 2, stride=2),
+            ConvNeXtBlock(output_dim),
+            nn.AdaptiveAvgPool2d(1),
+            nn.Flatten(),
+            nn.LayerNorm(output_dim),
+        )
+
+    def forward(self, image: torch.Tensor) -> torch.Tensor:
+        return self.network(image)
+
+
+class CompetitiveFusionSDM(nn.Module):
+    """Compute-aware multimodal SDM with attention across environmental modalities."""
+
+    def __init__(
+        self,
+        num_labels: int,
+        static_features: int,
+        model_dim: int = 192,
+        dropout: float = 0.15,
+    ):
+        super().__init__()
+        self.landsat = ResidualTemporalEncoder(6, output_dim=model_dim)
+        self.climate = ResidualTemporalEncoder(4, output_dim=model_dim)
+        self.sentinel = SentinelEncoder(output_dim=model_dim)
+        self.static = nn.Sequential(
+            nn.Linear(static_features, model_dim),
+            nn.GELU(),
+            nn.Dropout(dropout),
+            nn.Linear(model_dim, model_dim),
+            nn.LayerNorm(model_dim),
+        )
+        self.modality_embeddings = nn.Parameter(torch.randn(1, 4, model_dim) * 0.02)
+        layer = nn.TransformerEncoderLayer(
+            d_model=model_dim,
+            nhead=6,
+            dim_feedforward=model_dim * 3,
+            dropout=dropout,
+            activation="gelu",
+            batch_first=True,
+            norm_first=True,
+        )
+        self.fusion = nn.TransformerEncoder(layer, num_layers=2)
+        self.gate = nn.Sequential(nn.Linear(model_dim, 1), nn.Sigmoid())
+        self.head = nn.Sequential(
+            nn.LayerNorm(model_dim),
+            nn.Dropout(dropout),
+            nn.Linear(model_dim, num_labels),
+        )
+
+    def forward(self, batch: dict[str, torch.Tensor]) -> torch.Tensor:
+        tokens = torch.stack(
+            (
+                self.landsat(batch["landsat"]),
+                self.climate(batch["climate"]),
+                self.sentinel(batch["sentinel"]),
+                self.static(batch["static"]),
+            ),
+            dim=1,
+        )
+        tokens = self.fusion(tokens + self.modality_embeddings)
+        weights = self.gate(tokens)
+        pooled = (tokens * weights).sum(1) / weights.sum(1).clamp_min(1e-6)
+        return self.head(pooled)
+
+
 def count_trainable_parameters(model: nn.Module) -> int:
     return sum(parameter.numel() for parameter in model.parameters() if parameter.requires_grad)
-

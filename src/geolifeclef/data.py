@@ -7,7 +7,7 @@ import numpy as np
 import torch
 from torch.utils.data import Dataset
 
-KNOWN_MODALITIES = ("landsat", "climate", "static")
+KNOWN_MODALITIES = ("landsat", "climate", "sentinel", "static")
 
 
 @dataclass(frozen=True)

@@ -1,10 +1,10 @@
 # GeoLifeCLEF Risk-Aware SDM
 
-Reproducible PyTorch research code for multi-label plant-species presence prediction using **only** the GeoLifeCLEF 2025 Kaggle competition data. Phase 1 supplies an audit, a prevalence baseline, and a Landsat temporal-CNN baseline. It does not claim any score is state of the art without independent evaluation.
+Reproducible PyTorch research code for multi-label plant-species presence prediction using **only** the GeoLifeCLEF 2025 Kaggle competition data. The repository includes diagnostics, spatial validation, and a compute-aware multimodal Sentinel/Landsat/bioclimatic model. It does not claim any score is state of the art without like-for-like hidden-test evaluation.
 
 ## Research protocol
 
-The published single-modality Landsat reference is approximately F1 0.144. This repository treats a reproducible, documented score above that as the initial target; 0.16--0.18 is a realistic research target, not a result. Report micro-F1 and macro-F1, threshold policy, common/rare strata, calibration, predicted-set size, parameters, memory, throughput, and wall-clock time. Rare species remain in aggregate metrics.
+The primary external target is the GeoLifeCLEF 2025 winning private-leaderboard sample-averaged F1 of 0.2302. Internal scores are candidate-selection evidence only and are never compared numerically with the hidden-test result. Report sample-averaged F1 first, plus micro/macro F1, prediction policy, common/rare strata, calibration, predicted-set size, parameters, memory, throughput, and wall-clock time. Rare species remain in aggregate metrics.
 
 Use a spatially blocked validation split when coordinates, tiles, regions, or habitats permit it. Otherwise use the official split and explicitly record why spatial blocking was unavailable.
 
@@ -42,9 +42,11 @@ To create/update a private Kaggle script kernel and start a Phase-1 run directly
 .\scripts\push_kaggle_kernel.ps1 -RunMode schema
 .\scripts\push_kaggle_kernel.ps1 -RunMode frequency
 .\scripts\push_kaggle_kernel.ps1 -RunMode landsat_smoke
+.\scripts\push_kaggle_kernel.ps1 -RunMode sota_spatial_smoke
+.\scripts\push_kaggle_kernel.ps1 -RunMode sota_spatial_full
 ```
 
-The script uses the same credential precedence, keeps credentials in memory only, uploads a Git archive of tracked files only, and attaches `geolifeclef-2025` as a competition source. Audit/schema/frequency runs are CPU-only; `landsat_smoke` requests a T4 and prepares 12,000/3,000 canonical survey splits before six TCN epochs. It fails safely if competition access/rules are unavailable. The `frequency` mode evaluates the documented PA-survey prevalence baseline and writes its real validation metrics to `artifacts/frequency_pa/metrics.json`.
+The script uses the same credential precedence, keeps credentials in memory only, uploads a Git archive of tracked files only, and attaches `geolifeclef-2025` as a competition source. Audit/schema/frequency runs are CPU-only; neural modes request a T4. The SOTA-oriented run freezes the Netherlands holdout, creates a non-overlapping spatial-block calibration set, and trains both the Landsat reference and multimodal candidate on identical split hashes. The smoke mode measures feasibility before the registered full run, which has a 10.5-hour internal stop guard under Kaggle's 12-hour envelope.
 
 ## Audit and canonical data contract
 

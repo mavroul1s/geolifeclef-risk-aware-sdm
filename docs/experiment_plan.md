@@ -20,6 +20,16 @@
 7. Self-supervised pretraining plus fine-tuning.
 8. Compute and ablation study on the 2x T4 16 GB envelope.
 
+## SOTA-oriented spatial comparison
+
+Freeze Netherlands as the untouched geographic holdout. Within all non-Netherlands surveys,
+reserve deterministic 10 km spatial blocks for calibration. The Landsat reference and competitive
+fusion model must share the exact SHA-256 split identifiers, asymmetric loss family, checkpoint
+selection metric, and calibration-only prediction-policy search. The candidate combines a dilated
+Landsat encoder, dilated bioclimatic encoder, compact ConvNeXt-style Sentinel encoder, Fourier
+geographic/static encoder, and cross-modal Transformer fusion. A smoke run must pass before the
+full run. The full job has a 10.5-hour internal guard inside the 12-hour Kaggle allowance.
+
 ## Reporting and risks
 
 Fix and save seeds/configs; retain checkpoint, CSV/JSON history, package versions, parameter count, peak GPU memory, throughput, and training time. Report macro/micro F1, prevalence strata, precision/recall, calibration error/Brier score, and candidate-set size. Do not claim conformal guarantees unless assumptions are verified.
