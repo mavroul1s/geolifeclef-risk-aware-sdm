@@ -1,0 +1,22 @@
+seed: 2025
+run_name: landsat_tcn_full
+data:
+  train_path: data/processed/landsat_pa_full_train.npz
+  val_path: data/processed/landsat_pa_full_val.npz
+model:
+  name: temporal_cnn
+  modality: landsat
+  channels: 32
+  dropout: 0.15
+training:
+  batch_size: 256
+  epochs: 16
+  lr: 0.0008
+  weight_decay: 0.0001
+  num_workers: 0
+  mixed_precision: true
+  early_stopping_patience: 5
+  max_pos_weight: 20.0
+  selection_top_k: 16
+evaluation:
+  threshold: 0.5

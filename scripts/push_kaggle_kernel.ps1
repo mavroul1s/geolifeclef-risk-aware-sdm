@@ -12,7 +12,7 @@ GeoLifeCLEF 2025 competition as a server-side input.
 [CmdletBinding()]
 param(
     [string]$KernelSlug = "",
-    [ValidateSet("audit", "schema", "frequency", "frequency_smoke", "landsat_smoke", "landsat_scale")]
+    [ValidateSet("audit", "schema", "frequency", "frequency_smoke", "landsat_smoke", "landsat_scale", "landsat_full")]
     [string]$RunMode = "schema"
 )
 
@@ -48,7 +48,7 @@ function Get-KaggleAuthorization {
 }
 
 $auth = Get-KaggleAuthorization
-$enableGpu = $RunMode -in @("landsat_smoke", "landsat_scale")
+$enableGpu = $RunMode -in @("landsat_smoke", "landsat_scale", "landsat_full")
 if ([string]::IsNullOrWhiteSpace($KernelSlug)) {
     if ([string]::IsNullOrWhiteSpace($auth.Username)) { throw "When using KAGGLE_API_TOKEN, pass -KernelSlug '<username>/geolifeclef-risk-aware-sdm-phase-1'." }
     $KernelSlug = "$($auth.Username)/geolifeclef-risk-aware-sdm-phase-1"
@@ -104,6 +104,10 @@ elif RUN_MODE == 'landsat_scale':
     subprocess.run([sys.executable, 'scripts/prepare_landsat_pa.py', '--data-root', str(data_root), '--train-output', 'data/processed/landsat_pa_scale_train.npz', '--val-output', 'data/processed/landsat_pa_scale_val.npz', '--manifest-path', 'data/processed/landsat_pa_scale_manifest.json', '--max-train-surveys', '48000', '--max-validation-surveys', '6000'], check=True)
     subprocess.run([sys.executable, 'scripts/train.py', '--config', 'configs/landsat_tcn_scale.yaml'], check=True)
     subprocess.run([sys.executable, 'scripts/evaluate.py', '--checkpoint', 'artifacts/landsat_tcn_scale/best.pt', '--split', 'data/processed/landsat_pa_scale_val.npz', '--channels', '32', '--top-k', '16'], check=True)
+elif RUN_MODE == 'landsat_full':
+    subprocess.run([sys.executable, 'scripts/prepare_landsat_pa.py', '--data-root', str(data_root), '--train-output', 'data/processed/landsat_pa_full_train.npz', '--val-output', 'data/processed/landsat_pa_full_val.npz', '--manifest-path', 'data/processed/landsat_pa_full_manifest.json'], check=True)
+    subprocess.run([sys.executable, 'scripts/train.py', '--config', 'configs/landsat_tcn_full.yaml'], check=True)
+    subprocess.run([sys.executable, 'scripts/evaluate.py', '--checkpoint', 'artifacts/landsat_tcn_full/best.pt', '--split', 'data/processed/landsat_pa_full_val.npz', '--channels', '32', '--top-k', '16'], check=True)
 subprocess.run([sys.executable, '-m', 'pytest'], check=True)
 
 print(f'Phase-1 {RUN_MODE} run and synthetic smoke tests completed.')
