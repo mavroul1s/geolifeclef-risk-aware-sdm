@@ -11,8 +11,8 @@
 
 ## Sequence
 
-1. Audit and data card.
-2. Frequency baseline.
+1. Audit and raw-schema probe: PA labels are long-format `surveyId`/`speciesId`; Landsat cubes are `[band=6, season=4, year=21]` and bioclimatic cubes are `[variable=4, year=19, month=12]`.
+2. Frequency baseline: deterministic 80/20 survey-level split; rank species by unique training-survey prevalence; predict the top-k species for each validation survey, where k is the rounded mean training label cardinality. Record micro-F1, macro-F1 over observed validation species, precision, recall and unseen validation species. This deliberately has no feature input.
 3. Landsat-only temporal CNN.
 4. Climate-only and static-only baselines.
 5. Lightweight gated fusion; optional image patches only as ablation.
@@ -25,4 +25,3 @@
 Fix and save seeds/configs; retain checkpoint, CSV/JSON history, package versions, parameter count, peak GPU memory, throughput, and training time. Report macro/micro F1, prevalence strata, precision/recall, calibration error/Brier score, and candidate-set size. Do not claim conformal guarantees unless assumptions are verified.
 
 Key risks: spatial leakage (use blocks where metadata permits), class imbalance (class-balanced/asymmetric losses plus transparent strata), missing time steps (audit and document imputation/masks), and threshold overfitting (separate calibration set).
-

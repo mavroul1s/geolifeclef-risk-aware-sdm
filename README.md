@@ -35,13 +35,15 @@ Files land in ignored `data/raw/`. If access is unavailable, the downloader stop
 
 ### Direct Kaggle execution
 
-To create/update a private Kaggle script kernel and start its Phase-1 audit directly through Kaggle's API (without browser interaction), run:
+To create/update a private Kaggle script kernel and start a Phase-1 run directly through Kaggle's API (without browser interaction), run:
 
 ```powershell
 .\scripts\push_kaggle_kernel.ps1
+.\scripts\push_kaggle_kernel.ps1 -RunMode schema
+.\scripts\push_kaggle_kernel.ps1 -RunMode frequency
 ```
 
-The script uses the same credential precedence, keeps credentials in memory only, uploads a Git archive of tracked files only, attaches `geolifeclef-2025` as a competition source, requests a T4 accelerator, and runs the audit plus synthetic smoke tests. It fails safely if competition access/rules are unavailable. Its kernel script intentionally defers training until an audit-derived raw-to-canonical adapter is recorded.
+The script uses the same credential precedence, keeps credentials in memory only, uploads a Git archive of tracked files only, and attaches `geolifeclef-2025` as a competition source. Audit/schema/frequency runs are CPU-only; future neural training will request a T4. It fails safely if competition access/rules are unavailable. The `frequency` mode evaluates the documented PA-survey prevalence baseline and writes its real validation metrics to `artifacts/frequency_pa/metrics.json`.
 
 ## Audit and canonical data contract
 

@@ -12,7 +12,7 @@ GeoLifeCLEF 2025 competition as a server-side input.
 [CmdletBinding()]
 param(
     [string]$KernelSlug = "",
-    [ValidateSet("audit", "schema")]
+    [ValidateSet("audit", "schema", "frequency")]
     [string]$RunMode = "schema"
 )
 
@@ -91,6 +91,8 @@ if RUN_MODE == 'audit':
     subprocess.run([sys.executable, 'scripts/audit_data.py', '--data-root', str(data_root), '--report-dir', 'data/reports'], check=True)
 elif RUN_MODE == 'schema':
     subprocess.run([sys.executable, 'scripts/inspect_schema.py', '--data-root', str(data_root), '--report-path', 'data/reports/schema_report.json'], check=True)
+elif RUN_MODE == 'frequency':
+    subprocess.run([sys.executable, 'scripts/run_frequency_baseline.py', '--metadata-path', str(data_root / 'GLC25_PA_metadata_train.csv'), '--report-path', 'artifacts/frequency_pa/metrics.json'], check=True)
 subprocess.run([sys.executable, '-m', 'pytest'], check=True)
 
 print(f'Phase-1 {RUN_MODE} run and synthetic smoke tests completed.')
