@@ -333,6 +333,7 @@ def main() -> None:
     reference_score = float(reference_result["validation_sample_f1"])
     fusion_score = float(fusion_result["validation_sample_f1"])
     report = {
+        "seed": args.seed,
         "split_sha256": manifest["split_sha256"],
         "same_split_verified": True,
         "holdout_country": manifest["holdout_country"],

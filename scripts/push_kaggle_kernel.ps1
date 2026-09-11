@@ -12,7 +12,7 @@ GeoLifeCLEF 2025 competition as a server-side input.
 [CmdletBinding()]
 param(
     [string]$KernelSlug = "",
-    [ValidateSet("audit", "schema", "spatial_audit", "frequency", "frequency_smoke", "landsat_smoke", "landsat_scale", "landsat_full", "sota_spatial_smoke", "sota_spatial_full")]
+    [ValidateSet("audit", "schema", "spatial_audit", "frequency", "frequency_smoke", "landsat_smoke", "landsat_scale", "landsat_full", "sota_spatial_smoke", "sota_spatial_full", "sota_spatial_multiseed")]
     [string]$RunMode = "schema"
 )
 
@@ -48,7 +48,7 @@ function Get-KaggleAuthorization {
 }
 
 $auth = Get-KaggleAuthorization
-$enableGpu = $RunMode -in @("landsat_smoke", "landsat_scale", "landsat_full", "sota_spatial_smoke", "sota_spatial_full")
+$enableGpu = $RunMode -in @("landsat_smoke", "landsat_scale", "landsat_full", "sota_spatial_smoke", "sota_spatial_full", "sota_spatial_multiseed")
 if ([string]::IsNullOrWhiteSpace($KernelSlug)) {
     if ([string]::IsNullOrWhiteSpace($auth.Username)) { throw "When using KAGGLE_API_TOKEN, pass -KernelSlug '<username>/geolifeclef-risk-aware-sdm-phase-1'." }
     $KernelSlug = "$($auth.Username)/geolifeclef-risk-aware-sdm-phase-1"
@@ -118,6 +118,16 @@ elif RUN_MODE == 'sota_spatial_full':
     subprocess.run([sys.executable, '-m', 'pytest'], check=True)
     subprocess.run([sys.executable, 'scripts/prepare_spatial_multimodal.py', '--data-root', str(data_root), '--output-dir', 'data/processed/sota_spatial_full', '--holdout-country', 'Netherlands', '--image-size', '32'], check=True)
     subprocess.run([sys.executable, 'scripts/train_spatial_competition.py', '--data-dir', 'data/processed/sota_spatial_full', '--output-dir', 'artifacts/sota_spatial_full', '--batch-size', '64', '--reference-epochs', '8', '--fusion-epochs', '16', '--model-dim', '192', '--max-hours', '10.5', '--cleanup-cache'], check=True)
+elif RUN_MODE == 'sota_spatial_multiseed':
+    subprocess.run([sys.executable, '-m', 'pytest'], check=True)
+    data_dir = 'data/processed/sota_spatial_multiseed'
+    subprocess.run([sys.executable, 'scripts/prepare_spatial_multimodal.py', '--data-root', str(data_root), '--output-dir', data_dir, '--holdout-country', 'Netherlands', '--image-size', '32'], check=True)
+    run_dirs = []
+    for seed in ('2025', '3407', '7919'):
+        run_dir = f'artifacts/sota_spatial_multiseed_seed_{seed}'
+        run_dirs.append(run_dir)
+        subprocess.run([sys.executable, 'scripts/train_spatial_competition.py', '--data-dir', data_dir, '--output-dir', run_dir, '--seed', seed, '--batch-size', '64', '--reference-epochs', '8', '--fusion-epochs', '16', '--model-dim', '192', '--max-hours', '3.0'], check=True)
+    subprocess.run([sys.executable, 'scripts/evaluate_spatial_ensemble.py', '--data-dir', data_dir, '--run-dirs', *run_dirs, '--output-path', 'artifacts/sota_spatial_multiseed/ensemble.json', '--model-dim', '192', '--batch-size', '64', '--cleanup-cache'], check=True)
 subprocess.run([sys.executable, '-m', 'pytest'], check=True)
 
 print(f'Phase-1 {RUN_MODE} run and synthetic smoke tests completed.')

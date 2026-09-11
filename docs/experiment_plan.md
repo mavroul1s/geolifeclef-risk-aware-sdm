@@ -53,6 +53,12 @@ standard deviation, and probability-ensemble sample-F1. Only after robustness is
 the model be retrained on all PA surveys and evaluated on the official test protocol. If it remains
 below the external target, add PA+PO weak supervision and an OOD-aware mixture of experts.
 
+The registered multi-seed run uses seeds 2025, 3407, and 7919, one shared preprocessing pass, and
+the exact v15 split construction. Every seed trains a matched reference and fusion candidate. The
+probability ensemble fits its prediction policy on calibration blocks only and evaluates Netherlands
+once. Promotion requires all fusion seeds to beat their matched references and the ensemble to beat
+the mean reference score.
+
 ## Reporting and risks
 
 Fix and save seeds/configs; retain checkpoint, CSV/JSON history, package versions, parameter count, peak GPU memory, throughput, and training time. Report macro/micro F1, prevalence strata, precision/recall, calibration error/Brier score, and candidate-set size. Do not claim conformal guarantees unless assumptions are verified.
