@@ -41,6 +41,18 @@ calibration, and 3,000 Netherlands surveys. Competitive fusion reached Netherlan
 performance was still improving at epoch 12, so the promoted full run uses 16 fusion epochs while
 retaining the 10.5-hour total-pipeline guard.
 
+Full spatial v15 passed all 12 tests with no missing modalities and verified identical split hashes
+for 67,140 train, 6,823 spatial-block calibration, and 15,024 Netherlands surveys. Competitive
+fusion reached sample-F1 0.2497956 versus 0.1757597 for the Landsat reference, an absolute gain of
+0.0740359. The calibration-selected policy was top-20 for both models. Total preparation plus
+training time was 1.2448 hours. This is strong OOD validation evidence, but it is not numerically
+interchangeable with the official hidden-test score of 0.2302.
+
+The next promotion gate is three full fusion seeds on these exact split hashes, reporting mean,
+standard deviation, and probability-ensemble sample-F1. Only after robustness is confirmed should
+the model be retrained on all PA surveys and evaluated on the official test protocol. If it remains
+below the external target, add PA+PO weak supervision and an OOD-aware mixture of experts.
+
 ## Reporting and risks
 
 Fix and save seeds/configs; retain checkpoint, CSV/JSON history, package versions, parameter count, peak GPU memory, throughput, and training time. Report macro/micro F1, prevalence strata, precision/recall, calibration error/Brier score, and candidate-set size. Do not claim conformal guarantees unless assumptions are verified.
