@@ -25,3 +25,11 @@
 Fix and save seeds/configs; retain checkpoint, CSV/JSON history, package versions, parameter count, peak GPU memory, throughput, and training time. Report macro/micro F1, prevalence strata, precision/recall, calibration error/Brier score, and candidate-set size. Do not claim conformal guarantees unless assumptions are verified.
 
 Key risks: spatial leakage (use blocks where metadata permits), class imbalance (class-balanced/asymmetric losses plus transparent strata), missing time steps (audit and document imputation/masks), and threshold overfitting (separate calibration set).
+
+## Confirmed full-split result
+
+With seed 2025, 71,190 training surveys, 17,797 validation surveys, 5,016 species and no missing Landsat cubes, the 169,368-parameter Landsat TCN reached top-16 micro-F1 0.2678696. The matched full frequency baseline was 0.1570004, an absolute gain of 0.1108692. This is an internal random survey-split result; it is not yet evidence of spatial generalization or a standalone paper contribution.
+
+Before any further model comparison, select and freeze a country/region holdout using the
+registered spatial-audit rule: 8%-30% of surveys, no more than 20% unseen validation labels,
+then closest to a 20% validation share. Do not revise this choice after inspecting model F1.

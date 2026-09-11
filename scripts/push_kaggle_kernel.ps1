@@ -12,7 +12,7 @@ GeoLifeCLEF 2025 competition as a server-side input.
 [CmdletBinding()]
 param(
     [string]$KernelSlug = "",
-    [ValidateSet("audit", "schema", "frequency", "frequency_smoke", "landsat_smoke", "landsat_scale", "landsat_full")]
+    [ValidateSet("audit", "schema", "spatial_audit", "frequency", "frequency_smoke", "landsat_smoke", "landsat_scale", "landsat_full")]
     [string]$RunMode = "schema"
 )
 
@@ -92,6 +92,8 @@ if RUN_MODE == 'audit':
     subprocess.run([sys.executable, 'scripts/audit_data.py', '--data-root', str(data_root), '--report-dir', 'data/reports'], check=True)
 elif RUN_MODE == 'schema':
     subprocess.run([sys.executable, 'scripts/inspect_schema.py', '--data-root', str(data_root), '--report-path', 'data/reports/schema_report.json'], check=True)
+elif RUN_MODE == 'spatial_audit':
+    subprocess.run([sys.executable, 'scripts/audit_spatial_split.py', '--metadata-path', str(data_root / 'GLC25_PA_metadata_train.csv'), '--report-path', 'data/reports/spatial_split_audit.json'], check=True)
 elif RUN_MODE == 'frequency':
     subprocess.run([sys.executable, 'scripts/run_frequency_baseline.py', '--metadata-path', str(data_root / 'GLC25_PA_metadata_train.csv'), '--report-path', 'artifacts/frequency_pa/metrics.json'], check=True)
 elif RUN_MODE == 'frequency_smoke':
