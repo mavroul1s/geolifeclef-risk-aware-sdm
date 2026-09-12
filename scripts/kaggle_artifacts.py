@@ -108,7 +108,7 @@ class KaggleReader:
 
     def files(self, kernel: str = KERNEL, version: int | None = None) -> list[dict]:
         args = self.kernel_args(kernel)
-        args["pageSize"] = 1000
+        args["pageSize"] = 100
         if version is not None:
             args["kernelVersionNumber"] = version
         result = []
@@ -122,7 +122,7 @@ class KaggleReader:
         raise SafeKaggleError("Kaggle file pagination exceeded the bounded limit.")
 
     def competition_files(self) -> list[dict]:
-        args = {"pageSize": 1000}
+        args = {"pageSize": 100}
         result = []
         for _ in range(100):
             raw = self.json(f"/competitions/data/list/{COMPETITION}", args)
