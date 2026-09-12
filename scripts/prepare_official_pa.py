@@ -31,6 +31,29 @@ def split_digest(ids: np.ndarray) -> str:
     return hashlib.sha256(np.asarray(ids, dtype="<i8").tobytes()).hexdigest()
 
 
+def feature_paths(data_root: Path, source: str, survey_id: int) -> tuple[Path, Path, Path]:
+    if source not in {"PA-train", "PA-test"}:
+        raise ValueError(f"Unsupported PA source: {source}")
+    source_token = "train" if source == "PA-train" else "test"
+    landsat_stem = "landsat-time-series" if source == "PA-train" else "landsat_time_series"
+    landsat_path = (
+        data_root
+        / "SateliteTimeSeries-Landsat"
+        / "cubes"
+        / source
+        / f"GLC25-PA-{source_token}-{landsat_stem}_{survey_id}_cube.pt"
+    )
+    climate_path = (
+        data_root
+        / "BioclimTimeSeries"
+        / "cubes"
+        / source
+        / f"GLC25-PA-{source_token}-bioclimatic_monthly_{survey_id}_cube.pt"
+    )
+    sentinel_path = construct_patch_path(data_root / "SatelitePatches" / source, survey_id)
+    return landsat_path, climate_path, sentinel_path
+
+
 def build_feature_split(
     rows: pd.DataFrame,
     survey_ids: np.ndarray,
@@ -44,10 +67,6 @@ def build_feature_split(
     if source not in {"PA-train", "PA-test"}:
         raise ValueError(f"Unsupported PA source: {source}")
     row_lookup = rows.set_index("surveyId")
-    landsat_root = data_root / "SateliteTimeSeries-Landsat" / "cubes" / source
-    climate_root = data_root / "BioclimTimeSeries" / "cubes" / source
-    sentinel_root = data_root / "SatelitePatches" / source
-    source_token = "train" if source == "PA-train" else "test"
     selected: list[int] = []
     landsat: list[np.ndarray] = []
     climate: list[np.ndarray] = []
@@ -55,15 +74,9 @@ def build_feature_split(
     missing: list[int] = []
     for survey_id_value in survey_ids:
         survey_id = int(survey_id_value)
-        landsat_path = (
-            landsat_root
-            / f"GLC25-PA-{source_token}-landsat-time-series_{survey_id}_cube.pt"
+        landsat_path, climate_path, sentinel_path = feature_paths(
+            data_root, source, survey_id
         )
-        climate_path = (
-            climate_root
-            / f"GLC25-PA-{source_token}-bioclimatic_monthly_{survey_id}_cube.pt"
-        )
-        sentinel_path = construct_patch_path(sentinel_root, survey_id)
         if not landsat_path.is_file() or not climate_path.is_file() or not sentinel_path.is_file():
             missing.append(survey_id)
             continue
