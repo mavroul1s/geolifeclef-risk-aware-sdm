@@ -82,7 +82,7 @@ try {
     if ((($rows.surveyId | Sort-Object -Unique).Count) -ne 14784) {
         throw "Submission CSV contains duplicate or missing survey IDs."
     }
-    if (($rows | Where-Object { ($_.predictions -split '\s+').Count -ne 18 }).Count -ne 0) {
+    if (@($rows | Where-Object { ($_.predictions -split '\s+').Count -ne 18 }).Count -ne 0) {
         throw "Submission CSV contains a row that is not top-18."
     }
 
