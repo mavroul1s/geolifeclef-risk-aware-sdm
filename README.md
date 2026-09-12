@@ -45,9 +45,14 @@ To create/update a private Kaggle script kernel and start a Phase-1 run directly
 .\scripts\push_kaggle_kernel.ps1 -RunMode sota_spatial_smoke
 .\scripts\push_kaggle_kernel.ps1 -RunMode sota_spatial_full
 .\scripts\push_kaggle_kernel.ps1 -RunMode sota_single
+.\scripts\push_kaggle_kernel.ps1 -RunMode environmental_challenger
 ```
 
-The script uses the same credential precedence, keeps credentials in memory only, uploads a Git archive of tracked files only, and attaches `geolifeclef-2025` as a competition source. Audit/schema/frequency runs are CPU-only; neural modes request a T4. `sota_single` keeps all advanced work in the existing master notebook: one rare-aware multimodal network, learned prediction cardinality, a hard eastern/alpine holdout, and PA/PO spatial post-processing. It has a 10.5-hour internal guard under Kaggle's 12-hour envelope.
+The script keeps credentials in memory only, uploads a Git archive of **HEAD** (commit intended source changes first), and attaches `geolifeclef-2025`. It also supports the explicitly user-authorized ignored `api_key/kaggle_2.json`. Audit/schema/frequency runs are CPU-only; neural modes request a T4.
+
+The current mode is `environmental_challenger`, deployed as a real notebook in the same private Kaggle kernel. One run prepares competition environmental predictors and all PA modalities, trains the previous fusion architecture as a matched reference and two challenger seeds, freezes a calibration-only output policy, reports an untouched spatial/country audit, and produces a test submission CSV. No external weights/data or post-calibration refit is used. Prepared data use memory maps; setup/preparation/training/inference have a 10.5-hour guard. A failed mandatory check stops the job rather than silently reducing the protocol. Details and limitations are in `docs/environmental_challenger_v20.md`.
+
+Historical `sota_single` version 19 scored 0.17516 private, below the earlier 0.18900. Neither is SOTA. The current master notebook does not rerun historical experiments with Run All.
 
 ## Audit and canonical data contract
 

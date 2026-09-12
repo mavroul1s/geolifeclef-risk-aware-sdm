@@ -12,7 +12,7 @@ GeoLifeCLEF 2025 competition as a server-side input.
 [CmdletBinding()]
 param(
     [string]$KernelSlug = "",
-    [ValidateSet("audit", "schema", "spatial_audit", "frequency", "frequency_smoke", "landsat_smoke", "landsat_scale", "landsat_full", "sota_spatial_smoke", "sota_spatial_full", "sota_spatial_multiseed", "sota_spatial_multiseed_resume", "official_pa_submit", "sota_single")]
+    [ValidateSet("audit", "schema", "spatial_audit", "frequency", "frequency_smoke", "landsat_smoke", "landsat_scale", "landsat_full", "sota_spatial_smoke", "sota_spatial_full", "sota_spatial_multiseed", "sota_spatial_multiseed_resume", "official_pa_submit", "sota_single", "environmental_challenger")]
     [string]$RunMode = "schema"
 )
 
@@ -48,7 +48,7 @@ function Get-KaggleAuthorization {
 }
 
 $auth = Get-KaggleAuthorization
-$enableGpu = $RunMode -in @("landsat_smoke", "landsat_scale", "landsat_full", "sota_spatial_smoke", "sota_spatial_full", "sota_spatial_multiseed", "sota_spatial_multiseed_resume", "official_pa_submit", "sota_single")
+$enableGpu = $RunMode -in @("landsat_smoke", "landsat_scale", "landsat_full", "sota_spatial_smoke", "sota_spatial_full", "sota_spatial_multiseed", "sota_spatial_multiseed_resume", "official_pa_submit", "sota_single", "environmental_challenger")
 if ([string]::IsNullOrWhiteSpace($KernelSlug)) {
     if ([string]::IsNullOrWhiteSpace($auth.Username)) { throw "When using KAGGLE_API_TOKEN, pass -KernelSlug '<username>/geolifeclef-risk-aware-sdm-phase-1'." }
     $KernelSlug = "$($auth.Username)/geolifeclef-risk-aware-sdm-phase-1"
@@ -65,11 +65,14 @@ import io
 import os
 import subprocess
 import sys
+import time
 import zipfile
 from pathlib import Path
 
 SOURCE_ARCHIVE_B64 = '$encodedSource'
 RUN_MODE = '$RunMode'
+os.environ['GLC_PIPELINE_STARTED_AT'] = str(time.time())
+os.environ['PYTHONUNBUFFERED'] = '1'
 PROJECT = Path('/kaggle/working/geolifeclef-risk-aware-sdm')
 PROJECT.mkdir(parents=True, exist_ok=True)
 with zipfile.ZipFile(io.BytesIO(base64.b64decode(SOURCE_ARCHIVE_B64))) as archive:
@@ -84,7 +87,7 @@ import torch
 print({'torch': torch.__version__, 'cuda_available': torch.cuda.is_available(), 'gpu_count': torch.cuda.device_count()})
 
 input_root = Path('/kaggle/input')
-competition_roots = [path for path in input_root.rglob('*') if path.is_dir() and path.name == 'geolifeclef-2025']
+competition_roots = [path for path in (input_root / 'competitions' / 'geolifeclef-2025', input_root / 'geolifeclef-2025') if path.is_dir()]
 if not competition_roots:
     raise RuntimeError('GeoLifeCLEF 2025 input was not mounted. Confirm competition rules are accepted, then push again.')
 data_root = competition_roots[0]
@@ -149,12 +152,30 @@ elif RUN_MODE == 'sota_single':
     output_dir = 'artifacts/sota_single'
     subprocess.run([sys.executable, 'scripts/prepare_official_pa.py', '--data-root', str(data_root), '--output-dir', data_dir, '--image-size', '32'], check=True)
     subprocess.run([sys.executable, 'scripts/train_sota_single.py', '--data-root', str(data_root), '--data-dir', data_dir, '--sample-submission', str(data_root / 'GLC25_SAMPLE_SUBMISSION.csv'), '--output-dir', output_dir, '--seed', '2025', '--stage-one-epochs', '12', '--full-finetune-epochs', '6', '--model-dim', '192', '--batch-size', '64', '--rare-max-occurrences', '50', '--max-hours', '10.5', '--cleanup-cache'], check=True)
+elif RUN_MODE == 'environmental_challenger':
+    subprocess.run([sys.executable, '-m', 'pytest'], check=True)
+    remaining_seconds = max(1, 10.5 * 3600 - (time.time() - float(os.environ['GLC_PIPELINE_STARTED_AT'])))
+    subprocess.run([sys.executable, '-m', 'scripts.run_environmental_challenger', '--data-root', str(data_root), '--epochs', '24', '--batch-size', '128', '--max-hours', '10.5'], check=True, timeout=remaining_seconds)
 subprocess.run([sys.executable, '-m', 'pytest'], check=True)
 
 print(f'Phase-1 {RUN_MODE} run and synthetic smoke tests completed.')
 "@
     $kernelSources = @()
     $kernelTitle = "GeoLifeCLEF Risk-Aware SDM - Phase 1"
+    $kernelType = "script"
+    if ($RunMode -eq "environmental_challenger") {
+        $kernelType = "notebook"
+        $notebookDocument = [ordered]@{
+            cells = @(
+                [ordered]@{ cell_type = "markdown"; metadata = @{}; source = @("# GeoLifeCLEF 2025: environmental challenger`n", "One competition-only run: matched reference, two candidate seeds, frozen calibration, untouched spatial/country audit and test CSV. No SOTA claim before official evaluation.") },
+                [ordered]@{ cell_type = "code"; execution_count = $null; metadata = @{}; outputs = @(); source = @($notebookText) }
+            )
+            metadata = @{ kernelspec = @{ display_name = "Python 3"; language = "python"; name = "python3" }; language_info = @{ name = "python"; version = "3.12" } }
+            nbformat = 4
+            nbformat_minor = 5
+        }
+        $notebookText = $notebookDocument | ConvertTo-Json -Depth 12 -Compress
+    }
     if ($RunMode -eq "sota_spatial_multiseed_resume") {
         if ([string]::IsNullOrWhiteSpace($auth.Username)) { throw "The resume mode requires a username-based Kaggle credential." }
         $kernelSources = @("$($auth.Username)/geolifeclef-risk-aware-sdm-phase-1")
@@ -165,7 +186,7 @@ print(f'Phase-1 {RUN_MODE} run and synthetic smoke tests completed.')
         newTitle = $kernelTitle
         text = $notebookText
         language = "python"
-        kernelType = "script"
+        kernelType = $kernelType
         isPrivate = $true
         # Only neural training requests an accelerator; audit/schema/frequency
         # runs stay CPU-only and therefore do not consume GPU quota.
