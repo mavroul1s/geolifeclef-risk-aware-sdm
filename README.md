@@ -44,9 +44,10 @@ To create/update a private Kaggle script kernel and start a Phase-1 run directly
 .\scripts\push_kaggle_kernel.ps1 -RunMode landsat_smoke
 .\scripts\push_kaggle_kernel.ps1 -RunMode sota_spatial_smoke
 .\scripts\push_kaggle_kernel.ps1 -RunMode sota_spatial_full
+.\scripts\push_kaggle_kernel.ps1 -RunMode sota_single
 ```
 
-The script uses the same credential precedence, keeps credentials in memory only, uploads a Git archive of tracked files only, and attaches `geolifeclef-2025` as a competition source. Audit/schema/frequency runs are CPU-only; neural modes request a T4. The SOTA-oriented run freezes the Netherlands holdout, creates a non-overlapping spatial-block calibration set, and trains both the Landsat reference and multimodal candidate on identical split hashes. The smoke mode measures feasibility before the registered full run, which has a 10.5-hour internal stop guard under Kaggle's 12-hour envelope.
+The script uses the same credential precedence, keeps credentials in memory only, uploads a Git archive of tracked files only, and attaches `geolifeclef-2025` as a competition source. Audit/schema/frequency runs are CPU-only; neural modes request a T4. `sota_single` keeps all advanced work in the existing master notebook: one rare-aware multimodal network, learned prediction cardinality, a hard eastern/alpine holdout, and PA/PO spatial post-processing. It has a 10.5-hour internal guard under Kaggle's 12-hour envelope.
 
 ## Audit and canonical data contract
 

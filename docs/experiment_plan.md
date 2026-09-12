@@ -76,6 +76,15 @@ The post-run submission wrapper downloads only the CSV and manifest to temporary
 the manifest SHA-256 plus all registered invariants, and submits once through the official Kaggle
 API client. It deletes both temporary files immediately and never prints credentials or signed URLs.
 
+The first official full-PA submission scored 0.21594 public and 0.18900 private. The gap from the
+0.2302 target confirms that the Netherlands-only internal holdout did not represent the 2025 hidden
+geography. The next registered run remains in the single master notebook and uses one model rather
+than another multi-notebook sweep. It holds out eastern/alpine countries, adds a rare-species residual
+head and a learned survey-cardinality head, and tunes PA-neighbor plus PO-neighbor spatial priors on a
+disjoint half of that hard holdout. The model is then fine-tuned once on all PA labels. Test samples
+farther than 10 km from any PA training survey receive the PO-oriented policy; nearby samples receive
+the PA consensus policy. The official hidden score remains the only basis for a SOTA claim.
+
 Kaggle version 16 completed all three registered trainings, but its final ensemble command failed
 because the standalone evaluator could not import the `scripts` namespace. All checkpoints and
 evaluation arrays were retained. The registered recovery is an evaluation-only kernel that mounts

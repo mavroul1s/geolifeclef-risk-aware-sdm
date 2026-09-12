@@ -160,7 +160,9 @@ class CompetitiveFusionSDM(nn.Module):
         # Start close to a stable Landsat predictor; learn multimodal corrections gradually.
         self.fusion_logit = nn.Parameter(torch.tensor(-2.0))
 
-    def forward(self, batch: dict[str, torch.Tensor]) -> torch.Tensor:
+    def forward_features(
+        self, batch: dict[str, torch.Tensor]
+    ) -> tuple[torch.Tensor, torch.Tensor]:
         landsat_token = self.landsat(batch["landsat"])
         tokens = torch.stack(
             (
@@ -174,7 +176,65 @@ class CompetitiveFusionSDM(nn.Module):
         tokens = self.fusion(tokens + self.modality_embeddings)
         weights = self.gate(tokens)
         pooled = (tokens * weights).sum(1) / weights.sum(1).clamp_min(1e-6)
-        return self.landsat_head(landsat_token) + torch.sigmoid(self.fusion_logit) * self.head(pooled)
+        logits = self.landsat_head(landsat_token) + torch.sigmoid(self.fusion_logit) * self.head(
+            pooled
+        )
+        return logits, pooled
+
+    def forward(self, batch: dict[str, torch.Tensor]) -> torch.Tensor:
+        return self.forward_features(batch)[0]
+
+
+class RareAwareCompetitiveFusionSDM(nn.Module):
+    """Single multimodal model with rare-taxon and survey-cardinality specialists."""
+
+    def __init__(
+        self,
+        num_labels: int,
+        static_features: int,
+        rare_indices: torch.Tensor,
+        model_dim: int = 192,
+        dropout: float = 0.15,
+    ):
+        super().__init__()
+        rare_indices = torch.as_tensor(rare_indices, dtype=torch.long)
+        if rare_indices.ndim != 1 or len(rare_indices) == 0:
+            raise ValueError("rare_indices must be a non-empty one-dimensional tensor")
+        if int(rare_indices.min()) < 0 or int(rare_indices.max()) >= num_labels:
+            raise ValueError("rare_indices contain a label outside num_labels")
+        self.backbone = CompetitiveFusionSDM(
+            num_labels,
+            static_features=static_features,
+            model_dim=model_dim,
+            dropout=dropout,
+        )
+        self.register_buffer("rare_indices", rare_indices)
+        self.rare_head = nn.Sequential(
+            nn.LayerNorm(model_dim),
+            nn.Dropout(dropout),
+            nn.Linear(model_dim, len(rare_indices)),
+        )
+        self.rare_residual_logit = nn.Parameter(torch.tensor(-1.0))
+        self.cardinality_head = nn.Sequential(
+            nn.LayerNorm(model_dim),
+            nn.Linear(model_dim, model_dim // 2),
+            nn.GELU(),
+            nn.Dropout(dropout),
+            nn.Linear(model_dim // 2, 1),
+        )
+
+    def forward_with_aux(
+        self, batch: dict[str, torch.Tensor]
+    ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
+        logits, pooled = self.backbone.forward_features(batch)
+        rare_logits = self.rare_head(pooled)
+        rare_delta = torch.zeros_like(logits).index_copy(1, self.rare_indices, rare_logits)
+        logits = logits + torch.sigmoid(self.rare_residual_logit) * rare_delta
+        log_cardinality = self.cardinality_head(pooled).squeeze(-1)
+        return logits, rare_logits, log_cardinality
+
+    def forward(self, batch: dict[str, torch.Tensor]) -> torch.Tensor:
+        return self.forward_with_aux(batch)[0]
 
 
 def count_trainable_parameters(model: nn.Module) -> int:

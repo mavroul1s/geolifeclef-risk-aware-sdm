@@ -12,7 +12,7 @@ GeoLifeCLEF 2025 competition as a server-side input.
 [CmdletBinding()]
 param(
     [string]$KernelSlug = "",
-    [ValidateSet("audit", "schema", "spatial_audit", "frequency", "frequency_smoke", "landsat_smoke", "landsat_scale", "landsat_full", "sota_spatial_smoke", "sota_spatial_full", "sota_spatial_multiseed", "sota_spatial_multiseed_resume", "official_pa_submit")]
+    [ValidateSet("audit", "schema", "spatial_audit", "frequency", "frequency_smoke", "landsat_smoke", "landsat_scale", "landsat_full", "sota_spatial_smoke", "sota_spatial_full", "sota_spatial_multiseed", "sota_spatial_multiseed_resume", "official_pa_submit", "sota_single")]
     [string]$RunMode = "schema"
 )
 
@@ -48,7 +48,7 @@ function Get-KaggleAuthorization {
 }
 
 $auth = Get-KaggleAuthorization
-$enableGpu = $RunMode -in @("landsat_smoke", "landsat_scale", "landsat_full", "sota_spatial_smoke", "sota_spatial_full", "sota_spatial_multiseed", "sota_spatial_multiseed_resume", "official_pa_submit")
+$enableGpu = $RunMode -in @("landsat_smoke", "landsat_scale", "landsat_full", "sota_spatial_smoke", "sota_spatial_full", "sota_spatial_multiseed", "sota_spatial_multiseed_resume", "official_pa_submit", "sota_single")
 if ([string]::IsNullOrWhiteSpace($KernelSlug)) {
     if ([string]::IsNullOrWhiteSpace($auth.Username)) { throw "When using KAGGLE_API_TOKEN, pass -KernelSlug '<username>/geolifeclef-risk-aware-sdm-phase-1'." }
     $KernelSlug = "$($auth.Username)/geolifeclef-risk-aware-sdm-phase-1"
@@ -143,6 +143,12 @@ elif RUN_MODE == 'official_pa_submit':
     output_dir = 'artifacts/official_pa_submission'
     subprocess.run([sys.executable, 'scripts/prepare_official_pa.py', '--data-root', str(data_root), '--output-dir', data_dir, '--image-size', '32'], check=True)
     subprocess.run([sys.executable, 'scripts/train_full_pa_ensemble.py', '--data-dir', data_dir, '--sample-submission', str(data_root / 'GLC25_SAMPLE_SUBMISSION.csv'), '--output-dir', output_dir, '--seeds', '2025', '3407', '7919', '--epochs', '16', '--model-dim', '192', '--batch-size', '64', '--top-k', '18', '--max-hours', '10.5', '--cleanup-cache'], check=True)
+elif RUN_MODE == 'sota_single':
+    subprocess.run([sys.executable, '-m', 'pytest'], check=True)
+    data_dir = 'data/processed/sota_single'
+    output_dir = 'artifacts/sota_single'
+    subprocess.run([sys.executable, 'scripts/prepare_official_pa.py', '--data-root', str(data_root), '--output-dir', data_dir, '--image-size', '32'], check=True)
+    subprocess.run([sys.executable, 'scripts/train_sota_single.py', '--data-root', str(data_root), '--data-dir', data_dir, '--sample-submission', str(data_root / 'GLC25_SAMPLE_SUBMISSION.csv'), '--output-dir', output_dir, '--seed', '2025', '--stage-one-epochs', '12', '--full-finetune-epochs', '6', '--model-dim', '192', '--batch-size', '64', '--rare-max-occurrences', '50', '--max-hours', '10.5', '--cleanup-cache'], check=True)
 subprocess.run([sys.executable, '-m', 'pytest'], check=True)
 
 print(f'Phase-1 {RUN_MODE} run and synthetic smoke tests completed.')
