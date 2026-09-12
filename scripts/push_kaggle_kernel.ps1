@@ -12,7 +12,7 @@ GeoLifeCLEF 2025 competition as a server-side input.
 [CmdletBinding()]
 param(
     [string]$KernelSlug = "",
-    [ValidateSet("audit", "schema", "spatial_audit", "frequency", "frequency_smoke", "landsat_smoke", "landsat_scale", "landsat_full", "sota_spatial_smoke", "sota_spatial_full", "sota_spatial_multiseed")]
+    [ValidateSet("audit", "schema", "spatial_audit", "frequency", "frequency_smoke", "landsat_smoke", "landsat_scale", "landsat_full", "sota_spatial_smoke", "sota_spatial_full", "sota_spatial_multiseed", "sota_spatial_multiseed_resume")]
     [string]$RunMode = "schema"
 )
 
@@ -48,7 +48,7 @@ function Get-KaggleAuthorization {
 }
 
 $auth = Get-KaggleAuthorization
-$enableGpu = $RunMode -in @("landsat_smoke", "landsat_scale", "landsat_full", "sota_spatial_smoke", "sota_spatial_full", "sota_spatial_multiseed")
+$enableGpu = $RunMode -in @("landsat_smoke", "landsat_scale", "landsat_full", "sota_spatial_smoke", "sota_spatial_full", "sota_spatial_multiseed", "sota_spatial_multiseed_resume")
 if ([string]::IsNullOrWhiteSpace($KernelSlug)) {
     if ([string]::IsNullOrWhiteSpace($auth.Username)) { throw "When using KAGGLE_API_TOKEN, pass -KernelSlug '<username>/geolifeclef-risk-aware-sdm-phase-1'." }
     $KernelSlug = "$($auth.Username)/geolifeclef-risk-aware-sdm-phase-1"
@@ -128,14 +128,30 @@ elif RUN_MODE == 'sota_spatial_multiseed':
         run_dirs.append(run_dir)
         subprocess.run([sys.executable, 'scripts/train_spatial_competition.py', '--data-dir', data_dir, '--output-dir', run_dir, '--seed', seed, '--batch-size', '64', '--reference-epochs', '8', '--fusion-epochs', '16', '--model-dim', '192', '--max-hours', '3.0'], check=True)
     subprocess.run([sys.executable, 'scripts/evaluate_spatial_ensemble.py', '--data-dir', data_dir, '--run-dirs', *run_dirs, '--output-path', 'artifacts/sota_spatial_multiseed/ensemble.json', '--model-dim', '192', '--batch-size', '64', '--cleanup-cache'], check=True)
+elif RUN_MODE == 'sota_spatial_multiseed_resume':
+    subprocess.run([sys.executable, '-m', 'pytest'], check=True)
+    comparison_files = sorted(input_root.rglob('artifacts/sota_spatial_multiseed_seed_2025/comparison.json'))
+    if len(comparison_files) != 1:
+        raise RuntimeError(f'Expected one mounted version-16 output, found {len(comparison_files)} candidates.')
+    previous_project = comparison_files[0].parents[2]
+    previous_data = previous_project / 'data/processed/sota_spatial_multiseed'
+    previous_runs = [previous_project / f'artifacts/sota_spatial_multiseed_seed_{seed}' for seed in ('2025', '3407', '7919')]
+    subprocess.run([sys.executable, 'scripts/evaluate_spatial_ensemble.py', '--data-dir', str(previous_data), '--run-dirs', *map(str, previous_runs), '--output-path', 'artifacts/sota_spatial_multiseed/ensemble.json', '--model-dim', '192', '--batch-size', '64'], check=True)
 subprocess.run([sys.executable, '-m', 'pytest'], check=True)
 
 print(f'Phase-1 {RUN_MODE} run and synthetic smoke tests completed.')
 print('Training remains deferred until the raw-to-canonical adapter is recorded.')
 "@
+    $kernelSources = @()
+    $kernelTitle = "GeoLifeCLEF Risk-Aware SDM - Phase 1"
+    if ($RunMode -eq "sota_spatial_multiseed_resume") {
+        if ([string]::IsNullOrWhiteSpace($auth.Username)) { throw "The resume mode requires a username-based Kaggle credential." }
+        $kernelSources = @("$($auth.Username)/geolifeclef-risk-aware-sdm-phase-1")
+        $kernelTitle = "GeoLifeCLEF Risk-Aware SDM Ensemble Recovery"
+    }
     $payload = [ordered]@{
         slug = $KernelSlug
-        newTitle = "GeoLifeCLEF Risk-Aware SDM - Phase 1"
+        newTitle = $kernelTitle
         text = $notebookText
         language = "python"
         kernelType = "script"
@@ -146,6 +162,7 @@ print('Training remains deferred until the raw-to-canonical adapter is recorded.
         enableTpu = $false
         enableInternet = $false
         competitionDataSources = @("geolifeclef-2025")
+        kernelDataSources = $kernelSources
         machineShape = "NvidiaTeslaT4"
     } | ConvertTo-Json -Depth 5 -Compress
     $payloadPath = [IO.Path]::GetTempFileName()

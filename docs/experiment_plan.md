@@ -59,6 +59,11 @@ probability ensemble fits its prediction policy on calibration blocks only and e
 once. Promotion requires all fusion seeds to beat their matched references and the ensemble to beat
 the mean reference score.
 
+Kaggle version 16 completed all three registered trainings, but its final ensemble command failed
+because the standalone evaluator could not import the `scripts` namespace. All checkpoints and
+evaluation arrays were retained. The registered recovery is an evaluation-only kernel that mounts
+version 16 as a kernel source; it must not retrain or alter the seed models.
+
 ## Reporting and risks
 
 Fix and save seeds/configs; retain checkpoint, CSV/JSON history, package versions, parameter count, peak GPU memory, throughput, and training time. Report macro/micro F1, prevalence strata, precision/recall, calibration error/Brier score, and candidate-set size. Do not claim conformal guarantees unless assumptions are verified.
