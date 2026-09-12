@@ -17,7 +17,7 @@ from scripts.run_environmental_challenger import top_rank, ranked_f1
 @torch.no_grad()
 def expert_predict(model, features, device, deadline, batch_size=512):
     model.eval()
-    output = np.empty((len(features), model.head.out_features), dtype=np.float16)
+    output = np.empty((len(features), model.num_labels), dtype=np.float16)
     for begin in range(0, len(features), batch_size):
         if time.monotonic() >= deadline:
             raise TimeoutError("PO inference exceeded the registered deadline")
@@ -45,6 +45,7 @@ def fit_expert(pa_features, pa_labels, train_indices, selection_indices,
         raise ValueError("Insufficient registered PA training exposure")
     set_seed(20250921)
     rng = np.random.default_rng(20250921)
+    pa_rng = np.random.default_rng(20250921)
     model = POExpert(pa_labels.shape[1], pa_features.shape[1]).to(device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=8e-4, weight_decay=1e-3)
     scaler = torch.amp.GradScaler("cuda", enabled=device.type == "cuda")
@@ -105,7 +106,7 @@ def fit_expert(pa_features, pa_labels, train_indices, selection_indices,
     for epoch in range(1, epochs + 1):
         started = time.monotonic()
         model.train()
-        indices = rng.permutation(train_indices)
+        indices = pa_rng.permutation(train_indices)
         losses = []
         for step, begin in enumerate(range(0, len(indices), batch_size)):
             x, y = batch(pa_features, pa_labels, indices[begin:begin + batch_size])
