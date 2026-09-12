@@ -1,7 +1,9 @@
 """Read-only, bounded Kaggle access without exposing credentials or signed URLs.
 
-Endpoints match the installed Kaggle 1.6.17 client. Its output endpoint is
-latest-only; version-pinned files are cross-checked before any output retrieval.
+Endpoints were checked against the installed Kaggle 1.6.17 client and live API.
+The live API rejects its advertised kernelVersionNumber files argument. Output
+access therefore checks currentVersionNumber before and after listing and
+refuses historical downloads after the kernel has advanced.
 """
 from __future__ import annotations
 
@@ -107,19 +109,7 @@ class KaggleReader:
         return {"kernel": kernel, "status": sanitize_text(str(raw.get("status", "unknown")), self.secrets)}
 
     def files(self, kernel: str = KERNEL, version: int | None = None) -> list[dict]:
-        args = self.kernel_args(kernel)
-        args["pageSize"] = 100
-        if version is not None:
-            args["kernelVersionNumber"] = version
-        result = []
-        for _ in range(100):
-            raw = self.json("/kernels/files", args)
-            result.extend(raw.get("files", raw.get("datasetFiles", [])))
-            token = raw.get("nextPageToken")
-            if not token:
-                return result
-            args["pageToken"] = token
-        raise SafeKaggleError("Kaggle file pagination exceeded the bounded limit.")
+        return self.output(kernel, version)["files"]
 
     def competition_files(self) -> list[dict]:
         args = {"pageSize": 100}
@@ -136,11 +126,17 @@ class KaggleReader:
     def output(self, kernel: str = KERNEL, version: int = 20) -> dict:
         # Fail closed if latest output no longer corresponds to the requested
         # version. Signed output URLs stay inside this process only.
-        pinned = sorted((file_summary(f) for f in self.files(kernel, version)), key=lambda f: f["name"])
-        latest = sorted((file_summary(f) for f in self.files(kernel)), key=lambda f: f["name"])
-        if not pinned or pinned != latest:
-            raise SafeKaggleError("Latest kernel file inventory differs from the requested version; refusing unpinned output.")
-        return self.json("/kernels/output", self.kernel_args(kernel))
+        args = self.kernel_args(kernel)
+        before = self.json("/kernels/pull", args)["metadata"].get("currentVersionNumber")
+        if version is not None and before != version:
+            raise SafeKaggleError("Latest kernel version differs from the requested version; refusing unpinned output.")
+        output = self.json("/kernels/output", args)
+        if output.get("nextPageToken"):
+            raise SafeKaggleError("Output inventory is paginated; refusing an incomplete listing.")
+        after = self.json("/kernels/pull", args)["metadata"].get("currentVersionNumber")
+        if before != after:
+            raise SafeKaggleError("Kernel version advanced while listing outputs; refusing unpinned output.")
+        return output
 
     def download_url(self, url: str, destination: Path, expected_bytes: int = 0) -> dict:
         # A fresh unauthenticated request ensures Kaggle authorization is never
