@@ -14,11 +14,15 @@ param(
     [string]$Message = "CompetitiveFusionSDM full-PA 3-seed top-18 ensemble",
     [string]$ArtifactDirectory = "official_pa_submission",
     [string]$ManifestName = "submission_manifest.json",
-    [switch]$AdaptivePolicy
+    [switch]$AdaptivePolicy,
+    [switch]$EnvironmentalChallenger
 )
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
+if ($AdaptivePolicy -and $EnvironmentalChallenger) {
+    throw "Choose only one specialized submission validation mode."
+}
 
 $credentialPath = Join-Path $PSScriptRoot "..\api_key\kaggle_2.json"
 if (-not (Test-Path -LiteralPath $credentialPath)) {
@@ -79,7 +83,28 @@ try {
     }
     if ($manifest.test_labels_used -ne $false) { throw "Manifest does not prove test-label isolation." }
     if ([int]$manifest.submission.rows -ne 14784) { throw "Manifest has an unexpected row count." }
-    if ($AdaptivePolicy) {
+    if ($EnvironmentalChallenger) {
+        if ($manifest.external_data_or_weights -ne $false) {
+            throw "Environmental challenger manifest does not prove competition-only inputs."
+        }
+        if ($manifest.post_calibration_finetuning -ne $false) {
+            throw "Environmental challenger was refit after policy calibration."
+        }
+        if ($manifest.untouched_audit.used_for_selection -ne $false) {
+            throw "The supposedly untouched audit was used for selection."
+        }
+        if ([double]$manifest.untouched_audit.selected_minus_reference -le 0) {
+            throw "Environmental challenger did not beat its matched reference on the untouched audit."
+        }
+        if ($manifest.submission.prediction_policy.kind -ne "top_k") {
+            throw "Environmental challenger manifest has an unsupported prediction policy."
+        }
+        $registeredPredictionCount = [int]$manifest.submission.prediction_policy.k
+        if ($registeredPredictionCount -lt 1 -or $registeredPredictionCount -gt 50) {
+            throw "Environmental challenger prediction count is outside the registered bounds."
+        }
+    }
+    elseif ($AdaptivePolicy) {
         if ([double]$manifest.geographic_holdout.tuning_optimized_f1 -lt [double]$manifest.geographic_holdout.tuning_neural_only_adaptive_f1) {
             throw "The tuned adaptive policy underperformed its neural-only control."
         }
@@ -96,7 +121,12 @@ try {
     if (@($predictionCounts | Where-Object { $_ -lt 1 }).Count -ne 0) {
         throw "Submission CSV contains an empty prediction row."
     }
-    if ($AdaptivePolicy) {
+    if ($EnvironmentalChallenger) {
+        if (@($predictionCounts | Where-Object { $_ -ne $registeredPredictionCount }).Count -ne 0) {
+            throw "Environmental challenger CSV does not match its frozen top-k policy."
+        }
+    }
+    elseif ($AdaptivePolicy) {
         if (@($predictionCounts | Where-Object { $_ -gt 50 }).Count -ne 0) {
             throw "Adaptive submission exceeds its registered maximum cardinality."
         }
@@ -154,6 +184,7 @@ try {
         TemplateIdsVerified = $true
         TestLabelsUsed = $false
         AdaptivePolicy = [bool]$AdaptivePolicy
+        EnvironmentalChallenger = [bool]$EnvironmentalChallenger
     } | ConvertTo-Json -Compress
 }
 finally {
