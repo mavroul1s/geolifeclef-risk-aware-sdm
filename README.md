@@ -52,7 +52,7 @@ The script keeps credentials in memory only, uploads a Git archive of **HEAD** (
 
 The current mode is `environmental_challenger`, deployed as a real notebook in the same private Kaggle kernel. One run prepares competition environmental predictors and all PA modalities, trains the previous fusion architecture as a matched reference and two challenger seeds, freezes a calibration-only output policy, reports an untouched spatial/country audit, and produces a test submission CSV. No external weights/data or post-calibration refit is used. Prepared data use memory maps; setup/preparation/training/inference have a 10.5-hour guard. A failed mandatory check stops the job rather than silently reducing the protocol. Details and limitations are in `docs/environmental_challenger_v20.md`.
 
-Historical `sota_single` version 19 scored 0.17516 private, below the earlier 0.18900. Neither is SOTA. The current master notebook does not rerun historical experiments with Run All.
+The completed version 20 submission scored **0.21601 public / 0.19360 private**, improving the previous best private score of 0.18900 but remaining below the 0.2302 winner target. Historical `sota_single` version 19 scored 0.19891 / 0.17516. The current master notebook does not rerun historical experiments with Run All. See `results/experiment_registry.json` and `docs/HANDOFF_V20_TO_V21.md` before starting another experiment.
 
 ## Audit and canonical data contract
 

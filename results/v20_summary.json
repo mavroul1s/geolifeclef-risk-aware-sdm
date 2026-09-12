@@ -1,0 +1,120 @@
+{
+  "run": {
+    "kernel": "con1los/geolifeclef-risk-aware-sdm-phase-1",
+    "kernel_version": 20,
+    "source_commit": "1a2528b",
+    "submission_validation_commit": "f6f98f0",
+    "status": "complete",
+    "pipeline_hours": 0.8681650624339924,
+    "external_data_or_weights": false,
+    "test_labels_used": false,
+    "post_calibration_finetuning": false
+  },
+  "data": {
+    "training_samples": 71332,
+    "checkpoint_selection_samples": 2627,
+    "policy_calibration_samples": 7343,
+    "untouched_audit_samples": 7685,
+    "official_test_samples": 14784,
+    "species": 5016,
+    "environment_features": 74,
+    "country_audit": ["Italy", "Switzerland"]
+  },
+  "model_runs": [
+    {
+      "name": "reference_2025",
+      "seed": 2025,
+      "parameters": 3514866,
+      "best_epoch": 19,
+      "epochs_completed": 24,
+      "selection_top18_f1": 0.3082673999853497
+    },
+    {
+      "name": "challenger_2025",
+      "seed": 2025,
+      "parameters": 15010186,
+      "best_epoch": 11,
+      "epochs_completed": 19,
+      "selection_top18_f1": 0.32294962509413727
+    },
+    {
+      "name": "challenger_3407",
+      "seed": 3407,
+      "parameters": 15010186,
+      "best_epoch": 7,
+      "epochs_completed": 15,
+      "selection_top18_f1": 0.32935980509868346
+    }
+  ],
+  "frozen_selection": {
+    "challenger_weight": 0.75,
+    "reference_weight": 0.25,
+    "prediction_policy": {"kind": "top_k", "k": 20},
+    "calibration_f1": 0.3683761121790417,
+    "best_reference_only_calibration_f1": 0.35329396484243264,
+    "calibration_gain": 0.015082147336609064,
+    "registered_candidates": 125
+  },
+  "untouched_audit": {
+    "selected_ensemble_sample_f1": 0.32341959313181096,
+    "reference_calibrated_sample_f1": 0.31412557549618236,
+    "reference_top18_sample_f1": 0.3151663675262985,
+    "challenger_single_seed_calibrated_sample_f1": 0.30724170113167465,
+    "selected_minus_calibrated_reference": 0.009294017635628593,
+    "selected_minus_reference_survey_bootstrap_95_ci": [0.007688608395902734, 0.010876206190793738],
+    "bootstrap_warning": "Survey bootstrap ignores residual spatial clustering and can understate uncertainty.",
+    "fraction_surveys_improved": 0.3301236174365647,
+    "fraction_surveys_tied": 0.4277163305139883,
+    "selected_country_macro_f1": 0.3155665474550005,
+    "reference_country_macro_f1": 0.3116547411630161,
+    "selected_italy_switzerland_ood_f1": 0.1871250453476091,
+    "reference_italy_switzerland_ood_f1": 0.18150274274311026,
+    "selected_by_country": {
+      "Austria": {"n": 59, "f1": 0.34843772527020506},
+      "Belgium": {"n": 94, "f1": 0.3867510929680177},
+      "Bosnia and Herzegovina": {"n": 2, "f1": 0.3079838900734423},
+      "Bulgaria": {"n": 7, "f1": 0.30162498129993326},
+      "Croatia": {"n": 8, "f1": 0.32369464419184285},
+      "Czech Republic": {"n": 20, "f1": 0.1918515452921091},
+      "Denmark": {"n": 2634, "f1": 0.42819716635246163},
+      "France": {"n": 427, "f1": 0.490097757706803},
+      "Germany": {"n": 2, "f1": 0.4462519936204147},
+      "Greece": {"n": 4, "f1": 0.29759701083230494},
+      "Italy": {"n": 2602, "f1": 0.18449717676208854},
+      "Montenegro": {"n": 82, "f1": 0.24876019195540938},
+      "Netherlands": {"n": 1428, "f1": 0.3408709842962854},
+      "Poland": {"n": 88, "f1": 0.3367424754671782},
+      "Romania": {"n": 63, "f1": 0.3952683162700458},
+      "Slovakia": {"n": 4, "f1": 0.3188156561616807},
+      "Slovenia": {"n": 2, "f1": 0.17872117400419285},
+      "Spain": {"n": 4, "f1": 0.23836128951798966},
+      "Switzerland": {"n": 155, "f1": 0.23123932960260593}
+    },
+    "important_interpretation": "The two-seed challenger/reference ensemble won; the one-seed challenger alone lost to the reference. Italy improved but Switzerland regressed versus the calibrated reference."
+  },
+  "submission": {
+    "rows": 14784,
+    "unique_survey_ids": 14784,
+    "prediction_count_min": 20,
+    "prediction_count_max": 20,
+    "sha256": "260c1bf2b454a5d1d9cb71874a36eeb7f663b718a066d90a64d39d937731fd84",
+    "official_public_score": 0.21601,
+    "official_private_score": 0.19360,
+    "prior_best_private_score": 0.18900,
+    "winner_private_target": 0.2302,
+    "sota_proven": false
+  },
+  "kaggle_artifacts_not_committed": [
+    "GLC25_PA_submission.csv",
+    "challenger_report.json",
+    "data_manifest.json",
+    "frozen_policy.json",
+    "untouched_audit_per_survey.csv",
+    "reference_2025_best.pt",
+    "challenger_2025_best.pt",
+    "challenger_3407_best.pt",
+    "all three models' calibration/audit/test probability .npy files",
+    "all three models' training history .json files"
+  ],
+  "artifact_location": "Kaggle kernel con1los/geolifeclef-risk-aware-sdm-phase-1, version 20, under geolifeclef-risk-aware-sdm/artifacts/environmental_challenger/"
+}

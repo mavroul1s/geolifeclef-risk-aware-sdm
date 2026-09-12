@@ -30,3 +30,9 @@ One GPU T4 request; batch 128; mixed-precision neural operations with float32 lo
 Outputs live in `artifacts/environmental_challenger`: three best checkpoints; per-model histories and calibration/audit/test probabilities; `data_manifest.json`; `frozen_policy.json`; per-survey audit; `challenger_report.json`; `GLC25_PA_submission.csv`. Prepared array caches are removed only after final outputs are written; inference probabilities remain for independent audit.
 
 No automatic leaderboard submission occurs in this notebook. Check completion, untouched audit, IDs, digest and frozen policy before the next authorized official evaluation. Expected wall time is uncertain until Kaggle throughput is measured. SOTA is not promised, and PO representation training remains a potential later experiment rather than an untested claim about this one.
+
+## Completed result
+
+Kaggle kernel `con1los/geolifeclef-risk-aware-sdm-phase-1`, version 20, completed on 2026-09-12 in 0.8682 hours. The frozen 75% challenger / 25% reference ensemble with top-20 output scored **0.21601 public / 0.19360 private**. This is the repository's best official private result so far: +0.00460 absolute (+2.43% relative) over v18's 0.18900, but 0.03660 below the 0.2302 winner target. The official result confirms the direction of the independent audit improvement, though the hidden-test gain was smaller.
+
+The standalone single-seed challenger underperformed the matched reference on the untouched internal audit (0.30724 versus 0.31413); only the frozen ensemble won (0.32342). Therefore the result supports the ensemble, not a claim that the challenger architecture alone is superior. The v20 audit is now observed and must not be reused as an untouched v21 model-selection set.
