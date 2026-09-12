@@ -115,7 +115,7 @@ def read_modalities(task: tuple[Path, str, int, int]) -> tuple[np.ndarray, np.nd
             climate.permute(1, 2, 0).reshape(228, 4).numpy().astype(np.float32), image.astype(np.float16))
 
 
-def prepare(data_root: Path, output: Path, image_size: int = 32, workers: int = 6, deadline: float = float("inf")) -> dict:
+def prepare(data_root: Path, output: Path, image_size: int = 32, workers: int = 6, deadline: float = float("inf"), partition_override: np.ndarray | None = None) -> dict:
     started = time.monotonic()
     output.mkdir(parents=True, exist_ok=True)
     raw = pd.read_csv(data_root / "GLC25_PA_metadata_train.csv")
@@ -126,7 +126,9 @@ def prepare(data_root: Path, output: Path, image_size: int = 32, workers: int = 
     test_ids = test_rows.surveyId.to_numpy(dtype=np.int64)
     if len(set(ids) & set(test_ids)) or set(test_ids) != set(template.surveyId):
         raise ValueError("PA train/test overlap or inconsistent test/template IDs")
-    partitions = spatial_partitions(rows)
+    partitions = spatial_partitions(rows) if partition_override is None else np.asarray(partition_override, dtype=np.int8)
+    if partitions.shape != (len(rows),) or not np.isin(partitions, [-1, 0, 1, 2, 3]).all():
+        raise ValueError("Invalid externally registered PA partitions")
     fit_mask = partitions == 0
     if any(np.count_nonzero(partitions == i) < 100 for i in range(4)):
         raise ValueError("A registered spatial partition has fewer than 100 surveys")
