@@ -197,6 +197,17 @@ class KaggleReader:
             raise SafeKaggleError("CSV prefix contains too few rows to establish its schema.")
         return {"file": name, "columns": rows[0], "sample_rows": rows[1:4], "downloaded_prefix_bytes": len(prefix)}
 
+    def download_competition(self, name: str, destination: Path) -> dict:
+        safe_name(name)
+        from urllib.parse import quote
+        with self.request(f"/competitions/data/download/{COMPETITION}/{quote(name, safe='/')}", stream=True) as response:
+            url = response.url
+            # The API redirects to a signed storage URL; obtain it in memory,
+            # then transfer without attaching Kaggle credentials to storage.
+            if url.startswith(API_ROOT):
+                raise SafeKaggleError("Competition download did not redirect to storage.")
+        return self.download_url(url, destination / name)
+
 
 def decode_csv_prefix(data: bytes, max_bytes: int) -> bytes:
     """Decode the first file in an ordinary streamed ZIP without fetching all of it."""
@@ -217,7 +228,7 @@ def decode_csv_prefix(data: bytes, max_bytes: int) -> bytes:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("action", choices=("status", "files", "competition-files", "schema", "download-v20", "log"))
+    parser.add_argument("action", choices=("status", "files", "competition-files", "schema", "download-v20", "competition-download", "log"))
     parser.add_argument("--kernel", default=KERNEL)
     parser.add_argument("--version", type=int, default=20)
     parser.add_argument("--file", action="append", default=[])
@@ -235,6 +246,8 @@ def main() -> int:
         result = [client.peek_csv(name) for name in args.file]
     elif args.action == "download-v20":
         result = client.download_v20(args.file, args.output)
+    elif args.action == "competition-download":
+        result = [client.download_competition(name, args.output) for name in args.file]
     else:
         result = {"log": sanitize_text(str(client.output(args.kernel, args.version).get("log", "")), client.secrets)}
     rendered = json.dumps(result, indent=2)
