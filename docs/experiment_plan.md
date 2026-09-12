@@ -72,6 +72,10 @@ the official template by surveyId because metadata and template orders differ. T
 the exact columns, complete ID set, unique IDs, prediction cardinality, and CSV digest before API
 submission. No test labels are available or used.
 
+The post-run submission wrapper downloads only the CSV and manifest to temporary files, verifies
+the manifest SHA-256 plus all registered invariants, and submits once through the official Kaggle
+API client. It deletes both temporary files immediately and never prints credentials or signed URLs.
+
 Kaggle version 16 completed all three registered trainings, but its final ensemble command failed
 because the standalone evaluator could not import the `scripts` namespace. All checkpoints and
 evaluation arrays were retained. The registered recovery is an evaluation-only kernel that mounts
