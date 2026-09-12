@@ -113,7 +113,8 @@ try {
     $templateRows = Import-Csv -LiteralPath $templateFile.FullName
     $submittedIds = @($rows.surveyId | Sort-Object)
     $templateIds = @($templateRows.surveyId | Sort-Object)
-    if ((Compare-Object -ReferenceObject $templateIds -DifferenceObject $submittedIds).Count -ne 0) {
+    $idDifferences = @(Compare-Object -ReferenceObject $templateIds -DifferenceObject $submittedIds)
+    if ($idDifferences.Count -ne 0) {
         throw "Submission survey IDs do not exactly match the official template."
     }
 
