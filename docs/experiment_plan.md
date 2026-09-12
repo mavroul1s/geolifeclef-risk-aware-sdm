@@ -59,6 +59,19 @@ probability ensemble fits its prediction policy on calibration blocks only and e
 once. Promotion requires all fusion seeds to beat their matched references and the ensemble to beat
 the mean reference score.
 
+Kaggle version 17 passed the registered gate. Fusion sample-F1 was 0.2497956, 0.2542624, and
+0.2637938 (mean 0.2559506, sample standard deviation 0.0071501), while the matched Landsat
+references averaged 0.1787446. The probability ensemble reached 0.2668232 with its calibration-only
+top-18 policy. All fusion seeds beat their matched references and the ensemble beat the reference
+mean. These are internal Netherlands-holdout results and do not establish SOTA.
+
+The promoted official run retrains seeds 2025, 3407, and 7919 on all 88,987 labeled PA surveys for
+16 epochs, normalizes the 14,784 unlabeled PA-test surveys using full-training statistics, averages
+the three probability matrices, and applies the frozen top-18 policy. Submission rows are joined to
+the official template by surveyId because metadata and template orders differ. The run must verify
+the exact columns, complete ID set, unique IDs, prediction cardinality, and CSV digest before API
+submission. No test labels are available or used.
+
 Kaggle version 16 completed all three registered trainings, but its final ensemble command failed
 because the standalone evaluator could not import the `scripts` namespace. All checkpoints and
 evaluation arrays were retained. The registered recovery is an evaluation-only kernel that mounts
