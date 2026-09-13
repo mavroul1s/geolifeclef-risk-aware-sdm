@@ -1,6 +1,16 @@
 {
   "experiment": "v21_competition_only_ood_po_expert",
   "status": "kaggle_running",
+  "status_monitoring": "Stopped at user request; wait for user completion notice. Do not poll Kaggle status.",
+  "latest_user_supplied_log": {
+    "initial_notebook_tests_passed": 85,
+    "pa_features_prepared": 57600,
+    "pa_features_total": 88987,
+    "notebook_elapsed_seconds_at_log": 1733.0,
+    "training_or_assessment_scores_available": false,
+    "visible_gpu_devices": 2,
+    "training_device_policy": "single default CUDA device, no DataParallel or DDP"
+  },
   "kernel": "con1los/geolifeclef-risk-aware-sdm-phase-1",
   "kernel_version": 21,
   "source_commit": "c04358425500da006acc0572b786f23f0fd9f4a2",

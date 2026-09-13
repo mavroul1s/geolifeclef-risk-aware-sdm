@@ -4,6 +4,8 @@ Read this file before taking any action. It is the compact source of truth for a
 
 ## v21 implementation progress — 2026-09-13
 
+**Latest user instruction:** do not check Kaggle status through the API. The user watches the run and will announce completion. The local read-only status monitor was stopped. Wait for that notice; do not restart monitoring or push another run. User-provided partial logs show 85 notebook tests passing and PA feature preparation at 57,600/88,987 rows, with no training/evaluation scores yet. Kaggle exposes two GPU devices, but this code uses the default CUDA device only, without multi-GPU training.
+
 The v21 source is implemented and 85 local tests pass. See `docs/ood_po_expert_v21.md`, `results/v21_schema_preflight.json` and `results/v21_summary.json`. **Kaggle version 21 is running**, launched from tested commit `c04358425500da006acc0572b786f23f0fd9f4a2`, confirmed 2026-09-13 18:51 UTC. There is no v21 assessment or official score yet. The master notebook runs only v21 through `scripts/launch_ood_po_expert.py` and `scripts/run_ood_po_expert.py`.
 
 Actual Kaggle reads confirmed the P0 metadata spelling, publisher field and all five PO environmental families (64 raw predictors). Six original v20 calibration/test probability arrays were downloaded selectively and combined without retraining. Their compact verified input is **private and ready**, pinned at `con1los/geolifeclef-v20-frozen-control/1` on the same authenticated account. Original top20 ties are preserved by retaining the exact original submission CSV; reconstructed float32 rank scores match every row exactly.
