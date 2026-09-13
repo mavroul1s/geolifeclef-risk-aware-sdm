@@ -327,7 +327,8 @@ def main() -> int:
     elif args.action == "dataset-status":
         client.kernel_args(args.dataset)
         raw = client.json(f"/datasets/status/{args.dataset}")
-        result = {"dataset": args.dataset, "status": sanitize_text(str(raw.get("status", "unknown")), client.secrets)}
+        status = raw if isinstance(raw, str) else raw.get("status", "unknown")
+        result = {"dataset": args.dataset, "status": sanitize_text(str(status), client.secrets)}
     else:
         result = {"log": sanitize_text(str(client.output(args.kernel, args.version).get("log", "")), client.secrets)}
     rendered = json.dumps(result, indent=2)
