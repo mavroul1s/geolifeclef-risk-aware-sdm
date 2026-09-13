@@ -44,7 +44,9 @@
   "experimental_runs": [
     {
       "experiment": "v21_competition_only_ood_po_expert",
-      "status": "tested_ready_for_kaggle_launch",
+      "status": "kaggle_running",
+      "kernel_version": 21,
+      "source_commit": "c04358425500da006acc0572b786f23f0fd9f4a2",
       "summary": "results/v21_summary.json",
       "preregistration": "docs/ood_po_expert_v21.md",
       "official_submission_made": false,

@@ -1,8 +1,10 @@
 {
   "experiment": "v21_competition_only_ood_po_expert",
-  "status": "tested_ready_for_kaggle_launch",
+  "status": "kaggle_running",
   "kernel": "con1los/geolifeclef-risk-aware-sdm-phase-1",
-  "kernel_version": null,
+  "kernel_version": 21,
+  "source_commit": "c04358425500da006acc0572b786f23f0fd9f4a2",
+  "launch_confirmed_at_utc": "2026-09-13T18:51:11Z",
   "frozen_v20_source_version": 20,
   "frozen_input": "con1los/geolifeclef-v20-frozen-control/1",
   "frozen_input_private": true,
