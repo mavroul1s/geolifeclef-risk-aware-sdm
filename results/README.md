@@ -1,6 +1,7 @@
 # Results index
 
 - `experiment_registry.json` is the canonical official-score history and competition target.
+- `v21_summary.json` and `v21_schema_preflight.json` track the new experiment; pending/null values are not measured results. The current official best remains v20 until a new submission is scored.
 - `v20_summary.json` contains the complete compact numerical handoff for the current best run, including splits, model-selection results, audit metrics, official scores and artifact inventory.
 - The immutable raw v20 artifacts are stored with Kaggle kernel `con1los/geolifeclef-risk-aware-sdm-phase-1`, version 20. Their exact remote directory is `geolifeclef-risk-aware-sdm/artifacts/environmental_challenger/`.
 

@@ -2,6 +2,16 @@
 
 Read this file before taking any action. It is the compact source of truth for a fresh Codex conversation.
 
+## v21 implementation progress — 2026-09-13
+
+The v21 source is implemented and 85 local tests pass. See `docs/ood_po_expert_v21.md`, `results/v21_schema_preflight.json` and `results/v21_summary.json`. Kaggle training has not yet been launched at this checkpoint; there is no v21 assessment or official score yet. The master notebook now runs only v21 through `scripts/launch_ood_po_expert.py` and `scripts/run_ood_po_expert.py`.
+
+Actual Kaggle reads confirmed the P0 metadata spelling, publisher field and all five PO environmental families (64 raw predictors). Six original v20 calibration/test probability arrays were downloaded selectively and combined without retraining. Their compact verified input is **private and ready**, pinned at `con1los/geolifeclef-v20-frozen-control/1` on the same authenticated account. Original top20 ties are preserved by retaining the exact original submission CSV; reconstructed float32 rank scores match every row exactly.
+
+The old v20 checkpoints cannot provide an untouched assessment on a rehashed subset. A newly trained, subsequently frozen control uses the unchanged v20 recipe on new buffered training rows; the original probabilities remain the production baseline. New assessment: 17,163 surveys in 28 blocks, at least 20 km from the new PA training. It is Denmark-dominated and contains no Bulgaria/Ukraine/Switzerland surveys. This limits evidence about the intended priority countries. The separate production fit must never influence the outer candidate or policy.
+
+Next: commit the tested source and launch `scripts/push_kaggle_kernel.ps1 -RunMode ood_po_expert_v21`, which archives Git HEAD. Monitor to completion. The existing legacy submission helper is not sufficient for v21: independently enforce the saved v21 assessment/integrity gate, runtime, both notebook test passes, exact version/source commit, vocabulary/template/hash checks and an at-most-once receipt before any official submission. No submission if any gate fails. Record actual public/private scores only if a permitted submission is made.
+
 ## Current state
 
 - Repository: `C:\Users\nickb\Documents\projects\geolifeclef-risk-aware-sdm`
