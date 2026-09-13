@@ -1,4 +1,4 @@
-"""Read-only, bounded Kaggle access without exposing credentials or signed URLs.
+"""Bounded Kaggle access without exposing credentials or signed URLs.
 
 Endpoints were checked against the installed Kaggle 1.6.17 client and live API.
 The live API rejects its advertised kernelVersionNumber files argument. Output
@@ -8,6 +8,7 @@ refuses historical downloads after the kernel has advanced.
 from __future__ import annotations
 
 import argparse
+from contextlib import redirect_stderr, redirect_stdout
 import csv
 import hashlib
 import io
@@ -226,6 +227,60 @@ class KaggleReader:
                 raise SafeKaggleError("Competition download did not redirect to storage.")
         return self.download_url(url, destination / name)
 
+    def stage_private_bundle(self, directory: Path, dataset: str) -> dict:
+        """Upload only the independently verified compact v20 bundle privately.
+
+        This is the only write API in this utility. It cannot submit predictions,
+        launch kernels, upload arbitrary folders or publish a public dataset.
+        """
+        directory = directory.resolve()
+        if not directory.is_relative_to((ROOT / "artifacts").resolve()):
+            raise SafeKaggleError("Frozen bundle must be staged inside repository artifacts.")
+        sys.path.insert(0, str(ROOT))
+        sys.path.insert(0, str(ROOT / "src"))
+        from scripts.stage_frozen_v20 import verify_bundle
+        try:
+            provenance = verify_bundle(directory)
+        except Exception:
+            raise SafeKaggleError("Frozen bundle verification failed before upload.") from None
+        if not provenance["test"].get("submission_byte_parity") or not provenance["calibration"].get("id_order_verified_locally"):
+            raise SafeKaggleError("Frozen bundle lacks required original-output and calibration-order parity.")
+        allowed = set(provenance["files"]) | {"provenance.json", "dataset-metadata.json"}
+        if any(p.name not in allowed or not p.is_file() for p in directory.iterdir()):
+            raise SafeKaggleError("Unexpected file in frozen bundle; refusing upload.")
+        credential = json.loads((ROOT / "api_key" / "kaggle_2.json").read_text(encoding="utf-8-sig"))
+        parts = dataset.split("/")
+        if len(parts) != 2 or parts[0] != credential["username"] or not re.fullmatch(r"[a-z0-9-]{6,50}", parts[1]):
+            raise SafeKaggleError("Private dataset must belong to the authenticated owner and have a valid slug.")
+        metadata = {"id": dataset, "title": "GeoLifeCLEF frozen v20 control",
+                    "licenses": [{"name": "other"}],
+                    "description": "Private competition-derived frozen model probabilities for GeoLifeCLEF 2025. Competition data terms continue to apply. No external data, model weights or PA labels are included; no redistribution permission is granted."}
+        (directory / "dataset-metadata.json").write_text(json.dumps(metadata, indent=2), encoding="utf-8")
+        prior = {k: os.environ.get(k) for k in ("KAGGLE_USERNAME", "KAGGLE_KEY")}
+        try:
+            os.environ["KAGGLE_USERNAME"] = credential["username"]
+            os.environ["KAGGLE_KEY"] = credential["key"]
+            sys.path.insert(0, str(ROOT / ".venv" / "kaggle-api"))
+            with redirect_stdout(io.StringIO()), redirect_stderr(io.StringIO()):
+                from kaggle.api.kaggle_api_extended import KaggleApi
+                api = KaggleApi()
+                api.authenticate()
+                response = api.dataset_create_new(str(directory), public=False, quiet=True, convert_to_csv=False, dir_mode="skip")
+            if str(getattr(response, "status", "")).lower() != "ok":
+                raise SafeKaggleError("Kaggle did not confirm private dataset creation; inspect status before retrying.")
+        except SafeKaggleError:
+            raise
+        except Exception:
+            raise SafeKaggleError("Private dataset staging failed or is uncertain; inspect its status before retrying. Raw client output withheld.") from None
+        finally:
+            for key, value in prior.items():
+                if value is None:
+                    os.environ.pop(key, None)
+                else:
+                    os.environ[key] = value
+        return {"dataset": dataset, "private": True, "status": "creation_requested",
+                "source_kernel_version": 20, "files": len(allowed) - 1}
+
 
 def decode_csv_prefix(data: bytes, max_bytes: int) -> bytes:
     """Decode the first file in an ordinary streamed ZIP without fetching all of it."""
@@ -246,12 +301,13 @@ def decode_csv_prefix(data: bytes, max_bytes: int) -> bytes:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("action", choices=("status", "files", "competition-files", "schema", "download-v20", "competition-download", "log"))
+    parser.add_argument("action", choices=("status", "files", "competition-files", "schema", "download-v20", "competition-download", "stage-private-bundle", "dataset-status", "log"))
     parser.add_argument("--kernel", default=KERNEL)
     parser.add_argument("--version", type=int, default=20)
     parser.add_argument("--file", action="append", default=[])
     parser.add_argument("--output", type=Path, default=ROOT / "artifacts" / "v20_frozen")
     parser.add_argument("--report", type=Path)
+    parser.add_argument("--dataset", default="con1los/geolifeclef-v20-frozen-control")
     args = parser.parse_args()
     client = KaggleReader()
     if args.action == "status":
@@ -266,6 +322,12 @@ def main() -> int:
         result = client.download_v20(args.file, args.output)
     elif args.action == "competition-download":
         result = [client.download_competition(name, args.output) for name in args.file]
+    elif args.action == "stage-private-bundle":
+        result = client.stage_private_bundle(args.output, args.dataset)
+    elif args.action == "dataset-status":
+        client.kernel_args(args.dataset)
+        raw = client.json(f"/datasets/status/{args.dataset}")
+        result = {"dataset": args.dataset, "status": sanitize_text(str(raw.get("status", "unknown")), client.secrets)}
     else:
         result = {"log": sanitize_text(str(client.output(args.kernel, args.version).get("log", "")), client.secrets)}
     rendered = json.dumps(result, indent=2)

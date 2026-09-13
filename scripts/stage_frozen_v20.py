@@ -100,6 +100,47 @@ def _combine(source: Path, output: Path, split: str, shape: tuple[int, int]) -> 
              "shape": list(values.shape), "dtype": str(values.dtype)} for path, values in zip(paths, arrays)]
 
 
+def verify_original_ties(probabilities, species, test_ids, template_ids, original: bytes) -> dict:
+    """Accept platform tie permutations only; preserve the original CSV verbatim.
+
+    NumPy argpartition does not specify how equal elements are ordered. Every
+    original rank must have EXACTLY the recomputed rank's float32 probability,
+    including rank20 boundary ties. No tolerance, new species or score change
+    is permitted. Alpha zero must use the preserved original CSV at deployment.
+    """
+    generated = submission_bytes(probabilities, species, test_ids, template_ids)
+    generated_rows = list(csv.reader(io.StringIO(generated.decode("utf-8"))))
+    original_rows = list(csv.reader(io.StringIO(original.decode("utf-8-sig"))))
+    if len(original_rows) != len(generated_rows) or original_rows[0] != generated_rows[0]:
+        raise ValueError("Recomputed v20 predictions/order have inconsistent rows/header")
+    lookup, vocabulary = pd.Index(test_ids), pd.Index(species)
+    order_ties, membership_ties = 0, 0
+    for old, new, sid in zip(original_rows[1:], generated_rows[1:], template_ids):
+        if len(old) != 2 or old[0] != str(int(sid)):
+            raise ValueError("Recomputed v20 predictions/order have inconsistent IDs")
+        try:
+            old_species = np.asarray([int(value) for value in old[1].split()], dtype=np.int64)
+            new_species = np.asarray([int(value) for value in new[1].split()], dtype=np.int64)
+        except ValueError:
+            raise ValueError("Original v20 predictions/order contain invalid species") from None
+        old_indices = vocabulary.get_indexer(old_species)
+        if len(old_indices) != 20 or (old_indices < 0).any() or len(np.unique(old_indices)) != 20:
+            raise ValueError("Original v20 predictions/order contain invalid species")
+        row = probabilities[lookup.get_loc(sid)]
+        if not np.array_equal(row[old_indices], row[vocabulary.get_indexer(new_species)]):
+            raise ValueError("Recomputed v20 predictions/order differ beyond exact probability ties")
+        order_ties += old[1] != new[1]
+        membership_ties += set(old_species) != set(new_species)
+    replay = io.StringIO(newline="")
+    csv.writer(replay).writerows(original_rows)
+    if replay.getvalue().encode("utf-8") != original:
+        raise ValueError("Recomputed v20 CSV bytes differ from original submission")
+    return {"exact_rank_probability_parity": True,
+            "platform_order_tie_rows": int(order_ties),
+            "platform_boundary_membership_tie_rows": int(membership_ties),
+            "unchanged_v20_deployment": "preserved original CSV, including original tie choices"}
+
+
 def stage_bundle(source_dir: Path, output_dir: Path, test_metadata: Path, template: Path,
                  train_metadata: Path | None = None, *, expected_species: int = 5016,
                  expected_test_samples: int = 14784) -> dict:
@@ -144,14 +185,8 @@ def stage_bundle(source_dir: Path, output_dir: Path, test_metadata: Path, templa
     for split, rows in (("calibration", calibration_rows), ("test", expected_test_samples)):
         components.extend(_combine(source_dir, output_dir / f"v20_{split}_probabilities.npy", split, (rows, expected_species)))
     test_probability = np.load(output_dir / "v20_test_probabilities.npy", mmap_mode="r", allow_pickle=False)
-    generated = submission_bytes(test_probability, species, test_ids, template_ids)
     original = (source_dir / "GLC25_PA_submission.csv").read_bytes()
-    generated_rows = list(csv.reader(io.StringIO(generated.decode("utf-8"))))
-    original_rows = list(csv.reader(io.StringIO(original.decode("utf-8-sig"))))
-    if generated_rows != original_rows:
-        raise ValueError("Recomputed v20 top20 predictions/order differ from original submission")
-    if generated != original:
-        raise ValueError("Recomputed v20 CSV bytes differ from original submission")
+    tie_proof = verify_original_ties(test_probability, species, test_ids, template_ids, original)
     np.save(output_dir / "species_ids.npy", species, allow_pickle=False)
     np.save(output_dir / "test_ids.npy", test_ids, allow_pickle=False)
     if calibration_ids is not None:
@@ -172,7 +207,7 @@ def stage_bundle(source_dir: Path, output_dir: Path, test_metadata: Path, templa
                         "original_partition": "policy_calibration", "labels_packaged": False},
         "test": {"rows": expected_test_samples, "ordered_ids_sha256": ordered_ids_sha256(test_ids),
                  "template_ordered_ids_sha256": ordered_ids_sha256(template_ids),
-                 "prediction_parity": True, "submission_byte_parity": True,
+                 "prediction_parity": True, "submission_byte_parity": True, **tie_proof,
                  "original_submission_sha256": hashlib.sha256(original).hexdigest()},
         "species": expected_species, "species_ids_sha256": ordered_ids_sha256(species),
         "checkpoint_files_packaged": False, "v20_retraining": False, "external_data_or_weights": False,

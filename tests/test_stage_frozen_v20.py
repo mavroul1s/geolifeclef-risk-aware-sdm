@@ -7,7 +7,7 @@ import pytest
 from scripts.ood_po_protocol import frozen_v20_blend
 from scripts.prepare_environmental_challenger import spatial_partitions
 from scripts.stage_frozen_v20 import (
-    MODELS, ordered_ids_sha256, stage_bundle, submission_bytes, verify_bundle,
+    MODELS, ordered_ids_sha256, stage_bundle, submission_bytes, verify_bundle, verify_original_ties,
 )
 
 
@@ -122,3 +122,13 @@ def test_submission_reconstruction_rejects_duplicate_template_ids(tmp_path):
     template_ids[0] = template_ids[1]
     with pytest.raises(ValueError, match="Duplicate"):
         submission_bytes(np.ones((4, 5016), np.float32), np.arange(5016), test_ids, template_ids)
+
+
+def test_original_boundary_tie_is_preserved_but_unequal_score_is_rejected():
+    probabilities = np.full((1, 60), .5, dtype=np.float32)
+    original = ('surveyId,predictions\r\n1,' + ' '.join(map(str, range(20))) + '\r\n').encode()
+    proof = verify_original_ties(probabilities, np.arange(60), np.array([1]), np.array([1]), original)
+    assert proof['exact_rank_probability_parity']
+    probabilities[0, 59] = .6
+    with pytest.raises(ValueError, match='beyond exact probability ties'):
+        verify_original_ties(probabilities, np.arange(60), np.array([1]), np.array([1]), original)

@@ -111,3 +111,32 @@ def test_complete_download_reports_digest_without_url(tmp_path):
     assert report["bytes"] == 7
     assert len(report["sha256"]) == 64
     assert "https://" not in json.dumps(report)
+
+
+def test_resume_requires_matching_content_range(tmp_path):
+    client = KaggleReader.__new__(KaggleReader)
+    response = Response()
+    response.status_code = 206
+    response.headers = {"Content-Range": "bytes 12-19/20"}
+    client.requests = type("FakeRequests", (), {"get": lambda *a, **k: response})()
+    destination = tmp_path / "probabilities.npy"
+    destination.with_suffix(".npy.partial").write_bytes(b"prior")
+    with pytest.raises(SafeKaggleError, match="unexpected byte range"):
+        client.download_url("https://signed.example", destination)
+    assert not destination.exists()
+
+
+def test_nested_competition_filename_is_encoded_as_one_path_parameter():
+    client = KaggleReader.__new__(KaggleReader)
+    response = Response()
+    response.iter_content = lambda chunk_size: iter((b"surveyId,Elevation\n1,23\n",))
+    endpoints = []
+    client.request = lambda endpoint, **kwargs: endpoints.append(endpoint) or response
+    client.peek_csv("EnvironmentalValues/Elevation/table.csv")
+    assert endpoints == ["/competitions/data/download/geolifeclef-2025/EnvironmentalValues%2FElevation%2Ftable.csv"]
+
+
+def test_upload_refuses_arbitrary_directory_before_credential_access(tmp_path):
+    client = KaggleReader.__new__(KaggleReader)
+    with pytest.raises(SafeKaggleError, match="inside repository artifacts"):
+        client.stage_private_bundle(tmp_path, "owner/dataset")
