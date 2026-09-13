@@ -203,7 +203,7 @@ class KaggleReader:
         if not name.lower().endswith(".csv"):
             raise SafeKaggleError("Schema peeking supports CSV files only.")
         from urllib.parse import quote
-        with self.request(f"/competitions/data/download/{COMPETITION}/{quote(name, safe='/')}", stream=True) as response:
+        with self.request(f"/competitions/data/download/{COMPETITION}/{quote(name, safe='')}", stream=True) as response:
             prefix = bytearray()
             for chunk in response.iter_content(64 * 1024):
                 prefix.extend(chunk[:max_bytes - len(prefix)])
@@ -218,7 +218,7 @@ class KaggleReader:
     def download_competition(self, name: str, destination: Path) -> dict:
         safe_name(name)
         from urllib.parse import quote
-        with self.request(f"/competitions/data/download/{COMPETITION}/{quote(name, safe='/')}", stream=True) as response:
+        with self.request(f"/competitions/data/download/{COMPETITION}/{quote(name, safe='')}", stream=True) as response:
             url = response.url
             # The API redirects to a signed storage URL; obtain it in memory,
             # then transfer without attaching Kaggle credentials to storage.
