@@ -144,11 +144,24 @@ class KaggleReader:
         temporary = destination.with_suffix(destination.suffix + ".partial")
         destination.parent.mkdir(parents=True, exist_ok=True)
         digest, count = hashlib.sha256(), 0
+        resume_bytes = temporary.stat().st_size if temporary.exists() else 0
+        headers = {"Range": f"bytes={resume_bytes}-"} if resume_bytes else {}
         try:
-            with self.requests.get(url, stream=True, timeout=(30, 180)) as response:
-                if response.status_code != 200:
+            with self.requests.get(url, headers=headers, stream=True, timeout=(30, 180)) as response:
+                if response.status_code not in (200, 206):
                     raise SafeKaggleError(f"Artifact download failed (HTTP {response.status_code}).")
-                with temporary.open("wb") as handle:
+                continuing = response.status_code == 206 and resume_bytes > 0
+                if response.status_code == 206 and not str(getattr(response, "headers", {}).get("Content-Range", "")).startswith(f"bytes {resume_bytes}-"):
+                    raise SafeKaggleError("Artifact resume response has an unexpected byte range.")
+                if continuing:
+                    with temporary.open("rb") as previous:
+                        for chunk in iter(lambda: previous.read(1024 * 1024), b""):
+                            digest.update(chunk)
+                            count += len(chunk)
+                length = int(getattr(response, "headers", {}).get("Content-Length", 0) or 0)
+                if not expected_bytes and length:
+                    expected_bytes = count + length
+                with temporary.open("ab" if continuing else "wb") as handle:
                     for chunk in response.iter_content(1024 * 1024):
                         count += len(chunk)
                         if expected_bytes and count > expected_bytes:
@@ -177,7 +190,12 @@ class KaggleReader:
             if entry is None:
                 raise SafeKaggleError(f"Required v20 artifact is absent: {name}.")
             reports.append(self.download_url(entry["url"], destination / name, file_summary(entry)["bytes"]))
-        (destination / "download_manifest.json").write_text(json.dumps({"kernel": KERNEL, "version": 20, "artifacts": reports}, indent=2), encoding="utf-8")
+            manifest_path = destination / "download_manifest.json"
+            previous = json.loads(manifest_path.read_text(encoding="utf-8")) if manifest_path.exists() else {"kernel": KERNEL, "version": 20, "artifacts": []}
+            merged = {item["file"]: item for item in previous["artifacts"]}
+            merged.update({item["file"]: item for item in reports})
+            previous["artifacts"] = list(merged.values())
+            manifest_path.write_text(json.dumps(previous, indent=2), encoding="utf-8")
         return reports
 
     def peek_csv(self, name: str, max_bytes: int = 1024 * 1024) -> dict:
