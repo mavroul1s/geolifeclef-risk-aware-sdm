@@ -69,6 +69,13 @@ def test_environment_join_rejects_missing_duplicate_and_expired_budget(tmp_path)
         _stream_environment(path, np.array([1]), ['value'], time.monotonic() - 1)
 
 
+def test_landcover_features_are_not_mistaken_for_class_probabilities(tmp_path):
+    path = tmp_path / 'landcover.csv'
+    pd.DataFrame({'surveyId': [1, 2], 'LandCover-1': [12., 17.], 'LandCover-2': [99., 99.]}).to_csv(path, index=False)
+    values, _ = _stream_environment(path, np.array([1, 2]), ['LandCover-1', 'LandCover-2'], time.monotonic() + 60, landcover_stratum=True)
+    assert values[:, 0].tolist() == [2., 3.]
+
+
 def test_matching_pa_training_only_normalization_and_missing_indicators():
     pa = np.array([[1., np.nan], [3., np.nan], [999., 9.]])
     a, test, po, stats = normalized_environment(pa, np.array([[2., 5.]]), np.array([[4., np.nan]]), np.array([0, 1]))
@@ -78,4 +85,3 @@ def test_matching_pa_training_only_normalization_and_missing_indicators():
     assert a[2, 0] == 12
     assert np.isfinite(a).all() and np.isfinite(po).all()
     assert coordinate_features(np.array([[45., 6.]])).shape == (1, 34)
-

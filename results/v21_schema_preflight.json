@@ -1,0 +1,258 @@
+{
+  "verified_at": "2026-09-13",
+  "method": "Authenticated bounded competition CSV prefix reads before architecture finalization",
+  "metadata": [
+    {
+      "file": "GLC25_P0_metadata_train.csv",
+      "columns": [
+        "publisher",
+        "year",
+        "month",
+        "day",
+        "lat",
+        "lon",
+        "geoUncertaintyInM",
+        "taxonRank",
+        "date",
+        "dayOfYear",
+        "speciesId",
+        "surveyId"
+      ]
+    },
+    {
+      "file": "GLC25_PA_metadata_train.csv",
+      "columns": [
+        "lon",
+        "lat",
+        "year",
+        "geoUncertaintyInM",
+        "areaInM2",
+        "region",
+        "country",
+        "speciesId",
+        "surveyId"
+      ]
+    },
+    {
+      "file": "GLC25_PA_metadata_test.csv",
+      "columns": [
+        "lon",
+        "lat",
+        "year",
+        "geoUncertaintyInM",
+        "areaInM2",
+        "region",
+        "country",
+        "surveyId"
+      ]
+    }
+  ],
+  "po_environment": [
+    {
+      "file": "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PO-train-bioclimatic.csv",
+      "columns": [
+        "surveyId",
+        "Bio1",
+        "Bio2",
+        "Bio3",
+        "Bio4",
+        "Bio5",
+        "Bio6",
+        "Bio7",
+        "Bio8",
+        "Bio9",
+        "Bio10",
+        "Bio11",
+        "Bio12",
+        "Bio13",
+        "Bio14",
+        "Bio15",
+        "Bio16",
+        "Bio17",
+        "Bio18",
+        "Bio19"
+      ]
+    },
+    {
+      "file": "EnvironmentalValues/Elevation/GLC25-PO-train-elevation.csv",
+      "columns": [
+        "surveyId",
+        "Elevation"
+      ]
+    },
+    {
+      "file": "EnvironmentalValues/HumanFootprint/GLC25-PO-train-human_footprint.csv",
+      "columns": [
+        "surveyId",
+        "HumanFootprint-cemetery",
+        "HumanFootprint-reservoir",
+        "HumanFootprint-greenhouse",
+        "HumanFootprint-farmland",
+        "HumanFootprint-building-copernicus",
+        "HumanFootprint-forest",
+        "HumanFootprint-harbour",
+        "HumanFootprint-building-residential",
+        "HumanFootprint-building-commercial",
+        "HumanFootprint-grass",
+        "HumanFootprint-quarry",
+        "HumanFootprint-road",
+        "HumanFootprint-salt",
+        "HumanFootprint-building-industrial",
+        "HumanFootprint-vineyard",
+        "HumanFootprint-military",
+        "HumanFootprint-construction-site",
+        "HumanFootprint-orchard",
+        "HumanFootprint-meadow",
+        "HumanFootprint-farmyard",
+        "HumanFootprint-dump-site",
+        "HumanFootprint-railway"
+      ]
+    },
+    {
+      "file": "EnvironmentalValues/LandCover/GLC25-PO-train-landcover.csv",
+      "columns": [
+        "surveyId",
+        "LandCover-1",
+        "LandCover-2",
+        "LandCover-3",
+        "LandCover-4",
+        "LandCover-5",
+        "LandCover-6",
+        "LandCover-7",
+        "LandCover-8",
+        "LandCover-9",
+        "LandCover-10",
+        "LandCover-11",
+        "LandCover-12",
+        "LandCover-13"
+      ]
+    },
+    {
+      "file": "EnvironmentalValues/SoilGrids/GLC25-PO-train-soilgrids.csv",
+      "columns": [
+        "surveyId",
+        "Soilgrid-bdod",
+        "Soilgrid-cec",
+        "Soilgrid-cfvo",
+        "Soilgrid-clay",
+        "Soilgrid-nitrogen",
+        "Soilgrid-phh2o",
+        "Soilgrid-sand",
+        "Soilgrid-silt",
+        "Soilgrid-soc"
+      ]
+    }
+  ],
+  "pa_environment": [
+    {
+      "file": "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv",
+      "columns": [
+        "surveyId",
+        "Bio1",
+        "Bio2",
+        "Bio3",
+        "Bio4",
+        "Bio5",
+        "Bio6",
+        "Bio7",
+        "Bio8",
+        "Bio9",
+        "Bio10",
+        "Bio11",
+        "Bio12",
+        "Bio13",
+        "Bio14",
+        "Bio15",
+        "Bio16",
+        "Bio17",
+        "Bio18",
+        "Bio19"
+      ]
+    },
+    {
+      "file": "EnvironmentalValues/Elevation/GLC25-PA-train-elevation.csv",
+      "columns": [
+        "surveyId",
+        "Elevation"
+      ]
+    },
+    {
+      "file": "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv",
+      "columns": [
+        "surveyId",
+        "HumanFootprint-cemetery",
+        "HumanFootprint-reservoir",
+        "HumanFootprint-greenhouse",
+        "HumanFootprint-farmland",
+        "HumanFootprint-building-copernicus",
+        "HumanFootprint-forest",
+        "HumanFootprint-harbour",
+        "HumanFootprint-building-residential",
+        "HumanFootprint-building-commercial",
+        "HumanFootprint-grass",
+        "HumanFootprint-quarry",
+        "HumanFootprint-road",
+        "HumanFootprint-salt",
+        "HumanFootprint-building-industrial",
+        "HumanFootprint-vineyard",
+        "HumanFootprint-military",
+        "HumanFootprint-construction-site",
+        "HumanFootprint-orchard",
+        "HumanFootprint-meadow",
+        "HumanFootprint-farmyard",
+        "HumanFootprint-dump-site",
+        "HumanFootprint-railway"
+      ]
+    },
+    {
+      "file": "EnvironmentalValues/LandCover/GLC25-PA-train-landcover.csv",
+      "columns": [
+        "surveyId",
+        "LandCover-1",
+        "LandCover-2",
+        "LandCover-3",
+        "LandCover-4",
+        "LandCover-5",
+        "LandCover-6",
+        "LandCover-7",
+        "LandCover-8",
+        "LandCover-9",
+        "LandCover-10",
+        "LandCover-11",
+        "LandCover-12",
+        "LandCover-13"
+      ]
+    },
+    {
+      "file": "EnvironmentalValues/SoilGrids/GLC25-PA-train-soilgrids.csv",
+      "columns": [
+        "surveyId",
+        "Soilgrid-bdod",
+        "Soilgrid-cec",
+        "Soilgrid-cfvo",
+        "Soilgrid-clay",
+        "Soilgrid-nitrogen",
+        "Soilgrid-phh2o",
+        "Soilgrid-sand",
+        "Soilgrid-silt",
+        "Soilgrid-soc"
+      ]
+    }
+  ],
+  "raw_environment_features": 64,
+  "full_row_counts_and_uniqueness": "Deferred to mounted streaming validation; prefix reads do not prove whole-table integrity",
+  "new_geography": {
+    "training": 25511,
+    "checkpoint_selection": 8420,
+    "calibration": 9211,
+    "assessment": 17163,
+    "assessment_blocks": 28,
+    "minimum_evaluation_training_distance_km": 20.00039197939593,
+    "priority_countries_in_assessment": {
+      "Bulgaria": 0,
+      "Ukraine": 0,
+      "Switzerland": 0
+    },
+    "warning": "Assessment is geographically separated but Denmark-dominated; no fresh priority-country estimate."
+  }
+}

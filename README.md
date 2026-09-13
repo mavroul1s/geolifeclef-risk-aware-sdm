@@ -46,11 +46,12 @@ To create/update a private Kaggle script kernel and start a Phase-1 run directly
 .\scripts\push_kaggle_kernel.ps1 -RunMode sota_spatial_full
 .\scripts\push_kaggle_kernel.ps1 -RunMode sota_single
 .\scripts\push_kaggle_kernel.ps1 -RunMode environmental_challenger
+.\scripts\push_kaggle_kernel.ps1 -RunMode ood_po_expert_v21
 ```
 
 The script keeps credentials in memory only, uploads a Git archive of **HEAD** (commit intended source changes first), and attaches `geolifeclef-2025`. It also supports the explicitly user-authorized ignored `api_key/kaggle_2.json`. Audit/schema/frequency runs are CPU-only; neural modes request a T4.
 
-The current mode is `environmental_challenger`, deployed as a real notebook in the same private Kaggle kernel. One run prepares competition environmental predictors and all PA modalities, trains the previous fusion architecture as a matched reference and two challenger seeds, freezes a calibration-only output policy, reports an untouched spatial/country audit, and produces a test submission CSV. No external weights/data or post-calibration refit is used. Prepared data use memory maps; setup/preparation/training/inference have a 10.5-hour guard. A failed mandatory check stops the job rather than silently reducing the protocol. Details and limitations are in `docs/environmental_challenger_v20.md`.
+The current mode is `ood_po_expert_v21`, in the same private Kaggle kernel and one master notebook. It learns a compact competition PO/environmental expert from deduplicated, publisher-balanced pseudo-surveys, adapts on PA, and conservatively mixes with frozen v20 probabilities. A fresh buffered geographic protocol compares a frozen matched-v20 recipe control and a zero-PO control. It reuses original v20 probabilities for deployment. The private derived input is pinned at `con1los/geolifeclef-v20-frozen-control/1`. Setup, preprocessing, training, inference and tests share a strict 10.5-hour guard. See `docs/ood_po_expert_v21.md` for the preregistration and the limitation that the new assessment validates recipe transfer, not the exact original checkpoint ensemble. The old v20 audit is consumed.
 
 The completed version 20 submission scored **0.21601 public / 0.19360 private**, improving the previous best private score of 0.18900 but remaining below the 0.2302 winner target. Historical `sota_single` version 19 scored 0.19891 / 0.17516. The current master notebook does not rerun historical experiments with Run All. See `results/experiment_registry.json` and `docs/HANDOFF_V20_TO_V21.md` before starting another experiment.
 

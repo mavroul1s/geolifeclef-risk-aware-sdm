@@ -71,7 +71,7 @@ def expand_features(
 
 def _stream_environment(
     path: Path, requested_ids: np.ndarray, columns: list[str], deadline: float,
-    dominant_landcover: bool = False,
+    landcover_stratum: bool = False,
 ) -> tuple[np.ndarray, dict]:
     """Read one PO environmental source and align only requested rows in memory."""
     _check_deadline(deadline)
@@ -82,7 +82,7 @@ def _stream_environment(
     index = pd.Index(requested_ids)
     if not index.is_unique:
         raise ValueError("Requested environmental IDs must be unique")
-    width = 1 if dominant_landcover else len(columns)
+    width = 1 if landcover_stratum else len(columns)
     result = np.full((len(requested_ids), width), np.nan, dtype=np.float32)
     seen = np.zeros(len(requested_ids), dtype=bool)
     all_source_ids = []
@@ -104,12 +104,13 @@ def _stream_environment(
             raise ValueError(f"Duplicate environmental survey IDs in {path.name}")
         values = chunk.loc[relevant, columns].apply(pd.to_numeric, errors="raise").to_numpy(dtype=np.float32)
         values[~np.isfinite(values)] = np.nan
-        if dominant_landcover:
-            available = np.isfinite(values)
-            # Column order breaks ties deterministically; all-missing is -1.
-            dominant = np.where(available, values, -np.inf).argmax(axis=1)
-            dominant[~available.any(axis=1)] = -1
-            values = dominant[:, None].astype(np.float32)
+        if landcover_stratum:
+            # The verified columns are numerical predictors, not documented
+            # class probabilities. Do not interpret their argmax as a habitat.
+            available = np.isfinite(values[:, 0])
+            strata = np.full(len(values), -1, dtype=np.float32)
+            strata[available] = np.floor(values[available, 0] / 5.)
+            values = strata[:, None]
         result[selected] = values
         seen[selected] = True
     _check_deadline(deadline)
@@ -259,7 +260,7 @@ def prepare_po(
     _, _, landcover_path, landcover_columns = landcover_sources[0]
     metadata_ids = np.unique(retained.survey_id.to_numpy(dtype=np.int64))
     landcover, landcover_schema = _stream_environment(
-        landcover_path, metadata_ids, landcover_columns, deadline, dominant_landcover=True,
+        landcover_path, metadata_ids, landcover_columns, deadline, landcover_stratum=True,
     )
     retained["landcover_stratum"] = landcover[pd.Index(metadata_ids).get_indexer(retained.survey_id), 0].astype(np.int16)
     group_columns = ["cell_lat", "cell_lon", "publisher", "landcover_stratum"]
@@ -364,7 +365,7 @@ def prepare_po(
         "cell_degrees": CELL_DEGREES, "representative_coordinates": "fixed cell center",
         "deduplication_key": group_columns + ["speciesId"],
         "environmental_representative": "minimum surveyId after cell/publisher/stratum/species deduplication",
-        "landcover_stratum_rule": "argmax in source column order; first breaks ties; all-missing stratum -1",
+        "landcover_stratum_rule": "floor(first supplied land-cover feature / 5); missing -1; numerical bin, no semantic habitat claim",
         "maximum_nonmissing_geographic_uncertainty_m": 1000,
         "pa_duplicate_exclusion_radius_m": 100,
         "pa_duplicate_exclusion_reference": "all PA train and test coordinates; no species labels read",

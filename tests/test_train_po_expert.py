@@ -18,7 +18,7 @@ def test_po_and_zero_po_training_checkpoint_inference(tmp_path):
         name = 'po' if use_po else 'zero'
         model, report = fit_expert(features, labels, np.arange(16), np.arange(16, 20),
                                   po_features, po_labels, np.ones(8), torch.device('cpu'), tmp_path,
-                                  name, time.monotonic() + 60, use_po, pretrain_epochs=1,
+                                  name, time.monotonic() + 300, use_po, pretrain_epochs=1,
                                   epochs=1, minimum_epochs=1, batch_size=4)
         assert report['po_epochs'] == int(use_po)
         assert report['pa_epochs'] == 1

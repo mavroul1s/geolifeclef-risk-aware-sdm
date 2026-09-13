@@ -13,6 +13,7 @@ dependencies = [
   "pandas==2.2.3",
   "PyYAML==6.0.2",
   "scikit-learn==1.5.2",
+  "scipy>=1.10,<2",
   "torch==2.5.1",
   "tqdm==4.67.1",
   "kaggle==1.6.17",
@@ -34,4 +35,3 @@ addopts = "-q"
 [tool.ruff]
 line-length = 100
 target-version = "py310"
-

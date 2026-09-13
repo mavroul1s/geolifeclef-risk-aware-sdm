@@ -12,7 +12,7 @@ GeoLifeCLEF 2025 competition as a server-side input.
 [CmdletBinding()]
 param(
     [string]$KernelSlug = "",
-    [ValidateSet("audit", "schema", "spatial_audit", "frequency", "frequency_smoke", "landsat_smoke", "landsat_scale", "landsat_full", "sota_spatial_smoke", "sota_spatial_full", "sota_spatial_multiseed", "sota_spatial_multiseed_resume", "official_pa_submit", "sota_single", "environmental_challenger")]
+    [ValidateSet("audit", "schema", "spatial_audit", "frequency", "frequency_smoke", "landsat_smoke", "landsat_scale", "landsat_full", "sota_spatial_smoke", "sota_spatial_full", "sota_spatial_multiseed", "sota_spatial_multiseed_resume", "official_pa_submit", "sota_single", "environmental_challenger", "ood_po_expert_v21")]
     [string]$RunMode = "schema"
 )
 
@@ -48,7 +48,7 @@ function Get-KaggleAuthorization {
 }
 
 $auth = Get-KaggleAuthorization
-$enableGpu = $RunMode -in @("landsat_smoke", "landsat_scale", "landsat_full", "sota_spatial_smoke", "sota_spatial_full", "sota_spatial_multiseed", "sota_spatial_multiseed_resume", "official_pa_submit", "sota_single", "environmental_challenger")
+$enableGpu = $RunMode -in @("landsat_smoke", "landsat_scale", "landsat_full", "sota_spatial_smoke", "sota_spatial_full", "sota_spatial_multiseed", "sota_spatial_multiseed_resume", "official_pa_submit", "sota_single", "environmental_challenger", "ood_po_expert_v21")
 if ([string]::IsNullOrWhiteSpace($KernelSlug)) {
     if ([string]::IsNullOrWhiteSpace($auth.Username)) { throw "When using KAGGLE_API_TOKEN, pass -KernelSlug '<username>/geolifeclef-risk-aware-sdm-phase-1'." }
     $KernelSlug = "$($auth.Username)/geolifeclef-risk-aware-sdm-phase-1"
@@ -59,6 +59,7 @@ try {
     git -c safe.directory="$PWD" archive --format=zip --output=$temporaryArchive HEAD
     if (-not (Test-Path -LiteralPath $temporaryArchive)) { throw "Could not create the tracked-source archive." }
     $encodedSource = [Convert]::ToBase64String([IO.File]::ReadAllBytes($temporaryArchive))
+    $sourceCommit = git rev-parse HEAD
     $notebookText = @"
 import base64
 import io
@@ -73,6 +74,7 @@ SOURCE_ARCHIVE_B64 = '$encodedSource'
 RUN_MODE = '$RunMode'
 os.environ['GLC_PIPELINE_STARTED_AT'] = str(time.time())
 os.environ['PYTHONUNBUFFERED'] = '1'
+os.environ['GLC_SOURCE_COMMIT'] = '$sourceCommit'
 PROJECT = Path('/kaggle/working/geolifeclef-risk-aware-sdm')
 PROJECT.mkdir(parents=True, exist_ok=True)
 with zipfile.ZipFile(io.BytesIO(base64.b64decode(SOURCE_ARCHIVE_B64))) as archive:
@@ -156,18 +158,29 @@ elif RUN_MODE == 'environmental_challenger':
     subprocess.run([sys.executable, '-m', 'pytest'], check=True)
     remaining_seconds = max(1, 10.5 * 3600 - (time.time() - float(os.environ['GLC_PIPELINE_STARTED_AT'])))
     subprocess.run([sys.executable, '-m', 'scripts.run_environmental_challenger', '--data-root', str(data_root), '--epochs', '24', '--batch-size', '128', '--max-hours', '10.5'], check=True, timeout=remaining_seconds)
-subprocess.run([sys.executable, '-m', 'pytest'], check=True)
+elif RUN_MODE == 'ood_po_expert_v21':
+    import json
+    master = json.loads(Path('notebooks/geolifeclef_research_pipeline.ipynb').read_text())
+    for cell in master['cells']:
+        if cell['cell_type'] == 'code':
+            exec(compile(''.join(cell['source']), 'master_notebook', 'exec'))
+if RUN_MODE != 'ood_po_expert_v21':
+    subprocess.run([sys.executable, '-m', 'pytest'], check=True)
 
 print(f'Phase-1 {RUN_MODE} run and synthetic smoke tests completed.')
 "@
     $kernelSources = @()
+    $datasetSources = @()
+    if ($RunMode -eq "ood_po_expert_v21") {
+        $datasetSources = @("con1los/geolifeclef-v20-frozen-control/1")
+    }
     $kernelTitle = "GeoLifeCLEF Risk-Aware SDM - Phase 1"
     $kernelType = "script"
-    if ($RunMode -eq "environmental_challenger") {
+    if ($RunMode -in @("environmental_challenger", "ood_po_expert_v21")) {
         $kernelType = "notebook"
         $notebookDocument = [ordered]@{
             cells = @(
-                [ordered]@{ cell_type = "markdown"; metadata = @{}; source = @("# GeoLifeCLEF 2025: environmental challenger`n", "One competition-only run: matched reference, two candidate seeds, frozen calibration, untouched spatial/country audit and test CSV. No SOTA claim before official evaluation.") },
+                [ordered]@{ cell_type = "markdown"; metadata = @{}; source = @("# GeoLifeCLEF 2025: $RunMode`n", "One competition-only bounded run. See the embedded master notebook and committed preregistration. No SOTA claim before official evaluation.") },
                 [ordered]@{ cell_type = "code"; execution_count = $null; metadata = @{}; outputs = @(); source = @($notebookText) }
             )
             metadata = @{ kernelspec = @{ display_name = "Python 3"; language = "python"; name = "python3" }; language_info = @{ name = "python"; version = "3.12" } }
@@ -195,6 +208,7 @@ print(f'Phase-1 {RUN_MODE} run and synthetic smoke tests completed.')
         enableInternet = $false
         competitionDataSources = @("geolifeclef-2025")
         kernelDataSources = $kernelSources
+        datasetDataSources = $datasetSources
         machineShape = "NvidiaTeslaT4"
     } | ConvertTo-Json -Depth 5 -Compress
     $payloadPath = [IO.Path]::GetTempFileName()
