@@ -108,7 +108,19 @@ main()
 
 
 def _instructions(commit: str, package: Path, tests_passed: int) -> str:
+    downloaded = package / "downloaded_kaggle_v23_output"
     return f"""# Χειροκίνητη εκτέλεση GeoLifeCLEF v23 στο Kaggle
+
+## Offline preflight πριν από upload
+
+Από το repository root τρέξε ακριβώς:
+
+```powershell
+$env:PYTHONPATH='src;.'
+& '.\\.venv\\research\\Scripts\\python.exe' scripts\\preflight_manual_v23.py --package '{package}'
+```
+
+Συνέχισε μόνο αν εμφανιστεί `"PREFLIGHT_OK": true`.
 
 ## Αρχεία και inputs
 
@@ -132,7 +144,7 @@ def _instructions(commit: str, package: Path, tests_passed: int) -> str:
 
 Το τελευταίο output πρέπει να περιέχει `"V23_RUN_COMPLETE": true`, χρόνο μικρότερο από 10,5 ώρες, το `manual_submission_gate`, και `"output_csv": "{OUTPUT_CSV}"`. Πρέπει επίσης να έχουν περάσει τα notebook tests πριν και μετά το pipeline.
 
-Κατέβασε ολόκληρο τον φάκελο `geolifeclef_v23_source/artifacts/diverse_po_v23/` από τα Kaggle outputs. Βεβαιώσου ειδικά ότι περιέχει:
+Κατέβασε ολόκληρο τον φάκελο `geolifeclef_v23_source/artifacts/diverse_po_v23/` από τα Kaggle outputs και αποθήκευσέ τον τοπικά ως `{downloaded}`. Βεβαιώσου ειδικά ότι περιέχει:
 
 - `{OUTPUT_CSV}`
 - `unchanged_v22_submission.csv`
@@ -152,7 +164,7 @@ def _instructions(commit: str, package: Path, tests_passed: int) -> str:
 
 ```powershell
 $env:PYTHONPATH='src;.'
-& '.\\.venv\\research\\Scripts\\python.exe' scripts\\validate_v23_outputs.py 'C:\\path\\to\\downloaded-kaggle-output' --expected-commit {commit} --template artifacts\\v20_frozen\\raw\\GLC25_SAMPLE_SUBMISSION.csv
+& '.\\.venv\\research\\Scripts\\python.exe' scripts\\validate_v23_outputs.py '{downloaded}' --expected-commit {commit} --template artifacts\\v20_frozen\\raw\\GLC25_SAMPLE_SUBMISSION.csv
 ```
 
 Επίσημη submission επιτρέπεται μόνο αν ο validator επιστρέψει ακριβώς `ELIGIBLE_FOR_MANUAL_SUBMISSION`. Σε κάθε `DO_NOT_SUBMIT`, αποτυχία integrity gate, runtime ≥10,5 ώρες, missing output ή αβέβαιο run, μην υποβάλεις τίποτα. Αν περάσει το gate, το μοναδικό CSV που επιτρέπεται να υποβληθεί χειροκίνητα είναι το `{OUTPUT_CSV}`. Κανένα script του πακέτου δεν κάνει upload, run ή submission.
