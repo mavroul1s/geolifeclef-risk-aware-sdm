@@ -1,4 +1,4 @@
-"""Read-only monitoring of an already launched v21; never pushes or submits."""
+"""Read-only monitoring of an already launched v21/v22; never pushes or submits."""
 from __future__ import annotations
 
 import argparse
@@ -17,10 +17,12 @@ OUTPUT_NAMES = ('v21_report.json', 'failure.json', 'split_manifest.json', 'po_ma
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--version', type=int, default=21)
-    parser.add_argument('--output-dir', type=Path, default=Path('artifacts/v21_review'))
+    parser.add_argument('--version', type=int, choices=(21, 22), default=21)
+    parser.add_argument('--output-dir', type=Path)
     parser.add_argument('--max-hours', type=float, default=11.)
     args = parser.parse_args()
+    if args.output_dir is None:
+        args.output_dir = Path(f'artifacts/v{args.version}_review')
     args.output_dir.mkdir(parents=True, exist_ok=True)
     reader = KaggleReader()
     deadline = time.monotonic() + args.max_hours * 3600
@@ -37,9 +39,14 @@ def main():
                 log = sanitize_text(str(output.get('log', '')), reader.secrets)
                 (args.output_dir / 'execution.log').write_text(log, encoding='utf-8')
                 by_name = {entry['fileName']: entry for entry in output['files']}
-                prefix = 'geolifeclef-risk-aware-sdm/artifacts/ood_po_expert_v21/'
+                folder = 'ood_po_expert_v21' if args.version == 21 else 'retained_po_v22'
+                prefix = f'geolifeclef-risk-aware-sdm/artifacts/{folder}/'
+                names = OUTPUT_NAMES if args.version == 21 else (
+                    'v22_report.json', 'failure.json', 'split_manifest.json', 'po_manifests.json',
+                    'frozen_policies.json', 'pre_assessment_freeze.json', 'assessment_per_survey.csv',
+                    'GLC25_PA_submission.csv', 'frozen_v21_provenance.json', 'unchanged_v21_submission.csv')
                 downloaded = []
-                for name in OUTPUT_NAMES:
+                for name in names:
                     entry = by_name.get(prefix + name)
                     if entry is not None:
                         downloaded.append(reader.download_url(entry['url'], args.output_dir / name))
