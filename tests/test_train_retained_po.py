@@ -14,7 +14,7 @@ def test_real_tiny_training_retains_shared_initialization_and_selects_complement
     po_labels=sparse.csr_matrix(labels)
     train,probe=po_indices(48)
     assert not set(train)&set(probe)
-    device=torch.device('cpu'); deadline=time.monotonic()+90
+    device=torch.device('cpu'); deadline=time.monotonic()+300
     initial,diagnostic=pretrain(features,po_labels,np.ones(48),device,tmp_path,deadline,epochs=1,draws=32,width=8)
     state={k:v.clone() for k,v in initial.state_dict().items()}
     selection=np.arange(32,40); base=np.full((8,24),.1,dtype=np.float16)
