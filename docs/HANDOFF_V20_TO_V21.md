@@ -2,6 +2,14 @@
 
 Read this file before taking any action. It is the compact source of truth for a fresh Codex conversation.
 
+## Authorized v22 implementation — 2026-09-14
+
+The user authorized the next experiment after reviewing the v21 diagnosis. See `docs/retained_po_v22.md` and `results/v22_summary.json`. Implementation now includes two new outer folds from former v21 training, complementary checkpoint selection, smaller PO cells with unique-survey environmental means, a global publisher sampling cap, and retained-PO/single-head/zero-PO arms. The master notebook targets v22. No v22 Kaggle run or official submission has started.
+
+Original v21 artifacts have been selectively preserved under ignored `artifacts/v21_frozen_source/`. The compact input `artifacts/v21_frozen_bundle/` passed exact original-rank probability parity; the original CSV is preserved. The first private dataset upload was **not executed**: automatic approval review rejected the process due to its service usage limit. Complete local tests/docs and commit before retrying the authorized private upload and kernel push; do not bypass the approval rejection. Dataset must be private, owned by the authenticated account, ready and attached as `con1los/geolifeclef-v21-frozen-control/1`, alongside the existing v20 bundle.
+
+New assessment preflight: 7,435 + 7,044 surveys, 28 + 36 disjoint blocks, 20km training buffers, 38 Bulgarian surveys and no Ukraine/Switzerland. All models/policies and production predictions must freeze before either fold is scored. `scripts/submit_v22.py` independently validates the source commit, per-survey metrics/intervals, IDs, policies and CSV before its exclusive at-most-once submission. Current official best remains v21 until a permitted v22 official result establishes otherwise.
+
 ## Completed v21 — 2026-09-14
 
 **Current best: v21, 0.21633 public / 0.19426 private.** Exactly one official submission was made after the registered assessment and integrity gate passed: ref `56221053`, status `complete`, request started `2026-09-14T04:02:39.372790+00:00`. Private gain over v20 is **0.00066**; gap to the 0.2302 target is **0.03594**. This is a modest improvement, not SOTA. Do not resubmit or push another run without a new experiment request.

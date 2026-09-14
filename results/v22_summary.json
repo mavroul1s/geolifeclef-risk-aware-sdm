@@ -1,0 +1,65 @@
+{
+  "experiment": "v22_retained_po_crossfit",
+  "status": "local_implementation_testing",
+  "kernel": "con1los/geolifeclef-risk-aware-sdm-phase-1",
+  "kernel_version": null,
+  "source_commit": null,
+  "preregistration": "docs/retained_po_v22.md",
+  "baseline_version": 21,
+  "baseline_official_public_score": 0.21633,
+  "baseline_official_private_score": 0.19426,
+  "target_private_score": 0.2302,
+  "baseline_gap_to_target": 0.03594,
+  "species": 5016,
+  "registered_max_total_hours": 10.5,
+  "total_pipeline_hours": null,
+  "external_data_or_weights": false,
+  "original_v21_outputs_preserved_without_retraining": true,
+  "original_v21_probability_parity_verified": true,
+  "original_v21_submission_sha256": "93c1d03258f87131eaaf3000dc9df01fe66b2dd61771e0fb4642a1a4a98847a1",
+  "v21_private_bundle": {
+    "dataset": "con1los/geolifeclef-v21-frozen-control/1",
+    "local_verified": true,
+    "upload_status": "not_started_auto_approval_service_usage_limit",
+    "contents": "Only five allowlisted original v21 probability/policy/report/submission files, plus provenance and dataset metadata."
+  },
+  "crossfit_preflight": {
+    "assessment_eligible_pool": "former v21 training only",
+    "assignment_seed": 20250922,
+    "adaptive_split_retries": 0,
+    "folds": [
+      {
+        "fold": 0,
+        "training": 43207,
+        "checkpoint_selection": 1579,
+        "calibration": 5141,
+        "assessment": 7435,
+        "assessment_blocks": 28,
+        "minimum_evaluation_distance_km": 20.00039197939593,
+        "assessment_ids_sha256": "8e8a7d16b2e30827c8823048ddcad1efc86ec931af09a712ca5dc31ff9e5ecc5"
+      },
+      {
+        "fold": 1,
+        "training": 36847,
+        "checkpoint_selection": 3040,
+        "calibration": 6793,
+        "assessment": 7044,
+        "assessment_blocks": 36,
+        "minimum_evaluation_distance_km": 20.003144665395155,
+        "assessment_ids_sha256": "9908e302ffdf7561e9f69f43cf369a8bd41cb58f0e3af129650e8a428d6379eb"
+      }
+    ],
+    "assessment_total": 14479,
+    "assessment_blocks": 64,
+    "assessment_denmark": 6074,
+    "priority_country_samples": {"Bulgaria": 38, "Ukraine": 0, "Switzerland": 0},
+    "all_prior_assessments_excluded_from_new_assessment": true,
+    "warning": "Recipe transfer, not fresh evaluation of exact deployed weights; overlapping cross-fit training limits uncertainty interpretation."
+  },
+  "production_split": {"training": 71332, "checkpoint_selection": 2536, "calibration": 4807},
+  "local_tests_passed": null,
+  "official_submission_made": false,
+  "official_public_score": null,
+  "official_private_score": null,
+  "sota_proven": false
+}

@@ -46,12 +46,12 @@ To create/update a private Kaggle script kernel and start a Phase-1 run directly
 .\scripts\push_kaggle_kernel.ps1 -RunMode sota_spatial_full
 .\scripts\push_kaggle_kernel.ps1 -RunMode sota_single
 .\scripts\push_kaggle_kernel.ps1 -RunMode environmental_challenger
-.\scripts\push_kaggle_kernel.ps1 -RunMode ood_po_expert_v21
+.\scripts\push_kaggle_kernel.ps1 -RunMode retained_po_v22
 ```
 
 The script keeps credentials in memory only, uploads a Git archive of **HEAD** (commit intended source changes first), and attaches `geolifeclef-2025`. It also supports the explicitly user-authorized ignored `api_key/kaggle_2.json`. Audit/schema/frequency runs are CPU-only; neural modes request a T4.
 
-The current mode is `ood_po_expert_v21`, in the same private Kaggle kernel and one master notebook. It learns a compact competition PO/environmental expert from deduplicated, publisher-balanced pseudo-surveys, adapts on PA, and conservatively mixes with frozen v20 probabilities. A fresh buffered geographic protocol compares a frozen matched-v20 recipe control and a zero-PO control. It reuses original v20 probabilities for deployment. The private derived input is pinned at `con1los/geolifeclef-v20-frozen-control/1`. Setup, preprocessing, training, inference and tests share a strict 10.5-hour guard. See `docs/ood_po_expert_v21.md` for the preregistration and the limitation that the new assessment validates recipe transfer, not the exact original checkpoint ensemble. The old v20 audit is consumed.
+The current master notebook targets `retained_po_v22`, an authorized experiment continuing v21 in the same private Kaggle kernel. It compares retained-PO, PO-without-retention and zero-PO experts under two new geographic folds, selecting checkpoints by their contribution to the baseline. Production reuses frozen v21 outputs. Both private frozen v20/v21 inputs must be ready before launch; source must be committed. Setup, preparation, training, inference and tests share a strict 10.5-hour guard. See `docs/retained_po_v22.md` and `results/v22_summary.json` for the protocol and actual launch status. Both older assessments are consumed; the new assessment evaluates recipe transfer, not the exact deployed weights on unseen labels.
 
 The completed version 21 submission is the current best: **0.21633 public / 0.19426 private**, a private gain of **0.00066** over v20 (0.21601 / 0.19360). It completed in 1.1325 hours and passed the registered assessment/integrity gate before exactly one official submission. The gap to the 0.2302 winner target is **0.03594**; SOTA is not established. Both v20 and v21 assessments are now consumed. The current master notebook does not rerun historical experiments with Run All. See `results/experiment_registry.json`, `results/v21_summary.json` and `docs/HANDOFF_V20_TO_V21.md` before starting another experiment.
 

@@ -62,6 +62,17 @@
   ],
   "experimental_runs": [
     {
+      "experiment": "v22_retained_po_crossfit",
+      "status": "local_implementation_testing",
+      "kernel_version": null,
+      "source_commit": null,
+      "summary": "results/v22_summary.json",
+      "preregistration": "docs/retained_po_v22.md",
+      "official_submission_made": false,
+      "official_public_score": null,
+      "official_private_score": null
+    },
+    {
       "experiment": "v21_competition_only_ood_po_expert",
       "status": "complete_official_current_best",
       "kernel_version": 21,
