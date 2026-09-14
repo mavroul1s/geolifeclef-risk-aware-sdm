@@ -69,3 +69,25 @@ One Kaggle T4; a hard **10.5-hour total** deadline includes notebook setup, test
 Use `apply_patch` for repository edits, run meaningful local tests and notebook tests, and commit the tested source before the existing API push because it uploads Git HEAD. Keep one master notebook; supporting scripts are allowed. Credentials are read only in memory and never printed, committed, copied into notebook source or exposed through signed URLs.
 
 Save schema and split manifests, PO support/duplicate diagnostics, all checkpoint and calibration histories, frozen evaluation/production policies, assessment predictions and per-survey results, controls, artifact digests, runtime and the submission decision. Update `results/experiment_registry.json`, the v21 summary and handoff with the completed outcome. Monitoring continues until the Kaggle run completes or fails; an executable notebook alone is not evidence of improvement.
+
+## Completed result — appended 2026-09-14, no protocol changes
+
+Version 21 completed in **1.132513 hours** (67 min 57 sec), including setup and both successful notebook test passes. The submission validator and local suite passed **88 tests**. Exactly one official submission, ref `56221053`, scored **0.21633 public / 0.19426 private**. This improves private F1 over v20 by **0.00066**, leaving **0.03594** to the 0.2302 competition target. It does not establish SOTA.
+
+The PO construction read 5,079,797 records. After excluding 416,140 records outside the PA vocabulary and 451,334 within 100m of PA coordinates, 4,212,323 remained; deduplication yielded 2,853,929 presences across 335,592 pseudo-surveys, 145,786 cells and 12 publishers. PO supported 4,308 species, while all 5,016 output species were preserved. Sampling weights reduce local repetition and publisher dominance within cells; they do not equalize global publishers (Pl@ntNet retained approximately 61.9% draw mass).
+
+| New internal assessment | Sample F1 |
+| --- | ---: |
+| Matched frozen-v20 recipe | 0.3646102178 |
+| Calibrated zero-PO mixture | 0.3653365284 |
+| Calibrated PO mixture | 0.3662031171 |
+| Standalone zero-PO expert | 0.2578327137 |
+| Standalone PO expert | 0.2802826240 |
+
+The PO mixture's gain over matched v20 was **0.0015928993**, spatial-block-bootstrap 95% CI **[0.0004665888, 0.0031759479]**. Its gain over the zero-PO mixture was **0.0008665887**, CI **[0.0003444368, 0.0031763624]**. The preregistered gate passed. A local independent recomputation from the saved per-survey CSV reproduced means and intervals; all frozen policy/CSV digests, vocabulary, template order and unchanged-v20 byte parity passed. Final species sets differ from unchanged v20 for 4,171 of 14,784 test surveys.
+
+Calibration chose a uniform 20% PO evaluation mixture and a uniform 10% zero-PO evaluation mixture. The separate production calibration chose **up to 2.5% PO through the PA-distance gate**, versus zero weight for the production zero-PO expert, with top20 throughout. Production calibration was 0.3684556763 versus unchanged v20 0.3683761122. These choices and production predictions were frozen before assessment; the small production gain was not used to retune the evaluated policy.
+
+The assessment has 17,163 surveys in 28 blocks, including 14,659 Danish surveys and zero surveys from Bulgaria, Ukraine or Switzerland. It supports a modest recipe-transfer improvement in this split, without directly measuring fresh performance in the priority countries or the exact deployed checkpoints. PO alone remains weaker than the multimodal control. Unequal PO/zero-PO training exposure does not isolate an architecture effect. Both v20 and v21 assessments are now consumed; neither may be presented as untouched for future decisions.
+
+The report and official submission are linked by source commit `c04358425500da006acc0572b786f23f0fd9f4a2` and submission SHA-256 `93c1d03258f87131eaaf3000dc9df01fe66b2dd61771e0fb4642a1a4a98847a1`. See `results/v21_summary.json` for full compact evidence and `artifacts/v21_review/` for retrieved reports, independent checks and the at-most-once receipt. No second submission or notebook rerun was made.

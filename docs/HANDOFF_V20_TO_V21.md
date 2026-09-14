@@ -1,20 +1,26 @@
-# Handoff: completed v20 and recommended v21
+# Handoff: completed v21, continuing from v20
 
 Read this file before taking any action. It is the compact source of truth for a fresh Codex conversation.
 
-## v21 implementation progress — 2026-09-13
+## Completed v21 — 2026-09-14
 
-**Latest user instruction:** do not check Kaggle status through the API. The user watches the run and will announce completion. The local read-only status monitor was stopped. Wait for that notice; do not restart monitoring or push another run. User-provided partial logs show 85 notebook tests passing and PA feature preparation at 57,600/88,987 rows, with no training/evaluation scores yet. Kaggle exposes two GPU devices, but this code uses the default CUDA device only, without multi-GPU training.
+**Current best: v21, 0.21633 public / 0.19426 private.** Exactly one official submission was made after the registered assessment and integrity gate passed: ref `56221053`, status `complete`, request started `2026-09-14T04:02:39.372790+00:00`. Private gain over v20 is **0.00066**; gap to the 0.2302 target is **0.03594**. This is a modest improvement, not SOTA. Do not resubmit or push another run without a new experiment request.
 
-The v21 source is implemented and 85 local tests pass. See `docs/ood_po_expert_v21.md`, `results/v21_schema_preflight.json` and `results/v21_summary.json`. **Kaggle version 21 is running**, launched from tested commit `c04358425500da006acc0572b786f23f0fd9f4a2`, confirmed 2026-09-13 18:51 UTC. There is no v21 assessment or official score yet. The master notebook runs only v21 through `scripts/launch_ood_po_expert.py` and `scripts/run_ood_po_expert.py`.
+Kaggle version 21 completed from tested source commit `c04358425500da006acc0572b786f23f0fd9f4a2` in **1.132513 hours (67 min 57 sec)** including setup, preparation, training, inference and tests, below the 10.5-hour guard. Both notebook test passes succeeded (85 tests); the final local suite including submission validation passed 88 tests. Kaggle exposed two CUDA devices, but the implementation used the default device only. The user temporarily stopped API monitoring, then announced completion and authorized retrieval and continuation. No duplicate notebook run was launched.
+
+PO processing read 5,079,797 competition records, retained 4,212,323 after vocabulary/coordinate exclusions, deduplicated to 2,853,929 presences and constructed 335,592 sampling-weighted pseudo-surveys. PO covered 4,308 species; all 5,016 PA outputs were retained. The deployment mixture is frozen original v20 plus at most 2.5% PO expert with the registered PA-distance gate, top20. The separately calibrated evaluation mixture used 20% PO uniformly; this difference was frozen before assessment and must remain explicit.
+
+New assessment results: PO mixture **0.3662031171**, matched frozen-v20 recipe **0.3646102178**, zero-PO mixture **0.3653365284**. Gain versus matched v20 is +0.0015928993 with spatial-bootstrap 95% CI [0.0004665888, 0.0031759479]; gain versus zero-PO is +0.0008665887, CI [0.0003444368, 0.0031763624]. All report integrity checks passed. Local review independently recomputed means and intervals from 17,163 saved per-survey scores, checked frozen policies/digests, template order/vocabulary and exact original v20 CSV parity. The final CSV changes species sets on 4,171/14,784 rows. These internal scores are not hidden-test scores.
+
+**Both the old v20 audit and new v21 assessment have now been examined and are consumed.** Do not relabel either untouched or tune against them while claiming a fresh evaluation. No changes were made to the candidate after assessment or leaderboard feedback.
 
 Actual Kaggle reads confirmed the P0 metadata spelling, publisher field and all five PO environmental families (64 raw predictors). Six original v20 calibration/test probability arrays were downloaded selectively and combined without retraining. Their compact verified input is **private and ready**, pinned at `con1los/geolifeclef-v20-frozen-control/1` on the same authenticated account. Original top20 ties are preserved by retaining the exact original submission CSV; reconstructed float32 rank scores match every row exactly.
 
 The old v20 checkpoints cannot provide an untouched assessment on a rehashed subset. A newly trained, subsequently frozen control uses the unchanged v20 recipe on new buffered training rows; the original probabilities remain the production baseline. New assessment: 17,163 surveys in 28 blocks, at least 20 km from the new PA training. It is Denmark-dominated and contains no Bulgaria/Ukraine/Switzerland surveys. This limits evidence about the intended priority countries. The separate production fit must never influence the outer candidate or policy.
 
-Next: monitor the already launched version 21 to completion; **do not push a duplicate run**. `scripts/submit_v21.py` is the separate tested validator: it recomputes the saved v21 assessment/integrity gate and checks runtime, both notebook test passes, exact version/source commit, vocabulary/template/hash checks and an exclusive at-most-once receipt. Invoke with `python -m scripts.submit_v21 validate --source-commit c04358425500da006acc0572b786f23f0fd9f4a2`; use action `submit` only after it passes, then action `scores`. No submission if any gate fails; never retry a recorded uncertain attempt. Record actual public/private scores only if a permitted submission is made.
+Evidence: `results/v21_summary.json`, `results/experiment_registry.json`, and ignored `artifacts/v21_review/` containing the original report, per-survey assessment, manifests, frozen policies, independent validation, CSV, exclusive submission receipt and official scores. Submission SHA-256: `93c1d03258f87131eaaf3000dc9df01fe66b2dd61771e0fb4642a1a4a98847a1`. Report SHA-256: `60858bca1e00cbc7fcd52641785975cb6c43a950e6dbd410b2f7e02a55effce2`. Large v21 checkpoints/probabilities remain in the existing kernel version 21 under `geolifeclef-risk-aware-sdm/artifacts/ood_po_expert_v21/`. The guarded reader only accepts the current requested version, so preserve needed artifacts before any future version advance; do not silently retrieve a newer output as v20/v21.
 
-## Current state
+## Historical v20 handoff (retained context; current result above)
 
 - Repository: `C:\Users\nickb\Documents\projects\geolifeclef-risk-aware-sdm`
 - Branch: `master`; v20 source commit `1a2528b`; submission validation commit `f6f98f0`.
@@ -37,7 +43,7 @@ v20 completed in 0.8682 hours. Its internal untouched audit selected a frozen 75
 - Italy/Switzerland aggregate: 0.18713 versus 0.18150.
 - Single challenger seed: 0.30724, below the reference. The architectural claim alone is therefore not supported.
 
-Official result: **0.21601 public / 0.19360 private**. This beats v18 (0.21594 / 0.18900) and is the current repository best, but remains 0.03660 below the 0.2302 winning private target. v19 regressed to 0.19891 / 0.17516.
+Official v20 result: **0.21601 public / 0.19360 private**. This beat v18 (0.21594 / 0.18900) and was the repository best before v21. Its gap to the 0.2302 winning private target was 0.03660. v19 regressed to 0.19891 / 0.17516.
 
 Do not compare internal F1 numerically to hidden-test F1 as though they were the same split. The direction of v20's audit gain transferred, but the official gain was only +0.00460. The v20 audit has now been examined and is no longer an untouched set for v21 decisions.
 
@@ -62,7 +68,7 @@ The Git repository intentionally does not contain large checkpoints and probabil
 5. v20 uses 32x32 Sentinel patches and random initialization. Larger imagery or heavier models must be justified under the T4/10.5-hour budget.
 6. The 0.2302 target belongs to the finished 2025 competition. Do not call a method universal SOTA, and do not promise that it will beat the target.
 
-## Recommended next experiment: v21 competition-only OOD/PO expert
+## Original v21 recommendation (now implemented and completed)
 
 The next step should target the hidden geographic shift rather than enlarge the same PA model again. Build one bounded v21 notebook around a competition-only PO expert and a conservative mixture with the frozen v20 predictor.
 
