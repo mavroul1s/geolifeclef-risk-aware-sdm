@@ -1,6 +1,6 @@
 {
   "experiment": "v22_retained_po_crossfit",
-  "status": "private_input_upload_in_progress",
+  "status": "ready_to_launch",
   "kernel": "con1los/geolifeclef-risk-aware-sdm-phase-1",
   "kernel_version": null,
   "source_commit": null,
@@ -21,7 +21,8 @@
   "v21_private_bundle": {
     "dataset": "con1los/geolifeclef-v21-frozen-control/1",
     "local_verified": true,
-    "upload_status": "upload_in_progress",
+    "upload_status": "ready",
+    "dataset_version": 1,
     "upload_bytes": 223699506,
     "local_same_credential_owner_verified": true,
     "explicit_user_upload_approval_received": true,
@@ -62,6 +63,7 @@
   },
   "production_split": {"training": 71332, "checkpoint_selection": 2536, "calibration": 4807},
   "local_tests_passed": 101,
+  "latest_full_test_pass_confirmed": true,
   "official_submission_made": false,
   "official_public_score": null,
   "official_private_score": null,
