@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-13",
+  "updated_at": "2026-09-14",
   "metric": "Kaggle sample-averaged F1",
   "competition": "geolifeclef-2025",
   "kernel": "con1los/geolifeclef-risk-aware-sdm-phase-1",
@@ -35,22 +35,48 @@
       "private_score": 0.19360,
       "repository_commit": "1a2528b",
       "submission_validation_commit": "f6f98f0",
-      "status": "current_best",
+      "status": "superseded_best",
       "private_gain_over_v18_absolute": 0.00460,
       "private_gain_over_v18_relative": 0.02434,
       "gap_to_winner_private": 0.03660
+    },
+    {
+      "version": 21,
+      "description": "Frozen v20 plus competition-only PO expert, distance gate up to 2.5%, top-20",
+      "submitted_at_utc": "2026-09-14T04:02:39.372790+00:00",
+      "submission_ref": "56221053",
+      "public_score": 0.21633,
+      "private_score": 0.19426,
+      "repository_commit": "c04358425500da006acc0572b786f23f0fd9f4a2",
+      "submission_validation_commit": "6b72b55",
+      "submission_sha256": "93c1d03258f87131eaaf3000dc9df01fe66b2dd61771e0fb4642a1a4a98847a1",
+      "status": "current_best",
+      "kaggle_submission_status": "complete",
+      "official_submission_count": 1,
+      "public_gain_over_v20_absolute": 0.00032,
+      "private_gain_over_v20_absolute": 0.00066,
+      "gap_to_winner_private": 0.03594,
+      "pipeline_hours": 1.1325130742788314,
+      "registered_assessment_and_integrity_gate_passed": true
     }
   ],
   "experimental_runs": [
     {
       "experiment": "v21_competition_only_ood_po_expert",
-      "status": "kaggle_running",
+      "status": "complete_official_current_best",
       "kernel_version": 21,
       "source_commit": "c04358425500da006acc0572b786f23f0fd9f4a2",
       "summary": "results/v21_summary.json",
       "preregistration": "docs/ood_po_expert_v21.md",
-      "official_submission_made": false,
-      "official_private_score": null
+      "official_submission_made": true,
+      "official_public_score": 0.21633,
+      "official_private_score": 0.19426,
+      "assessment_po_sample_f1": 0.3662031171140497,
+      "assessment_frozen_v20_recipe_sample_f1": 0.3646102178118898,
+      "assessment_zero_po_sample_f1": 0.36533652840496017,
+      "assessment_gain_over_v20_spatial_ci95": [0.0004665887959188459, 0.0031759479114240306],
+      "assessment_now_consumed": true,
+      "assessment_warning": "Internal matched-recipe assessment, dominated by Denmark with no Bulgaria/Ukraine/Switzerland; not a hidden-test estimate."
     }
   ],
   "historical_internal_results": {

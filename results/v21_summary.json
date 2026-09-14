@@ -1,6 +1,6 @@
 {
   "experiment": "v21_competition_only_ood_po_expert",
-  "status": "complete_validated_submission_in_progress",
+  "status": "complete_official_current_best",
   "status_monitoring": "User announced completion and authorized results retrieval; completed version 21 independently validated.",
   "latest_user_supplied_log": {
     "initial_notebook_tests_passed": 85,
@@ -98,12 +98,20 @@
     "pre_assessment_freeze_sha256": "cd406c6a7a55fbc91ffe578fc27c3db620f16afd2e12a0e7df8b56ce8fb64a88",
     "local_evidence_directory": "artifacts/v21_review"
   },
-  "official_submission_made": false,
-  "official_public_score": null,
-  "official_private_score": null,
-  "current_best_private_score": 0.1936,
+  "official_submission_made": true,
+  "official_submission_count": 1,
+  "official_submission_ref": "56221053",
+  "official_submission_status": "complete",
+  "official_submission_started_at_utc": "2026-09-14T04:02:39.372790+00:00",
+  "official_submission_message": "v21 PO OOD expert c04358425500: frozen gated evaluation",
+  "official_public_score": 0.21633,
+  "official_private_score": 0.19426,
+  "official_public_gain_over_v20": 0.00032,
+  "official_private_gain_over_v20": 0.00066,
+  "prior_best_private_score": 0.1936,
+  "current_best_private_score": 0.19426,
   "competition_winner_private_target": 0.2302,
-  "current_best_gap_to_target": 0.0366,
+  "current_best_gap_to_target": 0.03594,
   "sota_proven": false,
   "external_data_or_weights": false
 }
