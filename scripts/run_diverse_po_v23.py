@@ -19,7 +19,6 @@ import torch
 
 from scripts.ood_po_protocol import (
     assessment_metrics,
-    mix_probabilities,
     nearest_training_support,
     paired_block_bootstrap,
     sample_f1,
@@ -29,7 +28,7 @@ from scripts.prepare_environmental_challenger import prepare, spatial_partitions
 from scripts.prepare_po_expert import coordinate_features, expand_features, prepare_po
 from scripts.run_ood_po_expert import matched_control, normalized_environment, save_json
 from scripts.run_retained_po import fit_v21_control
-from scripts.stage_frozen_v20 import sha256_file, verify_bundle, verify_original_ties
+from scripts.stage_frozen_v20 import sha256_file, verify_bundle
 from scripts.stage_frozen_v21 import verify_v21
 from scripts.stage_frozen_v22 import OFFICIAL_CSV_SHA256, reconstruct, verify_v22
 from scripts.train_diverse_po_v23 import fit_adaptation, predict, pretrain
@@ -41,7 +40,6 @@ from scripts.v23_protocol import (
     LARGE_SEED,
     V23_SEEDS,
     crossfit_partitions,
-    gate_values,
     mix,
     ood_components,
     per_survey_f1,
@@ -240,6 +238,9 @@ def fit_v23_models(rows, test_rows, labels, split, distance, pool, base_selectio
             np.save(output / f"{family}_{role}.npy", ensemble, allow_pickle=False)
             np.save(output / f"{family}_{role}_disagreement.npy", disagreement, allow_pickle=False)
         predictions[family]["seed_count"] = len(predictions[family]["selection"])
+    if not deployment:
+        for seed, values in zip(V23_SEEDS, predictions["single_head_ensemble"]["target"]):
+            np.save(output / f"single_head_seed_{seed}_target.npy", values, allow_pickle=False)
     policies = {}
     calibration_targets = np.asarray(labels[indices[2]])
     for family in FAMILIES:
@@ -260,14 +261,21 @@ def deployment_partitions(rows):
     original = spatial_partitions(rows)
     v22 = __import__("scripts.run_retained_po", fromlist=["deployment_partitions"]).deployment_partitions(rows)
     eligible = np.flatnonzero(v22 == 2)
-    bucket = hashed = np.asarray([
-        int.from_bytes(hashlib.sha256(f"20251223:{block}".encode()).digest()[:8], "little") % 100
-        for block in spatial_block_ids(rows.iloc[eligible])
-    ])
+    blocks = spatial_block_ids(rows.iloc[eligible])
+    unique, counts = np.unique(blocks, return_counts=True)
+    order = sorted(range(len(unique)), key=lambda index: (-counts[index],
+        hashlib.sha256(f"20251223:{unique[index]}".encode()).digest()))
+    selection_blocks, totals = set(), [0, 0]
+    for index in order:
+        side = 0 if totals[0] <= totals[1] else 1
+        if side == 0:
+            selection_blocks.add(unique[index])
+        totals[side] += int(counts[index])
     split = np.full(len(rows), -1, dtype=np.int8)
     split[original == 0] = 0
-    split[eligible[hashed < 50]] = 1
-    split[eligible[hashed >= 50]] = 2
+    selected = np.isin(blocks, list(selection_blocks))
+    split[eligible[selected]] = 1
+    split[eligible[~selected]] = 2
     if min((split == 1).sum(), (split == 2).sum()) < 100:
         raise ValueError("Insufficient fixed v23 deployment development split")
     return split
@@ -308,7 +316,8 @@ def submission_bytes(probabilities, species, test_ids, template_ids, policy, com
     return stream.getvalue().encode("utf-8")
 
 
-def _metrics(targets, probabilities, policy, components, countries, distances, training_counts):
+def _metrics(targets, probabilities, policy, components, countries, distances, training_counts,
+             *, baseline=None, species_ids=None):
     scores = per_survey_f1(targets, probabilities, policy, components)
     counts = policy_counts(policy, components)
     report = {
@@ -317,6 +326,7 @@ def _metrics(targets, probabilities, policy, components, countries, distances, t
                         "prediction_mean": float(counts.mean()),
                         "target_mean": float(np.asarray(targets).sum(axis=1).mean())},
         "by_country": {}, "by_pa_distance": {}, "species_recall": {}, "used_for_selection": False,
+        "ood_component_means": {name: float(np.mean(values)) for name, values in components.items()},
     }
     for country in np.unique(countries):
         mask = countries == country
@@ -339,6 +349,42 @@ def _metrics(targets, probabilities, policy, components, countries, distances, t
         report["species_recall"][name] = {"species": int(species_mask.sum()),
             "target_positives": positives, "true_positives": hits,
             "micro_recall": hits / positives if positives else None}
+    if baseline is not None and species_ids is not None:
+        base_indices, _ = top_rank(baseline, maximum=20)
+        added, removed, added_hits, removed_hits = 0, 0, 0, 0
+        species_delta = np.zeros(targets.shape[1], dtype=np.int64)
+        prediction_delta = np.zeros(targets.shape[1], dtype=np.int64)
+        for row, count in enumerate(counts):
+            old = set(map(int, base_indices[row, :20]))
+            new = set(map(int, max_indices[row, :count]))
+            add, drop = new - old, old - new
+            added += len(add)
+            removed += len(drop)
+            for index in add:
+                prediction_delta[index] += 1
+                if targets[row, index]:
+                    added_hits += 1
+                    species_delta[index] += 1
+            for index in drop:
+                prediction_delta[index] -= 1
+                if targets[row, index]:
+                    removed_hits += 1
+                    species_delta[index] -= 1
+        order_gain = np.argsort(-species_delta, kind="stable")[:20]
+        order_loss = np.argsort(species_delta, kind="stable")[:20]
+        report["changes_vs_frozen_v22_top20"] = {
+            "added_predictions": added, "removed_predictions": removed,
+            "added_true_presences": added_hits, "removed_true_presences": removed_hits,
+            "net_true_presence_change": added_hits - removed_hits,
+            "top_species_true_presence_gains": [
+                {"species_id": int(species_ids[index]), "net_true_presence_change": int(species_delta[index]),
+                 "net_prediction_count_change": int(prediction_delta[index])} for index in order_gain
+                if species_delta[index] > 0],
+            "top_species_true_presence_losses": [
+                {"species_id": int(species_ids[index]), "net_true_presence_change": int(species_delta[index]),
+                 "net_prediction_count_change": int(prediction_delta[index])} for index in order_loss
+                if species_delta[index] < 0],
+        }
     return report, scores
 
 
@@ -435,11 +481,14 @@ def run(args):
                                                  template, primary_policy,
                                                  components["single_head_ensemble"]["target"]))
     submission = _validate_submission(destination, template, species)
+    checkpoint_hashes = {path.relative_to(output).as_posix(): sha256_file(path)
+                         for path in sorted(output.rglob("*.pt"))}
     freeze = {"policies_sha256": sha256_file(output / "frozen_policies.json"),
               "submission_sha256": sha256_file(destination),
               "unchanged_v22_sha256": sha256_file(output / "unchanged_v22_submission.csv"),
               "assessment_reporting_started": False,
-              "all_models_and_policies_frozen": True}
+              "all_models_and_policies_frozen": True,
+              "checkpoint_sha256": checkpoint_hashes}
     save_json(output / "pre_assessment_freeze.json", freeze)
     frames, fold_metrics, fold_scores = [], {}, []
     for fold, (split, support, manifest) in enumerate(folds):
@@ -450,9 +499,19 @@ def run(args):
         countries = rows.country.fillna("unknown").to_numpy(dtype=str)[indices]
         counts = np.asarray(labels[np.flatnonzero(split == 0)]).sum(axis=0)
         base = np.load(directory / "matched_v22" / "frozen_v22_assessment.npy", mmap_mode="r")
-        scores = {"frozen_v22": sample_f1(targets, base)}
-        metrics = {"frozen_v22": assessment_metrics(targets, base, countries,
-                   support["distance_km"][indices], counts)[0]}
+        frozen_v20 = np.load(directory / "matched_v22" / "frozen_control_assessment.npy", mmap_mode="r")
+        frozen_v21 = np.load(directory / "matched_v22" / "frozen_v21_assessment.npy", mmap_mode="r")
+        scores = {"frozen_v20": sample_f1(targets, frozen_v20),
+                  "frozen_v21": sample_f1(targets, frozen_v21),
+                  "frozen_v22": sample_f1(targets, base)}
+        metrics = {
+            "frozen_v20": assessment_metrics(targets, frozen_v20, countries,
+                support["distance_km"][indices], counts)[0],
+            "frozen_v21": assessment_metrics(targets, frozen_v21, countries,
+                support["distance_km"][indices], counts)[0],
+            "frozen_v22": assessment_metrics(targets, base, countries,
+                support["distance_km"][indices], counts)[0],
+        }
         for family in FAMILIES:
             policy = policies[name][family]["selected"]
             family_components = component_paths[name][family]["target"]
@@ -460,8 +519,17 @@ def run(args):
                               family_components, policy)
             metrics[family], scores[family] = _metrics(
                 targets, probability, policy, family_components, countries,
-                support["distance_km"][indices], counts,
+                support["distance_km"][indices], counts, baseline=base, species_ids=species,
             )
+        metrics["single_head_ensemble"]["individual_seed_sample_f1"] = {}
+        primary_policy = policies[name]["single_head_ensemble"]["selected"]
+        primary_components = component_paths[name]["single_head_ensemble"]["target"]
+        for seed in V23_SEEDS:
+            seed_path = directory / f"single_head_seed_{seed}_target.npy"
+            seed_probability = mix(base, np.load(seed_path, mmap_mode="r"),
+                                   primary_components, primary_policy)
+            metrics["single_head_ensemble"]["individual_seed_sample_f1"][str(seed)] = float(
+                per_survey_f1(targets, seed_probability, primary_policy, primary_components).mean())
         fold_metrics[name] = metrics
         fold_scores.append({key: float(value.mean()) for key, value in scores.items()})
         frames.append(pd.DataFrame({"surveyId": rows.surveyId.to_numpy()[indices], "fold": fold,
@@ -475,7 +543,7 @@ def run(args):
                    frame[name].to_numpy(), frame.block.to_numpy())
                    for name in ("frozen_v22", "retained_po", "zero_po", "large_single_head")}
     assessment = {"sample_f1": {name: float(frame[name].mean()) for name in
-                  ("frozen_v22", *FAMILIES)}, "fold_sample_f1": fold_scores,
+                  ("frozen_v20", "frozen_v21", "frozen_v22", *FAMILIES)}, "fold_sample_f1": fold_scores,
                   "metrics": fold_metrics, "comparisons": comparisons,
                   "surveys": len(frame), "blocks": int(frame.block.nunique()),
                   "used_for_selection": False, "now_consumed": True,
@@ -490,8 +558,12 @@ def run(args):
         "exact_unchanged_v22": sha256_file(output / "unchanged_v22_submission.csv") == OFFICIAL_CSV_SHA256,
         "frozen_v22_parity": v22_proof["parity"]["exact_rank_probability_parity"] is True,
         "policies_unchanged": sha256_file(output / "frozen_policies.json") == freeze["policies_sha256"],
+        "checkpoint_hashes_unchanged": all(
+            (output / name).is_file() and sha256_file(output / name) == digest
+            for name, digest in freeze["checkpoint_sha256"].items()),
         "submission_unchanged_after_freeze": sha256_file(destination) == freeze["submission_sha256"],
         "competition_only": True, "test_labels_unused": True, "no_post_assessment_training": True,
+        "notebook_tests_before_passed": os.environ.get("GLC_TESTS_BEFORE") == "1",
         "single_cuda_device_used": device.index == 0, "registered_runtime": time.time() - started < MAX_HOURS * 3600,
     }
     gate = submission_gate(assessment, integrity, policies)
@@ -514,6 +586,10 @@ def run(args):
                       "manual_submission_gate": gate, "hours": report["total_pipeline_hours"]}), flush=True)
     if time.time() - started >= MAX_HOURS * 3600:
         raise TimeoutError("v23 exceeded the 10.5-hour total guard")
+    del labels, old_pool, new_pool
+    gc.collect()
+    if cache.resolve().is_relative_to((Path.cwd() / "data" / "processed").resolve()):
+        shutil.rmtree(cache)
     return report
 
 

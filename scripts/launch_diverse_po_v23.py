@@ -55,6 +55,11 @@ def main():
     report["notebook_tests_after_passed"] = True
     report["total_pipeline_hours"] = (time.time() - started) / 3600
     report["integrity"]["registered_runtime"] = report["total_pipeline_hours"] < 10.5
+    report["integrity"]["notebook_tests_before_and_after_passed"] = (
+        report.get("notebook_tests_before_passed") is True)
+    from scripts.v23_protocol import submission_gate
+    report["submission_gate"] = submission_gate(
+        report["assessment"], report["integrity"], report["selected_policies"])
     report_path.write_text(json.dumps(report, indent=2, allow_nan=False) + "\n", encoding="utf-8")
     remaining()
     print(json.dumps({"V23_RUN_COMPLETE": True, "hours": report["total_pipeline_hours"],

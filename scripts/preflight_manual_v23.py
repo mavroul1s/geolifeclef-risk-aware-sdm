@@ -12,6 +12,7 @@ from pathlib import Path, PurePosixPath
 import re
 import subprocess
 import tarfile
+import zipfile
 
 from scripts.stage_frozen_v20 import sha256_file
 from scripts.stage_frozen_v22 import DATASET_SLUG, verify_v22
@@ -131,6 +132,12 @@ def validate(args) -> dict:
     zip_path = package / "frozen_v22_dataset.zip"
     if sha256_file(zip_path) != manifest["dataset_zip"]["sha256"]:
         raise ValueError("Frozen-v22 ZIP hash mismatch")
+    with zipfile.ZipFile(zip_path) as bundle_zip:
+        if set(bundle_zip.namelist()) != DATASET_FILES:
+            raise ValueError("Frozen-v22 ZIP allowlist mismatch")
+        for name in bundle_zip.namelist():
+            if hashlib.sha256(bundle_zip.read(name)).hexdigest() != sha256_file(dataset / name):
+                raise ValueError(f"Frozen-v22 ZIP content mismatch: {name}")
     sums = {}
     for line in (package / "SHA256SUMS.txt").read_text(encoding="utf-8").splitlines():
         digest, name = line.split("  ", 1)

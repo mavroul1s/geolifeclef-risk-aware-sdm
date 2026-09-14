@@ -60,6 +60,10 @@ def validate(root: Path, expected_commit: str, template: Path | None) -> tuple[s
     freeze = json.loads((output_dir / "pre_assessment_freeze.json").read_text(encoding="utf-8"))
     checks["frozen_policies"] = sha256_file(output_dir / "frozen_policies.json") == freeze.get("policies_sha256")
     checks["frozen_csv"] = sha256_file(output_dir / EXPECTED_OUTPUT) == freeze.get("submission_sha256")
+    checkpoint_hashes = freeze.get("checkpoint_sha256", {})
+    checks["frozen_checkpoints"] = bool(checkpoint_hashes) and all(
+        (output_dir / name).is_file() and sha256_file(output_dir / name) == digest
+        for name, digest in checkpoint_hashes.items())
     checks["unchanged_v22"] = (sha256_file(output_dir / "unchanged_v22_submission.csv") ==
                                 freeze.get("unchanged_v22_sha256") == OFFICIAL_CSV_SHA256)
     integrity = report.get("integrity", {})
@@ -101,6 +105,10 @@ def validate(root: Path, expected_commit: str, template: Path | None) -> tuple[s
         "primary_beats_retained_po": comparisons.get("retained_po", {}).get("mean_difference", -1) > 0,
         "primary_beats_v22_each_fold": len(folds) == 2 and all(item["single_head_ensemble"] > item["frozen_v22"] for item in folds),
         "nonzero_production_weight": policy.get("alpha", 0) > 0,
+        "nonzero_primary_weight_each_fold": all(
+            report.get("selected_policies", {}).get(f"fold_{fold}", {})
+            .get("single_head_ensemble", {}).get("selected", {}).get("alpha", 0) > 0
+            for fold in (0, 1)),
         "all_integrity_checks_pass": checks["integrity"],
     }
     checks["csv_differs_from_v22"] = sha256_file(csv_path) != OFFICIAL_CSV_SHA256

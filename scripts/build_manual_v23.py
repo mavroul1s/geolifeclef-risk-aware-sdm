@@ -10,7 +10,6 @@ import json
 from pathlib import Path
 import subprocess
 import tarfile
-import textwrap
 import zipfile
 
 from scripts.stage_frozen_v20 import sha256_file
@@ -114,7 +113,7 @@ def _instructions(commit: str, package: Path, tests_passed: int) -> str:
 ## Αρχεία και inputs
 
 1. Ανέβασε το notebook `{NOTEBOOK_NAME}` από τον φάκελο `{package}`.
-2. Δημιούργησε **Private Dataset** από το περιεχόμενο του φακέλου `frozen_v22_dataset/` ή από το `{DATASET_ZIP}`. Χρησιμοποίησε ακριβώς τίτλο `GeoLifeCLEF frozen v22 control` και slug `{DATASET_SLUG}`. Η πρώτη έκδοση πρέπει να είναι `{DATASET_SLUG}/1`.
+2. Δημιούργησε **Private Dataset** από τα μεμονωμένα αρχεία μέσα στον φάκελο `frozen_v22_dataset/`. Το `{DATASET_ZIP}` είναι μόνο αντίγραφο μεταφοράς· αν το χρησιμοποιήσεις, αποσυμπίεσέ το πρώτα και ανέβασε τα αρχεία του, όχι το ZIP ως μοναδικό αρχείο. Χρησιμοποίησε ακριβώς τίτλο `GeoLifeCLEF frozen v22 control` και slug `{DATASET_SLUG}`. Η πρώτη έκδοση πρέπει να είναι `{DATASET_SLUG}/1`.
 3. Σύνδεσε ακριβώς αυτά τα υπάρχοντα private inputs στις συγκεκριμένες εκδόσεις:
    - `con1los/geolifeclef-v20-frozen-control/1`
    - `con1los/geolifeclef-v21-frozen-control/1`

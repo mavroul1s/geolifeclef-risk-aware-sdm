@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import copy
+import hashlib
 import json
 import time
 from pathlib import Path
@@ -234,7 +235,9 @@ def fit_adaptation(pretrained: DeepPOExpert | None, arm: str, pa_features, label
     model.load_state_dict(torch.load(checkpoint, map_location=device, weights_only=True)["state_dict"])
     probe = po_probe(model, po_features, po_labels, po_test, device, deadline) if arm != "zero_po" else None
     (output / f"{arm}_seed_{seed}_history.json").write_text(json.dumps(history, indent=2) + "\n")
+    digest = hashlib.sha256(checkpoint.read_bytes()).hexdigest()
     return model, {"arm": arm, "seed": seed, "width": width, "blocks": blocks,
                    "fixed_checkpoint_epochs": list(checkpoint_epochs), "selected_epoch": best_epoch,
                    "selection_complement_f1": best_score, "po_probe_loss_after_adaptation": probe,
-                   "history": history, "early_stopping_used": False, "learning_rate": 2e-4}
+                   "history": history, "early_stopping_used": False, "learning_rate": 2e-4,
+                   "checkpoint_sha256": digest}
