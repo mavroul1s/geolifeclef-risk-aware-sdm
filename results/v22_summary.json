@@ -1,9 +1,10 @@
 {
   "experiment": "v22_retained_po_crossfit",
-  "status": "ready_to_launch",
+  "status": "kaggle_running",
   "kernel": "con1los/geolifeclef-risk-aware-sdm-phase-1",
-  "kernel_version": null,
-  "source_commit": null,
+  "kernel_version": 22,
+  "source_commit": "519ae6c",
+  "launch_confirmed_at_utc": "2026-09-14T09:59:00Z",
   "tested_repository_commit": "1ba5cae",
   "preregistration": "docs/retained_po_v22.md",
   "baseline_version": 21,

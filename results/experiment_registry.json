@@ -63,9 +63,9 @@
   "experimental_runs": [
     {
       "experiment": "v22_retained_po_crossfit",
-      "status": "ready_to_launch",
-      "kernel_version": null,
-      "source_commit": null,
+      "status": "kaggle_running",
+      "kernel_version": 22,
+      "source_commit": "519ae6c",
       "summary": "results/v22_summary.json",
       "preregistration": "docs/retained_po_v22.md",
       "official_submission_made": false,
