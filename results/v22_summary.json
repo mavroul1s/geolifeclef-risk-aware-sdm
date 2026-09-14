@@ -1,6 +1,6 @@
 {
   "experiment": "v22_retained_po_crossfit",
-  "status": "local_implementation_testing",
+  "status": "implemented_tests_passed_pending_private_input",
   "kernel": "con1los/geolifeclef-risk-aware-sdm-phase-1",
   "kernel_version": null,
   "source_commit": null,
@@ -57,7 +57,7 @@
     "warning": "Recipe transfer, not fresh evaluation of exact deployed weights; overlapping cross-fit training limits uncertainty interpretation."
   },
   "production_split": {"training": 71332, "checkpoint_selection": 2536, "calibration": 4807},
-  "local_tests_passed": null,
+  "local_tests_passed": 101,
   "official_submission_made": false,
   "official_public_score": null,
   "official_private_score": null,
