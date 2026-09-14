@@ -234,17 +234,13 @@ print(f'Phase-1 {RUN_MODE} run and synthetic smoke tests completed.')
             -o $responsePath `
             -w "%{http_code}"
         if ($LASTEXITCODE -ne 0) {
-            $serverDetail = "No response detail was returned."
-            if ((Test-Path -LiteralPath $responsePath) -and ((Get-Item -LiteralPath $responsePath).Length -gt 0)) {
-                $serverDetail = (Get-Content -LiteralPath $responsePath -Raw).Trim()
-                # A Kaggle error must never cause an accidental credential echo.
-                $serverDetail = [regex]::Replace($serverDetail, '(?i)(token|key|password|authorization)\s*[:=]\s*[^,}\s]+', '$1=[redacted]')
-            }
-            throw "Kaggle kernel push failed (HTTP $httpCode): $serverDetail"
+            # Server bodies can contain signed URLs; never emit them, even on
+            # an error path. Inspect status safely before retrying any push.
+            throw "Kaggle kernel push failed (HTTP $httpCode); server details withheld. Check status before retrying."
         }
         $result = Get-Content -LiteralPath $responsePath -Raw | ConvertFrom-Json
         if (-not [string]::IsNullOrWhiteSpace($result.error)) {
-            throw "Kaggle rejected the kernel push: $($result.error)"
+            throw "Kaggle rejected the kernel push; server details withheld."
         }
         if ([int]$result.versionNumber -le 0 -and [string]::IsNullOrWhiteSpace($result.url)) {
             throw "Kaggle did not return a kernel version or URL; no run was confirmed."

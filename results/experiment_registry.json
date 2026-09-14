@@ -63,7 +63,7 @@
   "experimental_runs": [
     {
       "experiment": "v22_retained_po_crossfit",
-      "status": "ready_waiting_private_upload_approval",
+      "status": "private_input_upload_in_progress",
       "kernel_version": null,
       "source_commit": null,
       "summary": "results/v22_summary.json",

@@ -1,6 +1,6 @@
 {
   "experiment": "v22_retained_po_crossfit",
-  "status": "ready_waiting_private_upload_approval",
+  "status": "private_input_upload_in_progress",
   "kernel": "con1los/geolifeclef-risk-aware-sdm-phase-1",
   "kernel_version": null,
   "source_commit": null,
@@ -21,10 +21,10 @@
   "v21_private_bundle": {
     "dataset": "con1los/geolifeclef-v21-frozen-control/1",
     "local_verified": true,
-    "upload_status": "not_started_auto_review_requires_explicit_destination_approval",
+    "upload_status": "upload_in_progress",
     "upload_bytes": 223699506,
     "local_same_credential_owner_verified": true,
-    "approval_needed": "Explicit approval to upload these five competition-derived v21 artifacts privately to con1los/geolifeclef-v21-frozen-control for the authorized v22 run.",
+    "explicit_user_upload_approval_received": true,
     "contents": "Only five allowlisted original v21 probability/policy/report/submission files, plus provenance and dataset metadata."
   },
   "crossfit_preflight": {
