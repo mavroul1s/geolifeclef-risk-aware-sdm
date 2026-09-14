@@ -2,6 +2,16 @@
 
 Read this file before taking any action. It is the compact source of truth for a fresh Codex conversation.
 
+## Completed v22 — 2026-09-14
+
+**Current best: v22, 0.21684 public / 0.19491 private.** Exactly one official submission was made after the registered two-fold cross-fit and integrity gate passed: ref `56233226`, status `complete`, request started `2026-09-14T14:31:52.154515+00:00`. This is +0.00065 private over v21 and +0.00131 over v20; the gap to the 0.2302 target is **0.03529**. It is a modest improvement, not SOTA. Do not resubmit this run.
+
+Kaggle version 22 completed from commit `519ae6cecadb30e4339d6fcf5354c4f0ed19f479` in **2.303860 hours (2 h 18 min 14 sec)** including setup, preparation, training, inference and both notebook test passes. The independent validator reproduced the saved per-survey means and spatial intervals, verified both fold ID hashes, the 20km buffers, frozen policies, submission digest and exact unchanged-v21 control before submission. Final submission SHA-256: `fe4eb33353936c7bc66b6c7451b89b838ee0c8ad55d9440d76da86778b5646de`.
+
+Pooled internal cross-fit sample F1: retained-PO 0.3247592104, frozen v21 0.3241891884, frozen v20 0.3240264512, zero-PO 0.3241891884 and single-head ablation 0.3248939718. Retained-PO gained +0.0005700220 over v21 with whole-block bootstrap 95% CI [0.0000946736, 0.0012829566] and improved over v21 in each fold, so the preregistered primary gate passed. The single-head point estimate exceeded retained-PO by 0.0001347614, but its interval crossed zero and it was a diagnostic ablation, never an allowed post-assessment replacement candidate. Production calibration selected a conservative uniform 2.5% retained-PO mixture over exact frozen v21.
+
+These internal scores measure recipe transfer and are not hidden-test estimates. Cross-fit training overlaps, Ukraine/Switzerland have no fresh assessment rows, and the v22 assessment is now consumed. Do not tune against or relabel v20, v21 or v22 assessments as untouched. Evidence is in `results/v22_summary.json`, `results/experiment_registry.json` and ignored `artifacts/v22_review/`, including the original report, per-survey CSV, independent validation, exclusive submission receipt and official score response.
+
 ## Authorized v22 implementation — 2026-09-14
 
 The user authorized the next experiment after reviewing the v21 diagnosis. See `docs/retained_po_v22.md` and `results/v22_summary.json`. Implementation includes two new outer folds from former v21 training, complementary checkpoint selection, smaller PO cells with unique-survey environmental means, a global publisher sampling cap, and retained-PO/single-head/zero-PO arms. **101 local tests pass**, including real CPU training/orchestration for all three arms and independent submission validation. Master notebook code and deployment-script syntax pass. Kaggle version **22** was successfully launched from commit `519ae6c`; no v22 official submission has been made.
