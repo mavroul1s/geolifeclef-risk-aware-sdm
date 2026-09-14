@@ -12,7 +12,7 @@ GeoLifeCLEF 2025 competition as a server-side input.
 [CmdletBinding()]
 param(
     [string]$KernelSlug = "",
-    [ValidateSet("audit", "schema", "spatial_audit", "frequency", "frequency_smoke", "landsat_smoke", "landsat_scale", "landsat_full", "sota_spatial_smoke", "sota_spatial_full", "sota_spatial_multiseed", "sota_spatial_multiseed_resume", "official_pa_submit", "sota_single", "environmental_challenger", "ood_po_expert_v21")]
+    [ValidateSet("audit", "schema", "spatial_audit", "frequency", "frequency_smoke", "landsat_smoke", "landsat_scale", "landsat_full", "sota_spatial_smoke", "sota_spatial_full", "sota_spatial_multiseed", "sota_spatial_multiseed_resume", "official_pa_submit", "sota_single", "environmental_challenger", "ood_po_expert_v21", "retained_po_v22")]
     [string]$RunMode = "schema"
 )
 
@@ -48,7 +48,7 @@ function Get-KaggleAuthorization {
 }
 
 $auth = Get-KaggleAuthorization
-$enableGpu = $RunMode -in @("landsat_smoke", "landsat_scale", "landsat_full", "sota_spatial_smoke", "sota_spatial_full", "sota_spatial_multiseed", "sota_spatial_multiseed_resume", "official_pa_submit", "sota_single", "environmental_challenger", "ood_po_expert_v21")
+$enableGpu = $RunMode -in @("landsat_smoke", "landsat_scale", "landsat_full", "sota_spatial_smoke", "sota_spatial_full", "sota_spatial_multiseed", "sota_spatial_multiseed_resume", "official_pa_submit", "sota_single", "environmental_challenger", "ood_po_expert_v21", "retained_po_v22")
 if ([string]::IsNullOrWhiteSpace($KernelSlug)) {
     if ([string]::IsNullOrWhiteSpace($auth.Username)) { throw "When using KAGGLE_API_TOKEN, pass -KernelSlug '<username>/geolifeclef-risk-aware-sdm-phase-1'." }
     $KernelSlug = "$($auth.Username)/geolifeclef-risk-aware-sdm-phase-1"
@@ -56,6 +56,8 @@ if ([string]::IsNullOrWhiteSpace($KernelSlug)) {
 
 $temporaryArchive = Join-Path ([IO.Path]::GetTempPath()) ("geolifeclef-source-" + [guid]::NewGuid().ToString() + ".zip")
 try {
+    $pendingChanges = git status --porcelain --untracked-files=normal
+    if ($LASTEXITCODE -ne 0 -or $pendingChanges) { throw "Commit all intended source changes before Kaggle push; deployment archives Git HEAD." }
     git -c safe.directory="$PWD" archive --format=zip --output=$temporaryArchive HEAD
     if (-not (Test-Path -LiteralPath $temporaryArchive)) { throw "Could not create the tracked-source archive." }
     $encodedSource = [Convert]::ToBase64String([IO.File]::ReadAllBytes($temporaryArchive))
@@ -83,7 +85,8 @@ os.chdir(PROJECT)
 
 # No credentials are required inside the notebook: the Kaggle API attaches the
 # competition source below. --no-deps avoids pulling unrelated packages.
-subprocess.run([sys.executable, '-m', 'pip', 'install', '--no-deps', '--no-build-isolation', '-e', '.'], check=True)
+subprocess.run([sys.executable, '-m', 'pip', 'install', '--no-deps', '--no-build-isolation', '-e', '.'], check=True, timeout=max(1,10.5*3600-(time.time()-float(os.environ['GLC_PIPELINE_STARTED_AT']))))
+os.environ['GLC_PACKAGE_INSTALLED'] = '1'
 
 import torch
 print({'torch': torch.__version__, 'cuda_available': torch.cuda.is_available(), 'gpu_count': torch.cuda.device_count()})
@@ -159,12 +162,15 @@ elif RUN_MODE == 'environmental_challenger':
     remaining_seconds = max(1, 10.5 * 3600 - (time.time() - float(os.environ['GLC_PIPELINE_STARTED_AT'])))
     subprocess.run([sys.executable, '-m', 'scripts.run_environmental_challenger', '--data-root', str(data_root), '--epochs', '24', '--batch-size', '128', '--max-hours', '10.5'], check=True, timeout=remaining_seconds)
 elif RUN_MODE == 'ood_po_expert_v21':
+    from scripts.launch_ood_po_expert import main
+    main()
+elif RUN_MODE == 'retained_po_v22':
     import json
     master = json.loads(Path('notebooks/geolifeclef_research_pipeline.ipynb').read_text())
     for cell in master['cells']:
         if cell['cell_type'] == 'code':
             exec(compile(''.join(cell['source']), 'master_notebook', 'exec'))
-if RUN_MODE != 'ood_po_expert_v21':
+if RUN_MODE not in ('ood_po_expert_v21', 'retained_po_v22'):
     subprocess.run([sys.executable, '-m', 'pytest'], check=True)
 
 print(f'Phase-1 {RUN_MODE} run and synthetic smoke tests completed.')
@@ -174,14 +180,17 @@ print(f'Phase-1 {RUN_MODE} run and synthetic smoke tests completed.')
     if ($RunMode -eq "ood_po_expert_v21") {
         $datasetSources = @("con1los/geolifeclef-v20-frozen-control/1")
     }
+    if ($RunMode -eq "retained_po_v22") {
+        $datasetSources = @("con1los/geolifeclef-v20-frozen-control/1", "con1los/geolifeclef-v21-frozen-control/1")
+    }
     $kernelTitle = "GeoLifeCLEF Risk-Aware SDM - Phase 1"
     $kernelType = "script"
-    if ($RunMode -in @("environmental_challenger", "ood_po_expert_v21")) {
+    if ($RunMode -in @("environmental_challenger", "ood_po_expert_v21", "retained_po_v22")) {
         $kernelType = "notebook"
         $notebookDocument = [ordered]@{
             cells = @(
-                [ordered]@{ cell_type = "markdown"; metadata = @{}; source = @("# GeoLifeCLEF 2025: $RunMode`n", "One competition-only bounded run. See the embedded master notebook and committed preregistration. No SOTA claim before official evaluation.") },
-                [ordered]@{ cell_type = "code"; execution_count = $null; metadata = @{}; outputs = @(); source = @($notebookText) }
+                [ordered]@{ cell_type = "markdown"; id = "run-description"; metadata = @{}; source = @("# GeoLifeCLEF 2025: $RunMode`n", "One competition-only bounded run. See the embedded master notebook and committed preregistration. No SOTA claim before official evaluation.") },
+                [ordered]@{ cell_type = "code"; id = "run-source"; execution_count = $null; metadata = @{}; outputs = @(); source = @($notebookText) }
             )
             metadata = @{ kernelspec = @{ display_name = "Python 3"; language = "python"; name = "python3" }; language_info = @{ name = "python"; version = "3.12" } }
             nbformat = 4

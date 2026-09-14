@@ -85,3 +85,20 @@ def test_matching_pa_training_only_normalization_and_missing_indicators():
     assert a[2, 0] == 12
     assert np.isfinite(a).all() and np.isfinite(po).all()
     assert coordinate_features(np.array([[45., 6.]])).shape == (1, 34)
+
+
+def test_v22_smaller_cells_and_unique_survey_environment_mean(tmp_path):
+    pa,test=fixture_data(tmp_path/'source',repeat=True)
+    path=tmp_path/'source/EnvironmentalValues/GLC25-PO-train-temperature.csv'
+    source=pd.read_csv(path)
+    source['temperature-1']=[10,30,100,90,80,70,60]
+    source.to_csv(path,index=False)
+    manifest=prepare_po(tmp_path/'source',tmp_path/'out',pa,test,np.arange(5016),time.monotonic()+60,mode='v22')
+    assert manifest['cell_degrees']==.01
+    support=np.load(manifest['paths']['po_support'])
+    values=np.load(manifest['paths']['po_environment_raw'])
+    column=manifest['environment_columns'].index('EnvironmentalValues/temperature-1')
+    representative=support['representative_survey_ids']
+    assert values[representative==1,column].tolist()==[20.]
+    assert max(manifest['weighted_publisher_draw_fraction'].values())<=.5+1e-12
+    assert manifest['environmental_representative']=='mean of unique survey IDs within group'

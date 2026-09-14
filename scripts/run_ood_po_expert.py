@@ -73,7 +73,7 @@ def validate_submission(path, template_ids, species):
             "prediction_count_min": 20, "prediction_count_max": 20}
 
 
-def matched_control(data_dir, output, partitions, labels, device, deadline, workers, epochs):
+def matched_control(data_dir, output, partitions, labels, device, deadline, workers, epochs, include_selection=False):
     """Scientific refit for independent assessment; never recreates v20 outputs."""
     indices = [np.flatnonzero(partitions == i) for i in range(4)]
     loaders = {name: DataLoader(MappedDataset(data_dir, "train", indices[i]), batch_size=128,
@@ -99,14 +99,14 @@ def matched_control(data_dir, output, partitions, labels, device, deadline, work
         run = train_one(model, train, loaders["selection"], np.array(labels[indices[1]]),
                         device, output, name, epochs, time.monotonic() + seconds, minimum_epochs=8)
         runs.append(run)
-        for split in ("calibration", "assessment"):
+        for split in (("selection", "calibration", "assessment") if include_selection else ("calibration", "assessment")):
             values = predict(model, loaders[split], device, deadline)
             np.save(output / f"{name}_{split}.npy", values, allow_pickle=False)
         del model, train, values
         gc.collect()
         if device.type == "cuda":
             torch.cuda.empty_cache()
-    for split in ("calibration", "assessment"):
+    for split in (("selection", "calibration", "assessment") if include_selection else ("calibration", "assessment")):
         values = frozen_v20_blend(*(np.load(output / f"{name}_{split}.npy", mmap_mode="r")
                                    for name in ("reference_2025", "challenger_2025", "challenger_3407")))
         np.save(output / f"frozen_control_{split}.npy", values, allow_pickle=False)

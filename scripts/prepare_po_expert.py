@@ -134,6 +134,7 @@ def prepare_po(
     test_rows: pd.DataFrame,
     species: np.ndarray,
     deadline: float,
+    mode: str = "v21",
 ) -> dict:
     """Build binary cell/publisher pseudo-surveys without reading any PA labels.
 
@@ -144,6 +145,10 @@ def prepare_po(
     reported but only coordinate proximity excludes potential duplicates.
     """
     started = time.monotonic()
+    if mode not in ("v21", "v22"):
+        raise ValueError("Unknown PO construction protocol")
+    cell_degrees = CELL_DEGREES if mode == "v21" else 0.01
+    cell_scale = round(1 / cell_degrees)
     _check_deadline(deadline)
     data_root, output = Path(data_root), Path(output)
     source = data_root / PO_FILENAME
@@ -216,9 +221,9 @@ def prepare_po(
             continue
         # Integer cells are latitude/longitude floor bins, with closed poles
         # assigned to the final valid cell. Centers never use record averages.
-        cells = np.floor(coordinates[selected] * 20).astype(np.int32)
-        cells[:, 0] = np.clip(cells[:, 0], -1800, 1799)
-        cells[:, 1] = np.clip(cells[:, 1], -3600, 3599)
+        cells = np.floor(coordinates[selected] * cell_scale).astype(np.int32)
+        cells[:, 0] = np.clip(cells[:, 0], -90 * cell_scale, 90 * cell_scale - 1)
+        cells[:, 1] = np.clip(cells[:, 1], -180 * cell_scale, 180 * cell_scale - 1)
         selected_publishers = publisher.iloc[selected].to_numpy(dtype=str)
         retained_publishers.update(Counter(selected_publishers))
         chunks.append(pd.DataFrame({
@@ -290,16 +295,33 @@ def prepare_po(
     # One environmental survey may represent multiple groups if metadata uses
     # that ID for several species; align unique IDs and then restore group rows.
     unique_representatives, representative_inverse = np.unique(representative_ids, return_inverse=True)
+    if mode == "v22":
+        # Each unique source survey contributes once per group, irrespective
+        # of its number of reported species or repeated raw observations.
+        group_surveys = pd.DataFrame({"group": raw_group_codes, "id": retained.survey_id}).drop_duplicates()
+        environment_ids = np.unique(group_surveys.id.to_numpy())
+        environment_inverse = pd.Index(environment_ids).get_indexer(group_surveys.id)
+        environment_groups = group_surveys.group.to_numpy(dtype=np.int64)
     po_environment, environmental_schema = [], []
     for pa_path, test_path, po_path, columns in environment_sources:
-        values, schema = _stream_environment(po_path, unique_representatives, columns, deadline)
-        po_environment.append(values[representative_inverse])
+        values, schema = _stream_environment(po_path, environment_ids if mode == "v22" else unique_representatives, columns, deadline)
+        if mode == "v22":
+            aggregate = np.full((group_count, len(columns)), np.nan, dtype=np.float32)
+            for column in range(len(columns)):
+                column_values = values[environment_inverse, column]
+                valid = np.isfinite(column_values)
+                count = np.bincount(environment_groups[valid], minlength=group_count)
+                sums = np.bincount(environment_groups[valid], weights=column_values[valid], minlength=group_count)
+                aggregate[:, column] = np.divide(sums, count, out=np.full(group_count, np.nan), where=count > 0)
+            po_environment.append(aggregate)
+        else:
+            po_environment.append(values[representative_inverse])
         schema.update({"pa_train_file": str(pa_path.relative_to(data_root)),
                        "pa_test_file": str(test_path.relative_to(data_root)),
                        "po_file": str(po_path.relative_to(data_root))})
         environmental_schema.append(schema)
     cell_pairs = groups[["cell_lat", "cell_lon"]].to_numpy(dtype=np.int32)
-    centers = (cell_pairs.astype(np.float64) + 0.5) * CELL_DEGREES
+    centers = (cell_pairs.astype(np.float64) + 0.5) * cell_degrees
     # Split cell mass equally over publishers, and each publisher's mass equally
     # over its ecological strata, so strata cannot reinflate publisher exposure.
     cell_publisher_columns = ["cell_lat", "cell_lon", "publisher"]
@@ -309,9 +331,9 @@ def prepare_po(
     publishers_in_cell = cell_publisher_counts.reindex(pd.MultiIndex.from_arrays(cell_pairs.T)).to_numpy(dtype=np.int64)
     strata_in_cell_publisher = cell_publisher_strata.reindex(pd.MultiIndex.from_frame(groups[cell_publisher_columns])).to_numpy(dtype=np.int64)
     unique_cells = np.unique(cell_pairs, axis=0)
-    unique_blocks = np.floor_divide(unique_cells, 20)
+    unique_blocks = np.floor_divide(unique_cells, cell_scale)
     block_keys, block_counts = np.unique(unique_blocks, axis=0, return_counts=True)
-    group_blocks = np.floor_divide(cell_pairs, 20)
+    group_blocks = np.floor_divide(cell_pairs, cell_scale)
     block_lookup = pd.MultiIndex.from_arrays(block_keys.T)
     block_index = block_lookup.get_indexer(pd.MultiIndex.from_arrays(group_blocks.T))
     block_cell_count = block_counts[block_index]
@@ -320,6 +342,9 @@ def prepare_po(
     if not np.isfinite(weights).all() or (weights <= 0).any():
         raise ValueError("PO sampling weights must be finite and positive")
     publisher_names, publisher_codes = np.unique(groups.publisher.to_numpy(dtype=str), return_inverse=True)
+    if mode == "v22":
+        from scripts.v22_protocol import cap_publisher_weights
+        weights = cap_publisher_weights(weights, publisher_codes, maximum_share=0.30)
     weighted_exposure = np.bincount(publisher_codes, weights=weights, minlength=len(publisher_names))
     weighted_exposure /= weighted_exposure.sum()
     coverage = np.asarray(labels.getnnz(axis=0)).ravel()
@@ -361,16 +386,17 @@ def prepare_po(
         "coordinate_feature_dimension": 34,
         "environment_columns": environment_columns, "raw_environment_dimension": len(environment_columns),
         "environmental_sources": environmental_schema, "landcover_stratum_source": landcover_schema,
-        "po_environmental_features": "verified competition environmental values at minimum-ID representative",
-        "cell_degrees": CELL_DEGREES, "representative_coordinates": "fixed cell center",
+        "construction_mode": mode,
+        "po_environmental_features": "unique-survey finite means within group" if mode == "v22" else "verified competition environmental values at minimum-ID representative",
+        "cell_degrees": cell_degrees, "representative_coordinates": "fixed cell center",
         "deduplication_key": group_columns + ["speciesId"],
-        "environmental_representative": "minimum surveyId after cell/publisher/stratum/species deduplication",
+        "environmental_representative": "mean of unique survey IDs within group" if mode == "v22" else "minimum surveyId after cell/publisher/stratum/species deduplication",
         "landcover_stratum_rule": "floor(first supplied land-cover feature / 5); missing -1; numerical bin, no semantic habitat claim",
         "maximum_nonmissing_geographic_uncertainty_m": 1000,
         "pa_duplicate_exclusion_radius_m": 100,
         "pa_duplicate_exclusion_reference": "all PA train and test coordinates; no species labels read",
         "numeric_id_overlap_policy": "diagnostic only; independent namespaces not assumed identical",
-        "weight_formula": "1 / (publishers_in_cell * strata_in_cell_publisher * sqrt(unique_cells_in_1degree_block))",
+        "weight_formula": "1 / (publishers_in_cell * strata_in_cell_publisher * sqrt(unique_cells_in_1degree_block))" + ("; then global publisher share capped at max(0.30, 1/publishers)" if mode == "v22" else ""),
         "sampling": "replacement using normalized weights; raw occurrence counts never increase group weight",
         "publisher_is_model_input": False,
         "raw_publisher_record_exposure": {str(k): int(v) for k, v in sorted(raw_publishers.items())},
