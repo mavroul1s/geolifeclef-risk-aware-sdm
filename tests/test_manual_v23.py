@@ -30,6 +30,11 @@ def test_postrun_validator_contains_no_submission_client():
     assert "DO_NOT_SUBMIT" in source
 
 
+def test_frozen_v22_verifier_rejects_trailing_npy_bytes():
+    source = Path("scripts/stage_frozen_v22.py").read_text(encoding="utf-8")
+    assert "path.stat().st_size != array.offset + array.nbytes" in source
+
+
 def test_postrun_validator_recomputes_gate_and_accepts_consistent_fixture(tmp_path, monkeypatch):
     monkeypatch.setattr(postrun, "EXPECTED_SPECIES", 24)
     monkeypatch.setattr(postrun, "EXPECTED_TEST_ROWS", 4)

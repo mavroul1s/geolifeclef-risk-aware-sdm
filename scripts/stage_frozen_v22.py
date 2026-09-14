@@ -99,9 +99,12 @@ def verify_v22(directory: Path, *, v20: Path | None = None, v21: Path | None = N
             raise ValueError(f"Frozen-v22 hash mismatch: {name}")
     shapes = {"retained_po_calibration.npy": (4807, 5016), "retained_po_test.npy": (14784, 5016)}
     for name, shape in shapes.items():
-        array = np.load(directory / name, mmap_mode="r", allow_pickle=False)
+        path = directory / name
+        array = np.load(path, mmap_mode="r", allow_pickle=False)
         if array.shape != shape or array.dtype != np.float16 or not np.isfinite(array).all():
             raise ValueError(f"Invalid frozen-v22 probability artifact: {name}")
+        if path.stat().st_size != array.offset + array.nbytes:
+            raise ValueError(f"Frozen-v22 NPY has trailing or truncated bytes: {name}")
     if sha256_file(directory / "GLC25_PA_submission.csv") != OFFICIAL_CSV_SHA256:
         raise ValueError("Frozen-v22 CSV is not the official v22 submission")
     if all(value is not None for value in (v20, v21, train_metadata, test_metadata, template)):
