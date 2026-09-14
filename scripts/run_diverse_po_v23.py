@@ -125,10 +125,11 @@ def fit_matched_v22(rows, test_rows, labels, split, distance, old_pool, new_pool
         predictions[role] = (base, expert)
     policy_record = {"selected": policy, "trials": trials,
                      "checkpoint_sha256": sha256_file(output / "retained_po_best.pt")}
+    role_index = {"selection": 1, "calibration": 2, "assessment": 3}
     for role, (base, expert) in predictions.items():
         from scripts.v22_protocol import mix as v22_mix
         np.save(output / f"frozen_v22_{role}.npy",
-                v22_mix(base, expert, distance[indices[{"selection": 1, "calibration": 2, "assessment": 3}[role]], policy),
+                v22_mix(base, expert, distance[indices[role_index[role]]], policy),
                 allow_pickle=False)
     del model, pretrained, pa, po
     gc.collect()
