@@ -25,7 +25,7 @@ CHECKPOINT_EPOCHS = (12, 24, 36, 48, 60, 72)
 ALPHAS = (0.0, 0.025, 0.05, 0.10, 0.20, 0.35)
 GATES = ("uniform", "pa_distance", "pa_po", "pa_po_disagreement")
 CARDINALITIES = ((20, 20), (16, 20), (18, 22), (20, 24), (20, 28))
-EXPECTED_KERNEL_VERSION = 24
+EXPECTED_KERNEL_VERSION = 25
 POLICY_FIELDS = ("alpha", "gate", "k_near", "k_far", "transition")
 
 

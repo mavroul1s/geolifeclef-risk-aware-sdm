@@ -21,6 +21,11 @@ def test_manual_notebook_is_self_contained_and_all_cells_compile():
     assert metadata["required_inputs"] == REQUIRED_INPUTS
     assert metadata["max_total_hours"] == 10.5
     assert metadata["submission_performed"] is False
+    bootstrap = "".join(notebook["cells"][-1]["source"])
+    path_activation = 'sys.path[:0] = [str(destination / "src"), str(destination)]'
+    assert path_activation in bootstrap
+    assert bootstrap.index(path_activation) < bootstrap.index(
+        "from scripts.launch_diverse_po_v23 import main")
 
 
 def test_postrun_validator_contains_no_submission_client():

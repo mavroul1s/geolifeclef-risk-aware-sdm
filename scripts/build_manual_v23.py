@@ -75,6 +75,9 @@ if actual != manifest:
 os.environ["GLC_SOURCE_COMMIT"] = EXPECTED_COMMIT
 os.environ["PYTHONPATH"] = str(destination / "src") + os.pathsep + str(destination)
 os.chdir(destination)
+# Updating PYTHONPATH only affects child processes.  Make the embedded source
+# importable in this already-running notebook kernel before importing launchers.
+sys.path[:0] = [str(destination / "src"), str(destination)]
 subprocess.run([sys.executable, "-m", "pip", "install", "--no-deps", "--no-build-isolation", "-e", "."],
                check=True, timeout=max(1, int(10.5 * 3600 - (time.time() - float(os.environ["GLC_PIPELINE_STARTED_AT"])))))
 from scripts.launch_diverse_po_v23 import main
