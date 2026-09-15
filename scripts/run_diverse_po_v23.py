@@ -37,6 +37,7 @@ from scripts.train_retained_po import predict as predict_v22
 from scripts.train_retained_po import pretrain as pretrain_v22
 from scripts.v22_protocol import select_policy as select_v22_policy
 from scripts.v23_protocol import (
+    EXPECTED_KERNEL_VERSION,
     LARGE_SEED,
     V23_SEEDS,
     crossfit_partitions,
@@ -53,7 +54,6 @@ from scripts.run_environmental_challenger import top_rank
 
 FAMILIES = ("single_head_ensemble", "retained_po", "zero_po", "large_single_head")
 OUTPUT_CSV = "GLC25_PA_submission_v23.csv"
-EXPECTED_KERNEL_VERSION = 23
 MAX_HOURS = 10.5
 
 

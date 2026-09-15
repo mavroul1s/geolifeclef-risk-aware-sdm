@@ -33,8 +33,16 @@ def test_v23_policy_selection_scores_per_survey_and_includes_unchanged_control()
     targets[:, :18] = 1
     selected, trials = protocol.select_policy(targets, base, expert, _components(2))
     assert selected in trials
+    # Regression for Kaggle kernel v23: selected records include the audit score
+    # and must remain valid inputs to final mixing and cardinality selection.
+    mixed = protocol.mix(base, expert, _components(2), selected)
+    counts = protocol.policy_counts(selected, _components(2))
+    assert mixed.shape == base.shape
+    assert counts.shape == (2,)
     assert any(item["alpha"] == 0 for item in trials)
     assert all(16 <= item["k_near"] <= 20 and 20 <= item["k_far"] <= 28 for item in trials)
+    with np.testing.assert_raises_regex(ValueError, "Unregistered v23 mixture"):
+        protocol.mix(base, expert, _components(2), {**selected, "alpha": 0.123})
 
 
 def test_v23_crossfit_uses_only_buckets_not_consumed_by_v22(monkeypatch):

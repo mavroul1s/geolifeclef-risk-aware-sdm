@@ -14,6 +14,8 @@ import subprocess
 import tarfile
 import zipfile
 
+from scripts.v23_protocol import EXPECTED_KERNEL_VERSION
+
 from scripts.stage_frozen_v20 import sha256_file
 from scripts.stage_frozen_v22 import DATASET_SLUG, verify_v22
 
@@ -100,7 +102,8 @@ def validate(args) -> dict:
         raise ValueError("Notebook commit metadata mismatch")
     if metadata.get("required_inputs") != REQUIRED_INPUTS or metadata.get("max_total_hours") != 10.5:
         raise ValueError("Notebook requests undeclared inputs or lacks the 10.5-hour guard")
-    if metadata.get("expected_kernel_version") != 23 or metadata.get("output_csv") != "GLC25_PA_submission_v23.csv":
+    if (metadata.get("expected_kernel_version") != EXPECTED_KERNEL_VERSION
+            or metadata.get("output_csv") != "GLC25_PA_submission_v23.csv"):
         raise ValueError("Notebook kernel/output contract mismatch")
     current_commit = subprocess.run(["git", "rev-parse", "HEAD"], cwd=args.repository,
                                     check=True, capture_output=True, text=True).stdout.strip()

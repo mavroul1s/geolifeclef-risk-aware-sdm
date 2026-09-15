@@ -14,6 +14,7 @@ import zipfile
 
 from scripts.stage_frozen_v20 import sha256_file
 from scripts.stage_frozen_v22 import DATASET_SLUG, build as build_v22_bundle
+from scripts.v23_protocol import EXPECTED_KERNEL_VERSION
 
 
 NOTEBOOK_NAME = "geolifeclef_v23_manual.ipynb"
@@ -98,7 +99,7 @@ main()
         "metadata": {
             "kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"},
             "language_info": {"name": "python", "version": "3.11"},
-            "glc_v23": {"expected_source_commit": commit, "expected_kernel_version": 23,
+            "glc_v23": {"expected_source_commit": commit, "expected_kernel_version": EXPECTED_KERNEL_VERSION,
                          "max_total_hours": 10.5, "accelerator": "NVIDIA T4 x1",
                          "internet": False, "required_inputs": REQUIRED_INPUTS,
                          "output_csv": OUTPUT_CSV, "submission_performed": False},
@@ -138,7 +139,7 @@ $env:PYTHONPATH='src;.'
 - Internet: **Off**.
 - Notebook source commit: `{commit}`.
 - Έλεγξε ότι το v22 dataset παραμένει **Private**.
-- Πάτησε **Save Version**, επίλεξε **Save & Run All**, και επιβεβαίωσε. Η αναμενόμενη έκδοση του υπάρχοντος kernel είναι η **23**.
+- Πάτησε **Save Version**, επίλεξε **Save & Run All**, και επιβεβαίωσε. Η αναμενόμενη έκδοση του υπάρχοντος kernel είναι η **{EXPECTED_KERNEL_VERSION}**.
 
 ## Επιτυχής ολοκλήρωση
 
@@ -208,7 +209,7 @@ def build(args):
         "format": "geolifeclef_manual_upload_v23_v1", "created_from_clean_repository": True,
         "repository_clean_when_packaged": True, "expected_git_commit": commit,
         "expected_kernel": "con1los/geolifeclef-risk-aware-sdm-phase-1",
-        "expected_kernel_version": 23, "notebook": {"file": NOTEBOOK_NAME,
+        "expected_kernel_version": EXPECTED_KERNEL_VERSION, "notebook": {"file": NOTEBOOK_NAME,
         "sha256": relative_hashes[NOTEBOOK_NAME]}, "dataset": DATASET_SLUG,
         "dataset_version_to_create": 1, "dataset_zip": {"file": DATASET_ZIP,
         "sha256": relative_hashes[DATASET_ZIP]}, "existing_inputs": REQUIRED_INPUTS[1:3],

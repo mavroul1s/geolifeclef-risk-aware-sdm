@@ -11,9 +11,9 @@ import pandas as pd
 
 from scripts.stage_frozen_v20 import sha256_file
 from scripts.stage_frozen_v22 import OFFICIAL_CSV_SHA256, SOURCE_COMMIT
+from scripts.v23_protocol import EXPECTED_KERNEL_VERSION
 
 
-EXPECTED_KERNEL_VERSION = 23
 EXPECTED_SPECIES = 5016
 EXPECTED_TEST_ROWS = 14784
 EXPECTED_ASSESSMENT_ROWS = 11032

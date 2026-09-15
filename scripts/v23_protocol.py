@@ -25,6 +25,8 @@ CHECKPOINT_EPOCHS = (12, 24, 36, 48, 60, 72)
 ALPHAS = (0.0, 0.025, 0.05, 0.10, 0.20, 0.35)
 GATES = ("uniform", "pa_distance", "pa_po", "pa_po_disagreement")
 CARDINALITIES = ((20, 20), (16, 20), (18, 22), (20, 24), (20, 28))
+EXPECTED_KERNEL_VERSION = 24
+POLICY_FIELDS = ("alpha", "gate", "k_near", "k_far", "transition")
 
 
 def _ids_sha256(values: np.ndarray) -> str:
@@ -159,6 +161,23 @@ def registered_policies() -> list[dict]:
     ]
 
 
+def _registered_policy(policy: dict) -> dict:
+    """Return a policy's preregistered fields while allowing recorded metrics.
+
+    ``select_policy`` stores ``calibration_f1`` alongside the selected policy for
+    auditability.  Runtime consumers must validate the preregistered decision
+    fields, rather than comparing that enriched record to a bare grid entry.
+    """
+    if not isinstance(policy, dict) or any(field not in policy for field in POLICY_FIELDS):
+        raise ValueError("Unregistered v23 policy")
+    registered = {field: policy[field] for field in POLICY_FIELDS}
+    if registered not in registered_policies():
+        raise ValueError("Unregistered v23 policy")
+    if "calibration_f1" in policy and not np.isfinite(policy["calibration_f1"]):
+        raise ValueError("Invalid v23 calibration score")
+    return registered
+
+
 def _probabilities(values: np.ndarray) -> np.ndarray:
     values = np.asarray(values)
     if values.ndim != 2 or not values.size or not np.isfinite(values).all():
@@ -170,22 +189,28 @@ def _probabilities(values: np.ndarray) -> np.ndarray:
 
 def mix(base: np.ndarray, expert: np.ndarray, components: dict[str, np.ndarray], policy: dict) -> np.ndarray:
     base, expert = _probabilities(base), _probabilities(expert)
-    if base.shape != expert.shape or policy not in registered_policies():
+    if base.shape != expert.shape:
         raise ValueError("Unregistered v23 mixture")
-    gate = gate_values(components, policy["gate"])
+    try:
+        registered = _registered_policy(policy)
+    except ValueError as error:
+        raise ValueError("Unregistered v23 mixture") from error
+    gate = gate_values(components, registered["gate"])
     if gate.shape != (len(base),):
         raise ValueError("OOD gate rows do not match probabilities")
-    if policy["alpha"] == 0:
+    if registered["alpha"] == 0:
         return base
-    weight = (policy["alpha"] * gate).astype(np.float32)[:, None]
+    weight = (registered["alpha"] * gate).astype(np.float32)[:, None]
     return (1.0 - weight) * base.astype(np.float32) + weight * expert.astype(np.float32)
 
 
 def policy_counts(policy: dict, components: dict[str, np.ndarray]) -> np.ndarray:
-    if policy not in registered_policies():
-        raise ValueError("Unregistered v23 cardinality policy")
-    gate = gate_values(components, policy["gate"])
-    return np.where(gate < policy["transition"], policy["k_near"], policy["k_far"]).astype(np.int64)
+    try:
+        registered = _registered_policy(policy)
+    except ValueError as error:
+        raise ValueError("Unregistered v23 cardinality policy") from error
+    gate = gate_values(components, registered["gate"])
+    return np.where(gate < registered["transition"], registered["k_near"], registered["k_far"]).astype(np.int64)
 
 
 def per_survey_f1(targets: np.ndarray, probabilities: np.ndarray, policy: dict,

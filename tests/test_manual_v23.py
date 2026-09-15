@@ -60,7 +60,7 @@ def test_postrun_validator_recomputes_gate_and_accepts_consistent_fixture(tmp_pa
     for name in ("frozen_v22", "retained_po", "zero_po", "large_single_head"):
         mean, interval = postrun._bootstrap(assessment.single_head_ensemble, assessment[name], assessment.block)
         comparisons[name] = {"mean_difference": mean, "ci95": interval.tolist()}
-    report = {"source_commit": commit, "kernel_version": 23,
+    report = {"source_commit": commit, "kernel_version": postrun.EXPECTED_KERNEL_VERSION,
         "frozen_v22_source_version": 22, "frozen_v22_source_commit": postrun.SOURCE_COMMIT,
         "notebook_tests_before_passed": True, "notebook_tests_after_passed": True,
         "total_pipeline_hours": 1.0, "split": [{"assessment_previously_consumed": False}] * 2,

@@ -57,3 +57,10 @@ The bootstrap remains 500 whole-block resamples with seed 20250921. The assessme
 ## Compute and data contract
 
 One master notebook, one T4 used as `cuda:0`, Internet off, strict 10.5-hour end-to-end parent timeout. Only GeoLifeCLEF 2025 PA, PO and provided predictors are permitted. All 5,016 PA species remain. No external data, pretrained weights, nearest-96 heuristic, automatic Kaggle upload, kernel push, run, monitoring or competition submission exists in the manual package.
+
+Kernel version 24 is the operational rerun of the unchanged preregistered v23
+experiment. Version 23 stopped before assessment because the selected policy's
+recorded `calibration_f1` audit field was compared against bare grid records.
+The rerun changes only that policy-record validation and the expected Kaggle
+version; the candidate grid, splits, seeds, training, assessment, and submission
+gate are unchanged.

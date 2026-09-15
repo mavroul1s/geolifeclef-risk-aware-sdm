@@ -8,9 +8,10 @@ import subprocess
 import sys
 import time
 
+from scripts.v23_protocol import EXPECTED_KERNEL_VERSION
+
 
 EXPECTED_COMMIT = os.environ.get("GLC_SOURCE_COMMIT", "")
-EXPECTED_KERNEL_VERSION = 23
 MAX_SECONDS = int(10.5 * 3600)
 
 
