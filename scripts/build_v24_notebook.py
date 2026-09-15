@@ -92,12 +92,16 @@ assessment, and writes exactly four files to `/kaggle/working/v24_export`. Submi
     )
     return {
         "cells": [
-            {"cell_type": "markdown", "metadata": {}, "source": source_lines(markdown)},
-            {"cell_type": "code", "execution_count": None, "metadata": {}, "outputs": [],
+            {"cell_type": "markdown", "id": "v24-intro", "metadata": {},
+             "source": source_lines(markdown)},
+            {"cell_type": "code", "id": "v24-core", "execution_count": None,
+             "metadata": {}, "outputs": [],
              "source": source_lines(core)},
-            {"cell_type": "code", "execution_count": None, "metadata": {}, "outputs": [],
+            {"cell_type": "code", "id": "v24-evidence", "execution_count": None,
+             "metadata": {}, "outputs": [],
              "source": source_lines(payload_cell)},
-            {"cell_type": "code", "execution_count": None, "metadata": {}, "outputs": [],
+            {"cell_type": "code", "id": "v24-run", "execution_count": None,
+             "metadata": {}, "outputs": [],
              "source": source_lines(run_cell)},
         ],
         "metadata": {
