@@ -7,6 +7,7 @@ import pandas as pd
 
 from scripts.build_v24_notebook import (
     EXPECTED_V23_HASH,
+    KAGGLE_KERNEL_SOURCE_LIMIT_BYTES,
     canonical_v23_files,
     make_notebook,
     payload,
@@ -110,6 +111,8 @@ def test_generated_notebook_has_no_repository_runtime_dependency():
     assert notebook["metadata"]["glc_v24"]["required_input"] == ["geolifeclef-2025"]
     on_disk = json.loads((ROOT / "notebooks/geolifeclef_v24_multimodal_rare_species_sdm.ipynb")
                          .read_text(encoding="utf-8"))
+    assert (ROOT / "notebooks/geolifeclef_v24_multimodal_rare_species_sdm.ipynb").stat().st_size \
+        < KAGGLE_KERNEL_SOURCE_LIMIT_BYTES
     assert on_disk["metadata"]["glc_v24"]["frozen_v23_submission_sha256"] == EXPECTED_V23_HASH
     scope = {}
     exec(compile("".join(on_disk["cells"][1]["source"]), "v24-notebook-core", "exec"), scope)

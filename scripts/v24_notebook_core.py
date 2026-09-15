@@ -185,28 +185,18 @@ def safe_extract_tar_gz(payload_b64: str, destination: Path) -> None:
 
 def verify_frozen_v23(payload_b64: str, destination: Path) -> dict[str, Any]:
     safe_extract_tar_gz(payload_b64, destination)
-    required = {
-        "GLC25_PA_submission_v23.csv", "v23_report.json", "frozen_policies.json",
-        "pre_assessment_freeze.json", "split_manifest.json", "assessment_per_survey.csv",
-    }
+    required = {"GLC25_PA_submission_v23.csv"}
     found = {path.name for path in destination.iterdir() if path.is_file()}
-    if not required.issubset(found):
-        raise ValueError(f"Embedded v23 evidence is incomplete: {sorted(required - found)}")
-    report = json.loads((destination / "v23_report.json").read_text(encoding="utf-8"))
-    freeze = json.loads((destination / "pre_assessment_freeze.json").read_text(encoding="utf-8"))
+    if found != required:
+        raise ValueError(f"Embedded v23 payload has unexpected files: {sorted(found)}")
     csv_path = destination / "GLC25_PA_submission_v23.csv"
     checks = {
-        "experiment": report.get("experiment") == "v23_diverse_single_head_crossfit",
-        "status": report.get("status") == "complete",
-        "source_commit": report.get("source_commit") == V23_COMMIT,
-        "kernel_version": report.get("kernel_version") == 25,
-        "frozen_hash_record": freeze.get("submission_sha256") == V23_SUBMISSION_SHA256,
+        "payload_file_set": found == required,
         "submission_sha256": sha256_file(csv_path) == V23_SUBMISSION_SHA256,
-        "assessment_consumed": report.get("assessment", {}).get("now_consumed") is True,
     }
     if not all(checks.values()):
         raise ValueError(f"Frozen v23 verification failed: {checks}")
-    return {"checks": checks, "report_sha256": sha256_file(destination / "v23_report.json"),
+    return {"checks": checks, "provenance_storage": "constants embedded in notebook source",
             "submission_sha256": sha256_file(csv_path), "source_commit": V23_COMMIT,
             "kernel_version": 25, "submission_reference": "56255321",
             "public_score": V23_PUBLIC_SCORE, "private_score": V23_PRIVATE_SCORE,

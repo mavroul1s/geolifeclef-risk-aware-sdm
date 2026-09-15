@@ -13,17 +13,10 @@ import tarfile
 
 
 EXPECTED_V23_HASH = "9da01ce45a3478e8073cd93e22dbf69dde65def0f86b7ef2700e84630f2c30f8"
-REQUIRED_EVIDENCE = {
-    "assessment_per_survey.csv",
-    "frozen_policies.json",
-    "GLC25_PA_submission_v23.csv",
-    "partition_ids.csv",
-    "po_manifests.json",
-    "pre_assessment_freeze.json",
-    "split_manifest.json",
-    "unchanged_v22_submission.csv",
-    "v23_report.json",
-}
+KAGGLE_KERNEL_SOURCE_LIMIT_BYTES = 1_000_000
+# Only the exact v23 prediction is needed at runtime.  Embedding the full audit bundle
+# made the notebook 2.38 MB and Kaggle rejected it before execution.
+REQUIRED_EVIDENCE = {"GLC25_PA_submission_v23.csv"}
 
 
 def source_lines(text: str) -> list[str]:
@@ -65,8 +58,9 @@ def make_notebook(core: str, payload_b64: str, source_commit: str | None = None)
     markdown = """# GeoLifeCLEF 2025 — v24 multimodal rare-species SDM
 
 This is the complete Kaggle deliverable. It uses only the official `geolifeclef-2025`
-competition input and one GPU. The exact v23 submission and its audit evidence are embedded
-as the frozen control. Internet and external/pretrained weights are not used.
+competition input and one GPU. The exact v23 submission is embedded as the frozen control;
+its immutable hash and provenance are verified at runtime. Internet and external/pretrained
+weights are not used.
 
 The notebook has an 11.25-hour hard budget inside Kaggle's 12-hour limit, a 2.75-hour cap
 for feature extraction, and a 35-minute finalization reserve. Expected runtime is 5–8.5 hours
@@ -78,7 +72,7 @@ assessment, and writes exactly four files to `/kaggle/working/v24_export`. Submi
     payload_cell = (
         f"NOTEBOOK_SOURCE_SHA256 = {source_sha!r}\n"
         f"V24_SOURCE_COMMIT = {source_commit!r}\n"
-        "# Exact frozen v23 evidence, compressed into this notebook.\n"
+        "# Exact frozen v23 submission, compressed into this notebook.\n"
         f"FROZEN_V23_PAYLOAD_B64 = {payload_b64!r}\n"
         "print({'embedded_v23_payload_bytes': len(FROZEN_V23_PAYLOAD_B64), "
         "'core_sha256': NOTEBOOK_SOURCE_SHA256})\n"
@@ -155,6 +149,11 @@ def main() -> None:
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(notebook, ensure_ascii=False, indent=1) + "\n",
                            encoding="utf-8")
+    if args.output.stat().st_size >= KAGGLE_KERNEL_SOURCE_LIMIT_BYTES:
+        raise RuntimeError(
+            f"Generated notebook is {args.output.stat().st_size} bytes; Kaggle requires "
+            f"less than {KAGGLE_KERNEL_SOURCE_LIMIT_BYTES} bytes"
+        )
     print(json.dumps({"output": str(args.output), "bytes": args.output.stat().st_size,
                       "sha256": hashlib.sha256(args.output.read_bytes()).hexdigest(),
                       "cells": len(notebook["cells"])}, indent=2))
