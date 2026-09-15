@@ -174,7 +174,13 @@ def safe_extract_tar_gz(payload_b64: str, destination: Path) -> None:
             target = (destination / member.name).resolve()
             if root != target and root not in target.parents:
                 raise ValueError("Unsafe frozen-v23 archive member")
-        archive.extractall(destination)
+        for member in archive.getmembers():
+            if not member.isfile():
+                raise ValueError("Frozen-v23 payload may contain regular files only")
+            source = archive.extractfile(member)
+            if source is None:
+                raise ValueError(f"Unable to read embedded member {member.name}")
+            (destination / member.name).write_bytes(source.read())
 
 
 def verify_frozen_v23(payload_b64: str, destination: Path) -> dict[str, Any]:
@@ -784,7 +790,7 @@ def train_model(model: nn.Module, arrays: dict[str, np.ndarray], labels: np.ndar
                 epochs: int, minimum_epochs: int, batch_size: int = 256) -> dict[str, Any]:
     set_seed(seed)
     model.to(device)
-    frequencies = np.asarray(labels[training_indices], dtype=np.uint8).sum(0).astype(np.float32)
+    frequencies = _frequency(labels, training_indices).astype(np.float32)
     positive_weights_np = np.where(
         frequencies > 0,
         np.clip(np.sqrt(np.maximum(np.median(frequencies[frequencies > 0]), 1) /
@@ -954,6 +960,9 @@ class POGridIndex:
             selected = scored[:48]
             scale = max((value for _, value in selected), default=1.0)
             cells[cell] = [(column, float(value / scale)) for column, value in selected]
+        accumulated.clear()
+        raw_cells.clear()
+        gc.collect()
         return cls(cells, species_ids, global_counts, seen, retained)
 
     def query(self, coordinates: np.ndarray, *, cell_degrees: float = 0.10,
@@ -1033,9 +1042,9 @@ def richness_features(probabilities: np.ndarray, raw_log_richness: np.ndarray,
 
 def fit_richness_model(probabilities: np.ndarray, raw_log_richness: np.ndarray,
                        rows: pd.DataFrame, pa_distance: np.ndarray, po_coverage: np.ndarray,
-                       targets: np.ndarray, training_rows: pd.DataFrame,
-                       training_targets: np.ndarray, *, seed: int) -> tuple[Any, dict[str, Any]]:
-    training_cardinality = np.asarray(training_targets).sum(1)
+                       target_cardinality: np.ndarray, training_rows: pd.DataFrame,
+                       training_cardinality: np.ndarray, *, seed: int) -> tuple[Any, dict[str, Any]]:
+    training_cardinality = np.asarray(training_cardinality)
     countries = training_rows.get("country", pd.Series(["unknown"] * len(training_rows))).fillna("unknown")
     table = pd.DataFrame({"country": countries.to_numpy(), "richness": training_cardinality})
     country_means = table.groupby("country").richness.mean().to_dict()
@@ -1044,10 +1053,10 @@ def fit_richness_model(probabilities: np.ndarray, raw_log_richness: np.ndarray,
                                  country_means, global_mean)
     model = HistGradientBoostingRegressor(loss="absolute_error", max_iter=70, max_leaf_nodes=15,
                                           learning_rate=0.06, l2_regularization=1.0,
-                                          random_state=seed).fit(features, np.asarray(targets).sum(1))
+                                          random_state=seed).fit(features, target_cardinality)
     prediction = np.clip(model.predict(features), 12, 32)
     return model, {"country_means": country_means, "global_mean": global_mean,
-                   "selection_mae": float(np.mean(np.abs(prediction - np.asarray(targets).sum(1)))),
+                   "selection_mae": float(np.mean(np.abs(prediction - target_cardinality))),
                    "feature_names": ["neural_log_richness", "top1", "top5_mean", "top20_mean",
                                      "top40_mean", "top40_std", "rank_margin_20_40",
                                      "log_pa_distance", "log_po_coverage", "month_sin",
@@ -1178,6 +1187,14 @@ def _frequency(labels: np.ndarray, indices: np.ndarray) -> np.ndarray:
     return total
 
 
+def _cardinality(labels: np.ndarray, indices: np.ndarray) -> np.ndarray:
+    total = np.empty(len(indices), dtype=np.int16)
+    for begin in range(0, len(indices), 2048):
+        batch = np.asarray(labels[indices[begin:begin + 2048]], dtype=np.uint8)
+        total[begin:begin + len(batch)] = batch.sum(1, dtype=np.int16)
+    return total
+
+
 def _role_components(rows: pd.DataFrame, role_indices: np.ndarray, spatial: PASpatialIndex,
                      po: POGridIndex) -> tuple[list[dict[int, float]], np.ndarray,
                                                list[dict[int, float]], np.ndarray]:
@@ -1232,8 +1249,8 @@ def _build_models_for_fold(name: str, split: dict[str, np.ndarray], rows: pd.Dat
     richness_model, richness_metadata = fit_richness_model(
         selection_values["v24"], selection_values["raw_richness"], rows.iloc[selection],
         selection_components["pa_distance"], selection_components["po_coverage"],
-        np.asarray(store.labels[selection]), rows.iloc[split["training"]],
-        np.asarray(store.labels[split["training"]]), seed=seed,
+        _cardinality(store.labels, selection), rows.iloc[split["training"]],
+        _cardinality(store.labels, split["training"]), seed=seed,
     )
     for role in ("calibration", "assessment"):
         values, components = predictions[role], role_components[role]
@@ -1344,8 +1361,9 @@ def _train_deployment(split: dict[str, np.ndarray], rows: pd.DataFrame, test_row
         _role_components(rows, calibration, spatial, po))
     richness_model, richness_metadata = fit_richness_model(
         calibration_probability, calibration_raw_richness, rows.iloc[calibration],
-        calibration_pa_distance, calibration_po_coverage, np.asarray(store.labels[calibration]),
-        rows.iloc[split["training"]], np.asarray(store.labels[split["training"]]),
+        calibration_pa_distance, calibration_po_coverage,
+        _cardinality(store.labels, calibration), rows.iloc[split["training"]],
+        _cardinality(store.labels, split["training"]),
         seed=SEEDS["deployment"],
     )
     test_indices = np.arange(len(store.test_ids), dtype=np.int64)
@@ -1757,6 +1775,12 @@ def run_v24(frozen_v23_payload_b64: str) -> dict[str, Any]:
         report = {
             "experiment": EXPERIMENT, "status": "complete",
             "runtime_hours": guard.elapsed_hours(), "registered_max_total_hours": MAX_TOTAL_HOURS,
+            "runtime_plan": {"expected_hours": [5.0, 8.5], "feature_preparation_cap_hours": 2.75,
+                             "hard_guard_hours": 11.25, "kaggle_limit_hours": 12.0,
+                             "finalization_reserve_minutes": 35,
+                             "models_trained_sequentially": 5,
+                             "v23_reference_runtime_hours": 6.61616224692927,
+                             "vram_estimate_gb": "under 5 on one T4"},
             "frozen_v23_baseline": frozen_v23, "assessment": assessment,
             "training": {**training_records, "deployment": deployment_record},
             "selected_policy": selected_policy, "policy_trials": policy_trials,
@@ -1774,7 +1798,8 @@ def run_v24(frozen_v23_payload_b64: str) -> dict[str, Any]:
         report_path = export / "v24_report.json"
         save_json(report_path, report)
         manifest = {
-            "experiment": EXPERIMENT, "source_base_commit": V23_COMMIT,
+            "experiment": EXPERIMENT, "source_commit": V24_SOURCE_COMMIT,
+            "source_base_commit": V23_COMMIT,
             "notebook_source_sha256": NOTEBOOK_SOURCE_SHA256,
             "kaggle": {"kernel": "con1los/geolifeclef-risk-aware-sdm-phase-1",
                        "intended_version": 26, "runtime_gpu": torch.cuda.get_device_name(0)},
@@ -1795,6 +1820,10 @@ def run_v24(frozen_v23_payload_b64: str) -> dict[str, Any]:
                                    "cardinality_bounds": [16, 30], "relative_count_change": 3}},
             "checkpoint_identifiers_and_hashes": pre_assessment_freeze["checkpoint_sha256"],
             "pretrained_weight_provenance": [], "external_data_or_weights": False,
+            "runtime_budget": {"expected_hours": [5.0, 8.5], "hard_guard_hours": 11.25,
+                               "kaggle_limit_hours": 12.0, "feature_preparation_cap_hours": 2.75,
+                               "finalization_reserve_minutes": 35, "single_gpu": True,
+                               "models_kept_on_gpu_concurrently": 1},
             "frozen_policies": selected_policy, "pre_assessment_freeze": pre_assessment_freeze,
             "final_file_hashes": {"GLC25_PA_submission_v24.csv": submission["sha256"],
                                   "assessment_per_survey_v24.csv": assessment_sha,

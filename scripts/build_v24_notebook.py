@@ -8,6 +8,7 @@ import hashlib
 import io
 import json
 from pathlib import Path
+import subprocess
 import tarfile
 
 
@@ -58,21 +59,25 @@ def payload(files: dict[str, bytes]) -> str:
     return base64.b64encode(packed).decode("ascii")
 
 
-def make_notebook(core: str, payload_b64: str) -> dict:
+def make_notebook(core: str, payload_b64: str, source_commit: str | None = None) -> dict:
     source_sha = hashlib.sha256(core.encode("utf-8")).hexdigest()
+    source_commit = source_commit or f"notebook-source-sha256:{source_sha}"
     markdown = """# GeoLifeCLEF 2025 — v24 multimodal rare-species SDM
 
 This is the complete Kaggle deliverable. It uses only the official `geolifeclef-2025`
 competition input and one GPU. The exact v23 submission and its audit evidence are embedded
 as the frozen control. Internet and external/pretrained weights are not used.
 
-The notebook has an 11.25-hour hard budget inside Kaggle's 12-hour limit. It trains two new
-spatial outer folds plus one deployment model, freezes every decision before assessment,
-and writes exactly four files to `/kaggle/working/v24_export`. Submit
+The notebook has an 11.25-hour hard budget inside Kaggle's 12-hour limit, a 2.75-hour cap
+for feature extraction, and a 35-minute finalization reserve. Expected runtime is 5–8.5 hours
+on one T4 (the v23 reference took 6.62 hours); only one model is resident on the GPU at a time.
+It trains two new spatial outer folds plus one deployment model, freezes every decision before
+assessment, and writes exactly four files to `/kaggle/working/v24_export`. Submit
 `GLC25_PA_submission_v24.csv` only when the printed `eligible_for_submission` value is `true`.
 """
     payload_cell = (
         f"NOTEBOOK_SOURCE_SHA256 = {source_sha!r}\n"
+        f"V24_SOURCE_COMMIT = {source_commit!r}\n"
         "# Exact frozen v23 evidence, compressed into this notebook.\n"
         f"FROZEN_V23_PAYLOAD_B64 = {payload_b64!r}\n"
         "print({'embedded_v23_payload_bytes': len(FROZEN_V23_PAYLOAD_B64), "
@@ -100,6 +105,7 @@ and writes exactly four files to `/kaggle/working/v24_export`. Submit
             "language_info": {"name": "python", "version": "3.11"},
             "glc_v24": {
                 "experiment": "v24_multimodal_rare_species_sdm",
+                "source_commit": source_commit,
                 "frozen_v23_commit": "d307326eb55af13d1bc3b593f17997a8246df644",
                 "frozen_v23_submission_sha256": EXPECTED_V23_HASH,
                 "intended_kernel": "con1los/geolifeclef-risk-aware-sdm-phase-1",
@@ -134,7 +140,14 @@ def main() -> None:
     args = parser.parse_args()
     core_path = repository / "scripts/v24_notebook_core.py"
     core = core_path.read_text(encoding="utf-8")
-    notebook = make_notebook(core, payload(canonical_v23_files(args.evidence)))
+    try:
+        source_commit = subprocess.run(
+            ["git", "log", "-1", "--format=%H", "--", core_path.relative_to(repository).as_posix()],
+            cwd=repository, check=True, capture_output=True, text=True,
+        ).stdout.strip()
+    except (OSError, subprocess.CalledProcessError):
+        source_commit = f"notebook-source-sha256:{hashlib.sha256(core.encode('utf-8')).hexdigest()}"
+    notebook = make_notebook(core, payload(canonical_v23_files(args.evidence)), source_commit)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(notebook, ensure_ascii=False, indent=1) + "\n",
                            encoding="utf-8")

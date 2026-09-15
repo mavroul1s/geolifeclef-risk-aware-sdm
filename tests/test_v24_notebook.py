@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+from types import SimpleNamespace
 
 import numpy as np
 import pandas as pd
@@ -14,8 +15,11 @@ from scripts.v24_notebook_core import (
     MODALITIES,
     REMOTE_DIMS,
     CooccurrenceGraph,
+    POGridIndex,
+    RuntimeGuard,
     V24MultimodalRareJSDM,
     _channel_summary,
+    _build_models_for_fold,
     _decode_v23_submission,
     compose_predictions,
     make_outer_split,
@@ -107,3 +111,30 @@ def test_generated_notebook_has_no_repository_runtime_dependency():
     on_disk = json.loads((ROOT / "notebooks/geolifeclef_v24_multimodal_rare_species_sdm.ipynb")
                          .read_text(encoding="utf-8"))
     assert on_disk["metadata"]["glc_v24"]["frozen_v23_submission_sha256"] == EXPECTED_V23_HASH
+    scope = {}
+    exec(compile("".join(on_disk["cells"][1]["source"]), "v24-notebook-core", "exec"), scope)
+    exec(compile("".join(on_disk["cells"][2]["source"]), "v24-notebook-payload", "exec"), scope)
+    assert scope["notebook_self_tests"]()["passed"] is True
+
+
+def test_tiny_fold_runs_end_to_end_on_cpu(tmp_path):
+    rng = np.random.default_rng(24)
+    rows_count, species_count = 120, 40
+    arrays = {name: rng.normal(size=(rows_count, 3)).astype(np.float32) for name in MODALITIES}
+    labels = np.zeros((rows_count, species_count), dtype=np.uint8)
+    for row in range(rows_count):
+        labels[row, rng.choice(species_count, size=6, replace=False)] = 1
+    rows = pd.DataFrame({"surveyId": np.arange(rows_count),
+                         "lat": 35 + np.arange(rows_count) * 0.001,
+                         "lon": 20 + np.arange(rows_count) * 0.001,
+                         "country": ["synthetic"] * rows_count,
+                         "month": (np.arange(rows_count) % 12) + 1})
+    store = SimpleNamespace(train=arrays, labels=labels, species_ids=np.arange(species_count),
+                            dims={name: 3 for name in MODALITIES})
+    split = {"training": np.arange(60), "selection": np.arange(60, 80),
+             "calibration": np.arange(80, 100), "assessment": np.arange(100, 120)}
+    po = POGridIndex({}, np.arange(species_count), np.zeros(species_count), 0, 0)
+    bundle, record = _build_models_for_fold("smoke", split, rows, store, po, tmp_path,
+                                            RuntimeGuard(3), __import__("torch").device("cpu"), 24)
+    assert len(bundle["calibration_trials"]) > 1
+    assert record["v24"]["best_epoch"] >= 6
