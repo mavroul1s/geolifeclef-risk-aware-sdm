@@ -1789,12 +1789,12 @@ def compose_v25_predictions(base_lists: list[list[int]], probabilities: np.ndarr
     return result
 
 
-def compose_predictions(base_lists: list[list[int]], probabilities: np.ndarray,
-                        predicted_count: np.ndarray, frequencies: np.ndarray,
-                        spatial_candidates: list[dict[int, float]],
-                        po_candidates: list[dict[int, float]], graph: CooccurrenceGraph,
-                        risk: np.ndarray, policy: dict[str, Any]) -> list[list[int]]:
-    """Conservative rank-level fusion of the frozen v25 list and raw-raster CNN."""
+def compose_v26_predictions(base_lists: list[list[int]], probabilities: np.ndarray,
+                            predicted_count: np.ndarray, frequencies: np.ndarray,
+                            spatial_candidates: list[dict[int, float]],
+                            po_candidates: list[dict[int, float]], graph: CooccurrenceGraph,
+                            risk: np.ndarray, policy: dict[str, Any]) -> list[list[int]]:
+    """Reproduce the registered v26 fusion around the matched v25 control."""
     del spatial_candidates, po_candidates, graph
     if policy["id"] == "control":
         return [list(map(int, row)) for row in base_lists]
@@ -1835,6 +1835,50 @@ def compose_predictions(base_lists: list[list[int]], probabilities: np.ndarray,
                 break
         if len(selected) != len(set(selected)) or not 10 <= len(selected) <= 40:
             raise ValueError("v26 post-processing produced an invalid prediction row")
+        result.append(selected)
+    return result
+
+
+def compose_predictions(base_lists: list[list[int]], probabilities: np.ndarray,
+                        predicted_count: np.ndarray, frequencies: np.ndarray,
+                        spatial_candidates: list[dict[int, float]],
+                        po_candidates: list[dict[int, float]], graph: CooccurrenceGraph,
+                        risk: np.ndarray, policy: dict[str, Any]) -> list[list[int]]:
+    """Rank-level fusion of the exact/matched v26 list and the diverse v27 pyramid."""
+    del frequencies, spatial_candidates, po_candidates, graph
+    if policy["id"] == "control":
+        return [list(map(int, row)) for row in base_lists]
+    ranked, _ = top_rank(probabilities, 64)
+    result: list[list[int]] = []
+    for row, original in enumerate(base_lists):
+        base = list(map(int, original))
+        alpha = policy["alpha_near"] + (
+            policy["alpha_far"] - policy["alpha_near"]) * float(risk[row])
+        denominator = max(len(base) - 1, 1)
+        scores = {column: (1 - alpha) * (1.0 - 0.70 * rank / denominator)
+                  for rank, column in enumerate(base)}
+        for rank, column in enumerate(ranked[row]):
+            column = int(column)
+            scores[column] = scores.get(column, 0.0) + alpha * (1.0 - 0.85 * rank / 63)
+        model_count = int(round(float(predicted_count[row])))
+        desired = int(round((1 - policy["count_weight"]) * len(base) +
+                            policy["count_weight"] * model_count))
+        change = int(policy["max_count_change"])
+        desired = int(np.clip(desired, len(base) - change, len(base) + change))
+        desired = int(np.clip(desired, policy["minimum_count"], policy["maximum_count"]))
+        ordered = [column for column, _ in sorted(scores.items(),
+                                                   key=lambda item: (-item[1], item[0]))]
+        selected: list[int] = []
+        for candidates in (ordered, base, list(map(int, ranked[row]))):
+            for column in candidates:
+                if column not in selected:
+                    selected.append(column)
+                if len(selected) == desired:
+                    break
+            if len(selected) == desired:
+                break
+        if len(selected) != len(set(selected)) or not 8 <= len(selected) <= 40:
+            raise ValueError("v27 post-processing produced an invalid prediction row")
         result.append(selected)
     return result
 
