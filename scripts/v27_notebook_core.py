@@ -2253,26 +2253,29 @@ def _train_deployment(split: dict[str, np.ndarray], rows: pd.DataFrame, test_row
     selection_raw = np.zeros(len(selection), dtype=np.float32)
     test_raw = np.zeros(len(test_indices), dtype=np.float32)
     training_records = []
-    for candidate_number, candidate_seed in enumerate(
-            (SEEDS["deployment"] + 100, SEEDS["deployment"] + 200)):
-        model = SpatialRasterJSDM(store.dims, len(store.species_ids), active_mask)
-        checkpoint = output / f"v26_spatial_seed_{candidate_number}.pt"
-        epochs = 2 if len(store.species_ids) < 100 else 30
-        minimum_epochs = 1 if len(store.species_ids) < 100 else 15
+    deployment_seeds = (SEEDS["deployment"] + 100, SEEDS["deployment"] + 200,
+                        SEEDS["deployment"] + 300)
+    for candidate_number, candidate_seed in enumerate(deployment_seeds):
+        model = PyramidRasterJSDM(store.dims, len(store.species_ids), active_mask)
+        checkpoint = output / f"v27_pyramid_seed_{candidate_number}.pt"
+        epochs = 2 if len(store.species_ids) < 100 else 36
+        minimum_epochs = 1 if len(store.species_ids) < 100 else 18
         training = train_spatial_model(
             model, store.train, store.raster_train, store.labels,
             split["training"], selection, stats, raster_stats, device, checkpoint, guard,
-            seed=candidate_seed, epochs=epochs, minimum_epochs=minimum_epochs,
+            seed=candidate_seed, epochs=epochs, minimum_epochs=minimum_epochs, batch_size=96,
         )
         training_records.append(training)
         probability, raw = predict_spatial_model(
-            model, store.train, store.raster_train, selection, stats, raster_stats, device)
-        selection_probability += probability.astype(np.float32) / 2
-        selection_raw += raw / 2
+            model, store.train, store.raster_train, selection, stats, raster_stats, device,
+            batch_size=128, tta_views=4)
+        selection_probability += probability.astype(np.float32) / len(deployment_seeds)
+        selection_raw += raw / len(deployment_seeds)
         probability, raw = predict_spatial_model(
-            model, store.test, store.raster_test, test_indices, stats, raster_stats, device)
-        test_probability += probability.astype(np.float32) / 2
-        test_raw += raw / 2
+            model, store.test, store.raster_test, test_indices, stats, raster_stats, device,
+            batch_size=128, tta_views=4)
+        test_probability += probability.astype(np.float32) / len(deployment_seeds)
+        test_raw += raw / len(deployment_seeds)
         del model
         gc.collect()
         if device.type == "cuda":
@@ -2284,7 +2287,7 @@ def _train_deployment(split: dict[str, np.ndarray], rows: pd.DataFrame, test_row
     count_model, count_metadata = fit_count_model(
         selection_probability, selection_raw, rows.iloc[selection], selection_distance,
         selection_coverage, oracle_counts, rows.iloc[split["training"]],
-        _cardinality(store.labels, split["training"]), seed=SEEDS["deployment"] + 300)
+        _cardinality(store.labels, split["training"]), seed=SEEDS["deployment"] + 400)
     test_coordinates = test_rows[["lat", "lon"]].to_numpy(np.float64)
     test_spatial, test_pa_distance = spatial.query(test_coordinates)
     test_po, test_po_coverage = po.query(test_coordinates)
@@ -2307,7 +2310,8 @@ def _train_deployment(split: dict[str, np.ndarray], rows: pd.DataFrame, test_row
                  "predicted_cardinality_min": min(map(len, predictions)),
                  "predicted_cardinality_mean": float(np.mean(list(map(len, predictions)))),
                  "predicted_cardinality_max": max(map(len, predictions)),
-                 "raw_spatial_seeds": 2},
+                 "pyramid_spatial_seeds": len(deployment_seeds),
+                 "sentinel_tta_views": 4},
         "checkpoint_sha256": {path.name: sha256_file(path)
                               for path in sorted(output.glob("*.pt"))},
     }
