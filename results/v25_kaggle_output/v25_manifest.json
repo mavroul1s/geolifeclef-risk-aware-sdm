@@ -1,0 +1,455 @@
+{
+  "checkpoint_identifiers_and_hashes": {
+    "deployment/v25_candidate_seed_0.pt": "867b2078c7f15e86f2c10c7b0a1e4e65682314f95e2f6a1ad5af272d6ad59aa3",
+    "deployment/v25_candidate_seed_1.pt": "de10589b6e7afcdc7ab74bd4e1669b635b83b164d5e698c3f14f0c026e46d6e0",
+    "fold_0/matched_v23_control.pt": "c16949791a5d58b7d101ef52ed2571e6e9f05cd9b713ccb27b85954e363387f2",
+    "fold_0/matched_v24_multimodal.pt": "b45b14c36b93014dab39a986a98b5530aaf5b59ac4dcc251c4928759c8134a3e",
+    "fold_0/v25_candidate_seed_0.pt": "92a7d4f94dc5095b2e237c7991b00042ce507dff26fb13c6ca5bbf6a9e141720",
+    "fold_0/v25_candidate_seed_1.pt": "1d0920eef1f1b2354283ff16c1aad85c6f8d54510f3b90fa13f93ef32e637a9a",
+    "fold_1/matched_v23_control.pt": "b559432c898807c70777b45f52f3fad4cea32f42046b2f7b504281ea0525491f",
+    "fold_1/matched_v24_multimodal.pt": "b137932fdb0bfe2d44ec572f796f07ff62947e9a22a808eae8230c21fece1a90",
+    "fold_1/v25_candidate_seed_0.pt": "91b57ce5c2b70e535973d745c25c7b3c8a6503cfc52a2bcc1775390117f1eee0",
+    "fold_1/v25_candidate_seed_1.pt": "4bfbfc6ac6e2ef8b7ac14ddf3c051d349502c22eb4898bf9f3e2e93a0b630459"
+  },
+  "datasets": [
+    {
+      "kind": "competition",
+      "slug": "geolifeclef-2025",
+      "version": "competition snapshot mounted by Kaggle"
+    }
+  ],
+  "experiment": "v25_fresh_holdout_adaptive_ensemble",
+  "external_data_or_weights": false,
+  "feature_manifest": {
+    "environment_sources": [
+      {
+        "missing_indicators": 0,
+        "predictors": 19,
+        "test": "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-test-bioclimatic.csv",
+        "train": "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv"
+      },
+      {
+        "missing_indicators": 1,
+        "predictors": 1,
+        "test": "EnvironmentalValues/Elevation/GLC25-PA-test-elevation.csv",
+        "train": "EnvironmentalValues/Elevation/GLC25-PA-train-elevation.csv"
+      },
+      {
+        "missing_indicators": 0,
+        "predictors": 22,
+        "test": "EnvironmentalValues/HumanFootprint/GLC25-PA-test-human_footprint.csv",
+        "train": "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv"
+      },
+      {
+        "missing_indicators": 0,
+        "predictors": 13,
+        "test": "EnvironmentalValues/LandCover/GLC25-PA-test-landcover.csv",
+        "train": "EnvironmentalValues/LandCover/GLC25-PA-train-landcover.csv"
+      },
+      {
+        "missing_indicators": 9,
+        "predictors": 9,
+        "test": "EnvironmentalValues/SoilGrids/GLC25-PA-test-soilgrids.csv",
+        "train": "EnvironmentalValues/SoilGrids/GLC25-PA-train-soilgrids.csv"
+      }
+    ],
+    "external_data_or_weights": false,
+    "modalities": {
+      "bioclim": [
+        76
+      ],
+      "environment": [
+        74
+      ],
+      "landsat": [
+        114
+      ],
+      "sentinel": [
+        115
+      ],
+      "static": [
+        55
+      ]
+    },
+    "official_competition": "geolifeclef-2025",
+    "preparation_seconds": 2862.932373997,
+    "remote_preparation": {
+      "test": {
+        "rows": 14784,
+        "seconds": 425
+      },
+      "train": {
+        "rows": 88987,
+        "seconds": 2430
+      }
+    },
+    "species": 5016,
+    "species_ids_sha256": "4cfb4e44b760ae8feeb817a1788e12f8853f071689a5bf5a47c06587d5090a96",
+    "summary_encoder": {
+      "bioclim": "per-channel distribution plus 12 temporal bins",
+      "landsat": "per-band distribution plus 12 temporal bins",
+      "sentinel": "fixed-reflectance band and NDVI statistics plus 4x4 spatial pooling"
+    },
+    "test_ids_sha256": "43dc449194bbde82d746bd72ef26c04fe99a6e049360b152157d8828db20cd0f",
+    "test_labels_used": false,
+    "test_rows": 14784,
+    "train_ids_sha256": "2938f816ee93f5c53b1fc71a4505f413680018f8dff766ae891df06219286095",
+    "train_rows": 88987
+  },
+  "final_file_hashes": {
+    "GLC25_PA_submission_v25.csv": "c450107d5219bb3a99f37741142ea40cf9320c87e851173ec50f1e899ada48c5",
+    "assessment_per_survey_v25.csv": "4907c904578385e54f167a7909ba7de3d00ee0991759669ca523a1c90caaaa81",
+    "v25_manifest.json": null,
+    "v25_report.json": "f8d68c295725f10c07bc0109d05307f7b369db85e0439b53eaa7d8d68ca0395f"
+  },
+  "frozen_policies": {
+    "alpha_far": 0.2,
+    "alpha_near": 0.1,
+    "cooccurrence_weight": 0.0,
+    "count_weight": 0.5,
+    "id": "adaptive_half",
+    "max_count_change": 8,
+    "maximum_count": 34,
+    "minimum_count": 12,
+    "pooled_calibration_f1": 0.29170762914550097,
+    "rare_keep_bonus": 0.02,
+    "rare_weight": 0.0,
+    "spatial_weight": 0.0,
+    "threshold": null
+  },
+  "kaggle": {
+    "intended_version": 27,
+    "kernel": "con1los/geolifeclef-risk-aware-sdm-phase-1",
+    "runtime_gpu": "Tesla T4"
+  },
+  "model_configurations": {
+    "matched_v23_control": {
+      "epochs": 6,
+      "kind": "early_fusion_residual",
+      "role": "new-fold recipe-transfer control",
+      "width": 384
+    },
+    "postprocessing": {
+      "candidate_relative_count_change": [
+        0,
+        18
+      ],
+      "cardinality_bounds": [
+        10,
+        40
+      ],
+      "max_rare_additions": 4,
+      "max_zero_pa_additions": 2,
+      "policies": [
+        {
+          "alpha_far": 0.0,
+          "alpha_near": 0.0,
+          "cooccurrence_weight": 0.0,
+          "count_weight": 0.0,
+          "id": "control",
+          "max_count_change": 0,
+          "maximum_count": 36,
+          "minimum_count": 10,
+          "rare_keep_bonus": 0.0,
+          "rare_weight": 0.0,
+          "spatial_weight": 0.0,
+          "threshold": null
+        },
+        {
+          "alpha_far": 0.2,
+          "alpha_near": 0.1,
+          "cooccurrence_weight": 0.0,
+          "count_weight": 0.5,
+          "id": "adaptive_half",
+          "max_count_change": 8,
+          "maximum_count": 34,
+          "minimum_count": 12,
+          "rare_keep_bonus": 0.02,
+          "rare_weight": 0.0,
+          "spatial_weight": 0.0,
+          "threshold": null
+        },
+        {
+          "alpha_far": 0.28,
+          "alpha_near": 0.14,
+          "cooccurrence_weight": 0.0,
+          "count_weight": 1.0,
+          "id": "adaptive_full",
+          "max_count_change": 16,
+          "maximum_count": 36,
+          "minimum_count": 10,
+          "rare_keep_bonus": 0.025,
+          "rare_weight": 0.0,
+          "spatial_weight": 0.0,
+          "threshold": null
+        },
+        {
+          "alpha_far": 0.3,
+          "alpha_near": 0.14,
+          "cooccurrence_weight": 0.02,
+          "count_weight": 1.0,
+          "id": "adaptive_context",
+          "max_count_change": 16,
+          "maximum_count": 36,
+          "minimum_count": 10,
+          "rare_keep_bonus": 0.03,
+          "rare_weight": 0.02,
+          "spatial_weight": 0.025,
+          "threshold": null
+        },
+        {
+          "alpha_far": 0.32,
+          "alpha_near": 0.16,
+          "cooccurrence_weight": 0.0,
+          "count_weight": 1.0,
+          "id": "threshold_10",
+          "max_count_change": 18,
+          "maximum_count": 36,
+          "minimum_count": 14,
+          "rare_keep_bonus": 0.02,
+          "rare_weight": 0.0,
+          "spatial_weight": 0.0,
+          "threshold": 0.1
+        },
+        {
+          "alpha_far": 0.32,
+          "alpha_near": 0.16,
+          "cooccurrence_weight": 0.0,
+          "count_weight": 1.0,
+          "id": "threshold_15",
+          "max_count_change": 18,
+          "maximum_count": 36,
+          "minimum_count": 14,
+          "rare_keep_bonus": 0.02,
+          "rare_weight": 0.0,
+          "spatial_weight": 0.0,
+          "threshold": 0.15
+        },
+        {
+          "alpha_far": 0.32,
+          "alpha_near": 0.16,
+          "cooccurrence_weight": 0.0,
+          "count_weight": 1.0,
+          "id": "threshold_20",
+          "max_count_change": 18,
+          "maximum_count": 36,
+          "minimum_count": 14,
+          "rare_keep_bonus": 0.02,
+          "rare_weight": 0.0,
+          "spatial_weight": 0.0,
+          "threshold": 0.2
+        }
+      ],
+      "selected": {
+        "alpha_far": 0.2,
+        "alpha_near": 0.1,
+        "cooccurrence_weight": 0.0,
+        "count_weight": 0.5,
+        "id": "adaptive_half",
+        "max_count_change": 8,
+        "maximum_count": 34,
+        "minimum_count": 12,
+        "pooled_calibration_f1": 0.29170762914550097,
+        "rare_keep_bonus": 0.02,
+        "rare_weight": 0.0,
+        "spatial_weight": 0.0,
+        "threshold": null
+      }
+    },
+    "v24": {
+      "epochs_outer": 8,
+      "loss": "frequency-aware asymmetric + rare auxiliary + richness",
+      "low_rank_joint_species_head": 80,
+      "modality_encoders": [
+        "landsat",
+        "bioclim",
+        "sentinel",
+        "environment",
+        "static"
+      ],
+      "rare_threshold": 25,
+      "role": "fresh-fold matched control",
+      "width": 160
+    },
+    "v25": {
+      "count_target": "selection-only oracle sample-F1 top-k",
+      "epochs_deployment": 12,
+      "epochs_outer": 10,
+      "independent_seeds": 2,
+      "low_rank_joint_species_head": 112,
+      "modality_encoders": [
+        "landsat",
+        "bioclim",
+        "sentinel",
+        "environment",
+        "static"
+      ],
+      "width": 224
+    }
+  },
+  "notebook_source_sha256": "c007bc0e9652c5348333c67dc764da0434a2cc3bcde8fc4102f3411a3811d8cd",
+  "pre_assessment_freeze": {
+    "all_models_and_policies_frozen": true,
+    "assessment_prediction_sha256": {
+      "fold_0": "637e6d9881987b63a412997bcbce86ae6c726ea2b424806b25675c1e69f7b7ad",
+      "fold_1": "003e091970ffe6a5eb2433ec2422d4150245e3d3c268fa278afe514c67466d4a"
+    },
+    "assessment_reporting_started": false,
+    "checkpoint_sha256": {
+      "deployment/v25_candidate_seed_0.pt": "867b2078c7f15e86f2c10c7b0a1e4e65682314f95e2f6a1ad5af272d6ad59aa3",
+      "deployment/v25_candidate_seed_1.pt": "de10589b6e7afcdc7ab74bd4e1669b635b83b164d5e698c3f14f0c026e46d6e0",
+      "fold_0/matched_v23_control.pt": "c16949791a5d58b7d101ef52ed2571e6e9f05cd9b713ccb27b85954e363387f2",
+      "fold_0/matched_v24_multimodal.pt": "b45b14c36b93014dab39a986a98b5530aaf5b59ac4dcc251c4928759c8134a3e",
+      "fold_0/v25_candidate_seed_0.pt": "92a7d4f94dc5095b2e237c7991b00042ce507dff26fb13c6ca5bbf6a9e141720",
+      "fold_0/v25_candidate_seed_1.pt": "1d0920eef1f1b2354283ff16c1aad85c6f8d54510f3b90fa13f93ef32e637a9a",
+      "fold_1/matched_v23_control.pt": "b559432c898807c70777b45f52f3fad4cea32f42046b2f7b504281ea0525491f",
+      "fold_1/matched_v24_multimodal.pt": "b137932fdb0bfe2d44ec572f796f07ff62947e9a22a808eae8230c21fece1a90",
+      "fold_1/v25_candidate_seed_0.pt": "91b57ce5c2b70e535973d745c25c7b3c8a6503cfc52a2bcc1775390117f1eee0",
+      "fold_1/v25_candidate_seed_1.pt": "4bfbfc6ac6e2ef8b7ac14ddf3c051d349502c22eb4898bf9f3e2e93a0b630459"
+    },
+    "selected_policy": {
+      "alpha_far": 0.2,
+      "alpha_near": 0.1,
+      "cooccurrence_weight": 0.0,
+      "count_weight": 0.5,
+      "id": "adaptive_half",
+      "max_count_change": 8,
+      "maximum_count": 34,
+      "minimum_count": 12,
+      "pooled_calibration_f1": 0.29170762914550097,
+      "rare_keep_bonus": 0.02,
+      "rare_weight": 0.0,
+      "spatial_weight": 0.0,
+      "threshold": null
+    },
+    "submission_sha256": "c450107d5219bb3a99f37741142ea40cf9320c87e851173ec50f1e899ada48c5"
+  },
+  "pretrained_weight_provenance": [],
+  "runtime_budget": {
+    "expected_hours": [
+      2.0,
+      5.0
+    ],
+    "feature_preparation_cap_hours": 2.75,
+    "finalization_reserve_minutes": 35,
+    "hard_guard_hours": 10.75,
+    "kaggle_limit_hours": 12.0,
+    "models_kept_on_gpu_concurrently": 1,
+    "single_gpu": true
+  },
+  "seeds": {
+    "bootstrap": 20262504,
+    "deployment": 20262503,
+    "fold_0": 20262501,
+    "fold_1": 20262502,
+    "po": 20262505,
+    "split": 20260923
+  },
+  "self_hash_note": "The manifest's own byte hash is emitted by the final notebook cell.",
+  "source_base_commit": "72c8e98dbb927d93637df431c37b751632f51458",
+  "source_commit": "dccf4e6451d6f46c1dff8db87a88e984aa631c93;notebook-source-sha256:c007bc0e9652c5348333c67dc764da0434a2cc3bcde8fc4102f3411a3811d8cd",
+  "split_definitions": {
+    "consumed_assessment_union_count": 55325,
+    "deployment": {
+      "adaptive_retries": 0,
+      "block_size_degrees": 1.0,
+      "calibration_bucket_range": [
+        8,
+        17
+      ],
+      "development_ids_drawn_from_consumed_assessments": true,
+      "partition_counts": {
+        "calibration": 1806,
+        "selection": 4972,
+        "training": 74010
+      },
+      "seed": 20260923,
+      "selection_bucket_range": [
+        0,
+        7
+      ],
+      "training_bucket_range": [
+        18,
+        99
+      ],
+      "training_buffer_km": 10.0
+    },
+    "outer": [
+      {
+        "adaptive_retries": 0,
+        "all_v21_v22_v23_v24_assessments_excluded": true,
+        "assessment_bucket_range": [
+          0,
+          14
+        ],
+        "assessment_ids_sha256": "3f3b22951026a95e754f1119bd6e9b4c7b37a2a25625dbd1a26ff0d72c04faef",
+        "assessment_used_for_selection": false,
+        "block_size_degrees": 1.0,
+        "buffer_km": 20.0,
+        "calibration_bucket_range": [
+          40,
+          49
+        ],
+        "consumed_assessment_ids": 55325,
+        "fold": 0,
+        "fresh_assessment_surveys": 5170,
+        "minimum_assessment_training_distance_km": 20.0062894201084,
+        "partition_blocks": {
+          "assessment": 23,
+          "calibration": 24,
+          "selection": 23,
+          "training": 126
+        },
+        "partition_counts": {
+          "assessment": 5170,
+          "calibration": 6755,
+          "selection": 2230,
+          "training": 26166
+        },
+        "seed": 20260923,
+        "selection_bucket_range": [
+          30,
+          39
+        ]
+      },
+      {
+        "adaptive_retries": 0,
+        "all_v21_v22_v23_v24_assessments_excluded": true,
+        "assessment_bucket_range": [
+          15,
+          29
+        ],
+        "assessment_ids_sha256": "bc9da54179b24bdc7e0dd13e5171c6ac78a6f6b505a6b0d2433eacf83704401d",
+        "assessment_used_for_selection": false,
+        "block_size_degrees": 1.0,
+        "buffer_km": 20.0,
+        "calibration_bucket_range": [
+          40,
+          49
+        ],
+        "consumed_assessment_ids": 55325,
+        "fold": 1,
+        "fresh_assessment_surveys": 9135,
+        "minimum_assessment_training_distance_km": 20.002086052903362,
+        "partition_blocks": {
+          "assessment": 22,
+          "calibration": 24,
+          "selection": 23,
+          "training": 126
+        },
+        "partition_counts": {
+          "assessment": 9135,
+          "calibration": 6755,
+          "selection": 2230,
+          "training": 25839
+        },
+        "seed": 20260923,
+        "selection_bucket_range": [
+          30,
+          39
+        ]
+      }
+    ],
+    "v21_v22_v23_v24_assessments_excluded": true
+  }
+}

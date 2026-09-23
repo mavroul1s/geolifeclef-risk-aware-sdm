@@ -51,20 +51,20 @@ To create/update a private Kaggle script kernel and start a Phase-1 run directly
 
 The script keeps credentials in memory only, uploads a Git archive of **HEAD** (commit intended source changes first), and attaches `geolifeclef-2025`. It also supports the explicitly user-authorized ignored `api_key/kaggle_2.json`. Audit/schema/frequency runs are CPU-only; neural modes request a T4.
 
-The current official best is v24: **0.22397 public / 0.20094 private**. It gained
-**0.00345 public / 0.00364 private** over v23 and completed in 0.9812 hours. The
-remaining private-score gap is **0.02927**, so SOTA is not established. Exact v24
+The current official best is v25: **0.22812 public / 0.20503 private**. It gained
+**0.00415 public / 0.00409 private** over v24 and completed in 0.9970 hours. The
+remaining private-score gap is **0.02518**, so SOTA is not established. Exact v25
 outputs, hashes, assessment diagnostics and leaderboard evidence are preserved under
-`results/`; see `results/v24_summary.json` and `results/experiment_registry.json`.
+`results/`; see `results/v25_summary.json` and `results/experiment_registry.json`.
 
-The current master notebook is
-`notebooks/geolifeclef_v25_fresh_holdout_adaptive_ensemble.ipynb`. It embeds the exact
-scored v24 predictions and excludes all 55,325 survey IDs assessed by v21-v24 from its
-two new assessment folds. Its candidate averages two independently seeded multimodal
-models and replaces v24's saturated 25-30 prediction rule with calibration-selected
-adaptive top-k or threshold inference. The notebook is self-contained, 1-MB-safe,
-uses only the official competition input, and has a 10.75-hour guard. See
-`docs/fresh_holdout_adaptive_ensemble_v25.md`.
+The current candidate notebook is
+`notebooks/geolifeclef_v26_raw_spatial_raster_ensemble.ipynb`. It embeds the exact scored
+v25 predictions and excludes all 69,630 survey IDs assessed by v21-v25 from two new
+assessment folds. The candidate adds residual CNN encoders over raw Sentinel, Landsat,
+and bioclimatic tensors, then conservatively blends their ranking with v25. The notebook
+is self-contained, 677,705 bytes, uses only the official competition input, deletes its
+large temporary cache, and has a 10.75-hour guard. See
+`docs/raw_spatial_raster_ensemble_v26.md`.
 
 ## Audit and canonical data contract
 

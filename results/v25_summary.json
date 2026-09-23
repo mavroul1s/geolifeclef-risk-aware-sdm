@@ -1,0 +1,83 @@
+{
+  "experiment": "v25_fresh_holdout_adaptive_ensemble",
+  "status": "complete_official_current_best",
+  "source_revision": "dccf4e6451d6f46c1dff8db87a88e984aa631c93;notebook-source-sha256:c007bc0e9652c5348333c67dc764da0434a2cc3bcde8fc4102f3411a3811d8cd",
+  "scored_notebook": "geolifeclef_v25_fresh_holdout_adaptive_ensemble - Version 1",
+  "score_recorded_from": "user-provided Kaggle result screenshot",
+  "score_recorded_at": "2026-09-23",
+  "official": {
+    "public_score": 0.22812,
+    "private_score": 0.20503,
+    "public_gain_over_v24": 0.00415,
+    "private_gain_over_v24": 0.00409,
+    "target_private_score": 0.23021,
+    "gap_to_target_private": 0.02518,
+    "screenshot": "results/v25_kaggle_scores.png"
+  },
+  "runtime_hours": 0.9970158073102777,
+  "selected_policy": "adaptive_half",
+  "internal_assessment": {
+    "surveys": 14305,
+    "spatial_blocks": 45,
+    "matched_v24_sample_f1": 0.30661848753972276,
+    "v25_sample_f1": 0.3089922887119047,
+    "gain": 0.0023738011721819584,
+    "spatial_block_bootstrap_ci95": [
+      0.000376772568005697,
+      0.005148307728042842
+    ],
+    "fold_gains": [
+      0.0006176460181464324,
+      0.0033677061690471654
+    ],
+    "cardinality": {
+      "true_mean": 16.024746592100666,
+      "matched_v24_mae": 11.355889549108703,
+      "v25_predicted_mean": 22.594896889199582,
+      "v25_mae": 9.53694512408249
+    },
+    "gain_by_true_cardinality": {
+      "0_to_9": 0.008925676512821574,
+      "10_to_14": 0.0051755010868515,
+      "15_to_19": 0.0011564996089169677,
+      "20_to_24": -0.0026681618964249816,
+      "25_plus": -0.007468156033652153
+    },
+    "ablations_delta_vs_full": {
+      "without_adaptive_count": -0.002373801172181944,
+      "without_candidate_ranking": -0.0006127893296348774,
+      "without_cooccurrence": 0.0,
+      "without_spatial": 0.0,
+      "without_rare_context": 0.000008381799132484158
+    },
+    "diagnosis": "Adaptive cardinality produced essentially the entire gain. Spatial and co-occurrence components were inactive, rare context was slightly harmful, and the model still overpredicted low-richness plots while underpredicting plots with 25 or more true species."
+  },
+  "submission_gate": {
+    "eligible": false,
+    "failed_component": "rare_species_f1_protected",
+    "all_integrity_checks_passed": true,
+    "note": "The user submitted the candidate despite the registered conservative gate; the official private score nevertheless improved by 0.00409."
+  },
+  "test_prediction_comparison": {
+    "v24_mean_cardinality": 23.48721590909091,
+    "v25_mean_cardinality": 23.490936147186147,
+    "mean_jaccard_similarity": 0.8978776582357664,
+    "unchanged_rows": 1031,
+    "interpretation": "The mean prediction count barely changed; gains came from survey-specific count redistribution and limited reranking."
+  },
+  "assessment_reuse_audit": {
+    "unique_assessment_ids_consumed_by_v21_through_v25": 69630,
+    "official_train_surveys": 88987,
+    "never_assessed_surveys_remaining": 19357,
+    "v25_fresh_assessment_surveys": 14305,
+    "v26_action": "Embed the v21-v25 union and use only the remaining 19357 IDs for final assessment."
+  },
+  "artifact_hashes": {
+    "GLC25_PA_submission_v25.csv": "c450107d5219bb3a99f37741142ea40cf9320c87e851173ec50f1e899ada48c5",
+    "assessment_per_survey_v25.csv": "4907c904578385e54f167a7909ba7de3d00ee0991759669ca523a1c90caaaa81",
+    "v25_manifest.json": "85bdfac074892a49db6b38974bfdc22b6e50ed58f5cf18598895ee4836ed20fe",
+    "v25_report.json": "f8d68c295725f10c07bc0109d05307f7b369db85e0439b53eaa7d8d68ca0395f"
+  },
+  "artifact_directory": "results/v25_kaggle_output",
+  "output_policy": "Only the four compact v25 deliverables and leaderboard screenshot are committed; temporary feature arrays and checkpoints remain excluded."
+}

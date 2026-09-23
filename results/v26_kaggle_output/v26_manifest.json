@@ -1,0 +1,463 @@
+{
+  "checkpoint_identifiers_and_hashes": {
+    "deployment/v26_spatial_seed_0.pt": "7be4be7160074fdcdec124fc758334e8db86c0a1d5850c640ffd41e006bd11ac",
+    "deployment/v26_spatial_seed_1.pt": "5d037daa1dc225c1d1f885a7f4e65ff9a59da680d6391ad5a47f8bc14b319605",
+    "fold_0/matched_v23_control.pt": "d2626f2748e9319dd328373f769503105552726e661f385615bf85f4b4eec779",
+    "fold_0/matched_v24_multimodal.pt": "a2141799ddb1664ccb31b3f9e62d533d39bd2b4482b521f58f6672f6fb4192e8",
+    "fold_0/v25_candidate_seed_0.pt": "9ab3e6a0533df2da6f0e4c0611bb56c1c97e5763ad9f714cdba6572eb1babfc2",
+    "fold_0/v25_candidate_seed_1.pt": "51c39d2b32faa23f983f228afcc5108a743f1392edb4f90b1090c0a4cd314093",
+    "fold_0/v26_spatial_raster.pt": "2abde13decd6f0ff939ba36daab6c90212ae80dbad695c96790c2ff4491f85b5",
+    "fold_1/matched_v23_control.pt": "6dc0c0b90b8f37adc28a85324530dcd352b8574d197b4d82edec50b17da2323e",
+    "fold_1/matched_v24_multimodal.pt": "7d83920ac8f4c681b9d38d72e425081a3cab03a04c3782117b9a47e69ea9c42c",
+    "fold_1/v25_candidate_seed_0.pt": "89ea6480acee7004f96543b8a427c539aa972007f669bde788ad5f164d0f0521",
+    "fold_1/v25_candidate_seed_1.pt": "448a34ad97c9d79b344c1e648d45a1167ba3ff61af03a0bebf4884a050dad39a",
+    "fold_1/v26_spatial_raster.pt": "0297ed645a23bd418b287a6d1c49353f1e261520cb371fb61fbfba6d705a0b7a"
+  },
+  "datasets": [
+    {
+      "kind": "competition",
+      "slug": "geolifeclef-2025",
+      "version": "competition snapshot mounted by Kaggle"
+    }
+  ],
+  "experiment": "v26_raw_spatial_raster_ensemble",
+  "external_data_or_weights": false,
+  "feature_manifest": {
+    "environment_sources": [
+      {
+        "missing_indicators": 0,
+        "predictors": 19,
+        "test": "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-test-bioclimatic.csv",
+        "train": "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv"
+      },
+      {
+        "missing_indicators": 1,
+        "predictors": 1,
+        "test": "EnvironmentalValues/Elevation/GLC25-PA-test-elevation.csv",
+        "train": "EnvironmentalValues/Elevation/GLC25-PA-train-elevation.csv"
+      },
+      {
+        "missing_indicators": 0,
+        "predictors": 22,
+        "test": "EnvironmentalValues/HumanFootprint/GLC25-PA-test-human_footprint.csv",
+        "train": "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv"
+      },
+      {
+        "missing_indicators": 0,
+        "predictors": 13,
+        "test": "EnvironmentalValues/LandCover/GLC25-PA-test-landcover.csv",
+        "train": "EnvironmentalValues/LandCover/GLC25-PA-train-landcover.csv"
+      },
+      {
+        "missing_indicators": 9,
+        "predictors": 9,
+        "test": "EnvironmentalValues/SoilGrids/GLC25-PA-test-soilgrids.csv",
+        "train": "EnvironmentalValues/SoilGrids/GLC25-PA-train-soilgrids.csv"
+      }
+    ],
+    "external_data_or_weights": false,
+    "modalities": {
+      "bioclim": [
+        76
+      ],
+      "environment": [
+        74
+      ],
+      "landsat": [
+        114
+      ],
+      "sentinel": [
+        115
+      ],
+      "static": [
+        55
+      ]
+    },
+    "official_competition": "geolifeclef-2025",
+    "preparation_seconds": 3968.2008876859995,
+    "raw_encoder_input": {
+      "bioclim": "unaltered official 4x19x12 tensor",
+      "landsat": "unaltered official 6x4x21 tensor",
+      "sentinel": "official TIFF bilinearly resampled to 4x32x32 and scaled by 10000"
+    },
+    "raw_raster_shapes": {
+      "bioclim": [
+        4,
+        19,
+        12
+      ],
+      "landsat": [
+        6,
+        4,
+        21
+      ],
+      "sentinel": [
+        4,
+        32,
+        32
+      ]
+    },
+    "remote_preparation": {
+      "test": {
+        "rows": 14784,
+        "seconds": 552
+      },
+      "train": {
+        "rows": 88987,
+        "seconds": 3403
+      }
+    },
+    "species": 5016,
+    "species_ids_sha256": "4cfb4e44b760ae8feeb817a1788e12f8853f071689a5bf5a47c06587d5090a96",
+    "summary_encoder": {
+      "bioclim": "per-channel distribution plus 12 temporal bins",
+      "landsat": "per-band distribution plus 12 temporal bins",
+      "sentinel": "fixed-reflectance band and NDVI statistics plus 4x4 spatial pooling"
+    },
+    "test_ids_sha256": "43dc449194bbde82d746bd72ef26c04fe99a6e049360b152157d8828db20cd0f",
+    "test_labels_used": false,
+    "test_rows": 14784,
+    "train_ids_sha256": "2938f816ee93f5c53b1fc71a4505f413680018f8dff766ae891df06219286095",
+    "train_rows": 88987
+  },
+  "final_file_hashes": {
+    "GLC25_PA_submission_v26.csv": "67937cf92f0b4626b7b3c643ababbd0c7a4f39801909e4bd5646b532371c21a9",
+    "assessment_per_survey_v26.csv": "54c60ca624d5d3e2f9be32a4c8df97de80436e589c87dddbe8b7200a27f1ade3",
+    "v26_manifest.json": null,
+    "v26_report.json": "1202b507693608e4cf5e6376618669511c44164509b8f24168d99da1fd8d1dd5"
+  },
+  "frozen_policies": {
+    "alpha_far": 0.32,
+    "alpha_near": 0.22,
+    "count_weight": 0.35,
+    "id": "spatial_count_35",
+    "max_count_change": 5,
+    "maximum_count": 40,
+    "minimum_count": 10,
+    "pooled_calibration_f1": 0.28300020652291413,
+    "rare_keep_bonus": 0.06
+  },
+  "kaggle": {
+    "intended_version": 28,
+    "kernel": "con1los/geolifeclef-risk-aware-sdm-phase-1",
+    "runtime_gpu": "Tesla T4"
+  },
+  "model_configurations": {
+    "matched_v23_control": {
+      "epochs": 6,
+      "kind": "early_fusion_residual",
+      "role": "new-fold recipe-transfer control",
+      "width": 384
+    },
+    "matched_v25": {
+      "count_target": "selection-only oracle sample-F1 top-k",
+      "epochs_deployment": 12,
+      "epochs_outer": 10,
+      "independent_seeds": 2,
+      "low_rank_joint_species_head": 112,
+      "modality_encoders": [
+        "landsat",
+        "bioclim",
+        "sentinel",
+        "environment",
+        "static"
+      ],
+      "width": 224
+    },
+    "postprocessing": {
+      "candidate_relative_count_change": [
+        -5,
+        5
+      ],
+      "cardinality_bounds": [
+        10,
+        40
+      ],
+      "policies": [
+        {
+          "alpha_far": 0.0,
+          "alpha_near": 0.0,
+          "count_weight": 0.0,
+          "id": "control",
+          "max_count_change": 0,
+          "maximum_count": 40,
+          "minimum_count": 10,
+          "rare_keep_bonus": 0.0
+        },
+        {
+          "alpha_far": 0.1,
+          "alpha_near": 0.1,
+          "count_weight": 0.0,
+          "id": "spatial_rank_10",
+          "max_count_change": 0,
+          "maximum_count": 40,
+          "minimum_count": 10,
+          "rare_keep_bonus": 0.04
+        },
+        {
+          "alpha_far": 0.2,
+          "alpha_near": 0.2,
+          "count_weight": 0.0,
+          "id": "spatial_rank_20",
+          "max_count_change": 0,
+          "maximum_count": 40,
+          "minimum_count": 10,
+          "rare_keep_bonus": 0.04
+        },
+        {
+          "alpha_far": 0.3,
+          "alpha_near": 0.3,
+          "count_weight": 0.0,
+          "id": "spatial_rank_30",
+          "max_count_change": 0,
+          "maximum_count": 40,
+          "minimum_count": 10,
+          "rare_keep_bonus": 0.05
+        },
+        {
+          "alpha_far": 0.24,
+          "alpha_near": 0.16,
+          "count_weight": 0.2,
+          "id": "spatial_count_20",
+          "max_count_change": 3,
+          "maximum_count": 40,
+          "minimum_count": 10,
+          "rare_keep_bonus": 0.05
+        },
+        {
+          "alpha_far": 0.32,
+          "alpha_near": 0.22,
+          "count_weight": 0.35,
+          "id": "spatial_count_35",
+          "max_count_change": 5,
+          "maximum_count": 40,
+          "minimum_count": 10,
+          "rare_keep_bonus": 0.06
+        }
+      ],
+      "rare_v25_predictions_pinned": true,
+      "selected": {
+        "alpha_far": 0.32,
+        "alpha_near": 0.22,
+        "count_weight": 0.35,
+        "id": "spatial_count_35",
+        "max_count_change": 5,
+        "maximum_count": 40,
+        "minimum_count": 10,
+        "pooled_calibration_f1": 0.28300020652291413,
+        "rare_keep_bonus": 0.06
+      }
+    },
+    "v24": {
+      "epochs_outer": 8,
+      "loss": "frequency-aware asymmetric + rare auxiliary + richness",
+      "low_rank_joint_species_head": 80,
+      "modality_encoders": [
+        "landsat",
+        "bioclim",
+        "sentinel",
+        "environment",
+        "static"
+      ],
+      "rare_threshold": 25,
+      "role": "fresh-fold matched control",
+      "width": 160
+    },
+    "v26": {
+      "count_target": "selection-only oracle sample-F1 top-k",
+      "deployment_seeds": 2,
+      "epochs_deployment": 30,
+      "epochs_outer": 24,
+      "fusion_width": 320,
+      "low_rank_joint_species_head": 96,
+      "minimum_training_occurrences": 6,
+      "outer_seeds": 1,
+      "raster_width": 32,
+      "raw_raster_encoders": [
+        "landsat",
+        "bioclim",
+        "sentinel"
+      ],
+      "raw_raster_shapes": {
+        "bioclim": [
+          4,
+          19,
+          12
+        ],
+        "landsat": [
+          6,
+          4,
+          21
+        ],
+        "sentinel": [
+          4,
+          32,
+          32
+        ]
+      }
+    }
+  },
+  "notebook_source_sha256": "197b3a14a45f5f3d986e84420c258679f9c61461d3cbcd8d8226d2dbfbe05d46",
+  "pre_assessment_freeze": {
+    "all_models_and_policies_frozen": true,
+    "assessment_prediction_sha256": {
+      "fold_0": "4590f829fdbfa377b4768acb25f72f2b582ba53f7998a481599bc648c3dd85b2",
+      "fold_1": "726d23e9be57eb0987f9096cd449754e892ff38ce096ec1baf69eebb53c8a86a"
+    },
+    "assessment_reporting_started": false,
+    "checkpoint_sha256": {
+      "deployment/v26_spatial_seed_0.pt": "7be4be7160074fdcdec124fc758334e8db86c0a1d5850c640ffd41e006bd11ac",
+      "deployment/v26_spatial_seed_1.pt": "5d037daa1dc225c1d1f885a7f4e65ff9a59da680d6391ad5a47f8bc14b319605",
+      "fold_0/matched_v23_control.pt": "d2626f2748e9319dd328373f769503105552726e661f385615bf85f4b4eec779",
+      "fold_0/matched_v24_multimodal.pt": "a2141799ddb1664ccb31b3f9e62d533d39bd2b4482b521f58f6672f6fb4192e8",
+      "fold_0/v25_candidate_seed_0.pt": "9ab3e6a0533df2da6f0e4c0611bb56c1c97e5763ad9f714cdba6572eb1babfc2",
+      "fold_0/v25_candidate_seed_1.pt": "51c39d2b32faa23f983f228afcc5108a743f1392edb4f90b1090c0a4cd314093",
+      "fold_0/v26_spatial_raster.pt": "2abde13decd6f0ff939ba36daab6c90212ae80dbad695c96790c2ff4491f85b5",
+      "fold_1/matched_v23_control.pt": "6dc0c0b90b8f37adc28a85324530dcd352b8574d197b4d82edec50b17da2323e",
+      "fold_1/matched_v24_multimodal.pt": "7d83920ac8f4c681b9d38d72e425081a3cab03a04c3782117b9a47e69ea9c42c",
+      "fold_1/v25_candidate_seed_0.pt": "89ea6480acee7004f96543b8a427c539aa972007f669bde788ad5f164d0f0521",
+      "fold_1/v25_candidate_seed_1.pt": "448a34ad97c9d79b344c1e648d45a1167ba3ff61af03a0bebf4884a050dad39a",
+      "fold_1/v26_spatial_raster.pt": "0297ed645a23bd418b287a6d1c49353f1e261520cb371fb61fbfba6d705a0b7a"
+    },
+    "selected_policy": {
+      "alpha_far": 0.32,
+      "alpha_near": 0.22,
+      "count_weight": 0.35,
+      "id": "spatial_count_35",
+      "max_count_change": 5,
+      "maximum_count": 40,
+      "minimum_count": 10,
+      "pooled_calibration_f1": 0.28300020652291413,
+      "rare_keep_bonus": 0.06
+    },
+    "submission_sha256": "67937cf92f0b4626b7b3c643ababbd0c7a4f39801909e4bd5646b532371c21a9"
+  },
+  "pretrained_weight_provenance": [],
+  "runtime_budget": {
+    "expected_hours": [
+      3.0,
+      9.5
+    ],
+    "feature_preparation_cap_hours": 2.75,
+    "finalization_reserve_minutes": 35,
+    "hard_guard_hours": 10.75,
+    "kaggle_limit_hours": 12.0,
+    "models_kept_on_gpu_concurrently": 1,
+    "single_gpu": true
+  },
+  "seeds": {
+    "bootstrap": 20262604,
+    "deployment": 20262603,
+    "fold_0": 20262601,
+    "fold_1": 20262602,
+    "po": 20262605,
+    "split": 20260924
+  },
+  "self_hash_note": "The manifest's own byte hash is emitted by the final notebook cell.",
+  "source_base_commit": "dccf4e6",
+  "source_commit": "a80f2c58d17ca45ad1700aa5152b8b0090dc8359;notebook-source-sha256:197b3a14a45f5f3d986e84420c258679f9c61461d3cbcd8d8226d2dbfbe05d46",
+  "split_definitions": {
+    "consumed_assessment_union_count": 69630,
+    "deployment": {
+      "adaptive_retries": 0,
+      "block_size_degrees": 1.0,
+      "calibration_bucket_range": [
+        8,
+        17
+      ],
+      "development_ids_drawn_from_consumed_assessments": true,
+      "partition_counts": {
+        "calibration": 5942,
+        "selection": 1355,
+        "training": 75750
+      },
+      "seed": 20260924,
+      "selection_bucket_range": [
+        0,
+        7
+      ],
+      "training_bucket_range": [
+        18,
+        99
+      ],
+      "training_buffer_km": 10.0
+    },
+    "outer": [
+      {
+        "adaptive_retries": 0,
+        "all_v21_v22_v23_v24_v25_assessments_excluded": true,
+        "assessment_bucket_range": [
+          0,
+          20
+        ],
+        "assessment_ids_sha256": "fa4ab37dc4b6fc1c782bb51c1011a4ec51738df37769b1effc09b09115db90f1",
+        "assessment_used_for_selection": false,
+        "block_size_degrees": 1.0,
+        "buffer_km": 20.0,
+        "calibration_bucket_range": [
+          50,
+          59
+        ],
+        "consumed_assessment_ids": 69630,
+        "fold": 0,
+        "fresh_assessment_surveys": 1236,
+        "minimum_assessment_training_distance_km": 20.008027737347835,
+        "partition_blocks": {
+          "assessment": 21,
+          "calibration": 24,
+          "selection": 16,
+          "training": 125
+        },
+        "partition_counts": {
+          "assessment": 1236,
+          "calibration": 6336,
+          "selection": 3297,
+          "training": 39990
+        },
+        "seed": 20260924,
+        "selection_bucket_range": [
+          42,
+          49
+        ]
+      },
+      {
+        "adaptive_retries": 0,
+        "all_v21_v22_v23_v24_v25_assessments_excluded": true,
+        "assessment_bucket_range": [
+          21,
+          41
+        ],
+        "assessment_ids_sha256": "fa4b477b62b014876dfe1d11b8491ae8d54f6c76a3833ca13a8d3ef1808767e9",
+        "assessment_used_for_selection": false,
+        "block_size_degrees": 1.0,
+        "buffer_km": 20.0,
+        "calibration_bucket_range": [
+          50,
+          59
+        ],
+        "consumed_assessment_ids": 69630,
+        "fold": 1,
+        "fresh_assessment_surveys": 2621,
+        "minimum_assessment_training_distance_km": 20.002216387498798,
+        "partition_blocks": {
+          "assessment": 21,
+          "calibration": 24,
+          "selection": 16,
+          "training": 125
+        },
+        "partition_counts": {
+          "assessment": 2621,
+          "calibration": 6336,
+          "selection": 3297,
+          "training": 38651
+        },
+        "seed": 20260924,
+        "selection_bucket_range": [
+          42,
+          49
+        ]
+      }
+    ],
+    "v21_v22_v23_v24_v25_assessments_excluded": true
+  }
+}
