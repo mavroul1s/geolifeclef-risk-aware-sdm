@@ -753,15 +753,27 @@ def raster_normalization_stats(arrays: dict[str, np.ndarray], indices: np.ndarra
 def normalized_raster_batch(arrays: dict[str, np.ndarray], indices: np.ndarray,
                             stats: dict[str, dict[str, np.ndarray]], device: torch.device,
                             *, augment: bool = False,
-                            rng: np.random.Generator | None = None
+                            rng: np.random.Generator | None = None,
+                            derived_sentinel: bool = False,
+                            tta_transform: int = 0,
                             ) -> dict[str, torch.Tensor]:
     result = {}
     for name in RASTER_MODALITIES:
         values = np.asarray(arrays[name][indices], dtype=np.float32)
+        derived = None
+        if name == "sentinel" and derived_sentinel:
+            blue, green, red, nir = values[:, 0], values[:, 1], values[:, 2], values[:, 3]
+            ndvi = (nir - red) / np.maximum(np.abs(nir) + np.abs(red), 1e-4)
+            ndwi = (green - nir) / np.maximum(np.abs(green) + np.abs(nir), 1e-4)
+            evi = 2.5 * (nir - red) / np.maximum(
+                np.abs(nir + 6 * red - 7.5 * blue) + 1.0, 1e-4)
+            derived = np.clip(np.stack([ndvi, ndwi, evi], axis=1), -3, 3).astype(np.float32)
         mean = stats[name]["mean"].reshape(1, -1, 1, 1)
         std = stats[name]["std"].reshape(1, -1, 1, 1)
         values = np.clip(np.nan_to_num((values - mean) / std, nan=0.0,
                                        posinf=0.0, neginf=0.0), -8, 8)
+        if derived is not None:
+            values = np.concatenate([values, derived], axis=1)
         if augment and name == "sentinel" and rng is not None:
             if rng.random() < 0.5:
                 values = values[..., ::-1].copy()
@@ -770,6 +782,11 @@ def normalized_raster_batch(arrays: dict[str, np.ndarray], indices: np.ndarray,
             turns = int(rng.integers(0, 4))
             if turns:
                 values = np.rot90(values, turns, axes=(-2, -1)).copy()
+        elif name == "sentinel" and tta_transform:
+            if tta_transform in (1, 3):
+                values = values[..., ::-1].copy()
+            if tta_transform in (2, 3):
+                values = values[..., ::-1, :].copy()
         result[name] = torch.from_numpy(values).to(device, non_blocking=True)
     return result
 
