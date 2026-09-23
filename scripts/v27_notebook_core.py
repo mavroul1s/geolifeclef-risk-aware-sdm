@@ -881,6 +881,116 @@ class SpatialRasterJSDM(nn.Module):
         return self.forward_with_aux(vector, rasters)[0]
 
 
+class SqueezeExcite(nn.Module):
+    def __init__(self, channels: int):
+        super().__init__()
+        hidden = max(channels // 8, 8)
+        self.network = nn.Sequential(
+            nn.AdaptiveAvgPool2d(1), nn.Conv2d(channels, hidden, 1), nn.GELU(),
+            nn.Conv2d(hidden, channels, 1), nn.Sigmoid())
+
+    def forward(self, values: torch.Tensor) -> torch.Tensor:
+        return values * self.network(values)
+
+
+class PyramidBlock(nn.Module):
+    def __init__(self, channels: int, dropout: float = 0.05):
+        super().__init__()
+        groups = min(8, channels)
+        while channels % groups:
+            groups -= 1
+        self.network = nn.Sequential(
+            nn.GroupNorm(groups, channels), nn.GELU(),
+            nn.Conv2d(channels, channels, 3, padding=1, groups=channels, bias=False),
+            nn.Conv2d(channels, channels, 1, bias=False),
+            nn.GroupNorm(groups, channels), nn.GELU(),
+            nn.Conv2d(channels, channels, 3, padding=1, groups=channels, bias=False),
+            nn.Conv2d(channels, channels, 1, bias=False), SqueezeExcite(channels),
+            nn.Dropout2d(dropout),
+        )
+
+    def forward(self, values: torch.Tensor) -> torch.Tensor:
+        return values + self.network(values)
+
+
+class PyramidRasterEncoder(nn.Module):
+    def __init__(self, channels: int, *, width: int = 48, output: int = 128):
+        super().__init__()
+        self.stem = nn.Sequential(nn.Conv2d(channels, width, 3, padding=1, bias=False),
+                                  nn.GroupNorm(8, width), nn.GELU(), PyramidBlock(width))
+        self.stage_two = nn.Sequential(
+            nn.Conv2d(width, width * 2, 3, stride=2, padding=1, bias=False),
+            nn.GroupNorm(8, width * 2), nn.GELU(), PyramidBlock(width * 2))
+        self.stage_three = nn.Sequential(
+            nn.Conv2d(width * 2, width * 3, 3, stride=2, padding=1, bias=False),
+            nn.GroupNorm(8, width * 3), nn.GELU(), PyramidBlock(width * 3),
+            PyramidBlock(width * 3))
+        self.projection = nn.Sequential(nn.Linear(width * 6, output), nn.GELU(),
+                                        nn.LayerNorm(output))
+
+    def forward(self, values: torch.Tensor) -> torch.Tensor:
+        values = self.stage_three(self.stage_two(self.stem(values)))
+        pooled = torch.cat([F.adaptive_avg_pool2d(values, 1).flatten(1),
+                            F.adaptive_max_pool2d(values, 1).flatten(1)], dim=1)
+        return self.projection(pooled)
+
+
+class PyramidRasterJSDM(nn.Module):
+    """Diverse multi-scale challenger with derived Sentinel indices and modality attention."""
+    derived_sentinel = True
+    tta_views = 4
+
+    def __init__(self, dims: dict[str, int], labels: int, active_mask: np.ndarray,
+                 *, raster_width: int = 48, token_width: int = 128,
+                 fusion_width: int = 384, rank: int = 128):
+        super().__init__()
+        input_channels = {"landsat": 6, "bioclim": 4, "sentinel": 7}
+        self.raster_encoders = nn.ModuleDict({
+            name: PyramidRasterEncoder(input_channels[name], width=raster_width,
+                                       output=token_width)
+            for name in RASTER_MODALITIES
+        })
+        self.vector = nn.Sequential(
+            nn.Linear(sum(dims.values()), 256), nn.GELU(), ResidualVectorBlock(256, 0.15),
+            nn.LayerNorm(256), nn.Linear(256, token_width), nn.GELU(),
+        )
+        self.modality_embeddings = nn.Parameter(torch.randn(4, token_width) * 0.02)
+        self.gate = nn.Sequential(nn.Linear(4 * token_width, token_width), nn.GELU(),
+                                  nn.Linear(token_width, 4))
+        self.fusion = nn.Sequential(
+            nn.Linear(5 * token_width, fusion_width), nn.GELU(),
+            ResidualVectorBlock(fusion_width, 0.15), ResidualVectorBlock(fusion_width, 0.10),
+            nn.LayerNorm(fusion_width),
+        )
+        self.independent_head = nn.Linear(fusion_width, labels)
+        self.joint_projection = nn.Linear(fusion_width, rank, bias=False)
+        self.species_embedding = nn.Parameter(torch.randn(labels, rank) * 0.02)
+        self.joint_scale = nn.Parameter(torch.tensor(-1.25))
+        self.richness_head = nn.Sequential(nn.Linear(fusion_width, 128), nn.GELU(),
+                                           nn.Linear(128, 1))
+        self.register_buffer("active_mask", torch.as_tensor(active_mask, dtype=torch.bool))
+
+    def forward_with_aux(self, vector: dict[str, torch.Tensor],
+                         rasters: dict[str, torch.Tensor]
+                         ) -> tuple[torch.Tensor, torch.Tensor]:
+        tokens = [self.raster_encoders[name](rasters[name]) for name in RASTER_MODALITIES]
+        tokens.append(self.vector(torch.cat([vector[name] for name in MODALITIES], dim=1)))
+        stacked = torch.stack(tokens, dim=1) + self.modality_embeddings.unsqueeze(0)
+        flat = stacked.flatten(1)
+        weights = torch.softmax(self.gate(flat), dim=1)
+        pooled = (stacked * weights.unsqueeze(-1)).sum(1)
+        fused = self.fusion(torch.cat([flat, pooled], dim=1))
+        logits = self.independent_head(fused)
+        logits = logits + torch.sigmoid(self.joint_scale) * (
+            self.joint_projection(fused) @ self.species_embedding.T)
+        logits = logits.masked_fill(~self.active_mask.unsqueeze(0), -20.0)
+        return logits, self.richness_head(fused).squeeze(1)
+
+    def forward(self, vector: dict[str, torch.Tensor],
+                rasters: dict[str, torch.Tensor]) -> torch.Tensor:
+        return self.forward_with_aux(vector, rasters)[0]
+
+
 class MatchedV23Control(nn.Module):
     """Early-fusion refit of the frozen v23 family for new-fold recipe transfer.
 
