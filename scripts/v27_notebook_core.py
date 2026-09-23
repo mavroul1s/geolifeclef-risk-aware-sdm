@@ -2078,22 +2078,25 @@ def _build_models_for_fold(name: str, split: dict[str, np.ndarray], rows: pd.Dat
 
     raster_stats = raster_normalization_stats(store.raster_train, split["training"])
     active_mask = frequencies > 5
-    spatial_model = SpatialRasterJSDM(store.dims, len(store.species_ids), active_mask)
-    spatial_epochs = 2 if len(store.species_ids) < 100 else 24
-    spatial_minimum = 1 if len(store.species_ids) < 100 else 12
-    spatial_record = train_spatial_model(
-        spatial_model, store.train, store.raster_train, store.labels,
+
+    # Refit the complete v26 recipe first. Its predictions become the matched
+    # baseline on fresh v27 folds, just as the exact scored CSV does on test.
+    v26_model = SpatialRasterJSDM(store.dims, len(store.species_ids), active_mask)
+    reference_epochs = 2 if len(store.species_ids) < 100 else 24
+    reference_minimum = 1 if len(store.species_ids) < 100 else 12
+    v26_record = train_spatial_model(
+        v26_model, store.train, store.raster_train, store.labels,
         split["training"], split["selection"], stats, raster_stats, device,
-        fold_dir / "v26_spatial_raster.pt", guard, seed=seed + 400,
-        epochs=spatial_epochs, minimum_epochs=spatial_minimum,
+        fold_dir / "matched_v26_spatial_raster.pt", guard, seed=seed + 400,
+        epochs=reference_epochs, minimum_epochs=reference_minimum,
     )
     for role in ("selection", "calibration", "assessment"):
         probability, raw_richness = predict_spatial_model(
-            spatial_model, store.train, store.raster_train, split[role], stats,
+            v26_model, store.train, store.raster_train, split[role], stats,
             raster_stats, device)
         predictions[role]["candidate"] = probability.astype(np.float32)
         predictions[role]["candidate_raw_richness"] = raw_richness
-    del spatial_model
+    del v26_model
     gc.collect()
     if device.type == "cuda":
         torch.cuda.empty_cache()
@@ -2101,15 +2104,66 @@ def _build_models_for_fold(name: str, split: dict[str, np.ndarray], rows: pd.Dat
     selection_values = predictions["selection"]
     oracle_counts = oracle_f1_counts(
         selection_values["candidate"], np.asarray(store.labels[selection]))
-    spatial_count_model, spatial_count_metadata = fit_count_model(
+    v26_count_model, v26_count_metadata = fit_count_model(
         selection_values["candidate"], selection_values["candidate_raw_richness"],
         rows.iloc[selection], selection_components["pa_distance"],
         selection_components["po_coverage"], oracle_counts, rows.iloc[split["training"]],
         _cardinality(store.labels, split["training"]), seed=seed + 500)
-    for role in ("calibration", "assessment"):
+    for role in ("selection", "calibration", "assessment"):
         values, components = predictions[role], role_components[role]
         values["predicted_count"] = predict_count(
-            spatial_count_model, spatial_count_metadata, values["candidate"],
+            v26_count_model, v26_count_metadata, values["candidate"],
+            values["candidate_raw_richness"], rows.iloc[split[role]],
+            components["pa_distance"], components["po_coverage"])
+        ranked, _ = top_rank(values["candidate"], 64)
+        values["risk"] = ood_risk(components["pa_distance"], components["po_coverage"],
+                                  values["base_lists"], ranked)
+        values["base_lists"] = compose_v26_predictions(
+            values["base_lists"], values["candidate"], values["predicted_count"], frequencies,
+            components["spatial"], components["po"], graph, values["risk"], V26_POLICY)
+    del v26_count_model
+    for values in predictions.values():
+        for key in ("candidate", "candidate_raw_richness", "predicted_count", "risk"):
+            values.pop(key, None)
+    gc.collect()
+    if device.type == "cuda":
+        torch.cuda.empty_cache()
+
+    # The v27 challenger is deliberately architecturally diverse: deeper
+    # multi-scale encoders, derived vegetation/water indices, modality attention,
+    # and four deterministic Sentinel views at inference.
+    pyramid = PyramidRasterJSDM(store.dims, len(store.species_ids), active_mask)
+    pyramid_epochs = 2 if len(store.species_ids) < 100 else 30
+    pyramid_minimum = 1 if len(store.species_ids) < 100 else 15
+    pyramid_record = train_spatial_model(
+        pyramid, store.train, store.raster_train, store.labels,
+        split["training"], split["selection"], stats, raster_stats, device,
+        fold_dir / "v27_pyramid_raster.pt", guard, seed=seed + 600,
+        epochs=pyramid_epochs, minimum_epochs=pyramid_minimum, batch_size=96,
+    )
+    for role in ("selection", "calibration", "assessment"):
+        probability, raw_richness = predict_spatial_model(
+            pyramid, store.train, store.raster_train, split[role], stats,
+            raster_stats, device, batch_size=128, tta_views=4)
+        predictions[role]["candidate"] = probability.astype(np.float32)
+        predictions[role]["candidate_raw_richness"] = raw_richness
+    del pyramid
+    gc.collect()
+    if device.type == "cuda":
+        torch.cuda.empty_cache()
+
+    selection_values = predictions["selection"]
+    oracle_counts = oracle_f1_counts(
+        selection_values["candidate"], np.asarray(store.labels[selection]))
+    pyramid_count_model, pyramid_count_metadata = fit_count_model(
+        selection_values["candidate"], selection_values["candidate_raw_richness"],
+        rows.iloc[selection], selection_components["pa_distance"],
+        selection_components["po_coverage"], oracle_counts, rows.iloc[split["training"]],
+        _cardinality(store.labels, split["training"]), seed=seed + 700)
+    for role in ("selection", "calibration", "assessment"):
+        values, components = predictions[role], role_components[role]
+        values["predicted_count"] = predict_count(
+            pyramid_count_model, pyramid_count_metadata, values["candidate"],
             values["candidate_raw_richness"], rows.iloc[split[role]],
             components["pa_distance"], components["po_coverage"])
         ranked, _ = top_rank(values["candidate"], 64)
@@ -2134,14 +2188,16 @@ def _build_models_for_fold(name: str, split: dict[str, np.ndarray], rows: pd.Dat
         "matched_v24": {key: value for key, value in matched_v24_record.items()
                         if key != "training_frequency"},
         "matched_v25_candidate_seeds": candidate_records,
-        "v26_spatial_raster": spatial_record,
+        "matched_v26_spatial_raster": v26_record,
+        "v27_pyramid_raster": pyramid_record,
         "rare_species": int((frequencies <= 25).sum()),
         "zero_pa_species": int((frequencies == 0).sum()),
         "common_species": int((frequencies > 25).sum()),
         "normalization_fit_on_training_only": True,
         "matched_v24_richness": richness_metadata,
         "matched_v25_oracle_count": v25_count_metadata,
-        "v26_oracle_count": spatial_count_metadata,
+        "matched_v26_oracle_count": v26_count_metadata,
+        "v27_oracle_count": pyramid_count_metadata,
         "raw_raster_normalization_fit_on_training_only": True,
         "cooccurrence_sha256": graph.digest(),
         "calibration_trials": calibration_trials,
@@ -2150,7 +2206,7 @@ def _build_models_for_fold(name: str, split: dict[str, np.ndarray], rows: pd.Dat
               "raster_stats": raster_stats, "frequencies": frequencies,
               "graph": graph, "predictions": predictions, "components": role_components,
               "calibration_trials": calibration_trials}
-    del spatial_count_model
+    del pyramid_count_model
     gc.collect()
     if device.type == "cuda":
         torch.cuda.empty_cache()
