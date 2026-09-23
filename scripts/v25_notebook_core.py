@@ -1,7 +1,7 @@
-"""Self-contained GeoLifeCLEF v24 Kaggle pipeline.
+"""Self-contained GeoLifeCLEF v25 Kaggle pipeline.
 
 This source is copied verbatim into the deliverable notebook by
-``build_v24_notebook.py``.  The notebook depends only on the official
+``build_v25_notebook.py``.  The notebook depends only on the official
 GeoLifeCLEF 2025 competition input and Kaggle's standard Python image.
 """
 from __future__ import annotations
@@ -203,42 +203,53 @@ def discover_data_root(search_roots: Iterable[Path] | None = None) -> Path:
     return valid[0]
 
 
-def safe_extract_tar_gz(payload_b64: str, destination: Path) -> None:
-    raw = gzip.decompress(base64.b64decode(payload_b64.encode("ascii")))
-    destination.mkdir(parents=True, exist_ok=True)
-    with tarfile.open(fileobj=io.BytesIO(raw), mode="r:") as archive:
-        root = destination.resolve()
-        for member in archive.getmembers():
-            target = (destination / member.name).resolve()
-            if root != target and root not in target.parents:
-                raise ValueError("Unsafe frozen-v23 archive member")
-        for member in archive.getmembers():
-            if not member.isfile():
-                raise ValueError("Frozen-v23 payload may contain regular files only")
-            source = archive.extractfile(member)
-            if source is None:
-                raise ValueError(f"Unable to read embedded member {member.name}")
-            (destination / member.name).write_bytes(source.read())
+def decode_consumed_ids(payload_b64: str) -> np.ndarray:
+    """Decode the immutable union of every v21--v24 assessment survey."""
+    packed = base64.b64decode(payload_b64.encode("ascii"))
+    if sha256_bytes(packed) != CONSUMED_ASSESSMENT_IDS_SHA256:
+        raise ValueError("Consumed-assessment payload hash mismatch")
+    raw = lzma.decompress(packed)
+    deltas = np.frombuffer(raw, dtype="<u4")
+    values = np.cumsum(deltas, dtype=np.uint64).astype(np.int64)
+    if (len(values) != CONSUMED_ASSESSMENT_IDS_COUNT or
+            len(values) != len(np.unique(values)) or np.any(np.diff(values) <= 0)):
+        raise ValueError("Consumed-assessment payload is malformed")
+    return values
 
 
-def verify_frozen_v23(payload_b64: str, destination: Path) -> dict[str, Any]:
-    safe_extract_tar_gz(payload_b64, destination)
-    required = {"GLC25_PA_submission_v23.csv"}
-    found = {path.name for path in destination.iterdir() if path.is_file()}
-    if found != required:
-        raise ValueError(f"Embedded v23 payload has unexpected files: {sorted(found)}")
-    csv_path = destination / "GLC25_PA_submission_v23.csv"
-    checks = {
-        "payload_file_set": found == required,
-        "submission_sha256": sha256_file(csv_path) == V23_SUBMISSION_SHA256,
+def decode_v24_submission(payload_b64: str, template_ids: np.ndarray,
+                          species_ids: np.ndarray) -> tuple[list[list[int]], dict[str, Any]]:
+    """Decode the exact ordered predictions from the scored v24 submission."""
+    packed = base64.b64decode(payload_b64.encode("ascii"))
+    if sha256_bytes(packed) != FROZEN_V24_PAYLOAD_SHA256:
+        raise ValueError("Frozen-v24 payload hash mismatch")
+    raw = lzma.decompress(packed)
+    if sha256_bytes(raw) != FROZEN_V24_RAW_SHA256:
+        raise ValueError("Frozen-v24 raw prediction hash mismatch")
+    if len(template_ids) != EXPECTED_TEST_ROWS or len(species_ids) != EXPECTED_SPECIES:
+        raise ValueError("Official template or species vocabulary dimensions changed")
+    counts = np.frombuffer(raw[:EXPECTED_TEST_ROWS], dtype=np.uint8)
+    flat = np.frombuffer(raw[EXPECTED_TEST_ROWS:], dtype="<u2")
+    if int(counts.sum()) != len(flat) or np.any(counts < 10) or np.any(counts > 40):
+        raise ValueError("Frozen-v24 prediction cardinalities are malformed")
+    if len(flat) and int(flat.max()) >= len(species_ids):
+        raise ValueError("Frozen-v24 prediction uses an unknown species column")
+    predictions, offset = [], 0
+    for count in counts.astype(int):
+        row = flat[offset:offset + count].astype(np.int64).tolist()
+        if len(row) != len(set(row)):
+            raise ValueError("Frozen-v24 prediction row contains duplicates")
+        predictions.append(row)
+        offset += count
+    provenance = {
+        "checks": {"payload_sha256": True, "raw_sha256": True,
+                   "dimensions": True, "prediction_rows": True},
+        "submission_sha256": V24_SUBMISSION_SHA256,
+        "public_score": V24_PUBLIC_SCORE, "private_score": V24_PRIVATE_SCORE,
+        "assessment_consumed": True,
+        "storage": "lossless counts:uint8 plus species-column:uint16, LZMA compressed",
     }
-    if not all(checks.values()):
-        raise ValueError(f"Frozen v23 verification failed: {checks}")
-    return {"checks": checks, "provenance_storage": "constants embedded in notebook source",
-            "submission_sha256": sha256_file(csv_path), "source_commit": V23_COMMIT,
-            "kernel_version": 25, "submission_reference": "56255321",
-            "public_score": V23_PUBLIC_SCORE, "private_score": V23_PRIVATE_SCORE,
-            "assessment_consumed": True}
+    return predictions, provenance
 
 
 def construct_patch_path(root: Path, survey_id: int) -> Path:
@@ -547,16 +558,20 @@ def nearest_distance_km(reference_coordinates: np.ndarray,
     return distance[:, 0] * EARTH_RADIUS_KM
 
 
-def make_outer_split(rows: pd.DataFrame, fold: int) -> tuple[dict[str, np.ndarray], dict[str, Any]]:
+def make_outer_split(rows: pd.DataFrame, fold: int, consumed_ids: np.ndarray
+                     ) -> tuple[dict[str, np.ndarray], dict[str, Any]]:
     if fold not in (0, 1):
-        raise ValueError("v24 has exactly two preregistered outer folds")
+        raise ValueError("v25 has exactly two preregistered outer folds")
     blocks = spatial_blocks(rows)
-    bucket = np.asarray([stable_bucket(f"v24-outer:{SEEDS['split']}:{block}") for block in blocks])
-    assessment = (bucket >= fold * 12) & (bucket < (fold + 1) * 12)
-    selection = (bucket >= 24) & (bucket < 30)
-    calibration = (bucket >= 30) & (bucket < 38)
+    bucket = np.asarray([stable_bucket(f"v25-outer:{SEEDS['split']}:{block}") for block in blocks])
+    consumed = np.isin(rows.surveyId.to_numpy(np.int64), consumed_ids)
+    assessment = (~consumed) & (bucket >= fold * 15) & (bucket < (fold + 1) * 15)
+    selection = consumed & (bucket >= 30) & (bucket < 40)
+    calibration = consumed & (bucket >= 40) & (bucket < 50)
+    # Exclude the entire evaluation block ranges, not only the chosen survey IDs.
+    # This prevents same-block leakage from fresh or previously consumed rows.
+    candidate_train = bucket >= 50
     evaluation = assessment | selection | calibration
-    candidate_train = ~evaluation
     coordinates = rows[["lat", "lon"]].to_numpy(np.float64)
     distance = nearest_distance_km(coordinates[evaluation], coordinates[candidate_train])
     train_candidates = np.flatnonzero(candidate_train)
@@ -564,34 +579,41 @@ def make_outer_split(rows: pd.DataFrame, fold: int) -> tuple[dict[str, np.ndarra
     result = {"training": training, "selection": np.flatnonzero(selection),
               "calibration": np.flatnonzero(calibration),
               "assessment": np.flatnonzero(assessment)}
-    if min(map(len, result.values())) < 500:
+    if min(map(len, result.values())) < 1000:
         raise ValueError(f"Preregistered fold {fold} produced a small partition: "
-                         f"{{name: len(v) for name, v in result.items()}}")
+                         f"{ {name: len(v) for name, v in result.items()} }")
+    assessment_ids = rows.surveyId.to_numpy(np.int64)[result["assessment"]]
+    if np.intersect1d(assessment_ids, consumed_ids).size:
+        raise ValueError("A v25 assessment survey was used by an earlier experiment")
     support = nearest_distance_km(coordinates[training], coordinates[result["assessment"]])
     manifest = {
         "fold": fold, "seed": SEEDS["split"], "block_size_degrees": 1.0,
-        "assessment_bucket_range": [fold * 12, (fold + 1) * 12 - 1],
-        "selection_bucket_range": [24, 29], "calibration_bucket_range": [30, 37],
+        "assessment_bucket_range": [fold * 15, (fold + 1) * 15 - 1],
+        "selection_bucket_range": [30, 39], "calibration_bucket_range": [40, 49],
         "buffer_km": 20.0, "adaptive_retries": 0,
         "partition_counts": {name: len(values) for name, values in result.items()},
         "partition_blocks": {name: int(np.unique(blocks[values]).size)
                              for name, values in result.items()},
         "assessment_ids_sha256": sha256_bytes(
-            rows.surveyId.to_numpy(np.int64)[result["assessment"]].astype("<i8").tobytes()),
+            assessment_ids.astype("<i8").tobytes()),
         "minimum_assessment_training_distance_km": float(support.min()),
-        "v22_v23_assessments_consumed_and_not_reused": True,
+        "all_v21_v22_v23_v24_assessments_excluded": True,
+        "consumed_assessment_ids": int(len(consumed_ids)),
+        "fresh_assessment_surveys": int(len(assessment_ids)),
         "assessment_used_for_selection": False,
     }
     return result, manifest
 
 
-def make_deployment_split(rows: pd.DataFrame) -> tuple[dict[str, np.ndarray], dict[str, Any]]:
+def make_deployment_split(rows: pd.DataFrame, consumed_ids: np.ndarray
+                          ) -> tuple[dict[str, np.ndarray], dict[str, Any]]:
     blocks = spatial_blocks(rows)
-    bucket = np.asarray([stable_bucket(f"v24-deploy:{SEEDS['split']}:{block}") for block in blocks])
-    selection = bucket < 7
-    calibration = (bucket >= 7) & (bucket < 16)
+    bucket = np.asarray([stable_bucket(f"v25-deploy:{SEEDS['split']}:{block}") for block in blocks])
+    consumed = np.isin(rows.surveyId.to_numpy(np.int64), consumed_ids)
+    selection = consumed & (bucket < 8)
+    calibration = consumed & (bucket >= 8) & (bucket < 18)
     evaluation = selection | calibration
-    candidate_train = ~evaluation
+    candidate_train = bucket >= 18
     coordinates = rows[["lat", "lon"]].to_numpy(np.float64)
     distance = nearest_distance_km(coordinates[evaluation], coordinates[candidate_train])
     candidates = np.flatnonzero(candidate_train)
@@ -601,9 +623,10 @@ def make_deployment_split(rows: pd.DataFrame) -> tuple[dict[str, np.ndarray], di
     if min(map(len, result.values())) < 500:
         raise ValueError("Deployment partitions are unexpectedly small")
     return result, {"seed": SEEDS["split"], "block_size_degrees": 1.0,
-                    "selection_bucket_range": [0, 6], "calibration_bucket_range": [7, 15],
-                    "training_bucket_range": [16, 99], "training_buffer_km": 10.0,
+                    "selection_bucket_range": [0, 7], "calibration_bucket_range": [8, 17],
+                    "training_bucket_range": [18, 99], "training_buffer_km": 10.0,
                     "adaptive_retries": 0,
+                    "development_ids_drawn_from_consumed_assessments": True,
                     "partition_counts": {name: len(value) for name, value in result.items()}}
 
 
