@@ -1,0 +1,44 @@
+{
+  "experiment": "v26_raw_spatial_raster_ensemble",
+  "status": "complete_official_current_best",
+  "recorded_at": "2026-09-24",
+  "score_source": "user-provided Kaggle results screenshot",
+  "official": {
+    "public_score": 0.23052,
+    "private_score": 0.20693,
+    "private_target": 0.23021,
+    "target_reached": false,
+    "gap_to_target_private": 0.02328,
+    "gain_over_v25_public": 0.00240,
+    "gain_over_v25_private": 0.00190
+  },
+  "runtime_hours": 1.78643183518889,
+  "eligible_for_submission": true,
+  "selected_policy": "spatial_count_35",
+  "assessment": {
+    "surveys": 3857,
+    "spatial_blocks": 42,
+    "matched_v25_sample_f1": 0.258186423479925,
+    "v26_sample_f1": 0.262126352429451,
+    "gain": 0.00393992894952679,
+    "spatial_bootstrap_ci95": [
+      0.00231624229447866,
+      0.00574822751344768
+    ],
+    "matched_v25_cardinality_mae": 9.83406792844179,
+    "v26_cardinality_mae": 9.70261861550428,
+    "true_cardinality_mean": 17.0764843142339,
+    "predicted_cardinality_mean": 23.4231267824734,
+    "now_consumed": true,
+    "warning": "Fresh matched-recipe spatial assessment, not a hidden-test score."
+  },
+  "source_revision": "a80f2c58d17ca45ad1700aa5152b8b0090dc8359;notebook-source-sha256:197b3a14a45f5f3d986e84420c258679f9c61461d3cbcd8d8226d2dbfbe05d46",
+  "artifacts": {
+    "directory": "results/v26_kaggle_output",
+    "leaderboard_evidence": "results/v26_kaggle_scores.png",
+    "assessment_per_survey_v26.csv": "54c60ca624d5d3e2f9be32a4c8df97de80436e589c87dddbe8b7200a27f1ade3",
+    "GLC25_PA_submission_v26.csv": "67937cf92f0b4626b7b3c643ababbd0c7a4f39801909e4bd5646b532371c21a9",
+    "v26_manifest.json": "9c7ac14be955d1755a7eeae8ebe222c1a3e48891a5fa39959cd9f8d54a436a64",
+    "v26_report.json": "1202b507693608e4cf5e6376618669511c44164509b8f24168d99da1fd8d1dd5"
+  }
+}
