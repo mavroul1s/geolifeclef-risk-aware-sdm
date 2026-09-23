@@ -1,0 +1,1310 @@
+{
+  "assessment": {
+    "ablations": {
+      "without_cooccurrence": {
+        "delta_vs_full_v24": -0.00021255371715783733,
+        "sample_f1": 0.3534550043416688
+      },
+      "without_multimodal": {
+        "delta_vs_full_v24": -0.0005334514240239452,
+        "sample_f1": 0.3531341066348027
+      },
+      "without_rare_expert": {
+        "delta_vs_full_v24": 0.0,
+        "sample_f1": 0.35366755805882666
+      },
+      "without_richness": {
+        "delta_vs_full_v24": -0.0034089525901848106,
+        "sample_f1": 0.35025860546864185
+      },
+      "without_spatial": {
+        "delta_vs_full_v24": -3.233339807645619e-05,
+        "sample_f1": 0.3536352246607502
+      }
+    },
+    "by_country": {
+      "Andorra": {
+        "delta_f1": 0.01339591882404931,
+        "frozen_v23_f1": 0.1821019941157241,
+        "n": 4,
+        "v24_f1": 0.19549791293977342
+      },
+      "Austria": {
+        "delta_f1": -0.00019232332960270342,
+        "frozen_v23_f1": 0.29889405879248265,
+        "n": 180,
+        "v24_f1": 0.2987017354628799
+      },
+      "Belgium": {
+        "delta_f1": 0.0016550962289921002,
+        "frozen_v23_f1": 0.2903654934682068,
+        "n": 535,
+        "v24_f1": 0.29202058969719885
+      },
+      "Bosnia and Herzegovina": {
+        "delta_f1": 0.003003003003002991,
+        "frozen_v23_f1": 0.10810810810810811,
+        "n": 1,
+        "v24_f1": 0.1111111111111111
+      },
+      "Bulgaria": {
+        "delta_f1": 0.0012854817798786573,
+        "frozen_v23_f1": 0.23465792964993928,
+        "n": 27,
+        "v24_f1": 0.235943411429818
+      },
+      "Croatia": {
+        "delta_f1": 0.0009988881891391658,
+        "frozen_v23_f1": 0.2152259277820441,
+        "n": 53,
+        "v24_f1": 0.2162248159711833
+      },
+      "Czech Republic": {
+        "delta_f1": 0.0018271252588639188,
+        "frozen_v23_f1": 0.24332692156474467,
+        "n": 374,
+        "v24_f1": 0.24515404682360856
+      },
+      "Denmark": {
+        "delta_f1": 0.0034262930060640585,
+        "frozen_v23_f1": 0.3673829943162277,
+        "n": 20406,
+        "v24_f1": 0.3708092873222918
+      },
+      "France": {
+        "delta_f1": 0.005620654912754003,
+        "frozen_v23_f1": 0.35430578403369206,
+        "n": 3544,
+        "v24_f1": 0.35992643894644605
+      },
+      "Germany": {
+        "delta_f1": -0.0016692205623983325,
+        "frozen_v23_f1": 0.18197680069268515,
+        "n": 50,
+        "v24_f1": 0.1803075801302868
+      },
+      "Greece": {
+        "delta_f1": 0.0028019243734321657,
+        "frozen_v23_f1": 0.15212642524731493,
+        "n": 29,
+        "v24_f1": 0.15492834962074706
+      },
+      "Ireland": {
+        "delta_f1": 0.020954466918228245,
+        "frozen_v23_f1": 0.22336095509076395,
+        "n": 12,
+        "v24_f1": 0.24431542200899223
+      },
+      "Italy": {
+        "delta_f1": 0.0017023354405224186,
+        "frozen_v23_f1": 0.21229989111062794,
+        "n": 490,
+        "v24_f1": 0.2140022265511504
+      },
+      "Latvia": {
+        "delta_f1": -0.017282305358974147,
+        "frozen_v23_f1": 0.3416337542331324,
+        "n": 51,
+        "v24_f1": 0.3243514488741583
+      },
+      "Montenegro": {
+        "delta_f1": -0.0009731443710123222,
+        "frozen_v23_f1": 0.24806628642529419,
+        "n": 143,
+        "v24_f1": 0.24709314205428193
+      },
+      "Netherlands": {
+        "delta_f1": 0.006882124876685106,
+        "frozen_v23_f1": 0.21288575723693554,
+        "n": 811,
+        "v24_f1": 0.21976788211362067
+      },
+      "Poland": {
+        "delta_f1": 0.0031758597509666743,
+        "frozen_v23_f1": 0.2960603944653537,
+        "n": 398,
+        "v24_f1": 0.29923625421632033
+      },
+      "Portugal": {
+        "delta_f1": -0.01479279594334675,
+        "frozen_v23_f1": 0.2962464300285597,
+        "n": 3,
+        "v24_f1": 0.281453634085213
+      },
+      "Romania": {
+        "delta_f1": 0.004589238242578619,
+        "frozen_v23_f1": 0.17441374386813124,
+        "n": 4,
+        "v24_f1": 0.17900298211070986
+      },
+      "Serbia": {
+        "delta_f1": -0.0031265121043948705,
+        "frozen_v23_f1": 0.14328674217381565,
+        "n": 87,
+        "v24_f1": 0.14016023006942077
+      },
+      "Spain": {
+        "delta_f1": -0.0023473841452846264,
+        "frozen_v23_f1": 0.20436291997297137,
+        "n": 158,
+        "v24_f1": 0.20201553582768675
+      },
+      "Switzerland": {
+        "delta_f1": -0.020363771984141566,
+        "frozen_v23_f1": 0.2965880196649194,
+        "n": 33,
+        "v24_f1": 0.2762242476807779
+      }
+    },
+    "by_pa_distance": {
+      "100_to_200km": {
+        "delta_f1": 0.004343556966525052,
+        "frozen_v23_f1": 0.3015956039437424,
+        "n": 1029,
+        "v24_f1": 0.30593916091026746
+      },
+      "200km_plus": {
+        "delta_f1": 0.013284779289693302,
+        "frozen_v23_f1": 0.2277616934341432,
+        "n": 18,
+        "v24_f1": 0.2410464727238365
+      },
+      "20_to_50km": {
+        "delta_f1": 0.0031737223579105605,
+        "frozen_v23_f1": 0.3536911401173309,
+        "n": 22869,
+        "v24_f1": 0.35686486247524146
+      },
+      "50_to_100km": {
+        "delta_f1": 0.005692776548984819,
+        "frozen_v23_f1": 0.3416533968399853,
+        "n": 3477,
+        "v24_f1": 0.34734617338897017
+      }
+    },
+    "cardinality": {
+      "predicted_mean": 25.143357792136676,
+      "true_mean": 17.006790055853685,
+      "v24_mae": 10.639761982988354
+    },
+    "control_definition": "The exact deployed v23 CSV is frozen for official-test inference. New-fold F1 uses a matched early-fusion refit with the frozen v23 cardinality rule because the original v23 assessment is consumed and its fold checkpoints were not exported. This is recipe-transfer evidence, not evaluation of the exact deployed v23 weights.",
+    "folds": [
+      {
+        "cardinality_mae": 9.745199240986718,
+        "fold": 0,
+        "frozen_v23_cardinality_mae": 11.758026565464895,
+        "frozen_v23_sample_f1": 0.3641465851526652,
+        "frozen_v23_species_groups": {
+          "common_over_25": {
+            "precision": 0.30662454579966375,
+            "predicted_positives": 368780,
+            "recall": 0.4822499338957173,
+            "species": 1864,
+            "target_positives": 234478,
+            "true_positives": 113077
+          },
+          "rare_1_to_25": {
+            "precision": 0.15833333333333333,
+            "predicted_positives": 120,
+            "recall": 0.007302075326671791,
+            "species": 2860,
+            "target_positives": 2602,
+            "true_positives": 19
+          },
+          "zero_pa": {
+            "precision": null,
+            "predicted_positives": 0,
+            "recall": 0.0,
+            "species": 292,
+            "target_positives": 376,
+            "true_positives": 0
+          }
+        },
+        "gain": 0.0016830507165551834,
+        "modality_weight_mean": {
+          "bioclim": 0.037168264389038086,
+          "environment": 0.00901755504310131,
+          "landsat": 0.7485775351524353,
+          "sentinel": 0.012303326278924942,
+          "static": 0.19292914867401123
+        },
+        "spatial_blocks": 33,
+        "surveys": 13175,
+        "v24_sample_f1": 0.3658296358692204,
+        "v24_species_groups": {
+          "common_over_25": {
+            "precision": 0.3208854301876996,
+            "predicted_positives": 331274,
+            "recall": 0.45335170037274286,
+            "species": 1864,
+            "target_positives": 234478,
+            "true_positives": 106301
+          },
+          "rare_1_to_25": {
+            "precision": 0.17204301075268819,
+            "predicted_positives": 93,
+            "recall": 0.006149116064565719,
+            "species": 2860,
+            "target_positives": 2602,
+            "true_positives": 16
+          },
+          "zero_pa": {
+            "precision": null,
+            "predicted_positives": 0,
+            "recall": 0.0,
+            "species": 292,
+            "target_positives": 376,
+            "true_positives": 0
+          }
+        }
+      },
+      {
+        "cardinality_mae": 11.468701645801097,
+        "fold": 1,
+        "frozen_v23_cardinality_mae": 13.654733436488957,
+        "frozen_v23_sample_f1": 0.3371291230629787,
+        "frozen_v23_species_groups": {
+          "common_over_25": {
+            "precision": 0.273209095141624,
+            "predicted_positives": 397355,
+            "recall": 0.4892625525605376,
+            "species": 1720,
+            "target_positives": 221887,
+            "true_positives": 108561
+          },
+          "rare_1_to_25": {
+            "precision": 0.13885180240320427,
+            "predicted_positives": 749,
+            "recall": 0.018245614035087718,
+            "species": 2768,
+            "target_positives": 5700,
+            "true_positives": 104
+          },
+          "zero_pa": {
+            "precision": null,
+            "predicted_positives": 0,
+            "recall": 0.0,
+            "species": 528,
+            "target_positives": 824,
+            "true_positives": 0
+          }
+        },
+        "gain": 0.00526853943023147,
+        "modality_weight_mean": {
+          "bioclim": 0.060889437794685364,
+          "environment": 0.08874104917049408,
+          "landsat": 0.6134312152862549,
+          "sentinel": 0.05565454065799713,
+          "static": 0.18128396570682526
+        },
+        "spatial_blocks": 54,
+        "surveys": 14218,
+        "v24_sample_f1": 0.3423976624932102,
+        "v24_species_groups": {
+          "common_over_25": {
+            "precision": 0.28820330240251185,
+            "predicted_positives": 356710,
+            "recall": 0.46332142036261703,
+            "species": 1720,
+            "target_positives": 221887,
+            "true_positives": 102805
+          },
+          "rare_1_to_25": {
+            "precision": 0.1259259259259259,
+            "predicted_positives": 675,
+            "recall": 0.014912280701754385,
+            "species": 2768,
+            "target_positives": 5700,
+            "true_positives": 85
+          },
+          "zero_pa": {
+            "precision": null,
+            "predicted_positives": 0,
+            "recall": 0.0,
+            "species": 528,
+            "target_positives": 824,
+            "true_positives": 0
+          }
+        }
+      }
+    ],
+    "frozen_v23_sample_f1": 0.3501235034897891,
+    "gain": 0.0035440545690375498,
+    "now_consumed": true,
+    "rarity_groups": {
+      "folds": [
+        {
+          "fold": 0,
+          "frozen_v23": {
+            "common_over_25": {
+              "precision": 0.30662454579966375,
+              "predicted_positives": 368780,
+              "recall": 0.4822499338957173,
+              "species": 1864,
+              "target_positives": 234478,
+              "true_positives": 113077
+            },
+            "rare_1_to_25": {
+              "precision": 0.15833333333333333,
+              "predicted_positives": 120,
+              "recall": 0.007302075326671791,
+              "species": 2860,
+              "target_positives": 2602,
+              "true_positives": 19
+            },
+            "zero_pa": {
+              "precision": null,
+              "predicted_positives": 0,
+              "recall": 0.0,
+              "species": 292,
+              "target_positives": 376,
+              "true_positives": 0
+            }
+          },
+          "v24": {
+            "common_over_25": {
+              "precision": 0.3208854301876996,
+              "predicted_positives": 331274,
+              "recall": 0.45335170037274286,
+              "species": 1864,
+              "target_positives": 234478,
+              "true_positives": 106301
+            },
+            "rare_1_to_25": {
+              "precision": 0.17204301075268819,
+              "predicted_positives": 93,
+              "recall": 0.006149116064565719,
+              "species": 2860,
+              "target_positives": 2602,
+              "true_positives": 16
+            },
+            "zero_pa": {
+              "precision": null,
+              "predicted_positives": 0,
+              "recall": 0.0,
+              "species": 292,
+              "target_positives": 376,
+              "true_positives": 0
+            }
+          }
+        },
+        {
+          "fold": 1,
+          "frozen_v23": {
+            "common_over_25": {
+              "precision": 0.273209095141624,
+              "predicted_positives": 397355,
+              "recall": 0.4892625525605376,
+              "species": 1720,
+              "target_positives": 221887,
+              "true_positives": 108561
+            },
+            "rare_1_to_25": {
+              "precision": 0.13885180240320427,
+              "predicted_positives": 749,
+              "recall": 0.018245614035087718,
+              "species": 2768,
+              "target_positives": 5700,
+              "true_positives": 104
+            },
+            "zero_pa": {
+              "precision": null,
+              "predicted_positives": 0,
+              "recall": 0.0,
+              "species": 528,
+              "target_positives": 824,
+              "true_positives": 0
+            }
+          },
+          "v24": {
+            "common_over_25": {
+              "precision": 0.28820330240251185,
+              "predicted_positives": 356710,
+              "recall": 0.46332142036261703,
+              "species": 1720,
+              "target_positives": 221887,
+              "true_positives": 102805
+            },
+            "rare_1_to_25": {
+              "precision": 0.1259259259259259,
+              "predicted_positives": 675,
+              "recall": 0.014912280701754385,
+              "species": 2768,
+              "target_positives": 5700,
+              "true_positives": 85
+            },
+            "zero_pa": {
+              "precision": null,
+              "predicted_positives": 0,
+              "recall": 0.0,
+              "species": 528,
+              "target_positives": 824,
+              "true_positives": 0
+            }
+          }
+        }
+      ],
+      "note": "Rarity is fold-specific; pooled counts are sums of fold metrics.",
+      "pooled": {
+        "common_over_25": {
+          "frozen_v23": {
+            "precision": 0.28929366234410386,
+            "predicted_positives": 766135,
+            "recall": 0.4856595050014791,
+            "target_positives": 456365,
+            "true_positives": 221638
+          },
+          "v24": {
+            "precision": 0.3039402079118119,
+            "predicted_positives": 687984,
+            "recall": 0.45819902928576905,
+            "target_positives": 456365,
+            "true_positives": 209106
+          }
+        },
+        "rare_1_to_25": {
+          "frozen_v23": {
+            "precision": 0.14154200230149597,
+            "predicted_positives": 869,
+            "recall": 0.014815707058540111,
+            "target_positives": 8302,
+            "true_positives": 123
+          },
+          "v24": {
+            "precision": 0.13151041666666666,
+            "predicted_positives": 768,
+            "recall": 0.012165743194410985,
+            "target_positives": 8302,
+            "true_positives": 101
+          }
+        },
+        "zero_pa": {
+          "frozen_v23": {
+            "precision": null,
+            "predicted_positives": 0,
+            "recall": 0.0,
+            "target_positives": 1200,
+            "true_positives": 0
+          },
+          "v24": {
+            "precision": null,
+            "predicted_positives": 0,
+            "recall": 0.0,
+            "target_positives": 1200,
+            "true_positives": 0
+          }
+        }
+      }
+    },
+    "spatial_blocks": 87,
+    "spatial_bootstrap": {
+      "ci95": [
+        0.0019549769074003794,
+        0.00627083878991283
+      ],
+      "iterations": 500,
+      "mean_difference": 0.0035440545690375498,
+      "seed": 20262404,
+      "spatial_blocks": 87,
+      "unit": "one_degree_spatial_block"
+    },
+    "surveys": 27393,
+    "used_for_selection": false,
+    "v24_sample_f1": 0.35366755805882666,
+    "warning": "Matched-recipe spatial cross-fit evidence, not a hidden-test score."
+  },
+  "experiment": "v24_multimodal_rare_species_sdm",
+  "external_data_or_weights": false,
+  "final_file_hashes": {
+    "GLC25_PA_submission_v24.csv": "31ce8fcc93d5831f1ecfdffb255c5eec14f0b8a40981f2f16f2ab6cf4b45a111",
+    "assessment_per_survey_v24.csv": "33832b8855f4b9cebda329b0f34d343d0e5c5199fb7aadbcaf2058d2f81d4dcc",
+    "v24_manifest.json": null,
+    "v24_report.json": null
+  },
+  "frozen_v23_baseline": {
+    "assessment_consumed": true,
+    "checks": {
+      "payload_file_set": true,
+      "submission_sha256": true
+    },
+    "kernel_version": 25,
+    "private_score": 0.1973,
+    "provenance_storage": "constants embedded in notebook source",
+    "public_score": 0.22052,
+    "source_commit": "d307326eb55af13d1bc3b593f17997a8246df644",
+    "submission_reference": "56255321",
+    "submission_sha256": "9da01ce45a3478e8073cd93e22dbf69dde65def0f86b7ef2700e84630f2c30f8"
+  },
+  "hash_note": "A file cannot contain its own byte hash; the manifest records the report hash, and the notebook prints the manifest hash after finalization.",
+  "integrity": {
+    "assessment_predictions_frozen": true,
+    "expected_dimensions": true,
+    "external_pretrained_weights": false,
+    "frozen_v23_exact": true,
+    "new_spatial_folds": true,
+    "notebook_tests_before_and_after": true,
+    "official_competition_only": true,
+    "runtime_within_limit": true,
+    "selection_calibration_assessment_separate": true,
+    "submission_schema_valid": true,
+    "submission_unchanged_after_freeze": true,
+    "test_labels_unused": true,
+    "twenty_km_buffer": true
+  },
+  "official_private_score": null,
+  "official_public_score": null,
+  "official_submission_made": false,
+  "official_submission_reference": null,
+  "policy_trials": [
+    {
+      "fold_scores": [
+        0.30681673553004063,
+        0.3036589944843174
+      ],
+      "intervention": 0.0,
+      "policy_id": "control",
+      "pooled_calibration_f1": 0.305237865007179,
+      "surveys": 4018
+    },
+    {
+      "fold_scores": [
+        0.31243143217963093,
+        0.3086258417907793
+      ],
+      "intervention": 0.53,
+      "policy_id": "mm_small",
+      "pooled_calibration_f1": 0.31052863698520516,
+      "surveys": 4018
+    },
+    {
+      "fold_scores": [
+        0.3125407297406908,
+        0.30916490744929975
+      ],
+      "intervention": 0.79,
+      "policy_id": "mm",
+      "pooled_calibration_f1": 0.31085281859499525,
+      "surveys": 4018
+    },
+    {
+      "fold_scores": [
+        0.3124490716418564,
+        0.30900314386711925
+      ],
+      "intervention": 0.825,
+      "policy_id": "mm_rare",
+      "pooled_calibration_f1": 0.31072610775448783,
+      "surveys": 4018
+    },
+    {
+      "fold_scores": [
+        0.3128878309576013,
+        0.3102512418251819
+      ],
+      "intervention": 0.805,
+      "policy_id": "mm_cooc",
+      "pooled_calibration_f1": 0.31156953639139157,
+      "surveys": 4018
+    },
+    {
+      "fold_scores": [
+        0.3126867744992999,
+        0.30917414296360496
+      ],
+      "intervention": 0.7549999999999999,
+      "policy_id": "mm_spatial",
+      "pooled_calibration_f1": 0.3109304587314524,
+      "surveys": 4018
+    },
+    {
+      "fold_scores": [
+        0.31289056749684646,
+        0.31010247083709486
+      ],
+      "intervention": 0.875,
+      "policy_id": "balanced",
+      "pooled_calibration_f1": 0.31149651916697063,
+      "surveys": 4018
+    },
+    {
+      "fold_scores": [
+        0.31292412198567293,
+        0.3096795000756159
+      ],
+      "intervention": 0.6250000000000001,
+      "policy_id": "balanced_conservative",
+      "pooled_calibration_f1": 0.3113018110306444,
+      "surveys": 4018
+    },
+    {
+      "fold_scores": [
+        0.31317641914014854,
+        0.3102031005233237
+      ],
+      "intervention": 0.925,
+      "policy_id": "ood_rare",
+      "pooled_calibration_f1": 0.31168975983173614,
+      "surveys": 4018
+    }
+  ],
+  "pre_assessment_freeze": {
+    "all_models_and_policies_frozen": true,
+    "assessment_prediction_sha256": {
+      "fold_0": "671e5ac230bcbc04b4a78306befb5cddb77275c87c6b72889ac30ffc8a7cb218",
+      "fold_1": "d7c6d4d19b8e2ba727d6ff70e790ae45d90781b593b77664e288bcdb81f0c441"
+    },
+    "assessment_reporting_started": false,
+    "checkpoint_sha256": {
+      "deployment/v24_multimodal.pt": "9e8681460979da316d3423f05f3bcd296ddd58b5dfe618bd9dde7c53df38d733",
+      "fold_0/matched_v23_control.pt": "26e6353076a2244ccd46969c1a4d758d375a46338428f000b29b803253aaf292",
+      "fold_0/v24_multimodal.pt": "ec0170fa9bcd51e160302949849cac2d08043203bbd6f35a00ad3b5eaee40cd3",
+      "fold_1/matched_v23_control.pt": "7413920fefe11603cbe7fd521bae0887318bc6d421b77ea86208a33b39daff7d",
+      "fold_1/v24_multimodal.pt": "1a58d2de6f844518a854003e34fcf3d18a7f0f69dd3f5ed27cfd875bf50d7f71"
+    },
+    "selected_policy": {
+      "alpha_far": 0.34,
+      "alpha_near": 0.08,
+      "cardinality_weight": 0.4,
+      "cooccurrence_weight": 0.02,
+      "id": "ood_rare",
+      "pooled_calibration_f1": 0.31168975983173614,
+      "rare_weight": 0.06,
+      "spatial_weight": 0.025
+    },
+    "submission_sha256": "31ce8fcc93d5831f1ecfdffb255c5eec14f0b8a40981f2f16f2ab6cf4b45a111"
+  },
+  "pretrained_weight_provenance": [],
+  "registered_max_total_hours": 11.25,
+  "runtime_hours": 0.9811864720533332,
+  "runtime_plan": {
+    "expected_hours": [
+      5.0,
+      8.5
+    ],
+    "feature_preparation_cap_hours": 2.75,
+    "finalization_reserve_minutes": 35,
+    "hard_guard_hours": 11.25,
+    "kaggle_limit_hours": 12.0,
+    "models_trained_sequentially": 5,
+    "v23_reference_runtime_hours": 6.61616224692927,
+    "vram_estimate_gb": "under 5 on one T4"
+  },
+  "selected_policy": {
+    "alpha_far": 0.34,
+    "alpha_near": 0.08,
+    "cardinality_weight": 0.4,
+    "cooccurrence_weight": 0.02,
+    "id": "ood_rare",
+    "pooled_calibration_f1": 0.31168975983173614,
+    "rare_weight": 0.06,
+    "spatial_weight": 0.025
+  },
+  "status": "complete",
+  "submission": {
+    "checks": {
+      "cardinality_bounds": true,
+      "columns": true,
+      "row_count": true,
+      "row_order": true,
+      "unique_ids": true,
+      "vocabulary_and_unique_predictions": true
+    },
+    "prediction_count_max": 30,
+    "prediction_count_mean": 23.48721590909091,
+    "prediction_count_min": 17,
+    "rows": 14784,
+    "sha256": "31ce8fcc93d5831f1ecfdffb255c5eec14f0b8a40981f2f16f2ab6cf4b45a111",
+    "species_vocabulary": 5016
+  },
+  "submission_gate": {
+    "all_integrity_checks": false,
+    "common_recall_protected": false,
+    "eligible_for_submission": false,
+    "nonzero_new_component": true,
+    "not_one_country_only": true,
+    "pooled_gain_positive": true,
+    "positive_gain_each_fold": true,
+    "rare_recall_gain": false,
+    "spatial_ci_lower_positive": true
+  },
+  "training": {
+    "deployment": {
+      "checkpoint_sha256": "9e8681460979da316d3423f05f3bcd296ddd58b5dfe618bd9dde7c53df38d733",
+      "cooccurrence_sha256": "b6e76ecdd6ea08e60fa23e8bea2cbdf5cd71744e9006e1be0a22990d8308cee7",
+      "frequency_groups": {
+        "common_over_25": 1965,
+        "rare_1_to_25": 2941,
+        "zero_pa": 110
+      },
+      "richness": {
+        "country_means": {
+          "Andorra": 14.75,
+          "Austria": 26.14538676607642,
+          "Belgium": 14.05137912385073,
+          "Bosnia and Herzegovina": 35.77777777777778,
+          "Bulgaria": 33.67901234567901,
+          "Croatia": 30.485436893203882,
+          "Czech Republic": 22.959367945823928,
+          "Denmark": 15.91470892528199,
+          "France": 18.17588504455326,
+          "Germany": 21.07301293900185,
+          "Greece": 31.135593220338983,
+          "Hungary": 41.791666666666664,
+          "Ireland": 8.916666666666666,
+          "Italy": 18.27491057741441,
+          "Latvia": 40.205479452054796,
+          "Monaco": 21.166666666666668,
+          "Montenegro": 22.597345132743364,
+          "Netherlands": 11.701832050670843,
+          "Poland": 19.43222003929273,
+          "Portugal": 12.166666666666666,
+          "Romania": 22.853658536585368,
+          "Serbia": 17.125,
+          "Slovakia": 25.473118279569892,
+          "Slovenia": 22.853658536585368,
+          "Spain": 22.05531914893617,
+          "Switzerland": 30.65806451612903,
+          "The former Yugoslav Republic of Macedonia": 31.0
+        },
+        "feature_names": [
+          "neural_log_richness",
+          "top1",
+          "top5_mean",
+          "top20_mean",
+          "top40_mean",
+          "top40_std",
+          "rank_margin_20_40",
+          "log_pa_distance",
+          "log_po_coverage",
+          "month_sin",
+          "month_cos",
+          "country_training_richness"
+        ],
+        "global_mean": 16.091748149501964,
+        "selection_mae": 5.475087516702433
+      },
+      "test": {
+        "modality_weight_mean": {
+          "bioclim": 0.1314307600259781,
+          "environment": 0.18507836759090424,
+          "landsat": 0.2533487379550934,
+          "sentinel": 0.10833784192800522,
+          "static": 0.3218063414096832
+        },
+        "ood_risk_mean": 0.5793921583495665,
+        "pa_distance_km_mean": 109.02850149727864,
+        "po_coverage_mean": 12.874276161193848,
+        "predicted_cardinality_max": 30,
+        "predicted_cardinality_mean": 23.48721590909091,
+        "predicted_cardinality_min": 17
+      },
+      "training": {
+        "best_epoch": 10,
+        "checkpoint_sha256": "9e8681460979da316d3423f05f3bcd296ddd58b5dfe618bd9dde7c53df38d733",
+        "history": [
+          {
+            "epoch": 1,
+            "examples_per_second": 11106.368689151333,
+            "loss": 0.3038666366541056,
+            "seconds": 6.89703377800015,
+            "selection_f1": null
+          },
+          {
+            "epoch": 2,
+            "examples_per_second": 10796.888376433497,
+            "loss": 0.17816044815034743,
+            "seconds": 7.094729270999778,
+            "selection_f1": null
+          },
+          {
+            "epoch": 3,
+            "examples_per_second": 11176.77912940062,
+            "loss": 0.14809304173407506,
+            "seconds": 6.85358448199986,
+            "selection_f1": null
+          },
+          {
+            "epoch": 4,
+            "examples_per_second": 11329.367246567936,
+            "loss": 0.132051486653899,
+            "seconds": 6.761277865999546,
+            "selection_f1": null
+          },
+          {
+            "epoch": 5,
+            "examples_per_second": 11048.794103938246,
+            "loss": 0.12150047665175671,
+            "seconds": 6.932973795999715,
+            "selection_f1": null
+          },
+          {
+            "epoch": 6,
+            "examples_per_second": 10042.717487622995,
+            "loss": 0.1121212610032485,
+            "seconds": 7.627517162999538,
+            "selection_f1": 0.3500723211576225
+          },
+          {
+            "epoch": 7,
+            "examples_per_second": 11164.131932427581,
+            "loss": 0.10578259112774985,
+            "seconds": 6.861348509999516,
+            "selection_f1": null
+          },
+          {
+            "epoch": 8,
+            "examples_per_second": 10245.211041905566,
+            "loss": 0.10156138562157879,
+            "seconds": 7.476761550999981,
+            "selection_f1": 0.3588724953584904
+          },
+          {
+            "epoch": 9,
+            "examples_per_second": 10805.061737519281,
+            "loss": 0.09843153513880355,
+            "seconds": 7.089362547000746,
+            "selection_f1": null
+          },
+          {
+            "epoch": 10,
+            "examples_per_second": 10156.341551728028,
+            "loss": 0.0970287888616176,
+            "seconds": 7.542184319999251,
+            "selection_f1": 0.36059861014848466
+          }
+        ],
+        "parameters": 3213835,
+        "selection_f1": 0.36059861014848466
+      }
+    },
+    "fold_0": {
+      "calibration_trials": [
+        {
+          "policy_id": "control",
+          "sample_f1": 0.30681673553004063,
+          "surveys": 2009
+        },
+        {
+          "policy_id": "mm_small",
+          "sample_f1": 0.31243143217963093,
+          "surveys": 2009
+        },
+        {
+          "policy_id": "mm",
+          "sample_f1": 0.3125407297406908,
+          "surveys": 2009
+        },
+        {
+          "policy_id": "mm_rare",
+          "sample_f1": 0.3124490716418564,
+          "surveys": 2009
+        },
+        {
+          "policy_id": "mm_cooc",
+          "sample_f1": 0.3128878309576013,
+          "surveys": 2009
+        },
+        {
+          "policy_id": "mm_spatial",
+          "sample_f1": 0.3126867744992999,
+          "surveys": 2009
+        },
+        {
+          "policy_id": "balanced",
+          "sample_f1": 0.31289056749684646,
+          "surveys": 2009
+        },
+        {
+          "policy_id": "balanced_conservative",
+          "sample_f1": 0.31292412198567293,
+          "surveys": 2009
+        },
+        {
+          "policy_id": "ood_rare",
+          "sample_f1": 0.31317641914014854,
+          "surveys": 2009
+        }
+      ],
+      "common_species": 1864,
+      "cooccurrence_sha256": "9cac4071b6037f735295fa50d646e28b4aa7dff24372a08f2f629c41eeffc1df",
+      "matched_v23_control": {
+        "best_epoch": 6,
+        "checkpoint_sha256": "26e6353076a2244ccd46969c1a4d758d375a46338428f000b29b803253aaf292",
+        "history": [
+          {
+            "epoch": 1,
+            "examples_per_second": 13498.18616989028,
+            "loss": 0.174458434603585,
+            "seconds": 4.066101867999805,
+            "selection_f1": null
+          },
+          {
+            "epoch": 2,
+            "examples_per_second": 24987.028893445215,
+            "loss": 0.11629778986174498,
+            "seconds": 2.196539662000305,
+            "selection_f1": null
+          },
+          {
+            "epoch": 3,
+            "examples_per_second": 25175.494064268914,
+            "loss": 0.10174120601704073,
+            "seconds": 2.180096241999763,
+            "selection_f1": null
+          },
+          {
+            "epoch": 4,
+            "examples_per_second": 18836.661674667957,
+            "loss": 0.09255681737702195,
+            "seconds": 2.9137328550000348,
+            "selection_f1": 0.31756933090307427
+          },
+          {
+            "epoch": 5,
+            "examples_per_second": 24990.589609872477,
+            "loss": 0.08589939610645551,
+            "seconds": 2.196226693999961,
+            "selection_f1": null
+          },
+          {
+            "epoch": 6,
+            "examples_per_second": 19222.944698439285,
+            "loss": 0.08193504903226252,
+            "seconds": 2.8551817040006426,
+            "selection_f1": 0.32468312173662367
+          }
+        ],
+        "parameters": 3282456,
+        "selection_f1": 0.32468312173662367
+      },
+      "normalization_fit_on_training_only": true,
+      "rare_species": 3152,
+      "richness": {
+        "country_means": {
+          "Austria": 26.074782608695653,
+          "Belgium": 13.748840803709427,
+          "Bosnia and Herzegovina": 35.52,
+          "Bulgaria": 33.75,
+          "Croatia": 29.52,
+          "Czech Republic": 22.446854663774403,
+          "Denmark": 14.848616500759237,
+          "France": 18.57517375929765,
+          "Germany": 17.3690036900369,
+          "Greece": 32.95744680851064,
+          "Hungary": 42.275862068965516,
+          "Ireland": 8.916666666666666,
+          "Italy": 16.20981165133596,
+          "Latvia": 40.205479452054796,
+          "Luxembourg": 19.0,
+          "Monaco": 21.166666666666668,
+          "Montenegro": 23.259485924112607,
+          "Netherlands": 11.5819414354602,
+          "Poland": 17.944915254237287,
+          "Portugal": 12.166666666666666,
+          "Romania": 22.003225806451614,
+          "Serbia": 32.44444444444444,
+          "Slovakia": 38.44859813084112,
+          "Slovenia": 20.63888888888889,
+          "Spain": 21.67191011235955,
+          "Switzerland": 30.65806451612903,
+          "The former Yugoslav Republic of Macedonia": 18.166666666666668
+        },
+        "feature_names": [
+          "neural_log_richness",
+          "top1",
+          "top5_mean",
+          "top20_mean",
+          "top40_mean",
+          "top40_std",
+          "rank_margin_20_40",
+          "log_pa_distance",
+          "log_po_coverage",
+          "month_sin",
+          "month_cos",
+          "country_training_richness"
+        ],
+        "global_mean": 15.424177826364216,
+        "selection_mae": 5.328937305479425
+      },
+      "v24": {
+        "best_epoch": 8,
+        "checkpoint_sha256": "ec0170fa9bcd51e160302949849cac2d08043203bbd6f35a00ad3b5eaee40cd3",
+        "history": [
+          {
+            "epoch": 1,
+            "examples_per_second": 9778.810558431358,
+            "loss": 0.3373240907454823,
+            "seconds": 5.612645799000347,
+            "selection_f1": null
+          },
+          {
+            "epoch": 2,
+            "examples_per_second": 11128.4431163486,
+            "loss": 0.18833208408600713,
+            "seconds": 4.9319567370002915,
+            "selection_f1": null
+          },
+          {
+            "epoch": 3,
+            "examples_per_second": 11482.343127118944,
+            "loss": 0.15832633412556538,
+            "seconds": 4.779947732999972,
+            "selection_f1": null
+          },
+          {
+            "epoch": 4,
+            "examples_per_second": 11583.089672961685,
+            "loss": 0.13941205241857813,
+            "seconds": 4.738373054999101,
+            "selection_f1": null
+          },
+          {
+            "epoch": 5,
+            "examples_per_second": 11524.795602675262,
+            "loss": 0.12759909006747716,
+            "seconds": 4.762340425999355,
+            "selection_f1": null
+          },
+          {
+            "epoch": 6,
+            "examples_per_second": 9923.22554527832,
+            "loss": 0.11770321660607828,
+            "seconds": 5.5309636720003255,
+            "selection_f1": 0.3038753215649155
+          },
+          {
+            "epoch": 7,
+            "examples_per_second": 11625.216011302538,
+            "loss": 0.11318351567589738,
+            "seconds": 4.72120259500025,
+            "selection_f1": null
+          },
+          {
+            "epoch": 8,
+            "examples_per_second": 9823.651296065882,
+            "loss": 0.11022418666781325,
+            "seconds": 5.587026488000447,
+            "selection_f1": 0.30452853968284593
+          }
+        ],
+        "parameters": 3230096,
+        "selection_f1": 0.30452853968284593
+      },
+      "zero_pa_species": 292
+    },
+    "fold_1": {
+      "calibration_trials": [
+        {
+          "policy_id": "control",
+          "sample_f1": 0.3036589944843174,
+          "surveys": 2009
+        },
+        {
+          "policy_id": "mm_small",
+          "sample_f1": 0.3086258417907793,
+          "surveys": 2009
+        },
+        {
+          "policy_id": "mm",
+          "sample_f1": 0.30916490744929975,
+          "surveys": 2009
+        },
+        {
+          "policy_id": "mm_rare",
+          "sample_f1": 0.30900314386711925,
+          "surveys": 2009
+        },
+        {
+          "policy_id": "mm_cooc",
+          "sample_f1": 0.3102512418251819,
+          "surveys": 2009
+        },
+        {
+          "policy_id": "mm_spatial",
+          "sample_f1": 0.30917414296360496,
+          "surveys": 2009
+        },
+        {
+          "policy_id": "balanced",
+          "sample_f1": 0.31010247083709486,
+          "surveys": 2009
+        },
+        {
+          "policy_id": "balanced_conservative",
+          "sample_f1": 0.3096795000756159,
+          "surveys": 2009
+        },
+        {
+          "policy_id": "ood_rare",
+          "sample_f1": 0.3102031005233237,
+          "surveys": 2009
+        }
+      ],
+      "common_species": 1720,
+      "cooccurrence_sha256": "bfc50c13c77bf168570185297848cd9e50dfd9695b9bdaab28053f56f46abeef",
+      "matched_v23_control": {
+        "best_epoch": 6,
+        "checkpoint_sha256": "7413920fefe11603cbe7fd521bae0887318bc6d421b77ea86208a33b39daff7d",
+        "history": [
+          {
+            "epoch": 1,
+            "examples_per_second": 24577.21797076568,
+            "loss": 0.1740606277852145,
+            "seconds": 2.0828638969996973,
+            "selection_f1": null
+          },
+          {
+            "epoch": 2,
+            "examples_per_second": 25314.75091919993,
+            "loss": 0.11553631863799844,
+            "seconds": 2.0221806710005694,
+            "selection_f1": null
+          },
+          {
+            "epoch": 3,
+            "examples_per_second": 25082.539972388382,
+            "loss": 0.10208076805674494,
+            "seconds": 2.0409017609999864,
+            "selection_f1": null
+          },
+          {
+            "epoch": 4,
+            "examples_per_second": 18478.159376017884,
+            "loss": 0.09335825827377847,
+            "seconds": 2.7703516869996747,
+            "selection_f1": 0.3138253768795321
+          },
+          {
+            "epoch": 5,
+            "examples_per_second": 25475.340246122574,
+            "loss": 0.087078658877838,
+            "seconds": 2.0094334169998547,
+            "selection_f1": null
+          },
+          {
+            "epoch": 6,
+            "examples_per_second": 18515.440488651977,
+            "loss": 0.08318657756389679,
+            "seconds": 2.764773542999137,
+            "selection_f1": 0.3204424665380248
+          }
+        ],
+        "parameters": 3282456,
+        "selection_f1": 0.3204424665380248
+      },
+      "normalization_fit_on_training_only": true,
+      "rare_species": 3296,
+      "richness": {
+        "country_means": {
+          "Andorra": 14.75,
+          "Austria": 26.584016393442624,
+          "Belgium": 15.25459825750242,
+          "Bosnia and Herzegovina": 35.38461538461539,
+          "Bulgaria": 31.59259259259259,
+          "Croatia": 27.772727272727273,
+          "Czech Republic": 21.201769911504424,
+          "Denmark": 15.967515514658677,
+          "France": 19.329812352429478,
+          "Germany": 17.678861788617887,
+          "Greece": 46.5,
+          "Hungary": 42.275862068965516,
+          "Italy": 14.50791788856305,
+          "Latvia": 37.77272727272727,
+          "Luxembourg": 19.0,
+          "Monaco": 21.166666666666668,
+          "Montenegro": 21.721698113207548,
+          "Netherlands": 11.79461386138614,
+          "Poland": 18.918367346938776,
+          "Romania": 21.821428571428573,
+          "Serbia": 15.575,
+          "Slovakia": 38.44859813084112,
+          "Slovenia": 20.63888888888889,
+          "Spain": 22.163076923076922,
+          "Switzerland": 30.91,
+          "The former Yugoslav Republic of Macedonia": 18.166666666666668
+        },
+        "feature_names": [
+          "neural_log_richness",
+          "top1",
+          "top5_mean",
+          "top20_mean",
+          "top40_mean",
+          "top40_std",
+          "rank_margin_20_40",
+          "log_pa_distance",
+          "log_po_coverage",
+          "month_sin",
+          "month_cos",
+          "country_training_richness"
+        ],
+        "global_mean": 16.017991443808484,
+        "selection_mae": 5.363809666596878
+      },
+      "v24": {
+        "best_epoch": 8,
+        "checkpoint_sha256": "1a58d2de6f844518a854003e34fcf3d18a7f0f69dd3f5ed27cfd875bf50d7f71",
+        "history": [
+          {
+            "epoch": 1,
+            "examples_per_second": 11155.955184472648,
+            "loss": 0.33703170706428864,
+            "seconds": 4.58867027999986,
+            "selection_f1": null
+          },
+          {
+            "epoch": 2,
+            "examples_per_second": 11555.001732290419,
+            "loss": 0.18866362201433035,
+            "seconds": 4.430202710999765,
+            "selection_f1": null
+          },
+          {
+            "epoch": 3,
+            "examples_per_second": 11586.758653477413,
+            "loss": 0.1569276989604889,
+            "seconds": 4.418060437000349,
+            "selection_f1": null
+          },
+          {
+            "epoch": 4,
+            "examples_per_second": 11242.543726194452,
+            "loss": 0.13949842529769046,
+            "seconds": 4.553328965999754,
+            "selection_f1": null
+          },
+          {
+            "epoch": 5,
+            "examples_per_second": 10754.786489935295,
+            "loss": 0.12745745296863417,
+            "seconds": 4.7598341490001985,
+            "selection_f1": null
+          },
+          {
+            "epoch": 6,
+            "examples_per_second": 9769.52634649749,
+            "loss": 0.11968746086504056,
+            "seconds": 5.2398650850000195,
+            "selection_f1": 0.3000876119628228
+          },
+          {
+            "epoch": 7,
+            "examples_per_second": 11247.062194125758,
+            "loss": 0.11460390362482287,
+            "seconds": 4.5514996820002125,
+            "selection_f1": null
+          },
+          {
+            "epoch": 8,
+            "examples_per_second": 9668.169715863329,
+            "loss": 0.11163484496840329,
+            "seconds": 5.294797413000197,
+            "selection_f1": 0.3033767873923564
+          }
+        ],
+        "parameters": 3253280,
+        "selection_f1": 0.3033767873923564
+      },
+      "zero_pa_species": 528
+    }
+  }
+}

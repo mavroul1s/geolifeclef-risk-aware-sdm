@@ -1,0 +1,392 @@
+{
+  "checkpoint_identifiers_and_hashes": {
+    "deployment/v24_multimodal.pt": "9e8681460979da316d3423f05f3bcd296ddd58b5dfe618bd9dde7c53df38d733",
+    "fold_0/matched_v23_control.pt": "26e6353076a2244ccd46969c1a4d758d375a46338428f000b29b803253aaf292",
+    "fold_0/v24_multimodal.pt": "ec0170fa9bcd51e160302949849cac2d08043203bbd6f35a00ad3b5eaee40cd3",
+    "fold_1/matched_v23_control.pt": "7413920fefe11603cbe7fd521bae0887318bc6d421b77ea86208a33b39daff7d",
+    "fold_1/v24_multimodal.pt": "1a58d2de6f844518a854003e34fcf3d18a7f0f69dd3f5ed27cfd875bf50d7f71"
+  },
+  "datasets": [
+    {
+      "kind": "competition",
+      "slug": "geolifeclef-2025",
+      "version": "competition snapshot mounted by Kaggle"
+    }
+  ],
+  "experiment": "v24_multimodal_rare_species_sdm",
+  "external_data_or_weights": false,
+  "feature_manifest": {
+    "environment_sources": [
+      {
+        "missing_indicators": 0,
+        "predictors": 19,
+        "test": "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-test-bioclimatic.csv",
+        "train": "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv"
+      },
+      {
+        "missing_indicators": 1,
+        "predictors": 1,
+        "test": "EnvironmentalValues/Elevation/GLC25-PA-test-elevation.csv",
+        "train": "EnvironmentalValues/Elevation/GLC25-PA-train-elevation.csv"
+      },
+      {
+        "missing_indicators": 0,
+        "predictors": 22,
+        "test": "EnvironmentalValues/HumanFootprint/GLC25-PA-test-human_footprint.csv",
+        "train": "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv"
+      },
+      {
+        "missing_indicators": 0,
+        "predictors": 13,
+        "test": "EnvironmentalValues/LandCover/GLC25-PA-test-landcover.csv",
+        "train": "EnvironmentalValues/LandCover/GLC25-PA-train-landcover.csv"
+      },
+      {
+        "missing_indicators": 9,
+        "predictors": 9,
+        "test": "EnvironmentalValues/SoilGrids/GLC25-PA-test-soilgrids.csv",
+        "train": "EnvironmentalValues/SoilGrids/GLC25-PA-train-soilgrids.csv"
+      }
+    ],
+    "external_data_or_weights": false,
+    "modalities": {
+      "bioclim": [
+        76
+      ],
+      "environment": [
+        74
+      ],
+      "landsat": [
+        114
+      ],
+      "sentinel": [
+        115
+      ],
+      "static": [
+        55
+      ]
+    },
+    "official_competition": "geolifeclef-2025",
+    "preparation_seconds": 2861.776469706,
+    "remote_preparation": {
+      "test": {
+        "rows": 14784,
+        "seconds": 452
+      },
+      "train": {
+        "rows": 88987,
+        "seconds": 2402
+      }
+    },
+    "species": 5016,
+    "species_ids_sha256": "4cfb4e44b760ae8feeb817a1788e12f8853f071689a5bf5a47c06587d5090a96",
+    "summary_encoder": {
+      "bioclim": "per-channel distribution plus 12 temporal bins",
+      "landsat": "per-band distribution plus 12 temporal bins",
+      "sentinel": "fixed-reflectance band and NDVI statistics plus 4x4 spatial pooling"
+    },
+    "test_ids_sha256": "43dc449194bbde82d746bd72ef26c04fe99a6e049360b152157d8828db20cd0f",
+    "test_labels_used": false,
+    "test_rows": 14784,
+    "train_ids_sha256": "2938f816ee93f5c53b1fc71a4505f413680018f8dff766ae891df06219286095",
+    "train_rows": 88987
+  },
+  "final_file_hashes": {
+    "GLC25_PA_submission_v24.csv": "31ce8fcc93d5831f1ecfdffb255c5eec14f0b8a40981f2f16f2ab6cf4b45a111",
+    "assessment_per_survey_v24.csv": "33832b8855f4b9cebda329b0f34d343d0e5c5199fb7aadbcaf2058d2f81d4dcc",
+    "v24_manifest.json": null,
+    "v24_report.json": "d171b4280ed4c2e2b37bde9f3f937b391b3aefd9703825bf40b3c3d23e23ca36"
+  },
+  "frozen_policies": {
+    "alpha_far": 0.34,
+    "alpha_near": 0.08,
+    "cardinality_weight": 0.4,
+    "cooccurrence_weight": 0.02,
+    "id": "ood_rare",
+    "pooled_calibration_f1": 0.31168975983173614,
+    "rare_weight": 0.06,
+    "spatial_weight": 0.025
+  },
+  "kaggle": {
+    "intended_version": 26,
+    "kernel": "con1los/geolifeclef-risk-aware-sdm-phase-1",
+    "runtime_gpu": "Tesla T4"
+  },
+  "model_configurations": {
+    "matched_v23_control": {
+      "epochs": 6,
+      "kind": "early_fusion_residual",
+      "role": "new-fold recipe-transfer control",
+      "width": 384
+    },
+    "postprocessing": {
+      "cardinality_bounds": [
+        16,
+        30
+      ],
+      "max_rare_additions": 4,
+      "max_zero_pa_additions": 2,
+      "policies": [
+        {
+          "alpha_far": 0.0,
+          "alpha_near": 0.0,
+          "cardinality_weight": 0.0,
+          "cooccurrence_weight": 0.0,
+          "id": "control",
+          "rare_weight": 0.0,
+          "spatial_weight": 0.0
+        },
+        {
+          "alpha_far": 0.18,
+          "alpha_near": 0.1,
+          "cardinality_weight": 0.25,
+          "cooccurrence_weight": 0.0,
+          "id": "mm_small",
+          "rare_weight": 0.0,
+          "spatial_weight": 0.0
+        },
+        {
+          "alpha_far": 0.28,
+          "alpha_near": 0.16,
+          "cardinality_weight": 0.35,
+          "cooccurrence_weight": 0.0,
+          "id": "mm",
+          "rare_weight": 0.0,
+          "spatial_weight": 0.0
+        },
+        {
+          "alpha_far": 0.28,
+          "alpha_near": 0.14,
+          "cardinality_weight": 0.35,
+          "cooccurrence_weight": 0.0,
+          "id": "mm_rare",
+          "rare_weight": 0.055,
+          "spatial_weight": 0.0
+        },
+        {
+          "alpha_far": 0.28,
+          "alpha_near": 0.14,
+          "cardinality_weight": 0.35,
+          "cooccurrence_weight": 0.035,
+          "id": "mm_cooc",
+          "rare_weight": 0.0,
+          "spatial_weight": 0.0
+        },
+        {
+          "alpha_far": 0.24,
+          "alpha_near": 0.12,
+          "cardinality_weight": 0.35,
+          "cooccurrence_weight": 0.0,
+          "id": "mm_spatial",
+          "rare_weight": 0.0,
+          "spatial_weight": 0.045
+        },
+        {
+          "alpha_far": 0.28,
+          "alpha_near": 0.14,
+          "cardinality_weight": 0.35,
+          "cooccurrence_weight": 0.025,
+          "id": "balanced",
+          "rare_weight": 0.045,
+          "spatial_weight": 0.035
+        },
+        {
+          "alpha_far": 0.2,
+          "alpha_near": 0.1,
+          "cardinality_weight": 0.25,
+          "cooccurrence_weight": 0.02,
+          "id": "balanced_conservative",
+          "rare_weight": 0.03,
+          "spatial_weight": 0.025
+        },
+        {
+          "alpha_far": 0.34,
+          "alpha_near": 0.08,
+          "cardinality_weight": 0.4,
+          "cooccurrence_weight": 0.02,
+          "id": "ood_rare",
+          "rare_weight": 0.06,
+          "spatial_weight": 0.025
+        }
+      ],
+      "relative_count_change": 3,
+      "selected": {
+        "alpha_far": 0.34,
+        "alpha_near": 0.08,
+        "cardinality_weight": 0.4,
+        "cooccurrence_weight": 0.02,
+        "id": "ood_rare",
+        "pooled_calibration_f1": 0.31168975983173614,
+        "rare_weight": 0.06,
+        "spatial_weight": 0.025
+      }
+    },
+    "v24": {
+      "epochs_deployment": 10,
+      "epochs_outer": 8,
+      "loss": "frequency-aware asymmetric + rare auxiliary + richness",
+      "low_rank_joint_species_head": 80,
+      "modality_encoders": [
+        "landsat",
+        "bioclim",
+        "sentinel",
+        "environment",
+        "static"
+      ],
+      "rare_threshold": 25,
+      "width": 160
+    }
+  },
+  "notebook_source_sha256": "e349d8ad575e3f55884a9da32f180e211e820a0f81bc74549477873117e62e7b",
+  "pre_assessment_freeze": {
+    "all_models_and_policies_frozen": true,
+    "assessment_prediction_sha256": {
+      "fold_0": "671e5ac230bcbc04b4a78306befb5cddb77275c87c6b72889ac30ffc8a7cb218",
+      "fold_1": "d7c6d4d19b8e2ba727d6ff70e790ae45d90781b593b77664e288bcdb81f0c441"
+    },
+    "assessment_reporting_started": false,
+    "checkpoint_sha256": {
+      "deployment/v24_multimodal.pt": "9e8681460979da316d3423f05f3bcd296ddd58b5dfe618bd9dde7c53df38d733",
+      "fold_0/matched_v23_control.pt": "26e6353076a2244ccd46969c1a4d758d375a46338428f000b29b803253aaf292",
+      "fold_0/v24_multimodal.pt": "ec0170fa9bcd51e160302949849cac2d08043203bbd6f35a00ad3b5eaee40cd3",
+      "fold_1/matched_v23_control.pt": "7413920fefe11603cbe7fd521bae0887318bc6d421b77ea86208a33b39daff7d",
+      "fold_1/v24_multimodal.pt": "1a58d2de6f844518a854003e34fcf3d18a7f0f69dd3f5ed27cfd875bf50d7f71"
+    },
+    "selected_policy": {
+      "alpha_far": 0.34,
+      "alpha_near": 0.08,
+      "cardinality_weight": 0.4,
+      "cooccurrence_weight": 0.02,
+      "id": "ood_rare",
+      "pooled_calibration_f1": 0.31168975983173614,
+      "rare_weight": 0.06,
+      "spatial_weight": 0.025
+    },
+    "submission_sha256": "31ce8fcc93d5831f1ecfdffb255c5eec14f0b8a40981f2f16f2ab6cf4b45a111"
+  },
+  "pretrained_weight_provenance": [],
+  "runtime_budget": {
+    "expected_hours": [
+      5.0,
+      8.5
+    ],
+    "feature_preparation_cap_hours": 2.75,
+    "finalization_reserve_minutes": 35,
+    "hard_guard_hours": 11.25,
+    "kaggle_limit_hours": 12.0,
+    "models_kept_on_gpu_concurrently": 1,
+    "single_gpu": true
+  },
+  "seeds": {
+    "bootstrap": 20262404,
+    "deployment": 20262403,
+    "fold_0": 20262401,
+    "fold_1": 20262402,
+    "po": 20262405,
+    "split": 20260915
+  },
+  "self_hash_note": "The manifest's own byte hash is emitted by the final notebook cell.",
+  "source_base_commit": "d307326eb55af13d1bc3b593f17997a8246df644",
+  "source_commit": "72c8e98dbb927d93637df431c37b751632f51458",
+  "split_definitions": {
+    "consumed": {
+      "v22": true,
+      "v23": true
+    },
+    "deployment": {
+      "adaptive_retries": 0,
+      "block_size_degrees": 1.0,
+      "calibration_bucket_range": [
+        7,
+        15
+      ],
+      "partition_counts": {
+        "calibration": 4294,
+        "selection": 3622,
+        "training": 76601
+      },
+      "seed": 20260915,
+      "selection_bucket_range": [
+        0,
+        6
+      ],
+      "training_bucket_range": [
+        16,
+        99
+      ],
+      "training_buffer_km": 10.0
+    },
+    "outer": [
+      {
+        "adaptive_retries": 0,
+        "assessment_bucket_range": [
+          0,
+          11
+        ],
+        "assessment_ids_sha256": "3da698e5f74c8bce12368ad4db46dcf95f28ccd9809ef102afb2e5060cf5ec9b",
+        "assessment_used_for_selection": false,
+        "block_size_degrees": 1.0,
+        "buffer_km": 20.0,
+        "calibration_bucket_range": [
+          30,
+          37
+        ],
+        "fold": 0,
+        "minimum_assessment_training_distance_km": 20.001649400657378,
+        "partition_blocks": {
+          "assessment": 33,
+          "calibration": 23,
+          "selection": 11,
+          "training": 223
+        },
+        "partition_counts": {
+          "assessment": 13175,
+          "calibration": 2009,
+          "selection": 4394,
+          "training": 54885
+        },
+        "seed": 20260915,
+        "selection_bucket_range": [
+          24,
+          29
+        ],
+        "v22_v23_assessments_consumed_and_not_reused": true
+      },
+      {
+        "adaptive_retries": 0,
+        "assessment_bucket_range": [
+          12,
+          23
+        ],
+        "assessment_ids_sha256": "3c320264bab22bf78c7e35c0a52dca04e046fdbd3943f8059cd15dcc645507de",
+        "assessment_used_for_selection": false,
+        "block_size_degrees": 1.0,
+        "buffer_km": 20.0,
+        "calibration_bucket_range": [
+          30,
+          37
+        ],
+        "fold": 1,
+        "minimum_assessment_training_distance_km": 20.001652137168062,
+        "partition_blocks": {
+          "assessment": 54,
+          "calibration": 23,
+          "selection": 11,
+          "training": 198
+        },
+        "partition_counts": {
+          "assessment": 14218,
+          "calibration": 2009,
+          "selection": 4394,
+          "training": 51191
+        },
+        "seed": 20260915,
+        "selection_bucket_range": [
+          24,
+          29
+        ],
+        "v22_v23_assessments_consumed_and_not_reused": true
+      }
+    ]
+  }
+}
