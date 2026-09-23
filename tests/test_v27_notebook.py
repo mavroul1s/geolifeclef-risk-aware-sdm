@@ -6,15 +6,15 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from scripts.build_v26_notebook import (
-    EXPECTED_V25_HASH,
+from scripts.build_v27_notebook import (
+    EXPECTED_V26_HASH,
     KAGGLE_KERNEL_SOURCE_LIMIT_BYTES,
     make_notebook,
     packed_consumed_ids,
-    packed_v25_submission,
+    packed_v26_submission,
 )
-import scripts.v26_notebook_core as core
-from scripts.v26_notebook_core import (
+import scripts.v27_notebook_core as core
+from scripts.v27_notebook_core import (
     MODALITIES,
     POLICIES,
     RASTER_MODALITIES,
@@ -23,6 +23,7 @@ from scripts.v26_notebook_core import (
     CooccurrenceGraph,
     POGridIndex,
     RuntimeGuard,
+    PyramidRasterJSDM,
     SpatialRasterJSDM,
     V24MultimodalRareJSDM,
     _build_models_for_fold,
@@ -40,14 +41,15 @@ from scripts.v26_notebook_core import (
 
 
 ROOT = Path(__file__).resolve().parents[1]
-V25 = ROOT / "results/v25_kaggle_output"
+V26 = ROOT / "results/v26_kaggle_output"
 SPECIES = ROOT / "artifacts/v20_frozen_bundle_v21/species_ids.npy"
 CONSUMED_PATHS = [
     ROOT / "artifacts/v21_review/assessment_per_survey.csv",
     ROOT / "artifacts/v22_review/assessment_per_survey.csv",
     ROOT / "artifacts/manual_upload_v23_retry2/user_provided_v25_exports/assessment_per_survey.csv",
     ROOT / "results/v24_kaggle_output/assessment_per_survey_v24.csv",
-    V25 / "assessment_per_survey_v25.csv",
+    ROOT / "results/v25_kaggle_output/assessment_per_survey_v25.csv",
+    V26 / "assessment_per_survey_v26.csv",
 ]
 
 
@@ -70,13 +72,17 @@ def test_official_float32_fill_values_are_safe_for_float16_cache():
 
 
 def test_self_tests_cover_model_and_adaptive_count_contracts():
-    assert notebook_self_tests() == {"passed": True, "tests": 9}
+    assert notebook_self_tests() == {"passed": True, "tests": 10}
     model = V24MultimodalRareJSDM({name: 3 for name in MODALITIES}, 7, np.array([1, 3]),
                                   width=16, rank=4)
     assert model.independent_head.out_features == 7
     spatial = SpatialRasterJSDM({name: 3 for name in MODALITIES}, 7, np.ones(7, dtype=bool),
                                 raster_width=8, vector_width=16, fusion_width=32, rank=4)
     assert spatial.independent_head.out_features == 7
+    pyramid = PyramidRasterJSDM({name: 3 for name in MODALITIES}, 7,
+                                np.ones(7, dtype=bool), raster_width=8,
+                                token_width=16, fusion_width=32, rank=4)
+    assert pyramid.independent_head.out_features == 7
     probabilities = np.asarray([[0.9, 0.8, 0.7, 0.1]], dtype=np.float32)
     targets = np.asarray([[1, 0, 1, 0]], dtype=np.uint8)
     assert oracle_f1_counts(probabilities, targets, minimum=1, maximum=4).tolist() == [3]
@@ -137,31 +143,31 @@ def test_data_root_supports_nested_kaggle_competition_mount(tmp_path):
     assert discover_data_root([root]) == competition.resolve()
 
 
-def test_embedded_v25_and_consumed_union_roundtrip_exactly(tmp_path, monkeypatch):
-    control_b64, control_sha, raw_sha = packed_v25_submission(
-        V25 / "GLC25_PA_submission_v25.csv", SPECIES)
+def test_embedded_v26_and_consumed_union_roundtrip_exactly(tmp_path, monkeypatch):
+    control_b64, control_sha, raw_sha = packed_v26_submission(
+        V26 / "GLC25_PA_submission_v26.csv", SPECIES)
     consumed_b64, consumed_sha, consumed_count = packed_consumed_ids(CONSUMED_PATHS)
-    monkeypatch.setattr(core, "FROZEN_V25_PAYLOAD_SHA256", control_sha, raising=False)
-    monkeypatch.setattr(core, "FROZEN_V25_RAW_SHA256", raw_sha, raising=False)
+    monkeypatch.setattr(core, "FROZEN_V26_PAYLOAD_SHA256", control_sha, raising=False)
+    monkeypatch.setattr(core, "FROZEN_V26_RAW_SHA256", raw_sha, raising=False)
     monkeypatch.setattr(core, "CONSUMED_ASSESSMENT_IDS_SHA256", consumed_sha, raising=False)
     monkeypatch.setattr(core, "CONSUMED_ASSESSMENT_IDS_COUNT", consumed_count, raising=False)
     template = pd.read_csv(ROOT / "artifacts/v20_frozen/raw/GLC25_SAMPLE_SUBMISSION.csv")
     species = np.load(SPECIES, allow_pickle=False)
-    predictions, proof = core.decode_v25_submission(
+    predictions, proof = core.decode_v26_submission(
         control_b64, template.surveyId.to_numpy(), species)
     output = tmp_path / "roundtrip.csv"
     report = write_submission(output, template, template.surveyId.to_numpy(), predictions, species)
-    assert report["sha256"] == EXPECTED_V25_HASH
-    assert proof["private_score"] == 0.20503
+    assert report["sha256"] == EXPECTED_V26_HASH
+    assert proof["private_score"] == 0.20693
     assert validate_submission(output, template, species)["checks"]["row_order"]
     decoded_consumed = core.decode_consumed_ids(consumed_b64)
-    assert len(decoded_consumed) == 69_630
+    assert len(decoded_consumed) == 73_487
     assert np.all(np.diff(decoded_consumed) > 0)
 
 
 def test_generated_notebook_has_no_repository_runtime_dependency():
-    core_text = (ROOT / "scripts/v26_notebook_core.py").read_text(encoding="utf-8")
-    control = packed_v25_submission(V25 / "GLC25_PA_submission_v25.csv", SPECIES)
+    core_text = (ROOT / "scripts/v27_notebook_core.py").read_text(encoding="utf-8")
+    control = packed_v26_submission(V26 / "GLC25_PA_submission_v26.csv", SPECIES)
     consumed = packed_consumed_ids(CONSUMED_PATHS)
     notebook = make_notebook(core_text, *control, *consumed)
     assert notebook["nbformat"] == 4
@@ -170,15 +176,15 @@ def test_generated_notebook_has_no_repository_runtime_dependency():
                      if cell["cell_type"] == "code")
     assert "from scripts." not in code
     assert "from geolifeclef" not in code
-    assert notebook["metadata"]["glc_v26"]["required_input"] == ["geolifeclef-2025"]
+    assert notebook["metadata"]["glc_v27"]["required_input"] == ["geolifeclef-2025"]
     assert notebook["metadata"]["kaggle"]["isGpuEnabled"] is True
-    path = ROOT / "notebooks/geolifeclef_v26_raw_spatial_raster_ensemble.ipynb"
+    path = ROOT / "notebooks/geolifeclef_v27_multiscale_shift_aware_ensemble.ipynb"
     on_disk = json.loads(path.read_text(encoding="utf-8"))
     assert path.stat().st_size < KAGGLE_KERNEL_SOURCE_LIMIT_BYTES
-    assert on_disk["metadata"]["glc_v26"]["frozen_v25_submission_sha256"] == EXPECTED_V25_HASH
+    assert on_disk["metadata"]["glc_v27"]["frozen_v26_submission_sha256"] == EXPECTED_V26_HASH
     scope = {}
-    exec(compile("".join(on_disk["cells"][1]["source"]), "v26-notebook-core", "exec"), scope)
-    exec(compile("".join(on_disk["cells"][2]["source"]), "v26-notebook-payload", "exec"), scope)
+    exec(compile("".join(on_disk["cells"][1]["source"]), "v27-notebook-core", "exec"), scope)
+    exec(compile("".join(on_disk["cells"][2]["source"]), "v27-notebook-payload", "exec"), scope)
     assert scope["notebook_self_tests"]()["passed"] is True
 
 
@@ -206,5 +212,6 @@ def test_tiny_fold_runs_end_to_end_on_cpu(tmp_path):
                                             RuntimeGuard(3), __import__("torch").device("cpu"), 25)
     assert len(bundle["calibration_trials"]) == len(POLICIES)
     assert len(record["matched_v25_candidate_seeds"]) == 2
-    assert record["v26_spatial_raster"]["best_epoch"] >= 1
+    assert record["matched_v26_spatial_raster"]["best_epoch"] >= 1
+    assert record["v27_pyramid_raster"]["best_epoch"] >= 1
     assert record["matched_v24"]["best_epoch"] >= 6
