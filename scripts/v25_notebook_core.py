@@ -10,9 +10,7 @@ import base64
 from collections import Counter, defaultdict
 import csv
 import gc
-import gzip
 import hashlib
-import io
 import json
 import lzma
 import math
@@ -20,7 +18,6 @@ import os
 from pathlib import Path
 import random
 import shutil
-import tarfile
 import time
 import traceback
 from typing import Any, Iterable
@@ -41,6 +38,7 @@ V23_SUBMISSION_SHA256 = "9da01ce45a3478e8073cd93e22dbf69dde65def0f86b7ef2700e846
 V23_PUBLIC_SCORE = 0.22052
 V23_PRIVATE_SCORE = 0.19730
 V24_SUBMISSION_SHA256 = "31ce8fcc93d5831f1ecfdffb255c5eec14f0b8a40981f2f16f2ab6cf4b45a111"
+V24_COMMIT = "72c8e98dbb927d93637df431c37b751632f51458"
 V24_PUBLIC_SCORE = 0.22397
 V24_PRIVATE_SCORE = 0.20094
 SOTA_PRIVATE_SCORE = 0.23021
@@ -1123,6 +1121,56 @@ def predict_richness(model: Any, metadata: dict[str, Any], probabilities: np.nda
     return np.clip(model.predict(features), 12, 32)
 
 
+def oracle_f1_counts(probabilities: np.ndarray, targets: np.ndarray, *, minimum: int = 8,
+                     maximum: int = 40) -> np.ndarray:
+    """Best top-k for each labelled survey, used only on the selection partition."""
+    ranked, _ = top_rank(probabilities, maximum)
+    truth = np.asarray(targets, dtype=np.uint8)
+    hits = np.take_along_axis(truth, ranked, axis=1).cumsum(1)
+    candidates = np.arange(minimum, maximum + 1, dtype=np.int64)
+    scores = 2 * hits[:, candidates - 1] / np.maximum(
+        truth.sum(1, keepdims=True) + candidates[None, :], 1)
+    return candidates[np.argmax(scores, axis=1)]
+
+
+def fit_count_model(probabilities: np.ndarray, raw_log_richness: np.ndarray,
+                    rows: pd.DataFrame, pa_distance: np.ndarray, po_coverage: np.ndarray,
+                    oracle_counts: np.ndarray, training_rows: pd.DataFrame,
+                    training_cardinality: np.ndarray, *, seed: int) -> tuple[Any, dict[str, Any]]:
+    training_cardinality = np.asarray(training_cardinality)
+    countries = training_rows.get(
+        "country", pd.Series(["unknown"] * len(training_rows))).fillna("unknown")
+    table = pd.DataFrame({"country": countries.to_numpy(), "richness": training_cardinality})
+    country_means = table.groupby("country").richness.mean().to_dict()
+    global_mean = float(training_cardinality.mean())
+    features = richness_features(probabilities, raw_log_richness, rows, pa_distance, po_coverage,
+                                 country_means, global_mean)
+    model = HistGradientBoostingRegressor(
+        loss="absolute_error", max_iter=90, max_leaf_nodes=15, learning_rate=0.05,
+        l2_regularization=1.5, random_state=seed,
+    ).fit(features, oracle_counts)
+    prediction = np.clip(model.predict(features), 8, 40)
+    return model, {
+        "target": "per-survey oracle top-k maximizing sample F1 on selection only",
+        "selection_mae": float(np.mean(np.abs(prediction - oracle_counts))),
+        "selection_oracle_count_mean": float(np.mean(oracle_counts)),
+        "predicted_count_mean": float(np.mean(prediction)),
+        "country_means": country_means, "global_mean": global_mean,
+        "feature_names": ["neural_log_richness", "top1", "top5_mean", "top20_mean",
+                          "top40_mean", "top40_std", "rank_margin_20_40",
+                          "log_pa_distance", "log_po_coverage", "month_sin",
+                          "month_cos", "country_training_richness"],
+    }
+
+
+def predict_count(model: Any, metadata: dict[str, Any], probabilities: np.ndarray,
+                  raw_log_richness: np.ndarray, rows: pd.DataFrame, pa_distance: np.ndarray,
+                  po_coverage: np.ndarray) -> np.ndarray:
+    features = richness_features(probabilities, raw_log_richness, rows, pa_distance, po_coverage,
+                                 metadata["country_means"], metadata["global_mean"])
+    return np.clip(model.predict(features), 8, 40)
+
+
 def ood_risk(pa_distance: np.ndarray, po_coverage: np.ndarray,
              base_lists: list[list[int]], v24_ranked: np.ndarray) -> np.ndarray:
     pa = np.clip(np.log1p(pa_distance) / np.log(201.0), 0, 1)
@@ -1134,11 +1182,12 @@ def ood_risk(pa_distance: np.ndarray, po_coverage: np.ndarray,
     return np.clip(0.50 * pa + 0.25 * po + 0.25 * disagreement, 0, 1)
 
 
-def compose_predictions(base_lists: list[list[int]], v24_probabilities: np.ndarray,
-                        predicted_richness: np.ndarray, frequencies: np.ndarray,
-                        spatial_candidates: list[dict[int, float]],
-                        po_candidates: list[dict[int, float]], graph: CooccurrenceGraph,
-                        risk: np.ndarray, policy: dict[str, Any]) -> list[list[int]]:
+def compose_v24_predictions(base_lists: list[list[int]], v24_probabilities: np.ndarray,
+                            predicted_richness: np.ndarray, frequencies: np.ndarray,
+                            spatial_candidates: list[dict[int, float]],
+                            po_candidates: list[dict[int, float]], graph: CooccurrenceGraph,
+                            risk: np.ndarray, policy: dict[str, Any] = V24_POLICY
+                            ) -> list[list[int]]:
     v24_ranked, v24_values = top_rank(v24_probabilities, 64)
     result: list[list[int]] = []
     for row, base in enumerate(base_lists):
@@ -1192,6 +1241,83 @@ def compose_predictions(base_lists: list[list[int]], v24_probabilities: np.ndarr
                     break
         if len(selected) != len(set(selected)) or not 16 <= len(selected) <= 30:
             raise ValueError("Post-processing produced an invalid prediction row")
+        result.append(selected)
+    return result
+
+
+def compose_predictions(base_lists: list[list[int]], probabilities: np.ndarray,
+                        predicted_count: np.ndarray, frequencies: np.ndarray,
+                        spatial_candidates: list[dict[int, float]],
+                        po_candidates: list[dict[int, float]], graph: CooccurrenceGraph,
+                        risk: np.ndarray, policy: dict[str, Any]) -> list[list[int]]:
+    """Risk-aware v25 ranking with adaptive top-k or calibrated probability threshold."""
+    if policy["id"] == "control":
+        return [list(map(int, row)) for row in base_lists]
+    ranked, ranked_values = top_rank(probabilities, 64)
+    result: list[list[int]] = []
+    for row, original in enumerate(base_lists):
+        base = list(map(int, original))
+        base_set = set(base)
+        alpha = policy["alpha_near"] + (
+            policy["alpha_far"] - policy["alpha_near"]) * float(risk[row])
+        scores: dict[int, float] = {}
+        denominator = max(len(base) - 1, 1)
+        for rank, column in enumerate(base):
+            keep = policy["rare_keep_bonus"] if 0 < frequencies[column] <= 25 else 0.0
+            scores[column] = (1 - alpha) * (1.0 - 0.70 * rank / denominator) + keep
+        for rank, column in enumerate(ranked[row]):
+            column = int(column)
+            scores[column] = scores.get(column, 0.0) + alpha * (1.0 - 0.85 * rank / 63)
+        for column, support in po_candidates[row].items():
+            if frequencies[column] <= 25 and support >= 0.12:
+                relative = float(probabilities[row, column]) / max(float(ranked_values[row, 0]), 1e-6)
+                scores[column] = scores.get(column, 0.0) + policy["rare_weight"] * support * (
+                    0.35 + 0.65 * min(relative, 1.0))
+        for column, support in spatial_candidates[row].items():
+            scores[column] = scores.get(column, 0.0) + policy["spatial_weight"] * support
+        for seed_rank, seed_column in enumerate(list(ranked[row, :12]) + base[:8]):
+            for neighbor, weight in zip(graph.neighbors[int(seed_column)],
+                                        graph.weights[int(seed_column)]):
+                if neighbor >= 0:
+                    scores[int(neighbor)] = scores.get(int(neighbor), 0.0) + (
+                        policy["cooccurrence_weight"] * float(weight) / (1 + 0.08 * seed_rank))
+        if policy["threshold"] is None:
+            model_count = int(round(float(predicted_count[row])))
+        else:
+            model_count = int(np.count_nonzero(probabilities[row] >= policy["threshold"]))
+        desired = int(round((1 - policy["count_weight"]) * len(base) +
+                            policy["count_weight"] * model_count))
+        change = int(policy["max_count_change"])
+        desired = int(np.clip(desired, len(base) - change, len(base) + change))
+        desired = int(np.clip(desired, policy["minimum_count"], policy["maximum_count"]))
+        ordered = [column for column, _ in sorted(scores.items(),
+                                                   key=lambda item: (-item[1], item[0]))]
+        selected: list[int] = []
+        new_zero, new_rare = 0, 0
+        for column in ordered:
+            if column not in base_set and frequencies[column] == 0:
+                if new_zero >= 2 or column not in po_candidates[row]:
+                    continue
+                new_zero += 1
+            elif column not in base_set and frequencies[column] <= 25:
+                if new_rare >= 4:
+                    continue
+                new_rare += 1
+            selected.append(column)
+            if len(selected) == desired:
+                break
+        # The candidate usually reduces count. These deterministic fallbacks also
+        # guarantee a valid row when a policy elects to increase it.
+        for fallback in (base, list(map(int, ranked[row]))):
+            for column in fallback:
+                if column not in selected:
+                    selected.append(column)
+                if len(selected) == desired:
+                    break
+            if len(selected) == desired:
+                break
+        if len(selected) != len(set(selected)) or not 10 <= len(selected) <= 40:
+            raise ValueError("v25 post-processing produced an invalid prediction row")
         result.append(selected)
     return result
 
@@ -1272,10 +1398,10 @@ def _build_models_for_fold(name: str, split: dict[str, np.ndarray], rows: pd.Dat
         device, fold_dir / "matched_v23_control.pt", guard, seed=seed + 10, v24=False,
         epochs=6, minimum_epochs=4,
     )
-    v24 = V24MultimodalRareJSDM(store.dims, len(store.species_ids), rare_indices)
-    v24_record = train_model(
-        v24, store.train, store.labels, split["training"], split["selection"], stats,
-        device, fold_dir / "v24_multimodal.pt", guard, seed=seed, v24=True,
+    matched_v24 = V24MultimodalRareJSDM(store.dims, len(store.species_ids), rare_indices)
+    matched_v24_record = train_model(
+        matched_v24, store.train, store.labels, split["training"], split["selection"], stats,
+        device, fold_dir / "matched_v24_multimodal.pt", guard, seed=seed, v24=True,
         epochs=8, minimum_epochs=6,
     )
     spatial_index = PASpatialIndex(rows, store.labels, split["training"])
@@ -1287,39 +1413,101 @@ def _build_models_for_fold(name: str, split: dict[str, np.ndarray], rows: pd.Dat
         control_probability, _, _ = predict_model(control, store.train, indices, stats, device,
                                                    v24=False)
         probability, raw_richness, modality_weight = predict_model(
-            v24, store.train, indices, stats, device, v24=True)
+            matched_v24, store.train, indices, stats, device, v24=True)
         spatial_candidates, pa_distance, po_candidates, po_coverage = _role_components(
             rows, indices, spatial_index, po)
-        predictions[role] = {"control": control_probability, "v24": probability,
-                             "raw_richness": raw_richness,
-                             "modality_weight_mean": modality_weight.mean(0)}
+        predictions[role] = {"matched_v23": control_probability,
+                             "matched_v24": probability,
+                             "matched_v24_raw_richness": raw_richness,
+                             "matched_v24_modality_weight_mean": modality_weight.mean(0)}
         role_components[role] = {"spatial": spatial_candidates, "pa_distance": pa_distance,
                                  "po": po_candidates, "po_coverage": po_coverage}
     selection = split["selection"]
     selection_values = predictions["selection"]
     selection_components = role_components["selection"]
     richness_model, richness_metadata = fit_richness_model(
-        selection_values["v24"], selection_values["raw_richness"], rows.iloc[selection],
+        selection_values["matched_v24"], selection_values["matched_v24_raw_richness"],
+        rows.iloc[selection],
         selection_components["pa_distance"], selection_components["po_coverage"],
         _cardinality(store.labels, selection), rows.iloc[split["training"]],
         _cardinality(store.labels, split["training"]), seed=seed,
     )
+    for role in ("selection", "calibration", "assessment"):
+        values, components = predictions[role], role_components[role]
+        matched_richness = predict_richness(
+            richness_model, richness_metadata, values["matched_v24"],
+            values["matched_v24_raw_richness"],
+            rows.iloc[split[role]], components["pa_distance"], components["po_coverage"])
+        matched_v23_lists = probabilities_to_base_lists(
+            values["matched_v23"], components["pa_distance"])
+        matched_ranked, _ = top_rank(values["matched_v24"], 64)
+        matched_risk = ood_risk(components["pa_distance"], components["po_coverage"],
+                                matched_v23_lists, matched_ranked)
+        values["base_lists"] = compose_v24_predictions(
+            matched_v23_lists, values["matched_v24"], matched_richness, frequencies,
+            components["spatial"], components["po"], graph, matched_risk)
+    for values in predictions.values():
+        for key in ("matched_v23", "matched_v24", "matched_v24_raw_richness",
+                    "matched_v24_modality_weight_mean"):
+            values.pop(key, None)
+    del control, matched_v24, richness_model
+    gc.collect()
+    if device.type == "cuda":
+        torch.cuda.empty_cache()
+
+    # Two independently seeded candidates are trained sequentially. Only their
+    # predictions are retained, so peak VRAM remains close to the v24 notebook.
+    candidate_records = []
+    for candidate_number, candidate_seed in enumerate((seed + 100, seed + 200)):
+        candidate = V24MultimodalRareJSDM(
+            store.dims, len(store.species_ids), rare_indices, width=224, rank=112)
+        checkpoint = fold_dir / f"v25_candidate_seed_{candidate_number}.pt"
+        record = train_model(
+            candidate, store.train, store.labels, split["training"], split["selection"],
+            stats, device, checkpoint, guard, seed=candidate_seed, v24=True,
+            epochs=10, minimum_epochs=6,
+        )
+        candidate_records.append({key: value for key, value in record.items()
+                                  if key != "training_frequency"})
+        for role in ("selection", "calibration", "assessment"):
+            probability, raw_richness, modality_weight = predict_model(
+                candidate, store.train, split[role], stats, device, v24=True)
+            values = predictions[role]
+            values["candidate"] = values.get("candidate", 0.0) + probability.astype(np.float32) / 2
+            values["candidate_raw_richness"] = values.get(
+                "candidate_raw_richness", 0.0) + raw_richness.astype(np.float32) / 2
+            values["candidate_modality_weight_mean"] = values.get(
+                "candidate_modality_weight_mean", 0.0) + modality_weight.mean(0) / 2
+        del candidate
+        gc.collect()
+        if device.type == "cuda":
+            torch.cuda.empty_cache()
+
+    selection_values = predictions["selection"]
+    selection_components = role_components["selection"]
+    oracle_counts = oracle_f1_counts(
+        selection_values["candidate"], np.asarray(store.labels[selection]))
+    count_model, count_metadata = fit_count_model(
+        selection_values["candidate"], selection_values["candidate_raw_richness"],
+        rows.iloc[selection], selection_components["pa_distance"],
+        selection_components["po_coverage"], oracle_counts, rows.iloc[split["training"]],
+        _cardinality(store.labels, split["training"]), seed=seed + 300,
+    )
     for role in ("calibration", "assessment"):
         values, components = predictions[role], role_components[role]
-        values["predicted_richness"] = predict_richness(
-            richness_model, richness_metadata, values["v24"], values["raw_richness"],
-            rows.iloc[split[role]], components["pa_distance"], components["po_coverage"])
-        values["base_lists"] = probabilities_to_base_lists(values["control"],
-                                                            components["pa_distance"])
-        ranked, _ = top_rank(values["v24"], 64)
+        values["predicted_count"] = predict_count(
+            count_model, count_metadata, values["candidate"],
+            values["candidate_raw_richness"], rows.iloc[split[role]],
+            components["pa_distance"], components["po_coverage"])
+        ranked, _ = top_rank(values["candidate"], 64)
         values["risk"] = ood_risk(components["pa_distance"], components["po_coverage"],
                                   values["base_lists"], ranked)
     calibration_targets = np.asarray(store.labels[split["calibration"]])
     calibration_trials = []
     for policy in POLICIES:
         predicted = compose_predictions(
-            predictions["calibration"]["base_lists"], predictions["calibration"]["v24"],
-            predictions["calibration"]["predicted_richness"], frequencies,
+            predictions["calibration"]["base_lists"], predictions["calibration"]["candidate"],
+            predictions["calibration"]["predicted_count"], frequencies,
             role_components["calibration"]["spatial"], role_components["calibration"]["po"],
             graph, predictions["calibration"]["risk"], policy,
         )
@@ -1330,20 +1518,22 @@ def _build_models_for_fold(name: str, split: dict[str, np.ndarray], rows: pd.Dat
     training_record = {
         "matched_v23_control": {key: value for key, value in control_record.items()
                                 if key != "training_frequency"},
-        "v24": {key: value for key, value in v24_record.items()
-                if key != "training_frequency"},
+        "matched_v24": {key: value for key, value in matched_v24_record.items()
+                        if key != "training_frequency"},
+        "v25_candidate_seeds": candidate_records,
         "rare_species": int((frequencies <= 25).sum()),
         "zero_pa_species": int((frequencies == 0).sum()),
         "common_species": int((frequencies > 25).sum()),
         "normalization_fit_on_training_only": True,
-        "richness": richness_metadata,
+        "matched_v24_richness": richness_metadata,
+        "v25_oracle_count": count_metadata,
         "cooccurrence_sha256": graph.digest(),
         "calibration_trials": calibration_trials,
     }
     bundle = {"name": name, "split": split, "stats": stats, "frequencies": frequencies,
               "graph": graph, "predictions": predictions, "components": role_components,
               "calibration_trials": calibration_trials}
-    del control, v24, richness_model
+    del count_model
     gc.collect()
     if device.type == "cuda":
         torch.cuda.empty_cache()
@@ -1359,7 +1549,8 @@ def select_global_policy(bundles: list[dict[str, Any]]) -> tuple[dict[str, Any],
         score = sum(record["sample_f1"] * record["surveys"] for record in records) / surveys
         intervention = (policy["alpha_near"] + policy["alpha_far"] + policy["rare_weight"] +
                         policy["spatial_weight"] + policy["cooccurrence_weight"] +
-                        policy["cardinality_weight"])
+                        policy["count_weight"] + policy["rare_keep_bonus"] +
+                        0.01 * policy["max_count_change"])
         trials.append({"policy_id": policy["id"], "pooled_calibration_f1": score,
                        "surveys": surveys, "fold_scores": [record["sample_f1"] for record in records],
                        "intervention": intervention})
@@ -1368,24 +1559,6 @@ def select_global_policy(bundles: list[dict[str, Any]]) -> tuple[dict[str, Any],
     selected = next(dict(policy) for policy in POLICIES if policy["id"] == selected_record["policy_id"])
     selected["pooled_calibration_f1"] = selected_record["pooled_calibration_f1"]
     return selected, trials
-
-
-def _decode_v23_submission(path: Path, template_ids: np.ndarray, species_ids: np.ndarray
-                           ) -> list[list[int]]:
-    frame = pd.read_csv(path)
-    if list(frame.columns) != ["surveyId", "predictions"]:
-        raise ValueError("Frozen v23 submission schema changed")
-    if not np.array_equal(frame.surveyId.to_numpy(np.int64), np.asarray(template_ids, np.int64)):
-        raise ValueError("Frozen v23 submission is not in official template order")
-    lookup = pd.Index(species_ids)
-    result: list[list[int]] = []
-    for text in frame.predictions.astype(str):
-        ids = np.asarray([int(value) for value in text.split()], dtype=np.int64)
-        columns = lookup.get_indexer(ids)
-        if (columns < 0).any() or len(columns) != len(np.unique(columns)) or not 20 <= len(columns) <= 28:
-            raise ValueError("Frozen v23 prediction row is invalid")
-        result.append(list(map(int, columns)))
-    return result
 
 
 def _train_deployment(split: dict[str, np.ndarray], rows: pd.DataFrame, test_rows: pd.DataFrame,
@@ -1398,43 +1571,62 @@ def _train_deployment(split: dict[str, np.ndarray], rows: pd.DataFrame, test_row
     rare_indices = np.flatnonzero(frequencies <= 25)
     output = temporary / "deployment"
     output.mkdir(parents=True, exist_ok=True)
-    model = V24MultimodalRareJSDM(store.dims, len(store.species_ids), rare_indices)
-    training = train_model(
-        model, store.train, store.labels, split["training"], split["selection"], stats,
-        device, output / "v24_multimodal.pt", guard, seed=SEEDS["deployment"], v24=True,
-        epochs=10, minimum_epochs=6,
-    )
     spatial = PASpatialIndex(rows, store.labels, split["training"])
     graph = CooccurrenceGraph.build(store.labels, split["training"])
-    calibration = split["calibration"]
-    calibration_probability, calibration_raw_richness, calibration_modality = predict_model(
-        model, store.train, calibration, stats, device, v24=True)
-    calibration_spatial, calibration_pa_distance, calibration_po, calibration_po_coverage = (
-        _role_components(rows, calibration, spatial, po))
-    richness_model, richness_metadata = fit_richness_model(
-        calibration_probability, calibration_raw_richness, rows.iloc[calibration],
-        calibration_pa_distance, calibration_po_coverage,
-        _cardinality(store.labels, calibration), rows.iloc[split["training"]],
-        _cardinality(store.labels, split["training"]),
-        seed=SEEDS["deployment"],
-    )
+    selection = split["selection"]
     test_indices = np.arange(len(store.test_ids), dtype=np.int64)
-    test_probability, test_raw_richness, test_modality = predict_model(
-        model, store.test, test_indices, stats, device, v24=True)
+    selection_probability = np.zeros((len(selection), len(store.species_ids)), dtype=np.float32)
+    test_probability = np.zeros((len(test_indices), len(store.species_ids)), dtype=np.float32)
+    selection_raw = np.zeros(len(selection), dtype=np.float32)
+    test_raw = np.zeros(len(test_indices), dtype=np.float32)
+    test_modality = np.zeros(len(MODALITIES), dtype=np.float32)
+    training_records = []
+    for candidate_number, candidate_seed in enumerate(
+            (SEEDS["deployment"] + 100, SEEDS["deployment"] + 200)):
+        model = V24MultimodalRareJSDM(
+            store.dims, len(store.species_ids), rare_indices, width=224, rank=112)
+        checkpoint = output / f"v25_candidate_seed_{candidate_number}.pt"
+        training = train_model(
+            model, store.train, store.labels, split["training"], selection, stats,
+            device, checkpoint, guard, seed=candidate_seed, v24=True,
+            epochs=12, minimum_epochs=7,
+        )
+        training_records.append({key: value for key, value in training.items()
+                                 if key != "training_frequency"})
+        probability, raw, _ = predict_model(
+            model, store.train, selection, stats, device, v24=True)
+        selection_probability += probability.astype(np.float32) / 2
+        selection_raw += raw / 2
+        probability, raw, modality = predict_model(
+            model, store.test, test_indices, stats, device, v24=True)
+        test_probability += probability.astype(np.float32) / 2
+        test_raw += raw / 2
+        test_modality += modality.mean(0) / 2
+        del model
+        gc.collect()
+        if device.type == "cuda":
+            torch.cuda.empty_cache()
+    _, selection_distance, _, selection_coverage = _role_components(
+        rows, selection, spatial, po)
+    oracle_counts = oracle_f1_counts(
+        selection_probability, np.asarray(store.labels[selection]))
+    count_model, count_metadata = fit_count_model(
+        selection_probability, selection_raw, rows.iloc[selection], selection_distance,
+        selection_coverage, oracle_counts, rows.iloc[split["training"]],
+        _cardinality(store.labels, split["training"]), seed=SEEDS["deployment"] + 300)
     test_coordinates = test_rows[["lat", "lon"]].to_numpy(np.float64)
     test_spatial, test_pa_distance = spatial.query(test_coordinates)
     test_po, test_po_coverage = po.query(test_coordinates)
-    predicted_richness = predict_richness(
-        richness_model, richness_metadata, test_probability, test_raw_richness, test_rows,
+    predicted_count = predict_count(
+        count_model, count_metadata, test_probability, test_raw, test_rows,
         test_pa_distance, test_po_coverage)
     ranked, _ = top_rank(test_probability, 64)
     risk = ood_risk(test_pa_distance, test_po_coverage, base_lists, ranked)
-    predictions = compose_predictions(base_lists, test_probability, predicted_richness, frequencies,
+    predictions = compose_predictions(base_lists, test_probability, predicted_count, frequencies,
                                       test_spatial, test_po, graph, risk, policy)
     record = {
-        "training": {key: value for key, value in training.items()
-                     if key != "training_frequency"},
-        "richness": richness_metadata, "cooccurrence_sha256": graph.digest(),
+        "training": training_records,
+        "oracle_count": count_metadata, "cooccurrence_sha256": graph.digest(),
         "frequency_groups": {"zero_pa": int((frequencies == 0).sum()),
                              "rare_1_to_25": int(((frequencies >= 1) & (frequencies <= 25)).sum()),
                              "common_over_25": int((frequencies > 25).sum())},
@@ -1444,10 +1636,11 @@ def _train_deployment(split: dict[str, np.ndarray], rows: pd.DataFrame, test_row
                  "predicted_cardinality_min": min(map(len, predictions)),
                  "predicted_cardinality_mean": float(np.mean(list(map(len, predictions)))),
                  "predicted_cardinality_max": max(map(len, predictions)),
-                 "modality_weight_mean": dict(zip(MODALITIES, test_modality.mean(0).tolist()))},
-        "checkpoint_sha256": sha256_file(output / "v24_multimodal.pt"),
+                 "modality_weight_mean": dict(zip(MODALITIES, test_modality.tolist()))},
+        "checkpoint_sha256": {path.name: sha256_file(path)
+                              for path in sorted(output.glob("*.pt"))},
     }
-    del model, richness_model, calibration_probability, test_probability
+    del count_model, selection_probability, test_probability
     gc.collect()
     if device.type == "cuda":
         torch.cuda.empty_cache()
@@ -1485,7 +1678,7 @@ def validate_submission(path: Path, template: pd.DataFrame, species_ids: np.ndar
         counts.append(len(values))
         valid_rows &= len(values) == len(set(values)) and set(values).issubset(vocabulary)
     checks.update({"vocabulary_and_unique_predictions": bool(valid_rows),
-                   "cardinality_bounds": min(counts) >= 16 and max(counts) <= 30})
+                   "cardinality_bounds": min(counts) >= 10 and max(counts) <= 40})
     if not all(checks.values()):
         raise ValueError(f"Submission validation failed: {checks}")
     return {"checks": checks, "rows": len(frame), "species_vocabulary": len(vocabulary),
@@ -1532,19 +1725,19 @@ def assess_bundles(bundles: list[dict[str, Any]], policy: dict[str, Any], rows: 
                    labels: np.ndarray) -> tuple[pd.DataFrame, dict[str, Any], dict[str, Any]]:
     frames = []
     fold_reports = []
-    pooled_targets, pooled_base, pooled_v24, pooled_frequencies = [], [], [], []
+    pooled_targets, pooled_base, pooled_v25, pooled_frequencies = [], [], [], []
     for fold, bundle in enumerate(bundles):
         indices = bundle["split"]["assessment"]
         values = bundle["predictions"]["assessment"]
         components = bundle["components"]["assessment"]
         targets = np.asarray(labels[indices])
         predicted = compose_predictions(
-            values["base_lists"], values["v24"], values["predicted_richness"],
+            values["base_lists"], values["candidate"], values["predicted_count"],
             bundle["frequencies"], components["spatial"], components["po"], bundle["graph"],
             values["risk"], policy,
         )
         base_scores = score_prediction_lists(targets, values["base_lists"])
-        v24_scores = score_prediction_lists(targets, predicted)
+        v25_scores = score_prediction_lists(targets, predicted)
         frequencies = bundle["frequencies"]
         rarity = []
         for target in targets:
@@ -1562,43 +1755,43 @@ def assess_bundles(bundles: list[dict[str, Any]], policy: dict[str, Any], rows: 
             "pa_distance_bucket": distance_bucket(components["pa_distance"]),
             "rarity_summary": rarity, "true_cardinality": targets.sum(1).astype(int),
             "predicted_cardinality": np.asarray(list(map(len, predicted)), dtype=int),
-            "frozen_v23_f1": base_scores, "v24_f1": v24_scores,
-            "delta_f1": v24_scores - base_scores,
+            "matched_v24_f1": base_scores, "v25_f1": v25_scores,
+            "delta_f1": v25_scores - base_scores,
         })
         frames.append(frame)
         fold_reports.append({
             "fold": fold, "surveys": len(frame), "spatial_blocks": frame.spatial_block.nunique(),
-            "frozen_v23_sample_f1": float(base_scores.mean()),
-            "v24_sample_f1": float(v24_scores.mean()),
-            "gain": float((v24_scores - base_scores).mean()),
+            "matched_v24_sample_f1": float(base_scores.mean()),
+            "v25_sample_f1": float(v25_scores.mean()),
+            "gain": float((v25_scores - base_scores).mean()),
             "cardinality_mae": float(np.mean(np.abs(frame.predicted_cardinality -
                                                      frame.true_cardinality))),
-            "frozen_v23_cardinality_mae": float(np.mean(np.abs(
+            "matched_v24_cardinality_mae": float(np.mean(np.abs(
                 np.asarray(list(map(len, values["base_lists"]))) - frame.true_cardinality))),
-            "frozen_v23_species_groups": species_group_metrics(targets, values["base_lists"],
-                                                                frequencies),
-            "v24_species_groups": species_group_metrics(targets, predicted, frequencies),
+            "matched_v24_species_groups": species_group_metrics(targets, values["base_lists"],
+                                                                  frequencies),
+            "v25_species_groups": species_group_metrics(targets, predicted, frequencies),
             "modality_weight_mean": dict(zip(MODALITIES,
-                                               values["modality_weight_mean"].tolist())),
+                                               values["candidate_modality_weight_mean"].tolist())),
         })
         pooled_targets.append(targets)
         pooled_base.extend(values["base_lists"])
-        pooled_v24.extend(predicted)
+        pooled_v25.extend(predicted)
         pooled_frequencies.append(frequencies)
     frame = pd.concat(frames, ignore_index=True)
     if frame.surveyId.duplicated().any():
-        raise ValueError("The two v24 assessment folds overlap")
+        raise ValueError("The two v25 assessment folds overlap")
     bootstrap = paired_block_bootstrap(frame.delta_f1.to_numpy(), frame.spatial_block.to_numpy())
-    country = summarize_by_group(frame, "country", ("frozen_v23_f1", "v24_f1", "delta_f1"))
+    country = summarize_by_group(frame, "country", ("matched_v24_f1", "v25_f1", "delta_f1"))
     distance = summarize_by_group(frame, "pa_distance_bucket",
-                                  ("frozen_v23_f1", "v24_f1", "delta_f1"))
+                                  ("matched_v24_f1", "v25_f1", "delta_f1"))
     ablations = {}
     for component, fields in {
-        "without_multimodal": ("alpha_near", "alpha_far"),
-        "without_rare_expert": ("rare_weight",),
+        "without_candidate_ranking": ("alpha_near", "alpha_far"),
+        "without_rare_context": ("rare_weight", "rare_keep_bonus"),
         "without_spatial": ("spatial_weight",),
         "without_cooccurrence": ("cooccurrence_weight",),
-        "without_richness": ("cardinality_weight",),
+        "without_adaptive_count": ("count_weight", "max_count_change"),
     }.items():
         ablated = dict(policy)
         for field in fields:
@@ -1608,25 +1801,25 @@ def assess_bundles(bundles: list[dict[str, Any]], policy: dict[str, Any], rows: 
             values = bundle["predictions"]["assessment"]
             components = bundle["components"]["assessment"]
             predictions = compose_predictions(
-                values["base_lists"], values["v24"], values["predicted_richness"],
+                values["base_lists"], values["candidate"], values["predicted_count"],
                 bundle["frequencies"], components["spatial"], components["po"],
                 bundle["graph"], values["risk"], ablated,
             )
             scores.extend(score_prediction_lists(
                 np.asarray(labels[bundle["split"]["assessment"]]), predictions))
         ablations[component] = {"sample_f1": float(np.mean(scores)),
-                                "delta_vs_full_v24": float(np.mean(scores) - frame.v24_f1.mean())}
+                                "delta_vs_full_v25": float(np.mean(scores) - frame.v25_f1.mean())}
     group_summary = {
         "note": "Rarity is fold-specific; pooled counts are sums of fold metrics.",
         "folds": [{"fold": record["fold"],
-                   "frozen_v23": record["frozen_v23_species_groups"],
-                   "v24": record["v24_species_groups"]} for record in fold_reports],
+                   "matched_v24": record["matched_v24_species_groups"],
+                   "v25": record["v25_species_groups"]} for record in fold_reports],
     }
     pooled_groups: dict[str, dict[str, Any]] = {}
     for group_name in ("zero_pa", "rare_1_to_25", "common_over_25"):
         pooled_groups[group_name] = {}
-        for model_name, record_key in (("frozen_v23", "frozen_v23_species_groups"),
-                                       ("v24", "v24_species_groups")):
+        for model_name, record_key in (("matched_v24", "matched_v24_species_groups"),
+                                       ("v25", "v25_species_groups")):
             records = [fold[record_key][group_name] for fold in fold_reports]
             target_positives = sum(record["target_positives"] for record in records)
             predicted_positives = sum(record["predicted_positives"] for record in records)
@@ -1641,41 +1834,48 @@ def assess_bundles(bundles: list[dict[str, Any]], policy: dict[str, Any], rows: 
     report = {
         "surveys": len(frame), "spatial_blocks": frame.spatial_block.nunique(),
         "control_definition": (
-            "The exact deployed v23 CSV is frozen for official-test inference. New-fold F1 uses a "
-            "matched early-fusion refit with the frozen v23 cardinality rule because the original "
-            "v23 assessment is consumed and its fold checkpoints were not exported. This is "
-            "recipe-transfer evidence, not evaluation of the exact deployed v23 weights."
+            "The exact scored v24 CSV is frozen for official-test inference. Fresh-fold F1 uses a "
+            "matched v24 recipe refit because exact v24 fold checkpoints were not exported. Every "
+            "survey assessed by v21 through v24 is excluded from v25 assessment."
         ),
-        "frozen_v23_sample_f1": float(frame.frozen_v23_f1.mean()),
-        "v24_sample_f1": float(frame.v24_f1.mean()),
+        "matched_v24_sample_f1": float(frame.matched_v24_f1.mean()),
+        "v25_sample_f1": float(frame.v25_f1.mean()),
         "gain": float(frame.delta_f1.mean()), "folds": fold_reports,
         "spatial_bootstrap": bootstrap, "by_country": country,
         "by_pa_distance": distance, "rarity_groups": group_summary,
-        "cardinality": {"v24_mae": float(np.mean(np.abs(frame.predicted_cardinality -
-                                                         frame.true_cardinality))),
+        "cardinality": {"v25_mae": float(np.mean(np.abs(frame.predicted_cardinality -
+                                                          frame.true_cardinality))),
+                        "matched_v24_mae": float(np.mean(np.abs(
+                            np.asarray([len(row) for row in pooled_base]) -
+                            frame.true_cardinality.to_numpy()))),
                         "true_mean": float(frame.true_cardinality.mean()),
                         "predicted_mean": float(frame.predicted_cardinality.mean())},
         "ablations": ablations, "used_for_selection": False, "now_consumed": True,
         "warning": "Matched-recipe spatial cross-fit evidence, not a hidden-test score.",
     }
+    def group_f1(metrics: dict[str, Any]) -> float:
+        precision = float(metrics["precision"] or 0.0)
+        recall = float(metrics["recall"] or 0.0)
+        return 2 * precision * recall / max(precision + recall, 1e-12)
+
     common_ok = True
     for fold in fold_reports:
-        old = fold["frozen_v23_species_groups"]
-        new = fold["v24_species_groups"]
-        old_common = old["common_over_25"]["recall"] or 0
-        new_common = new["common_over_25"]["recall"] or 0
-        common_ok &= new_common >= old_common - 0.005
+        old = fold["matched_v24_species_groups"]
+        new = fold["v25_species_groups"]
+        common_ok &= group_f1(new["common_over_25"]) >= group_f1(old["common_over_25"]) - 0.002
     pooled_rare = pooled_groups["rare_1_to_25"]
-    rare_gain = ((pooled_rare["v24"]["recall"] or 0) >
-                 (pooled_rare["frozen_v23"]["recall"] or 0))
+    rare_f1_noninferior = (group_f1(pooled_rare["v25"]) >=
+                           group_f1(pooled_rare["matched_v24"]) - 0.001)
     substantial_countries = [value for value in country.values() if value["n"] >= 200]
     gate_components = {
         "pooled_gain_positive": report["gain"] > 0,
         "spatial_ci_lower_positive": bootstrap["ci95"][0] > 0,
         "positive_gain_each_fold": all(record["gain"] > 0 for record in fold_reports),
         "not_one_country_only": sum(value["delta_f1"] > 0 for value in substantial_countries) >= 2,
-        "common_recall_protected": common_ok,
-        "rare_recall_gain": rare_gain,
+        "common_species_f1_protected": common_ok,
+        "cardinality_mae_improved": (report["cardinality"]["v25_mae"] <
+                                     report["cardinality"]["matched_v24_mae"]),
+        "rare_species_f1_protected": rare_f1_noninferior,
         "nonzero_new_component": policy["id"] != "control",
     }
     return frame, report, gate_components
@@ -1709,7 +1909,16 @@ def notebook_self_tests() -> dict[str, Any]:
     )
     if smoke_richness.shape != (2, 12) or not np.isfinite(smoke_richness).all():
         raise AssertionError("official metadata richness-feature self-test failed")
-    return {"passed": True, "tests": 6}
+    oracle = oracle_f1_counts(np.asarray([[0.9, 0.8, 0.1]], dtype=np.float32),
+                              np.asarray([[1, 0, 0]], dtype=np.uint8), minimum=1, maximum=3)
+    if oracle.tolist() != [1]:
+        raise AssertionError("oracle count self-test failed")
+    graph = CooccurrenceGraph(np.full((3, 1), -1), np.zeros((3, 1)))
+    base = [[0, 1]]
+    if compose_predictions(base, values[:1], np.asarray([1]), np.full(3, 100), [{}], [{}],
+                           graph, np.zeros(1), dict(POLICIES[0])) != base:
+        raise AssertionError("control policy is not an exact no-op")
+    return {"passed": True, "tests": 8}
 
 
 def _clean_directory(path: Path, allowed_parent: Path) -> None:
@@ -1720,11 +1929,11 @@ def _clean_directory(path: Path, allowed_parent: Path) -> None:
         shutil.rmtree(path)
 
 
-def run_v24(frozen_v23_payload_b64: str) -> dict[str, Any]:
+def run_v25(frozen_v24_payload_b64: str, consumed_ids_b64: str) -> dict[str, Any]:
     guard = RuntimeGuard()
     working = Path("/kaggle/working") if Path("/kaggle/working").exists() else Path("artifacts")
-    temporary = working / "v24_runtime"
-    export = working / "v24_export"
+    temporary = working / "v25_runtime"
+    export = working / "v25_export"
     _clean_directory(temporary, working)
     _clean_directory(export, working)
     temporary.mkdir(parents=True)
@@ -1735,8 +1944,7 @@ def run_v24(frozen_v23_payload_b64: str) -> dict[str, Any]:
     try:
         tests_before = notebook_self_tests()
         data_root = discover_data_root()
-        v23_dir = temporary / "frozen_v23"
-        frozen_v23 = verify_frozen_v23(frozen_v23_payload_b64, v23_dir)
+        consumed_ids = decode_consumed_ids(consumed_ids_b64)
         feature_manifest = prepare_feature_store(data_root, temporary / "features", guard)
         store = FeatureStore(temporary / "features")
         rows, test_rows, pairs = load_rows_and_pairs(data_root, store.train_ids, store.test_ids)
@@ -1748,9 +1956,18 @@ def run_v24(frozen_v23_payload_b64: str) -> dict[str, Any]:
             store.test_ids = store.test_ids[test_order]
             store.test = {name: values[test_order] for name, values in store.test.items()}
             test_rows = test_rows.iloc[test_order].reset_index(drop=True)
+        v24_base_lists, frozen_v24 = decode_v24_submission(
+            frozen_v24_payload_b64, template.surveyId.to_numpy(np.int64), store.species_ids)
+        reconstructed_v24_path = temporary / "frozen_v24_reconstructed.csv"
+        reconstructed_v24 = write_submission(
+            reconstructed_v24_path, template, store.test_ids, v24_base_lists, store.species_ids)
+        frozen_v24["checks"]["exact_submission_sha256"] = (
+            reconstructed_v24["sha256"] == V24_SUBMISSION_SHA256)
+        if not all(frozen_v24["checks"].values()):
+            raise ValueError(f"Frozen v24 verification failed: {frozen_v24['checks']}")
         device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
         if device.type != "cuda":
-            raise RuntimeError("The full v24 notebook requires one Kaggle GPU")
+            raise RuntimeError("The full v25 notebook requires one Kaggle GPU")
         torch.set_num_threads(min(os.cpu_count() or 2, 6))
         guard.stamp("data_ready", device=torch.cuda.get_device_name(0),
                     train_rows=len(rows), test_rows=len(test_rows))
@@ -1761,7 +1978,7 @@ def run_v24(frozen_v23_payload_b64: str) -> dict[str, Any]:
                                rows[["lat", "lon"]].to_numpy(np.float64), guard)
         outer_bundles, training_records, split_manifests = [], {}, []
         for fold in (0, 1):
-            split, split_manifest = make_outer_split(rows, fold)
+            split, split_manifest = make_outer_split(rows, fold, consumed_ids)
             bundle, training = _build_models_for_fold(
                 f"fold_{fold}", split, rows, store, po, temporary, guard, device,
                 SEEDS[f"fold_{fold}"],
@@ -1770,14 +1987,11 @@ def run_v24(frozen_v23_payload_b64: str) -> dict[str, Any]:
             training_records[f"fold_{fold}"] = training
             split_manifests.append(split_manifest)
         selected_policy, policy_trials = select_global_policy(outer_bundles)
-        deployment_split, deployment_manifest = make_deployment_split(rows)
-        v23_base_lists = _decode_v23_submission(
-            v23_dir / "GLC25_PA_submission_v23.csv", template.surveyId.to_numpy(np.int64),
-            store.species_ids)
+        deployment_split, deployment_manifest = make_deployment_split(rows, consumed_ids)
         deployment_predictions, deployment_record = _train_deployment(
-            deployment_split, rows, test_rows, store, po, v23_base_lists, selected_policy,
+            deployment_split, rows, test_rows, store, po, v24_base_lists, selected_policy,
             temporary, guard, device)
-        submission_path = export / "GLC25_PA_submission_v24.csv"
+        submission_path = export / "GLC25_PA_submission_v25.csv"
         submission = write_submission(submission_path, template, store.test_ids,
                                       deployment_predictions, store.species_ids)
         assessment_predictions_hashes = {}
@@ -1785,7 +1999,7 @@ def run_v24(frozen_v23_payload_b64: str) -> dict[str, Any]:
             values = bundle["predictions"]["assessment"]
             components = bundle["components"]["assessment"]
             predicted = compose_predictions(
-                values["base_lists"], values["v24"], values["predicted_richness"],
+                values["base_lists"], values["candidate"], values["predicted_count"],
                 bundle["frequencies"], components["spatial"], components["po"],
                 bundle["graph"], values["risk"], selected_policy,
             )
@@ -1802,20 +2016,23 @@ def run_v24(frozen_v23_payload_b64: str) -> dict[str, Any]:
         guard.stamp("pre_assessment_freeze", submission_sha256=submission["sha256"])
         assessment_frame, assessment, gate_components = assess_bundles(
             outer_bundles, selected_policy, rows, store.labels)
-        assessment_path = export / "assessment_per_survey_v24.csv"
+        assessment_path = export / "assessment_per_survey_v25.csv"
         required_columns = ["surveyId", "fold", "spatial_block", "country",
                             "pa_distance_bucket", "rarity_summary", "true_cardinality",
-                            "predicted_cardinality", "frozen_v23_f1", "v24_f1", "delta_f1"]
+                            "predicted_cardinality", "matched_v24_f1", "v25_f1", "delta_f1"]
         assessment_frame[required_columns].to_csv(assessment_path, index=False,
                                                   lineterminator="\n")
         tests_after = notebook_self_tests()
         integrity = {
-            "frozen_v23_exact": all(frozen_v23["checks"].values()),
+            "frozen_v24_exact": all(frozen_v24["checks"].values()),
             "official_competition_only": feature_manifest["external_data_or_weights"] is False,
             "expected_dimensions": (len(store.species_ids) == EXPECTED_SPECIES and
                                     len(store.test_ids) == EXPECTED_TEST_ROWS),
-            "new_spatial_folds": all(item["v22_v23_assessments_consumed_and_not_reused"]
+            "fresh_assessment_ids": all(item["all_v21_v22_v23_v24_assessments_excluded"]
                                      for item in split_manifests),
+            "assessment_disjoint_from_consumed_union": all(
+                np.intersect1d(rows.surveyId.to_numpy(np.int64)[bundle["split"]["assessment"]],
+                               consumed_ids).size == 0 for bundle in outer_bundles),
             "twenty_km_buffer": all(item["minimum_assessment_training_distance_km"] >= 20
                                     for item in split_manifests),
             "selection_calibration_assessment_separate": all(
@@ -1829,7 +2046,7 @@ def run_v24(frozen_v23_payload_b64: str) -> dict[str, Any]:
             "submission_schema_valid": all(submission["checks"].values()),
             "notebook_tests_before_and_after": tests_before["passed"] and tests_after["passed"],
             "runtime_within_limit": guard.elapsed_hours() < MAX_TOTAL_HOURS,
-            "test_labels_unused": True, "external_pretrained_weights": False,
+            "test_labels_unused": True, "no_external_pretrained_weights": True,
         }
         gate = {**gate_components, "all_integrity_checks": all(integrity.values())}
         gate["eligible_for_submission"] = all(gate.values())
@@ -1837,13 +2054,17 @@ def run_v24(frozen_v23_payload_b64: str) -> dict[str, Any]:
         report = {
             "experiment": EXPERIMENT, "status": "complete",
             "runtime_hours": guard.elapsed_hours(), "registered_max_total_hours": MAX_TOTAL_HOURS,
-            "runtime_plan": {"expected_hours": [5.0, 8.5], "feature_preparation_cap_hours": 2.75,
-                             "hard_guard_hours": 11.25, "kaggle_limit_hours": 12.0,
+            "runtime_plan": {"expected_hours": [2.0, 5.0], "feature_preparation_cap_hours": 2.75,
+                             "hard_guard_hours": MAX_TOTAL_HOURS, "kaggle_limit_hours": 12.0,
                              "finalization_reserve_minutes": 35,
-                             "models_trained_sequentially": 5,
+                             "models_trained_sequentially": 10,
+                             "v24_reference_runtime_hours": 0.9811864720533332,
                              "v23_reference_runtime_hours": 6.61616224692927,
-                             "vram_estimate_gb": "under 5 on one T4"},
-            "frozen_v23_baseline": frozen_v23, "assessment": assessment,
+                             "vram_estimate_gb": "under 6 on one T4"},
+            "frozen_v24_baseline": frozen_v24,
+            "consumed_assessment_union": {"surveys": int(len(consumed_ids)),
+                                           "payload_sha256": CONSUMED_ASSESSMENT_IDS_SHA256},
+            "assessment": assessment,
             "training": {**training_records, "deployment": deployment_record},
             "selected_policy": selected_policy, "policy_trials": policy_trials,
             "pre_assessment_freeze": pre_assessment_freeze, "integrity": integrity,
@@ -1851,64 +2072,70 @@ def run_v24(frozen_v23_payload_b64: str) -> dict[str, Any]:
             "official_submission_made": False, "official_submission_reference": None,
             "official_public_score": None, "official_private_score": None,
             "external_data_or_weights": False, "pretrained_weight_provenance": [],
-            "final_file_hashes": {"GLC25_PA_submission_v24.csv": submission["sha256"],
-                                  "assessment_per_survey_v24.csv": assessment_sha,
-                                  "v24_report.json": None, "v24_manifest.json": None},
+            "final_file_hashes": {"GLC25_PA_submission_v25.csv": submission["sha256"],
+                                  "assessment_per_survey_v25.csv": assessment_sha,
+                                  "v25_report.json": None, "v25_manifest.json": None},
             "hash_note": "A file cannot contain its own byte hash; the manifest records the report hash, "
                          "and the notebook prints the manifest hash after finalization.",
         }
-        report_path = export / "v24_report.json"
+        report_path = export / "v25_report.json"
         save_json(report_path, report)
         manifest = {
-            "experiment": EXPERIMENT, "source_commit": V24_SOURCE_COMMIT,
-            "source_base_commit": V23_COMMIT,
+            "experiment": EXPERIMENT, "source_commit": V25_SOURCE_COMMIT,
+            "source_base_commit": V24_COMMIT,
             "notebook_source_sha256": NOTEBOOK_SOURCE_SHA256,
             "kaggle": {"kernel": "con1los/geolifeclef-risk-aware-sdm-phase-1",
-                       "intended_version": 26, "runtime_gpu": torch.cuda.get_device_name(0)},
+                       "intended_version": 27, "runtime_gpu": torch.cuda.get_device_name(0)},
             "datasets": [{"slug": "geolifeclef-2025", "kind": "competition",
                           "version": "competition snapshot mounted by Kaggle"}],
             "feature_manifest": feature_manifest,
             "split_definitions": {"outer": split_manifests, "deployment": deployment_manifest,
-                                  "consumed": {"v22": True, "v23": True}},
+                                  "consumed_assessment_union_count": int(len(consumed_ids)),
+                                  "v21_v22_v23_v24_assessments_excluded": True},
             "seeds": SEEDS, "model_configurations": {
                 "matched_v23_control": {"kind": "early_fusion_residual", "width": 384,
                                         "epochs": 6, "role": "new-fold recipe-transfer control"},
                 "v24": {"modality_encoders": list(MODALITIES), "width": 160,
-                        "low_rank_joint_species_head": 80, "rare_threshold": 25,
-                        "epochs_outer": 8, "epochs_deployment": 10,
-                        "loss": "frequency-aware asymmetric + rare auxiliary + richness"},
+                         "low_rank_joint_species_head": 80, "rare_threshold": 25,
+                        "epochs_outer": 8, "role": "fresh-fold matched control",
+                         "loss": "frequency-aware asymmetric + rare auxiliary + richness"},
+                "v25": {"modality_encoders": list(MODALITIES), "width": 224,
+                        "low_rank_joint_species_head": 112, "independent_seeds": 2,
+                        "epochs_outer": 10, "epochs_deployment": 12,
+                        "count_target": "selection-only oracle sample-F1 top-k"},
                 "postprocessing": {"policies": list(POLICIES), "selected": selected_policy,
                                    "max_zero_pa_additions": 2, "max_rare_additions": 4,
-                                   "cardinality_bounds": [16, 30], "relative_count_change": 3}},
+                                   "cardinality_bounds": [10, 40],
+                                   "candidate_relative_count_change": [0, 18]}},
             "checkpoint_identifiers_and_hashes": pre_assessment_freeze["checkpoint_sha256"],
             "pretrained_weight_provenance": [], "external_data_or_weights": False,
-            "runtime_budget": {"expected_hours": [5.0, 8.5], "hard_guard_hours": 11.25,
+            "runtime_budget": {"expected_hours": [2.0, 5.0], "hard_guard_hours": MAX_TOTAL_HOURS,
                                "kaggle_limit_hours": 12.0, "feature_preparation_cap_hours": 2.75,
                                "finalization_reserve_minutes": 35, "single_gpu": True,
                                "models_kept_on_gpu_concurrently": 1},
             "frozen_policies": selected_policy, "pre_assessment_freeze": pre_assessment_freeze,
-            "final_file_hashes": {"GLC25_PA_submission_v24.csv": submission["sha256"],
-                                  "assessment_per_survey_v24.csv": assessment_sha,
-                                  "v24_report.json": sha256_file(report_path),
-                                  "v24_manifest.json": None},
+            "final_file_hashes": {"GLC25_PA_submission_v25.csv": submission["sha256"],
+                                  "assessment_per_survey_v25.csv": assessment_sha,
+                                  "v25_report.json": sha256_file(report_path),
+                                  "v25_manifest.json": None},
             "self_hash_note": "The manifest's own byte hash is emitted by the final notebook cell.",
         }
-        manifest_path = export / "v24_manifest.json"
+        manifest_path = export / "v25_manifest.json"
         save_json(manifest_path, manifest)
         final_hashes = {path.name: sha256_file(path) for path in sorted(export.iterdir()) if path.is_file()}
-        if set(final_hashes) != {"GLC25_PA_submission_v24.csv", "v24_report.json",
-                                "assessment_per_survey_v24.csv", "v24_manifest.json"}:
+        if set(final_hashes) != {"GLC25_PA_submission_v25.csv", "v25_report.json",
+                                "assessment_per_survey_v25.csv", "v25_manifest.json"}:
             raise ValueError(f"Export directory contains unexpected files: {sorted(final_hashes)}")
-        guard.stamp("v24_complete", eligible=gate["eligible_for_submission"],
+        guard.stamp("v25_complete", eligible=gate["eligible_for_submission"],
                     hashes=final_hashes)
         return {"status": "complete", "eligible_for_submission": gate["eligible_for_submission"],
                 "runtime_hours": guard.elapsed_hours(), "export_directory": str(export),
                 "final_hashes": final_hashes, "assessment_gain": assessment["gain"],
                 "spatial_ci95": assessment["spatial_bootstrap"]["ci95"],
                 "selected_policy": selected_policy["id"],
-                "instruction": ("Submit GLC25_PA_submission_v24.csv exactly once only if eligible is true."
+                "instruction": ("Submit GLC25_PA_submission_v25.csv exactly once only if eligible is true."
                                 if gate["eligible_for_submission"] else
-                                "DO NOT SUBMIT: keep the candidate for analysis; the frozen v23 remains control.")}
+                                "DO NOT SUBMIT: keep the candidate for analysis; the frozen v24 remains control.")}
     except Exception as error:
         failure = {"experiment": EXPERIMENT, "status": "failed",
                    "failed_stage": "see traceback", "error_type": type(error).__name__,

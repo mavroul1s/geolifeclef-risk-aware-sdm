@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-09-14",
+  "updated_at": "2026-09-23",
   "metric": "Kaggle sample-averaged F1",
   "competition": "geolifeclef-2025",
   "kernel": "con1los/geolifeclef-risk-aware-sdm-phase-1",
   "target": {
     "description": "GeoLifeCLEF 2025 winning private-leaderboard result",
-    "private_score": 0.2302,
+    "private_score": 0.23021,
     "scope_warning": "This is a competition target, not universal SOTA across datasets or protocols."
   },
   "official_submissions": [
@@ -68,7 +68,7 @@
       "private_score": 0.19491,
       "repository_commit": "519ae6cecadb30e4339d6fcf5354c4f0ed19f479",
       "submission_sha256": "fe4eb33353936c7bc66b6c7451b89b838ee0c8ad55d9440d76da86778b5646de",
-      "status": "current_best",
+      "status": "superseded_best",
       "kaggle_submission_status": "complete",
       "official_submission_count": 1,
       "public_gain_over_v21_absolute": 0.00051,
@@ -77,12 +77,74 @@
       "gap_to_winner_private": 0.03529,
       "pipeline_hours": 2.303860101302465,
       "registered_assessment_and_integrity_gate_passed": true
+    },
+    {
+      "version": 23,
+      "description": "Diverse single-head spatial cross-fit model",
+      "submitted_at": "recorded 2026-09-23 from prior completed run",
+      "submission_ref": "56255321",
+      "public_score": 0.22052,
+      "private_score": 0.19730,
+      "repository_commit": "d307326eb55af13d1bc3b593f17997a8246df644",
+      "submission_sha256": "9da01ce45a3478e8073cd93e22dbf69dde65def0f86b7ef2700e84630f2c30f8",
+      "status": "superseded_best",
+      "kaggle_submission_status": "complete",
+      "official_submission_count": 1,
+      "public_gain_over_v22_absolute": 0.00368,
+      "private_gain_over_v22_absolute": 0.00239,
+      "gap_to_winner_private": 0.03291,
+      "pipeline_hours": 6.61616224692927
+    },
+    {
+      "version": 24,
+      "description": "Multimodal rare-species SDM with risk-aware composition",
+      "submitted_at": "2026-09-23",
+      "score_source": "user-provided Kaggle results screenshot",
+      "public_score": 0.22397,
+      "private_score": 0.20094,
+      "repository_commit": "72c8e98dbb927d93637df431c37b751632f51458",
+      "submission_sha256": "31ce8fcc93d5831f1ecfdffb255c5eec14f0b8a40981f2f16f2ab6cf4b45a111",
+      "status": "current_best",
+      "kaggle_submission_status": "complete",
+      "official_submission_count": 1,
+      "public_gain_over_v23_absolute": 0.00345,
+      "private_gain_over_v23_absolute": 0.00364,
+      "gap_to_winner_private": 0.02927,
+      "pipeline_hours": 0.9811864720533332,
+      "summary": "results/v24_summary.json",
+      "artifacts": "results/v24_kaggle_output"
     }
   ],
   "experimental_runs": [
     {
-      "experiment": "v22_retained_po_crossfit",
+      "experiment": "v24_multimodal_rare_species_sdm",
       "status": "complete_official_current_best",
+      "kernel_version": 26,
+      "source_commit": "72c8e98dbb927d93637df431c37b751632f51458",
+      "summary": "results/v24_summary.json",
+      "official_submission_made": true,
+      "official_public_score": 0.22397,
+      "official_private_score": 0.20094,
+      "assessment_v24_sample_f1": 0.353667558058827,
+      "assessment_matched_control_sample_f1": 0.350123503489789,
+      "assessment_gain_spatial_ci95": [0.00195497690740038, 0.00627083878991283],
+      "assessment_now_consumed": true,
+      "assessment_warning": "14742 of 27393 assessment surveys overlapped v21-v23 assessments; the never-assessed subset still gained 0.005648."
+    },
+    {
+      "experiment": "v23_diverse_single_head_crossfit",
+      "status": "complete_official_superseded_best",
+      "kernel_version": 25,
+      "source_commit": "d307326eb55af13d1bc3b593f17997a8246df644",
+      "official_submission_made": true,
+      "official_public_score": 0.22052,
+      "official_private_score": 0.19730,
+      "assessment_surveys": 11032,
+      "assessment_now_consumed": true
+    },
+    {
+      "experiment": "v22_retained_po_crossfit",
+      "status": "complete_official_superseded_best",
       "kernel_version": 22,
       "source_commit": "519ae6cecadb30e4339d6fcf5354c4f0ed19f479",
       "summary": "results/v22_summary.json",

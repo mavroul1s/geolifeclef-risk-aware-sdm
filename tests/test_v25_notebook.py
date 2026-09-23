@@ -5,37 +5,44 @@ from types import SimpleNamespace
 import numpy as np
 import pandas as pd
 
-from scripts.build_v24_notebook import (
-    EXPECTED_V23_HASH,
+from scripts.build_v25_notebook import (
+    EXPECTED_V24_HASH,
     KAGGLE_KERNEL_SOURCE_LIMIT_BYTES,
-    canonical_v23_files,
     make_notebook,
-    payload,
+    packed_consumed_ids,
+    packed_v24_submission,
 )
-from scripts.v24_notebook_core import (
+import scripts.v25_notebook_core as core
+from scripts.v25_notebook_core import (
     MODALITIES,
+    POLICIES,
     REMOTE_DIMS,
     CooccurrenceGraph,
     POGridIndex,
     RuntimeGuard,
     V24MultimodalRareJSDM,
-    _channel_summary,
     _build_models_for_fold,
-    _decode_v23_submission,
+    _channel_summary,
     compose_predictions,
     discover_data_root,
     make_outer_split,
     notebook_self_tests,
+    oracle_f1_counts,
     richness_features,
-    sha256_file,
     validate_submission,
-    verify_frozen_v23,
     write_submission,
 )
 
 
 ROOT = Path(__file__).resolve().parents[1]
-EVIDENCE = ROOT / "artifacts/manual_upload_v23_retry2/user_provided_v25_exports"
+V24 = ROOT / "results/v24_kaggle_output"
+SPECIES = ROOT / "artifacts/v20_frozen_bundle_v21/species_ids.npy"
+CONSUMED_PATHS = [
+    ROOT / "artifacts/v21_review/assessment_per_survey.csv",
+    ROOT / "artifacts/v22_review/assessment_per_survey.csv",
+    ROOT / "artifacts/manual_upload_v23_retry2/user_provided_v25_exports/assessment_per_survey.csv",
+    V24 / "assessment_per_survey_v24.csv",
+]
 
 
 def test_remote_summary_dimensions_are_frozen():
@@ -48,11 +55,14 @@ def test_remote_summary_dimensions_are_frozen():
     assert len(np.concatenate([sentinel_band, ndvi])) == REMOTE_DIMS["sentinel"]
 
 
-def test_self_tests_cover_model_contract():
-    assert notebook_self_tests() == {"passed": True, "tests": 6}
+def test_self_tests_cover_model_and_adaptive_count_contracts():
+    assert notebook_self_tests() == {"passed": True, "tests": 8}
     model = V24MultimodalRareJSDM({name: 3 for name in MODALITIES}, 7, np.array([1, 3]),
                                   width=16, rank=4)
     assert model.independent_head.out_features == 7
+    probabilities = np.asarray([[0.9, 0.8, 0.7, 0.1]], dtype=np.float32)
+    targets = np.asarray([[1, 0, 1, 0]], dtype=np.uint8)
+    assert oracle_f1_counts(probabilities, targets, minimum=1, maximum=4).tolist() == [3]
 
 
 def test_richness_features_accept_official_metadata_without_month():
@@ -70,28 +80,26 @@ def test_control_policy_is_an_exact_noop():
     base = [list(range(20)), list(range(5, 25))]
     probability = np.random.default_rng(7).random((2, 30), dtype=np.float32)
     graph = CooccurrenceGraph(np.full((30, 2), -1), np.zeros((30, 2)))
-    policy = {"id": "control", "alpha_near": 0.0, "alpha_far": 0.0,
-              "rare_weight": 0.0, "spatial_weight": 0.0,
-              "cooccurrence_weight": 0.0, "cardinality_weight": 0.0}
-    result = compose_predictions(base, probability, np.array([20, 20]), np.full(30, 100),
-                                 [{}, {}], [{}, {}], graph, np.zeros(2), policy)
+    result = compose_predictions(base, probability, np.array([12, 32]), np.full(30, 100),
+                                 [{}, {}], [{}, {}], graph, np.zeros(2), dict(POLICIES[0]))
     assert result == base
 
 
-def test_new_outer_folds_are_disjoint_and_buffered():
-    latitudes = np.arange(-60, 61)
-    longitudes = np.arange(-170, 171)
-    coordinates = np.array([(lat, lon) for lat in latitudes for lon in longitudes], dtype=float)
-    coordinates = coordinates[:18000]
+def test_new_outer_folds_are_fresh_disjoint_and_buffered():
+    coordinates = np.array([(lat, lon) for lat in np.arange(-60, 61)
+                            for lon in np.arange(-170, 171)], dtype=float)
     rows = pd.DataFrame({"surveyId": np.arange(len(coordinates)),
                          "lat": coordinates[:, 0] + 0.25,
                          "lon": coordinates[:, 1] + 0.25})
-    fold_zero, manifest_zero = make_outer_split(rows, 0)
-    fold_one, manifest_one = make_outer_split(rows, 1)
+    consumed = rows.surveyId.to_numpy(np.int64)[::2]
+    fold_zero, manifest_zero = make_outer_split(rows, 0, consumed)
+    fold_one, manifest_one = make_outer_split(rows, 1, consumed)
     assert set(fold_zero["assessment"]).isdisjoint(fold_one["assessment"])
     assert manifest_zero["minimum_assessment_training_distance_km"] >= 20
     assert manifest_one["minimum_assessment_training_distance_km"] >= 20
     for split in (fold_zero, fold_one):
+        ids = rows.surveyId.to_numpy()[split["assessment"]]
+        assert np.intersect1d(ids, consumed).size == 0
         assert set(split["selection"]).isdisjoint(split["calibration"])
         assert set(split["assessment"]).isdisjoint(split["training"])
 
@@ -106,45 +114,52 @@ def test_data_root_supports_nested_kaggle_competition_mount(tmp_path):
     assert discover_data_root([root]) == competition.resolve()
 
 
-def test_embedded_v23_is_exact_and_csv_roundtrips(tmp_path):
-    files = canonical_v23_files(EVIDENCE)
-    assert sha256_file(EVIDENCE / "GLC25_PA_submission_v23.csv") != EXPECTED_V23_HASH
-    destination = tmp_path / "v23"
-    proof = verify_frozen_v23(payload(files), destination)
-    assert proof["submission_sha256"] == EXPECTED_V23_HASH
+def test_embedded_v24_and_consumed_union_roundtrip_exactly(tmp_path, monkeypatch):
+    control_b64, control_sha, raw_sha = packed_v24_submission(
+        V24 / "GLC25_PA_submission_v24.csv", SPECIES)
+    consumed_b64, consumed_sha, consumed_count = packed_consumed_ids(CONSUMED_PATHS)
+    monkeypatch.setattr(core, "FROZEN_V24_PAYLOAD_SHA256", control_sha, raising=False)
+    monkeypatch.setattr(core, "FROZEN_V24_RAW_SHA256", raw_sha, raising=False)
+    monkeypatch.setattr(core, "CONSUMED_ASSESSMENT_IDS_SHA256", consumed_sha, raising=False)
+    monkeypatch.setattr(core, "CONSUMED_ASSESSMENT_IDS_COUNT", consumed_count, raising=False)
     template = pd.read_csv(ROOT / "artifacts/v20_frozen/raw/GLC25_SAMPLE_SUBMISSION.csv")
-    species = np.load(ROOT / "artifacts/v20_frozen_bundle_v21/species_ids.npy")
-    predictions = _decode_v23_submission(destination / "GLC25_PA_submission_v23.csv",
-                                         template.surveyId.to_numpy(), species)
+    species = np.load(SPECIES, allow_pickle=False)
+    predictions, proof = core.decode_v24_submission(
+        control_b64, template.surveyId.to_numpy(), species)
     output = tmp_path / "roundtrip.csv"
     report = write_submission(output, template, template.surveyId.to_numpy(), predictions, species)
-    assert report["sha256"] == EXPECTED_V23_HASH
+    assert report["sha256"] == EXPECTED_V24_HASH
+    assert proof["private_score"] == 0.20094
     assert validate_submission(output, template, species)["checks"]["row_order"]
+    decoded_consumed = core.decode_consumed_ids(consumed_b64)
+    assert len(decoded_consumed) == 55_325
+    assert np.all(np.diff(decoded_consumed) > 0)
 
 
 def test_generated_notebook_has_no_repository_runtime_dependency():
-    core = (ROOT / "scripts/v24_notebook_core.py").read_text(encoding="utf-8")
-    notebook = make_notebook(core, payload(canonical_v23_files(EVIDENCE)))
+    core_text = (ROOT / "scripts/v25_notebook_core.py").read_text(encoding="utf-8")
+    control = packed_v24_submission(V24 / "GLC25_PA_submission_v24.csv", SPECIES)
+    consumed = packed_consumed_ids(CONSUMED_PATHS)
+    notebook = make_notebook(core_text, *control, *consumed)
     assert notebook["nbformat"] == 4
     assert len(notebook["cells"]) == 4
     code = "\n".join("".join(cell["source"]) for cell in notebook["cells"]
                      if cell["cell_type"] == "code")
     assert "from scripts." not in code
     assert "from geolifeclef" not in code
-    assert notebook["metadata"]["glc_v24"]["required_input"] == ["geolifeclef-2025"]
-    on_disk = json.loads((ROOT / "notebooks/geolifeclef_v24_multimodal_rare_species_sdm.ipynb")
-                         .read_text(encoding="utf-8"))
-    assert (ROOT / "notebooks/geolifeclef_v24_multimodal_rare_species_sdm.ipynb").stat().st_size \
-        < KAGGLE_KERNEL_SOURCE_LIMIT_BYTES
-    assert on_disk["metadata"]["glc_v24"]["frozen_v23_submission_sha256"] == EXPECTED_V23_HASH
+    assert notebook["metadata"]["glc_v25"]["required_input"] == ["geolifeclef-2025"]
+    path = ROOT / "notebooks/geolifeclef_v25_fresh_holdout_adaptive_ensemble.ipynb"
+    on_disk = json.loads(path.read_text(encoding="utf-8"))
+    assert path.stat().st_size < KAGGLE_KERNEL_SOURCE_LIMIT_BYTES
+    assert on_disk["metadata"]["glc_v25"]["frozen_v24_submission_sha256"] == EXPECTED_V24_HASH
     scope = {}
-    exec(compile("".join(on_disk["cells"][1]["source"]), "v24-notebook-core", "exec"), scope)
-    exec(compile("".join(on_disk["cells"][2]["source"]), "v24-notebook-payload", "exec"), scope)
+    exec(compile("".join(on_disk["cells"][1]["source"]), "v25-notebook-core", "exec"), scope)
+    exec(compile("".join(on_disk["cells"][2]["source"]), "v25-notebook-payload", "exec"), scope)
     assert scope["notebook_self_tests"]()["passed"] is True
 
 
 def test_tiny_fold_runs_end_to_end_on_cpu(tmp_path):
-    rng = np.random.default_rng(24)
+    rng = np.random.default_rng(25)
     rows_count, species_count = 120, 40
     arrays = {name: rng.normal(size=(rows_count, 3)).astype(np.float32) for name in MODALITIES}
     labels = np.zeros((rows_count, species_count), dtype=np.uint8)
@@ -161,6 +176,7 @@ def test_tiny_fold_runs_end_to_end_on_cpu(tmp_path):
              "calibration": np.arange(80, 100), "assessment": np.arange(100, 120)}
     po = POGridIndex({}, np.arange(species_count), np.zeros(species_count), 0, 0)
     bundle, record = _build_models_for_fold("smoke", split, rows, store, po, tmp_path,
-                                            RuntimeGuard(3), __import__("torch").device("cpu"), 24)
-    assert len(bundle["calibration_trials"]) > 1
-    assert record["v24"]["best_epoch"] >= 6
+                                            RuntimeGuard(3), __import__("torch").device("cpu"), 25)
+    assert len(bundle["calibration_trials"]) == len(POLICIES)
+    assert len(record["v25_candidate_seeds"]) == 2
+    assert record["matched_v24"]["best_epoch"] >= 6

@@ -152,13 +152,15 @@ def main() -> None:
     consumed = packed_consumed_ids(consumed_paths)
     core_path = repository / "scripts/v25_notebook_core.py"
     core = core_path.read_text(encoding="utf-8")
+    source_sha = hashlib.sha256(core.encode("utf-8")).hexdigest()
     try:
-        source_commit = subprocess.run(
-            ["git", "log", "-1", "--format=%H", "--", core_path.relative_to(repository).as_posix()],
-            cwd=repository, check=True, capture_output=True, text=True,
+        head = subprocess.run(
+            ["git", "rev-parse", "HEAD"], cwd=repository, check=True,
+            capture_output=True, text=True,
         ).stdout.strip()
+        source_commit = f"{head};notebook-source-sha256:{source_sha}"
     except (OSError, subprocess.CalledProcessError):
-        source_commit = f"notebook-source-sha256:{hashlib.sha256(core.encode()).hexdigest()}"
+        source_commit = f"notebook-source-sha256:{source_sha}"
     notebook = make_notebook(core, *control, *consumed, source_commit)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(notebook, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")

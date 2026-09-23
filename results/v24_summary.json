@@ -1,0 +1,69 @@
+{
+  "experiment": "v24_multimodal_rare_species_sdm",
+  "status": "complete_official_current_best",
+  "source_commit": "72c8e98dbb927d93637df431c37b751632f51458",
+  "scored_notebook": "geolifeclef_v24_multimodal_rare_species_sdm - Version 1",
+  "score_recorded_from": "user-provided Kaggle result screenshot",
+  "score_recorded_at": "2026-09-23",
+  "official": {
+    "public_score": 0.22397,
+    "private_score": 0.20094,
+    "public_gain_over_v23": 0.00345,
+    "private_gain_over_v23": 0.00364,
+    "target_private_score": 0.23021,
+    "gap_to_target_private": 0.02927,
+    "screenshot": "results/v24_kaggle_scores.png"
+  },
+  "runtime_hours": 0.9811864720533332,
+  "selected_policy": "ood_rare",
+  "internal_assessment": {
+    "surveys": 27393,
+    "matched_control_sample_f1": 0.350123503489789,
+    "v24_sample_f1": 0.353667558058827,
+    "gain": 0.00354405456903755,
+    "spatial_block_bootstrap_ci95": [
+      0.00195497690740038,
+      0.00627083878991283
+    ],
+    "fresh_vs_all_prior_assessments": {
+      "fresh_surveys": 12651,
+      "fresh_gain": 0.005648,
+      "previously_consumed_surveys": 14742,
+      "previously_consumed_gain": 0.001738
+    },
+    "cardinality": {
+      "true_mean": 17.0068,
+      "predicted_mean": 25.1434,
+      "mae": 10.6398,
+      "diagnosis": "The frozen v23 base predicted 28 species on all >=20 km rows and v24 constrained changes to plus/minus 3, forcing at least 25 predictions."
+    },
+    "ablations_delta_vs_full": {
+      "without_richness": -0.003409,
+      "without_multimodal": -0.000533,
+      "without_cooccurrence": -0.000213,
+      "without_spatial": -0.0000323,
+      "without_rare_expert": 0.0
+    },
+    "submission_gate": {
+      "eligible": false,
+      "gate_bug": "The implementation evaluated all integrity dictionary values while external_pretrained_weights=false correctly represented no external weights; this false value incorrectly failed the aggregate gate. Predictions and the scored CSV were unaffected."
+    }
+  },
+  "assessment_reuse_audit": {
+    "unique_assessment_ids_consumed_by_v21_through_v24": 55325,
+    "official_train_surveys": 88987,
+    "never_assessed_surveys_remaining": 33662,
+    "v24_overlap_with_v21": 8871,
+    "v24_overlap_with_v22": 2248,
+    "v24_overlap_with_v23": 3623,
+    "v25_action": "Embed the exact consumed-ID union and exclude it from both fresh v25 assessment folds."
+  },
+  "artifact_hashes": {
+    "GLC25_PA_submission_v24.csv": "31ce8fcc93d5831f1ecfdffb255c5eec14f0b8a40981f2f16f2ab6cf4b45a111",
+    "assessment_per_survey_v24.csv": "33832b8855f4b9cebda329b0f34d343d0e5c5199fb7aadbcaf2058d2f81d4dcc",
+    "v24_manifest.json": "213abafdaf0a9dc1f4bbdaedff992eb89761d3bd0324b801083c775cb43cc9fd",
+    "v24_report.json": "d171b4280ed4c2e2b37bde9f3f937b391b3aefd9703825bf40b3c3d23e23ca36"
+  },
+  "artifact_directory": "results/v24_kaggle_output",
+  "output_policy": "The four compact v24 deliverables are committed; temporary feature arrays and checkpoints remain excluded."
+}
