@@ -14,6 +14,7 @@ import gzip
 import hashlib
 import io
 import json
+import lzma
 import math
 import os
 from pathlib import Path
@@ -34,42 +35,59 @@ from torch import nn
 from torch.nn import functional as F
 
 
-EXPERIMENT = "v24_multimodal_rare_species_sdm"
+EXPERIMENT = "v25_fresh_holdout_adaptive_ensemble"
 V23_COMMIT = "d307326eb55af13d1bc3b593f17997a8246df644"
 V23_SUBMISSION_SHA256 = "9da01ce45a3478e8073cd93e22dbf69dde65def0f86b7ef2700e84630f2c30f8"
 V23_PUBLIC_SCORE = 0.22052
 V23_PRIVATE_SCORE = 0.19730
+V24_SUBMISSION_SHA256 = "31ce8fcc93d5831f1ecfdffb255c5eec14f0b8a40981f2f16f2ab6cf4b45a111"
+V24_PUBLIC_SCORE = 0.22397
+V24_PRIVATE_SCORE = 0.20094
 SOTA_PRIVATE_SCORE = 0.23021
 EXPECTED_SPECIES = 5016
 EXPECTED_TEST_ROWS = 14784
 EARTH_RADIUS_KM = 6371.0088
-MAX_TOTAL_HOURS = 11.25
+MAX_TOTAL_HOURS = 10.75
 FINAL_RESERVE_SECONDS = 35 * 60
 FEATURE_PREP_LIMIT_SECONDS = 2.75 * 3600
-SEEDS = {"split": 20260915, "fold_0": 20262401, "fold_1": 20262402, "deployment": 20262403,
-         "bootstrap": 20262404, "po": 20262405}
+SEEDS = {"split": 20260923, "fold_0": 20262501, "fold_1": 20262502, "deployment": 20262503,
+         "bootstrap": 20262504, "po": 20262505}
 MODALITIES = ("landsat", "bioclim", "sentinel", "environment", "static")
 REMOTE_DIMS = {"landsat": 114, "bioclim": 76, "sentinel": 115}
+V24_POLICY = {
+    "id": "v24_ood_rare", "alpha_near": 0.08, "alpha_far": 0.34,
+    "rare_weight": 0.06, "spatial_weight": 0.025, "cooccurrence_weight": 0.02,
+    "cardinality_weight": 0.40,
+}
 POLICIES = (
     {"id": "control", "alpha_near": 0.0, "alpha_far": 0.0, "rare_weight": 0.0,
-     "spatial_weight": 0.0, "cooccurrence_weight": 0.0, "cardinality_weight": 0.0},
-    {"id": "mm_small", "alpha_near": 0.10, "alpha_far": 0.18, "rare_weight": 0.0,
-     "spatial_weight": 0.0, "cooccurrence_weight": 0.0, "cardinality_weight": 0.25},
-    {"id": "mm", "alpha_near": 0.16, "alpha_far": 0.28, "rare_weight": 0.0,
-     "spatial_weight": 0.0, "cooccurrence_weight": 0.0, "cardinality_weight": 0.35},
-    {"id": "mm_rare", "alpha_near": 0.14, "alpha_far": 0.28, "rare_weight": 0.055,
-     "spatial_weight": 0.0, "cooccurrence_weight": 0.0, "cardinality_weight": 0.35},
-    {"id": "mm_cooc", "alpha_near": 0.14, "alpha_far": 0.28, "rare_weight": 0.0,
-     "spatial_weight": 0.0, "cooccurrence_weight": 0.035, "cardinality_weight": 0.35},
-    {"id": "mm_spatial", "alpha_near": 0.12, "alpha_far": 0.24, "rare_weight": 0.0,
-     "spatial_weight": 0.045, "cooccurrence_weight": 0.0, "cardinality_weight": 0.35},
-    {"id": "balanced", "alpha_near": 0.14, "alpha_far": 0.28, "rare_weight": 0.045,
-     "spatial_weight": 0.035, "cooccurrence_weight": 0.025, "cardinality_weight": 0.35},
-    {"id": "balanced_conservative", "alpha_near": 0.10, "alpha_far": 0.20,
-     "rare_weight": 0.030, "spatial_weight": 0.025, "cooccurrence_weight": 0.020,
-     "cardinality_weight": 0.25},
-    {"id": "ood_rare", "alpha_near": 0.08, "alpha_far": 0.34, "rare_weight": 0.060,
-     "spatial_weight": 0.025, "cooccurrence_weight": 0.020, "cardinality_weight": 0.40},
+     "spatial_weight": 0.0, "cooccurrence_weight": 0.0, "count_weight": 0.0,
+     "max_count_change": 0, "minimum_count": 10, "maximum_count": 36,
+     "threshold": None, "rare_keep_bonus": 0.0},
+    {"id": "adaptive_half", "alpha_near": 0.10, "alpha_far": 0.20, "rare_weight": 0.0,
+     "spatial_weight": 0.0, "cooccurrence_weight": 0.0, "count_weight": 0.50,
+     "max_count_change": 8, "minimum_count": 12, "maximum_count": 34,
+     "threshold": None, "rare_keep_bonus": 0.02},
+    {"id": "adaptive_full", "alpha_near": 0.14, "alpha_far": 0.28, "rare_weight": 0.0,
+     "spatial_weight": 0.0, "cooccurrence_weight": 0.0, "count_weight": 1.0,
+     "max_count_change": 16, "minimum_count": 10, "maximum_count": 36,
+     "threshold": None, "rare_keep_bonus": 0.025},
+    {"id": "adaptive_context", "alpha_near": 0.14, "alpha_far": 0.30, "rare_weight": 0.02,
+     "spatial_weight": 0.025, "cooccurrence_weight": 0.02, "count_weight": 1.0,
+     "max_count_change": 16, "minimum_count": 10, "maximum_count": 36,
+     "threshold": None, "rare_keep_bonus": 0.03},
+    {"id": "threshold_10", "alpha_near": 0.16, "alpha_far": 0.32, "rare_weight": 0.0,
+     "spatial_weight": 0.0, "cooccurrence_weight": 0.0, "count_weight": 1.0,
+     "max_count_change": 18, "minimum_count": 14, "maximum_count": 36,
+     "threshold": 0.10, "rare_keep_bonus": 0.02},
+    {"id": "threshold_15", "alpha_near": 0.16, "alpha_far": 0.32, "rare_weight": 0.0,
+     "spatial_weight": 0.0, "cooccurrence_weight": 0.0, "count_weight": 1.0,
+     "max_count_change": 18, "minimum_count": 14, "maximum_count": 36,
+     "threshold": 0.15, "rare_keep_bonus": 0.02},
+    {"id": "threshold_20", "alpha_near": 0.16, "alpha_far": 0.32, "rare_weight": 0.0,
+     "spatial_weight": 0.0, "cooccurrence_weight": 0.0, "count_weight": 1.0,
+     "max_count_change": 18, "minimum_count": 14, "maximum_count": 36,
+     "threshold": 0.20, "rare_keep_bonus": 0.02},
 )
 
 
