@@ -1247,32 +1247,48 @@ def train_model(model: nn.Module, arrays: dict[str, np.ndarray], labels: np.ndar
 
 
 @torch.no_grad()
-def predict_spatial_model(model: SpatialRasterJSDM,
+def predict_spatial_model(model: nn.Module,
                           vector_arrays: dict[str, np.ndarray],
                           raster_arrays: dict[str, np.ndarray], indices: np.ndarray,
                           vector_stats: dict[str, dict[str, np.ndarray]],
                           raster_stats: dict[str, dict[str, np.ndarray]],
-                          device: torch.device, *, batch_size: int = 192
+                          device: torch.device, *, batch_size: int = 192,
+                          tta_views: int | None = None,
                           ) -> tuple[np.ndarray, np.ndarray]:
     model.eval()
     probabilities = np.empty((len(indices), model.independent_head.out_features), dtype=np.float16)
     richness = np.empty(len(indices), dtype=np.float32)
+    views = int(tta_views if tta_views is not None else 1)
+    if views not in (1, 4):
+        raise ValueError("Only one-view or four-view raster inference is registered")
+    derived_sentinel = bool(getattr(model, "derived_sentinel", False))
     for begin in range(0, len(indices), batch_size):
         take = indices[begin:begin + batch_size]
         vector = normalized_batch(vector_arrays, take, vector_stats, device)
-        rasters = normalized_raster_batch(raster_arrays, take, raster_stats, device)
-        with torch.autocast(device_type=device.type, enabled=device.type == "cuda"):
-            logits, predicted_richness = model.forward_with_aux(vector, rasters)
+        probability_sum = None
+        richness_sum = None
+        for transform in range(views):
+            rasters = normalized_raster_batch(
+                raster_arrays, take, raster_stats, device,
+                derived_sentinel=derived_sentinel, tta_transform=transform)
+            with torch.autocast(device_type=device.type, enabled=device.type == "cuda"):
+                logits, predicted_richness = model.forward_with_aux(vector, rasters)
+            view_probability = torch.sigmoid(logits).float()
+            view_richness = predicted_richness.float()
+            probability_sum = (view_probability if probability_sum is None else
+                               probability_sum + view_probability)
+            richness_sum = (view_richness if richness_sum is None else
+                            richness_sum + view_richness)
         size = len(take)
-        probabilities[begin:begin + size] = torch.sigmoid(logits).float().cpu().numpy().astype(
+        probabilities[begin:begin + size] = (probability_sum / views).cpu().numpy().astype(
             np.float16)
-        richness[begin:begin + size] = predicted_richness.float().cpu().numpy()
+        richness[begin:begin + size] = (richness_sum / views).cpu().numpy()
     if not np.isfinite(probabilities).all() or not np.isfinite(richness).all():
         raise FloatingPointError("Non-finite spatial model predictions")
     return probabilities, richness
 
 
-def _spatial_checkpoint_score(model: SpatialRasterJSDM,
+def _spatial_checkpoint_score(model: nn.Module,
                               vector_arrays: dict[str, np.ndarray],
                               raster_arrays: dict[str, np.ndarray], labels: np.ndarray,
                               indices: np.ndarray,
@@ -1286,7 +1302,7 @@ def _spatial_checkpoint_score(model: SpatialRasterJSDM,
     return float(f1_from_ranked(np.asarray(labels[indices]), ranked, counts).mean())
 
 
-def train_spatial_model(model: SpatialRasterJSDM,
+def train_spatial_model(model: nn.Module,
                         vector_arrays: dict[str, np.ndarray],
                         raster_arrays: dict[str, np.ndarray], labels: np.ndarray,
                         training_indices: np.ndarray, selection_indices: np.ndarray,
@@ -1320,7 +1336,8 @@ def train_spatial_model(model: SpatialRasterJSDM,
             take = order[begin:begin + batch_size]
             vector = normalized_batch(vector_arrays, take, vector_stats, device)
             rasters = normalized_raster_batch(
-                raster_arrays, take, raster_stats, device, augment=True, rng=rng)
+                raster_arrays, take, raster_stats, device, augment=True, rng=rng,
+                derived_sentinel=bool(getattr(model, "derived_sentinel", False)))
             targets = torch.from_numpy(np.asarray(labels[take], dtype=np.float32)).to(
                 device, non_blocking=True)
             optimizer.zero_grad(set_to_none=True)
@@ -1354,7 +1371,7 @@ def train_spatial_model(model: SpatialRasterJSDM,
         record = {"epoch": epoch, "loss": total / max(seen, 1), "selection_f1": score,
                   "seconds": seconds, "examples_per_second": seen / max(seconds, 1e-6)}
         history.append(record)
-        guard.stamp("train_epoch", model="v26_spatial_raster", **record)
+        guard.stamp("train_epoch", model=model.__class__.__name__, **record)
         if (epoch >= minimum_epochs and
                 guard.remaining_seconds() < FINAL_RESERVE_SECONDS + 75 * 60 + seconds * 1.3):
             break
