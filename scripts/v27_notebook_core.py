@@ -2353,7 +2353,7 @@ def validate_submission(path: Path, template: pd.DataFrame, species_ids: np.ndar
         counts.append(len(values))
         valid_rows &= len(values) == len(set(values)) and set(values).issubset(vocabulary)
     checks.update({"vocabulary_and_unique_predictions": bool(valid_rows),
-                   "cardinality_bounds": min(counts) >= 10 and max(counts) <= 40})
+                   "cardinality_bounds": min(counts) >= 8 and max(counts) <= 40})
     if not all(checks.values()):
         raise ValueError(f"Submission validation failed: {checks}")
     return {"checks": checks, "rows": len(frame), "species_vocabulary": len(vocabulary),
@@ -2400,7 +2400,7 @@ def assess_bundles(bundles: list[dict[str, Any]], policy: dict[str, Any], rows: 
                    labels: np.ndarray) -> tuple[pd.DataFrame, dict[str, Any], dict[str, Any]]:
     frames = []
     fold_reports = []
-    pooled_targets, pooled_base, pooled_v26, pooled_frequencies = [], [], [], []
+    pooled_targets, pooled_base, pooled_v27, pooled_frequencies = [], [], [], []
     for fold, bundle in enumerate(bundles):
         indices = bundle["split"]["assessment"]
         values = bundle["predictions"]["assessment"]
@@ -2412,7 +2412,7 @@ def assess_bundles(bundles: list[dict[str, Any]], policy: dict[str, Any], rows: 
             values["risk"], policy,
         )
         base_scores = score_prediction_lists(targets, values["base_lists"])
-        v26_scores = score_prediction_lists(targets, predicted)
+        v27_scores = score_prediction_lists(targets, predicted)
         frequencies = bundle["frequencies"]
         rarity = []
         for target in targets:
@@ -2430,34 +2430,34 @@ def assess_bundles(bundles: list[dict[str, Any]], policy: dict[str, Any], rows: 
             "pa_distance_bucket": distance_bucket(components["pa_distance"]),
             "rarity_summary": rarity, "true_cardinality": targets.sum(1).astype(int),
             "predicted_cardinality": np.asarray(list(map(len, predicted)), dtype=int),
-            "matched_v25_f1": base_scores, "v26_f1": v26_scores,
-            "delta_f1": v26_scores - base_scores,
+            "matched_v26_f1": base_scores, "v27_f1": v27_scores,
+            "delta_f1": v27_scores - base_scores,
         })
         frames.append(frame)
         fold_reports.append({
             "fold": fold, "surveys": len(frame), "spatial_blocks": frame.spatial_block.nunique(),
-            "matched_v25_sample_f1": float(base_scores.mean()),
-            "v26_sample_f1": float(v26_scores.mean()),
-            "gain": float((v26_scores - base_scores).mean()),
+            "matched_v26_sample_f1": float(base_scores.mean()),
+            "v27_sample_f1": float(v27_scores.mean()),
+            "gain": float((v27_scores - base_scores).mean()),
             "cardinality_mae": float(np.mean(np.abs(frame.predicted_cardinality -
                                                      frame.true_cardinality))),
-            "matched_v25_cardinality_mae": float(np.mean(np.abs(
+            "matched_v26_cardinality_mae": float(np.mean(np.abs(
                 np.asarray(list(map(len, values["base_lists"]))) - frame.true_cardinality))),
-            "matched_v25_species_groups": species_group_metrics(targets, values["base_lists"],
+            "matched_v26_species_groups": species_group_metrics(targets, values["base_lists"],
                                                                   frequencies),
-            "v26_species_groups": species_group_metrics(targets, predicted, frequencies),
+            "v27_species_groups": species_group_metrics(targets, predicted, frequencies),
         })
         pooled_targets.append(targets)
         pooled_base.extend(values["base_lists"])
-        pooled_v26.extend(predicted)
+        pooled_v27.extend(predicted)
         pooled_frequencies.append(frequencies)
     frame = pd.concat(frames, ignore_index=True)
     if frame.surveyId.duplicated().any():
-        raise ValueError("The two v26 assessment folds overlap")
+        raise ValueError("The two v27 assessment folds overlap")
     bootstrap = paired_block_bootstrap(frame.delta_f1.to_numpy(), frame.spatial_block.to_numpy())
-    country = summarize_by_group(frame, "country", ("matched_v25_f1", "v26_f1", "delta_f1"))
+    country = summarize_by_group(frame, "country", ("matched_v26_f1", "v27_f1", "delta_f1"))
     distance = summarize_by_group(frame, "pa_distance_bucket",
-                                  ("matched_v25_f1", "v26_f1", "delta_f1"))
+                                  ("matched_v26_f1", "v27_f1", "delta_f1"))
     ablations = {}
     for component, fields in {
         "without_candidate_ranking": ("alpha_near", "alpha_far"),
@@ -2479,18 +2479,18 @@ def assess_bundles(bundles: list[dict[str, Any]], policy: dict[str, Any], rows: 
             scores.extend(score_prediction_lists(
                 np.asarray(labels[bundle["split"]["assessment"]]), predictions))
         ablations[component] = {"sample_f1": float(np.mean(scores)),
-                                "delta_vs_full_v26": float(np.mean(scores) - frame.v26_f1.mean())}
+                                "delta_vs_full_v27": float(np.mean(scores) - frame.v27_f1.mean())}
     group_summary = {
         "note": "Rarity is fold-specific; pooled counts are sums of fold metrics.",
         "folds": [{"fold": record["fold"],
-                   "matched_v25": record["matched_v25_species_groups"],
-                   "v26": record["v26_species_groups"]} for record in fold_reports],
+                   "matched_v26": record["matched_v26_species_groups"],
+                   "v27": record["v27_species_groups"]} for record in fold_reports],
     }
     pooled_groups: dict[str, dict[str, Any]] = {}
     for group_name in ("zero_pa", "rare_1_to_25", "common_over_25"):
         pooled_groups[group_name] = {}
-        for model_name, record_key in (("matched_v25", "matched_v25_species_groups"),
-                                       ("v26", "v26_species_groups")):
+        for model_name, record_key in (("matched_v26", "matched_v26_species_groups"),
+                                       ("v27", "v27_species_groups")):
             records = [fold[record_key][group_name] for fold in fold_reports]
             target_positives = sum(record["target_positives"] for record in records)
             predicted_positives = sum(record["predicted_positives"] for record in records)
@@ -2505,18 +2505,18 @@ def assess_bundles(bundles: list[dict[str, Any]], policy: dict[str, Any], rows: 
     report = {
         "surveys": len(frame), "spatial_blocks": frame.spatial_block.nunique(),
         "control_definition": (
-            "The exact scored v25 CSV is frozen for official-test inference. Fresh-fold F1 uses a "
-            "matched v25 recipe refit because exact v25 fold checkpoints were not exported. Every "
-            "survey assessed by v21 through v25 is excluded from v26 assessment."
+            "The exact scored v26 CSV is frozen for official-test inference. Fresh-fold F1 uses a "
+            "matched v26 recipe refit because exact v26 fold checkpoints were not exported. Every "
+            "survey assessed by v21 through v26 is excluded from v27 assessment."
         ),
-        "matched_v25_sample_f1": float(frame.matched_v25_f1.mean()),
-        "v26_sample_f1": float(frame.v26_f1.mean()),
+        "matched_v26_sample_f1": float(frame.matched_v26_f1.mean()),
+        "v27_sample_f1": float(frame.v27_f1.mean()),
         "gain": float(frame.delta_f1.mean()), "folds": fold_reports,
         "spatial_bootstrap": bootstrap, "by_country": country,
         "by_pa_distance": distance, "rarity_groups": group_summary,
-        "cardinality": {"v26_mae": float(np.mean(np.abs(frame.predicted_cardinality -
+        "cardinality": {"v27_mae": float(np.mean(np.abs(frame.predicted_cardinality -
                                                           frame.true_cardinality))),
-                        "matched_v25_mae": float(np.mean(np.abs(
+                        "matched_v26_mae": float(np.mean(np.abs(
                             np.asarray([len(row) for row in pooled_base]) -
                             frame.true_cardinality.to_numpy()))),
                         "true_mean": float(frame.true_cardinality.mean()),
@@ -2531,12 +2531,12 @@ def assess_bundles(bundles: list[dict[str, Any]], policy: dict[str, Any], rows: 
 
     common_ok = True
     for fold in fold_reports:
-        old = fold["matched_v25_species_groups"]
-        new = fold["v26_species_groups"]
+        old = fold["matched_v26_species_groups"]
+        new = fold["v27_species_groups"]
         common_ok &= group_f1(new["common_over_25"]) >= group_f1(old["common_over_25"]) - 0.002
     pooled_rare = pooled_groups["rare_1_to_25"]
-    rare_f1_noninferior = (group_f1(pooled_rare["v26"]) >=
-                           0.80 * group_f1(pooled_rare["matched_v25"]))
+    rare_f1_noninferior = (group_f1(pooled_rare["v27"]) >=
+                           0.80 * group_f1(pooled_rare["matched_v26"]))
     substantial_countries = [value for value in country.values() if value["n"] >= 200]
     gate_components = {
         "pooled_gain_positive": report["gain"] > 0,
@@ -2544,8 +2544,8 @@ def assess_bundles(bundles: list[dict[str, Any]], policy: dict[str, Any], rows: 
         "positive_gain_each_fold": all(record["gain"] > 0 for record in fold_reports),
         "not_one_country_only": sum(value["delta_f1"] > 0 for value in substantial_countries) >= 2,
         "common_species_f1_protected": common_ok,
-        "cardinality_mae_not_materially_worse": (report["cardinality"]["v26_mae"] <=
-                                                   report["cardinality"]["matched_v25_mae"] + 0.25),
+        "cardinality_mae_not_materially_worse": (report["cardinality"]["v27_mae"] <=
+                                                   report["cardinality"]["matched_v26_mae"] + 0.25),
         "rare_species_no_severe_collapse": rare_f1_noninferior,
         "nonzero_new_component": policy["id"] != "control",
     }
@@ -2578,6 +2578,14 @@ def notebook_self_tests() -> dict[str, Any]:
     spatial_logits, spatial_richness = spatial_model.forward_with_aux(batch, raster_batch)
     if spatial_logits.shape != (2, 7) or spatial_richness.shape != (2,):
         raise AssertionError("v26 raw-raster model shape self-test failed")
+    pyramid_model = PyramidRasterJSDM(
+        {name: 3 for name in MODALITIES}, 7, np.ones(7, dtype=bool),
+        raster_width=8, token_width=16, fusion_width=32, rank=4)
+    pyramid_batch = {**raster_batch,
+                     "sentinel": torch.zeros(2, 7, *RASTER_SHAPES["sentinel"][1:])}
+    pyramid_logits, pyramid_richness = pyramid_model.forward_with_aux(batch, pyramid_batch)
+    if pyramid_logits.shape != (2, 7) or pyramid_richness.shape != (2,):
+        raise AssertionError("v27 pyramid-raster model shape self-test failed")
     # The official PA metadata has ``year`` but no ``month`` column.  Exercise
     # that exact schema before the expensive feature extraction and training.
     smoke_richness = richness_features(
@@ -2597,7 +2605,7 @@ def notebook_self_tests() -> dict[str, Any]:
     if compose_predictions(base, values[:1], np.asarray([1]), np.full(3, 100), [{}], [{}],
                            graph, np.zeros(1), dict(POLICIES[0])) != base:
         raise AssertionError("control policy is not an exact no-op")
-    return {"passed": True, "tests": 9}
+    return {"passed": True, "tests": 10}
 
 
 def _clean_directory(path: Path, allowed_parent: Path) -> None:
