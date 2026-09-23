@@ -160,7 +160,7 @@ def require_gpu() -> torch.device:
             "Kaggle GPU is disabled. Open the notebook's right sidebar: Session options -> "
             "Accelerator -> GPU T4 x1 (or GPU), then restart the session and Run All from the "
             "first cell. CPU fallback is intentionally disabled because it cannot finish the "
-            "v26 training safely within the 12-hour competition limit."
+            "v27 training safely within the 12-hour competition limit."
         )
     return torch.device("cuda:0")
 
@@ -2616,11 +2616,11 @@ def _clean_directory(path: Path, allowed_parent: Path) -> None:
         shutil.rmtree(path)
 
 
-def run_v26(frozen_v25_payload_b64: str, consumed_ids_b64: str) -> dict[str, Any]:
+def run_v27(frozen_v26_payload_b64: str, consumed_ids_b64: str) -> dict[str, Any]:
     guard = RuntimeGuard()
     working = Path("/kaggle/working") if Path("/kaggle/working").exists() else Path("artifacts")
-    temporary = working / "v26_runtime"
-    export = working / "v26_export"
+    temporary = working / "v27_runtime"
+    export = working / "v27_export"
     _clean_directory(temporary, working)
     _clean_directory(export, working)
     temporary.mkdir(parents=True)
@@ -2649,15 +2649,15 @@ def run_v26(frozen_v25_payload_b64: str, consumed_ids_b64: str) -> dict[str, Any
                                  for name, values in store.raster_test.items()}
             store.rasters_test = store.raster_test
             test_rows = test_rows.iloc[test_order].reset_index(drop=True)
-        v25_base_lists, frozen_v25 = decode_v25_submission(
-            frozen_v25_payload_b64, template.surveyId.to_numpy(np.int64), store.species_ids)
-        reconstructed_v25_path = temporary / "frozen_v25_reconstructed.csv"
-        reconstructed_v25 = write_submission(
-            reconstructed_v25_path, template, store.test_ids, v25_base_lists, store.species_ids)
-        frozen_v25["checks"]["exact_submission_sha256"] = (
-            reconstructed_v25["sha256"] == V25_SUBMISSION_SHA256)
-        if not all(frozen_v25["checks"].values()):
-            raise ValueError(f"Frozen v25 verification failed: {frozen_v25['checks']}")
+        v26_base_lists, frozen_v26 = decode_v26_submission(
+            frozen_v26_payload_b64, template.surveyId.to_numpy(np.int64), store.species_ids)
+        reconstructed_v26_path = temporary / "frozen_v26_reconstructed.csv"
+        reconstructed_v26 = write_submission(
+            reconstructed_v26_path, template, store.test_ids, v26_base_lists, store.species_ids)
+        frozen_v26["checks"]["exact_submission_sha256"] = (
+            reconstructed_v26["sha256"] == V26_SUBMISSION_SHA256)
+        if not all(frozen_v26["checks"].values()):
+            raise ValueError(f"Frozen v26 verification failed: {frozen_v26['checks']}")
         torch.set_num_threads(min(os.cpu_count() or 2, 6))
         guard.stamp("data_ready", device=torch.cuda.get_device_name(0),
                     train_rows=len(rows), test_rows=len(test_rows))
@@ -2679,9 +2679,9 @@ def run_v26(frozen_v25_payload_b64: str, consumed_ids_b64: str) -> dict[str, Any
         selected_policy, policy_trials = select_global_policy(outer_bundles)
         deployment_split, deployment_manifest = make_deployment_split(rows, consumed_ids)
         deployment_predictions, deployment_record = _train_deployment(
-            deployment_split, rows, test_rows, store, po, v25_base_lists, selected_policy,
+            deployment_split, rows, test_rows, store, po, v26_base_lists, selected_policy,
             temporary, guard, device)
-        submission_path = export / "GLC25_PA_submission_v26.csv"
+        submission_path = export / "GLC25_PA_submission_v27.csv"
         submission = write_submission(submission_path, template, store.test_ids,
                                       deployment_predictions, store.species_ids)
         assessment_predictions_hashes = {}
@@ -2706,19 +2706,19 @@ def run_v26(frozen_v25_payload_b64: str, consumed_ids_b64: str) -> dict[str, Any
         guard.stamp("pre_assessment_freeze", submission_sha256=submission["sha256"])
         assessment_frame, assessment, gate_components = assess_bundles(
             outer_bundles, selected_policy, rows, store.labels)
-        assessment_path = export / "assessment_per_survey_v26.csv"
+        assessment_path = export / "assessment_per_survey_v27.csv"
         required_columns = ["surveyId", "fold", "spatial_block", "country",
                             "pa_distance_bucket", "rarity_summary", "true_cardinality",
-                            "predicted_cardinality", "matched_v25_f1", "v26_f1", "delta_f1"]
+                            "predicted_cardinality", "matched_v26_f1", "v27_f1", "delta_f1"]
         assessment_frame[required_columns].to_csv(assessment_path, index=False,
                                                   lineterminator="\n")
         tests_after = notebook_self_tests()
         integrity = {
-            "frozen_v25_exact": all(frozen_v25["checks"].values()),
+            "frozen_v26_exact": all(frozen_v26["checks"].values()),
             "official_competition_only": feature_manifest["external_data_or_weights"] is False,
             "expected_dimensions": (len(store.species_ids) == EXPECTED_SPECIES and
                                     len(store.test_ids) == EXPECTED_TEST_ROWS),
-            "fresh_assessment_ids": all(item["all_v21_v22_v23_v24_v25_assessments_excluded"]
+            "fresh_assessment_ids": all(item["all_v21_v22_v23_v24_v25_v26_assessments_excluded"]
                                      for item in split_manifests),
             "assessment_disjoint_from_consumed_union": all(
                 np.intersect1d(rows.surveyId.to_numpy(np.int64)[bundle["split"]["assessment"]],
@@ -2747,12 +2747,13 @@ def run_v26(frozen_v25_payload_b64: str, consumed_ids_b64: str) -> dict[str, Any
             "runtime_plan": {"expected_hours": [3.0, 9.5], "feature_preparation_cap_hours": 2.75,
                              "hard_guard_hours": MAX_TOTAL_HOURS, "kaggle_limit_hours": 12.0,
                              "finalization_reserve_minutes": 35,
-                             "models_trained_sequentially": 12,
+                             "models_trained_sequentially": 15,
+                             "v26_reference_runtime_hours": 1.786431835,
                              "v25_reference_runtime_hours": 0.9970158073,
                              "v24_reference_runtime_hours": 0.9811864720533332,
                              "v23_reference_runtime_hours": 6.61616224692927,
                              "vram_estimate_gb": "under 6 on one T4"},
-            "frozen_v25_baseline": frozen_v25,
+            "frozen_v26_baseline": frozen_v26,
             "consumed_assessment_union": {"surveys": int(len(consumed_ids)),
                                            "payload_sha256": CONSUMED_ASSESSMENT_IDS_SHA256},
             "assessment": assessment,
@@ -2763,26 +2764,26 @@ def run_v26(frozen_v25_payload_b64: str, consumed_ids_b64: str) -> dict[str, Any
             "official_submission_made": False, "official_submission_reference": None,
             "official_public_score": None, "official_private_score": None,
             "external_data_or_weights": False, "pretrained_weight_provenance": [],
-            "final_file_hashes": {"GLC25_PA_submission_v26.csv": submission["sha256"],
-                                  "assessment_per_survey_v26.csv": assessment_sha,
-                                  "v26_report.json": None, "v26_manifest.json": None},
+            "final_file_hashes": {"GLC25_PA_submission_v27.csv": submission["sha256"],
+                                  "assessment_per_survey_v27.csv": assessment_sha,
+                                  "v27_report.json": None, "v27_manifest.json": None},
             "hash_note": "A file cannot contain its own byte hash; the manifest records the report hash, "
                          "and the notebook prints the manifest hash after finalization.",
         }
-        report_path = export / "v26_report.json"
+        report_path = export / "v27_report.json"
         save_json(report_path, report)
         manifest = {
-            "experiment": EXPERIMENT, "source_commit": V26_SOURCE_COMMIT,
-            "source_base_commit": V25_COMMIT,
+            "experiment": EXPERIMENT, "source_commit": V27_SOURCE_COMMIT,
+            "source_base_commit": V26_COMMIT,
             "notebook_source_sha256": NOTEBOOK_SOURCE_SHA256,
             "kaggle": {"kernel": "con1los/geolifeclef-risk-aware-sdm-phase-1",
-                       "intended_version": 28, "runtime_gpu": torch.cuda.get_device_name(0)},
+                       "intended_version": 29, "runtime_gpu": torch.cuda.get_device_name(0)},
             "datasets": [{"slug": "geolifeclef-2025", "kind": "competition",
                           "version": "competition snapshot mounted by Kaggle"}],
             "feature_manifest": feature_manifest,
             "split_definitions": {"outer": split_manifests, "deployment": deployment_manifest,
                                   "consumed_assessment_union_count": int(len(consumed_ids)),
-                                  "v21_v22_v23_v24_v25_assessments_excluded": True},
+                                  "v21_v22_v23_v24_v25_v26_assessments_excluded": True},
             "seeds": SEEDS, "model_configurations": {
                 "matched_v23_control": {"kind": "early_fusion_residual", "width": 384,
                                         "epochs": 6, "role": "new-fold recipe-transfer control"},
@@ -2800,13 +2801,24 @@ def run_v26(frozen_v25_payload_b64: str, consumed_ids_b64: str) -> dict[str, Any
                          "raster_width": 32, "fusion_width": 320,
                          "low_rank_joint_species_head": 96,
                          "minimum_training_occurrences": 6,
-                         "outer_seeds": 1, "deployment_seeds": 2,
-                         "epochs_outer": 24, "epochs_deployment": 30,
+                         "outer_seeds": 1, "role": "fresh-fold matched control",
+                         "epochs_outer": 24,
+                         "count_target": "selection-only oracle sample-F1 top-k"},
+                "v27": {"raw_raster_encoders": list(RASTER_MODALITIES),
+                         "architecture": "depthwise residual feature pyramid with squeeze-excite",
+                         "sentinel_channels": 7,
+                         "derived_sentinel_indices": ["NDVI", "NDWI", "EVI"],
+                         "raster_width": 48, "token_width": 128, "fusion_width": 384,
+                         "low_rank_joint_species_head": 128,
+                         "modality_attention": True, "sentinel_tta_views": 4,
+                         "minimum_training_occurrences": 6,
+                         "outer_seeds": 1, "deployment_seeds": 3,
+                         "epochs_outer": 30, "epochs_deployment": 36,
                          "count_target": "selection-only oracle sample-F1 top-k"},
                 "postprocessing": {"policies": list(POLICIES), "selected": selected_policy,
-                                   "rare_v25_predictions_pinned": True,
-                                   "cardinality_bounds": [10, 40],
-                                   "candidate_relative_count_change": [-5, 5]}},
+                                   "exact_v26_control": True,
+                                   "cardinality_bounds": [8, 40],
+                                   "candidate_relative_count_change": [-10, 10]}},
             "checkpoint_identifiers_and_hashes": pre_assessment_freeze["checkpoint_sha256"],
             "pretrained_weight_provenance": [], "external_data_or_weights": False,
             "runtime_budget": {"expected_hours": [3.0, 9.5], "hard_guard_hours": MAX_TOTAL_HOURS,
@@ -2814,28 +2826,28 @@ def run_v26(frozen_v25_payload_b64: str, consumed_ids_b64: str) -> dict[str, Any
                                "finalization_reserve_minutes": 35, "single_gpu": True,
                                "models_kept_on_gpu_concurrently": 1},
             "frozen_policies": selected_policy, "pre_assessment_freeze": pre_assessment_freeze,
-            "final_file_hashes": {"GLC25_PA_submission_v26.csv": submission["sha256"],
-                                  "assessment_per_survey_v26.csv": assessment_sha,
-                                  "v26_report.json": sha256_file(report_path),
-                                  "v26_manifest.json": None},
+            "final_file_hashes": {"GLC25_PA_submission_v27.csv": submission["sha256"],
+                                  "assessment_per_survey_v27.csv": assessment_sha,
+                                  "v27_report.json": sha256_file(report_path),
+                                  "v27_manifest.json": None},
             "self_hash_note": "The manifest's own byte hash is emitted by the final notebook cell.",
         }
-        manifest_path = export / "v26_manifest.json"
+        manifest_path = export / "v27_manifest.json"
         save_json(manifest_path, manifest)
         final_hashes = {path.name: sha256_file(path) for path in sorted(export.iterdir()) if path.is_file()}
-        if set(final_hashes) != {"GLC25_PA_submission_v26.csv", "v26_report.json",
-                                "assessment_per_survey_v26.csv", "v26_manifest.json"}:
+        if set(final_hashes) != {"GLC25_PA_submission_v27.csv", "v27_report.json",
+                                "assessment_per_survey_v27.csv", "v27_manifest.json"}:
             raise ValueError(f"Export directory contains unexpected files: {sorted(final_hashes)}")
-        guard.stamp("v26_complete", eligible=gate["eligible_for_submission"],
+        guard.stamp("v27_complete", eligible=gate["eligible_for_submission"],
                     hashes=final_hashes)
         return {"status": "complete", "eligible_for_submission": gate["eligible_for_submission"],
                 "runtime_hours": guard.elapsed_hours(), "export_directory": str(export),
                 "final_hashes": final_hashes, "assessment_gain": assessment["gain"],
                 "spatial_ci95": assessment["spatial_bootstrap"]["ci95"],
                 "selected_policy": selected_policy["id"],
-                "instruction": ("Submit GLC25_PA_submission_v26.csv exactly once only if eligible is true."
+                "instruction": ("Submit GLC25_PA_submission_v27.csv exactly once only if eligible is true."
                                 if gate["eligible_for_submission"] else
-                                "DO NOT SUBMIT: keep the candidate for analysis; the frozen v25 remains control.")}
+                                "DO NOT SUBMIT: keep the candidate for analysis; the frozen v26 remains control.")}
     except Exception as error:
         failure = {"experiment": EXPERIMENT, "status": "failed",
                    "failed_stage": "see traceback", "error_type": type(error).__name__,
