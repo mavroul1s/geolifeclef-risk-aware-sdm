@@ -1,0 +1,3344 @@
+{
+  "assessment": {
+    "ablations": {
+      "without_adaptive_count": {
+        "delta_vs_full_v27": -0.002238552312107789,
+        "sample_f1": 0.2079505181824805
+      },
+      "without_candidate_ranking": {
+        "delta_vs_full_v27": -0.010422352485971648,
+        "sample_f1": 0.19976671800861664
+      },
+      "without_rare_protection": {
+        "delta_vs_full_v27": 0.0,
+        "sample_f1": 0.2101890704945883
+      }
+    },
+    "by_country": {
+      "Austria": {
+        "delta_f1": 0.001265476146117255,
+        "matched_v26_f1": 0.1426245510964524,
+        "n": 645,
+        "v27_f1": 0.1438900272425696
+      },
+      "Belgium": {
+        "delta_f1": 0.009312754946087357,
+        "matched_v26_f1": 0.20732881033454553,
+        "n": 961,
+        "v27_f1": 0.21664156528063286
+      },
+      "Bosnia and Herzegovina": {
+        "delta_f1": 0.10457160827805749,
+        "matched_v26_f1": 0.21793921423276502,
+        "n": 2,
+        "v27_f1": 0.3225108225108225
+      },
+      "Bulgaria": {
+        "delta_f1": 0.03446787520039462,
+        "matched_v26_f1": 0.09655937846836848,
+        "n": 2,
+        "v27_f1": 0.1310272536687631
+      },
+      "Croatia": {
+        "delta_f1": 0.009012219755800547,
+        "matched_v26_f1": 0.14635863826482706,
+        "n": 7,
+        "v27_f1": 0.1553708580206276
+      },
+      "Czech Republic": {
+        "delta_f1": 0.017820789410871805,
+        "matched_v26_f1": 0.16778250608872178,
+        "n": 25,
+        "v27_f1": 0.18560329549959353
+      },
+      "Denmark": {
+        "delta_f1": 0.010495375688417583,
+        "matched_v26_f1": 0.3496992093239126,
+        "n": 183,
+        "v27_f1": 0.36019458501233015
+      },
+      "France": {
+        "delta_f1": 0.020883651265928563,
+        "matched_v26_f1": 0.36482695413791394,
+        "n": 451,
+        "v27_f1": 0.3857106054038425
+      },
+      "Germany": {
+        "delta_f1": 0.002452040444478618,
+        "matched_v26_f1": 0.14260810905611512,
+        "n": 26,
+        "v27_f1": 0.14506014950059376
+      },
+      "Hungary": {
+        "delta_f1": 0.008843691715370625,
+        "matched_v26_f1": 0.1500465983224604,
+        "n": 2,
+        "v27_f1": 0.158890290037831
+      },
+      "Italy": {
+        "delta_f1": 0.013179840033923137,
+        "matched_v26_f1": 0.2074652051387687,
+        "n": 444,
+        "v27_f1": 0.22064504517269182
+      },
+      "Montenegro": {
+        "delta_f1": -0.01173783302610992,
+        "matched_v26_f1": 0.0783081218414199,
+        "n": 660,
+        "v27_f1": 0.06657028881530998
+      },
+      "Netherlands": {
+        "delta_f1": 0.01677630081699885,
+        "matched_v26_f1": 0.19658637832612222,
+        "n": 5633,
+        "v27_f1": 0.21336267914312107
+      },
+      "Poland": {
+        "delta_f1": 0.07039761703793938,
+        "matched_v26_f1": 0.26061455253695665,
+        "n": 42,
+        "v27_f1": 0.33101216957489604
+      },
+      "Portugal": {
+        "delta_f1": 0.004415954415954437,
+        "matched_v26_f1": 0.24843304843304845,
+        "n": 3,
+        "v27_f1": 0.25284900284900286
+      },
+      "Serbia": {
+        "delta_f1": -0.02918586789554531,
+        "matched_v26_f1": 0.19047619047619047,
+        "n": 1,
+        "v27_f1": 0.16129032258064516
+      },
+      "Slovakia": {
+        "delta_f1": 0.020023053753326872,
+        "matched_v26_f1": 0.16443725792257663,
+        "n": 8,
+        "v27_f1": 0.1844603116759035
+      }
+    },
+    "by_pa_distance": {
+      "100_to_200km": {
+        "delta_f1": 0.016081170877438006,
+        "matched_v26_f1": 0.18700271136966487,
+        "n": 6171,
+        "v27_f1": 0.2030838822471028
+      },
+      "200km_plus": {
+        "delta_f1": 0.007280219780219796,
+        "matched_v26_f1": 0.2656898656898657,
+        "n": 4,
+        "v27_f1": 0.2729700854700855
+      },
+      "20_to_50km": {
+        "delta_f1": 0.020602971679921474,
+        "matched_v26_f1": 0.2809789734148801,
+        "n": 622,
+        "v27_f1": 0.3015819450948016
+      },
+      "50_to_100km": {
+        "delta_f1": 0.002436356848176914,
+        "matched_v26_f1": 0.20198623175520083,
+        "n": 2298,
+        "v27_f1": 0.20442258860337775
+      }
+    },
+    "cardinality": {
+      "matched_v26_mae": 10.296536558548652,
+      "predicted_mean": 18.77724024189115,
+      "true_mean": 14.207696536558549,
+      "v27_mae": 9.225068719076416
+    },
+    "control_definition": "The exact scored v26 CSV is frozen for official-test inference. Fresh-fold F1 uses a matched v26 recipe refit because exact v26 fold checkpoints were not exported. Every survey assessed by v21 through v26 is excluded from v27 assessment.",
+    "folds": [
+      {
+        "cardinality_mae": 9.290223406435745,
+        "fold": 0,
+        "gain": 0.02192845265921312,
+        "matched_v26_cardinality_mae": 10.562615290018446,
+        "matched_v26_sample_f1": 0.2155661868852252,
+        "matched_v26_species_groups": {
+          "common_over_25": {
+            "precision": 0.18771885308297387,
+            "predicted_positives": 98525,
+            "recall": 0.31163119850376586,
+            "species": 1015,
+            "target_positives": 59349,
+            "true_positives": 18495
+          },
+          "rare_1_to_25": {
+            "precision": 0.07179487179487179,
+            "predicted_positives": 195,
+            "recall": 0.002267941033533128,
+            "species": 2395,
+            "target_positives": 6173,
+            "true_positives": 14
+          },
+          "zero_pa": {
+            "precision": null,
+            "predicted_positives": 0,
+            "recall": 0.0,
+            "species": 1606,
+            "target_positives": 1557,
+            "true_positives": 0
+          }
+        },
+        "spatial_blocks": 16,
+        "surveys": 4879,
+        "v27_sample_f1": 0.2374946395444383,
+        "v27_species_groups": {
+          "common_over_25": {
+            "precision": 0.21549026229877294,
+            "predicted_positives": 88830,
+            "recall": 0.3225328143692396,
+            "species": 1015,
+            "target_positives": 59349,
+            "true_positives": 19142
+          },
+          "rare_1_to_25": {
+            "precision": 0.04780876494023904,
+            "predicted_positives": 502,
+            "recall": 0.00388789891462822,
+            "species": 2395,
+            "target_positives": 6173,
+            "true_positives": 24
+          },
+          "zero_pa": {
+            "precision": null,
+            "predicted_positives": 0,
+            "recall": 0.0,
+            "species": 1606,
+            "target_positives": 1557,
+            "true_positives": 0
+          }
+        }
+      },
+      {
+        "cardinality_mae": 9.149667931688805,
+        "fold": 1,
+        "gain": 0.002535792756525549,
+        "matched_v26_cardinality_mae": 9.988614800759013,
+        "matched_v26_sample_f1": 0.1760536877489218,
+        "matched_v26_species_groups": {
+          "common_over_25": {
+            "precision": 0.1539894184915419,
+            "predicted_positives": 84298,
+            "recall": 0.27211554586617476,
+            "species": 1016,
+            "target_positives": 47704,
+            "true_positives": 12981
+          },
+          "rare_1_to_25": {
+            "precision": 0.03945182724252492,
+            "predicted_positives": 2408,
+            "recall": 0.008114803109250876,
+            "species": 2382,
+            "target_positives": 11707,
+            "true_positives": 95
+          },
+          "zero_pa": {
+            "precision": null,
+            "predicted_positives": 0,
+            "recall": 0.0,
+            "species": 1618,
+            "target_positives": 2729,
+            "true_positives": 0
+          }
+        },
+        "spatial_blocks": 15,
+        "surveys": 4216,
+        "v27_sample_f1": 0.17858948050544735,
+        "v27_species_groups": {
+          "common_over_25": {
+            "precision": 0.16070347226695872,
+            "predicted_positives": 77615,
+            "recall": 0.26146654368606403,
+            "species": 1016,
+            "target_positives": 47704,
+            "true_positives": 12473
+          },
+          "rare_1_to_25": {
+            "precision": 0.0540187891440501,
+            "predicted_positives": 3832,
+            "recall": 0.01768172888015717,
+            "species": 2382,
+            "target_positives": 11707,
+            "true_positives": 207
+          },
+          "zero_pa": {
+            "precision": null,
+            "predicted_positives": 0,
+            "recall": 0.0,
+            "species": 1618,
+            "target_positives": 2729,
+            "true_positives": 0
+          }
+        }
+      }
+    ],
+    "gain": 0.012938957975350471,
+    "matched_v26_sample_f1": 0.19725011251923785,
+    "now_consumed": true,
+    "rarity_groups": {
+      "folds": [
+        {
+          "fold": 0,
+          "matched_v26": {
+            "common_over_25": {
+              "precision": 0.18771885308297387,
+              "predicted_positives": 98525,
+              "recall": 0.31163119850376586,
+              "species": 1015,
+              "target_positives": 59349,
+              "true_positives": 18495
+            },
+            "rare_1_to_25": {
+              "precision": 0.07179487179487179,
+              "predicted_positives": 195,
+              "recall": 0.002267941033533128,
+              "species": 2395,
+              "target_positives": 6173,
+              "true_positives": 14
+            },
+            "zero_pa": {
+              "precision": null,
+              "predicted_positives": 0,
+              "recall": 0.0,
+              "species": 1606,
+              "target_positives": 1557,
+              "true_positives": 0
+            }
+          },
+          "v27": {
+            "common_over_25": {
+              "precision": 0.21549026229877294,
+              "predicted_positives": 88830,
+              "recall": 0.3225328143692396,
+              "species": 1015,
+              "target_positives": 59349,
+              "true_positives": 19142
+            },
+            "rare_1_to_25": {
+              "precision": 0.04780876494023904,
+              "predicted_positives": 502,
+              "recall": 0.00388789891462822,
+              "species": 2395,
+              "target_positives": 6173,
+              "true_positives": 24
+            },
+            "zero_pa": {
+              "precision": null,
+              "predicted_positives": 0,
+              "recall": 0.0,
+              "species": 1606,
+              "target_positives": 1557,
+              "true_positives": 0
+            }
+          }
+        },
+        {
+          "fold": 1,
+          "matched_v26": {
+            "common_over_25": {
+              "precision": 0.1539894184915419,
+              "predicted_positives": 84298,
+              "recall": 0.27211554586617476,
+              "species": 1016,
+              "target_positives": 47704,
+              "true_positives": 12981
+            },
+            "rare_1_to_25": {
+              "precision": 0.03945182724252492,
+              "predicted_positives": 2408,
+              "recall": 0.008114803109250876,
+              "species": 2382,
+              "target_positives": 11707,
+              "true_positives": 95
+            },
+            "zero_pa": {
+              "precision": null,
+              "predicted_positives": 0,
+              "recall": 0.0,
+              "species": 1618,
+              "target_positives": 2729,
+              "true_positives": 0
+            }
+          },
+          "v27": {
+            "common_over_25": {
+              "precision": 0.16070347226695872,
+              "predicted_positives": 77615,
+              "recall": 0.26146654368606403,
+              "species": 1016,
+              "target_positives": 47704,
+              "true_positives": 12473
+            },
+            "rare_1_to_25": {
+              "precision": 0.0540187891440501,
+              "predicted_positives": 3832,
+              "recall": 0.01768172888015717,
+              "species": 2382,
+              "target_positives": 11707,
+              "true_positives": 207
+            },
+            "zero_pa": {
+              "precision": null,
+              "predicted_positives": 0,
+              "recall": 0.0,
+              "species": 1618,
+              "target_positives": 2729,
+              "true_positives": 0
+            }
+          }
+        }
+      ],
+      "note": "Rarity is fold-specific; pooled counts are sums of fold metrics.",
+      "pooled": {
+        "common_over_25": {
+          "matched_v26": {
+            "precision": 0.17216652171772698,
+            "predicted_positives": 182823,
+            "recall": 0.2940225869429161,
+            "target_positives": 107053,
+            "true_positives": 31476
+          },
+          "v27": {
+            "precision": 0.18994262368950704,
+            "predicted_positives": 166445,
+            "recall": 0.29532100921973226,
+            "target_positives": 107053,
+            "true_positives": 31615
+          }
+        },
+        "rare_1_to_25": {
+          "matched_v26": {
+            "precision": 0.041874759892431807,
+            "predicted_positives": 2603,
+            "recall": 0.0060961968680089485,
+            "target_positives": 17880,
+            "true_positives": 109
+          },
+          "v27": {
+            "precision": 0.0532994923857868,
+            "predicted_positives": 4334,
+            "recall": 0.012919463087248322,
+            "target_positives": 17880,
+            "true_positives": 231
+          }
+        },
+        "zero_pa": {
+          "matched_v26": {
+            "precision": null,
+            "predicted_positives": 0,
+            "recall": 0.0,
+            "target_positives": 4286,
+            "true_positives": 0
+          },
+          "v27": {
+            "precision": null,
+            "predicted_positives": 0,
+            "recall": 0.0,
+            "target_positives": 4286,
+            "true_positives": 0
+          }
+        }
+      }
+    },
+    "spatial_blocks": 31,
+    "spatial_bootstrap": {
+      "ci95": [
+        0.003108585013168653,
+        0.021427576598965895
+      ],
+      "iterations": 500,
+      "mean_difference": 0.012938957975350471,
+      "seed": 20262704,
+      "spatial_blocks": 31,
+      "unit": "one_degree_spatial_block"
+    },
+    "surveys": 9095,
+    "used_for_selection": false,
+    "v27_sample_f1": 0.2101890704945883,
+    "warning": "Matched-recipe spatial cross-fit evidence, not a hidden-test score."
+  },
+  "consumed_assessment_union": {
+    "payload_sha256": "a9d8b4b80a8dcf260c8e4e486d897e75538f60453da430d4ec9e3e1b20e87373",
+    "surveys": 73487
+  },
+  "experiment": "v27_multiscale_shift_aware_ensemble",
+  "external_data_or_weights": false,
+  "final_file_hashes": {
+    "GLC25_PA_submission_v27.csv": "32cd02788d910abe0cd18715da00f201a52a371a2135d17399301dd7e532f710",
+    "assessment_per_survey_v27.csv": "cb76e350790cd6894246626cf1731dd085da716951dec5be7a992d90b491a2ae",
+    "v27_manifest.json": null,
+    "v27_report.json": null
+  },
+  "frozen_v26_baseline": {
+    "assessment_consumed": true,
+    "checks": {
+      "dimensions": true,
+      "exact_submission_sha256": true,
+      "payload_sha256": true,
+      "prediction_rows": true,
+      "raw_sha256": true
+    },
+    "private_score": 0.20693,
+    "public_score": 0.23052,
+    "storage": "lossless counts:uint8 plus species-column:uint16, LZMA compressed",
+    "submission_sha256": "67937cf92f0b4626b7b3c643ababbd0c7a4f39801909e4bd5646b532371c21a9"
+  },
+  "hash_note": "A file cannot contain its own byte hash; the manifest records the report hash, and the notebook prints the manifest hash after finalization.",
+  "integrity": {
+    "assessment_disjoint_from_consumed_union": true,
+    "assessment_predictions_frozen": true,
+    "expected_dimensions": true,
+    "fresh_assessment_ids": true,
+    "frozen_v26_exact": true,
+    "no_external_pretrained_weights": true,
+    "notebook_tests_before_and_after": true,
+    "official_competition_only": true,
+    "runtime_within_limit": true,
+    "selection_calibration_assessment_separate": true,
+    "submission_schema_valid": true,
+    "submission_unchanged_after_freeze": true,
+    "test_labels_unused": true,
+    "twenty_km_buffer": true
+  },
+  "official_private_score": null,
+  "official_public_score": null,
+  "official_submission_made": false,
+  "official_submission_reference": null,
+  "policy_trials": [
+    {
+      "fold_scores": [
+        0.2286040379988213,
+        0.23443791270386583
+      ],
+      "intervention": 0.0,
+      "policy_id": "control",
+      "pooled_calibration_f1": 0.23152097535134356,
+      "surveys": 5544
+    },
+    {
+      "fold_scores": [
+        0.23036015260070203,
+        0.23573002627121836
+      ],
+      "intervention": 0.5,
+      "policy_id": "pyramid_rank_25",
+      "pooled_calibration_f1": 0.2330450894359602,
+      "surveys": 5544
+    },
+    {
+      "fold_scores": [
+        0.23898549470873384,
+        0.2429368121977247
+      ],
+      "intervention": 0.8,
+      "policy_id": "pyramid_rank_40",
+      "pooled_calibration_f1": 0.24096115345322927,
+      "surveys": 5544
+    },
+    {
+      "fold_scores": [
+        0.23736534654925423,
+        0.2413028391277956
+      ],
+      "intervention": 1.0999999999999999,
+      "policy_id": "pyramid_count_35",
+      "pooled_calibration_f1": 0.23933409283852491,
+      "surveys": 5544
+    },
+    {
+      "fold_scores": [
+        0.24169662034441844,
+        0.2446593357358824
+      ],
+      "intervention": 1.45,
+      "policy_id": "pyramid_count_50",
+      "pooled_calibration_f1": 0.2431779780401504,
+      "surveys": 5544
+    },
+    {
+      "fold_scores": [
+        0.24462974434746773,
+        0.24694482432232967
+      ],
+      "intervention": 1.83,
+      "policy_id": "pyramid_count_65",
+      "pooled_calibration_f1": 0.24578728433489871,
+      "surveys": 5544
+    }
+  ],
+  "pre_assessment_freeze": {
+    "all_models_and_policies_frozen": true,
+    "assessment_prediction_sha256": {
+      "fold_0": "17ee4e643e1751353ac114a892f7cc4d1b2ec78e6c167ca3d69b2f968e8e9c04",
+      "fold_1": "8d950b4eec0283ff8a12d2aaf6fdff375758e00679fa6a603f5433a560763539"
+    },
+    "assessment_reporting_started": false,
+    "checkpoint_sha256": {
+      "deployment/v27_pyramid_seed_0.pt": "bd5633489207c933dcb3e9ccf85c21b0b8e2ca7f3d8ef182df3cd14ec9e4a253",
+      "deployment/v27_pyramid_seed_1.pt": "ccfa6e625b9fab78dc49bac5a58c3811f1e3d62d88eea136ddd56e5c4fa322f6",
+      "deployment/v27_pyramid_seed_2.pt": "d405c717e31f3045b0dd407377f9b14933086825741fa3097d3937195dea8439",
+      "fold_0/matched_v23_control.pt": "f472c3937ef378a0fc2808ae806f4670a2efe3a00f9a0b31a1bb6050a3854078",
+      "fold_0/matched_v24_multimodal.pt": "d6524fce96e32f3f4f19770aae7d1269ea07935de1e0d7e69282dd23c3a9665b",
+      "fold_0/matched_v26_spatial_raster.pt": "0a1c273cccee79018113b8187928e018943646ee1ca8f97bee562e7400f4684c",
+      "fold_0/v25_candidate_seed_0.pt": "bdd17d19ab07b7385c2c5b5198d9162664c84e716521e4b8c6295ce7f054dd9e",
+      "fold_0/v25_candidate_seed_1.pt": "6bc8d5adf54d927bfd08c1ba13fc1be0a42d567bdddc1209000218c4f183966e",
+      "fold_0/v27_pyramid_raster.pt": "afe3ad6ba30023557552159f4cf9a69d09d7e97e3713fdc71a11463296cc403a",
+      "fold_1/matched_v23_control.pt": "d47a293b33952dccbe6dba46e374c30caa3237a83b4b6bab1df8301b42f3f094",
+      "fold_1/matched_v24_multimodal.pt": "47072f8e986f7665dbb728d5ad8f29d4f08e145b21509bf413a26373c1800201",
+      "fold_1/matched_v26_spatial_raster.pt": "84d9c444776b27d22636d2aa2fd51cfdd2dbfd8af0cfd8098ff597e57f3c63a0",
+      "fold_1/v25_candidate_seed_0.pt": "1a09e3255b9421bbad15edf217fcd6332d8d56a3fcc0468af758cb90a5232e69",
+      "fold_1/v25_candidate_seed_1.pt": "8fb9557e713f531d2deecfe6b8cfa2a3e05f7b68a68cbd54e42e77fa9e268ff0",
+      "fold_1/v27_pyramid_raster.pt": "38184ae76d239fd4e708462c8cb6d016da1c25d39424d783efa760e464fd4b0e"
+    },
+    "selected_policy": {
+      "alpha_far": 0.6,
+      "alpha_near": 0.48,
+      "count_weight": 0.65,
+      "id": "pyramid_count_65",
+      "max_count_change": 10,
+      "maximum_count": 40,
+      "minimum_count": 8,
+      "pooled_calibration_f1": 0.24578728433489871,
+      "rare_keep_bonus": 0.0
+    },
+    "submission_sha256": "32cd02788d910abe0cd18715da00f201a52a371a2135d17399301dd7e532f710"
+  },
+  "pretrained_weight_provenance": [],
+  "registered_max_total_hours": 10.75,
+  "runtime_hours": 2.0682214702091666,
+  "runtime_plan": {
+    "expected_hours": [
+      3.0,
+      9.5
+    ],
+    "feature_preparation_cap_hours": 2.75,
+    "finalization_reserve_minutes": 35,
+    "hard_guard_hours": 10.75,
+    "kaggle_limit_hours": 12.0,
+    "models_trained_sequentially": 15,
+    "v23_reference_runtime_hours": 6.61616224692927,
+    "v24_reference_runtime_hours": 0.9811864720533332,
+    "v25_reference_runtime_hours": 0.9970158073,
+    "v26_reference_runtime_hours": 1.786431835,
+    "vram_estimate_gb": "under 6 on one T4"
+  },
+  "selected_policy": {
+    "alpha_far": 0.6,
+    "alpha_near": 0.48,
+    "count_weight": 0.65,
+    "id": "pyramid_count_65",
+    "max_count_change": 10,
+    "maximum_count": 40,
+    "minimum_count": 8,
+    "pooled_calibration_f1": 0.24578728433489871,
+    "rare_keep_bonus": 0.0
+  },
+  "status": "complete",
+  "submission": {
+    "checks": {
+      "cardinality_bounds": true,
+      "columns": true,
+      "row_count": true,
+      "row_order": true,
+      "unique_ids": true,
+      "vocabulary_and_unique_predictions": true
+    },
+    "prediction_count_max": 37,
+    "prediction_count_mean": 24.90510010822511,
+    "prediction_count_min": 10,
+    "rows": 14784,
+    "sha256": "32cd02788d910abe0cd18715da00f201a52a371a2135d17399301dd7e532f710",
+    "species_vocabulary": 5016
+  },
+  "submission_gate": {
+    "all_integrity_checks": true,
+    "cardinality_mae_not_materially_worse": true,
+    "common_species_f1_protected": true,
+    "eligible_for_submission": true,
+    "nonzero_new_component": true,
+    "not_one_country_only": true,
+    "pooled_gain_positive": true,
+    "positive_gain_each_fold": true,
+    "rare_species_no_severe_collapse": true,
+    "spatial_ci_lower_positive": true
+  },
+  "training": {
+    "deployment": {
+      "checkpoint_sha256": {
+        "v27_pyramid_seed_0.pt": "bd5633489207c933dcb3e9ccf85c21b0b8e2ca7f3d8ef182df3cd14ec9e4a253",
+        "v27_pyramid_seed_1.pt": "ccfa6e625b9fab78dc49bac5a58c3811f1e3d62d88eea136ddd56e5c4fa322f6",
+        "v27_pyramid_seed_2.pt": "d405c717e31f3045b0dd407377f9b14933086825741fa3097d3937195dea8439"
+      },
+      "cooccurrence_sha256": "62f005eb578199f6d7b968c7192f84476acd8752d80dc61569ef02d2030c8c6f",
+      "frequency_groups": {
+        "common_over_25": 1899,
+        "rare_1_to_25": 2860,
+        "zero_pa": 257
+      },
+      "oracle_count": {
+        "country_means": {
+          "Andorra": 14.75,
+          "Austria": 26.764143426294822,
+          "Belgium": 13.760511882998172,
+          "Bosnia and Herzegovina": 35.77777777777778,
+          "Bulgaria": 31.43103448275862,
+          "Croatia": 30.928571428571427,
+          "Czech Republic": 22.237868696479545,
+          "Denmark": 15.110413793103449,
+          "France": 18.437628912205184,
+          "Germany": 13.599624060150376,
+          "Greece": 33.54545454545455,
+          "Hungary": 41.791666666666664,
+          "Ireland": 8.916666666666666,
+          "Italy": 16.924050632911392,
+          "Latvia": 39.964285714285715,
+          "Luxembourg": 19.0,
+          "Monaco": 21.166666666666668,
+          "Montenegro": 22.597345132743364,
+          "Netherlands": 11.943531309871936,
+          "Norway": 7.2,
+          "Poland": 17.661971830985916,
+          "Portugal": 12.166666666666666,
+          "Romania": 22.776758409785934,
+          "Serbia": 15.556962025316455,
+          "Slovakia": 33.3875968992248,
+          "Slovenia": 33.54545454545455,
+          "Spain": 22.04421052631579,
+          "Switzerland": 30.479166666666668,
+          "The former Yugoslav Republic of Macedonia": 11.75
+        },
+        "feature_names": [
+          "neural_log_richness",
+          "top1",
+          "top5_mean",
+          "top20_mean",
+          "top40_mean",
+          "top40_std",
+          "rank_margin_20_40",
+          "log_pa_distance",
+          "log_po_coverage",
+          "month_sin",
+          "month_cos",
+          "country_training_richness"
+        ],
+        "global_mean": 16.267894936173057,
+        "predicted_count_mean": 20.118699204899425,
+        "selection_mae": 7.348178884957346,
+        "selection_oracle_count_mean": 21.249820916905446,
+        "target": "per-survey oracle top-k maximizing sample F1 on selection only"
+      },
+      "test": {
+        "ood_risk_mean": 0.5793433856027366,
+        "pa_distance_km_mean": 111.87269796368437,
+        "po_coverage_mean": 12.874276161193848,
+        "predicted_cardinality_max": 37,
+        "predicted_cardinality_mean": 24.90510010822511,
+        "predicted_cardinality_min": 10,
+        "pyramid_spatial_seeds": 3,
+        "sentinel_tta_views": 4
+      },
+      "training": [
+        {
+          "active_species": 3171,
+          "augmentation": "Sentinel random horizontal/vertical flips and quarter rotations",
+          "best_epoch": 21,
+          "checkpoint_sha256": "bd5633489207c933dcb3e9ccf85c21b0b8e2ca7f3d8ef182df3cd14ec9e4a253",
+          "history": [
+            {
+              "epoch": 1,
+              "examples_per_second": 855.5817053124807,
+              "loss": 0.23456877394227607,
+              "seconds": 52.463721140000416,
+              "selection_f1": null
+            },
+            {
+              "epoch": 2,
+              "examples_per_second": 1680.5228560357964,
+              "loss": 0.16019926757157535,
+              "seconds": 26.710139548999905,
+              "selection_f1": null
+            },
+            {
+              "epoch": 3,
+              "examples_per_second": 1713.675994138329,
+              "loss": 0.14192232652716194,
+              "seconds": 26.193399542000407,
+              "selection_f1": null
+            },
+            {
+              "epoch": 4,
+              "examples_per_second": 1753.7426851321613,
+              "loss": 0.1298191004801246,
+              "seconds": 25.594974895999258,
+              "selection_f1": null
+            },
+            {
+              "epoch": 5,
+              "examples_per_second": 1750.6722295673844,
+              "loss": 0.12067854542117641,
+              "seconds": 25.639865213999656,
+              "selection_f1": null
+            },
+            {
+              "epoch": 6,
+              "examples_per_second": 1759.0954009187412,
+              "loss": 0.11265741435060961,
+              "seconds": 25.517092465000133,
+              "selection_f1": null
+            },
+            {
+              "epoch": 7,
+              "examples_per_second": 1759.8027924570183,
+              "loss": 0.1054163469468028,
+              "seconds": 25.506835307000074,
+              "selection_f1": null
+            },
+            {
+              "epoch": 8,
+              "examples_per_second": 1732.5353844617164,
+              "loss": 0.0988080262094434,
+              "seconds": 25.908273160000135,
+              "selection_f1": null
+            },
+            {
+              "epoch": 9,
+              "examples_per_second": 1715.6583626956422,
+              "loss": 0.09328357363946535,
+              "seconds": 26.163134209000418,
+              "selection_f1": null
+            },
+            {
+              "epoch": 10,
+              "examples_per_second": 1743.192277687134,
+              "loss": 0.08791768588319078,
+              "seconds": 25.749884607999775,
+              "selection_f1": null
+            },
+            {
+              "epoch": 11,
+              "examples_per_second": 1749.899767470649,
+              "loss": 0.0830380533929709,
+              "seconds": 25.65118347600037,
+              "selection_f1": null
+            },
+            {
+              "epoch": 12,
+              "examples_per_second": 1719.9963277781615,
+              "loss": 0.07856177546799821,
+              "seconds": 26.097148740999728,
+              "selection_f1": null
+            },
+            {
+              "epoch": 13,
+              "examples_per_second": 1730.7824931829102,
+              "loss": 0.07439886613570512,
+              "seconds": 25.93451238199941,
+              "selection_f1": null
+            },
+            {
+              "epoch": 14,
+              "examples_per_second": 1763.0324500889,
+              "loss": 0.07073642528514289,
+              "seconds": 25.460109936000663,
+              "selection_f1": null
+            },
+            {
+              "epoch": 15,
+              "examples_per_second": 1760.9969309642024,
+              "loss": 0.06712297545532885,
+              "seconds": 25.489539027999854,
+              "selection_f1": null
+            },
+            {
+              "epoch": 16,
+              "examples_per_second": 1767.1689963571903,
+              "loss": 0.06380268162445515,
+              "seconds": 25.40051352899991,
+              "selection_f1": null
+            },
+            {
+              "epoch": 17,
+              "examples_per_second": 1728.9266769269263,
+              "loss": 0.06116451677635,
+              "seconds": 25.962350282999978,
+              "selection_f1": null
+            },
+            {
+              "epoch": 18,
+              "examples_per_second": 1485.442603808914,
+              "loss": 0.05836386790581544,
+              "seconds": 30.21792958199967,
+              "selection_f1": 0.33191948097161955
+            },
+            {
+              "epoch": 19,
+              "examples_per_second": 1723.0565320912665,
+              "loss": 0.055883449380393864,
+              "seconds": 26.050799357999495,
+              "selection_f1": null
+            },
+            {
+              "epoch": 20,
+              "examples_per_second": 1740.7873483664628,
+              "loss": 0.053723005804035294,
+              "seconds": 25.78545854099957,
+              "selection_f1": null
+            },
+            {
+              "epoch": 21,
+              "examples_per_second": 1651.2175543431033,
+              "loss": 0.051671312880696776,
+              "seconds": 27.184182897000028,
+              "selection_f1": 0.33264751549671073
+            },
+            {
+              "epoch": 22,
+              "examples_per_second": 1769.0566891243438,
+              "loss": 0.04980418836952682,
+              "seconds": 25.373409611999705,
+              "selection_f1": null
+            },
+            {
+              "epoch": 23,
+              "examples_per_second": 1744.5177151398104,
+              "loss": 0.04811236297178378,
+              "seconds": 25.730320540999855,
+              "selection_f1": null
+            },
+            {
+              "epoch": 24,
+              "examples_per_second": 1635.457809022197,
+              "loss": 0.04658966638151316,
+              "seconds": 27.446137560000352,
+              "selection_f1": 0.3253436692129507
+            },
+            {
+              "epoch": 25,
+              "examples_per_second": 1774.0002114352521,
+              "loss": 0.04513001064405482,
+              "seconds": 25.302702734000377,
+              "selection_f1": null
+            },
+            {
+              "epoch": 26,
+              "examples_per_second": 1770.7855140142353,
+              "loss": 0.04392577350542298,
+              "seconds": 25.34863745199982,
+              "selection_f1": null
+            },
+            {
+              "epoch": 27,
+              "examples_per_second": 1611.7727590833238,
+              "loss": 0.04291714431818952,
+              "seconds": 27.849459390000447,
+              "selection_f1": 0.32690448205748057
+            },
+            {
+              "epoch": 28,
+              "examples_per_second": 1762.114465295659,
+              "loss": 0.04190467316073452,
+              "seconds": 25.47337354299998,
+              "selection_f1": null
+            },
+            {
+              "epoch": 29,
+              "examples_per_second": 1775.7824064872152,
+              "loss": 0.04102789149160378,
+              "seconds": 25.277308659000482,
+              "selection_f1": null
+            },
+            {
+              "epoch": 30,
+              "examples_per_second": 1637.129492441451,
+              "loss": 0.04029423509737655,
+              "seconds": 27.41811213299934,
+              "selection_f1": 0.327524548461122
+            },
+            {
+              "epoch": 31,
+              "examples_per_second": 1765.6856476967243,
+              "loss": 0.03971718559333961,
+              "seconds": 25.421852444999786,
+              "selection_f1": null
+            },
+            {
+              "epoch": 32,
+              "examples_per_second": 1735.1824424680353,
+              "loss": 0.03921583338464499,
+              "seconds": 25.868749534000017,
+              "selection_f1": null
+            },
+            {
+              "epoch": 33,
+              "examples_per_second": 1644.2719930001401,
+              "loss": 0.03874690948897358,
+              "seconds": 27.29901147200053,
+              "selection_f1": 0.326254672221417
+            },
+            {
+              "epoch": 34,
+              "examples_per_second": 1774.4875864217076,
+              "loss": 0.0384440309415525,
+              "seconds": 25.29575317600029,
+              "selection_f1": null
+            },
+            {
+              "epoch": 35,
+              "examples_per_second": 1744.7394823949649,
+              "loss": 0.03813460047103885,
+              "seconds": 25.72705005700027,
+              "selection_f1": null
+            },
+            {
+              "epoch": 36,
+              "examples_per_second": 1629.8540794158728,
+              "loss": 0.037948547612641575,
+              "seconds": 27.540502286000446,
+              "selection_f1": 0.32736984201613334
+            }
+          ],
+          "minimum_training_occurrences": 6,
+          "parameters": 5583782,
+          "selection_f1": 0.33264751549671073
+        },
+        {
+          "active_species": 3171,
+          "augmentation": "Sentinel random horizontal/vertical flips and quarter rotations",
+          "best_epoch": 21,
+          "checkpoint_sha256": "ccfa6e625b9fab78dc49bac5a58c3811f1e3d62d88eea136ddd56e5c4fa322f6",
+          "history": [
+            {
+              "epoch": 1,
+              "examples_per_second": 1705.1099303509925,
+              "loss": 0.23554847643201285,
+              "seconds": 26.324988905999817,
+              "selection_f1": null
+            },
+            {
+              "epoch": 2,
+              "examples_per_second": 1760.8785373394192,
+              "loss": 0.16027942095946535,
+              "seconds": 25.491252830999656,
+              "selection_f1": null
+            },
+            {
+              "epoch": 3,
+              "examples_per_second": 1742.2884427310378,
+              "loss": 0.14241318881483803,
+              "seconds": 25.763242697999885,
+              "selection_f1": null
+            },
+            {
+              "epoch": 4,
+              "examples_per_second": 1742.9154295936892,
+              "loss": 0.13037494654586354,
+              "seconds": 25.75397477000024,
+              "selection_f1": null
+            },
+            {
+              "epoch": 5,
+              "examples_per_second": 1768.960860930906,
+              "loss": 0.12053147946278835,
+              "seconds": 25.37478414100042,
+              "selection_f1": null
+            },
+            {
+              "epoch": 6,
+              "examples_per_second": 1772.307682611935,
+              "loss": 0.1123506123069802,
+              "seconds": 25.32686645800004,
+              "selection_f1": null
+            },
+            {
+              "epoch": 7,
+              "examples_per_second": 1757.8214187959297,
+              "loss": 0.10544738301957397,
+              "seconds": 25.535585992999586,
+              "selection_f1": null
+            },
+            {
+              "epoch": 8,
+              "examples_per_second": 1748.3327678738142,
+              "loss": 0.09933251808750086,
+              "seconds": 25.674174175999724,
+              "selection_f1": null
+            },
+            {
+              "epoch": 9,
+              "examples_per_second": 1772.0531318930023,
+              "loss": 0.09327149837873862,
+              "seconds": 25.330504595000093,
+              "selection_f1": null
+            },
+            {
+              "epoch": 10,
+              "examples_per_second": 1740.1092514910604,
+              "loss": 0.08783461428710802,
+              "seconds": 25.795506783000747,
+              "selection_f1": null
+            },
+            {
+              "epoch": 11,
+              "examples_per_second": 1747.5740901466527,
+              "loss": 0.08311982164370425,
+              "seconds": 25.685320155000227,
+              "selection_f1": null
+            },
+            {
+              "epoch": 12,
+              "examples_per_second": 1732.7236912461367,
+              "loss": 0.07875166820636459,
+              "seconds": 25.905457533000117,
+              "selection_f1": null
+            },
+            {
+              "epoch": 13,
+              "examples_per_second": 1766.6407918028804,
+              "loss": 0.07433071465948721,
+              "seconds": 25.40810797999984,
+              "selection_f1": null
+            },
+            {
+              "epoch": 14,
+              "examples_per_second": 1768.1399429104101,
+              "loss": 0.07078552692793295,
+              "seconds": 25.386565232000066,
+              "selection_f1": null
+            },
+            {
+              "epoch": 15,
+              "examples_per_second": 1703.3908433872416,
+              "loss": 0.06721143295523806,
+              "seconds": 26.351556470000105,
+              "selection_f1": null
+            },
+            {
+              "epoch": 16,
+              "examples_per_second": 1756.3780644836872,
+              "loss": 0.06432882777839122,
+              "seconds": 25.556570597000245,
+              "selection_f1": null
+            },
+            {
+              "epoch": 17,
+              "examples_per_second": 1769.877942339811,
+              "loss": 0.061291084120750405,
+              "seconds": 25.36163592199955,
+              "selection_f1": null
+            },
+            {
+              "epoch": 18,
+              "examples_per_second": 1630.610591843025,
+              "loss": 0.058659904973081524,
+              "seconds": 27.527725028000532,
+              "selection_f1": 0.3369261441625659
+            },
+            {
+              "epoch": 19,
+              "examples_per_second": 1764.355692225745,
+              "loss": 0.05611412925312701,
+              "seconds": 25.441015208999488,
+              "selection_f1": null
+            },
+            {
+              "epoch": 20,
+              "examples_per_second": 1760.2736869622358,
+              "loss": 0.05391702568103525,
+              "seconds": 25.50001192000036,
+              "selection_f1": null
+            },
+            {
+              "epoch": 21,
+              "examples_per_second": 1652.5586521690216,
+              "loss": 0.05183033907484458,
+              "seconds": 27.16212216799977,
+              "selection_f1": 0.3388557949308813
+            },
+            {
+              "epoch": 22,
+              "examples_per_second": 1760.6794312738004,
+              "loss": 0.05003217571336019,
+              "seconds": 25.49413550400004,
+              "selection_f1": null
+            },
+            {
+              "epoch": 23,
+              "examples_per_second": 1717.261731550007,
+              "loss": 0.048348147595280895,
+              "seconds": 26.13870627599954,
+              "selection_f1": null
+            },
+            {
+              "epoch": 24,
+              "examples_per_second": 1635.2675690621525,
+              "loss": 0.0470877458796489,
+              "seconds": 27.449330524999823,
+              "selection_f1": 0.3345042883056623
+            },
+            {
+              "epoch": 25,
+              "examples_per_second": 1726.5130329004076,
+              "loss": 0.0455158154779161,
+              "seconds": 25.998645329999817,
+              "selection_f1": null
+            },
+            {
+              "epoch": 26,
+              "examples_per_second": 1719.2873299266735,
+              "loss": 0.04420602727865393,
+              "seconds": 26.107910655000524,
+              "selection_f1": null
+            },
+            {
+              "epoch": 27,
+              "examples_per_second": 1658.5411146485708,
+              "loss": 0.04300566888510906,
+              "seconds": 27.06414667899935,
+              "selection_f1": 0.32962483221011807
+            },
+            {
+              "epoch": 28,
+              "examples_per_second": 1783.5810925092314,
+              "loss": 0.04215492121339984,
+              "seconds": 25.166783943000155,
+              "selection_f1": null
+            },
+            {
+              "epoch": 29,
+              "examples_per_second": 1773.6663153719649,
+              "loss": 0.041347727279865375,
+              "seconds": 25.307466016000035,
+              "selection_f1": null
+            },
+            {
+              "epoch": 30,
+              "examples_per_second": 1661.852403872554,
+              "loss": 0.04054611212860415,
+              "seconds": 27.01022057999944,
+              "selection_f1": 0.33106291863567494
+            },
+            {
+              "epoch": 31,
+              "examples_per_second": 1777.8514817299429,
+              "loss": 0.03996107697785319,
+              "seconds": 25.247890761000235,
+              "selection_f1": null
+            },
+            {
+              "epoch": 32,
+              "examples_per_second": 1741.4042596885931,
+              "loss": 0.03945936889907388,
+              "seconds": 25.77632376299971,
+              "selection_f1": null
+            },
+            {
+              "epoch": 33,
+              "examples_per_second": 1644.5265178147913,
+              "loss": 0.0389835459912607,
+              "seconds": 27.294786380000005,
+              "selection_f1": 0.3297426768736885
+            },
+            {
+              "epoch": 34,
+              "examples_per_second": 1766.2389980515861,
+              "loss": 0.038693459329682094,
+              "seconds": 25.4138879559996,
+              "selection_f1": null
+            },
+            {
+              "epoch": 35,
+              "examples_per_second": 1752.7371357352783,
+              "loss": 0.03843055567785785,
+              "seconds": 25.609658792999653,
+              "selection_f1": null
+            },
+            {
+              "epoch": 36,
+              "examples_per_second": 1574.6402738802174,
+              "loss": 0.03819620637691826,
+              "seconds": 28.50619328399989,
+              "selection_f1": 0.32856798186999026
+            }
+          ],
+          "minimum_training_occurrences": 6,
+          "parameters": 5583782,
+          "selection_f1": 0.3388557949308813
+        },
+        {
+          "active_species": 3171,
+          "augmentation": "Sentinel random horizontal/vertical flips and quarter rotations",
+          "best_epoch": 27,
+          "checkpoint_sha256": "d405c717e31f3045b0dd407377f9b14933086825741fa3097d3937195dea8439",
+          "history": [
+            {
+              "epoch": 1,
+              "examples_per_second": 1752.1733863809638,
+              "loss": 0.2333380850793222,
+              "seconds": 25.617898518999937,
+              "selection_f1": null
+            },
+            {
+              "epoch": 2,
+              "examples_per_second": 1762.499543900138,
+              "loss": 0.160340125519875,
+              "seconds": 25.46780800900069,
+              "selection_f1": null
+            },
+            {
+              "epoch": 3,
+              "examples_per_second": 1749.4343240145197,
+              "loss": 0.14153649792031006,
+              "seconds": 25.658008067999617,
+              "selection_f1": null
+            },
+            {
+              "epoch": 4,
+              "examples_per_second": 1712.5451363624275,
+              "loss": 0.12961328057982852,
+              "seconds": 26.210696025999823,
+              "selection_f1": null
+            },
+            {
+              "epoch": 5,
+              "examples_per_second": 1751.4595222753696,
+              "loss": 0.12008374264424734,
+              "seconds": 25.6283399240001,
+              "selection_f1": null
+            },
+            {
+              "epoch": 6,
+              "examples_per_second": 1708.8914107408966,
+              "loss": 0.1118811318011342,
+              "seconds": 26.266736270000365,
+              "selection_f1": null
+            },
+            {
+              "epoch": 7,
+              "examples_per_second": 1698.4679944239444,
+              "loss": 0.10471410663549847,
+              "seconds": 26.427933965999728,
+              "selection_f1": null
+            },
+            {
+              "epoch": 8,
+              "examples_per_second": 1733.2688932067497,
+              "loss": 0.0984421138445785,
+              "seconds": 25.897308937999696,
+              "selection_f1": null
+            },
+            {
+              "epoch": 9,
+              "examples_per_second": 1740.665599191839,
+              "loss": 0.09261605420742451,
+              "seconds": 25.78726207999989,
+              "selection_f1": null
+            },
+            {
+              "epoch": 10,
+              "examples_per_second": 1705.7986263767505,
+              "loss": 0.08748590826073974,
+              "seconds": 26.31436050299999,
+              "selection_f1": null
+            },
+            {
+              "epoch": 11,
+              "examples_per_second": 1747.3247680716402,
+              "loss": 0.08250824432101947,
+              "seconds": 25.68898513900058,
+              "selection_f1": null
+            },
+            {
+              "epoch": 12,
+              "examples_per_second": 1746.6873208659338,
+              "loss": 0.07807472621126169,
+              "seconds": 25.698360241000046,
+              "selection_f1": null
+            },
+            {
+              "epoch": 13,
+              "examples_per_second": 1738.7893937714214,
+              "loss": 0.07411070217017192,
+              "seconds": 25.815087301999483,
+              "selection_f1": null
+            },
+            {
+              "epoch": 14,
+              "examples_per_second": 1743.598348462279,
+              "loss": 0.07039530020121103,
+              "seconds": 25.74388765599997,
+              "selection_f1": null
+            },
+            {
+              "epoch": 15,
+              "examples_per_second": 1752.1880987866386,
+              "loss": 0.06669192775739692,
+              "seconds": 25.617683416000546,
+              "selection_f1": null
+            },
+            {
+              "epoch": 16,
+              "examples_per_second": 1713.7211246454528,
+              "loss": 0.06370120084926838,
+              "seconds": 26.19270974400024,
+              "selection_f1": null
+            },
+            {
+              "epoch": 17,
+              "examples_per_second": 1719.1605548349733,
+              "loss": 0.060887401442885423,
+              "seconds": 26.10983591599961,
+              "selection_f1": null
+            },
+            {
+              "epoch": 18,
+              "examples_per_second": 1625.4223380547414,
+              "loss": 0.05823117069909829,
+              "seconds": 27.615591928999493,
+              "selection_f1": 0.3306573364931482
+            },
+            {
+              "epoch": 19,
+              "examples_per_second": 1747.7022776968247,
+              "loss": 0.055617417462538114,
+              "seconds": 25.683436231000087,
+              "selection_f1": null
+            },
+            {
+              "epoch": 20,
+              "examples_per_second": 1728.905643790297,
+              "loss": 0.05352688163779835,
+              "seconds": 25.96266612999989,
+              "selection_f1": null
+            },
+            {
+              "epoch": 21,
+              "examples_per_second": 1605.007773401077,
+              "loss": 0.051484370467676066,
+              "seconds": 27.966842742999688,
+              "selection_f1": 0.3293853740390004
+            },
+            {
+              "epoch": 22,
+              "examples_per_second": 1708.202407369771,
+              "loss": 0.049559302166850255,
+              "seconds": 26.27733095700023,
+              "selection_f1": null
+            },
+            {
+              "epoch": 23,
+              "examples_per_second": 1731.148279509852,
+              "loss": 0.04785156283578819,
+              "seconds": 25.92903249900064,
+              "selection_f1": null
+            },
+            {
+              "epoch": 24,
+              "examples_per_second": 1629.3161267874536,
+              "loss": 0.04637249617408277,
+              "seconds": 27.54959535600028,
+              "selection_f1": 0.32992188472355183
+            },
+            {
+              "epoch": 25,
+              "examples_per_second": 1721.739211284395,
+              "loss": 0.045050534638546226,
+              "seconds": 26.070731099000113,
+              "selection_f1": null
+            },
+            {
+              "epoch": 26,
+              "examples_per_second": 1703.0819243834528,
+              "loss": 0.043708312248141666,
+              "seconds": 26.356336331999955,
+              "selection_f1": null
+            },
+            {
+              "epoch": 27,
+              "examples_per_second": 1617.743974975684,
+              "loss": 0.04269138578009557,
+              "seconds": 27.746664920000512,
+              "selection_f1": 0.33153247966552735
+            },
+            {
+              "epoch": 28,
+              "examples_per_second": 1700.2714895991267,
+              "loss": 0.04174137064130974,
+              "seconds": 26.399901589000365,
+              "selection_f1": null
+            },
+            {
+              "epoch": 29,
+              "examples_per_second": 1756.0236506033655,
+              "loss": 0.04090542843041288,
+              "seconds": 25.561728615999527,
+              "selection_f1": null
+            },
+            {
+              "epoch": 30,
+              "examples_per_second": 1648.0704884624972,
+              "loss": 0.04019120870059772,
+              "seconds": 27.236092335999274,
+              "selection_f1": 0.326703665612866
+            },
+            {
+              "epoch": 31,
+              "examples_per_second": 1743.8272226520703,
+              "loss": 0.03955098595788467,
+              "seconds": 25.740508816999863,
+              "selection_f1": null
+            },
+            {
+              "epoch": 32,
+              "examples_per_second": 1747.3816650391589,
+              "loss": 0.03909017504369352,
+              "seconds": 25.688148672999887,
+              "selection_f1": null
+            },
+            {
+              "epoch": 33,
+              "examples_per_second": 1623.6012262500399,
+              "loss": 0.03863002284941347,
+              "seconds": 27.646566948999862,
+              "selection_f1": 0.32524960194428826
+            },
+            {
+              "epoch": 34,
+              "examples_per_second": 1715.6243865824276,
+              "loss": 0.03832071037259629,
+              "seconds": 26.163652342000205,
+              "selection_f1": null
+            },
+            {
+              "epoch": 35,
+              "examples_per_second": 1743.641352329064,
+              "loss": 0.038018152887236874,
+              "seconds": 25.743252728000698,
+              "selection_f1": null
+            },
+            {
+              "epoch": 36,
+              "examples_per_second": 1611.302820002545,
+              "loss": 0.037810170469823816,
+              "seconds": 27.857581729999765,
+              "selection_f1": 0.3270679337294496
+            }
+          ],
+          "minimum_training_occurrences": 6,
+          "parameters": 5583782,
+          "selection_f1": 0.33153247966552735
+        }
+      ]
+    },
+    "fold_0": {
+      "calibration_trials": [
+        {
+          "policy_id": "control",
+          "sample_f1": 0.2286040379988213,
+          "surveys": 2772
+        },
+        {
+          "policy_id": "pyramid_rank_25",
+          "sample_f1": 0.23036015260070203,
+          "surveys": 2772
+        },
+        {
+          "policy_id": "pyramid_rank_40",
+          "sample_f1": 0.23898549470873384,
+          "surveys": 2772
+        },
+        {
+          "policy_id": "pyramid_count_35",
+          "sample_f1": 0.23736534654925423,
+          "surveys": 2772
+        },
+        {
+          "policy_id": "pyramid_count_50",
+          "sample_f1": 0.24169662034441844,
+          "surveys": 2772
+        },
+        {
+          "policy_id": "pyramid_count_65",
+          "sample_f1": 0.24462974434746773,
+          "surveys": 2772
+        }
+      ],
+      "common_species": 1015,
+      "cooccurrence_sha256": "b32eefcdda65b58270f111633ff65fce0b1828c22a237171eddcdd10d21a667c",
+      "matched_v23_control": {
+        "best_epoch": 6,
+        "checkpoint_sha256": "f472c3937ef378a0fc2808ae806f4670a2efe3a00f9a0b31a1bb6050a3854078",
+        "history": [
+          {
+            "epoch": 1,
+            "examples_per_second": 16566.016857791183,
+            "loss": 0.16091761884169462,
+            "seconds": 2.0380879899998945,
+            "selection_f1": null
+          },
+          {
+            "epoch": 2,
+            "examples_per_second": 28289.856371901868,
+            "loss": 0.10355681119143488,
+            "seconds": 1.1934666460001608,
+            "selection_f1": null
+          },
+          {
+            "epoch": 3,
+            "examples_per_second": 28244.431501326366,
+            "loss": 0.09308799237963522,
+            "seconds": 1.19538607100003,
+            "selection_f1": null
+          },
+          {
+            "epoch": 4,
+            "examples_per_second": 16263.971681617695,
+            "loss": 0.08656265293141661,
+            "seconds": 2.0759381939997184,
+            "selection_f1": 0.2767112043670364
+          },
+          {
+            "epoch": 5,
+            "examples_per_second": 27693.344778005874,
+            "loss": 0.08191909738145613,
+            "seconds": 1.2191737859998284,
+            "selection_f1": null
+          },
+          {
+            "epoch": 6,
+            "examples_per_second": 16186.361250051325,
+            "loss": 0.0789098969856519,
+            "seconds": 2.085891910999635,
+            "selection_f1": 0.2833988145740679
+          }
+        ],
+        "parameters": 3282456,
+        "selection_f1": 0.2833988145740679
+      },
+      "matched_v24": {
+        "best_epoch": 8,
+        "checkpoint_sha256": "d6524fce96e32f3f4f19770aae7d1269ea07935de1e0d7e69282dd23c3a9665b",
+        "history": [
+          {
+            "epoch": 1,
+            "examples_per_second": 11455.75927662295,
+            "loss": 0.3229849500629012,
+            "seconds": 2.947251176000009,
+            "selection_f1": null
+          },
+          {
+            "epoch": 2,
+            "examples_per_second": 13125.632594367979,
+            "loss": 0.17561076306387227,
+            "seconds": 2.57229506900012,
+            "selection_f1": null
+          },
+          {
+            "epoch": 3,
+            "examples_per_second": 12950.189203557662,
+            "loss": 0.14465480908648654,
+            "seconds": 2.60714337599984,
+            "selection_f1": null
+          },
+          {
+            "epoch": 4,
+            "examples_per_second": 13144.171235854734,
+            "loss": 0.1298603537232253,
+            "seconds": 2.568667084000026,
+            "selection_f1": null
+          },
+          {
+            "epoch": 5,
+            "examples_per_second": 13299.023698240913,
+            "loss": 0.11936854858000943,
+            "seconds": 2.5387577889996464,
+            "selection_f1": null
+          },
+          {
+            "epoch": 6,
+            "examples_per_second": 9792.640823315285,
+            "loss": 0.11261156628717832,
+            "seconds": 3.4477931549999994,
+            "selection_f1": 0.2679648386488591
+          },
+          {
+            "epoch": 7,
+            "examples_per_second": 13136.205132788375,
+            "loss": 0.10817344122713389,
+            "seconds": 2.5702247839999472,
+            "selection_f1": null
+          },
+          {
+            "epoch": 8,
+            "examples_per_second": 9849.706722903777,
+            "loss": 0.10638949126437691,
+            "seconds": 3.427817796999989,
+            "selection_f1": 0.26897403273077336
+          }
+        ],
+        "parameters": 3366785,
+        "selection_f1": 0.26897403273077336
+      },
+      "matched_v24_richness": {
+        "country_means": {
+          "Andorra": 14.75,
+          "Austria": 26.5,
+          "Belgium": 13.842105263157896,
+          "Bosnia and Herzegovina": 30.0,
+          "Bulgaria": 35.816901408450704,
+          "Croatia": 33.40816326530612,
+          "Czech Republic": 22.55421686746988,
+          "Denmark": 15.712135835567471,
+          "France": 19.871076523994812,
+          "Germany": 32.48760330578512,
+          "Greece": 36.95652173913044,
+          "Hungary": 44.6,
+          "Ireland": 8.916666666666666,
+          "Italy": 20.606367583212734,
+          "Latvia": 37.77272727272727,
+          "Monaco": 21.166666666666668,
+          "Montenegro": 39.4,
+          "Netherlands": 6.505154639175258,
+          "Poland": 20.033898305084747,
+          "Portugal": 12.333333333333334,
+          "Serbia": 30.88888888888889,
+          "Slovakia": 18.75,
+          "Slovenia": 19.742857142857144,
+          "Spain": 20.14503816793893,
+          "Switzerland": 31.396551724137932,
+          "The former Yugoslav Republic of Macedonia": 31.0
+        },
+        "feature_names": [
+          "neural_log_richness",
+          "top1",
+          "top5_mean",
+          "top20_mean",
+          "top40_mean",
+          "top40_std",
+          "rank_margin_20_40",
+          "log_pa_distance",
+          "log_po_coverage",
+          "month_sin",
+          "month_cos",
+          "country_training_richness"
+        ],
+        "global_mean": 16.52572342505109,
+        "selection_mae": 6.027569077615093
+      },
+      "matched_v25_candidate_seeds": [
+        {
+          "best_epoch": 10,
+          "checkpoint_sha256": "bdd17d19ab07b7385c2c5b5198d9162664c84e716521e4b8c6295ce7f054dd9e",
+          "history": [
+            {
+              "epoch": 1,
+              "examples_per_second": 12676.60364486772,
+              "loss": 0.2912539665686577,
+              "seconds": 2.6634105590001127,
+              "selection_f1": null
+            },
+            {
+              "epoch": 2,
+              "examples_per_second": 12833.481390206813,
+              "loss": 0.1586538811932807,
+              "seconds": 2.6308527649998723,
+              "selection_f1": null
+            },
+            {
+              "epoch": 3,
+              "examples_per_second": 12591.503576798086,
+              "loss": 0.13232630378073562,
+              "seconds": 2.681411302000015,
+              "selection_f1": null
+            },
+            {
+              "epoch": 4,
+              "examples_per_second": 12866.431593154046,
+              "loss": 0.11869584511683824,
+              "seconds": 2.624115300000085,
+              "selection_f1": null
+            },
+            {
+              "epoch": 5,
+              "examples_per_second": 12902.57681480002,
+              "loss": 0.10897257163155451,
+              "seconds": 2.6167641150000236,
+              "selection_f1": null
+            },
+            {
+              "epoch": 6,
+              "examples_per_second": 9668.84334954975,
+              "loss": 0.10212605313599556,
+              "seconds": 3.491937843999949,
+              "selection_f1": 0.2728288987040263
+            },
+            {
+              "epoch": 7,
+              "examples_per_second": 12604.165303878848,
+              "loss": 0.09591152071705666,
+              "seconds": 2.6787176450002335,
+              "selection_f1": null
+            },
+            {
+              "epoch": 8,
+              "examples_per_second": 9614.179699666176,
+              "loss": 0.09253296090251718,
+              "seconds": 3.5117920669999876,
+              "selection_f1": 0.27925685018850377
+            },
+            {
+              "epoch": 9,
+              "examples_per_second": 12754.424716872365,
+              "loss": 0.08917984589075931,
+              "seconds": 2.647159770000144,
+              "selection_f1": null
+            },
+            {
+              "epoch": 10,
+              "examples_per_second": 9470.255996368252,
+              "loss": 0.08791460008081432,
+              "seconds": 3.565162336999947,
+              "selection_f1": 0.28205240676948345
+            }
+          ],
+          "parameters": 5512705,
+          "selection_f1": 0.28205240676948345
+        },
+        {
+          "best_epoch": 8,
+          "checkpoint_sha256": "6bc8d5adf54d927bfd08c1ba13fc1be0a42d567bdddc1209000218c4f183966e",
+          "history": [
+            {
+              "epoch": 1,
+              "examples_per_second": 12620.853791275631,
+              "loss": 0.2903343347452286,
+              "seconds": 2.67517559099997,
+              "selection_f1": null
+            },
+            {
+              "epoch": 2,
+              "examples_per_second": 12730.616030354153,
+              "loss": 0.15949511380340803,
+              "seconds": 2.652110465000078,
+              "selection_f1": null
+            },
+            {
+              "epoch": 3,
+              "examples_per_second": 12646.881852432047,
+              "loss": 0.13111901387819,
+              "seconds": 2.6696699150002132,
+              "selection_f1": null
+            },
+            {
+              "epoch": 4,
+              "examples_per_second": 12609.252376673616,
+              "loss": 0.11846975868542613,
+              "seconds": 2.6776369439999144,
+              "selection_f1": null
+            },
+            {
+              "epoch": 5,
+              "examples_per_second": 12850.894819189602,
+              "loss": 0.10877732732704111,
+              "seconds": 2.627287864000209,
+              "selection_f1": null
+            },
+            {
+              "epoch": 6,
+              "examples_per_second": 9603.410614460412,
+              "loss": 0.10173152874321839,
+              "seconds": 3.5157301249996635,
+              "selection_f1": 0.27360566227582045
+            },
+            {
+              "epoch": 7,
+              "examples_per_second": 12910.890421269714,
+              "loss": 0.09622758407081412,
+              "seconds": 2.6150791229997594,
+              "selection_f1": null
+            },
+            {
+              "epoch": 8,
+              "examples_per_second": 9590.789192744583,
+              "loss": 0.09175717116207237,
+              "seconds": 3.5203568050001195,
+              "selection_f1": 0.27746670861826556
+            },
+            {
+              "epoch": 9,
+              "examples_per_second": 12851.454811215484,
+              "loss": 0.0890864717978188,
+              "seconds": 2.62717338199991,
+              "selection_f1": null
+            },
+            {
+              "epoch": 10,
+              "examples_per_second": 9608.89993404779,
+              "loss": 0.0875833044105827,
+              "seconds": 3.5137216780003655,
+              "selection_f1": 0.27706167748246013
+            }
+          ],
+          "parameters": 5512705,
+          "selection_f1": 0.27746670861826556
+        }
+      ],
+      "matched_v25_oracle_count": {
+        "country_means": {
+          "Andorra": 14.75,
+          "Austria": 26.5,
+          "Belgium": 13.842105263157896,
+          "Bosnia and Herzegovina": 30.0,
+          "Bulgaria": 35.816901408450704,
+          "Croatia": 33.40816326530612,
+          "Czech Republic": 22.55421686746988,
+          "Denmark": 15.712135835567471,
+          "France": 19.871076523994812,
+          "Germany": 32.48760330578512,
+          "Greece": 36.95652173913044,
+          "Hungary": 44.6,
+          "Ireland": 8.916666666666666,
+          "Italy": 20.606367583212734,
+          "Latvia": 37.77272727272727,
+          "Monaco": 21.166666666666668,
+          "Montenegro": 39.4,
+          "Netherlands": 6.505154639175258,
+          "Poland": 20.033898305084747,
+          "Portugal": 12.333333333333334,
+          "Serbia": 30.88888888888889,
+          "Slovakia": 18.75,
+          "Slovenia": 19.742857142857144,
+          "Spain": 20.14503816793893,
+          "Switzerland": 31.396551724137932,
+          "The former Yugoslav Republic of Macedonia": 31.0
+        },
+        "feature_names": [
+          "neural_log_richness",
+          "top1",
+          "top5_mean",
+          "top20_mean",
+          "top40_mean",
+          "top40_std",
+          "rank_margin_20_40",
+          "log_pa_distance",
+          "log_po_coverage",
+          "month_sin",
+          "month_cos",
+          "country_training_richness"
+        ],
+        "global_mean": 16.52572342505109,
+        "predicted_count_mean": 20.12630374471346,
+        "selection_mae": 7.756842126789252,
+        "selection_oracle_count_mean": 21.48340183370218,
+        "target": "per-survey oracle top-k maximizing sample F1 on selection only"
+      },
+      "matched_v26_oracle_count": {
+        "country_means": {
+          "Andorra": 14.75,
+          "Austria": 26.5,
+          "Belgium": 13.842105263157896,
+          "Bosnia and Herzegovina": 30.0,
+          "Bulgaria": 35.816901408450704,
+          "Croatia": 33.40816326530612,
+          "Czech Republic": 22.55421686746988,
+          "Denmark": 15.712135835567471,
+          "France": 19.871076523994812,
+          "Germany": 32.48760330578512,
+          "Greece": 36.95652173913044,
+          "Hungary": 44.6,
+          "Ireland": 8.916666666666666,
+          "Italy": 20.606367583212734,
+          "Latvia": 37.77272727272727,
+          "Monaco": 21.166666666666668,
+          "Montenegro": 39.4,
+          "Netherlands": 6.505154639175258,
+          "Poland": 20.033898305084747,
+          "Portugal": 12.333333333333334,
+          "Serbia": 30.88888888888889,
+          "Slovakia": 18.75,
+          "Slovenia": 19.742857142857144,
+          "Spain": 20.14503816793893,
+          "Switzerland": 31.396551724137932,
+          "The former Yugoslav Republic of Macedonia": 31.0
+        },
+        "feature_names": [
+          "neural_log_richness",
+          "top1",
+          "top5_mean",
+          "top20_mean",
+          "top40_mean",
+          "top40_std",
+          "rank_margin_20_40",
+          "log_pa_distance",
+          "log_po_coverage",
+          "month_sin",
+          "month_cos",
+          "country_training_richness"
+        ],
+        "global_mean": 16.52572342505109,
+        "predicted_count_mean": 19.65692148468128,
+        "selection_mae": 7.610621156741291,
+        "selection_oracle_count_mean": 20.97028137843819,
+        "target": "per-survey oracle top-k maximizing sample F1 on selection only"
+      },
+      "matched_v26_spatial_raster": {
+        "active_species": 1992,
+        "augmentation": "Sentinel random horizontal/vertical flips and quarter rotations",
+        "best_epoch": 15,
+        "checkpoint_sha256": "0a1c273cccee79018113b8187928e018943646ee1ca8f97bee562e7400f4684c",
+        "history": [
+          {
+            "epoch": 1,
+            "examples_per_second": 1171.5132738234886,
+            "loss": 0.24478700221718247,
+            "seconds": 28.819989286000236,
+            "selection_f1": null
+          },
+          {
+            "epoch": 2,
+            "examples_per_second": 3908.8808763845313,
+            "loss": 0.1737095632173861,
+            "seconds": 8.637510599000052,
+            "selection_f1": null
+          },
+          {
+            "epoch": 3,
+            "examples_per_second": 3946.933789777619,
+            "loss": 0.16069556805500892,
+            "seconds": 8.55423521099965,
+            "selection_f1": null
+          },
+          {
+            "epoch": 4,
+            "examples_per_second": 3897.00487788874,
+            "loss": 0.15249850473298573,
+            "seconds": 8.663833137999973,
+            "selection_f1": null
+          },
+          {
+            "epoch": 5,
+            "examples_per_second": 3914.175383128234,
+            "loss": 0.14603050593680103,
+            "seconds": 8.62582707599995,
+            "selection_f1": null
+          },
+          {
+            "epoch": 6,
+            "examples_per_second": 3889.2779964544916,
+            "loss": 0.14086980198181215,
+            "seconds": 8.68104569299976,
+            "selection_f1": null
+          },
+          {
+            "epoch": 7,
+            "examples_per_second": 3924.1486503627516,
+            "loss": 0.13612505372350958,
+            "seconds": 8.60390444099994,
+            "selection_f1": null
+          },
+          {
+            "epoch": 8,
+            "examples_per_second": 3933.678958493666,
+            "loss": 0.13172586981664036,
+            "seconds": 8.58305935899989,
+            "selection_f1": null
+          },
+          {
+            "epoch": 9,
+            "examples_per_second": 3924.07659459538,
+            "loss": 0.1277084348926477,
+            "seconds": 8.604062429999885,
+            "selection_f1": null
+          },
+          {
+            "epoch": 10,
+            "examples_per_second": 3920.2483162727885,
+            "loss": 0.12411822719597172,
+            "seconds": 8.612464639000336,
+            "selection_f1": null
+          },
+          {
+            "epoch": 11,
+            "examples_per_second": 3924.7956421373815,
+            "loss": 0.1206889555912583,
+            "seconds": 8.602486110999962,
+            "selection_f1": null
+          },
+          {
+            "epoch": 12,
+            "examples_per_second": 3216.877626651956,
+            "loss": 0.11706232342761906,
+            "seconds": 10.495581094000045,
+            "selection_f1": 0.2980968940030172
+          },
+          {
+            "epoch": 13,
+            "examples_per_second": 3914.2958828727074,
+            "loss": 0.11402848897547009,
+            "seconds": 8.625561533999644,
+            "selection_f1": null
+          },
+          {
+            "epoch": 14,
+            "examples_per_second": 3932.536327943983,
+            "loss": 0.11127719762758653,
+            "seconds": 8.585553237000113,
+            "selection_f1": null
+          },
+          {
+            "epoch": 15,
+            "examples_per_second": 3352.114166108281,
+            "loss": 0.10868438273073355,
+            "seconds": 10.072150985000007,
+            "selection_f1": 0.30402447570219604
+          },
+          {
+            "epoch": 16,
+            "examples_per_second": 3938.3135350024572,
+            "loss": 0.10635441387840644,
+            "seconds": 8.572958881999966,
+            "selection_f1": null
+          },
+          {
+            "epoch": 17,
+            "examples_per_second": 3934.4386239822857,
+            "loss": 0.10421791829053384,
+            "seconds": 8.58140213300021,
+            "selection_f1": null
+          },
+          {
+            "epoch": 18,
+            "examples_per_second": 3353.92292307937,
+            "loss": 0.1023127597673959,
+            "seconds": 10.066719115000069,
+            "selection_f1": 0.3022834281442225
+          },
+          {
+            "epoch": 19,
+            "examples_per_second": 3920.1318929984654,
+            "loss": 0.10092141813462942,
+            "seconds": 8.612720418999743,
+            "selection_f1": null
+          },
+          {
+            "epoch": 20,
+            "examples_per_second": 3859.847334325346,
+            "loss": 0.09954459184466093,
+            "seconds": 8.747237151000263,
+            "selection_f1": null
+          },
+          {
+            "epoch": 21,
+            "examples_per_second": 3349.325667832444,
+            "loss": 0.09853843256963131,
+            "seconds": 10.080536605999896,
+            "selection_f1": 0.30158212507377563
+          },
+          {
+            "epoch": 22,
+            "examples_per_second": 3943.3318211602664,
+            "loss": 0.0976327823471307,
+            "seconds": 8.562048929999946,
+            "selection_f1": null
+          },
+          {
+            "epoch": 23,
+            "examples_per_second": 3949.7506750566204,
+            "loss": 0.09703142623405576,
+            "seconds": 8.548134496999864,
+            "selection_f1": null
+          },
+          {
+            "epoch": 24,
+            "examples_per_second": 3365.137641246962,
+            "loss": 0.09664269903447925,
+            "seconds": 10.03317058599987,
+            "selection_f1": 0.30162087619625627
+          }
+        ],
+        "minimum_training_occurrences": 6,
+        "parameters": 3307642,
+        "selection_f1": 0.30402447570219604
+      },
+      "normalization_fit_on_training_only": true,
+      "rare_species": 4001,
+      "raw_raster_normalization_fit_on_training_only": true,
+      "v27_oracle_count": {
+        "country_means": {
+          "Andorra": 14.75,
+          "Austria": 26.5,
+          "Belgium": 13.842105263157896,
+          "Bosnia and Herzegovina": 30.0,
+          "Bulgaria": 35.816901408450704,
+          "Croatia": 33.40816326530612,
+          "Czech Republic": 22.55421686746988,
+          "Denmark": 15.712135835567471,
+          "France": 19.871076523994812,
+          "Germany": 32.48760330578512,
+          "Greece": 36.95652173913044,
+          "Hungary": 44.6,
+          "Ireland": 8.916666666666666,
+          "Italy": 20.606367583212734,
+          "Latvia": 37.77272727272727,
+          "Monaco": 21.166666666666668,
+          "Montenegro": 39.4,
+          "Netherlands": 6.505154639175258,
+          "Poland": 20.033898305084747,
+          "Portugal": 12.333333333333334,
+          "Serbia": 30.88888888888889,
+          "Slovakia": 18.75,
+          "Slovenia": 19.742857142857144,
+          "Spain": 20.14503816793893,
+          "Switzerland": 31.396551724137932,
+          "The former Yugoslav Republic of Macedonia": 31.0
+        },
+        "feature_names": [
+          "neural_log_richness",
+          "top1",
+          "top5_mean",
+          "top20_mean",
+          "top40_mean",
+          "top40_std",
+          "rank_margin_20_40",
+          "log_pa_distance",
+          "log_po_coverage",
+          "month_sin",
+          "month_cos",
+          "country_training_richness"
+        ],
+        "global_mean": 16.52572342505109,
+        "predicted_count_mean": 19.604305765349093,
+        "selection_mae": 7.549346209088353,
+        "selection_oracle_count_mean": 20.900569079987353,
+        "target": "per-survey oracle top-k maximizing sample F1 on selection only"
+      },
+      "v27_pyramid_raster": {
+        "active_species": 1992,
+        "augmentation": "Sentinel random horizontal/vertical flips and quarter rotations",
+        "best_epoch": 15,
+        "checkpoint_sha256": "afe3ad6ba30023557552159f4cf9a69d09d7e97e3713fdc71a11463296cc403a",
+        "history": [
+          {
+            "epoch": 1,
+            "examples_per_second": 487.69238498443866,
+            "loss": 0.22828650453805083,
+            "seconds": 69.23011521099988,
+            "selection_f1": null
+          },
+          {
+            "epoch": 2,
+            "examples_per_second": 1717.6538990057563,
+            "loss": 0.16785152836902775,
+            "seconds": 19.656462818000364,
+            "selection_f1": null
+          },
+          {
+            "epoch": 3,
+            "examples_per_second": 1725.0647401588783,
+            "loss": 0.15461297823973,
+            "seconds": 19.5720190750003,
+            "selection_f1": null
+          },
+          {
+            "epoch": 4,
+            "examples_per_second": 1763.2388679588505,
+            "loss": 0.14528965289449816,
+            "seconds": 19.14828479200014,
+            "selection_f1": null
+          },
+          {
+            "epoch": 5,
+            "examples_per_second": 1713.5595511327006,
+            "loss": 0.1386526198993979,
+            "seconds": 19.703429611000047,
+            "selection_f1": null
+          },
+          {
+            "epoch": 6,
+            "examples_per_second": 1735.4121706283343,
+            "loss": 0.13139511941866022,
+            "seconds": 19.45532051200007,
+            "selection_f1": null
+          },
+          {
+            "epoch": 7,
+            "examples_per_second": 1679.5049790522298,
+            "loss": 0.1252856771336296,
+            "seconds": 20.102947250000398,
+            "selection_f1": null
+          },
+          {
+            "epoch": 8,
+            "examples_per_second": 1728.5538083130648,
+            "loss": 0.11938338716806607,
+            "seconds": 19.532513154999833,
+            "selection_f1": null
+          },
+          {
+            "epoch": 9,
+            "examples_per_second": 1737.0632313597168,
+            "loss": 0.11387670893561158,
+            "seconds": 19.436828429999878,
+            "selection_f1": null
+          },
+          {
+            "epoch": 10,
+            "examples_per_second": 1766.22230540217,
+            "loss": 0.10818254361863958,
+            "seconds": 19.115940217000116,
+            "selection_f1": null
+          },
+          {
+            "epoch": 11,
+            "examples_per_second": 1745.473235593526,
+            "loss": 0.10271768597746667,
+            "seconds": 19.343178292000175,
+            "selection_f1": null
+          },
+          {
+            "epoch": 12,
+            "examples_per_second": 1752.2277047710413,
+            "loss": 0.09790950172161196,
+            "seconds": 19.268614408999838,
+            "selection_f1": null
+          },
+          {
+            "epoch": 13,
+            "examples_per_second": 1724.8044696917448,
+            "loss": 0.09333198661550055,
+            "seconds": 19.574972463999984,
+            "selection_f1": null
+          },
+          {
+            "epoch": 14,
+            "examples_per_second": 1747.2192580773233,
+            "loss": 0.08879291504529706,
+            "seconds": 19.323848363000252,
+            "selection_f1": null
+          },
+          {
+            "epoch": 15,
+            "examples_per_second": 1212.9490798632,
+            "loss": 0.08482106841865163,
+            "seconds": 27.835463632000028,
+            "selection_f1": 0.29685801846507015
+          },
+          {
+            "epoch": 16,
+            "examples_per_second": 1686.7215029087763,
+            "loss": 0.08089603500425986,
+            "seconds": 20.016938149999987,
+            "selection_f1": null
+          },
+          {
+            "epoch": 17,
+            "examples_per_second": 1740.2865633955275,
+            "loss": 0.07765195448822883,
+            "seconds": 19.400827834999745,
+            "selection_f1": null
+          },
+          {
+            "epoch": 18,
+            "examples_per_second": 1575.8740364525956,
+            "loss": 0.0745095177812747,
+            "seconds": 21.424935761999677,
+            "selection_f1": 0.29286385719593927
+          },
+          {
+            "epoch": 19,
+            "examples_per_second": 1737.7286855794598,
+            "loss": 0.0717561872463562,
+            "seconds": 19.4293851970001,
+            "selection_f1": null
+          },
+          {
+            "epoch": 20,
+            "examples_per_second": 1704.6503514406058,
+            "loss": 0.0693481431354495,
+            "seconds": 19.80640779000032,
+            "selection_f1": null
+          },
+          {
+            "epoch": 21,
+            "examples_per_second": 1587.427110054541,
+            "loss": 0.06716661406371724,
+            "seconds": 21.269008061000022,
+            "selection_f1": 0.2935106260815374
+          },
+          {
+            "epoch": 22,
+            "examples_per_second": 1761.5063756668574,
+            "loss": 0.06521846685193675,
+            "seconds": 19.167117682000026,
+            "selection_f1": null
+          },
+          {
+            "epoch": 23,
+            "examples_per_second": 1762.5629232568415,
+            "loss": 0.06349847864443363,
+            "seconds": 19.15562817900036,
+            "selection_f1": null
+          },
+          {
+            "epoch": 24,
+            "examples_per_second": 1587.3613120163686,
+            "loss": 0.06210552377968508,
+            "seconds": 21.26988968700016,
+            "selection_f1": 0.2924118313327389
+          },
+          {
+            "epoch": 25,
+            "examples_per_second": 1722.0354346649867,
+            "loss": 0.06090559844902224,
+            "seconds": 19.60644904300034,
+            "selection_f1": null
+          },
+          {
+            "epoch": 26,
+            "examples_per_second": 1752.3019713409897,
+            "loss": 0.05992652844556314,
+            "seconds": 19.26779776100011,
+            "selection_f1": null
+          },
+          {
+            "epoch": 27,
+            "examples_per_second": 1577.6279711730256,
+            "loss": 0.05912172253373353,
+            "seconds": 21.401116497000203,
+            "selection_f1": 0.29026470870877225
+          },
+          {
+            "epoch": 28,
+            "examples_per_second": 1744.453952508697,
+            "loss": 0.05854395359297328,
+            "seconds": 19.35448049600018,
+            "selection_f1": null
+          },
+          {
+            "epoch": 29,
+            "examples_per_second": 1689.0261154119382,
+            "loss": 0.05803079432209701,
+            "seconds": 19.98962579199997,
+            "selection_f1": null
+          },
+          {
+            "epoch": 30,
+            "examples_per_second": 1550.176058225844,
+            "loss": 0.05768124297968716,
+            "seconds": 21.78010673100016,
+            "selection_f1": 0.2911337997107017
+          }
+        ],
+        "minimum_training_occurrences": 6,
+        "parameters": 5583782,
+        "selection_f1": 0.29685801846507015
+      },
+      "zero_pa_species": 1606
+    },
+    "fold_1": {
+      "calibration_trials": [
+        {
+          "policy_id": "control",
+          "sample_f1": 0.23443791270386583,
+          "surveys": 2772
+        },
+        {
+          "policy_id": "pyramid_rank_25",
+          "sample_f1": 0.23573002627121836,
+          "surveys": 2772
+        },
+        {
+          "policy_id": "pyramid_rank_40",
+          "sample_f1": 0.2429368121977247,
+          "surveys": 2772
+        },
+        {
+          "policy_id": "pyramid_count_35",
+          "sample_f1": 0.2413028391277956,
+          "surveys": 2772
+        },
+        {
+          "policy_id": "pyramid_count_50",
+          "sample_f1": 0.2446593357358824,
+          "surveys": 2772
+        },
+        {
+          "policy_id": "pyramid_count_65",
+          "sample_f1": 0.24694482432232967,
+          "surveys": 2772
+        }
+      ],
+      "common_species": 1016,
+      "cooccurrence_sha256": "0d1328f0c06370ad1271c849fed8523e1057112db7b97a92749a9f217918906b",
+      "matched_v23_control": {
+        "best_epoch": 6,
+        "checkpoint_sha256": "d47a293b33952dccbe6dba46e374c30caa3237a83b4b6bab1df8301b42f3f094",
+        "history": [
+          {
+            "epoch": 1,
+            "examples_per_second": 27672.582655710892,
+            "loss": 0.16068479171598754,
+            "seconds": 1.2222567159997197,
+            "selection_f1": null
+          },
+          {
+            "epoch": 2,
+            "examples_per_second": 27537.692480185393,
+            "loss": 0.10340245967394456,
+            "seconds": 1.228243797999312,
+            "selection_f1": null
+          },
+          {
+            "epoch": 3,
+            "examples_per_second": 27316.631702576586,
+            "loss": 0.09318276787341334,
+            "seconds": 1.238183403000221,
+            "selection_f1": null
+          },
+          {
+            "epoch": 4,
+            "examples_per_second": 16241.921905014568,
+            "loss": 0.08645390010067217,
+            "seconds": 2.0824505989994577,
+            "selection_f1": 0.2773840985170108
+          },
+          {
+            "epoch": 5,
+            "examples_per_second": 27764.304008874173,
+            "loss": 0.08187070996017722,
+            "seconds": 1.2182189039995137,
+            "selection_f1": null
+          },
+          {
+            "epoch": 6,
+            "examples_per_second": 15937.580738105566,
+            "loss": 0.07894266988987707,
+            "seconds": 2.122216699999626,
+            "selection_f1": 0.28433626246862503
+          }
+        ],
+        "parameters": 3282456,
+        "selection_f1": 0.28433626246862503
+      },
+      "matched_v24": {
+        "best_epoch": 8,
+        "checkpoint_sha256": "47072f8e986f7665dbb728d5ad8f29d4f08e145b21509bf413a26373c1800201",
+        "history": [
+          {
+            "epoch": 1,
+            "examples_per_second": 13084.418149830452,
+            "loss": 0.3215099444695852,
+            "seconds": 2.5849831160003305,
+            "selection_f1": null
+          },
+          {
+            "epoch": 2,
+            "examples_per_second": 13004.739392191315,
+            "loss": 0.17397098460522198,
+            "seconds": 2.6008210530008,
+            "selection_f1": null
+          },
+          {
+            "epoch": 3,
+            "examples_per_second": 12762.15308675406,
+            "loss": 0.14489971980559593,
+            "seconds": 2.65025813200009,
+            "selection_f1": null
+          },
+          {
+            "epoch": 4,
+            "examples_per_second": 12736.18420578142,
+            "loss": 0.12899373428253344,
+            "seconds": 2.6556619670000146,
+            "selection_f1": null
+          },
+          {
+            "epoch": 5,
+            "examples_per_second": 12919.567894877102,
+            "loss": 0.11875125148219311,
+            "seconds": 2.6179668139993737,
+            "selection_f1": null
+          },
+          {
+            "epoch": 6,
+            "examples_per_second": 9754.977884344597,
+            "loss": 0.11285618160744822,
+            "seconds": 3.4672554259996105,
+            "selection_f1": 0.265720878264172
+          },
+          {
+            "epoch": 7,
+            "examples_per_second": 12829.411244916528,
+            "loss": 0.10871166864487858,
+            "seconds": 2.6363641600000847,
+            "selection_f1": null
+          },
+          {
+            "epoch": 8,
+            "examples_per_second": 9768.612764370862,
+            "loss": 0.10648665156083151,
+            "seconds": 3.462415883999711,
+            "selection_f1": 0.26883329958430086
+          }
+        ],
+        "parameters": 3366624,
+        "selection_f1": 0.26883329958430086
+      },
+      "matched_v24_richness": {
+        "country_means": {
+          "Andorra": 14.75,
+          "Austria": 26.5,
+          "Belgium": 13.03125,
+          "Bosnia and Herzegovina": 30.0,
+          "Bulgaria": 35.816901408450704,
+          "Croatia": 33.40816326530612,
+          "Czech Republic": 22.55421686746988,
+          "Denmark": 15.712135835567471,
+          "France": 19.822723814354553,
+          "Germany": 34.99009900990099,
+          "Greece": 36.95652173913044,
+          "Hungary": 44.6,
+          "Ireland": 8.916666666666666,
+          "Italy": 20.561299852289512,
+          "Latvia": 37.77272727272727,
+          "Monaco": 21.166666666666668,
+          "Montenegro": 39.4,
+          "Netherlands": 6.505154639175258,
+          "Poland": 20.901041666666668,
+          "Serbia": 30.88888888888889,
+          "Slovakia": 18.75,
+          "Slovenia": 19.742857142857144,
+          "Spain": 20.14503816793893,
+          "Switzerland": 31.396551724137932,
+          "The former Yugoslav Republic of Macedonia": 31.0
+        },
+        "feature_names": [
+          "neural_log_richness",
+          "top1",
+          "top5_mean",
+          "top20_mean",
+          "top40_mean",
+          "top40_std",
+          "rank_margin_20_40",
+          "log_pa_distance",
+          "log_po_coverage",
+          "month_sin",
+          "month_cos",
+          "country_training_richness"
+        ],
+        "global_mean": 16.530792655885048,
+        "selection_mae": 6.077216822957442
+      },
+      "matched_v25_candidate_seeds": [
+        {
+          "best_epoch": 10,
+          "checkpoint_sha256": "1a09e3255b9421bbad15edf217fcd6332d8d56a3fcc0468af758cb90a5232e69",
+          "history": [
+            {
+              "epoch": 1,
+              "examples_per_second": 12627.64618513116,
+              "loss": 0.2902573717865061,
+              "seconds": 2.6784880969998994,
+              "selection_f1": null
+            },
+            {
+              "epoch": 2,
+              "examples_per_second": 12683.307780960718,
+              "loss": 0.16024107769798232,
+              "seconds": 2.6667333619998317,
+              "selection_f1": null
+            },
+            {
+              "epoch": 3,
+              "examples_per_second": 12470.136336074018,
+              "loss": 0.13453345105994358,
+              "seconds": 2.71231998499934,
+              "selection_f1": null
+            },
+            {
+              "epoch": 4,
+              "examples_per_second": 12474.454172627702,
+              "loss": 0.12106344327663214,
+              "seconds": 2.711381158000222,
+              "selection_f1": null
+            },
+            {
+              "epoch": 5,
+              "examples_per_second": 12670.524015520634,
+              "loss": 0.11086828984401448,
+              "seconds": 2.669423929000004,
+              "selection_f1": null
+            },
+            {
+              "epoch": 6,
+              "examples_per_second": 9580.31650824445,
+              "loss": 0.10264185175603192,
+              "seconds": 3.5304679099999703,
+              "selection_f1": 0.2760323072622478
+            },
+            {
+              "epoch": 7,
+              "examples_per_second": 12407.830592270977,
+              "loss": 0.09805401726088786,
+              "seconds": 2.7259398609994605,
+              "selection_f1": null
+            },
+            {
+              "epoch": 8,
+              "examples_per_second": 9368.33765773917,
+              "loss": 0.0933342579364181,
+              "seconds": 3.610352362999947,
+              "selection_f1": 0.2787920269250492
+            },
+            {
+              "epoch": 9,
+              "examples_per_second": 12593.84387115262,
+              "loss": 0.09071517982919561,
+              "seconds": 2.6856772520004597,
+              "selection_f1": null
+            },
+            {
+              "epoch": 10,
+              "examples_per_second": 9289.263850239642,
+              "loss": 0.08883929207643033,
+              "seconds": 3.641085078999822,
+              "selection_f1": 0.28232085236927934
+            }
+          ],
+          "parameters": 5512480,
+          "selection_f1": 0.28232085236927934
+        },
+        {
+          "best_epoch": 10,
+          "checkpoint_sha256": "8fb9557e713f531d2deecfe6b8cfa2a3e05f7b68a68cbd54e42e77fa9e268ff0",
+          "history": [
+            {
+              "epoch": 1,
+              "examples_per_second": 12599.947322886137,
+              "loss": 0.28822434224771853,
+              "seconds": 2.6843763019996913,
+              "selection_f1": null
+            },
+            {
+              "epoch": 2,
+              "examples_per_second": 12708.7915415574,
+              "loss": 0.15922918426811816,
+              "seconds": 2.6613860090001253,
+              "selection_f1": null
+            },
+            {
+              "epoch": 3,
+              "examples_per_second": 12448.487779948699,
+              "loss": 0.13434078286516776,
+              "seconds": 2.7170368480001343,
+              "selection_f1": null
+            },
+            {
+              "epoch": 4,
+              "examples_per_second": 12769.551743056561,
+              "loss": 0.11935473138476005,
+              "seconds": 2.6487225769997167,
+              "selection_f1": null
+            },
+            {
+              "epoch": 5,
+              "examples_per_second": 12823.452033173515,
+              "loss": 0.11014643849009396,
+              "seconds": 2.637589310000294,
+              "selection_f1": null
+            },
+            {
+              "epoch": 6,
+              "examples_per_second": 9513.084679126747,
+              "loss": 0.10239889215059757,
+              "seconds": 3.55541878799977,
+              "selection_f1": 0.2698101439211679
+            },
+            {
+              "epoch": 7,
+              "examples_per_second": 11970.942356801897,
+              "loss": 0.09766257961306775,
+              "seconds": 2.8254250159998264,
+              "selection_f1": null
+            },
+            {
+              "epoch": 8,
+              "examples_per_second": 9276.04124776077,
+              "loss": 0.09362058671352635,
+              "seconds": 3.646275290999256,
+              "selection_f1": 0.2753252676996171
+            },
+            {
+              "epoch": 9,
+              "examples_per_second": 12695.174509594253,
+              "loss": 0.09071905264046122,
+              "seconds": 2.664240651,
+              "selection_f1": null
+            },
+            {
+              "epoch": 10,
+              "examples_per_second": 9323.579513475574,
+              "loss": 0.08913200331059212,
+              "seconds": 3.6276839760002986,
+              "selection_f1": 0.2787184181975805
+            }
+          ],
+          "parameters": 5512480,
+          "selection_f1": 0.2787184181975805
+        }
+      ],
+      "matched_v25_oracle_count": {
+        "country_means": {
+          "Andorra": 14.75,
+          "Austria": 26.5,
+          "Belgium": 13.03125,
+          "Bosnia and Herzegovina": 30.0,
+          "Bulgaria": 35.816901408450704,
+          "Croatia": 33.40816326530612,
+          "Czech Republic": 22.55421686746988,
+          "Denmark": 15.712135835567471,
+          "France": 19.822723814354553,
+          "Germany": 34.99009900990099,
+          "Greece": 36.95652173913044,
+          "Hungary": 44.6,
+          "Ireland": 8.916666666666666,
+          "Italy": 20.561299852289512,
+          "Latvia": 37.77272727272727,
+          "Monaco": 21.166666666666668,
+          "Montenegro": 39.4,
+          "Netherlands": 6.505154639175258,
+          "Poland": 20.901041666666668,
+          "Serbia": 30.88888888888889,
+          "Slovakia": 18.75,
+          "Slovenia": 19.742857142857144,
+          "Spain": 20.14503816793893,
+          "Switzerland": 31.396551724137932,
+          "The former Yugoslav Republic of Macedonia": 31.0
+        },
+        "feature_names": [
+          "neural_log_richness",
+          "top1",
+          "top5_mean",
+          "top20_mean",
+          "top40_mean",
+          "top40_std",
+          "rank_margin_20_40",
+          "log_pa_distance",
+          "log_po_coverage",
+          "month_sin",
+          "month_cos",
+          "country_training_richness"
+        ],
+        "global_mean": 16.530792655885048,
+        "predicted_count_mean": 20.045097342343713,
+        "selection_mae": 7.787843759450194,
+        "selection_oracle_count_mean": 21.24865633891875,
+        "target": "per-survey oracle top-k maximizing sample F1 on selection only"
+      },
+      "matched_v26_oracle_count": {
+        "country_means": {
+          "Andorra": 14.75,
+          "Austria": 26.5,
+          "Belgium": 13.03125,
+          "Bosnia and Herzegovina": 30.0,
+          "Bulgaria": 35.816901408450704,
+          "Croatia": 33.40816326530612,
+          "Czech Republic": 22.55421686746988,
+          "Denmark": 15.712135835567471,
+          "France": 19.822723814354553,
+          "Germany": 34.99009900990099,
+          "Greece": 36.95652173913044,
+          "Hungary": 44.6,
+          "Ireland": 8.916666666666666,
+          "Italy": 20.561299852289512,
+          "Latvia": 37.77272727272727,
+          "Monaco": 21.166666666666668,
+          "Montenegro": 39.4,
+          "Netherlands": 6.505154639175258,
+          "Poland": 20.901041666666668,
+          "Serbia": 30.88888888888889,
+          "Slovakia": 18.75,
+          "Slovenia": 19.742857142857144,
+          "Spain": 20.14503816793893,
+          "Switzerland": 31.396551724137932,
+          "The former Yugoslav Republic of Macedonia": 31.0
+        },
+        "feature_names": [
+          "neural_log_richness",
+          "top1",
+          "top5_mean",
+          "top20_mean",
+          "top40_mean",
+          "top40_std",
+          "rank_margin_20_40",
+          "log_pa_distance",
+          "log_po_coverage",
+          "month_sin",
+          "month_cos",
+          "country_training_richness"
+        ],
+        "global_mean": 16.530792655885048,
+        "predicted_count_mean": 19.87633060375485,
+        "selection_mae": 7.662042130942401,
+        "selection_oracle_count_mean": 21.10306670882074,
+        "target": "per-survey oracle top-k maximizing sample F1 on selection only"
+      },
+      "matched_v26_spatial_raster": {
+        "active_species": 1985,
+        "augmentation": "Sentinel random horizontal/vertical flips and quarter rotations",
+        "best_epoch": 15,
+        "checkpoint_sha256": "84d9c444776b27d22636d2aa2fd51cfdd2dbfd8af0cfd8098ff597e57f3c63a0",
+        "history": [
+          {
+            "epoch": 1,
+            "examples_per_second": 1913.1238500071613,
+            "loss": 0.24610811019216583,
+            "seconds": 17.679461787000037,
+            "selection_f1": null
+          },
+          {
+            "epoch": 2,
+            "examples_per_second": 3965.732900593053,
+            "loss": 0.17393956858219453,
+            "seconds": 8.528814432999752,
+            "selection_f1": null
+          },
+          {
+            "epoch": 3,
+            "examples_per_second": 4005.4116648876234,
+            "loss": 0.16054578734731362,
+            "seconds": 8.444325535000644,
+            "selection_f1": null
+          },
+          {
+            "epoch": 4,
+            "examples_per_second": 3988.3401291985883,
+            "loss": 0.1524302262682997,
+            "seconds": 8.480470296999556,
+            "selection_f1": null
+          },
+          {
+            "epoch": 5,
+            "examples_per_second": 3981.20199094058,
+            "loss": 0.1459474513801801,
+            "seconds": 8.49567544599995,
+            "selection_f1": null
+          },
+          {
+            "epoch": 6,
+            "examples_per_second": 3928.14757102751,
+            "loss": 0.14086679436991809,
+            "seconds": 8.610419896000167,
+            "selection_f1": null
+          },
+          {
+            "epoch": 7,
+            "examples_per_second": 3996.7324824252228,
+            "loss": 0.13602384326427877,
+            "seconds": 8.462662975000057,
+            "selection_f1": null
+          },
+          {
+            "epoch": 8,
+            "examples_per_second": 3965.505733870286,
+            "loss": 0.13183540638768723,
+            "seconds": 8.529303011999218,
+            "selection_f1": null
+          },
+          {
+            "epoch": 9,
+            "examples_per_second": 3997.5502664959017,
+            "loss": 0.1277487555999676,
+            "seconds": 8.460931757000253,
+            "selection_f1": null
+          },
+          {
+            "epoch": 10,
+            "examples_per_second": 4008.4166714537896,
+            "loss": 0.12389284329066429,
+            "seconds": 8.437995042000694,
+            "selection_f1": null
+          },
+          {
+            "epoch": 11,
+            "examples_per_second": 4025.0706749478763,
+            "loss": 0.12043903608050123,
+            "seconds": 8.40308226399975,
+            "selection_f1": null
+          },
+          {
+            "epoch": 12,
+            "examples_per_second": 3374.4156090910833,
+            "loss": 0.11715234260172021,
+            "seconds": 10.023365204000584,
+            "selection_f1": 0.2980768051549741
+          },
+          {
+            "epoch": 13,
+            "examples_per_second": 3979.3037418305753,
+            "loss": 0.11419299162120923,
+            "seconds": 8.499728141999185,
+            "selection_f1": null
+          },
+          {
+            "epoch": 14,
+            "examples_per_second": 4013.584640847515,
+            "loss": 0.11123277939561095,
+            "seconds": 8.427130115999717,
+            "selection_f1": null
+          },
+          {
+            "epoch": 15,
+            "examples_per_second": 3352.7696597927657,
+            "loss": 0.10871722139850978,
+            "seconds": 10.088077450000128,
+            "selection_f1": 0.30107533073011894
+          },
+          {
+            "epoch": 16,
+            "examples_per_second": 3936.8258135526908,
+            "loss": 0.10633750711739658,
+            "seconds": 8.591439296999852,
+            "selection_f1": null
+          },
+          {
+            "epoch": 17,
+            "examples_per_second": 3923.0352988730756,
+            "loss": 0.10425211402167378,
+            "seconds": 8.6216404959996,
+            "selection_f1": null
+          },
+          {
+            "epoch": 18,
+            "examples_per_second": 3362.0814574635165,
+            "loss": 0.10245609466765515,
+            "seconds": 10.060136979999697,
+            "selection_f1": 0.2998498607192818
+          },
+          {
+            "epoch": 19,
+            "examples_per_second": 4007.358001220277,
+            "loss": 0.1008417015065392,
+            "seconds": 8.44022420500005,
+            "selection_f1": null
+          },
+          {
+            "epoch": 20,
+            "examples_per_second": 4007.7036313099625,
+            "loss": 0.0995605829575034,
+            "seconds": 8.439496308000344,
+            "selection_f1": null
+          },
+          {
+            "epoch": 21,
+            "examples_per_second": 3353.6408949668257,
+            "loss": 0.09856821087860354,
+            "seconds": 10.085456689999774,
+            "selection_f1": 0.2985276823137939
+          },
+          {
+            "epoch": 22,
+            "examples_per_second": 3958.646694571171,
+            "loss": 0.09779757944303039,
+            "seconds": 8.544081503000598,
+            "selection_f1": null
+          },
+          {
+            "epoch": 23,
+            "examples_per_second": 3974.372406795356,
+            "loss": 0.09720532094310079,
+            "seconds": 8.510274462999405,
+            "selection_f1": null
+          },
+          {
+            "epoch": 24,
+            "examples_per_second": 3345.139397709656,
+            "loss": 0.09671850939309178,
+            "seconds": 10.111088352000479,
+            "selection_f1": 0.30008789190564594
+          }
+        ],
+        "minimum_training_occurrences": 6,
+        "parameters": 3307642,
+        "selection_f1": 0.30107533073011894
+      },
+      "normalization_fit_on_training_only": true,
+      "rare_species": 4000,
+      "raw_raster_normalization_fit_on_training_only": true,
+      "v27_oracle_count": {
+        "country_means": {
+          "Andorra": 14.75,
+          "Austria": 26.5,
+          "Belgium": 13.03125,
+          "Bosnia and Herzegovina": 30.0,
+          "Bulgaria": 35.816901408450704,
+          "Croatia": 33.40816326530612,
+          "Czech Republic": 22.55421686746988,
+          "Denmark": 15.712135835567471,
+          "France": 19.822723814354553,
+          "Germany": 34.99009900990099,
+          "Greece": 36.95652173913044,
+          "Hungary": 44.6,
+          "Ireland": 8.916666666666666,
+          "Italy": 20.561299852289512,
+          "Latvia": 37.77272727272727,
+          "Monaco": 21.166666666666668,
+          "Montenegro": 39.4,
+          "Netherlands": 6.505154639175258,
+          "Poland": 20.901041666666668,
+          "Serbia": 30.88888888888889,
+          "Slovakia": 18.75,
+          "Slovenia": 19.742857142857144,
+          "Spain": 20.14503816793893,
+          "Switzerland": 31.396551724137932,
+          "The former Yugoslav Republic of Macedonia": 31.0
+        },
+        "feature_names": [
+          "neural_log_richness",
+          "top1",
+          "top5_mean",
+          "top20_mean",
+          "top40_mean",
+          "top40_std",
+          "rank_margin_20_40",
+          "log_pa_distance",
+          "log_po_coverage",
+          "month_sin",
+          "month_cos",
+          "country_training_richness"
+        ],
+        "global_mean": 16.530792655885048,
+        "predicted_count_mean": 20.009948507181914,
+        "selection_mae": 7.679275785048035,
+        "selection_oracle_count_mean": 21.276794182737905,
+        "target": "per-survey oracle top-k maximizing sample F1 on selection only"
+      },
+      "v27_pyramid_raster": {
+        "active_species": 1985,
+        "augmentation": "Sentinel random horizontal/vertical flips and quarter rotations",
+        "best_epoch": 15,
+        "checkpoint_sha256": "38184ae76d239fd4e708462c8cb6d016da1c25d39424d783efa760e464fd4b0e",
+        "history": [
+          {
+            "epoch": 1,
+            "examples_per_second": 725.645391955664,
+            "loss": 0.2286286263965409,
+            "seconds": 46.61092094699961,
+            "selection_f1": null
+          },
+          {
+            "epoch": 2,
+            "examples_per_second": 1739.093021465576,
+            "loss": 0.1685146944906253,
+            "seconds": 19.448643392000122,
+            "selection_f1": null
+          },
+          {
+            "epoch": 3,
+            "examples_per_second": 1767.7797362479675,
+            "loss": 0.1549718934885449,
+            "seconds": 19.133039770999858,
+            "selection_f1": null
+          },
+          {
+            "epoch": 4,
+            "examples_per_second": 1763.2262610318594,
+            "loss": 0.1461775953770283,
+            "seconds": 19.18245023200052,
+            "selection_f1": null
+          },
+          {
+            "epoch": 5,
+            "examples_per_second": 1751.7751678637167,
+            "loss": 0.1384759945106285,
+            "seconds": 19.307843049999974,
+            "selection_f1": null
+          },
+          {
+            "epoch": 6,
+            "examples_per_second": 1764.4060303563012,
+            "loss": 0.1316603641446322,
+            "seconds": 19.16962389499986,
+            "selection_f1": null
+          },
+          {
+            "epoch": 7,
+            "examples_per_second": 1766.1302510993728,
+            "loss": 0.12553053478914197,
+            "seconds": 19.150909158000104,
+            "selection_f1": null
+          },
+          {
+            "epoch": 8,
+            "examples_per_second": 1759.429929704686,
+            "loss": 0.11947762792574197,
+            "seconds": 19.2238403070005,
+            "selection_f1": null
+          },
+          {
+            "epoch": 9,
+            "examples_per_second": 1715.7684960571569,
+            "loss": 0.11353921453616833,
+            "seconds": 19.713032427000144,
+            "selection_f1": null
+          },
+          {
+            "epoch": 10,
+            "examples_per_second": 1717.4427011943214,
+            "loss": 0.10820194196402172,
+            "seconds": 19.69381568100016,
+            "selection_f1": null
+          },
+          {
+            "epoch": 11,
+            "examples_per_second": 1748.3133528788746,
+            "loss": 0.10298412500921163,
+            "seconds": 19.346074285999748,
+            "selection_f1": null
+          },
+          {
+            "epoch": 12,
+            "examples_per_second": 1709.7324029807594,
+            "loss": 0.09784448421422964,
+            "seconds": 19.782627936999233,
+            "selection_f1": null
+          },
+          {
+            "epoch": 13,
+            "examples_per_second": 1506.4419908304203,
+            "loss": 0.09341830021350377,
+            "seconds": 22.452241908999895,
+            "selection_f1": null
+          },
+          {
+            "epoch": 14,
+            "examples_per_second": 1646.8674576745773,
+            "loss": 0.08890920598734504,
+            "seconds": 20.537779068000418,
+            "selection_f1": null
+          },
+          {
+            "epoch": 15,
+            "examples_per_second": 1576.7753675107376,
+            "loss": 0.08488187266761688,
+            "seconds": 21.450740984999356,
+            "selection_f1": 0.29191120824572114
+          },
+          {
+            "epoch": 16,
+            "examples_per_second": 1762.9646993467397,
+            "loss": 0.08117325734258442,
+            "seconds": 19.18529622999995,
+            "selection_f1": null
+          },
+          {
+            "epoch": 17,
+            "examples_per_second": 1744.3954656257063,
+            "loss": 0.07769812415162171,
+            "seconds": 19.389525292000144,
+            "selection_f1": null
+          },
+          {
+            "epoch": 18,
+            "examples_per_second": 1579.5860109505445,
+            "loss": 0.07470815536579213,
+            "seconds": 21.41257251300067,
+            "selection_f1": 0.29121602210148917
+          },
+          {
+            "epoch": 19,
+            "examples_per_second": 1693.6131814421801,
+            "loss": 0.07182781882585196,
+            "seconds": 19.97091211299994,
+            "selection_f1": null
+          },
+          {
+            "epoch": 20,
+            "examples_per_second": 1754.2345360909865,
+            "loss": 0.06929767829414848,
+            "seconds": 19.2807742089999,
+            "selection_f1": null
+          },
+          {
+            "epoch": 21,
+            "examples_per_second": 1581.8103140918838,
+            "loss": 0.06709218518241535,
+            "seconds": 21.38246267500017,
+            "selection_f1": 0.28755264789627083
+          },
+          {
+            "epoch": 22,
+            "examples_per_second": 1722.4000459874885,
+            "loss": 0.06518863037057206,
+            "seconds": 19.63713370700043,
+            "selection_f1": null
+          },
+          {
+            "epoch": 23,
+            "examples_per_second": 1687.7627271264653,
+            "loss": 0.06345092295310373,
+            "seconds": 20.04013920699981,
+            "selection_f1": null
+          },
+          {
+            "epoch": 24,
+            "examples_per_second": 1588.8816149901363,
+            "loss": 0.06206760012225531,
+            "seconds": 21.287300250000044,
+            "selection_f1": 0.2886045004058818
+          },
+          {
+            "epoch": 25,
+            "examples_per_second": 1744.1915310905258,
+            "loss": 0.060802853883636224,
+            "seconds": 19.391792355999314,
+            "selection_f1": null
+          },
+          {
+            "epoch": 26,
+            "examples_per_second": 1766.926304120955,
+            "loss": 0.05985168915420275,
+            "seconds": 19.142281101999288,
+            "selection_f1": null
+          },
+          {
+            "epoch": 27,
+            "examples_per_second": 1569.9761413366912,
+            "loss": 0.059030771099313595,
+            "seconds": 21.543639492000693,
+            "selection_f1": 0.28791208105750765
+          },
+          {
+            "epoch": 28,
+            "examples_per_second": 1745.922193555745,
+            "loss": 0.058424352290085066,
+            "seconds": 19.3725700519999,
+            "selection_f1": null
+          },
+          {
+            "epoch": 29,
+            "examples_per_second": 1760.8789084855177,
+            "loss": 0.05789785746884696,
+            "seconds": 19.20802153800014,
+            "selection_f1": null
+          },
+          {
+            "epoch": 30,
+            "examples_per_second": 1565.6971582088327,
+            "loss": 0.05756489404202956,
+            "seconds": 21.602517333999458,
+            "selection_f1": 0.2874312700194286
+          }
+        ],
+        "minimum_training_occurrences": 6,
+        "parameters": 5583782,
+        "selection_f1": 0.29191120824572114
+      },
+      "zero_pa_species": 1618
+    }
+  }
+}

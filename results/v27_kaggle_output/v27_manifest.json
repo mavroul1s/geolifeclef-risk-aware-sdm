@@ -1,0 +1,502 @@
+{
+  "checkpoint_identifiers_and_hashes": {
+    "deployment/v27_pyramid_seed_0.pt": "bd5633489207c933dcb3e9ccf85c21b0b8e2ca7f3d8ef182df3cd14ec9e4a253",
+    "deployment/v27_pyramid_seed_1.pt": "ccfa6e625b9fab78dc49bac5a58c3811f1e3d62d88eea136ddd56e5c4fa322f6",
+    "deployment/v27_pyramid_seed_2.pt": "d405c717e31f3045b0dd407377f9b14933086825741fa3097d3937195dea8439",
+    "fold_0/matched_v23_control.pt": "f472c3937ef378a0fc2808ae806f4670a2efe3a00f9a0b31a1bb6050a3854078",
+    "fold_0/matched_v24_multimodal.pt": "d6524fce96e32f3f4f19770aae7d1269ea07935de1e0d7e69282dd23c3a9665b",
+    "fold_0/matched_v26_spatial_raster.pt": "0a1c273cccee79018113b8187928e018943646ee1ca8f97bee562e7400f4684c",
+    "fold_0/v25_candidate_seed_0.pt": "bdd17d19ab07b7385c2c5b5198d9162664c84e716521e4b8c6295ce7f054dd9e",
+    "fold_0/v25_candidate_seed_1.pt": "6bc8d5adf54d927bfd08c1ba13fc1be0a42d567bdddc1209000218c4f183966e",
+    "fold_0/v27_pyramid_raster.pt": "afe3ad6ba30023557552159f4cf9a69d09d7e97e3713fdc71a11463296cc403a",
+    "fold_1/matched_v23_control.pt": "d47a293b33952dccbe6dba46e374c30caa3237a83b4b6bab1df8301b42f3f094",
+    "fold_1/matched_v24_multimodal.pt": "47072f8e986f7665dbb728d5ad8f29d4f08e145b21509bf413a26373c1800201",
+    "fold_1/matched_v26_spatial_raster.pt": "84d9c444776b27d22636d2aa2fd51cfdd2dbfd8af0cfd8098ff597e57f3c63a0",
+    "fold_1/v25_candidate_seed_0.pt": "1a09e3255b9421bbad15edf217fcd6332d8d56a3fcc0468af758cb90a5232e69",
+    "fold_1/v25_candidate_seed_1.pt": "8fb9557e713f531d2deecfe6b8cfa2a3e05f7b68a68cbd54e42e77fa9e268ff0",
+    "fold_1/v27_pyramid_raster.pt": "38184ae76d239fd4e708462c8cb6d016da1c25d39424d783efa760e464fd4b0e"
+  },
+  "datasets": [
+    {
+      "kind": "competition",
+      "slug": "geolifeclef-2025",
+      "version": "competition snapshot mounted by Kaggle"
+    }
+  ],
+  "experiment": "v27_multiscale_shift_aware_ensemble",
+  "external_data_or_weights": false,
+  "feature_manifest": {
+    "environment_sources": [
+      {
+        "missing_indicators": 0,
+        "predictors": 19,
+        "test": "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-test-bioclimatic.csv",
+        "train": "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv"
+      },
+      {
+        "missing_indicators": 1,
+        "predictors": 1,
+        "test": "EnvironmentalValues/Elevation/GLC25-PA-test-elevation.csv",
+        "train": "EnvironmentalValues/Elevation/GLC25-PA-train-elevation.csv"
+      },
+      {
+        "missing_indicators": 0,
+        "predictors": 22,
+        "test": "EnvironmentalValues/HumanFootprint/GLC25-PA-test-human_footprint.csv",
+        "train": "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv"
+      },
+      {
+        "missing_indicators": 0,
+        "predictors": 13,
+        "test": "EnvironmentalValues/LandCover/GLC25-PA-test-landcover.csv",
+        "train": "EnvironmentalValues/LandCover/GLC25-PA-train-landcover.csv"
+      },
+      {
+        "missing_indicators": 9,
+        "predictors": 9,
+        "test": "EnvironmentalValues/SoilGrids/GLC25-PA-test-soilgrids.csv",
+        "train": "EnvironmentalValues/SoilGrids/GLC25-PA-train-soilgrids.csv"
+      }
+    ],
+    "external_data_or_weights": false,
+    "modalities": {
+      "bioclim": [
+        76
+      ],
+      "environment": [
+        74
+      ],
+      "landsat": [
+        114
+      ],
+      "sentinel": [
+        115
+      ],
+      "static": [
+        55
+      ]
+    },
+    "official_competition": "geolifeclef-2025",
+    "preparation_seconds": 2210.4519931620002,
+    "raw_encoder_input": {
+      "bioclim": "unaltered official 4x19x12 tensor",
+      "landsat": "unaltered official 6x4x21 tensor",
+      "sentinel": "official TIFF bilinearly resampled to 4x32x32 and scaled by 10000"
+    },
+    "raw_raster_shapes": {
+      "bioclim": [
+        4,
+        19,
+        12
+      ],
+      "landsat": [
+        6,
+        4,
+        21
+      ],
+      "sentinel": [
+        4,
+        32,
+        32
+      ]
+    },
+    "remote_preparation": {
+      "test": {
+        "rows": 14784,
+        "seconds": 321
+      },
+      "train": {
+        "rows": 88987,
+        "seconds": 1874
+      }
+    },
+    "species": 5016,
+    "species_ids_sha256": "4cfb4e44b760ae8feeb817a1788e12f8853f071689a5bf5a47c06587d5090a96",
+    "summary_encoder": {
+      "bioclim": "per-channel distribution plus 12 temporal bins",
+      "landsat": "per-band distribution plus 12 temporal bins",
+      "sentinel": "fixed-reflectance band and NDVI statistics plus 4x4 spatial pooling"
+    },
+    "test_ids_sha256": "43dc449194bbde82d746bd72ef26c04fe99a6e049360b152157d8828db20cd0f",
+    "test_labels_used": false,
+    "test_rows": 14784,
+    "train_ids_sha256": "2938f816ee93f5c53b1fc71a4505f413680018f8dff766ae891df06219286095",
+    "train_rows": 88987
+  },
+  "final_file_hashes": {
+    "GLC25_PA_submission_v27.csv": "32cd02788d910abe0cd18715da00f201a52a371a2135d17399301dd7e532f710",
+    "assessment_per_survey_v27.csv": "cb76e350790cd6894246626cf1731dd085da716951dec5be7a992d90b491a2ae",
+    "v27_manifest.json": null,
+    "v27_report.json": "c067412d6eb95d41aa9d5b45cd2d48f667f16f5a9eee108d19fe629c9e807aa5"
+  },
+  "frozen_policies": {
+    "alpha_far": 0.6,
+    "alpha_near": 0.48,
+    "count_weight": 0.65,
+    "id": "pyramid_count_65",
+    "max_count_change": 10,
+    "maximum_count": 40,
+    "minimum_count": 8,
+    "pooled_calibration_f1": 0.24578728433489871,
+    "rare_keep_bonus": 0.0
+  },
+  "kaggle": {
+    "intended_version": 29,
+    "kernel": "con1los/geolifeclef-risk-aware-sdm-phase-1",
+    "runtime_gpu": "Tesla T4"
+  },
+  "model_configurations": {
+    "matched_v23_control": {
+      "epochs": 6,
+      "kind": "early_fusion_residual",
+      "role": "new-fold recipe-transfer control",
+      "width": 384
+    },
+    "matched_v25": {
+      "count_target": "selection-only oracle sample-F1 top-k",
+      "epochs_deployment": 12,
+      "epochs_outer": 10,
+      "independent_seeds": 2,
+      "low_rank_joint_species_head": 112,
+      "modality_encoders": [
+        "landsat",
+        "bioclim",
+        "sentinel",
+        "environment",
+        "static"
+      ],
+      "width": 224
+    },
+    "postprocessing": {
+      "candidate_relative_count_change": [
+        -10,
+        10
+      ],
+      "cardinality_bounds": [
+        8,
+        40
+      ],
+      "exact_v26_control": true,
+      "policies": [
+        {
+          "alpha_far": 0.0,
+          "alpha_near": 0.0,
+          "count_weight": 0.0,
+          "id": "control",
+          "max_count_change": 0,
+          "maximum_count": 40,
+          "minimum_count": 10,
+          "rare_keep_bonus": 0.0
+        },
+        {
+          "alpha_far": 0.25,
+          "alpha_near": 0.25,
+          "count_weight": 0.0,
+          "id": "pyramid_rank_25",
+          "max_count_change": 0,
+          "maximum_count": 40,
+          "minimum_count": 10,
+          "rare_keep_bonus": 0.0
+        },
+        {
+          "alpha_far": 0.4,
+          "alpha_near": 0.4,
+          "count_weight": 0.0,
+          "id": "pyramid_rank_40",
+          "max_count_change": 0,
+          "maximum_count": 40,
+          "minimum_count": 10,
+          "rare_keep_bonus": 0.0
+        },
+        {
+          "alpha_far": 0.4,
+          "alpha_near": 0.3,
+          "count_weight": 0.35,
+          "id": "pyramid_count_35",
+          "max_count_change": 5,
+          "maximum_count": 40,
+          "minimum_count": 10,
+          "rare_keep_bonus": 0.0
+        },
+        {
+          "alpha_far": 0.5,
+          "alpha_near": 0.38,
+          "count_weight": 0.5,
+          "id": "pyramid_count_50",
+          "max_count_change": 7,
+          "maximum_count": 40,
+          "minimum_count": 9,
+          "rare_keep_bonus": 0.0
+        },
+        {
+          "alpha_far": 0.6,
+          "alpha_near": 0.48,
+          "count_weight": 0.65,
+          "id": "pyramid_count_65",
+          "max_count_change": 10,
+          "maximum_count": 40,
+          "minimum_count": 8,
+          "rare_keep_bonus": 0.0
+        }
+      ],
+      "selected": {
+        "alpha_far": 0.6,
+        "alpha_near": 0.48,
+        "count_weight": 0.65,
+        "id": "pyramid_count_65",
+        "max_count_change": 10,
+        "maximum_count": 40,
+        "minimum_count": 8,
+        "pooled_calibration_f1": 0.24578728433489871,
+        "rare_keep_bonus": 0.0
+      }
+    },
+    "v24": {
+      "epochs_outer": 8,
+      "loss": "frequency-aware asymmetric + rare auxiliary + richness",
+      "low_rank_joint_species_head": 80,
+      "modality_encoders": [
+        "landsat",
+        "bioclim",
+        "sentinel",
+        "environment",
+        "static"
+      ],
+      "rare_threshold": 25,
+      "role": "fresh-fold matched control",
+      "width": 160
+    },
+    "v26": {
+      "count_target": "selection-only oracle sample-F1 top-k",
+      "epochs_outer": 24,
+      "fusion_width": 320,
+      "low_rank_joint_species_head": 96,
+      "minimum_training_occurrences": 6,
+      "outer_seeds": 1,
+      "raster_width": 32,
+      "raw_raster_encoders": [
+        "landsat",
+        "bioclim",
+        "sentinel"
+      ],
+      "raw_raster_shapes": {
+        "bioclim": [
+          4,
+          19,
+          12
+        ],
+        "landsat": [
+          6,
+          4,
+          21
+        ],
+        "sentinel": [
+          4,
+          32,
+          32
+        ]
+      },
+      "role": "fresh-fold matched control"
+    },
+    "v27": {
+      "architecture": "depthwise residual feature pyramid with squeeze-excite",
+      "count_target": "selection-only oracle sample-F1 top-k",
+      "deployment_seeds": 3,
+      "derived_sentinel_indices": [
+        "NDVI",
+        "NDWI",
+        "EVI"
+      ],
+      "epochs_deployment": 36,
+      "epochs_outer": 30,
+      "fusion_width": 384,
+      "low_rank_joint_species_head": 128,
+      "minimum_training_occurrences": 6,
+      "modality_attention": true,
+      "outer_seeds": 1,
+      "raster_width": 48,
+      "raw_raster_encoders": [
+        "landsat",
+        "bioclim",
+        "sentinel"
+      ],
+      "sentinel_channels": 7,
+      "sentinel_tta_views": 4,
+      "token_width": 128
+    }
+  },
+  "notebook_source_sha256": "69a2d3952fa6324d9a05f4edb6fa7662388a198df89c407f7f034b94099f1dc0",
+  "pre_assessment_freeze": {
+    "all_models_and_policies_frozen": true,
+    "assessment_prediction_sha256": {
+      "fold_0": "17ee4e643e1751353ac114a892f7cc4d1b2ec78e6c167ca3d69b2f968e8e9c04",
+      "fold_1": "8d950b4eec0283ff8a12d2aaf6fdff375758e00679fa6a603f5433a560763539"
+    },
+    "assessment_reporting_started": false,
+    "checkpoint_sha256": {
+      "deployment/v27_pyramid_seed_0.pt": "bd5633489207c933dcb3e9ccf85c21b0b8e2ca7f3d8ef182df3cd14ec9e4a253",
+      "deployment/v27_pyramid_seed_1.pt": "ccfa6e625b9fab78dc49bac5a58c3811f1e3d62d88eea136ddd56e5c4fa322f6",
+      "deployment/v27_pyramid_seed_2.pt": "d405c717e31f3045b0dd407377f9b14933086825741fa3097d3937195dea8439",
+      "fold_0/matched_v23_control.pt": "f472c3937ef378a0fc2808ae806f4670a2efe3a00f9a0b31a1bb6050a3854078",
+      "fold_0/matched_v24_multimodal.pt": "d6524fce96e32f3f4f19770aae7d1269ea07935de1e0d7e69282dd23c3a9665b",
+      "fold_0/matched_v26_spatial_raster.pt": "0a1c273cccee79018113b8187928e018943646ee1ca8f97bee562e7400f4684c",
+      "fold_0/v25_candidate_seed_0.pt": "bdd17d19ab07b7385c2c5b5198d9162664c84e716521e4b8c6295ce7f054dd9e",
+      "fold_0/v25_candidate_seed_1.pt": "6bc8d5adf54d927bfd08c1ba13fc1be0a42d567bdddc1209000218c4f183966e",
+      "fold_0/v27_pyramid_raster.pt": "afe3ad6ba30023557552159f4cf9a69d09d7e97e3713fdc71a11463296cc403a",
+      "fold_1/matched_v23_control.pt": "d47a293b33952dccbe6dba46e374c30caa3237a83b4b6bab1df8301b42f3f094",
+      "fold_1/matched_v24_multimodal.pt": "47072f8e986f7665dbb728d5ad8f29d4f08e145b21509bf413a26373c1800201",
+      "fold_1/matched_v26_spatial_raster.pt": "84d9c444776b27d22636d2aa2fd51cfdd2dbfd8af0cfd8098ff597e57f3c63a0",
+      "fold_1/v25_candidate_seed_0.pt": "1a09e3255b9421bbad15edf217fcd6332d8d56a3fcc0468af758cb90a5232e69",
+      "fold_1/v25_candidate_seed_1.pt": "8fb9557e713f531d2deecfe6b8cfa2a3e05f7b68a68cbd54e42e77fa9e268ff0",
+      "fold_1/v27_pyramid_raster.pt": "38184ae76d239fd4e708462c8cb6d016da1c25d39424d783efa760e464fd4b0e"
+    },
+    "selected_policy": {
+      "alpha_far": 0.6,
+      "alpha_near": 0.48,
+      "count_weight": 0.65,
+      "id": "pyramid_count_65",
+      "max_count_change": 10,
+      "maximum_count": 40,
+      "minimum_count": 8,
+      "pooled_calibration_f1": 0.24578728433489871,
+      "rare_keep_bonus": 0.0
+    },
+    "submission_sha256": "32cd02788d910abe0cd18715da00f201a52a371a2135d17399301dd7e532f710"
+  },
+  "pretrained_weight_provenance": [],
+  "runtime_budget": {
+    "expected_hours": [
+      3.0,
+      9.5
+    ],
+    "feature_preparation_cap_hours": 2.75,
+    "finalization_reserve_minutes": 35,
+    "hard_guard_hours": 10.75,
+    "kaggle_limit_hours": 12.0,
+    "models_kept_on_gpu_concurrently": 1,
+    "single_gpu": true
+  },
+  "seeds": {
+    "bootstrap": 20262704,
+    "deployment": 20262703,
+    "fold_0": 20262701,
+    "fold_1": 20262702,
+    "po": 20262705,
+    "split": 20260954
+  },
+  "self_hash_note": "The manifest's own byte hash is emitted by the final notebook cell.",
+  "source_base_commit": "a80f2c5;notebook-source-sha256:197b3a14a45f5f3d986e84420c258679f9c61461d3cbcd8d8226d2dbfbe05d46",
+  "source_commit": "cf52a55c4d74a51156f4fcd667a3db7d67fc64b7;notebook-source-sha256:69a2d3952fa6324d9a05f4edb6fa7662388a198df89c407f7f034b94099f1dc0",
+  "split_definitions": {
+    "consumed_assessment_union_count": 73487,
+    "deployment": {
+      "adaptive_retries": 0,
+      "block_size_degrees": 1.0,
+      "calibration_bucket_range": [
+        8,
+        17
+      ],
+      "development_ids_drawn_from_consumed_assessments": true,
+      "partition_counts": {
+        "calibration": 27494,
+        "selection": 5584,
+        "training": 44887
+      },
+      "seed": 20260954,
+      "selection_bucket_range": [
+        0,
+        7
+      ],
+      "training_bucket_range": [
+        18,
+        99
+      ],
+      "training_buffer_km": 10.0
+    },
+    "outer": [
+      {
+        "adaptive_retries": 29,
+        "all_v21_v22_v23_v24_v25_v26_assessments_excluded": true,
+        "assessment_bucket_range": [
+          0,
+          19
+        ],
+        "assessment_ids_sha256": "fb8f1cf7dfff2fbb190eb48aa7a55de569dc53eca0ff6e006ef83a0a7d75e0ca",
+        "assessment_used_for_selection": false,
+        "availability_only_seed_retry": 29,
+        "base_seed": 20260925,
+        "block_size_degrees": 1.0,
+        "buffer_km": 20.0,
+        "calibration_bucket_range": [
+          50,
+          59
+        ],
+        "consumed_assessment_ids": 73487,
+        "fold": 0,
+        "fresh_assessment_surveys": 4879,
+        "labels_or_species_used_for_assignment": false,
+        "minimum_assessment_training_distance_km": 20.098678632126745,
+        "partition_blocks": {
+          "assessment": 16,
+          "calibration": 22,
+          "selection": 30,
+          "training": 106
+        },
+        "partition_counts": {
+          "assessment": 4879,
+          "calibration": 2772,
+          "selection": 6326,
+          "training": 33763
+        },
+        "seed": 20260954,
+        "seed_revision_reason": "The original seed left fold 1 with 444 fresh surveys; retry 29 was frozen after a labels-blind search over retries 0--99 maximizing the smaller fresh assessment fold subject to spatial-block and development/training size constraints.",
+        "selection_bucket_range": [
+          40,
+          49
+        ]
+      },
+      {
+        "adaptive_retries": 29,
+        "all_v21_v22_v23_v24_v25_v26_assessments_excluded": true,
+        "assessment_bucket_range": [
+          20,
+          39
+        ],
+        "assessment_ids_sha256": "ca3f8fb4c61326cdf269ce1c762a649bc0d91c5b4a3da7bf0293417645fe9042",
+        "assessment_used_for_selection": false,
+        "availability_only_seed_retry": 29,
+        "base_seed": 20260925,
+        "block_size_degrees": 1.0,
+        "buffer_km": 20.0,
+        "calibration_bucket_range": [
+          50,
+          59
+        ],
+        "consumed_assessment_ids": 73487,
+        "fold": 1,
+        "fresh_assessment_surveys": 4216,
+        "labels_or_species_used_for_assignment": false,
+        "minimum_assessment_training_distance_km": 21.469736970439634,
+        "partition_blocks": {
+          "assessment": 15,
+          "calibration": 22,
+          "selection": 30,
+          "training": 105
+        },
+        "partition_counts": {
+          "assessment": 4216,
+          "calibration": 2772,
+          "selection": 6326,
+          "training": 33823
+        },
+        "seed": 20260954,
+        "seed_revision_reason": "The original seed left fold 1 with 444 fresh surveys; retry 29 was frozen after a labels-blind search over retries 0--99 maximizing the smaller fresh assessment fold subject to spatial-block and development/training size constraints.",
+        "selection_bucket_range": [
+          40,
+          49
+        ]
+      }
+    ],
+    "v21_v22_v23_v24_v25_v26_assessments_excluded": true
+  }
+}
