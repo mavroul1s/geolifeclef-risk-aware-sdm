@@ -164,11 +164,12 @@ def main() -> None:
     core = core_path.read_text(encoding="utf-8")
     source_sha = hashlib.sha256(core.encode("utf-8")).hexdigest()
     try:
-        head = subprocess.run(
-            ["git", "rev-parse", "HEAD"], cwd=repository, check=True,
+        source_revision = subprocess.run(
+            ["git", "log", "-1", "--format=%H", "--",
+             str(core_path.relative_to(repository))], cwd=repository, check=True,
             capture_output=True, text=True,
         ).stdout.strip()
-        source_commit = f"{head};notebook-source-sha256:{source_sha}"
+        source_commit = f"{source_revision};notebook-source-sha256:{source_sha}"
     except (OSError, subprocess.CalledProcessError):
         source_commit = f"notebook-source-sha256:{source_sha}"
     notebook = make_notebook(core, *control, *consumed, source_commit)
