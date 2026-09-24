@@ -62,7 +62,7 @@ MAX_TOTAL_HOURS = 10.75
 FINAL_RESERVE_SECONDS = 35 * 60
 FEATURE_PREP_LIMIT_SECONDS = 2.75 * 3600
 SEEDS = {"split": 20261095, "fold_0": 20262801, "fold_1": 20262802,
-         "bootstrap": 20262804, "po": 20262805}
+         "deployment": 20262803, "bootstrap": 20262804, "po": 20262805}
 MODALITIES = ("landsat", "bioclim", "sentinel", "environment", "static")
 REMOTE_DIMS = {"landsat": 114, "bioclim": 76, "sentinel": 115}
 RASTER_MODALITIES = ("landsat", "bioclim", "sentinel")
@@ -652,7 +652,9 @@ def make_outer_split(rows: pd.DataFrame, fold: int, consumed_ids: np.ndarray
     calibration = consumed & (bucket >= 60) & (bucket < 70)
     # Exclude the entire evaluation block ranges, not only the chosen survey IDs.
     # This prevents same-block leakage from fresh or previously consumed rows.
-    candidate_train = bucket >= 70
+    # Ordinary cross-fitting: the other fold's fresh blocks may train this fold,
+    # while the current fold, selection and calibration blocks stay excluded.
+    candidate_train = ((bucket < 50) & ~assessment) | (bucket >= 70)
     evaluation = assessment | selection | calibration
     coordinates = rows[["lat", "lon"]].to_numpy(np.float64)
     distance = nearest_distance_km(coordinates[evaluation], coordinates[candidate_train])
@@ -682,7 +684,9 @@ def make_outer_split(rows: pd.DataFrame, fold: int, consumed_ids: np.ndarray
         "block_size_degrees": 0.25,
         "assessment_bucket_range": [assessment_start, assessment_stop - 1],
         "selection_bucket_range": [50, 59], "calibration_bucket_range": [60, 69],
-        "training_bucket_range": [70, 99], "buffer_km": 20.0,
+        "training_bucket_ranges": ([[25, 49], [70, 99]] if fold == 0 else
+                                     [[0, 24], [70, 99]]),
+        "other_outer_fold_may_enter_training": True, "buffer_km": 20.0,
         "partition_counts": {name: len(values) for name, values in result.items()},
         "partition_blocks": {name: int(np.unique(blocks[values]).size)
                              for name, values in result.items()},
@@ -714,7 +718,7 @@ def make_deployment_split(rows: pd.DataFrame, consumed_ids: np.ndarray
               "calibration": np.flatnonzero(calibration)}
     if min(map(len, result.values())) < 500:
         raise ValueError("Deployment partitions are unexpectedly small")
-    return result, {"seed": SEEDS["split"], "block_size_degrees": 1.0,
+    return result, {"seed": SEEDS["split"], "block_size_degrees": 0.25,
                     "selection_bucket_range": [0, 7], "calibration_bucket_range": [8, 17],
                     "training_bucket_range": [18, 99], "training_buffer_km": 10.0,
                     "adaptive_retries": 0,
@@ -1442,8 +1446,10 @@ class PASpatialIndex:
 class POGridIndex:
     def __init__(self, cells: dict[tuple[int, int], list[tuple[int, float]]],
                  species_ids: np.ndarray, global_counts: np.ndarray, rows_seen: int,
-                 rows_retained: int):
+                 rows_retained: int,
+                 scale_cells: dict[float, dict[tuple[int, int], list[tuple[int, float]]]] | None = None):
         self.cells = cells
+        self.scale_cells = scale_cells or {0.10: cells}
         self.species_ids = np.asarray(species_ids, dtype=np.int64)
         self.global_counts = np.asarray(global_counts, dtype=np.int64)
         self.rows_seen = int(rows_seen)
@@ -1498,7 +1504,48 @@ class POGridIndex:
         accumulated.clear()
         raw_cells.clear()
         gc.collect()
-        return cls(cells, species_ids, global_counts, seen, retained)
+        scale_cells = {0.10: cells}
+        for scale, ratio in ((0.50, 5), (2.00, 20)):
+            scale_cells[scale] = cls._coarsen(cells, ratio, maximum_candidates=96)
+            gc.collect()
+        return cls(cells, species_ids, global_counts, seen, retained, scale_cells)
+
+    @staticmethod
+    def _coarsen(cells: dict[tuple[int, int], list[tuple[int, float]]], ratio: int,
+                 maximum_candidates: int) -> dict[tuple[int, int], list[tuple[int, float]]]:
+        """Aggregate the bounded fine-cell sketch with compact NumPy arrays."""
+        size = sum(len(values) for values in cells.values())
+        x = np.empty(size, dtype=np.int32)
+        y = np.empty(size, dtype=np.int32)
+        column = np.empty(size, dtype=np.int32)
+        score = np.empty(size, dtype=np.float32)
+        offset = 0
+        for (cell_x, cell_y), values in cells.items():
+            stop = offset + len(values)
+            x[offset:stop] = cell_x // ratio
+            y[offset:stop] = cell_y // ratio
+            column[offset:stop] = [item[0] for item in values]
+            score[offset:stop] = [item[1] for item in values]
+            offset = stop
+        # Cell coordinates are non-negative after the +180/+90 origin shift.
+        cell_code = x.astype(np.int64) * 10_000 + y.astype(np.int64)
+        key = cell_code * EXPECTED_SPECIES + column.astype(np.int64)
+        order = np.argsort(key, kind="stable")
+        key, score = key[order], score[order]
+        starts = np.r_[0, np.flatnonzero(np.diff(key)) + 1]
+        summed = np.add.reduceat(score, starts)
+        unique = key[starts]
+        coarse_cell = unique // EXPECTED_SPECIES
+        coarse_column = (unique % EXPECTED_SPECIES).astype(np.int32)
+        boundaries = np.r_[0, np.flatnonzero(np.diff(coarse_cell)) + 1, len(coarse_cell)]
+        result: dict[tuple[int, int], list[tuple[int, float]]] = {}
+        for begin, end in zip(boundaries[:-1], boundaries[1:]):
+            local = np.argsort(-summed[begin:end], kind="stable")[:maximum_candidates] + begin
+            maximum = max(float(summed[local[0]]) if len(local) else 0.0, 1e-8)
+            code = int(coarse_cell[begin])
+            result[(code // 10_000, code % 10_000)] = [
+                (int(coarse_column[index]), float(summed[index] / maximum)) for index in local]
+        return result
 
     def query(self, coordinates: np.ndarray, *, cell_degrees: float = 0.10,
               maximum_candidates: int = 28) -> tuple[list[dict[int, float]], np.ndarray]:
@@ -1518,6 +1565,45 @@ class POGridIndex:
             result.append({column: float(value / scale) for column, value in ordered})
             coverage[row] = float(sum(value for _, value in ordered))
         return result, coverage
+
+    def query_multiscale(self, coordinates: np.ndarray, *, maximum_candidates: int = 48
+                         ) -> tuple[list[dict[int, float]], np.ndarray, np.ndarray]:
+        """Fuse local, landscape and regional PO evidence without treating absence as negative."""
+        coordinates = np.asarray(coordinates, np.float64)
+        fused: list[dict[int, float]] = [defaultdict(float) for _ in range(len(coordinates))]
+        support: list[Counter[int]] = [Counter() for _ in range(len(coordinates))]
+        coverage = np.zeros(len(coordinates), dtype=np.float32)
+        for scale, scale_weight in ((0.10, 0.50), (0.50, 0.30), (2.00, 0.20)):
+            cells = self.scale_cells.get(scale, {})
+            for row, (lat, lon) in enumerate(coordinates):
+                x = int(math.floor((lon + 180) / scale))
+                y = int(math.floor((lat + 90) / scale))
+                local: dict[int, float] = defaultdict(float)
+                for dx in (-1, 0, 1):
+                    for dy in (-1, 0, 1):
+                        neighbor_weight = math.exp(-0.8 * math.hypot(dx, dy))
+                        for column, value in cells.get((x + dx, y + dy), ()):
+                            local[column] += neighbor_weight * value
+                maximum = max(local.values(), default=1.0)
+                for column, value in local.items():
+                    normalized = float(value / maximum)
+                    fused[row][column] += scale_weight * normalized
+                    if normalized >= 0.25:
+                        support[row][column] += 1
+        result: list[dict[int, float]] = []
+        agreement = np.zeros(len(coordinates), dtype=np.float32)
+        for row, values in enumerate(fused):
+            # Cross-scale agreement is more reliable than one very dense local checklist.
+            scored = [(column, value * (1.0 + 0.12 * max(support[row][column] - 1, 0)))
+                      for column, value in values.items()]
+            scored.sort(key=lambda item: (-item[1], item[0]))
+            selected = scored[:maximum_candidates]
+            maximum = max((value for _, value in selected), default=1.0)
+            result.append({column: float(value / maximum) for column, value in selected})
+            coverage[row] = float(sum(value for _, value in selected))
+            agreement[row] = float(np.mean([support[row][column] / 3
+                                            for column, _ in selected[:10]])) if selected else 0.0
+        return result, coverage, agreement
 
 
 class CooccurrenceGraph:
@@ -1903,6 +1989,64 @@ def compose_predictions(base_lists: list[list[int]], probabilities: np.ndarray,
     return result
 
 
+def po_shift_risk(pa_distance: np.ndarray, po_coverage: np.ndarray,
+                  po_agreement: np.ndarray, role_rows: pd.DataFrame,
+                  training_rows: pd.DataFrame) -> np.ndarray:
+    """Labels-blind gate for regions where PA support is scarce but PO evidence agrees."""
+    counts = training_rows.country.fillna("unknown").astype(str).value_counts()
+    scale = max(float(np.quantile(counts.to_numpy(np.float64), 0.75)) if len(counts) else 1.0, 1.0)
+    countries = role_rows.country.fillna("unknown").astype(str)
+    country_count = countries.map(counts).fillna(0).to_numpy(np.float64)
+    country_scarcity = 1.0 - np.clip(np.log1p(country_count) / np.log1p(scale), 0, 1)
+    distance = np.clip(np.log1p(pa_distance) / np.log(301.0), 0, 1)
+    po_signal = np.clip(np.log1p(po_coverage) / np.log(25.0), 0, 1)
+    agreement = np.clip(po_agreement, 0, 1)
+    return np.clip((0.55 * distance + 0.45 * country_scarcity) *
+                   po_signal * (0.55 + 0.45 * agreement), 0, 1).astype(np.float32)
+
+
+def compose_v28_predictions(base_lists: list[list[int]],
+                            po_candidates: list[dict[int, float]],
+                            risk: np.ndarray, policy: dict[str, Any]) -> list[list[int]]:
+    """Make bounded, confidence-gated tail swaps in the exact/matched v27 lists."""
+    if policy["id"] == "control":
+        return [list(map(int, row)) for row in base_lists]
+    result: list[list[int]] = []
+    for row, original in enumerate(base_lists):
+        base = list(map(int, original))
+        if float(risk[row]) < float(policy["minimum_risk"]):
+            result.append(base)
+            continue
+        budget = max(1, int(math.ceil(float(policy["max_swaps"]) * float(risk[row]))))
+        evidence = po_candidates[row]
+        additions = [(int(column), float(score)) for column, score in evidence.items()
+                     if column not in base and score >= float(policy["minimum_po_score"])]
+        additions.sort(key=lambda item: (-item[1], item[0]))
+        # Only the lower half of the v27 ranking is replaceable. Within it, first
+        # remove species unsupported by PO, using original rank as the tie-break.
+        tail_start = max(len(base) // 2, 1)
+        removable = sorted(range(tail_start, len(base)),
+                           key=lambda rank: (evidence.get(base[rank], 0.0), -rank))
+        removed: set[int] = set()
+        accepted: list[int] = []
+        for column, score in additions:
+            if len(accepted) >= budget or not removable:
+                break
+            remove_rank = removable[0]
+            old_score = float(evidence.get(base[remove_rank], 0.0))
+            if score - old_score < float(policy["minimum_margin"]):
+                continue
+            removable.pop(0)
+            removed.add(remove_rank)
+            accepted.append(column)
+        selected = [column for rank, column in enumerate(base) if rank not in removed]
+        selected.extend(accepted)
+        if len(selected) != len(base) or len(selected) != len(set(selected)) or not 8 <= len(selected) <= 40:
+            raise ValueError("v28 PO tail fusion produced an invalid prediction row")
+        result.append(selected)
+    return result
+
+
 def probabilities_to_base_lists(probabilities: np.ndarray, distance_km: np.ndarray
                                 ) -> list[list[int]]:
     counts = v23_cardinality(distance_km)
@@ -1963,6 +2107,20 @@ def _role_components(rows: pd.DataFrame, role_indices: np.ndarray, spatial: PASp
     return spatial_candidates, pa_distance, po_candidates, po_coverage
 
 
+def balanced_calibration_metrics(scores: np.ndarray, role_rows: pd.DataFrame) -> dict[str, float]:
+    frame = pd.DataFrame({"score": np.asarray(scores, np.float64),
+                          "country": role_rows.country.fillna("unknown").astype(str).to_numpy(),
+                          "block": quarter_degree_blocks(role_rows)})
+    substantial = frame.groupby("country").filter(lambda group: len(group) >= 20)
+    country_macro = (float(substantial.groupby("country").score.mean().mean())
+                     if len(substantial) else float(frame.score.mean()))
+    block_macro = float(frame.groupby("block").score.mean().mean())
+    pooled = float(frame.score.mean())
+    return {"sample_f1": pooled, "country_macro_f1": country_macro,
+            "spatial_block_macro_f1": block_macro,
+            "robust_score": 0.50 * pooled + 0.25 * country_macro + 0.25 * block_macro}
+
+
 def _build_models_for_fold(name: str, split: dict[str, np.ndarray], rows: pd.DataFrame,
                            store: FeatureStore, po: POGridIndex, temporary: Path,
                            guard: RuntimeGuard, device: torch.device, seed: int
@@ -1997,12 +2155,17 @@ def _build_models_for_fold(name: str, split: dict[str, np.ndarray], rows: pd.Dat
             matched_v24, store.train, indices, stats, device, v24=True)
         spatial_candidates, pa_distance, po_candidates, po_coverage = _role_components(
             rows, indices, spatial_index, po)
+        multiscale_po, multiscale_coverage, multiscale_agreement = po.query_multiscale(
+            rows.iloc[indices][["lat", "lon"]].to_numpy(np.float64))
         predictions[role] = {"matched_v23": control_probability,
                              "matched_v24": probability,
                              "matched_v24_raw_richness": raw_richness,
                              "matched_v24_modality_weight_mean": modality_weight.mean(0)}
         role_components[role] = {"spatial": spatial_candidates, "pa_distance": pa_distance,
-                                 "po": po_candidates, "po_coverage": po_coverage}
+                                 "po": po_candidates, "po_coverage": po_coverage,
+                                 "multiscale_po": multiscale_po,
+                                 "multiscale_po_coverage": multiscale_coverage,
+                                 "multiscale_po_agreement": multiscale_agreement}
     selection = split["selection"]
     selection_values = predictions["selection"]
     selection_components = role_components["selection"]
@@ -2189,18 +2352,25 @@ def _build_models_for_fold(name: str, split: dict[str, np.ndarray], rows: pd.Dat
         ranked, _ = top_rank(values["candidate"], 64)
         values["risk"] = ood_risk(components["pa_distance"], components["po_coverage"],
                                   values["base_lists"], ranked)
+        # Freeze the exact v27 recipe before calibrating the new PO-only layer.
+        values["base_lists"] = compose_predictions(
+            values["base_lists"], values["candidate"], values["predicted_count"], frequencies,
+            components["spatial"], components["po"], graph, values["risk"], V27_POLICY)
+        values["shift_risk"] = po_shift_risk(
+            components["pa_distance"], components["multiscale_po_coverage"],
+            components["multiscale_po_agreement"], rows.iloc[split[role]],
+            rows.iloc[split["training"]])
     calibration_targets = np.asarray(store.labels[split["calibration"]])
     calibration_trials = []
     for policy in POLICIES:
-        predicted = compose_predictions(
-            predictions["calibration"]["base_lists"], predictions["calibration"]["candidate"],
-            predictions["calibration"]["predicted_count"], frequencies,
-            role_components["calibration"]["spatial"], role_components["calibration"]["po"],
-            graph, predictions["calibration"]["risk"], policy,
-        )
-        calibration_trials.append({"policy_id": policy["id"],
-                                   "sample_f1": float(score_prediction_lists(
-                                       calibration_targets, predicted).mean()),
+        predicted = compose_v28_predictions(
+            predictions["calibration"]["base_lists"],
+            role_components["calibration"]["multiscale_po"],
+            predictions["calibration"]["shift_risk"], policy)
+        metrics = balanced_calibration_metrics(
+            score_prediction_lists(calibration_targets, predicted),
+            rows.iloc[split["calibration"]])
+        calibration_trials.append({"policy_id": policy["id"], **metrics,
                                    "surveys": len(calibration_targets)})
     training_record = {
         "matched_v23_control": {key: value for key, value in control_record.items()
@@ -2217,7 +2387,7 @@ def _build_models_for_fold(name: str, split: dict[str, np.ndarray], rows: pd.Dat
         "matched_v24_richness": richness_metadata,
         "matched_v25_oracle_count": v25_count_metadata,
         "matched_v26_oracle_count": v26_count_metadata,
-        "v27_oracle_count": pyramid_count_metadata,
+        "matched_v27_oracle_count": pyramid_count_metadata,
         "raw_raster_normalization_fit_on_training_only": True,
         "cooccurrence_sha256": graph.digest(),
         "calibration_trials": calibration_trials,
@@ -2240,16 +2410,21 @@ def select_global_policy(bundles: list[dict[str, Any]]) -> tuple[dict[str, Any],
                         if item["policy_id"] == policy["id"]) for bundle in bundles]
         surveys = sum(record["surveys"] for record in records)
         score = sum(record["sample_f1"] * record["surveys"] for record in records) / surveys
-        intervention = (policy["alpha_near"] + policy["alpha_far"] +
-                        policy["count_weight"] + policy["rare_keep_bonus"] +
-                        0.01 * policy["max_count_change"])
+        robust = float(np.mean([record["robust_score"] for record in records]))
+        country = float(np.mean([record["country_macro_f1"] for record in records]))
+        block = float(np.mean([record["spatial_block_macro_f1"] for record in records]))
+        intervention = (policy["max_swaps"] + 2 * (1 - policy["minimum_risk"]) +
+                        (1 - policy["minimum_po_score"]) + (1 - policy["minimum_margin"]))
         trials.append({"policy_id": policy["id"], "pooled_calibration_f1": score,
-                       "surveys": surveys, "fold_scores": [record["sample_f1"] for record in records],
+                       "robust_calibration_score": robust, "country_macro_f1": country,
+                       "spatial_block_macro_f1": block, "surveys": surveys,
+                       "fold_scores": [record["sample_f1"] for record in records],
                        "intervention": intervention})
-    selected_record = max(trials, key=lambda item: (item["pooled_calibration_f1"],
+    selected_record = max(trials, key=lambda item: (item["robust_calibration_score"],
                                                      -item["intervention"]))
     selected = next(dict(policy) for policy in POLICIES if policy["id"] == selected_record["policy_id"])
     selected["pooled_calibration_f1"] = selected_record["pooled_calibration_f1"]
+    selected["robust_calibration_score"] = selected_record["robust_calibration_score"]
     return selected, trials
 
 
@@ -2340,6 +2515,43 @@ def _train_deployment(split: dict[str, np.ndarray], rows: pd.DataFrame, test_row
     if device.type == "cuda":
         torch.cuda.empty_cache()
     return predictions, record
+
+
+def _apply_v28_deployment(rows: pd.DataFrame, test_rows: pd.DataFrame, po: POGridIndex,
+                          base_lists: list[list[int]], policy: dict[str, Any],
+                          guard: RuntimeGuard) -> tuple[list[list[int]], dict[str, Any]]:
+    """Apply the calibrated PO layer to the exact scored v27 list without retraining it."""
+    guard.stamp("deployment_start")
+    train_coordinates = rows[["lat", "lon"]].to_numpy(np.float64)
+    test_coordinates = test_rows[["lat", "lon"]].to_numpy(np.float64)
+    distance = nearest_distance_km(train_coordinates, test_coordinates)
+    candidates, coverage, agreement = po.query_multiscale(test_coordinates)
+    risk = po_shift_risk(distance, coverage, agreement, test_rows, rows)
+    predictions = compose_v28_predictions(base_lists, candidates, risk, policy)
+    changed = np.asarray([a != b for a, b in zip(base_lists, predictions)])
+    swaps = np.asarray([len(set(a) - set(b)) for a, b in zip(base_lists, predictions)])
+    by_country = {}
+    countries = test_rows.country.fillna("unknown").astype(str).to_numpy()
+    for country in np.unique(countries):
+        mask = countries == country
+        by_country[str(country)] = {
+            "surveys": int(mask.sum()), "changed_fraction": float(changed[mask].mean()),
+            "mean_swaps": float(swaps[mask].mean()), "mean_shift_risk": float(risk[mask].mean())}
+    return predictions, {
+        "exact_v27_models_retrained": False,
+        "presence_only_scales_degrees": [0.10, 0.50, 2.00],
+        "test": {"pa_distance_km_mean": float(distance.mean()),
+                 "po_coverage_mean": float(coverage.mean()),
+                 "po_scale_agreement_mean": float(agreement.mean()),
+                 "shift_risk_mean": float(risk.mean()),
+                 "changed_surveys": int(changed.sum()),
+                 "changed_fraction": float(changed.mean()),
+                 "mean_species_swaps": float(swaps.mean()),
+                 "maximum_species_swaps": int(swaps.max()),
+                 "predicted_cardinality_min": min(map(len, predictions)),
+                 "predicted_cardinality_mean": float(np.mean(list(map(len, predictions)))),
+                 "predicted_cardinality_max": max(map(len, predictions)),
+                 "by_country": by_country}}
 
 
 def write_submission(path: Path, template: pd.DataFrame, test_ids: np.ndarray,
@@ -2572,6 +2784,108 @@ def assess_bundles(bundles: list[dict[str, Any]], policy: dict[str, Any], rows: 
     return frame, report, gate_components
 
 
+def assess_v28_bundles(bundles: list[dict[str, Any]], policy: dict[str, Any],
+                       rows: pd.DataFrame, labels: np.ndarray
+                       ) -> tuple[pd.DataFrame, dict[str, Any], dict[str, Any]]:
+    frames, fold_reports = [], []
+    pooled_groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for fold, bundle in enumerate(bundles):
+        indices = bundle["split"]["assessment"]
+        values = bundle["predictions"]["assessment"]
+        components = bundle["components"]["assessment"]
+        targets = np.asarray(labels[indices])
+        predicted = compose_v28_predictions(values["base_lists"],
+                                             components["multiscale_po"],
+                                             values["shift_risk"], policy)
+        base_scores = score_prediction_lists(targets, values["base_lists"])
+        candidate_scores = score_prediction_lists(targets, predicted)
+        frequencies = bundle["frequencies"]
+        selected_rows = rows.iloc[indices]
+        frame = pd.DataFrame({
+            "surveyId": selected_rows.surveyId.to_numpy(np.int64), "fold": fold,
+            "spatial_block": quarter_degree_blocks(selected_rows),
+            "country": selected_rows.country.fillna("unknown").astype(str).to_numpy(),
+            "pa_distance_bucket": distance_bucket(components["pa_distance"]),
+            "shift_risk": values["shift_risk"],
+            "true_cardinality": targets.sum(1).astype(int),
+            "predicted_cardinality": np.asarray(list(map(len, predicted)), dtype=int),
+            "matched_v27_f1": base_scores, "v28_f1": candidate_scores,
+            "delta_f1": candidate_scores - base_scores,
+            "species_swaps": [len(set(old) - set(new))
+                              for old, new in zip(values["base_lists"], predicted)],
+        })
+        frames.append(frame)
+        old_groups = species_group_metrics(targets, values["base_lists"], frequencies)
+        new_groups = species_group_metrics(targets, predicted, frequencies)
+        for group in old_groups:
+            pooled_groups[f"old_{group}"].append(old_groups[group])
+            pooled_groups[f"new_{group}"].append(new_groups[group])
+        fold_reports.append({
+            "fold": fold, "surveys": len(frame), "spatial_blocks": frame.spatial_block.nunique(),
+            "matched_v27_sample_f1": float(base_scores.mean()),
+            "v28_sample_f1": float(candidate_scores.mean()),
+            "gain": float((candidate_scores - base_scores).mean()),
+            "changed_surveys": int((frame.species_swaps > 0).sum()),
+            "mean_species_swaps": float(frame.species_swaps.mean()),
+            "matched_v27_species_groups": old_groups, "v28_species_groups": new_groups})
+    frame = pd.concat(frames, ignore_index=True)
+    if frame.surveyId.duplicated().any():
+        raise ValueError("The two v28 assessment folds overlap")
+    bootstrap = paired_block_bootstrap(frame.delta_f1.to_numpy(), frame.spatial_block.to_numpy())
+    bootstrap["unit"] = "quarter_degree_spatial_block"
+    country = summarize_by_group(frame, "country", ("matched_v27_f1", "v28_f1", "delta_f1"))
+    distance = summarize_by_group(frame, "pa_distance_bucket",
+                                  ("matched_v27_f1", "v28_f1", "delta_f1"))
+    report = {
+        "surveys": len(frame), "spatial_blocks": frame.spatial_block.nunique(),
+        "control_definition": (
+            "The exact scored v27 CSV is frozen for official-test inference. Fresh-fold F1 uses "
+            "the complete matched v27 recipe refit. Every survey assessed by v21 through v27 is "
+            "excluded from v28 assessment."),
+        "matched_v27_sample_f1": float(frame.matched_v27_f1.mean()),
+        "v28_sample_f1": float(frame.v28_f1.mean()), "gain": float(frame.delta_f1.mean()),
+        "folds": fold_reports, "spatial_bootstrap": bootstrap, "by_country": country,
+        "by_pa_distance": distance,
+        "cardinality": {"unchanged_by_design": True,
+                         "true_mean": float(frame.true_cardinality.mean()),
+                         "predicted_mean": float(frame.predicted_cardinality.mean())},
+        "intervention": {"changed_surveys": int((frame.species_swaps > 0).sum()),
+                         "changed_fraction": float((frame.species_swaps > 0).mean()),
+                         "mean_species_swaps": float(frame.species_swaps.mean()),
+                         "maximum_species_swaps": int(frame.species_swaps.max())},
+        "used_for_selection": False, "now_consumed": True,
+        "warning": "Fresh matched-recipe spatial assessment, not a hidden-test estimate."}
+
+    def pooled_group(prefix: str, group: str) -> dict[str, float | int | None]:
+        records = pooled_groups[f"{prefix}_{group}"]
+        true = sum(item["true_positives"] for item in records)
+        target = sum(item["target_positives"] for item in records)
+        predicted = sum(item["predicted_positives"] for item in records)
+        return {"true_positives": true, "target_positives": target,
+                "predicted_positives": predicted,
+                "precision": true / predicted if predicted else None,
+                "recall": true / target if target else None}
+
+    report["rarity_groups"] = {
+        group: {"matched_v27": pooled_group("old", group),
+                "v28": pooled_group("new", group)}
+        for group in ("zero_pa", "rare_1_to_25", "common_over_25")}
+    substantial = [value for value in country.values() if value["n"] >= 100]
+    gate = {
+        "pooled_gain_positive": report["gain"] > 0,
+        "spatial_ci_lower_positive": bootstrap["ci95"][0] > 0,
+        "positive_gain_each_fold": all(item["gain"] > 0 for item in fold_reports),
+        "multiple_substantial_countries_positive":
+            sum(value["delta_f1"] > 0 for value in substantial) >= 2,
+        "cardinality_unchanged": bool((frame.predicted_cardinality ==
+                                        np.asarray([len(row) for bundle in bundles
+                                                    for row in bundle["predictions"]["assessment"]["base_lists"]])).all()),
+        "nonzero_bounded_intervention": (policy["id"] != "control" and
+                                           0 < report["intervention"]["maximum_species_swaps"] <= 4),
+    }
+    return frame, report, gate
+
+
 def notebook_self_tests() -> dict[str, Any]:
     values = np.asarray([[0.1, 0.8, 0.4], [0.9, 0.2, 0.3]], dtype=np.float32)
     ranked, _ = top_rank(values, 2)
@@ -2625,7 +2939,15 @@ def notebook_self_tests() -> dict[str, Any]:
     if compose_predictions(base, values[:1], np.asarray([1]), np.full(3, 100), [{}], [{}],
                            graph, np.zeros(1), dict(POLICIES[0])) != base:
         raise AssertionError("control policy is not an exact no-op")
-    return {"passed": True, "tests": 10}
+    if compose_v28_predictions(base, [{2: 1.0}], np.ones(1), dict(POLICIES[0])) != base:
+        raise AssertionError("v28 control is not an exact no-op")
+    swapped = compose_v28_predictions(
+        [list(range(8))], [{8: 1.0}], np.ones(1),
+        {"id": "smoke", "max_swaps": 1, "minimum_risk": 0.0,
+         "minimum_po_score": 0.5, "minimum_margin": 0.1})
+    if len(swapped[0]) != 8 or 8 not in swapped[0] or len(set(swapped[0])) != 8:
+        raise AssertionError("v28 bounded swap self-test failed")
+    return {"passed": True, "tests": 12}
 
 
 def _clean_directory(path: Path, allowed_parent: Path) -> None:
@@ -2636,11 +2958,11 @@ def _clean_directory(path: Path, allowed_parent: Path) -> None:
         shutil.rmtree(path)
 
 
-def run_v27(frozen_v26_payload_b64: str, consumed_ids_b64: str) -> dict[str, Any]:
+def run_v28(frozen_v27_payload_b64: str, consumed_ids_b64: str) -> dict[str, Any]:
     guard = RuntimeGuard()
     working = Path("/kaggle/working") if Path("/kaggle/working").exists() else Path("artifacts")
-    temporary = working / "v27_runtime"
-    export = working / "v27_export"
+    temporary = working / "v28_runtime"
+    export = working / "v28_export"
     _clean_directory(temporary, working)
     _clean_directory(export, working)
     temporary.mkdir(parents=True)
@@ -2685,15 +3007,15 @@ def run_v27(frozen_v26_payload_b64: str, consumed_ids_b64: str) -> dict[str, Any
                                  for name, values in store.raster_test.items()}
             store.rasters_test = store.raster_test
             test_rows = test_rows.iloc[test_order].reset_index(drop=True)
-        v26_base_lists, frozen_v26 = decode_v26_submission(
-            frozen_v26_payload_b64, template.surveyId.to_numpy(np.int64), store.species_ids)
-        reconstructed_v26_path = temporary / "frozen_v26_reconstructed.csv"
-        reconstructed_v26 = write_submission(
-            reconstructed_v26_path, template, store.test_ids, v26_base_lists, store.species_ids)
-        frozen_v26["checks"]["exact_submission_sha256"] = (
-            reconstructed_v26["sha256"] == V26_SUBMISSION_SHA256)
-        if not all(frozen_v26["checks"].values()):
-            raise ValueError(f"Frozen v26 verification failed: {frozen_v26['checks']}")
+        v27_base_lists, frozen_v27 = decode_v27_submission(
+            frozen_v27_payload_b64, template.surveyId.to_numpy(np.int64), store.species_ids)
+        reconstructed_v27_path = temporary / "frozen_v27_reconstructed.csv"
+        reconstructed_v27 = write_submission(
+            reconstructed_v27_path, template, store.test_ids, v27_base_lists, store.species_ids)
+        frozen_v27["checks"]["exact_submission_sha256"] = (
+            reconstructed_v27["sha256"] == V27_SUBMISSION_SHA256)
+        if not all(frozen_v27["checks"].values()):
+            raise ValueError(f"Frozen v27 verification failed: {frozen_v27['checks']}")
         torch.set_num_threads(min(os.cpu_count() or 2, 6))
         guard.stamp("data_ready", device=torch.cuda.get_device_name(0),
                     train_rows=len(rows), test_rows=len(test_rows))
@@ -2716,21 +3038,18 @@ def run_v27(frozen_v26_payload_b64: str, consumed_ids_b64: str) -> dict[str, Any
             training_records[f"fold_{fold}"] = training
             split_manifests.append(split_manifest)
         selected_policy, policy_trials = select_global_policy(outer_bundles)
-        deployment_predictions, deployment_record = _train_deployment(
-            deployment_split, rows, test_rows, store, po, v26_base_lists, selected_policy,
-            temporary, guard, device)
-        submission_path = export / "GLC25_PA_submission_v27.csv"
+        deployment_predictions, deployment_record = _apply_v28_deployment(
+            rows, test_rows, po, v27_base_lists, selected_policy, guard)
+        submission_path = export / "GLC25_PA_submission_v28.csv"
         submission = write_submission(submission_path, template, store.test_ids,
                                       deployment_predictions, store.species_ids)
         assessment_predictions_hashes = {}
         for bundle in outer_bundles:
             values = bundle["predictions"]["assessment"]
             components = bundle["components"]["assessment"]
-            predicted = compose_predictions(
-                values["base_lists"], values["candidate"], values["predicted_count"],
-                bundle["frequencies"], components["spatial"], components["po"],
-                bundle["graph"], values["risk"], selected_policy,
-            )
+            predicted = compose_v28_predictions(
+                values["base_lists"], components["multiscale_po"],
+                values["shift_risk"], selected_policy)
             encoded = json.dumps(predicted, separators=(",", ":")).encode("utf-8")
             assessment_predictions_hashes[bundle["name"]] = sha256_bytes(encoded)
         pre_assessment_freeze = {
@@ -2742,21 +3061,22 @@ def run_v27(frozen_v26_payload_b64: str, consumed_ids_b64: str) -> dict[str, Any
                 for path in sorted(temporary.rglob("*.pt"))},
         }
         guard.stamp("pre_assessment_freeze", submission_sha256=submission["sha256"])
-        assessment_frame, assessment, gate_components = assess_bundles(
+        assessment_frame, assessment, gate_components = assess_v28_bundles(
             outer_bundles, selected_policy, rows, store.labels)
-        assessment_path = export / "assessment_per_survey_v27.csv"
+        assessment_path = export / "assessment_per_survey_v28.csv"
         required_columns = ["surveyId", "fold", "spatial_block", "country",
-                            "pa_distance_bucket", "rarity_summary", "true_cardinality",
-                            "predicted_cardinality", "matched_v26_f1", "v27_f1", "delta_f1"]
+                            "pa_distance_bucket", "shift_risk", "true_cardinality",
+                            "predicted_cardinality", "matched_v27_f1", "v28_f1", "delta_f1",
+                            "species_swaps"]
         assessment_frame[required_columns].to_csv(assessment_path, index=False,
                                                   lineterminator="\n")
         tests_after = notebook_self_tests()
         integrity = {
-            "frozen_v26_exact": all(frozen_v26["checks"].values()),
+            "frozen_v27_exact": all(frozen_v27["checks"].values()),
             "official_competition_only": feature_manifest["external_data_or_weights"] is False,
             "expected_dimensions": (len(store.species_ids) == EXPECTED_SPECIES and
                                     len(store.test_ids) == EXPECTED_TEST_ROWS),
-            "fresh_assessment_ids": all(item["all_v21_v22_v23_v24_v25_v26_assessments_excluded"]
+            "fresh_assessment_ids": all(item["all_v21_v22_v23_v24_v25_v26_v27_assessments_excluded"]
                                      for item in split_manifests),
             "assessment_disjoint_from_consumed_union": all(
                 np.intersect1d(rows.surveyId.to_numpy(np.int64)[bundle["split"]["assessment"]],
@@ -2782,16 +3102,18 @@ def run_v27(frozen_v26_payload_b64: str, consumed_ids_b64: str) -> dict[str, Any
         report = {
             "experiment": EXPERIMENT, "status": "complete",
             "runtime_hours": guard.elapsed_hours(), "registered_max_total_hours": MAX_TOTAL_HOURS,
-            "runtime_plan": {"expected_hours": [3.0, 9.5], "feature_preparation_cap_hours": 2.75,
+            "runtime_plan": {"expected_hours": [2.0, 7.0], "feature_preparation_cap_hours": 2.75,
                              "hard_guard_hours": MAX_TOTAL_HOURS, "kaggle_limit_hours": 12.0,
                              "finalization_reserve_minutes": 35,
-                             "models_trained_sequentially": 15,
+                             "models_trained_sequentially": 12,
+                             "deployment_neural_models_trained": 0,
+                             "v27_reference_runtime_hours": 2.0682214702,
                              "v26_reference_runtime_hours": 1.786431835,
                              "v25_reference_runtime_hours": 0.9970158073,
                              "v24_reference_runtime_hours": 0.9811864720533332,
                              "v23_reference_runtime_hours": 6.61616224692927,
                              "vram_estimate_gb": "under 6 on one T4"},
-            "frozen_v26_baseline": frozen_v26,
+            "frozen_v27_baseline": frozen_v27,
             "consumed_assessment_union": {"surveys": int(len(consumed_ids)),
                                            "payload_sha256": CONSUMED_ASSESSMENT_IDS_SHA256},
             "assessment": assessment,
@@ -2802,26 +3124,26 @@ def run_v27(frozen_v26_payload_b64: str, consumed_ids_b64: str) -> dict[str, Any
             "official_submission_made": False, "official_submission_reference": None,
             "official_public_score": None, "official_private_score": None,
             "external_data_or_weights": False, "pretrained_weight_provenance": [],
-            "final_file_hashes": {"GLC25_PA_submission_v27.csv": submission["sha256"],
-                                  "assessment_per_survey_v27.csv": assessment_sha,
-                                  "v27_report.json": None, "v27_manifest.json": None},
+            "final_file_hashes": {"GLC25_PA_submission_v28.csv": submission["sha256"],
+                                  "assessment_per_survey_v28.csv": assessment_sha,
+                                  "v28_report.json": None, "v28_manifest.json": None},
             "hash_note": "A file cannot contain its own byte hash; the manifest records the report hash, "
                          "and the notebook prints the manifest hash after finalization.",
         }
-        report_path = export / "v27_report.json"
+        report_path = export / "v28_report.json"
         save_json(report_path, report)
         manifest = {
-            "experiment": EXPERIMENT, "source_commit": V27_SOURCE_COMMIT,
-            "source_base_commit": V26_COMMIT,
+            "experiment": EXPERIMENT, "source_commit": V28_SOURCE_COMMIT,
+            "source_base_commit": V27_COMMIT,
             "notebook_source_sha256": NOTEBOOK_SOURCE_SHA256,
             "kaggle": {"kernel": "con1los/geolifeclef-risk-aware-sdm-phase-1",
-                       "intended_version": 29, "runtime_gpu": torch.cuda.get_device_name(0)},
+                       "intended_version": 30, "runtime_gpu": torch.cuda.get_device_name(0)},
             "datasets": [{"slug": "geolifeclef-2025", "kind": "competition",
                           "version": "competition snapshot mounted by Kaggle"}],
             "feature_manifest": feature_manifest,
             "split_definitions": {"outer": split_manifests, "deployment": deployment_manifest,
                                   "consumed_assessment_union_count": int(len(consumed_ids)),
-                                  "v21_v22_v23_v24_v25_v26_assessments_excluded": True},
+                                  "v21_v22_v23_v24_v25_v26_v27_assessments_excluded": True},
             "seeds": SEEDS, "model_configurations": {
                 "matched_v23_control": {"kind": "early_fusion_residual", "width": 384,
                                         "epochs": 6, "role": "new-fold recipe-transfer control"},
@@ -2853,39 +3175,45 @@ def run_v27(frozen_v26_payload_b64: str, consumed_ids_b64: str) -> dict[str, Any
                          "outer_seeds": 1, "deployment_seeds": 3,
                          "epochs_outer": 30, "epochs_deployment": 36,
                          "count_target": "selection-only oracle sample-F1 top-k"},
+                "v28": {"kind": "bounded presence-only shift mixture-of-experts",
+                         "presence_only_scales_degrees": [0.10, 0.50, 2.00],
+                         "country_and_distance_shift_gate": True,
+                         "maximum_tail_swaps": 4,
+                         "cardinality_unchanged": True,
+                         "calibration_objective": "pooled plus country-macro plus spatial-block-macro"},
                 "postprocessing": {"policies": list(POLICIES), "selected": selected_policy,
-                                   "exact_v26_control": True,
+                                   "exact_v27_control": True,
                                    "cardinality_bounds": [8, 40],
-                                   "candidate_relative_count_change": [-10, 10]}},
+                                   "candidate_relative_count_change": [0, 0]}},
             "checkpoint_identifiers_and_hashes": pre_assessment_freeze["checkpoint_sha256"],
             "pretrained_weight_provenance": [], "external_data_or_weights": False,
-            "runtime_budget": {"expected_hours": [3.0, 9.5], "hard_guard_hours": MAX_TOTAL_HOURS,
+            "runtime_budget": {"expected_hours": [2.0, 7.0], "hard_guard_hours": MAX_TOTAL_HOURS,
                                "kaggle_limit_hours": 12.0, "feature_preparation_cap_hours": 2.75,
                                "finalization_reserve_minutes": 35, "single_gpu": True,
                                "models_kept_on_gpu_concurrently": 1},
             "frozen_policies": selected_policy, "pre_assessment_freeze": pre_assessment_freeze,
-            "final_file_hashes": {"GLC25_PA_submission_v27.csv": submission["sha256"],
-                                  "assessment_per_survey_v27.csv": assessment_sha,
-                                  "v27_report.json": sha256_file(report_path),
-                                  "v27_manifest.json": None},
+            "final_file_hashes": {"GLC25_PA_submission_v28.csv": submission["sha256"],
+                                  "assessment_per_survey_v28.csv": assessment_sha,
+                                  "v28_report.json": sha256_file(report_path),
+                                  "v28_manifest.json": None},
             "self_hash_note": "The manifest's own byte hash is emitted by the final notebook cell.",
         }
-        manifest_path = export / "v27_manifest.json"
+        manifest_path = export / "v28_manifest.json"
         save_json(manifest_path, manifest)
         final_hashes = {path.name: sha256_file(path) for path in sorted(export.iterdir()) if path.is_file()}
-        if set(final_hashes) != {"GLC25_PA_submission_v27.csv", "v27_report.json",
-                                "assessment_per_survey_v27.csv", "v27_manifest.json"}:
+        if set(final_hashes) != {"GLC25_PA_submission_v28.csv", "v28_report.json",
+                                "assessment_per_survey_v28.csv", "v28_manifest.json"}:
             raise ValueError(f"Export directory contains unexpected files: {sorted(final_hashes)}")
-        guard.stamp("v27_complete", eligible=gate["eligible_for_submission"],
+        guard.stamp("v28_complete", eligible=gate["eligible_for_submission"],
                     hashes=final_hashes)
         return {"status": "complete", "eligible_for_submission": gate["eligible_for_submission"],
                 "runtime_hours": guard.elapsed_hours(), "export_directory": str(export),
                 "final_hashes": final_hashes, "assessment_gain": assessment["gain"],
                 "spatial_ci95": assessment["spatial_bootstrap"]["ci95"],
                 "selected_policy": selected_policy["id"],
-                "instruction": ("Submit GLC25_PA_submission_v27.csv exactly once only if eligible is true."
+                "instruction": ("Submit GLC25_PA_submission_v28.csv exactly once only if eligible is true."
                                 if gate["eligible_for_submission"] else
-                                "DO NOT SUBMIT: keep the candidate for analysis; the frozen v26 remains control.")}
+                                "DO NOT SUBMIT: keep the candidate for analysis; the frozen v27 remains control.")}
     except Exception as error:
         failure = {"experiment": EXPERIMENT, "status": "failed",
                    "failed_stage": "see traceback", "error_type": type(error).__name__,

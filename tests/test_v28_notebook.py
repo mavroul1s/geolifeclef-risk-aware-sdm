@@ -6,15 +6,15 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from scripts.build_v27_notebook import (
-    EXPECTED_V26_HASH,
+from scripts.build_v28_notebook import (
+    EXPECTED_V27_HASH,
     KAGGLE_KERNEL_SOURCE_LIMIT_BYTES,
     make_notebook,
     packed_consumed_ids,
-    packed_v26_submission,
+    packed_v27_submission,
 )
-import scripts.v27_notebook_core as core
-from scripts.v27_notebook_core import (
+import scripts.v28_notebook_core as core
+from scripts.v28_notebook_core import (
     MODALITIES,
     POLICIES,
     RASTER_MODALITIES,
@@ -30,6 +30,7 @@ from scripts.v27_notebook_core import (
     _channel_summary,
     _clean_raw_tensor,
     compose_predictions,
+    compose_v28_predictions,
     discover_data_root,
     make_outer_split,
     notebook_self_tests,
@@ -41,7 +42,7 @@ from scripts.v27_notebook_core import (
 
 
 ROOT = Path(__file__).resolve().parents[1]
-V26 = ROOT / "results/v26_kaggle_output"
+V27 = ROOT / "results/v27_kaggle_output"
 SPECIES = ROOT / "artifacts/v20_frozen_bundle_v21/species_ids.npy"
 CONSUMED_PATHS = [
     ROOT / "artifacts/v21_review/assessment_per_survey.csv",
@@ -49,7 +50,8 @@ CONSUMED_PATHS = [
     ROOT / "artifacts/manual_upload_v23_retry2/user_provided_v25_exports/assessment_per_survey.csv",
     ROOT / "results/v24_kaggle_output/assessment_per_survey_v24.csv",
     ROOT / "results/v25_kaggle_output/assessment_per_survey_v25.csv",
-    V26 / "assessment_per_survey_v26.csv",
+    ROOT / "results/v26_kaggle_output/assessment_per_survey_v26.csv",
+    V27 / "assessment_per_survey_v27.csv",
 ]
 
 
@@ -72,7 +74,7 @@ def test_official_float32_fill_values_are_safe_for_float16_cache():
 
 
 def test_self_tests_cover_model_and_adaptive_count_contracts():
-    assert notebook_self_tests() == {"passed": True, "tests": 10}
+    assert notebook_self_tests() == {"passed": True, "tests": 12}
     model = V24MultimodalRareJSDM({name: 3 for name in MODALITIES}, 7, np.array([1, 3]),
                                   width=16, rank=4)
     assert model.independent_head.out_features == 7
@@ -112,6 +114,8 @@ def test_control_policy_is_an_exact_noop():
     result = compose_predictions(base, probability, np.array([12, 32]), np.full(30, 100),
                                  [{}, {}], [{}, {}], graph, np.zeros(2), dict(POLICIES[0]))
     assert result == base
+    assert compose_v28_predictions(base, [{25: 1.0}, {26: 1.0}], np.ones(2),
+                                   dict(POLICIES[0])) == base
 
 
 def test_new_outer_folds_are_fresh_disjoint_and_buffered():
@@ -133,7 +137,7 @@ def test_new_outer_folds_are_fresh_disjoint_and_buffered():
         assert set(split["assessment"]).isdisjoint(split["training"])
 
 
-def test_official_v27_split_revision_repairs_failed_fold():
+def test_official_v28_split_is_fresh_balanced_and_buffered():
     rows = (pd.read_csv(
         ROOT / "artifacts/v20_frozen/raw/GLC25_PA_metadata_train.csv",
         usecols=["surveyId", "lat", "lon"])
@@ -144,11 +148,11 @@ def test_official_v27_split_revision_repairs_failed_fold():
     ]))
     _, first = make_outer_split(rows, 0, consumed)
     _, second = make_outer_split(rows, 1, consumed)
-    assert first["partition_counts"]["assessment"] == 4_879
-    assert second["partition_counts"]["assessment"] == 4_216
-    assert first["partition_blocks"]["assessment"] == 16
-    assert second["partition_blocks"]["assessment"] == 15
-    assert first["adaptive_retries"] == second["adaptive_retries"] == 29
+    assert first["partition_counts"]["assessment"] == 1_845
+    assert second["partition_counts"]["assessment"] == 2_165
+    assert first["partition_blocks"]["assessment"] == 31
+    assert second["partition_blocks"]["assessment"] == 45
+    assert first["block_size_degrees"] == second["block_size_degrees"] == 0.25
     assert first["labels_or_species_used_for_assignment"] is False
     assert second["labels_or_species_used_for_assignment"] is False
 
@@ -163,31 +167,31 @@ def test_data_root_supports_nested_kaggle_competition_mount(tmp_path):
     assert discover_data_root([root]) == competition.resolve()
 
 
-def test_embedded_v26_and_consumed_union_roundtrip_exactly(tmp_path, monkeypatch):
-    control_b64, control_sha, raw_sha = packed_v26_submission(
-        V26 / "GLC25_PA_submission_v26.csv", SPECIES)
+def test_embedded_v27_and_consumed_union_roundtrip_exactly(tmp_path, monkeypatch):
+    control_b64, control_sha, raw_sha = packed_v27_submission(
+        V27 / "GLC25_PA_submission_v27.csv", SPECIES)
     consumed_b64, consumed_sha, consumed_count = packed_consumed_ids(CONSUMED_PATHS)
-    monkeypatch.setattr(core, "FROZEN_V26_PAYLOAD_SHA256", control_sha, raising=False)
-    monkeypatch.setattr(core, "FROZEN_V26_RAW_SHA256", raw_sha, raising=False)
+    monkeypatch.setattr(core, "FROZEN_V27_PAYLOAD_SHA256", control_sha, raising=False)
+    monkeypatch.setattr(core, "FROZEN_V27_RAW_SHA256", raw_sha, raising=False)
     monkeypatch.setattr(core, "CONSUMED_ASSESSMENT_IDS_SHA256", consumed_sha, raising=False)
     monkeypatch.setattr(core, "CONSUMED_ASSESSMENT_IDS_COUNT", consumed_count, raising=False)
     template = pd.read_csv(ROOT / "artifacts/v20_frozen/raw/GLC25_SAMPLE_SUBMISSION.csv")
     species = np.load(SPECIES, allow_pickle=False)
-    predictions, proof = core.decode_v26_submission(
+    predictions, proof = core.decode_v27_submission(
         control_b64, template.surveyId.to_numpy(), species)
     output = tmp_path / "roundtrip.csv"
     report = write_submission(output, template, template.surveyId.to_numpy(), predictions, species)
-    assert report["sha256"] == EXPECTED_V26_HASH
-    assert proof["private_score"] == 0.20693
+    assert report["sha256"] == EXPECTED_V27_HASH
+    assert proof["private_score"] == 0.20831
     assert validate_submission(output, template, species)["checks"]["row_order"]
     decoded_consumed = core.decode_consumed_ids(consumed_b64)
-    assert len(decoded_consumed) == 73_487
+    assert len(decoded_consumed) == 82_582
     assert np.all(np.diff(decoded_consumed) > 0)
 
 
 def test_generated_notebook_has_no_repository_runtime_dependency():
-    core_text = (ROOT / "scripts/v27_notebook_core.py").read_text(encoding="utf-8")
-    control = packed_v26_submission(V26 / "GLC25_PA_submission_v26.csv", SPECIES)
+    core_text = (ROOT / "scripts/v28_notebook_core.py").read_text(encoding="utf-8")
+    control = packed_v27_submission(V27 / "GLC25_PA_submission_v27.csv", SPECIES)
     consumed = packed_consumed_ids(CONSUMED_PATHS)
     notebook = make_notebook(core_text, *control, *consumed)
     assert notebook["nbformat"] == 4
@@ -196,15 +200,15 @@ def test_generated_notebook_has_no_repository_runtime_dependency():
                      if cell["cell_type"] == "code")
     assert "from scripts." not in code
     assert "from geolifeclef" not in code
-    assert notebook["metadata"]["glc_v27"]["required_input"] == ["geolifeclef-2025"]
+    assert notebook["metadata"]["glc_v28"]["required_input"] == ["geolifeclef-2025"]
     assert notebook["metadata"]["kaggle"]["isGpuEnabled"] is True
-    path = ROOT / "notebooks/geolifeclef_v27_multiscale_shift_aware_ensemble.ipynb"
+    path = ROOT / "notebooks/geolifeclef_v28_presence_only_shift_moe.ipynb"
     on_disk = json.loads(path.read_text(encoding="utf-8"))
     assert path.stat().st_size < KAGGLE_KERNEL_SOURCE_LIMIT_BYTES
-    assert on_disk["metadata"]["glc_v27"]["frozen_v26_submission_sha256"] == EXPECTED_V26_HASH
+    assert on_disk["metadata"]["glc_v28"]["frozen_v27_submission_sha256"] == EXPECTED_V27_HASH
     scope = {}
-    exec(compile("".join(on_disk["cells"][1]["source"]), "v27-notebook-core", "exec"), scope)
-    exec(compile("".join(on_disk["cells"][2]["source"]), "v27-notebook-payload", "exec"), scope)
+    exec(compile("".join(on_disk["cells"][1]["source"]), "v28-notebook-core", "exec"), scope)
+    exec(compile("".join(on_disk["cells"][2]["source"]), "v28-notebook-payload", "exec"), scope)
     assert scope["notebook_self_tests"]()["passed"] is True
 
 

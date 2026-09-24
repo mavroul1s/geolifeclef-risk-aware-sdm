@@ -51,20 +51,20 @@ To create/update a private Kaggle script kernel and start a Phase-1 run directly
 
 The script keeps credentials in memory only, uploads a Git archive of **HEAD** (commit intended source changes first), and attaches `geolifeclef-2025`. It also supports the explicitly user-authorized ignored `api_key/kaggle_2.json`. Audit/schema/frequency runs are CPU-only; neural modes request a T4.
 
-The current official best is v26: **0.23052 public / 0.20693 private**. It gained
-**0.00240 public / 0.00190 private** over v25 and completed in 1.7864 hours. The
-remaining private-score gap is **0.02328**, so SOTA is not established. Exact v26
+The current official best is v27: **0.23339 public / 0.20831 private**. It gained
+**0.00287 public / 0.00138 private** over v26 and completed in 2.0682 hours. The
+remaining private-score gap is **0.02190**, so SOTA is not established. Exact v27
 outputs, hashes, assessment diagnostics and leaderboard evidence are preserved under
-`results/`; see `results/v26_summary.json` and `results/experiment_registry.json`.
+`results/`; see `results/v27_summary.json` and `results/experiment_registry.json`.
 
 The current candidate notebook is
-`notebooks/geolifeclef_v27_multiscale_shift_aware_ensemble.ipynb`. It embeds the exact
-scored v26 predictions and excludes all 73,487 survey IDs assessed by v21-v26 from two
-new assessment folds. The candidate adds deeper multi-scale raster pyramids, derived
-Sentinel spectral indices, modality attention, four-view test-time augmentation, and a
-three-seed deployment ensemble around the exact v26 list. The notebook is self-contained,
-695,825 bytes, uses only the official competition input, deletes its large temporary cache,
-and has a 10.75-hour guard. See `docs/multiscale_shift_aware_ensemble_v27.md`.
+`notebooks/geolifeclef_v28_presence_only_shift_moe.ipynb`. It embeds the exact scored
+v27 predictions and excludes all 82,582 survey IDs assessed by v21-v27. The candidate
+adds a bounded multi-scale competition-PO geographic expert at 0.1, 0.5 and 2 degrees,
+keeps v27 cardinality unchanged, and selects its policy with pooled, country-balanced and
+spatial-block-balanced calibration. The notebook is self-contained, 767,190 bytes, uses
+only the official competition input, deletes its large temporary cache, and has a
+10.75-hour guard. See `docs/presence_only_shift_moe_v28.md`.
 
 ## Audit and canonical data contract
 

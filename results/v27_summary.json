@@ -1,0 +1,55 @@
+{
+  "experiment": "v27_multiscale_shift_aware_ensemble",
+  "status": "complete_official_current_best",
+  "recorded_at": "2026-09-24",
+  "score_source": "user-provided Kaggle results screenshot",
+  "official": {
+    "public_score": 0.23339,
+    "private_score": 0.20831,
+    "private_target": 0.23021,
+    "target_reached": false,
+    "gap_to_target_private": 0.02190,
+    "gain_over_v26_public": 0.00287,
+    "gain_over_v26_private": 0.00138
+  },
+  "runtime_hours": 2.0682214702091666,
+  "eligible_for_submission": true,
+  "selected_policy": "pyramid_count_65",
+  "assessment": {
+    "surveys": 9095,
+    "spatial_blocks": 31,
+    "matched_v26_sample_f1": 0.19725011251923785,
+    "v27_sample_f1": 0.2101890704945883,
+    "gain": 0.012938957975350471,
+    "spatial_bootstrap_ci95": [
+      0.003108585013168653,
+      0.021427576598965895
+    ],
+    "fold_gains": [
+      0.02192845265921312,
+      0.002535792756525549
+    ],
+    "matched_v26_cardinality_mae": 10.296536558548652,
+    "v27_cardinality_mae": 9.225068719076416,
+    "true_cardinality_mean": 14.207696536558549,
+    "predicted_cardinality_mean": 18.77724024189115,
+    "now_consumed": true,
+    "warning": "The fresh assessment is 61.9% Netherlands and contains no Ukraine, Switzerland or United Kingdom surveys and only two Bulgarian surveys; it is not a hidden-test estimate."
+  },
+  "diagnosis": {
+    "candidate_ranking_ablation_delta": -0.010422352485971648,
+    "adaptive_count_ablation_delta": -0.002238552312107789,
+    "rare_protection_ablation_delta": 0.0,
+    "private_transfer_efficiency": "The official private gain was positive but much smaller than the internal matched-fold gain, consistent with the known country shift.",
+    "next_method": "Exact-v27 control plus bounded multi-scale presence-only geographic expert selected with pooled, country-balanced and spatial-block-balanced calibration."
+  },
+  "source_revision": "cf52a55c4d74a51156f4fcd667a3db7d67fc64b7;notebook-source-sha256:69a2d3952fa6324d9a05f4edb6fa7662388a198df89c407f7f034b94099f1dc0",
+  "artifacts": {
+    "directory": "results/v27_kaggle_output",
+    "leaderboard_evidence": "results/v27_kaggle_scores.png",
+    "assessment_per_survey_v27.csv": "cb76e350790cd6894246626cf1731dd085da716951dec5be7a992d90b491a2ae",
+    "GLC25_PA_submission_v27.csv": "32cd02788d910abe0cd18715da00f201a52a371a2135d17399301dd7e532f710",
+    "v27_manifest.json": "b07c03b753b1081c3eb18397e1d2fdb515f39f7cc5dc8de87a4e973ca5f837a7",
+    "v27_report.json": "c067412d6eb95d41aa9d5b45cd2d48f667f16f5a9eee108d19fe629c9e807aa5"
+  }
+}
