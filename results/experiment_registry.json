@@ -169,7 +169,7 @@
       "candidate": "official-data-only multi-scale raster pyramid with Sentinel spectral indices, modality attention, four-view TTA, three seeds, and rank-list fusion around exact v26",
       "runtime_guard_hours": 10.75,
       "notebook_source_limit_bytes": 1000000,
-      "notebook_bytes": 693461
+      "notebook_bytes": 695825
     },
     {
       "experiment": "v26_raw_spatial_raster_ensemble",

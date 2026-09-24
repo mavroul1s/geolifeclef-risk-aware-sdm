@@ -63,7 +63,7 @@ scored v26 predictions and excludes all 73,487 survey IDs assessed by v21-v26 fr
 new assessment folds. The candidate adds deeper multi-scale raster pyramids, derived
 Sentinel spectral indices, modality attention, four-view test-time augmentation, and a
 three-seed deployment ensemble around the exact v26 list. The notebook is self-contained,
-693,461 bytes, uses only the official competition input, deletes its large temporary cache,
+695,825 bytes, uses only the official competition input, deletes its large temporary cache,
 and has a 10.75-hour guard. See `docs/multiscale_shift_aware_ensemble_v27.md`.
 
 ## Audit and canonical data contract

@@ -56,8 +56,10 @@ EARTH_RADIUS_KM = 6371.0088
 MAX_TOTAL_HOURS = 10.75
 FINAL_RESERVE_SECONDS = 35 * 60
 FEATURE_PREP_LIMIT_SECONDS = 2.75 * 3600
-SEEDS = {"split": 20260925, "fold_0": 20262701, "fold_1": 20262702, "deployment": 20262703,
+SEEDS = {"split": 20260954, "fold_0": 20262701, "fold_1": 20262702, "deployment": 20262703,
          "bootstrap": 20262704, "po": 20262705}
+OUTER_SPLIT_BASE_SEED = 20260925
+OUTER_SPLIT_AVAILABILITY_RETRY = SEEDS["split"] - OUTER_SPLIT_BASE_SEED
 MODALITIES = ("landsat", "bioclim", "sentinel", "environment", "static")
 REMOTE_DIMS = {"landsat": 114, "bioclim": 76, "sentinel": 115}
 RASTER_MODALITIES = ("landsat", "bioclim", "sentinel")
@@ -651,18 +653,30 @@ def make_outer_split(rows: pd.DataFrame, fold: int, consumed_ids: np.ndarray
     result = {"training": training, "selection": np.flatnonzero(selection),
               "calibration": np.flatnonzero(calibration),
               "assessment": np.flatnonzero(assessment)}
-    if min(map(len, result.values())) < 500:
+    minimums = {"training": 10_000, "selection": 500,
+                "calibration": 500, "assessment": 2_000}
+    if any(len(result[name]) < minimum for name, minimum in minimums.items()):
         raise ValueError(f"Preregistered fold {fold} produced a small partition: "
-                         f"{ {name: len(v) for name, v in result.items()} }")
+                         f"{ {name: len(v) for name, v in result.items()} }; "
+                         f"required {minimums}")
     assessment_ids = rows.surveyId.to_numpy(np.int64)[result["assessment"]]
     if np.intersect1d(assessment_ids, consumed_ids).size:
         raise ValueError("A v27 assessment survey was used by an earlier experiment")
     support = nearest_distance_km(coordinates[training], coordinates[result["assessment"]])
     manifest = {
-        "fold": fold, "seed": SEEDS["split"], "block_size_degrees": 1.0,
+        "fold": fold, "seed": SEEDS["split"],
+        "base_seed": OUTER_SPLIT_BASE_SEED,
+        "availability_only_seed_retry": OUTER_SPLIT_AVAILABILITY_RETRY,
+        "seed_revision_reason": (
+            "The original seed left fold 1 with 444 fresh surveys; retry 29 was frozen after "
+            "a labels-blind search over retries 0--99 maximizing the smaller fresh assessment "
+            "fold subject to spatial-block and development/training size constraints."
+        ),
+        "labels_or_species_used_for_assignment": False,
+        "block_size_degrees": 1.0,
         "assessment_bucket_range": [assessment_start, assessment_stop - 1],
         "selection_bucket_range": [40, 49], "calibration_bucket_range": [50, 59],
-        "buffer_km": 20.0, "adaptive_retries": 0,
+        "buffer_km": 20.0, "adaptive_retries": OUTER_SPLIT_AVAILABILITY_RETRY,
         "partition_counts": {name: len(values) for name, values in result.items()},
         "partition_blocks": {name: int(np.unique(blocks[values]).size)
                              for name, values in result.items()},
@@ -2635,6 +2649,22 @@ def run_v27(frozen_v26_payload_b64: str, consumed_ids_b64: str) -> dict[str, Any
         tests_before = notebook_self_tests()
         data_root = discover_data_root()
         consumed_ids = decode_consumed_ids(consumed_ids_b64)
+        # Validate every registered partition before the 30--40 minute raster scan.
+        # This reads coordinates/IDs only and never touches species labels.
+        preflight_rows = (pd.read_csv(
+            data_root / "GLC25_PA_metadata_train.csv",
+            usecols=["surveyId", "lat", "lon"])
+            .dropna(subset=["surveyId"]).drop_duplicates("surveyId").reset_index(drop=True))
+        preflight_outer = [make_outer_split(preflight_rows, fold, consumed_ids)
+                           for fold in (0, 1)]
+        preflight_deployment = make_deployment_split(preflight_rows, consumed_ids)
+        guard.stamp(
+            "split_preflight",
+            labels_used=False,
+            outer_partition_counts=[item[1]["partition_counts"] for item in preflight_outer],
+            deployment_partition_counts=preflight_deployment[1]["partition_counts"],
+        )
+        del preflight_rows, preflight_outer, preflight_deployment
         feature_manifest = prepare_feature_store(data_root, temporary / "features", guard)
         store = FeatureStore(temporary / "features")
         rows, test_rows, pairs = load_rows_and_pairs(data_root, store.train_ids, store.test_ids)
@@ -2661,14 +2691,17 @@ def run_v27(frozen_v26_payload_b64: str, consumed_ids_b64: str) -> dict[str, Any
         torch.set_num_threads(min(os.cpu_count() or 2, 6))
         guard.stamp("data_ready", device=torch.cuda.get_device_name(0),
                     train_rows=len(rows), test_rows=len(test_rows))
+        # Freeze and validate all splits before any model is trained. This prevents
+        # a late fold/deployment contract failure after an earlier fold has run.
+        outer_definitions = [make_outer_split(rows, fold, consumed_ids) for fold in (0, 1)]
+        deployment_split, deployment_manifest = make_deployment_split(rows, consumed_ids)
         po_path = data_root / "GLC25_P0_metadata_train.csv"
         if not po_path.is_file():
             raise FileNotFoundError("Official presence-only metadata GLC25_P0_metadata_train.csv missing")
         po = POGridIndex.build(po_path, store.species_ids,
                                rows[["lat", "lon"]].to_numpy(np.float64), guard)
         outer_bundles, training_records, split_manifests = [], {}, []
-        for fold in (0, 1):
-            split, split_manifest = make_outer_split(rows, fold, consumed_ids)
+        for fold, (split, split_manifest) in enumerate(outer_definitions):
             bundle, training = _build_models_for_fold(
                 f"fold_{fold}", split, rows, store, po, temporary, guard, device,
                 SEEDS[f"fold_{fold}"],
@@ -2677,7 +2710,6 @@ def run_v27(frozen_v26_payload_b64: str, consumed_ids_b64: str) -> dict[str, Any
             training_records[f"fold_{fold}"] = training
             split_manifests.append(split_manifest)
         selected_policy, policy_trials = select_global_policy(outer_bundles)
-        deployment_split, deployment_manifest = make_deployment_split(rows, consumed_ids)
         deployment_predictions, deployment_record = _train_deployment(
             deployment_split, rows, test_rows, store, po, v26_base_lists, selected_policy,
             temporary, guard, device)

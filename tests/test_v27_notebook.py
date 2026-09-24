@@ -133,6 +133,26 @@ def test_new_outer_folds_are_fresh_disjoint_and_buffered():
         assert set(split["assessment"]).isdisjoint(split["training"])
 
 
+def test_official_v27_split_revision_repairs_failed_fold():
+    rows = (pd.read_csv(
+        ROOT / "artifacts/v20_frozen/raw/GLC25_PA_metadata_train.csv",
+        usecols=["surveyId", "lat", "lon"])
+        .dropna(subset=["surveyId"]).drop_duplicates("surveyId").reset_index(drop=True))
+    consumed = np.unique(np.concatenate([
+        pd.read_csv(path, usecols=["surveyId"]).surveyId.to_numpy(np.int64)
+        for path in CONSUMED_PATHS
+    ]))
+    _, first = make_outer_split(rows, 0, consumed)
+    _, second = make_outer_split(rows, 1, consumed)
+    assert first["partition_counts"]["assessment"] == 4_879
+    assert second["partition_counts"]["assessment"] == 4_216
+    assert first["partition_blocks"]["assessment"] == 16
+    assert second["partition_blocks"]["assessment"] == 15
+    assert first["adaptive_retries"] == second["adaptive_retries"] == 29
+    assert first["labels_or_species_used_for_assignment"] is False
+    assert second["labels_or_species_used_for_assignment"] is False
+
+
 def test_data_root_supports_nested_kaggle_competition_mount(tmp_path):
     root = tmp_path / "input"
     competition = root / "competitions" / "geolifeclef-2025"

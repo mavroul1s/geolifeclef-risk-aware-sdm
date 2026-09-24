@@ -22,6 +22,12 @@ wider, still calibrated, list-fusion range.
 - Embed and exclude the union of all 73,487 survey IDs assessed by v21 through v26.
 - Use two preregistered fresh assessment block ranges: 0–19 and 20–39 under the v27 stable
   spatial hash. Neither assessment set may affect checkpoints, calibration, or policy choice.
+- The original split seed `20260925` left fold 1 with only 444 fresh surveys. Before any
+  assessment labels were read, a labels-blind search over retries 0–99 maximized the smaller
+  fresh fold subject to spatial-block and development/training-size constraints. This froze
+  retry 29 (`20260954`), producing 4,879 and 4,216 fresh surveys across 16 and 15 spatial blocks.
+  The notebook now validates both outer folds and the deployment split before feature extraction
+  or training.
 - Draw checkpoint-selection and policy-calibration surveys from already-consumed IDs in distinct
   ranges 40–49 and 50–59. Candidate training uses blocks 60–99 and a 20 km buffer from all
   evaluation surveys.
