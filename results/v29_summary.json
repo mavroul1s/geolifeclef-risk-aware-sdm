@@ -1,0 +1,54 @@
+{
+  "experiment": "v29_full_data_multisensor_ensemble",
+  "status": "complete_official_current_best",
+  "recorded_at": "2026-09-25",
+  "score_source": "user-provided Kaggle results screenshot",
+  "official": {
+    "public_score": 0.23900,
+    "private_score": 0.21093,
+    "private_target": 0.23021,
+    "target_reached": false,
+    "gap_to_target_private": 0.01928,
+    "gain_over_v27_public": 0.00561,
+    "gain_over_v27_private": 0.00262
+  },
+  "runtime_hours": 3.0141974191044443,
+  "hardware": "Tesla T4; PyTorch 2.10.0+cu128",
+  "selected_policy": "ensemble_a100_k80",
+  "eligible_for_submission": true,
+  "assessment": {
+    "surveys": 2395,
+    "spatial_blocks": 24,
+    "matched_v27_f1": 0.35205313088993545,
+    "v29_f1": 0.38428217516659796,
+    "gain": 0.032229044276662504,
+    "spatial_ci95": [0.015919645184316416, 0.053042568288633796],
+    "now_consumed": true,
+    "all_pa_ids_now_previously_assessed": 88987,
+    "fresh_pa_ids_remaining": 0,
+    "warning": "Small Denmark-heavy audit. Internal improvement transferred only partially to private F1."
+  },
+  "diagnosis": {
+    "temporal_attention_calibration_f1": 0.3778914802477396,
+    "multisensor_conv_calibration_f1": 0.3398327666170742,
+    "ecology_attention_calibration_f1": 0.3803790159199178,
+    "selected_ensemble_calibration_f1": 0.38591165255719234,
+    "development_best_epochs": [12, 15, 18],
+    "assessment_predicted_count_mean": 19.630480167014614,
+    "official_test_predicted_count_mean": 26.86255411255411,
+    "count_warning": "Different data distributions can legitimately require different counts; the mismatch is a diagnostic clue, not proof of overprediction.",
+    "calibration_limitation": "Platt parameters were transferred from development weights to separately trained full-PA production weights.",
+    "next_method": "Attention-only and new two-scale attention ensembles, learned oracle-count correction, repeated spatial regression checks, production-specific held-out calibration anchors."
+  },
+  "artifacts": {
+    "directory": "results/v29_kaggle_output",
+    "source_zip": "C:/Users/nickb/Downloads/results.zip",
+    "source_zip_sha256": "bbf84ac259ee6922b450a2bce8908bf0e892b9f8df0e41000d914b0f510d08aa",
+    "leaderboard_evidence": "results/v29_kaggle_scores.png",
+    "leaderboard_evidence_sha256": "e3abd8149941cc4521f7e957d1b5c7092b879fa54d35fa650b7b7b5431c19611",
+    "GLC25_PA_submission_v29.csv": "9ec7afb25eb1651b161b0f8c6ecaa64fd553d17dd24b4808b1f07446b85f8194",
+    "assessment_per_survey_v29.csv": "573c3d62ef4779395f3de28df3a71cc1a399ffad39f37136e7a7813fe936f618",
+    "v29_report.json": "ff942d39ab74fc73acb43abc78b7b2e307dfa24e1674218b587881e9d8adfbdd",
+    "v29_manifest.json": "ded192428735e698bbed2f000cf3045e99d3afdf3c0a53b1676a17fc60622efd"
+  }
+}

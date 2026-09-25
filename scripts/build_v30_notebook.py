@@ -105,6 +105,8 @@ def build(output=OUTPUT):
     manifest = json.loads((ROOT / 'results/v29_kaggle_output/v29_manifest.json').read_text())
     if hashlib.sha256(previous.encode()).hexdigest() != manifest['source_sha256']:
         raise ValueError('The scored v29 source was changed')
+    if hashlib.sha256(legacy.encode()).hexdigest() != manifest['embedded_legacy_sha256']:
+        raise ValueError('The frozen v29 readers/reference source was changed')
     control = pack_control(ROOT / 'results/v29_kaggle_output/GLC25_PA_submission_v29.csv',
                             ROOT / 'artifacts/v20_frozen_bundle_v21/species_ids.npy')
     notebook = make_notebook(core, previous, legacy, control)

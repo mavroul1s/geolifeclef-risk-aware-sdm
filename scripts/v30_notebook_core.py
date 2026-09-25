@@ -171,6 +171,8 @@ def train_model(*args, **kwargs):
 
 
 def combine(arrays, weights):
+    if len(arrays) != len(weights) or any(p.shape != arrays[0].shape for p in arrays):
+        raise ValueError("Ensemble members/weights have inconsistent dimensions")
     result = np.zeros(arrays[0].shape, np.float32)
     for probability, weight in zip(arrays, weights):
         if weight:
@@ -484,6 +486,8 @@ def run_v30(control_b64):
             features = legacy.prepare_feature_store(root, temporary / 'features', guard, workers=6)
         finally:
             legacy._write_remote_arrays = original_writer
+        features['candidate_sentinel'] = 'additional 4x64x64 RGB-NIR with derived NDVI/NDWI; central 32px view for multiscale model'
+        features['candidate_band_order'] = 'TIFF metadata preferred; documented RGB-NIR fallback'
         store = legacy.FeatureStore(temporary / 'features')
         store.high_train = np.load(store.cache / 'train_sentinel64.npy', mmap_mode='r')
         store.high_test = np.load(store.cache / 'test_sentinel64.npy', mmap_mode='r')

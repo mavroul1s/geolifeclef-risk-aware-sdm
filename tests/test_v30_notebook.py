@@ -153,6 +153,31 @@ def test_cpu_gpu_preflight_stops_immediately(tmp_path,monkeypatch):
     assert json.loads((tmp_path/'artifacts/v30_export/failure_report.json').read_text())['status']=='failed'
 
 
+def test_production_admission_precedes_training(sensors,tmp_path,monkeypatch):
+    store,rows=sensors
+    record={'best_epoch':10,'history':[{'seconds':100}]}
+    bundles=[{'records':[record]*4,'split':{'training':np.arange(16)}}]*2
+    class Expired:
+        def require(self, seconds, stage):
+            assert seconds > 2700 and 'whole' in stage
+            raise TimeoutError('refit rejected before fitting')
+    monkeypatch.setattr(core,'train_model',lambda *a,**k:pytest.fail('Admission was too late'))
+    with pytest.raises(TimeoutError,match='before fitting'):
+        core.fit_production(bundles,{'weights':'balanced'},rows,rows,store,[],
+                            {'training':np.arange(24),'anchor':np.arange(24,32)},tmp_path,Expired(),torch.device('cpu'))
+
+
+def test_archive_hashes_and_v29_gate_are_preserved():
+    directory=ROOT/'results/v29_kaggle_output'
+    manifest=json.loads((directory/'v29_manifest.json').read_text())
+    for name,digest in manifest['outputs'].items():
+        assert hashlib.sha256((directory/name).read_bytes()).hexdigest()==digest
+    report=json.loads((directory/'v29_report.json').read_text())
+    assert report['submission_gate']['eligible_for_submission']
+    assert report['submission']['sha256']==core.CONTROL_HASH
+    assert report['hardware']['gpu']=='Tesla T4'
+
+
 def test_end_to_end_miniature_with_actual_fits_and_production_anchors(sensors,tmp_path,monkeypatch):
     store,rows=sensors
     monkeypatch.chdir(tmp_path)
