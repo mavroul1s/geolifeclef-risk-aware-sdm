@@ -1,0 +1,61 @@
+{
+  "experiment": "v30_calibrated_multiscale_attention",
+  "recorded_at": "2026-09-25",
+  "status": "local_validation_passed_awaiting_kaggle",
+  "notebook": "notebooks/geolifeclef_v30_calibrated_multiscale_attention.ipynb",
+  "notebook_bytes": 608823,
+  "notebook_sha256": "055e49817ad4bfea57066fa89767fc0cf12a7125beebdab3be61d025b2e23060",
+  "normalized_source_sha256": "faf8f4d9b106097a5de7f11a156f4ea99cee809815970f2d802ae7f72634bc03",
+  "embedded_v29_source_sha256": "bdb162dbc822622d34e9cdc0c4f9e91ee89fd7e11c33ad3113b4b6adccb5f3e1",
+  "frozen_control_sha256": "9ec7afb25eb1651b161b0f8c6ecaa64fd553d17dd24b4808b1f07446b85f8194",
+  "nbformat_valid": true,
+  "embedded_code_execution_tested": true,
+  "regression_tests": {
+    "command": "PYTHONPATH=src .venv/research/Scripts/python.exe -m pytest -p no:cacheprovider",
+    "passed": 187,
+    "failed": 0,
+    "warnings": 2,
+    "seconds": 130.14,
+    "warning_description": "Existing nested-tensor optimization warnings in two legacy PyTorch model tests."
+  },
+  "source_parity_guard": {
+    "stale_intermediate_build_detected": true,
+    "resolution": "Rebuilt the notebook after the final policy update and reran the entire suite successfully."
+  },
+  "new_model_checks": {
+    "actual_multiscale_cpu_training": true,
+    "complete_miniature_pipeline_with_real_fits": true,
+    "production_anchors_excluded_from_weight_training": true,
+    "production_specific_calibration_tested": true,
+    "compact_diagnostic_archive_tested": true,
+    "budget_admission_before_production_training_tested": true,
+    "default_width_192_forward_backward": {
+      "input_environment_features": 74,
+      "outputs": 5016,
+      "parameters": 5258809,
+      "batch_size": 2,
+      "finite_loss": true,
+      "finite_head_gradient": true,
+      "device": "CPU"
+    }
+  },
+  "official_metadata_only_preflight": {
+    "development_training_rows": [35811, 37487],
+    "selection_rows_each_fold": 8816,
+    "calibration_rows_each_fold": 8691,
+    "disjoint_regression_rows": [15792, 15778],
+    "development_minimum_distances_km": [20.002659731640595, 20.00039197939593],
+    "production_training_rows": 72063,
+    "production_anchor_rows": 8302,
+    "production_minimum_distance_km": 20.003768234611943,
+    "previously_assessed_pa_ids": 88987,
+    "fresh_holdout_remaining": 0,
+    "species_labels_used_for_split_assignment": false
+  },
+  "output_limit_bytes": 16000000,
+  "runtime_guard_hours": 10.75,
+  "full_kaggle_gpu_run_performed": false,
+  "full_kaggle_runtime_measured": false,
+  "official_submission_made": false,
+  "sota_established": false
+}

@@ -293,6 +293,8 @@
       "runtime_guard_hours": 10.75,
       "notebook_source_limit_bytes": 1000000,
       "output_limit_bytes": 16000000,
+      "notebook_bytes": 608823,
+      "local_validation": "results/v30_local_validation.json",
       "full_kaggle_runtime_measured": false
     },
     {

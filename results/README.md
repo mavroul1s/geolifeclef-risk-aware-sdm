@@ -1,6 +1,7 @@
 # Results index
 
 - `experiment_registry.json` is the canonical official-score history and competition target.
+- `v30_local_validation.json` records the final 608,823-byte notebook, 187 passing tests, default-size model backpropagation, and production-anchor exclusion checks. It is not a full Kaggle run or score.
 - `v28_summary.json` records a failed improvement: public 0.23339 / private 0.20831, selected `control`, eligibility false, CSV byte-identical to v27.
 - `v28_kaggle_output/` preserves the four original v28 files; `v28_kaggle_scores.png` preserves the user's leaderboard screenshot.
 - `v29_local_validation.json` records 176 passing tests and a valid 649,610-byte notebook. This is local CPU/code verification, not a Kaggle score or T4 runtime measurement.
