@@ -1,0 +1,51 @@
+{
+  "experiment": "v28_presence_only_shift_moe",
+  "status": "complete_official_duplicate_control",
+  "recorded_at": "2026-09-25",
+  "score_source": "user-provided Kaggle results screenshot",
+  "official": {
+    "public_score": 0.23339,
+    "private_score": 0.20831,
+    "private_target": 0.23021,
+    "target_reached": false,
+    "gap_to_target_private": 0.02190,
+    "gain_over_v27_public": 0.0,
+    "gain_over_v27_private": 0.0
+  },
+  "runtime_hours": 1.6212555194758334,
+  "selected_policy": "control",
+  "eligible_for_submission": false,
+  "submitted_by_user": true,
+  "identical_to_v27_byte_for_byte": true,
+  "assessment": {
+    "surveys": 4010,
+    "spatial_blocks": 76,
+    "matched_v27_sample_f1": 0.34593538797502243,
+    "v28_sample_f1": 0.34593538797502243,
+    "gain": 0.0,
+    "spatial_bootstrap_ci95": [0.0, 0.0],
+    "changed_surveys": 0,
+    "now_consumed": true,
+    "consumed_union_v21_to_v28": 86592,
+    "never_assessed_pa_remaining": 2395
+  },
+  "diagnosis": {
+    "control_calibration_f1": 0.328655801315187,
+    "po_tail_1_calibration_f1": 0.3250125549467464,
+    "po_tail_2_calibration_f1": 0.32809025327747254,
+    "po_shift_3_calibration_f1": 0.32861579584118317,
+    "po_shift_4_calibration_f1": 0.328655801315187,
+    "cause": "The PO policies did not improve development F1. The notebook selected control and correctly failed eligibility, but still named the unchanged CSV like a submission.",
+    "next_method": "Three new 64px multisensor models, all-species probability calibration and full-PA refits; unchanged or failed-gate files explicitly named DO_NOT_SUBMIT."
+  },
+  "artifacts": {
+    "source_zip": "C:/Users/nickb/Downloads/results.zip",
+    "source_zip_sha256": "0ec36a6402df359b36ead7603e8a8bc297ce5f3d90b350b2cd00e0156750c89c",
+    "directory": "results/v28_kaggle_output",
+    "leaderboard_evidence": "results/v28_kaggle_scores.png",
+    "assessment_per_survey_v28.csv": "088367fb6288aa7d8ba53a27175039769ad99e51a922601279aa719d5a14e6d0",
+    "GLC25_PA_submission_v28.csv": "32cd02788d910abe0cd18715da00f201a52a371a2135d17399301dd7e532f710",
+    "v28_manifest.json": "266e37e36a94726d2ac4497d59f26682056e8ab25d56fa93bd310fb689c32457",
+    "v28_report.json": "feda0b56fcb2c9a7c154730ca3be8ce911226c2700a684ef95fa87012c0f29dd"
+  }
+}

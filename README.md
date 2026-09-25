@@ -57,14 +57,22 @@ remaining private-score gap is **0.02190**, so SOTA is not established. Exact v2
 outputs, hashes, assessment diagnostics and leaderboard evidence are preserved under
 `results/`; see `results/v27_summary.json` and `results/experiment_registry.json`.
 
+V28 did **not** improve: it selected `control` and emitted the exact same CSV as v27,
+with the same public/private scores. Its report correctly said
+`eligible_for_submission: false`. Evidence is in `results/v28_summary.json` and
+`results/v28_kaggle_output/`; the four original outputs and screenshot are preserved.
+
 The current candidate notebook is
-`notebooks/geolifeclef_v28_presence_only_shift_moe.ipynb`. It embeds the exact scored
-v27 predictions and excludes all 82,582 survey IDs assessed by v21-v27. The candidate
-adds a bounded multi-scale competition-PO geographic expert at 0.1, 0.5 and 2 degrees,
-keeps v27 cardinality unchanged, and selects its policy with pooled, country-balanced and
-spatial-block-balanced calibration. The notebook is self-contained, 767,190 bytes, uses
-only the official competition input, deletes its large temporary cache, and has a
-10.75-hour guard. See `docs/presence_only_shift_moe_v28.md`.
+`notebooks/geolifeclef_v29_full_data_multisensor_ensemble.ipynb`. It trains three
+heterogeneous 64px multisensor models, calibrates all-species probabilities, and refits
+successful candidates on all 88,987 PA surveys. All 86,592 previously assessed IDs are
+excluded from its final 2,395-row audit. That small Denmark-heavy audit is not a
+hidden-test estimate. The self-contained notebook is below Kaggle's 1 MB limit, needs
+only the official competition input and one GPU, and exports only four compact files.
+A 10.75-hour cooperative guard, per-fit budgets and measured full-refit admission protect
+the session budget; full T4 completion/performance has not yet been measured.
+Only a passed gate produces `GLC25_PA_submission_v29.csv`. Every other prediction file
+explicitly says `DO_NOT_SUBMIT`. See `docs/full_data_multisensor_ensemble_v29.md`.
 
 ## Audit and canonical data contract
 

@@ -1,0 +1,47 @@
+{
+  "experiment": "v29_full_data_multisensor_ensemble",
+  "recorded_at": "2026-09-25",
+  "status": "local_validation_passed_awaiting_kaggle",
+  "notebook": "notebooks/geolifeclef_v29_full_data_multisensor_ensemble.ipynb",
+  "notebook_bytes": 649610,
+  "kaggle_source_limit_bytes": 1000000,
+  "notebook_sha256": "3c748e91da213dfdb20636b8f2f3d67c8463ffb68e2295bf752dc4a0ccb6c1fa",
+  "normalized_core_source_sha256": "bdb162dbc822622d34e9cdc0c4f9e91ee89fd7e11c33ad3113b4b6adccb5f3e1",
+  "embedded_reference_source_sha256": "69a2d3952fa6324d9a05f4edb6fa7662388a198df89c407f7f034b94099f1dc0",
+  "nbformat_validation_passed": true,
+  "embedded_code_executed_without_repository_imports": true,
+  "regression_tests": {
+    "command": "PYTHONPATH=src .venv/research/Scripts/python.exe -m pytest -p no:cacheprovider",
+    "passed": 176,
+    "failed": 0,
+    "warnings": 2,
+    "seconds": 71.22,
+    "warning_description": "Existing PyTorch nested-tensor optimization warnings in two legacy model tests; not test failures."
+  },
+  "new_model_validation": {
+    "all_three_configs_trained_on_synthetic_cpu_data": true,
+    "fixed_epoch_full_refits_tested": true,
+    "rare_output_weight_updates_tested": true,
+    "complete_miniature_pipeline_tested": true,
+    "dual_resolution_cache_writer_tested": true,
+    "sentinel_band_mapping_and_indices_tested": true,
+    "calibration_and_budget_admission_tested": true,
+    "exact_v27_control_round_trip_tested": true,
+    "no_op_and_failed_gate_file_naming_tested": true
+  },
+  "official_metadata_only_split_check": {
+    "training": 42840,
+    "selection": 18753,
+    "calibration": 8045,
+    "assessment": 2395,
+    "consumed_ids": 86592,
+    "pairwise_block_and_id_disjoint": true,
+    "minimum_evaluation_distance_at_least_20km": true,
+    "species_labels_used_for_this_check": false
+  },
+  "full_kaggle_gpu_run_performed": false,
+  "full_kaggle_runtime_measured": false,
+  "official_submission_made": false,
+  "official_score": null,
+  "sota_established": false
+}

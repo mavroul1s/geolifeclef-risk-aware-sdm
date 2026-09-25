@@ -1,0 +1,2577 @@
+{
+  "assessment": {
+    "by_country": {
+      "Austria": {
+        "delta_f1": 0.0,
+        "matched_v27_f1": 0.2553191489361702,
+        "n": 1,
+        "v28_f1": 0.2553191489361702
+      },
+      "Bosnia and Herzegovina": {
+        "delta_f1": 0.0,
+        "matched_v27_f1": 0.35679845708775315,
+        "n": 2,
+        "v28_f1": 0.35679845708775315
+      },
+      "Bulgaria": {
+        "delta_f1": 0.0,
+        "matched_v27_f1": 0.15606654921141475,
+        "n": 7,
+        "v28_f1": 0.15606654921141475
+      },
+      "Denmark": {
+        "delta_f1": 0.0,
+        "matched_v27_f1": 0.34743717300651306,
+        "n": 3344,
+        "v28_f1": 0.34743717300651306
+      },
+      "France": {
+        "delta_f1": 0.0,
+        "matched_v27_f1": 0.448069180323965,
+        "n": 254,
+        "v28_f1": 0.448069180323965
+      },
+      "Germany": {
+        "delta_f1": 0.0,
+        "matched_v27_f1": 0.2670300560804569,
+        "n": 23,
+        "v28_f1": 0.2670300560804569
+      },
+      "Greece": {
+        "delta_f1": 0.0,
+        "matched_v27_f1": 0.23781936250151525,
+        "n": 8,
+        "v28_f1": 0.23781936250151525
+      },
+      "Italy": {
+        "delta_f1": 0.0,
+        "matched_v27_f1": 0.29124921881187255,
+        "n": 174,
+        "v28_f1": 0.29124921881187255
+      },
+      "Netherlands": {
+        "delta_f1": 0.0,
+        "matched_v27_f1": 0.2559038543927228,
+        "n": 194,
+        "v28_f1": 0.2559038543927228
+      },
+      "Slovakia": {
+        "delta_f1": 0.0,
+        "matched_v27_f1": 0.33707865168539325,
+        "n": 1,
+        "v28_f1": 0.33707865168539325
+      },
+      "Switzerland": {
+        "delta_f1": 0.0,
+        "matched_v27_f1": 0.39800443458980045,
+        "n": 2,
+        "v28_f1": 0.39800443458980045
+      }
+    },
+    "by_pa_distance": {
+      "100_to_200km": {
+        "delta_f1": 0.0,
+        "matched_v27_f1": 0.2597041676341971,
+        "n": 9,
+        "v28_f1": 0.2597041676341971
+      },
+      "20_to_50km": {
+        "delta_f1": 0.0,
+        "matched_v27_f1": 0.3506175524498353,
+        "n": 3769,
+        "v28_f1": 0.3506175524498353
+      },
+      "50_to_100km": {
+        "delta_f1": 0.0,
+        "matched_v27_f1": 0.27321557365389265,
+        "n": 232,
+        "v28_f1": 0.27321557365389265
+      }
+    },
+    "cardinality": {
+      "predicted_mean": 20.875810473815463,
+      "true_mean": 15.96633416458853,
+      "unchanged_by_design": true
+    },
+    "control_definition": "The exact scored v27 CSV is frozen for official-test inference. Fresh-fold F1 uses the complete matched v27 recipe refit. Every survey assessed by v21 through v27 is excluded from v28 assessment.",
+    "folds": [
+      {
+        "changed_surveys": 0,
+        "fold": 0,
+        "gain": 0.0,
+        "matched_v27_sample_f1": 0.3600370412468167,
+        "matched_v27_species_groups": {
+          "common_over_25": {
+            "precision": 0.3291459995686867,
+            "predicted_positives": 37096,
+            "recall": 0.4166666666666667,
+            "species": 1343,
+            "target_positives": 29304,
+            "true_positives": 12210
+          },
+          "rare_1_to_25": {
+            "precision": 0.14035087719298245,
+            "predicted_positives": 57,
+            "recall": 0.012738853503184714,
+            "species": 2810,
+            "target_positives": 628,
+            "true_positives": 8
+          },
+          "zero_pa": {
+            "precision": null,
+            "predicted_positives": 0,
+            "recall": 0.0,
+            "species": 863,
+            "target_positives": 101,
+            "true_positives": 0
+          }
+        },
+        "mean_species_swaps": 0.0,
+        "spatial_blocks": 31,
+        "surveys": 1845,
+        "v28_sample_f1": 0.3600370412468167,
+        "v28_species_groups": {
+          "common_over_25": {
+            "precision": 0.3291459995686867,
+            "predicted_positives": 37096,
+            "recall": 0.4166666666666667,
+            "species": 1343,
+            "target_positives": 29304,
+            "true_positives": 12210
+          },
+          "rare_1_to_25": {
+            "precision": 0.14035087719298245,
+            "predicted_positives": 57,
+            "recall": 0.012738853503184714,
+            "species": 2810,
+            "target_positives": 628,
+            "true_positives": 8
+          },
+          "zero_pa": {
+            "precision": null,
+            "predicted_positives": 0,
+            "recall": 0.0,
+            "species": 863,
+            "target_positives": 101,
+            "true_positives": 0
+          }
+        }
+      },
+      {
+        "changed_surveys": 0,
+        "fold": 1,
+        "gain": 0.0,
+        "matched_v27_sample_f1": 0.3339180437318537,
+        "matched_v27_species_groups": {
+          "common_over_25": {
+            "precision": 0.29777529153578036,
+            "predicted_positives": 46478,
+            "recall": 0.4156780297341943,
+            "species": 1353,
+            "target_positives": 33295,
+            "true_positives": 13840
+          },
+          "rare_1_to_25": {
+            "precision": 0.09876543209876543,
+            "predicted_positives": 81,
+            "recall": 0.01199400299850075,
+            "species": 2826,
+            "target_positives": 667,
+            "true_positives": 8
+          },
+          "zero_pa": {
+            "precision": null,
+            "predicted_positives": 0,
+            "recall": 0.0,
+            "species": 837,
+            "target_positives": 30,
+            "true_positives": 0
+          }
+        },
+        "mean_species_swaps": 0.0,
+        "spatial_blocks": 45,
+        "surveys": 2165,
+        "v28_sample_f1": 0.3339180437318537,
+        "v28_species_groups": {
+          "common_over_25": {
+            "precision": 0.29777529153578036,
+            "predicted_positives": 46478,
+            "recall": 0.4156780297341943,
+            "species": 1353,
+            "target_positives": 33295,
+            "true_positives": 13840
+          },
+          "rare_1_to_25": {
+            "precision": 0.09876543209876543,
+            "predicted_positives": 81,
+            "recall": 0.01199400299850075,
+            "species": 2826,
+            "target_positives": 667,
+            "true_positives": 8
+          },
+          "zero_pa": {
+            "precision": null,
+            "predicted_positives": 0,
+            "recall": 0.0,
+            "species": 837,
+            "target_positives": 30,
+            "true_positives": 0
+          }
+        }
+      }
+    ],
+    "gain": 0.0,
+    "intervention": {
+      "changed_fraction": 0.0,
+      "changed_surveys": 0,
+      "maximum_species_swaps": 0,
+      "mean_species_swaps": 0.0
+    },
+    "matched_v27_sample_f1": 0.34593538797502243,
+    "now_consumed": true,
+    "rarity_groups": {
+      "common_over_25": {
+        "matched_v27": {
+          "precision": 0.311699810945988,
+          "predicted_positives": 83574,
+          "recall": 0.4161408329206537,
+          "target_positives": 62599,
+          "true_positives": 26050
+        },
+        "v28": {
+          "precision": 0.311699810945988,
+          "predicted_positives": 83574,
+          "recall": 0.4161408329206537,
+          "target_positives": 62599,
+          "true_positives": 26050
+        }
+      },
+      "rare_1_to_25": {
+        "matched_v27": {
+          "precision": 0.11594202898550725,
+          "predicted_positives": 138,
+          "recall": 0.012355212355212355,
+          "target_positives": 1295,
+          "true_positives": 16
+        },
+        "v28": {
+          "precision": 0.11594202898550725,
+          "predicted_positives": 138,
+          "recall": 0.012355212355212355,
+          "target_positives": 1295,
+          "true_positives": 16
+        }
+      },
+      "zero_pa": {
+        "matched_v27": {
+          "precision": null,
+          "predicted_positives": 0,
+          "recall": 0.0,
+          "target_positives": 131,
+          "true_positives": 0
+        },
+        "v28": {
+          "precision": null,
+          "predicted_positives": 0,
+          "recall": 0.0,
+          "target_positives": 131,
+          "true_positives": 0
+        }
+      }
+    },
+    "spatial_blocks": 76,
+    "spatial_bootstrap": {
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "iterations": 500,
+      "mean_difference": 0.0,
+      "seed": 20262804,
+      "spatial_blocks": 76,
+      "unit": "quarter_degree_spatial_block"
+    },
+    "surveys": 4010,
+    "used_for_selection": false,
+    "v28_sample_f1": 0.34593538797502243,
+    "warning": "Fresh matched-recipe spatial assessment, not a hidden-test estimate."
+  },
+  "consumed_assessment_union": {
+    "payload_sha256": "290278b5955d2ea91e51d58a0e393dcb8a5ff01e309c35cbd97cc19115a98a96",
+    "surveys": 82582
+  },
+  "experiment": "v28_presence_only_shift_moe",
+  "external_data_or_weights": false,
+  "final_file_hashes": {
+    "GLC25_PA_submission_v28.csv": "32cd02788d910abe0cd18715da00f201a52a371a2135d17399301dd7e532f710",
+    "assessment_per_survey_v28.csv": "088367fb6288aa7d8ba53a27175039769ad99e51a922601279aa719d5a14e6d0",
+    "v28_manifest.json": null,
+    "v28_report.json": null
+  },
+  "frozen_v27_baseline": {
+    "assessment_consumed": true,
+    "checks": {
+      "dimensions": true,
+      "exact_submission_sha256": true,
+      "payload_sha256": true,
+      "prediction_rows": true,
+      "raw_sha256": true
+    },
+    "private_score": 0.20831,
+    "public_score": 0.23339,
+    "storage": "lossless counts:uint8 plus species-column:uint16, LZMA compressed",
+    "submission_sha256": "32cd02788d910abe0cd18715da00f201a52a371a2135d17399301dd7e532f710"
+  },
+  "hash_note": "A file cannot contain its own byte hash; the manifest records the report hash, and the notebook prints the manifest hash after finalization.",
+  "integrity": {
+    "assessment_disjoint_from_consumed_union": true,
+    "assessment_predictions_frozen": true,
+    "expected_dimensions": true,
+    "fresh_assessment_ids": true,
+    "frozen_v27_exact": true,
+    "no_external_pretrained_weights": true,
+    "notebook_tests_before_and_after": true,
+    "official_competition_only": true,
+    "runtime_within_limit": true,
+    "selection_calibration_assessment_separate": true,
+    "submission_schema_valid": true,
+    "submission_unchanged_after_freeze": true,
+    "test_labels_unused": true,
+    "twenty_km_buffer": true
+  },
+  "official_private_score": null,
+  "official_public_score": null,
+  "official_submission_made": false,
+  "official_submission_reference": null,
+  "policy_trials": [
+    {
+      "country_macro_f1": 0.27214412232359186,
+      "fold_scores": [
+        0.3287141972727596,
+        0.3285974053576145
+      ],
+      "intervention": 0.0,
+      "policy_id": "control",
+      "pooled_calibration_f1": 0.328655801315187,
+      "robust_calibration_score": 0.3248204137736003,
+      "spatial_block_macro_f1": 0.3698259301404355,
+      "surveys": 20868
+    },
+    {
+      "country_macro_f1": 0.2673782361887984,
+      "fold_scores": [
+        0.3251906010380681,
+        0.32483450885542475
+      ],
+      "intervention": 3.4799999999999995,
+      "policy_id": "po_tail_1",
+      "pooled_calibration_f1": 0.3250125549467464,
+      "robust_calibration_score": 0.32119368332840753,
+      "spatial_block_macro_f1": 0.3673713872313389,
+      "surveys": 20868
+    },
+    {
+      "country_macro_f1": 0.2713149593701702,
+      "fold_scores": [
+        0.3281126012614372,
+        0.3280679052935078
+      ],
+      "intervention": 4.42,
+      "policy_id": "po_tail_2",
+      "pooled_calibration_f1": 0.32809025327747254,
+      "robust_calibration_score": 0.32417377417282395,
+      "spatial_block_macro_f1": 0.36919963076618056,
+      "surveys": 20868
+    },
+    {
+      "country_macro_f1": 0.27168787806484807,
+      "fold_scores": [
+        0.3286446480253881,
+        0.3285869436569782
+      ],
+      "intervention": 5.26,
+      "policy_id": "po_shift_3",
+      "pooled_calibration_f1": 0.32861579584118317,
+      "robust_calibration_score": 0.3246323251195515,
+      "spatial_block_macro_f1": 0.36960983073099146,
+      "surveys": 20868
+    },
+    {
+      "country_macro_f1": 0.27214412232359186,
+      "fold_scores": [
+        0.3287141972727596,
+        0.3285974053576145
+      ],
+      "intervention": 6.18,
+      "policy_id": "po_shift_4",
+      "pooled_calibration_f1": 0.328655801315187,
+      "robust_calibration_score": 0.3248204137736003,
+      "spatial_block_macro_f1": 0.3698259301404355,
+      "surveys": 20868
+    }
+  ],
+  "pre_assessment_freeze": {
+    "all_models_and_policies_frozen": true,
+    "assessment_prediction_sha256": {
+      "fold_0": "6efa9062bc54d2cc86b54e5528ba064b9bd5cb98c123fcc925c52b1f3eb1e8c9",
+      "fold_1": "3eac6781fe64ec2ecd71523fde88c18819e7815449219cbcc98477b68e7fa35d"
+    },
+    "assessment_reporting_started": false,
+    "checkpoint_sha256": {
+      "fold_0/matched_v23_control.pt": "411be50f0524d2f380300070395d4c7837794ba4e2501b0deab9f9ae33c836ef",
+      "fold_0/matched_v24_multimodal.pt": "12cd6d70b77c50b47bd95b73a7f35f0e6f0a874e63f21d2f322bd3fc349e1bc5",
+      "fold_0/matched_v26_spatial_raster.pt": "79c71cd6faca4860b4c694bc58d374bd4847f07cfa73c3d719629f7af4bbc124",
+      "fold_0/v25_candidate_seed_0.pt": "60e40471c068e93a1bb58675ebbd4f0aa2edce53e9051c306ffd1a1c13fd04a1",
+      "fold_0/v25_candidate_seed_1.pt": "68f81d3145721ec958aaef460918a12f8d8b43d1f77c0aab26ce141db18f8040",
+      "fold_0/v27_pyramid_raster.pt": "aac9725a4d462beeb392c1972119b797f7b40181ccc1a60bd4fcb2050c1e055b",
+      "fold_1/matched_v23_control.pt": "a16525b9eabc6403e72a264b33f74f72d6acf78032ccaca52e3cf9812cbeaed9",
+      "fold_1/matched_v24_multimodal.pt": "8ca7f234f2063ef5c98a1b0609c6841272ffc9c309d7fb2878e4b0de05cc1c97",
+      "fold_1/matched_v26_spatial_raster.pt": "325a73a32aec010a545929b0941eaf137449fdf51711d9bf30bb5780b5d0e964",
+      "fold_1/v25_candidate_seed_0.pt": "0a145778afcce838fc4eef2d23a45105556de98b2620cb09649f433d6ad3fa24",
+      "fold_1/v25_candidate_seed_1.pt": "86de257069304cf7193601f9f417e023211feb5fcd058d90c943ad7ab4f2cc9e",
+      "fold_1/v27_pyramid_raster.pt": "9667818ae6b348c5bf93efe90655acffdda6ec4d0cf389768f35c12e11db5c2c"
+    },
+    "selected_policy": {
+      "id": "control",
+      "max_swaps": 0,
+      "minimum_margin": 1.0,
+      "minimum_po_score": 1.0,
+      "minimum_risk": 1.0,
+      "pooled_calibration_f1": 0.328655801315187,
+      "robust_calibration_score": 0.3248204137736003
+    },
+    "submission_sha256": "32cd02788d910abe0cd18715da00f201a52a371a2135d17399301dd7e532f710"
+  },
+  "pretrained_weight_provenance": [],
+  "registered_max_total_hours": 10.75,
+  "runtime_hours": 1.6212555194758334,
+  "runtime_plan": {
+    "deployment_neural_models_trained": 0,
+    "expected_hours": [
+      2.0,
+      7.0
+    ],
+    "feature_preparation_cap_hours": 2.75,
+    "finalization_reserve_minutes": 35,
+    "hard_guard_hours": 10.75,
+    "kaggle_limit_hours": 12.0,
+    "models_trained_sequentially": 12,
+    "v23_reference_runtime_hours": 6.61616224692927,
+    "v24_reference_runtime_hours": 0.9811864720533332,
+    "v25_reference_runtime_hours": 0.9970158073,
+    "v26_reference_runtime_hours": 1.786431835,
+    "v27_reference_runtime_hours": 2.0682214702,
+    "vram_estimate_gb": "under 6 on one T4"
+  },
+  "selected_policy": {
+    "id": "control",
+    "max_swaps": 0,
+    "minimum_margin": 1.0,
+    "minimum_po_score": 1.0,
+    "minimum_risk": 1.0,
+    "pooled_calibration_f1": 0.328655801315187,
+    "robust_calibration_score": 0.3248204137736003
+  },
+  "status": "complete",
+  "submission": {
+    "checks": {
+      "cardinality_bounds": true,
+      "columns": true,
+      "row_count": true,
+      "row_order": true,
+      "unique_ids": true,
+      "vocabulary_and_unique_predictions": true
+    },
+    "prediction_count_max": 37,
+    "prediction_count_mean": 24.90510010822511,
+    "prediction_count_min": 10,
+    "rows": 14784,
+    "sha256": "32cd02788d910abe0cd18715da00f201a52a371a2135d17399301dd7e532f710",
+    "species_vocabulary": 5016
+  },
+  "submission_gate": {
+    "all_integrity_checks": true,
+    "cardinality_unchanged": true,
+    "eligible_for_submission": false,
+    "multiple_substantial_countries_positive": false,
+    "nonzero_bounded_intervention": false,
+    "pooled_gain_positive": false,
+    "positive_gain_each_fold": false,
+    "spatial_ci_lower_positive": false
+  },
+  "training": {
+    "deployment": {
+      "exact_v27_models_retrained": false,
+      "presence_only_scales_degrees": [
+        0.1,
+        0.5,
+        2.0
+      ],
+      "test": {
+        "by_country": {
+          "Albania": {
+            "changed_fraction": 0.0,
+            "mean_shift_risk": 0.5877699851989746,
+            "mean_swaps": 0.0,
+            "surveys": 140
+          },
+          "Austria": {
+            "changed_fraction": 0.0,
+            "mean_shift_risk": 0.16544675827026367,
+            "mean_swaps": 0.0,
+            "surveys": 238
+          },
+          "Belarus": {
+            "changed_fraction": 0.0,
+            "mean_shift_risk": 0.4096178710460663,
+            "mean_swaps": 0.0,
+            "surveys": 268
+          },
+          "Belgium": {
+            "changed_fraction": 0.0,
+            "mean_shift_risk": 0.14117588102817535,
+            "mean_swaps": 0.0,
+            "surveys": 71
+          },
+          "Bosnia and Herzegovina": {
+            "changed_fraction": 0.0,
+            "mean_shift_risk": 0.29192230105400085,
+            "mean_swaps": 0.0,
+            "surveys": 7
+          },
+          "Bosnia-Herzegovina": {
+            "changed_fraction": 0.0,
+            "mean_shift_risk": 0.4814699590206146,
+            "mean_swaps": 0.0,
+            "surveys": 3
+          },
+          "Bulgaria": {
+            "changed_fraction": 0.0,
+            "mean_shift_risk": 0.3569267988204956,
+            "mean_swaps": 0.0,
+            "surveys": 3273
+          },
+          "Croatia": {
+            "changed_fraction": 0.0,
+            "mean_shift_risk": 0.2726772725582123,
+            "mean_swaps": 0.0,
+            "surveys": 59
+          },
+          "Czech Republic": {
+            "changed_fraction": 0.0,
+            "mean_shift_risk": 0.10442918539047241,
+            "mean_swaps": 0.0,
+            "surveys": 10
+          },
+          "Denmark": {
+            "changed_fraction": 0.0,
+            "mean_shift_risk": 0.10406290739774704,
+            "mean_swaps": 0.0,
+            "surveys": 1453
+          },
+          "Finland": {
+            "changed_fraction": 0.0,
+            "mean_shift_risk": 0.6647758483886719,
+            "mean_swaps": 0.0,
+            "surveys": 51
+          },
+          "France": {
+            "changed_fraction": 0.0,
+            "mean_shift_risk": 0.1335395723581314,
+            "mean_swaps": 0.0,
+            "surveys": 1468
+          },
+          "Germany": {
+            "changed_fraction": 0.0,
+            "mean_shift_risk": 0.22356244921684265,
+            "mean_swaps": 0.0,
+            "surveys": 2
+          },
+          "Greece": {
+            "changed_fraction": 0.0,
+            "mean_shift_risk": 0.33187952637672424,
+            "mean_swaps": 0.0,
+            "surveys": 5
+          },
+          "Italy": {
+            "changed_fraction": 0.0,
+            "mean_shift_risk": 0.17225021123886108,
+            "mean_swaps": 0.0,
+            "surveys": 558
+          },
+          "Kosovo": {
+            "changed_fraction": 0.0,
+            "mean_shift_risk": 0.526269257068634,
+            "mean_swaps": 0.0,
+            "surveys": 2
+          },
+          "Latvia": {
+            "changed_fraction": 0.0,
+            "mean_shift_risk": 0.35172390937805176,
+            "mean_swaps": 0.0,
+            "surveys": 34
+          },
+          "Malta": {
+            "changed_fraction": 0.0,
+            "mean_shift_risk": 0.8637917637825012,
+            "mean_swaps": 0.0,
+            "surveys": 5
+          },
+          "Montenegro": {
+            "changed_fraction": 0.0,
+            "mean_shift_risk": 0.15786562860012054,
+            "mean_swaps": 0.0,
+            "surveys": 48
+          },
+          "Netherlands": {
+            "changed_fraction": 0.0,
+            "mean_shift_risk": 0.09552328288555145,
+            "mean_swaps": 0.0,
+            "surveys": 846
+          },
+          "Norway": {
+            "changed_fraction": 0.0,
+            "mean_shift_risk": 0.6719194650650024,
+            "mean_swaps": 0.0,
+            "surveys": 11
+          },
+          "Poland": {
+            "changed_fraction": 0.0,
+            "mean_shift_risk": 0.15476885437965393,
+            "mean_swaps": 0.0,
+            "surveys": 110
+          },
+          "Russian Federation": {
+            "changed_fraction": 0.0,
+            "mean_shift_risk": 0.007239957805722952,
+            "mean_swaps": 0.0,
+            "surveys": 65
+          },
+          "Serbia": {
+            "changed_fraction": 0.0,
+            "mean_shift_risk": 0.45350193977355957,
+            "mean_swaps": 0.0,
+            "surveys": 2
+          },
+          "Slovak Republic": {
+            "changed_fraction": 0.0,
+            "mean_shift_risk": 0.49532318115234375,
+            "mean_swaps": 0.0,
+            "surveys": 1
+          },
+          "Slovakia": {
+            "changed_fraction": 0.0,
+            "mean_shift_risk": 0.38685083389282227,
+            "mean_swaps": 0.0,
+            "surveys": 4
+          },
+          "Slovenia": {
+            "changed_fraction": 0.0,
+            "mean_shift_risk": 0.30734679102897644,
+            "mean_swaps": 0.0,
+            "surveys": 39
+          },
+          "Spain": {
+            "changed_fraction": 0.0,
+            "mean_shift_risk": 0.25610917806625366,
+            "mean_swaps": 0.0,
+            "surveys": 79
+          },
+          "Sweden": {
+            "changed_fraction": 0.0,
+            "mean_shift_risk": 0.4888065457344055,
+            "mean_swaps": 0.0,
+            "surveys": 52
+          },
+          "Switzerland": {
+            "changed_fraction": 0.0,
+            "mean_shift_risk": 0.35946720838546753,
+            "mean_swaps": 0.0,
+            "surveys": 1982
+          },
+          "Turkey": {
+            "changed_fraction": 0.0,
+            "mean_shift_risk": 0.31459686160087585,
+            "mean_swaps": 0.0,
+            "surveys": 143
+          },
+          "Ukraina": {
+            "changed_fraction": 0.0,
+            "mean_shift_risk": 0.47195884585380554,
+            "mean_swaps": 0.0,
+            "surveys": 1
+          },
+          "Ukraine": {
+            "changed_fraction": 0.0,
+            "mean_shift_risk": 0.12917907536029816,
+            "mean_swaps": 0.0,
+            "surveys": 2911
+          },
+          "United Kingdom": {
+            "changed_fraction": 0.0,
+            "mean_shift_risk": 0.8226955533027649,
+            "mean_swaps": 0.0,
+            "surveys": 843
+          }
+        },
+        "changed_fraction": 0.0,
+        "changed_surveys": 0,
+        "maximum_species_swaps": 0,
+        "mean_species_swaps": 0.0,
+        "pa_distance_km_mean": 105.71814335844067,
+        "po_coverage_mean": 13.15604305267334,
+        "po_scale_agreement_mean": 0.6873871684074402,
+        "predicted_cardinality_max": 37,
+        "predicted_cardinality_mean": 24.90510010822511,
+        "predicted_cardinality_min": 10,
+        "shift_risk_mean": 0.2657170593738556
+      }
+    },
+    "fold_0": {
+      "calibration_trials": [
+        {
+          "country_macro_f1": 0.27240615868657975,
+          "policy_id": "control",
+          "robust_score": 0.32470604761659305,
+          "sample_f1": 0.3287141972727596,
+          "spatial_block_macro_f1": 0.36898963723427347,
+          "surveys": 10434
+        },
+        {
+          "country_macro_f1": 0.26820403882569405,
+          "policy_id": "po_tail_1",
+          "robust_score": 0.32138741765247364,
+          "sample_f1": 0.3251906010380681,
+          "spatial_block_macro_f1": 0.36696442970806437,
+          "surveys": 10434
+        },
+        {
+          "country_macro_f1": 0.27168727329798154,
+          "policy_id": "po_tail_2",
+          "robust_score": 0.3241142109616455,
+          "sample_f1": 0.3281126012614372,
+          "spatial_block_macro_f1": 0.3685443680257261,
+          "surveys": 10434
+        },
+        {
+          "country_macro_f1": 0.2714936701690922,
+          "policy_id": "po_shift_3",
+          "robust_score": 0.3243842711518037,
+          "sample_f1": 0.3286446480253881,
+          "spatial_block_macro_f1": 0.3687541183873462,
+          "surveys": 10434
+        },
+        {
+          "country_macro_f1": 0.27240615868657975,
+          "policy_id": "po_shift_4",
+          "robust_score": 0.32470604761659305,
+          "sample_f1": 0.3287141972727596,
+          "spatial_block_macro_f1": 0.36898963723427347,
+          "surveys": 10434
+        }
+      ],
+      "common_species": 1343,
+      "cooccurrence_sha256": "525f19fdab26b7823983c2e0bd07153c80e11ab6bf1138298e67ae20da545427",
+      "matched_v23_control": {
+        "best_epoch": 6,
+        "checkpoint_sha256": "411be50f0524d2f380300070395d4c7837794ba4e2501b0deab9f9ae33c836ef",
+        "history": [
+          {
+            "epoch": 1,
+            "examples_per_second": 10633.281699709838,
+            "loss": 0.2296352388946316,
+            "seconds": 1.9957150199998068,
+            "selection_f1": null
+          },
+          {
+            "epoch": 2,
+            "examples_per_second": 25900.516634330164,
+            "loss": 0.13701397006133403,
+            "seconds": 0.8193272859998615,
+            "selection_f1": null
+          },
+          {
+            "epoch": 3,
+            "examples_per_second": 25925.069702315406,
+            "loss": 0.11734746088420889,
+            "seconds": 0.8185513190001075,
+            "selection_f1": null
+          },
+          {
+            "epoch": 4,
+            "examples_per_second": 9740.94056471142,
+            "loss": 0.10557319380820097,
+            "seconds": 2.1785370580000745,
+            "selection_f1": 0.3138826412284959
+          },
+          {
+            "epoch": 5,
+            "examples_per_second": 24317.70903854445,
+            "loss": 0.09788825218023979,
+            "seconds": 0.8726562179999746,
+            "selection_f1": null
+          },
+          {
+            "epoch": 6,
+            "examples_per_second": 9730.896226205938,
+            "loss": 0.09374090943043646,
+            "seconds": 2.1807857680005327,
+            "selection_f1": 0.32322518756803637
+          }
+        ],
+        "parameters": 3282456,
+        "selection_f1": 0.32322518756803637
+      },
+      "matched_v24": {
+        "best_epoch": 8,
+        "checkpoint_sha256": "12cd6d70b77c50b47bd95b73a7f35f0e6f0a874e63f21d2f322bd3fc349e1bc5",
+        "history": [
+          {
+            "epoch": 1,
+            "examples_per_second": 8684.13391750638,
+            "loss": 0.4412252771071319,
+            "seconds": 2.4436518599995907,
+            "selection_f1": null
+          },
+          {
+            "epoch": 2,
+            "examples_per_second": 11783.00749218735,
+            "loss": 0.23382357693357217,
+            "seconds": 1.800983324000299,
+            "selection_f1": null
+          },
+          {
+            "epoch": 3,
+            "examples_per_second": 11796.551198068037,
+            "loss": 0.18796156997235983,
+            "seconds": 1.7989156020003065,
+            "selection_f1": null
+          },
+          {
+            "epoch": 4,
+            "examples_per_second": 11009.748074318255,
+            "loss": 0.163942332680452,
+            "seconds": 1.9274737129999266,
+            "selection_f1": null
+          },
+          {
+            "epoch": 5,
+            "examples_per_second": 10962.868757837443,
+            "loss": 0.15002714814224566,
+            "seconds": 1.9357159579994914,
+            "selection_f1": null
+          },
+          {
+            "epoch": 6,
+            "examples_per_second": 6129.91386338683,
+            "loss": 0.14048832104576953,
+            "seconds": 3.461875725000027,
+            "selection_f1": 0.30606660800967345
+          },
+          {
+            "epoch": 7,
+            "examples_per_second": 10763.920194290684,
+            "loss": 0.1344490771343692,
+            "seconds": 1.9714936210002634,
+            "selection_f1": null
+          },
+          {
+            "epoch": 8,
+            "examples_per_second": 6215.415977599781,
+            "loss": 0.13142772163911565,
+            "seconds": 3.4142525739998746,
+            "selection_f1": 0.30879074936556694
+          }
+        ],
+        "parameters": 3313977,
+        "selection_f1": 0.30879074936556694
+      },
+      "matched_v24_richness": {
+        "country_means": {
+          "Andorra": 14.75,
+          "Austria": 31.92091836734694,
+          "Belgium": 10.78641975308642,
+          "Bosnia and Herzegovina": 32.9,
+          "Bulgaria": 10.8125,
+          "Croatia": 30.365384615384617,
+          "Czech Republic": 23.47478260869565,
+          "Denmark": 17.02612527541706,
+          "France": 17.706698853349426,
+          "Germany": 27.696969696969695,
+          "Greece": 31.482142857142858,
+          "Hungary": 38.142857142857146,
+          "Ireland": 8.916666666666666,
+          "Italy": 17.124661246612465,
+          "Latvia": 39.833333333333336,
+          "Luxembourg": 19.0,
+          "Montenegro": 22.519422863485016,
+          "Netherlands": 10.81088211046991,
+          "Norway": 7.2,
+          "Poland": 22.917721518987342,
+          "Portugal": 12.166666666666666,
+          "Romania": 22.853658536585368,
+          "Serbia": 17.126436781609197,
+          "Slovakia": 23.72289156626506,
+          "Slovenia": 23.896551724137932,
+          "Spain": 16.64423076923077,
+          "Switzerland": 30.024590163934427,
+          "The former Yugoslav Republic of Macedonia": 18.166666666666668
+        },
+        "feature_names": [
+          "neural_log_richness",
+          "top1",
+          "top5_mean",
+          "top20_mean",
+          "top40_mean",
+          "top40_std",
+          "rank_margin_20_40",
+          "log_pa_distance",
+          "log_po_coverage",
+          "month_sin",
+          "month_cos",
+          "country_training_richness"
+        ],
+        "global_mean": 16.22953677960511,
+        "selection_mae": 6.042312285151305
+      },
+      "matched_v25_candidate_seeds": [
+        {
+          "best_epoch": 10,
+          "checkpoint_sha256": "60e40471c068e93a1bb58675ebbd4f0aa2edce53e9051c306ffd1a1c13fd04a1",
+          "history": [
+            {
+              "epoch": 1,
+              "examples_per_second": 10174.56936967171,
+              "loss": 0.3924069220424794,
+              "seconds": 2.0856902369996533,
+              "selection_f1": null
+            },
+            {
+              "epoch": 2,
+              "examples_per_second": 10044.69024263933,
+              "loss": 0.20826345984717576,
+              "seconds": 2.1126584780004123,
+              "selection_f1": null
+            },
+            {
+              "epoch": 3,
+              "examples_per_second": 10245.870617331775,
+              "loss": 0.16636290082321006,
+              "seconds": 2.0711758709994683,
+              "selection_f1": null
+            },
+            {
+              "epoch": 4,
+              "examples_per_second": 10262.476103588544,
+              "loss": 0.1442878384533356,
+              "seconds": 2.067824546999873,
+              "selection_f1": null
+            },
+            {
+              "epoch": 5,
+              "examples_per_second": 10553.77232865215,
+              "loss": 0.1293961100227972,
+              "seconds": 2.0107502169994405,
+              "selection_f1": null
+            },
+            {
+              "epoch": 6,
+              "examples_per_second": 6313.642254373668,
+              "loss": 0.1202018849007832,
+              "seconds": 3.3611343729999135,
+              "selection_f1": 0.3166737925095591
+            },
+            {
+              "epoch": 7,
+              "examples_per_second": 10798.050612212086,
+              "loss": 0.11238726651509573,
+              "seconds": 1.9652621350005575,
+              "selection_f1": null
+            },
+            {
+              "epoch": 8,
+              "examples_per_second": 6180.87948661823,
+              "loss": 0.10710982384467281,
+              "seconds": 3.4333301670003493,
+              "selection_f1": 0.32454058168909644
+            },
+            {
+              "epoch": 9,
+              "examples_per_second": 11100.747170518864,
+              "loss": 0.10312499550521545,
+              "seconds": 1.9116731220001384,
+              "selection_f1": null
+            },
+            {
+              "epoch": 10,
+              "examples_per_second": 6487.862455341133,
+              "loss": 0.10096249145383991,
+              "seconds": 3.27087698700052,
+              "selection_f1": 0.327626319619382
+            }
+          ],
+          "parameters": 5438905,
+          "selection_f1": 0.327626319619382
+        },
+        {
+          "best_epoch": 10,
+          "checkpoint_sha256": "68f81d3145721ec958aaef460918a12f8d8b43d1f77c0aab26ce141db18f8040",
+          "history": [
+            {
+              "epoch": 1,
+              "examples_per_second": 10566.76942473622,
+              "loss": 0.39181907984362846,
+              "seconds": 2.0082769999999073,
+              "selection_f1": null
+            },
+            {
+              "epoch": 2,
+              "examples_per_second": 10981.216507816254,
+              "loss": 0.20795473145944818,
+              "seconds": 1.9324817050001002,
+              "selection_f1": null
+            },
+            {
+              "epoch": 3,
+              "examples_per_second": 10870.05718200084,
+              "loss": 0.16749353685209267,
+              "seconds": 1.9522436400002334,
+              "selection_f1": null
+            },
+            {
+              "epoch": 4,
+              "examples_per_second": 11051.641568688423,
+              "loss": 0.1454491121192819,
+              "seconds": 1.920167231999585,
+              "selection_f1": null
+            },
+            {
+              "epoch": 5,
+              "examples_per_second": 11022.563959760872,
+              "loss": 0.13039393330416926,
+              "seconds": 1.9252326480000193,
+              "selection_f1": null
+            },
+            {
+              "epoch": 6,
+              "examples_per_second": 6489.954384603921,
+              "loss": 0.11971339899171483,
+              "seconds": 3.2698226739994425,
+              "selection_f1": 0.3143830557851135
+            },
+            {
+              "epoch": 7,
+              "examples_per_second": 11096.859778556163,
+              "loss": 0.11211476053370759,
+              "seconds": 1.9123428089997105,
+              "selection_f1": null
+            },
+            {
+              "epoch": 8,
+              "examples_per_second": 6632.374972153028,
+              "loss": 0.10690431178436277,
+              "seconds": 3.1996079969994753,
+              "selection_f1": 0.3251302393801404
+            },
+            {
+              "epoch": 9,
+              "examples_per_second": 11159.321901191237,
+              "loss": 0.10355993094396976,
+              "seconds": 1.9016388439995353,
+              "selection_f1": null
+            },
+            {
+              "epoch": 10,
+              "examples_per_second": 6331.715200920316,
+              "loss": 0.10221501370503706,
+              "seconds": 3.3515405110001666,
+              "selection_f1": 0.3269753933876869
+            }
+          ],
+          "parameters": 5438905,
+          "selection_f1": 0.3269753933876869
+        }
+      ],
+      "matched_v25_oracle_count": {
+        "country_means": {
+          "Andorra": 14.75,
+          "Austria": 31.92091836734694,
+          "Belgium": 10.78641975308642,
+          "Bosnia and Herzegovina": 32.9,
+          "Bulgaria": 10.8125,
+          "Croatia": 30.365384615384617,
+          "Czech Republic": 23.47478260869565,
+          "Denmark": 17.02612527541706,
+          "France": 17.706698853349426,
+          "Germany": 27.696969696969695,
+          "Greece": 31.482142857142858,
+          "Hungary": 38.142857142857146,
+          "Ireland": 8.916666666666666,
+          "Italy": 17.124661246612465,
+          "Latvia": 39.833333333333336,
+          "Luxembourg": 19.0,
+          "Montenegro": 22.519422863485016,
+          "Netherlands": 10.81088211046991,
+          "Norway": 7.2,
+          "Poland": 22.917721518987342,
+          "Portugal": 12.166666666666666,
+          "Romania": 22.853658536585368,
+          "Serbia": 17.126436781609197,
+          "Slovakia": 23.72289156626506,
+          "Slovenia": 23.896551724137932,
+          "Spain": 16.64423076923077,
+          "Switzerland": 30.024590163934427,
+          "The former Yugoslav Republic of Macedonia": 18.166666666666668
+        },
+        "feature_names": [
+          "neural_log_richness",
+          "top1",
+          "top5_mean",
+          "top20_mean",
+          "top40_mean",
+          "top40_std",
+          "rank_margin_20_40",
+          "log_pa_distance",
+          "log_po_coverage",
+          "month_sin",
+          "month_cos",
+          "country_training_richness"
+        ],
+        "global_mean": 16.22953677960511,
+        "predicted_count_mean": 19.65112997075246,
+        "selection_mae": 7.515826649792419,
+        "selection_oracle_count_mean": 20.947526236881558,
+        "target": "per-survey oracle top-k maximizing sample F1 on selection only"
+      },
+      "matched_v26_oracle_count": {
+        "country_means": {
+          "Andorra": 14.75,
+          "Austria": 31.92091836734694,
+          "Belgium": 10.78641975308642,
+          "Bosnia and Herzegovina": 32.9,
+          "Bulgaria": 10.8125,
+          "Croatia": 30.365384615384617,
+          "Czech Republic": 23.47478260869565,
+          "Denmark": 17.02612527541706,
+          "France": 17.706698853349426,
+          "Germany": 27.696969696969695,
+          "Greece": 31.482142857142858,
+          "Hungary": 38.142857142857146,
+          "Ireland": 8.916666666666666,
+          "Italy": 17.124661246612465,
+          "Latvia": 39.833333333333336,
+          "Luxembourg": 19.0,
+          "Montenegro": 22.519422863485016,
+          "Netherlands": 10.81088211046991,
+          "Norway": 7.2,
+          "Poland": 22.917721518987342,
+          "Portugal": 12.166666666666666,
+          "Romania": 22.853658536585368,
+          "Serbia": 17.126436781609197,
+          "Slovakia": 23.72289156626506,
+          "Slovenia": 23.896551724137932,
+          "Spain": 16.64423076923077,
+          "Switzerland": 30.024590163934427,
+          "The former Yugoslav Republic of Macedonia": 18.166666666666668
+        },
+        "feature_names": [
+          "neural_log_richness",
+          "top1",
+          "top5_mean",
+          "top20_mean",
+          "top40_mean",
+          "top40_std",
+          "rank_margin_20_40",
+          "log_pa_distance",
+          "log_po_coverage",
+          "month_sin",
+          "month_cos",
+          "country_training_richness"
+        ],
+        "global_mean": 16.22953677960511,
+        "predicted_count_mean": 19.192965346411718,
+        "selection_mae": 7.3829372283870445,
+        "selection_oracle_count_mean": 20.593357167570062,
+        "target": "per-survey oracle top-k maximizing sample F1 on selection only"
+      },
+      "matched_v26_spatial_raster": {
+        "active_species": 2489,
+        "augmentation": "Sentinel random horizontal/vertical flips and quarter rotations",
+        "best_epoch": 24,
+        "checkpoint_sha256": "79c71cd6faca4860b4c694bc58d374bd4847f07cfa73c3d719629f7af4bbc124",
+        "history": [
+          {
+            "epoch": 1,
+            "examples_per_second": 766.7300928723251,
+            "loss": 0.31562107835563785,
+            "seconds": 27.677275480999924,
+            "selection_f1": null
+          },
+          {
+            "epoch": 2,
+            "examples_per_second": 3517.785816509409,
+            "loss": 0.20135329867879967,
+            "seconds": 6.03248779400019,
+            "selection_f1": null
+          },
+          {
+            "epoch": 3,
+            "examples_per_second": 3557.2100945819175,
+            "loss": 0.17728465228569248,
+            "seconds": 5.965630209000665,
+            "selection_f1": null
+          },
+          {
+            "epoch": 4,
+            "examples_per_second": 3562.052229736612,
+            "loss": 0.16269719556018244,
+            "seconds": 5.957520730000397,
+            "selection_f1": null
+          },
+          {
+            "epoch": 5,
+            "examples_per_second": 3497.623059804006,
+            "loss": 0.1517298319255658,
+            "seconds": 6.067263291999552,
+            "selection_f1": null
+          },
+          {
+            "epoch": 6,
+            "examples_per_second": 3457.3792050159686,
+            "loss": 0.1429762590263483,
+            "seconds": 6.1378861680004775,
+            "selection_f1": null
+          },
+          {
+            "epoch": 7,
+            "examples_per_second": 3523.792561694106,
+            "loss": 0.13582281170548158,
+            "seconds": 6.022204663999219,
+            "selection_f1": null
+          },
+          {
+            "epoch": 8,
+            "examples_per_second": 3535.2207011661876,
+            "loss": 0.129374589445392,
+            "seconds": 6.0027369700001145,
+            "selection_f1": null
+          },
+          {
+            "epoch": 9,
+            "examples_per_second": 3530.544016925726,
+            "loss": 0.12425889119461644,
+            "seconds": 6.010688409000068,
+            "selection_f1": null
+          },
+          {
+            "epoch": 10,
+            "examples_per_second": 3556.551303068443,
+            "loss": 0.11908118245950895,
+            "seconds": 5.966735242000141,
+            "selection_f1": null
+          },
+          {
+            "epoch": 11,
+            "examples_per_second": 3531.658290844517,
+            "loss": 0.11481596232949212,
+            "seconds": 6.008791975999884,
+            "selection_f1": null
+          },
+          {
+            "epoch": 12,
+            "examples_per_second": 2514.4214556092884,
+            "loss": 0.110745239950733,
+            "seconds": 8.439714810999249,
+            "selection_f1": 0.3503772881890648
+          },
+          {
+            "epoch": 13,
+            "examples_per_second": 3480.2454466546096,
+            "loss": 0.10722496220207839,
+            "seconds": 6.097558440999819,
+            "selection_f1": null
+          },
+          {
+            "epoch": 14,
+            "examples_per_second": 3539.27829745474,
+            "loss": 0.10418305365863505,
+            "seconds": 5.9958551480003734,
+            "selection_f1": null
+          },
+          {
+            "epoch": 15,
+            "examples_per_second": 2566.7646097522766,
+            "loss": 0.10118149530433428,
+            "seconds": 8.267606589000025,
+            "selection_f1": 0.3530642649189198
+          },
+          {
+            "epoch": 16,
+            "examples_per_second": 3549.2246128604265,
+            "loss": 0.0986806546810081,
+            "seconds": 5.9790524170002755,
+            "selection_f1": null
+          },
+          {
+            "epoch": 17,
+            "examples_per_second": 3576.5997462866067,
+            "loss": 0.09656802059774557,
+            "seconds": 5.933289018999858,
+            "selection_f1": null
+          },
+          {
+            "epoch": 18,
+            "examples_per_second": 2566.3066679706317,
+            "loss": 0.09479212208372456,
+            "seconds": 8.269081892999566,
+            "selection_f1": 0.3544865824282449
+          },
+          {
+            "epoch": 19,
+            "examples_per_second": 3580.0344002250326,
+            "loss": 0.09306977365592002,
+            "seconds": 5.927596673000153,
+            "selection_f1": null
+          },
+          {
+            "epoch": 20,
+            "examples_per_second": 3501.8296124075728,
+            "loss": 0.0916967031067,
+            "seconds": 6.0599750270002914,
+            "selection_f1": null
+          },
+          {
+            "epoch": 21,
+            "examples_per_second": 2543.8857211664645,
+            "loss": 0.09066980131555753,
+            "seconds": 8.341962778999914,
+            "selection_f1": 0.35390762305057044
+          },
+          {
+            "epoch": 22,
+            "examples_per_second": 3553.6850077355043,
+            "loss": 0.08978670013160993,
+            "seconds": 5.971547830999953,
+            "selection_f1": null
+          },
+          {
+            "epoch": 23,
+            "examples_per_second": 3522.9074375893288,
+            "loss": 0.08934203440382368,
+            "seconds": 6.023717731999568,
+            "selection_f1": null
+          },
+          {
+            "epoch": 24,
+            "examples_per_second": 2527.6279631414745,
+            "loss": 0.08892775039174915,
+            "seconds": 8.395618464999643,
+            "selection_f1": 0.354496803392348
+          }
+        ],
+        "minimum_training_occurrences": 6,
+        "parameters": 3307642,
+        "selection_f1": 0.354496803392348
+      },
+      "matched_v27_oracle_count": {
+        "country_means": {
+          "Andorra": 14.75,
+          "Austria": 31.92091836734694,
+          "Belgium": 10.78641975308642,
+          "Bosnia and Herzegovina": 32.9,
+          "Bulgaria": 10.8125,
+          "Croatia": 30.365384615384617,
+          "Czech Republic": 23.47478260869565,
+          "Denmark": 17.02612527541706,
+          "France": 17.706698853349426,
+          "Germany": 27.696969696969695,
+          "Greece": 31.482142857142858,
+          "Hungary": 38.142857142857146,
+          "Ireland": 8.916666666666666,
+          "Italy": 17.124661246612465,
+          "Latvia": 39.833333333333336,
+          "Luxembourg": 19.0,
+          "Montenegro": 22.519422863485016,
+          "Netherlands": 10.81088211046991,
+          "Norway": 7.2,
+          "Poland": 22.917721518987342,
+          "Portugal": 12.166666666666666,
+          "Romania": 22.853658536585368,
+          "Serbia": 17.126436781609197,
+          "Slovakia": 23.72289156626506,
+          "Slovenia": 23.896551724137932,
+          "Spain": 16.64423076923077,
+          "Switzerland": 30.024590163934427,
+          "The former Yugoslav Republic of Macedonia": 18.166666666666668
+        },
+        "feature_names": [
+          "neural_log_richness",
+          "top1",
+          "top5_mean",
+          "top20_mean",
+          "top40_mean",
+          "top40_std",
+          "rank_margin_20_40",
+          "log_pa_distance",
+          "log_po_coverage",
+          "month_sin",
+          "month_cos",
+          "country_training_richness"
+        ],
+        "global_mean": 16.22953677960511,
+        "predicted_count_mean": 19.220687703251528,
+        "selection_mae": 7.463666111194623,
+        "selection_oracle_count_mean": 20.668896321070235,
+        "target": "per-survey oracle top-k maximizing sample F1 on selection only"
+      },
+      "normalization_fit_on_training_only": true,
+      "rare_species": 3673,
+      "raw_raster_normalization_fit_on_training_only": true,
+      "v27_pyramid_raster": {
+        "active_species": 2489,
+        "augmentation": "Sentinel random horizontal/vertical flips and quarter rotations",
+        "best_epoch": 18,
+        "checkpoint_sha256": "aac9725a4d462beeb392c1972119b797f7b40181ccc1a60bd4fcb2050c1e055b",
+        "history": [
+          {
+            "epoch": 1,
+            "examples_per_second": 289.11362419430077,
+            "loss": 0.2918593560493238,
+            "seconds": 73.4002074760001,
+            "selection_f1": null
+          },
+          {
+            "epoch": 2,
+            "examples_per_second": 1462.2230317067622,
+            "loss": 0.19079092962384803,
+            "seconds": 14.512833911000598,
+            "selection_f1": null
+          },
+          {
+            "epoch": 3,
+            "examples_per_second": 1466.6639873733523,
+            "loss": 0.16623345716848914,
+            "seconds": 14.468890068000292,
+            "selection_f1": null
+          },
+          {
+            "epoch": 4,
+            "examples_per_second": 1448.5524296453234,
+            "loss": 0.1505282872230212,
+            "seconds": 14.649797664000289,
+            "selection_f1": null
+          },
+          {
+            "epoch": 5,
+            "examples_per_second": 1435.6415001723085,
+            "loss": 0.13890952626550002,
+            "seconds": 14.781545390999781,
+            "selection_f1": null
+          },
+          {
+            "epoch": 6,
+            "examples_per_second": 1450.2348532094497,
+            "loss": 0.12943930766016357,
+            "seconds": 14.632802371999787,
+            "selection_f1": null
+          },
+          {
+            "epoch": 7,
+            "examples_per_second": 1402.2673604761817,
+            "loss": 0.12151709280124816,
+            "seconds": 15.133348031999958,
+            "selection_f1": null
+          },
+          {
+            "epoch": 8,
+            "examples_per_second": 1450.4457646301191,
+            "loss": 0.11478057703122045,
+            "seconds": 14.630674595000528,
+            "selection_f1": null
+          },
+          {
+            "epoch": 9,
+            "examples_per_second": 1453.1834120060457,
+            "loss": 0.10676177644170952,
+            "seconds": 14.603111916000671,
+            "selection_f1": null
+          },
+          {
+            "epoch": 10,
+            "examples_per_second": 1464.6444221306292,
+            "loss": 0.09974774094354218,
+            "seconds": 14.488840895000067,
+            "selection_f1": null
+          },
+          {
+            "epoch": 11,
+            "examples_per_second": 1423.6357162142046,
+            "loss": 0.09435750728115039,
+            "seconds": 14.906200904000798,
+            "selection_f1": null
+          },
+          {
+            "epoch": 12,
+            "examples_per_second": 1423.6733189828349,
+            "loss": 0.08936163685644646,
+            "seconds": 14.905807193999863,
+            "selection_f1": null
+          },
+          {
+            "epoch": 13,
+            "examples_per_second": 1472.1553435289736,
+            "loss": 0.08531882397271895,
+            "seconds": 14.41491897800006,
+            "selection_f1": null
+          },
+          {
+            "epoch": 14,
+            "examples_per_second": 1473.2603607271933,
+            "loss": 0.08092468944638666,
+            "seconds": 14.40410708499985,
+            "selection_f1": null
+          },
+          {
+            "epoch": 15,
+            "examples_per_second": 862.601484594661,
+            "loss": 0.07653374174027577,
+            "seconds": 24.6011633170001,
+            "selection_f1": 0.348168384709223
+          },
+          {
+            "epoch": 16,
+            "examples_per_second": 1430.5325694352473,
+            "loss": 0.07279595865385145,
+            "seconds": 14.834335444999851,
+            "selection_f1": null
+          },
+          {
+            "epoch": 17,
+            "examples_per_second": 1428.448698069445,
+            "loss": 0.06963604884449923,
+            "seconds": 14.85597629699987,
+            "selection_f1": null
+          },
+          {
+            "epoch": 18,
+            "examples_per_second": 1189.0186392341266,
+            "loss": 0.0669643273904051,
+            "seconds": 17.847491452000213,
+            "selection_f1": 0.34866813367069294
+          },
+          {
+            "epoch": 19,
+            "examples_per_second": 1425.4971917334396,
+            "loss": 0.06446339757480617,
+            "seconds": 14.886735745999431,
+            "selection_f1": null
+          },
+          {
+            "epoch": 20,
+            "examples_per_second": 1431.6868085397023,
+            "loss": 0.062360427598171626,
+            "seconds": 14.82237586699921,
+            "selection_f1": null
+          },
+          {
+            "epoch": 21,
+            "examples_per_second": 1205.6198308179355,
+            "loss": 0.060810769277256885,
+            "seconds": 17.601734359000147,
+            "selection_f1": 0.348127643238975
+          },
+          {
+            "epoch": 22,
+            "examples_per_second": 1416.5185219540401,
+            "loss": 0.05843276595772731,
+            "seconds": 14.98109602599925,
+            "selection_f1": null
+          },
+          {
+            "epoch": 23,
+            "examples_per_second": 1467.0432434930751,
+            "loss": 0.05690263910510921,
+            "seconds": 14.465149609000036,
+            "selection_f1": null
+          },
+          {
+            "epoch": 24,
+            "examples_per_second": 1201.4018416618972,
+            "loss": 0.055694738309483724,
+            "seconds": 17.663532104000296,
+            "selection_f1": 0.34791608053828127
+          },
+          {
+            "epoch": 25,
+            "examples_per_second": 1446.156952373133,
+            "loss": 0.05467261910241222,
+            "seconds": 14.674064226000155,
+            "selection_f1": null
+          },
+          {
+            "epoch": 26,
+            "examples_per_second": 1448.5402468086577,
+            "loss": 0.05373336117266822,
+            "seconds": 14.649920875000134,
+            "selection_f1": null
+          },
+          {
+            "epoch": 27,
+            "examples_per_second": 1196.8475050703398,
+            "loss": 0.05299622847384267,
+            "seconds": 17.730746741000075,
+            "selection_f1": 0.3474517304453274
+          },
+          {
+            "epoch": 28,
+            "examples_per_second": 1427.8742119169588,
+            "loss": 0.05245786251445039,
+            "seconds": 14.861953401000392,
+            "selection_f1": null
+          },
+          {
+            "epoch": 29,
+            "examples_per_second": 1403.3712725758123,
+            "loss": 0.05210483527609481,
+            "seconds": 15.121443921999344,
+            "selection_f1": null
+          },
+          {
+            "epoch": 30,
+            "examples_per_second": 1205.04962637117,
+            "loss": 0.051753405842853366,
+            "seconds": 17.610063134000484,
+            "selection_f1": 0.34660075050282063
+          }
+        ],
+        "minimum_training_occurrences": 6,
+        "parameters": 5583782,
+        "selection_f1": 0.34866813367069294
+      },
+      "zero_pa_species": 863
+    },
+    "fold_1": {
+      "calibration_trials": [
+        {
+          "country_macro_f1": 0.271882085960604,
+          "policy_id": "control",
+          "robust_score": 0.3249347799306076,
+          "sample_f1": 0.3285974053576145,
+          "spatial_block_macro_f1": 0.37066222304659757,
+          "surveys": 10434
+        },
+        {
+          "country_macro_f1": 0.26655243355190283,
+          "policy_id": "po_tail_1",
+          "robust_score": 0.3209999490043414,
+          "sample_f1": 0.32483450885542475,
+          "spatial_block_macro_f1": 0.36777834475461335,
+          "surveys": 10434
+        },
+        {
+          "country_macro_f1": 0.27094264544235885,
+          "policy_id": "po_tail_2",
+          "robust_score": 0.3242333373840024,
+          "sample_f1": 0.3280679052935078,
+          "spatial_block_macro_f1": 0.3698548935066351,
+          "surveys": 10434
+        },
+        {
+          "country_macro_f1": 0.271882085960604,
+          "policy_id": "po_shift_3",
+          "robust_score": 0.3248803790872993,
+          "sample_f1": 0.3285869436569782,
+          "spatial_block_macro_f1": 0.37046554307463675,
+          "surveys": 10434
+        },
+        {
+          "country_macro_f1": 0.271882085960604,
+          "policy_id": "po_shift_4",
+          "robust_score": 0.3249347799306076,
+          "sample_f1": 0.3285974053576145,
+          "spatial_block_macro_f1": 0.37066222304659757,
+          "surveys": 10434
+        }
+      ],
+      "common_species": 1353,
+      "cooccurrence_sha256": "e6d37636767148a24e51aa771279ca6ef818089829cae18695e70820fa082adc",
+      "matched_v23_control": {
+        "best_epoch": 6,
+        "checkpoint_sha256": "a16525b9eabc6403e72a264b33f74f72d6acf78032ccaca52e3cf9812cbeaed9",
+        "history": [
+          {
+            "epoch": 1,
+            "examples_per_second": 23769.162236324093,
+            "loss": 0.23109068097657415,
+            "seconds": 0.8882517520005422,
+            "selection_f1": null
+          },
+          {
+            "epoch": 2,
+            "examples_per_second": 25501.018281508725,
+            "loss": 0.13715174593755186,
+            "seconds": 0.8279277230003572,
+            "selection_f1": null
+          },
+          {
+            "epoch": 3,
+            "examples_per_second": 25685.273154535415,
+            "loss": 0.11740181877081982,
+            "seconds": 0.821988532999967,
+            "selection_f1": null
+          },
+          {
+            "epoch": 4,
+            "examples_per_second": 10049.921702029282,
+            "loss": 0.10543145031712313,
+            "seconds": 2.100812386999678,
+            "selection_f1": 0.3153672218685218
+          },
+          {
+            "epoch": 5,
+            "examples_per_second": 24814.50726826277,
+            "loss": 0.09780829273171683,
+            "seconds": 0.850832932999765,
+            "selection_f1": null
+          },
+          {
+            "epoch": 6,
+            "examples_per_second": 10103.708681004071,
+            "loss": 0.09357308420527187,
+            "seconds": 2.0896287360001224,
+            "selection_f1": 0.3212102369956128
+          }
+        ],
+        "parameters": 3282456,
+        "selection_f1": 0.3212102369956128
+      },
+      "matched_v24": {
+        "best_epoch": 8,
+        "checkpoint_sha256": "8ca7f234f2063ef5c98a1b0609c6841272ffc9c309d7fb2878e4b0de05cc1c97",
+        "history": [
+          {
+            "epoch": 1,
+            "examples_per_second": 11639.779697167021,
+            "loss": 0.4445253636499021,
+            "seconds": 1.8138659450005434,
+            "selection_f1": null
+          },
+          {
+            "epoch": 2,
+            "examples_per_second": 11275.248892668207,
+            "loss": 0.23656932317464732,
+            "seconds": 1.8725085539999782,
+            "selection_f1": null
+          },
+          {
+            "epoch": 3,
+            "examples_per_second": 11496.102295328279,
+            "loss": 0.18901684317396042,
+            "seconds": 1.8365355020005154,
+            "selection_f1": null
+          },
+          {
+            "epoch": 4,
+            "examples_per_second": 10990.296773012913,
+            "loss": 0.16690617165190919,
+            "seconds": 1.9210582240002623,
+            "selection_f1": null
+          },
+          {
+            "epoch": 5,
+            "examples_per_second": 11223.395680908727,
+            "loss": 0.1521952984968298,
+            "seconds": 1.8811597309995705,
+            "selection_f1": null
+          },
+          {
+            "epoch": 6,
+            "examples_per_second": 6511.196048946273,
+            "loss": 0.14243261572556715,
+            "seconds": 3.242568621999453,
+            "selection_f1": 0.3011883140224117
+          },
+          {
+            "epoch": 7,
+            "examples_per_second": 11424.643400070607,
+            "loss": 0.1367454065477267,
+            "seconds": 1.8480226700003186,
+            "selection_f1": null
+          },
+          {
+            "epoch": 8,
+            "examples_per_second": 6434.211885506777,
+            "loss": 0.13284908119889577,
+            "seconds": 3.281365359999654,
+            "selection_f1": 0.3086730797659789
+          }
+        ],
+        "parameters": 3312367,
+        "selection_f1": 0.3086730797659789
+      },
+      "matched_v24_richness": {
+        "country_means": {
+          "Andorra": 14.75,
+          "Austria": 31.880710659898476,
+          "Belgium": 10.78641975308642,
+          "Bosnia and Herzegovina": 33.45454545454545,
+          "Bulgaria": 10.8125,
+          "Croatia": 30.365384615384617,
+          "Czech Republic": 23.47478260869565,
+          "Denmark": 16.558453513347654,
+          "France": 17.5900718076803,
+          "Germany": 21.846153846153847,
+          "Greece": 32.95744680851064,
+          "Hungary": 38.142857142857146,
+          "Ireland": 8.916666666666666,
+          "Italy": 16.73453787352328,
+          "Latvia": 39.833333333333336,
+          "Luxembourg": 19.0,
+          "Montenegro": 22.597345132743364,
+          "Netherlands": 10.949175590685025,
+          "Norway": 7.2,
+          "Poland": 22.917721518987342,
+          "Portugal": 12.166666666666666,
+          "Romania": 22.853658536585368,
+          "Serbia": 17.126436781609197,
+          "Slovakia": 22.55,
+          "Slovenia": 23.896551724137932,
+          "Spain": 16.64423076923077,
+          "Switzerland": 30.45,
+          "The former Yugoslav Republic of Macedonia": 18.166666666666668
+        },
+        "feature_names": [
+          "neural_log_richness",
+          "top1",
+          "top5_mean",
+          "top20_mean",
+          "top40_mean",
+          "top40_std",
+          "rank_margin_20_40",
+          "log_pa_distance",
+          "log_po_coverage",
+          "month_sin",
+          "month_cos",
+          "country_training_richness"
+        ],
+        "global_mean": 16.138777056789657,
+        "selection_mae": 6.059672391133573
+      },
+      "matched_v25_candidate_seeds": [
+        {
+          "best_epoch": 10,
+          "checkpoint_sha256": "0a145778afcce838fc4eef2d23a45105556de98b2620cb09649f433d6ad3fa24",
+          "history": [
+            {
+              "epoch": 1,
+              "examples_per_second": 11020.673538623807,
+              "loss": 0.39751812880456927,
+              "seconds": 1.915763126999991,
+              "selection_f1": null
+            },
+            {
+              "epoch": 2,
+              "examples_per_second": 11025.46624416369,
+              "loss": 0.20838177228834426,
+              "seconds": 1.9149303559997861,
+              "selection_f1": null
+            },
+            {
+              "epoch": 3,
+              "examples_per_second": 10432.400080790492,
+              "loss": 0.17009914928153266,
+              "seconds": 2.0237912499997037,
+              "selection_f1": null
+            },
+            {
+              "epoch": 4,
+              "examples_per_second": 10704.272356785672,
+              "loss": 0.14652785958581696,
+              "seconds": 1.9723900230001163,
+              "selection_f1": null
+            },
+            {
+              "epoch": 5,
+              "examples_per_second": 11126.472918626892,
+              "loss": 0.13157871011244954,
+              "seconds": 1.8975465230005284,
+              "selection_f1": null
+            },
+            {
+              "epoch": 6,
+              "examples_per_second": 6638.602839162878,
+              "loss": 0.12213736203112856,
+              "seconds": 3.1803378679996968,
+              "selection_f1": 0.3184323264777444
+            },
+            {
+              "epoch": 7,
+              "examples_per_second": 10900.875256848192,
+              "loss": 0.11418202411820445,
+              "seconds": 1.936816952999834,
+              "selection_f1": null
+            },
+            {
+              "epoch": 8,
+              "examples_per_second": 6617.029681737606,
+              "loss": 0.10811699356476,
+              "seconds": 3.1907065579998743,
+              "selection_f1": 0.3206235301215122
+            },
+            {
+              "epoch": 9,
+              "examples_per_second": 11105.923676812183,
+              "loss": 0.10456370244501655,
+              "seconds": 1.9010575450001852,
+              "selection_f1": null
+            },
+            {
+              "epoch": 10,
+              "examples_per_second": 6335.144360458837,
+              "loss": 0.10250354914119682,
+              "seconds": 3.3326785939998445,
+              "selection_f1": 0.3236270514571596
+            }
+          ],
+          "parameters": 5436655,
+          "selection_f1": 0.3236270514571596
+        },
+        {
+          "best_epoch": 10,
+          "checkpoint_sha256": "86de257069304cf7193601f9f417e023211feb5fcd058d90c943ad7ab4f2cc9e",
+          "history": [
+            {
+              "epoch": 1,
+              "examples_per_second": 10767.21079986361,
+              "loss": 0.394445020821739,
+              "seconds": 1.9608606529991448,
+              "selection_f1": null
+            },
+            {
+              "epoch": 2,
+              "examples_per_second": 10579.728831463657,
+              "loss": 0.20857482853064185,
+              "seconds": 1.9956088039998576,
+              "selection_f1": null
+            },
+            {
+              "epoch": 3,
+              "examples_per_second": 10241.319550344859,
+              "loss": 0.17179343624593904,
+              "seconds": 2.0615507499996966,
+              "selection_f1": null
+            },
+            {
+              "epoch": 4,
+              "examples_per_second": 10652.950772305758,
+              "loss": 0.14849162759745538,
+              "seconds": 1.981892195999535,
+              "selection_f1": null
+            },
+            {
+              "epoch": 5,
+              "examples_per_second": 10528.207915360308,
+              "loss": 0.13219735907174657,
+              "seconds": 2.0053745299992443,
+              "selection_f1": null
+            },
+            {
+              "epoch": 6,
+              "examples_per_second": 6427.119918434382,
+              "loss": 0.12169690101376106,
+              "seconds": 3.2849861630002124,
+              "selection_f1": 0.3155850240361464
+            },
+            {
+              "epoch": 7,
+              "examples_per_second": 11120.836389838094,
+              "loss": 0.1146122268693324,
+              "seconds": 1.8985082830004103,
+              "selection_f1": null
+            },
+            {
+              "epoch": 8,
+              "examples_per_second": 6532.010611156947,
+              "loss": 0.10879008216861129,
+              "seconds": 3.2322360230000413,
+              "selection_f1": 0.3217331151464014
+            },
+            {
+              "epoch": 9,
+              "examples_per_second": 10996.240716388122,
+              "loss": 0.10571388078185907,
+              "seconds": 1.9200198090002232,
+              "selection_f1": null
+            },
+            {
+              "epoch": 10,
+              "examples_per_second": 6435.78545695692,
+              "loss": 0.10271810142047502,
+              "seconds": 3.2805630550001297,
+              "selection_f1": 0.32414500838343485
+            }
+          ],
+          "parameters": 5436655,
+          "selection_f1": 0.32414500838343485
+        }
+      ],
+      "matched_v25_oracle_count": {
+        "country_means": {
+          "Andorra": 14.75,
+          "Austria": 31.880710659898476,
+          "Belgium": 10.78641975308642,
+          "Bosnia and Herzegovina": 33.45454545454545,
+          "Bulgaria": 10.8125,
+          "Croatia": 30.365384615384617,
+          "Czech Republic": 23.47478260869565,
+          "Denmark": 16.558453513347654,
+          "France": 17.5900718076803,
+          "Germany": 21.846153846153847,
+          "Greece": 32.95744680851064,
+          "Hungary": 38.142857142857146,
+          "Ireland": 8.916666666666666,
+          "Italy": 16.73453787352328,
+          "Latvia": 39.833333333333336,
+          "Luxembourg": 19.0,
+          "Montenegro": 22.597345132743364,
+          "Netherlands": 10.949175590685025,
+          "Norway": 7.2,
+          "Poland": 22.917721518987342,
+          "Portugal": 12.166666666666666,
+          "Romania": 22.853658536585368,
+          "Serbia": 17.126436781609197,
+          "Slovakia": 22.55,
+          "Slovenia": 23.896551724137932,
+          "Spain": 16.64423076923077,
+          "Switzerland": 30.45,
+          "The former Yugoslav Republic of Macedonia": 18.166666666666668
+        },
+        "feature_names": [
+          "neural_log_richness",
+          "top1",
+          "top5_mean",
+          "top20_mean",
+          "top40_mean",
+          "top40_std",
+          "rank_margin_20_40",
+          "log_pa_distance",
+          "log_po_coverage",
+          "month_sin",
+          "month_cos",
+          "country_training_richness"
+        ],
+        "global_mean": 16.138777056789657,
+        "predicted_count_mean": 19.947826622113414,
+        "selection_mae": 7.556454246367543,
+        "selection_oracle_count_mean": 21.15765194325914,
+        "target": "per-survey oracle top-k maximizing sample F1 on selection only"
+      },
+      "matched_v26_oracle_count": {
+        "country_means": {
+          "Andorra": 14.75,
+          "Austria": 31.880710659898476,
+          "Belgium": 10.78641975308642,
+          "Bosnia and Herzegovina": 33.45454545454545,
+          "Bulgaria": 10.8125,
+          "Croatia": 30.365384615384617,
+          "Czech Republic": 23.47478260869565,
+          "Denmark": 16.558453513347654,
+          "France": 17.5900718076803,
+          "Germany": 21.846153846153847,
+          "Greece": 32.95744680851064,
+          "Hungary": 38.142857142857146,
+          "Ireland": 8.916666666666666,
+          "Italy": 16.73453787352328,
+          "Latvia": 39.833333333333336,
+          "Luxembourg": 19.0,
+          "Montenegro": 22.597345132743364,
+          "Netherlands": 10.949175590685025,
+          "Norway": 7.2,
+          "Poland": 22.917721518987342,
+          "Portugal": 12.166666666666666,
+          "Romania": 22.853658536585368,
+          "Serbia": 17.126436781609197,
+          "Slovakia": 22.55,
+          "Slovenia": 23.896551724137932,
+          "Spain": 16.64423076923077,
+          "Switzerland": 30.45,
+          "The former Yugoslav Republic of Macedonia": 18.166666666666668
+        },
+        "feature_names": [
+          "neural_log_richness",
+          "top1",
+          "top5_mean",
+          "top20_mean",
+          "top40_mean",
+          "top40_std",
+          "rank_margin_20_40",
+          "log_pa_distance",
+          "log_po_coverage",
+          "month_sin",
+          "month_cos",
+          "country_training_richness"
+        ],
+        "global_mean": 16.138777056789657,
+        "predicted_count_mean": 19.37181312086562,
+        "selection_mae": 7.482693886976321,
+        "selection_oracle_count_mean": 20.61838311613424,
+        "target": "per-survey oracle top-k maximizing sample F1 on selection only"
+      },
+      "matched_v26_spatial_raster": {
+        "active_species": 2491,
+        "augmentation": "Sentinel random horizontal/vertical flips and quarter rotations",
+        "best_epoch": 24,
+        "checkpoint_sha256": "325a73a32aec010a545929b0941eaf137449fdf51711d9bf30bb5780b5d0e964",
+        "history": [
+          {
+            "epoch": 1,
+            "examples_per_second": 1297.2657104936327,
+            "loss": 0.3216303480895021,
+            "seconds": 16.27500043300006,
+            "selection_f1": null
+          },
+          {
+            "epoch": 2,
+            "examples_per_second": 3498.994698783481,
+            "loss": 0.2021812008891345,
+            "seconds": 6.034018858999843,
+            "selection_f1": null
+          },
+          {
+            "epoch": 3,
+            "examples_per_second": 3556.0688544453383,
+            "loss": 0.17733514004596534,
+            "seconds": 5.9371741280001515,
+            "selection_f1": null
+          },
+          {
+            "epoch": 4,
+            "examples_per_second": 3496.3101250681534,
+            "loss": 0.16291453891296104,
+            "seconds": 6.03865196300012,
+            "selection_f1": null
+          },
+          {
+            "epoch": 5,
+            "examples_per_second": 3528.037433800106,
+            "loss": 0.15186572524331687,
+            "seconds": 5.984346934000314,
+            "selection_f1": null
+          },
+          {
+            "epoch": 6,
+            "examples_per_second": 3495.8598718475514,
+            "loss": 0.1431579507140294,
+            "seconds": 6.039429718000065,
+            "selection_f1": null
+          },
+          {
+            "epoch": 7,
+            "examples_per_second": 3496.7597414066713,
+            "loss": 0.13580373076304997,
+            "seconds": 6.03787550800007,
+            "selection_f1": null
+          },
+          {
+            "epoch": 8,
+            "examples_per_second": 3530.84757005216,
+            "loss": 0.12966627908653286,
+            "seconds": 5.979584102999979,
+            "selection_f1": null
+          },
+          {
+            "epoch": 9,
+            "examples_per_second": 3529.3930461523023,
+            "loss": 0.12402372077239411,
+            "seconds": 5.982048392999786,
+            "selection_f1": null
+          },
+          {
+            "epoch": 10,
+            "examples_per_second": 3486.7252681502073,
+            "loss": 0.11910898118755261,
+            "seconds": 6.055251955999665,
+            "selection_f1": null
+          },
+          {
+            "epoch": 11,
+            "examples_per_second": 3520.3672876141827,
+            "loss": 0.11491717933713529,
+            "seconds": 5.997385577999921,
+            "selection_f1": null
+          },
+          {
+            "epoch": 12,
+            "examples_per_second": 2518.014417254262,
+            "loss": 0.11078153561388013,
+            "seconds": 8.384781220999685,
+            "selection_f1": 0.34885035295063277
+          },
+          {
+            "epoch": 13,
+            "examples_per_second": 3506.558144979917,
+            "loss": 0.10721738933627623,
+            "seconds": 6.021003823999308,
+            "selection_f1": null
+          },
+          {
+            "epoch": 14,
+            "examples_per_second": 3476.661921962058,
+            "loss": 0.10399992712685821,
+            "seconds": 6.072779140999955,
+            "selection_f1": null
+          },
+          {
+            "epoch": 15,
+            "examples_per_second": 2530.434400343253,
+            "loss": 0.10116772734771057,
+            "seconds": 8.343626690000747,
+            "selection_f1": 0.3512512729828805
+          },
+          {
+            "epoch": 16,
+            "examples_per_second": 3522.3586836736963,
+            "loss": 0.09863077738659637,
+            "seconds": 5.993994903999919,
+            "selection_f1": null
+          },
+          {
+            "epoch": 17,
+            "examples_per_second": 3468.839576167725,
+            "loss": 0.09648403990956421,
+            "seconds": 6.086473455000487,
+            "selection_f1": null
+          },
+          {
+            "epoch": 18,
+            "examples_per_second": 2515.119868296947,
+            "loss": 0.09443978335019713,
+            "seconds": 8.394430924000517,
+            "selection_f1": 0.3529893116208653
+          },
+          {
+            "epoch": 19,
+            "examples_per_second": 3471.450716224207,
+            "loss": 0.09294499704435277,
+            "seconds": 6.081895358999645,
+            "selection_f1": null
+          },
+          {
+            "epoch": 20,
+            "examples_per_second": 3489.6085970590593,
+            "loss": 0.09163955152768773,
+            "seconds": 6.0502487349995135,
+            "selection_f1": null
+          },
+          {
+            "epoch": 21,
+            "examples_per_second": 2525.6210749516304,
+            "loss": 0.09059913318953769,
+            "seconds": 8.359527962999891,
+            "selection_f1": 0.3532278338689123
+          },
+          {
+            "epoch": 22,
+            "examples_per_second": 3429.954244386063,
+            "loss": 0.08980293835417175,
+            "seconds": 6.155475698999908,
+            "selection_f1": null
+          },
+          {
+            "epoch": 23,
+            "examples_per_second": 3440.6369110842043,
+            "loss": 0.08912703904358084,
+            "seconds": 6.1363638610000635,
+            "selection_f1": null
+          },
+          {
+            "epoch": 24,
+            "examples_per_second": 2498.23899472864,
+            "loss": 0.08877853675318122,
+            "seconds": 8.45115300999987,
+            "selection_f1": 0.35355512470605643
+          }
+        ],
+        "minimum_training_occurrences": 6,
+        "parameters": 3307642,
+        "selection_f1": 0.35355512470605643
+      },
+      "matched_v27_oracle_count": {
+        "country_means": {
+          "Andorra": 14.75,
+          "Austria": 31.880710659898476,
+          "Belgium": 10.78641975308642,
+          "Bosnia and Herzegovina": 33.45454545454545,
+          "Bulgaria": 10.8125,
+          "Croatia": 30.365384615384617,
+          "Czech Republic": 23.47478260869565,
+          "Denmark": 16.558453513347654,
+          "France": 17.5900718076803,
+          "Germany": 21.846153846153847,
+          "Greece": 32.95744680851064,
+          "Hungary": 38.142857142857146,
+          "Ireland": 8.916666666666666,
+          "Italy": 16.73453787352328,
+          "Latvia": 39.833333333333336,
+          "Luxembourg": 19.0,
+          "Montenegro": 22.597345132743364,
+          "Netherlands": 10.949175590685025,
+          "Norway": 7.2,
+          "Poland": 22.917721518987342,
+          "Portugal": 12.166666666666666,
+          "Romania": 22.853658536585368,
+          "Serbia": 17.126436781609197,
+          "Slovakia": 22.55,
+          "Slovenia": 23.896551724137932,
+          "Spain": 16.64423076923077,
+          "Switzerland": 30.45,
+          "The former Yugoslav Republic of Macedonia": 18.166666666666668
+        },
+        "feature_names": [
+          "neural_log_richness",
+          "top1",
+          "top5_mean",
+          "top20_mean",
+          "top40_mean",
+          "top40_std",
+          "rank_margin_20_40",
+          "log_pa_distance",
+          "log_po_coverage",
+          "month_sin",
+          "month_cos",
+          "country_training_richness"
+        ],
+        "global_mean": 16.138777056789657,
+        "predicted_count_mean": 19.188855982663107,
+        "selection_mae": 7.378336364125913,
+        "selection_oracle_count_mean": 20.610079575596817,
+        "target": "per-survey oracle top-k maximizing sample F1 on selection only"
+      },
+      "normalization_fit_on_training_only": true,
+      "rare_species": 3663,
+      "raw_raster_normalization_fit_on_training_only": true,
+      "v27_pyramid_raster": {
+        "active_species": 2491,
+        "augmentation": "Sentinel random horizontal/vertical flips and quarter rotations",
+        "best_epoch": 15,
+        "checkpoint_sha256": "9667818ae6b348c5bf93efe90655acffdda6ec4d0cf389768f35c12e11db5c2c",
+        "history": [
+          {
+            "epoch": 1,
+            "examples_per_second": 505.329457143697,
+            "loss": 0.2935133831871853,
+            "seconds": 41.78066348900029,
+            "selection_f1": null
+          },
+          {
+            "epoch": 2,
+            "examples_per_second": 1408.7225470426433,
+            "loss": 0.1912232115289542,
+            "seconds": 14.987337317999845,
+            "selection_f1": null
+          },
+          {
+            "epoch": 3,
+            "examples_per_second": 1424.2818718739156,
+            "loss": 0.16664066539785047,
+            "seconds": 14.823610703000668,
+            "selection_f1": null
+          },
+          {
+            "epoch": 4,
+            "examples_per_second": 1418.0340083659355,
+            "loss": 0.15016596027172788,
+            "seconds": 14.888923591000093,
+            "selection_f1": null
+          },
+          {
+            "epoch": 5,
+            "examples_per_second": 1446.0723203235677,
+            "loss": 0.13824372289122938,
+            "seconds": 14.600237970999842,
+            "selection_f1": null
+          },
+          {
+            "epoch": 6,
+            "examples_per_second": 1436.5472403083195,
+            "loss": 0.1279499524641352,
+            "seconds": 14.697045392999826,
+            "selection_f1": null
+          },
+          {
+            "epoch": 7,
+            "examples_per_second": 1432.9151911703175,
+            "loss": 0.1192462459574999,
+            "seconds": 14.734298394000689,
+            "selection_f1": null
+          },
+          {
+            "epoch": 8,
+            "examples_per_second": 1433.3671701402689,
+            "loss": 0.11121395883493894,
+            "seconds": 14.729652275999797,
+            "selection_f1": null
+          },
+          {
+            "epoch": 9,
+            "examples_per_second": 1440.9492707514285,
+            "loss": 0.10426055742426384,
+            "seconds": 14.652146628999617,
+            "selection_f1": null
+          },
+          {
+            "epoch": 10,
+            "examples_per_second": 1429.2452113444917,
+            "loss": 0.09754658158631585,
+            "seconds": 14.772132754000268,
+            "selection_f1": null
+          },
+          {
+            "epoch": 11,
+            "examples_per_second": 1392.7252801188833,
+            "loss": 0.09191629567494054,
+            "seconds": 15.159486440999899,
+            "selection_f1": null
+          },
+          {
+            "epoch": 12,
+            "examples_per_second": 1427.0002632483831,
+            "loss": 0.0868532216947545,
+            "seconds": 14.795372183000836,
+            "selection_f1": null
+          },
+          {
+            "epoch": 13,
+            "examples_per_second": 1435.666156334976,
+            "loss": 0.08197494962825727,
+            "seconds": 14.706065130000752,
+            "selection_f1": null
+          },
+          {
+            "epoch": 14,
+            "examples_per_second": 1424.8693778448958,
+            "loss": 0.07729919259014503,
+            "seconds": 14.817498591999538,
+            "selection_f1": null
+          },
+          {
+            "epoch": 15,
+            "examples_per_second": 1156.8087540296822,
+            "loss": 0.07357390358255718,
+            "seconds": 18.251072121000107,
+            "selection_f1": 0.35404022112884903
+          },
+          {
+            "epoch": 16,
+            "examples_per_second": 1432.1247639256474,
+            "loss": 0.07023277501803483,
+            "seconds": 14.742430639999839,
+            "selection_f1": null
+          },
+          {
+            "epoch": 17,
+            "examples_per_second": 1403.0015485394442,
+            "loss": 0.06706218588658795,
+            "seconds": 15.048450960000082,
+            "selection_f1": null
+          },
+          {
+            "epoch": 18,
+            "examples_per_second": 1178.7462549909303,
+            "loss": 0.0643279728336895,
+            "seconds": 17.911403671999324,
+            "selection_f1": 0.3536385568161481
+          },
+          {
+            "epoch": 19,
+            "examples_per_second": 1424.306917619906,
+            "loss": 0.06179911721767206,
+            "seconds": 14.823350036999727,
+            "selection_f1": null
+          },
+          {
+            "epoch": 20,
+            "examples_per_second": 1421.875288297523,
+            "loss": 0.05957941031952017,
+            "seconds": 14.848700286000167,
+            "selection_f1": null
+          },
+          {
+            "epoch": 21,
+            "examples_per_second": 1168.8436340228673,
+            "loss": 0.05758796889900072,
+            "seconds": 18.063151806999485,
+            "selection_f1": 0.35259997051496883
+          },
+          {
+            "epoch": 22,
+            "examples_per_second": 1429.9440176991593,
+            "loss": 0.05594254393152243,
+            "seconds": 14.764913687999979,
+            "selection_f1": null
+          },
+          {
+            "epoch": 23,
+            "examples_per_second": 1428.4146430754927,
+            "loss": 0.05454022695455937,
+            "seconds": 14.780722182000318,
+            "selection_f1": null
+          },
+          {
+            "epoch": 24,
+            "examples_per_second": 1175.1371041721331,
+            "loss": 0.053249761228068654,
+            "seconds": 17.966414237999743,
+            "selection_f1": 0.3508070361720315
+          },
+          {
+            "epoch": 25,
+            "examples_per_second": 1415.3817688557112,
+            "loss": 0.052275407063324696,
+            "seconds": 14.91682347799997,
+            "selection_f1": null
+          },
+          {
+            "epoch": 26,
+            "examples_per_second": 1447.6675012543922,
+            "loss": 0.051445247185591333,
+            "seconds": 14.584150007999597,
+            "selection_f1": null
+          },
+          {
+            "epoch": 27,
+            "examples_per_second": 1179.4687607507421,
+            "loss": 0.050747764975923676,
+            "seconds": 17.9004317050003,
+            "selection_f1": 0.3498650480377985
+          },
+          {
+            "epoch": 28,
+            "examples_per_second": 1398.3322403514826,
+            "loss": 0.05013938571634729,
+            "seconds": 15.098700717000611,
+            "selection_f1": null
+          },
+          {
+            "epoch": 29,
+            "examples_per_second": 1424.069043373951,
+            "loss": 0.049773486306844,
+            "seconds": 14.825826106000022,
+            "selection_f1": null
+          },
+          {
+            "epoch": 30,
+            "examples_per_second": 1190.9745206389318,
+            "loss": 0.049435546248586607,
+            "seconds": 17.72749931599992,
+            "selection_f1": 0.3503485190753621
+          }
+        ],
+        "minimum_training_occurrences": 6,
+        "parameters": 5583782,
+        "selection_f1": 0.35404022112884903
+      },
+      "zero_pa_species": 837
+    }
+  }
+}
