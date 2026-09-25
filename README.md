@@ -51,11 +51,11 @@ To create/update a private Kaggle script kernel and start a Phase-1 run directly
 
 The script keeps credentials in memory only, uploads a Git archive of **HEAD** (commit intended source changes first), and attaches `geolifeclef-2025`. It also supports the explicitly user-authorized ignored `api_key/kaggle_2.json`. Audit/schema/frequency runs are CPU-only; neural modes request a T4.
 
-The current official best is v27: **0.23339 public / 0.20831 private**. It gained
-**0.00287 public / 0.00138 private** over v26 and completed in 2.0682 hours. The
-remaining private-score gap is **0.02190**, so SOTA is not established. Exact v27
+The current official best is v29: **0.23900 public / 0.21093 private**. It gained
+**0.00561 public / 0.00262 private** over v27 and completed in 3.0142 hours on a T4. The
+remaining private-score gap is **0.01928**, so SOTA is not established. Exact v29
 outputs, hashes, assessment diagnostics and leaderboard evidence are preserved under
-`results/`; see `results/v27_summary.json` and `results/experiment_registry.json`.
+`results/`; see `results/v29_summary.json` and `results/experiment_registry.json`.
 
 V28 did **not** improve: it selected `control` and emitted the exact same CSV as v27,
 with the same public/private scores. Its report correctly said
@@ -63,16 +63,19 @@ with the same public/private scores. Its report correctly said
 `results/v28_kaggle_output/`; the four original outputs and screenshot are preserved.
 
 The current candidate notebook is
-`notebooks/geolifeclef_v29_full_data_multisensor_ensemble.ipynb`. It trains three
-heterogeneous 64px multisensor models, calibrates all-species probabilities, and refits
-successful candidates on all 88,987 PA surveys. All 86,592 previously assessed IDs are
-excluded from its final 2,395-row audit. That small Denmark-heavy audit is not a
-hidden-test estimate. The self-contained notebook is below Kaggle's 1 MB limit, needs
-only the official competition input and one GPU, and exports only four compact files.
-A 10.75-hour cooperative guard, per-fit budgets and measured full-refit admission protect
-the session budget; full T4 completion/performance has not yet been measured.
-Only a passed gate produces `GLC25_PA_submission_v29.csv`. Every other prediction file
-explicitly says `DO_NOT_SUBMIT`. See `docs/full_data_multisensor_ensemble_v29.md`.
+`notebooks/geolifeclef_v30_calibrated_multiscale_attention.ipynb`. It compares attention-only
+ensembles with a new central-habitat/landscape attention model and learns species-list
+length. Production models reserve 8,302 spatially separated calibration anchors instead
+of transferring calibration between different model weights. They train on 72,063 PA
+surveys; this deliberately trades some training data for honest production calibration.
+All 88,987 PA IDs have now been assessed previously: v30's two spatial folds are explicitly
+repeated development regression checks, NOT a fresh holdout or proof of SOTA.
+
+The offline single notebook stays below 1 MB, uses one GPU and only official competition
+data, has a 10.75-hour cooperative guard, and exports five compact files capped at 16 MB.
+Full v30 T4 runtime has not yet been measured. Submit **only** the eligible
+`GLC25_PA_submission_v30.csv`, never the ZIP, reports, NPZ or `DO_NOT_SUBMIT` files.
+See `docs/calibrated_multiscale_attention_v30.md`.
 
 ## Audit and canonical data contract
 
