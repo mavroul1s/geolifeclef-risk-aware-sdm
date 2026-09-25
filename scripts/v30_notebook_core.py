@@ -28,11 +28,12 @@ SPLIT_SEED = 20260926
 CONFIGS = tuple(dict(c) for c in previous.CONFIGS) + (
     {"id": "multiscale_ecology", "kind": "multiscale", "geo": False, "width": 192,
      "gamma": 0.0, "epochs": 48, "seed": 20263004},)
-# The weak convolutional member remains in the matched v29 reference, not candidates.
+# Test dropping/downweighting the weak standalone CNN; diversity may still help.
 WEIGHTS = {"attention_pair": (0.5, 0., 0.5, 0.),
            "balanced": (1/3, 0., 1/3, 1/3),
            "geo_lean": (0.6, 0., 0.2, 0.2),
-           "ecology_lean": (0.2, 0., 0.4, 0.4)}
+           "ecology_lean": (0.2, 0., 0.4, 0.4),
+           "diverse_low_conv": (0.3, 0.1, 0.3, 0.3)}
 POLICIES = ({"id": "control", "weights": "attention_pair", "learned_count": 0., "alpha": 0.},) + tuple(
     {"id": f"{name}_count{int(count*100)}_a{int(alpha*100)}", "weights": name,
      "learned_count": count, "alpha": alpha}
@@ -453,7 +454,7 @@ def publish(export, template, ids, predictions, species, gate):
 
 
 def self_tests():
-    assert len(POLICIES) == 25 and all(abs(sum(w)-1) < 1e-6 for w in WEIGHTS.values())
+    assert len(POLICIES) == 31 and all(abs(sum(w)-1) < 1e-6 for w in WEIGHTS.values())
     base = [list(range(8))]
     assert decode(base, np.arange(12)[None], np.array([8]), np.array([10]), POLICIES[0]) == base
     model = MultiscaleAttention(5, 2, 12, width=16).eval()
