@@ -372,7 +372,15 @@ def run_v32(control_b64):
         proof = legacy.write_submission(temporary/"control.csv", template, store.test_ids, control, store.species_ids)
         if proof["sha256"] != CONTROL_HASH:
             raise ValueError("Exact scored v31 round trip failed")
-        bundles = [fit_fold(i, split, rows, store, temporary, guard, device) for i, split in enumerate(splits)]
+        bundles = []
+        for i, split in enumerate(splits):
+            if bundles:
+                first = bundles[0]
+                remaining_development = 1.5*sum(r["seconds"] for r in first["records"]+first["reference_records"])
+                remaining_production = production_estimate(bundles, {"bag": 1., "specialist": 1.}, len(rows))
+                guard.require(remaining_development+remaining_production+30*60,
+                              "remaining development and largest production plan admission")
+            bundles.append(fit_fold(i, split, rows, store, temporary, guard, device))
         policy, trials = select_policy(bundles, rows)
         legacy.save_json(temporary/"frozen_policy.json", {"policy": policy, "trials": trials})
         guard.stamp("policy_frozen", policy=policy)
@@ -386,6 +394,7 @@ def run_v32(control_b64):
         if all(gates.values()):
             prediction, fitted, diagnostics = fit_production(bundles, policy, rows, test_rows, store, control, temporary, guard, device)
         previous.validate_residual(control, prediction, policy)
+        gates["within_budget"] = guard.elapsed_hours() < MAX_HOURS
         csv_proof, decision = publish(export, template, store.test_ids, prediction, store.species_ids, all(gates.values()))
         frame.to_csv(export/"regression_per_survey_v32.csv", index=False)
         save_compact(export/"calibration_top128_v32.npz", bundles, rows, store)
@@ -414,6 +423,7 @@ def run_v32(control_b64):
         size = sum(p.stat().st_size for p in export.iterdir())
         if len(list(export.iterdir())) != 5 or size > 16_000_000:
             raise ValueError("Compact five-file/16MB export contract exceeded")
+        guard.require(0, "final compact export")
         return {"status": "complete", **decision, "runtime_hours": guard.elapsed_hours(), "output_bytes": size,
             "export_directory": str(export), "regression_gain": regression["gain"], "fresh_assessment": False, "policy": policy}
     except Exception as error:
