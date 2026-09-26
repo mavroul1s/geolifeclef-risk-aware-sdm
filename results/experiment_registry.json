@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-25",
+  "updated_at": "2026-09-26",
   "metric": "Kaggle sample-averaged F1",
   "competition": "geolifeclef-2025",
   "kernel": "con1los/geolifeclef-risk-aware-sdm-phase-1",
@@ -206,6 +206,23 @@
       "pipeline_hours": 3.0141974191044443,
       "summary": "results/v29_summary.json",
       "artifacts": "results/v29_kaggle_output"
+    },
+    {
+      "version": 30,
+      "description": "Calibrated multiscale ensemble with held-out production anchors and adaptive counts",
+      "recorded_at": "2026-09-26",
+      "score_source": "user-provided Kaggle results screenshot",
+      "public_score": 0.23451,
+      "private_score": 0.20942,
+      "submission_sha256": "95a57131f8494320cec86d50bcdf6112998656497d9adc34ba826eb7c1086479",
+      "status": "regression_keep_v29",
+      "kaggle_submission_status": "complete",
+      "registered_submission_gate_passed": true,
+      "public_delta_from_v29": -0.00449,
+      "private_delta_from_v29": -0.00151,
+      "pipeline_hours": 3.7986563431850002,
+      "summary": "results/v30_summary.json",
+      "artifacts": "results/v30_kaggle_output"
     }
   ],
   "experimental_runs": [
@@ -279,12 +296,12 @@
     },
     {
       "experiment": "v30_calibrated_multiscale_attention",
-      "status": "ready_for_kaggle_validation",
+      "status": "complete_official_regression_keep_v29",
       "notebook": "notebooks/geolifeclef_v30_calibrated_multiscale_attention.ipynb",
       "preregistration": "docs/calibrated_multiscale_attention_v30.md",
-      "official_submission_made": false,
-      "official_public_score": null,
-      "official_private_score": null,
+      "official_submission_made": true,
+      "official_public_score": 0.23451,
+      "official_private_score": 0.20942,
       "control": "exact scored v29 test predictions; recipe-refit spatial reference",
       "fresh_assessment": false,
       "consumed_assessment_union": 88987,
@@ -295,6 +312,29 @@
       "output_limit_bytes": 16000000,
       "notebook_bytes": 608823,
       "local_validation": "results/v30_local_validation.json",
+      "full_kaggle_runtime_measured": true,
+      "pipeline_hours": 3.7986563431850002,
+      "summary": "results/v30_summary.json",
+      "artifacts": "results/v30_kaggle_output"
+    },
+    {
+      "experiment": "v31_full_data_bagged_habitat_residual",
+      "status": "ready_for_kaggle_validation",
+      "notebook": "notebooks/geolifeclef_v31_full_data_bagged_habitat_residual.ipynb",
+      "preregistration": "docs/full_data_bagged_habitat_residual_v31.md",
+      "official_submission_made": false,
+      "official_public_score": null,
+      "official_private_score": null,
+      "control": "exact scored v29 test CSV; fixed-epoch v29 recipe refit for development",
+      "fresh_assessment": false,
+      "consumed_assessment_union": 88987,
+      "validation_scope": "repeated spatial development with post-v30 geographic robustness gates; not independent assessment",
+      "candidate": "full-PA seed replicas and environmental analogue expert; fixed per-row v29 counts, leading 60% retained, at most 2/4 swaps",
+      "runtime_guard_hours": 10.75,
+      "notebook_source_limit_bytes": 1000000,
+      "output_limit_bytes": 16000000,
+      "notebook_bytes": 617078,
+      "local_validation": "results/v31_local_validation.json",
       "full_kaggle_runtime_measured": false
     },
     {

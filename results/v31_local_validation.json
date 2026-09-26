@@ -1,0 +1,70 @@
+{
+  "experiment": "v31_full_data_bagged_habitat_residual",
+  "recorded_at": "2026-09-26",
+  "status": "local_verification_passed_full_kaggle_run_outstanding",
+  "notebook": "notebooks/geolifeclef_v31_full_data_bagged_habitat_residual.ipynb",
+  "notebook_bytes": 617078,
+  "notebook_sha256": "d187137a8b93efab1ef9aa6773feddea45ead8626dc0a71690bbc728bfe1ab89",
+  "source_sha256_normalized_utf8": "35b414a5a804ab2eae663ae619d564c5014094d081e01531cec6f781bf934fdb",
+  "verification": {
+    "command": ".venv/research/Scripts/python.exe -m pytest tests -q -p no:cacheprovider",
+    "pythonpath": "src",
+    "exit_code": 0,
+    "tests_passed": 199,
+    "v31_specific_cases": 12,
+    "warnings": "Two existing PyTorch nested-tensor warnings in older model tests; no test failures.",
+    "notebook_schema_valid": true,
+    "standalone_embedded_code_executed_without_repo_imports": true,
+    "notebook_code_cells_output_free": true,
+    "source_and_frozen_module_hashes_match": true,
+    "exact_scored_v29_csv_round_trip": true,
+    "v30_archived_output_hashes_match": true,
+    "v29_best_results_unchanged": true,
+    "new_habitat_expert": [
+      "Normalization, PCA and sparse labels fit only the specified training rows",
+      "Changing query labels/covariates cannot affect fitted expert state",
+      "CPU neighbour averaging agrees with an independent dense distance calculation",
+      "74 environmental inputs, 32 latent components, 128 neighbours and 5016 outputs exercised",
+      "Missing/constant inputs remain finite and duplicate training indices are rejected"
+    ],
+    "residual_contracts": [
+      "All 15 policies preserve each row count, leading 60 percent and swap cap",
+      "Control is unchanged and zero-evidence habitat species are not added",
+      "New geographic gate rejects the actual archived v30 regression pattern",
+      "Repeated calibration IDs are deduplicated for minimum country support"
+    ],
+    "runtime_and_pipeline": [
+      "Missing GPU stops before official feature preparation",
+      "Whole-production runtime admission happens before fitting",
+      "Miniature real CPU fit runs both groups of three models on two folds and all three production refits",
+      "Every miniature production model uses every PA row; no production anchors are excluded",
+      "Real habitat fit, calibration, residual decoding, submission validation and five-file export exercised",
+      "Forced export failure revokes ready-to-submit CSV filename and writes ineligible failure report",
+      "Version-specific temporary runtime directory removed on success and failure"
+    ],
+    "miniature_scope_warning": "Small synthetic fixture, one epoch and width 16; geographic support and policy are controlled to exercise production. This is not a model-quality experiment."
+  },
+  "delivery_contract": {
+    "required_input": "geolifeclef-2025",
+    "required_accelerator": "one Kaggle GPU; T4 x1",
+    "internet_required": false,
+    "external_data_or_weights": false,
+    "cooperative_runtime_guard_hours": 10.75,
+    "requested_session_limit_hours": 12,
+    "source_limit_bytes": 1000000,
+    "output_limit_bytes": 16000000,
+    "successful_output_files": 5,
+    "only_eligible_submission": "v31_export/GLC25_PA_submission_v31.csv"
+  },
+  "full_kaggle_runtime_measured": false,
+  "official_submission_made": false,
+  "official_public_score": null,
+  "official_private_score": null,
+  "fresh_assessment": false,
+  "limitations": [
+    "No local T4 run, no measured full v31 runtime, and no guaranteed leaderboard improvement or SOTA claim",
+    "The 10.75h guard is cooperative and may stop a slow session before completing",
+    "All 88987 PA IDs were previously assessed; geographic gates were added after v30 diagnostics",
+    "Production Platt calibration is transferred from the scored v29 to independently seeded model weights"
+  ]
+}

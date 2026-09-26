@@ -62,20 +62,28 @@ with the same public/private scores. Its report correctly said
 `eligible_for_submission: false`. Evidence is in `results/v28_summary.json` and
 `results/v28_kaggle_output/`; the four original outputs and screenshot are preserved.
 
-The current candidate notebook is
-`notebooks/geolifeclef_v30_calibrated_multiscale_attention.ipynb`. It compares attention-only
-ensembles with a new central-habitat/landscape attention model and learns species-list
-length. Production models reserve 8,302 spatially separated calibration anchors instead
-of transferring calibration between different model weights. They train on 72,063 PA
-surveys; this deliberately trades some training data for honest production calibration.
-All 88,987 PA IDs have now been assessed previously: v30's two spatial folds are explicitly
-repeated development regression checks, NOT a fresh holdout or proof of SOTA.
+V30 regressed to **0.23451 public / 0.20942 private**, despite positive pooled internal
+gain. Outside Denmark/Netherlands its internal gain was negative. The cause cannot be
+isolated because training-data coverage, model mix, epochs and species counts changed
+together. Its five original outputs and screenshot are preserved in
+`results/v30_kaggle_output/`, `results/v30_kaggle_scores.png` and `results/v30_summary.json`.
+
+The current candidate is
+`notebooks/geolifeclef_v31_full_data_bagged_habitat_residual.ipynb`. It restores all-PA
+production training, adds independent-seed v29 replicas and an environmental-neighbour
+expert, and preserves **every scored-v29 row count and its leading 60% species**.
+At most 2/4 tail substitutions are allowed. It requires positive country-macro and
+outside-Denmark/Netherlands gains in addition to the two-fold/spatial-bootstrap gates.
+All 88,987 PA IDs have been assessed previously: these remain repeated development
+checks, NOT a fresh holdout or proof of SOTA. Production calibration transferred from
+v29 to new seeds is an explicit limitation. V29 remains the best actual submission.
 
 The offline single notebook stays below 1 MB, uses one GPU and only official competition
 data, has a 10.75-hour cooperative guard, and exports five compact files capped at 16 MB.
-Full v30 T4 runtime has not yet been measured. Submit **only** the eligible
-`GLC25_PA_submission_v30.csv`, never the ZIP, reports, NPZ or `DO_NOT_SUBMIT` files.
-See `docs/calibrated_multiscale_attention_v30.md`.
+V30 took 3.799h on T4; full v31 runtime is **not yet measured**, and its guard may stop
+a slow session safely. Submit **only** the eligible `v31_export/GLC25_PA_submission_v31.csv`,
+never the ZIP, reports, NPZ or `DO_NOT_SUBMIT` files. If the gate fails, keep v29.
+See `docs/full_data_bagged_habitat_residual_v31.md` and `results/v31_local_validation.json`.
 
 ## Audit and canonical data contract
 

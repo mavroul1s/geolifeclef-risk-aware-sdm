@@ -1,6 +1,9 @@
 # Results index
 
 - `experiment_registry.json` is the canonical official-score history and competition target.
+- `v30_summary.json` records the official regression to public 0.23451 / private 0.20942, its 3.799h T4 runtime, and negative internal gain outside Denmark/Netherlands. V29 remains the best.
+- `v30_kaggle_output/` preserves all five original files including compact calibration predictions; `v30_kaggle_scores.png` preserves the user's screenshot. Hashes are in the summary.
+- `v31_local_validation.json` records the current v31 notebook's local verification, not a full GPU run or official score.
 - `v30_local_validation.json` records the final 608,823-byte notebook, 187 passing tests, default-size model backpropagation, and production-anchor exclusion checks. It is not a full Kaggle run or score.
 - `v28_summary.json` records a failed improvement: public 0.23339 / private 0.20831, selected `control`, eligibility false, CSV byte-identical to v27.
 - `v28_kaggle_output/` preserves the four original v28 files; `v28_kaggle_scores.png` preserves the user's leaderboard screenshot.
@@ -16,7 +19,7 @@
 - `v24_summary.json` preserves the previous official best: public 0.22397 and private 0.20094.
 - `v24_kaggle_output/` contains exactly the four compact files returned by the completed Kaggle run; `v24_kaggle_scores.png` preserves the user-provided leaderboard evidence.
 - The v25 preregistration is `docs/fresh_holdout_adaptive_ensemble_v25.md`; its notebook is `notebooks/geolifeclef_v25_fresh_holdout_adaptive_ensemble.ipynb`.
-- The next registered candidate is v30 (`docs/calibrated_multiscale_attention_v30.md`), delivered as `notebooks/geolifeclef_v30_calibrated_multiscale_attention.ipynb`. It embeds exact v29 predictions, adds calibrated multiscale attention and held-out production calibration. It has not received an official score or full T4 runtime measurement. No fresh PA holdout remains; repeated validation must not be presented as fresh assessment.
+- The next candidate is v31 (`docs/full_data_bagged_habitat_residual_v31.md`), delivered as `notebooks/geolifeclef_v31_full_data_bagged_habitat_residual.ipynb`. It preserves exact v29 cardinality and leading species while testing bounded changes from full-data seed replicas and environmental analogues. It has no official score or full T4 runtime measurement. No fresh PA holdout remains; repeated validation must not be presented as fresh assessment.
 - `v21_summary.json` and `v21_schema_preflight.json` preserve the earlier PO-expert experiment.
 - `v20_summary.json` contains the complete compact numerical handoff for the earlier environmental-challenger run, including splits, model-selection results, audit metrics, official scores and artifact inventory.
 - The immutable raw v20 artifacts are stored with Kaggle kernel `con1los/geolifeclef-risk-aware-sdm-phase-1`, version 20. Their exact remote directory is `geolifeclef-risk-aware-sdm/artifacts/environmental_challenger/`.

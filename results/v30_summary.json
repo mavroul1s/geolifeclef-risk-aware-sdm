@@ -1,0 +1,60 @@
+{
+  "experiment": "v30_calibrated_multiscale_attention",
+  "status": "complete_official_regression_keep_v29",
+  "recorded_at": "2026-09-26",
+  "score_source": "user-provided Kaggle screenshot; not an API verification",
+  "official": {
+    "public_score": 0.23451,
+    "private_score": 0.20942,
+    "public_delta_from_v29": -0.00449,
+    "private_delta_from_v29": -0.00151,
+    "best_version": "v29",
+    "best_public_score": 0.23900,
+    "best_private_score": 0.21093,
+    "private_target": 0.23021,
+    "target_reached": false,
+    "best_gap_to_private_target": 0.01928
+  },
+  "runtime_hours": 3.7986563431850002,
+  "hardware": "Tesla T4",
+  "selected_policy": "diverse_low_conv_count50_a100",
+  "original_submission_gate_passed": true,
+  "repeated_spatial_regression": {
+    "surveys": 31570,
+    "spatial_blocks": 109,
+    "matched_v29_f1": 0.3594421058947509,
+    "v30_f1": 0.3629649716459574,
+    "gain": 0.0035228657512064217,
+    "spatial_ci95": [0.0016226305792057538, 0.004495798894619278],
+    "outside_denmark_netherlands_surveys": 8653,
+    "outside_denmark_netherlands_gain": -0.0007439578457975827,
+    "country_macro_gain_minimum_30_surveys": -0.00038608460642242174,
+    "fresh_assessment": false,
+    "all_pa_ids_previously_assessed": 88987
+  },
+  "diagnosis": {
+    "v30_production_training_rows": 72063,
+    "v29_production_training_rows": 88987,
+    "v30_anchor_rows": 8302,
+    "v30_production_epochs": [12, 10, 12, 4],
+    "v29_production_epochs": [12, 15, 18],
+    "v30_test_mean_species_count": 23.30282738095238,
+    "v29_test_mean_species_count": 26.86255411255411,
+    "finding": "Pooled development gains were dominated by Denmark and Netherlands; macro-country and outside-core gains were negative.",
+    "causality_warning": "The regression cannot be assigned to one cause: data exclusion, architecture, training duration, calibration and cardinality all changed together.",
+    "next_method": "Full-PA independent seed replicas plus environmental analogue expert, preserving exact scored-v29 row counts and top 60 percent; bounded tail swaps and stronger geographic development gates.",
+    "no_guarantee": "The new gates are post-v30 development choices, not independent evidence or a guarantee of hidden-test improvement."
+  },
+  "artifacts": {
+    "directory": "results/v30_kaggle_output",
+    "source_zip": "C:/Users/nickb/Downloads/results.zip",
+    "source_zip_sha256": "e43c71eb2e2297ba4d24bdd39e279135e76174662beaaa73c9268b76078f8733",
+    "leaderboard_evidence": "results/v30_kaggle_scores.png",
+    "leaderboard_evidence_sha256": "ee919ba5aa704eb454added80da31b5650acf99dc30ee3ed97f0004756cbb647",
+    "calibration_top64_v30.npz": "db76f659c5c7399924443cc098ed00b9a625c14c57a1de24e0ac355444b14851",
+    "GLC25_PA_submission_v30.csv": "95a57131f8494320cec86d50bcdf6112998656497d9adc34ba826eb7c1086479",
+    "regression_per_survey_v30.csv": "db792818404922288d6d63a2f34146895a7a10260c00b179976127a5611cd90e",
+    "v30_manifest.json": "6627274e091f6193f41c6600ceea1b12628755ae9bbfa018e478bd6d6e875fad",
+    "v30_report.json": "d4a9df316529aca7acdafcd1413e3db975766a91be3c3ff5eff72d5e002080a5"
+  }
+}
