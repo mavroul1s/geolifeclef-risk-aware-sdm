@@ -51,11 +51,12 @@ To create/update a private Kaggle script kernel and start a Phase-1 run directly
 
 The script keeps credentials in memory only, uploads a Git archive of **HEAD** (commit intended source changes first), and attaches `geolifeclef-2025`. It also supports the explicitly user-authorized ignored `api_key/kaggle_2.json`. Audit/schema/frequency runs are CPU-only; neural modes request a T4.
 
-The current official best is v29: **0.23900 public / 0.21093 private**. It gained
-**0.00561 public / 0.00262 private** over v27 and completed in 3.0142 hours on a T4. The
-remaining private-score gap is **0.01928**, so SOTA is not established. Exact v29
-outputs, hashes, assessment diagnostics and leaderboard evidence are preserved under
-`results/`; see `results/v29_summary.json` and `results/experiment_registry.json`.
+The current official best is v31: **0.24072 public / 0.21301 private**. It gained
+**0.00172 public / 0.00208 private** over the previous best v29 and completed in
+3.1845 hours on a T4. The remaining private-score gap to the competition winner is
+**0.01720**, so SOTA is not established. Exact v31 outputs, hashes, diagnostics and
+leaderboard evidence are preserved under `results/v31_kaggle_output/`; see
+`results/v31_summary.json` and `results/experiment_registry.json`.
 
 V28 did **not** improve: it selected `control` and emitted the exact same CSV as v27,
 with the same public/private scores. Its report correctly said
@@ -69,21 +70,27 @@ together. Its five original outputs and screenshot are preserved in
 `results/v30_kaggle_output/`, `results/v30_kaggle_scores.png` and `results/v30_summary.json`.
 
 The current candidate is
-`notebooks/geolifeclef_v31_full_data_bagged_habitat_residual.ipynb`. It restores all-PA
-production training, adds independent-seed v29 replicas and an environmental-neighbour
-expert, and preserves **every scored-v29 row count and its leading 60% species**.
-At most 2/4 tail substitutions are allowed. It requires positive country-macro and
-outside-Denmark/Netherlands gains in addition to the two-fold/spatial-bootstrap gates.
-All 88,987 PA IDs have been assessed previously: these remain repeated development
-checks, NOT a fresh holdout or proof of SOTA. Production calibration transferred from
-v29 to new seeds is an explicit limitation. V29 remains the best actual submission.
+`notebooks/geolifeclef_v32_asymmetric_rare_specialist_ensemble.ipynb`. It freezes
+the exact best-v31 CSV and adds three independently seeded models plus two wider
+asymmetric-loss attention specialists, including a training-defined rare-species
+residual head. Production uses all PA rows and preserves **every scored-v31 row
+count and its leading 60% species**. Calibration chooses among seed-only,
+specialist-only and mixed policies, with up to 2/4/8 tail substitutions. The
+comparison is now against a matched **v31** recipe refit, not the older v29.
+Positive country-macro and outside-Denmark/Netherlands gains are required alongside
+the two-fold/spatial-bootstrap gates. All 88,987 PA IDs were assessed previously:
+these are repeated development checks, NOT a fresh holdout or proof of SOTA.
+Production calibration transfer remains an explicit limitation. V31 stays the
+best actual submission until a new official result beats it.
 
 The offline single notebook stays below 1 MB, uses one GPU and only official competition
 data, has a 10.75-hour cooperative guard, and exports five compact files capped at 16 MB.
-V30 took 3.799h on T4; full v31 runtime is **not yet measured**, and its guard may stop
-a slow session safely. Submit **only** the eligible `v31_export/GLC25_PA_submission_v31.csv`,
-never the ZIP, reports, NPZ or `DO_NOT_SUBMIT` files. If the gate fails, keep v29.
-See `docs/full_data_bagged_habitat_residual_v31.md` and `results/v31_local_validation.json`.
+V31 took 3.1845h on T4; full v32 runtime is **not yet measured**. V32 has 22 development
+fits and at most five production fits. Admission checks use measured training speed
+with margins; the guard may stop a slow session safely instead of completing.
+Submit **only** the eligible `v32_export/GLC25_PA_submission_v32.csv`, never the ZIP,
+reports, NPZ or `DO_NOT_SUBMIT` files. If the gate fails, keep v31. See
+`docs/asymmetric_rare_specialist_ensemble_v32.md` and `results/v32_local_validation.json`.
 
 ## Audit and canonical data contract
 
