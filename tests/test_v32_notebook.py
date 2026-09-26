@@ -63,6 +63,28 @@ def test_new_policy_count_and_protected_prefix_contract():
     assert core.decode(base, None, None, core.POLICIES[0]) == base
 
 
+@pytest.mark.parametrize('config', core.SPECIALISTS, ids=lambda c: c['id'])
+def test_production_width_and_full_vocabulary_backward(sensors, config):
+    store, _ = sensors
+    store.labels = np.pad(store.labels, ((0, 0), (0, 5016-12)))
+    store.species_ids = np.arange(5016)
+    take = np.arange(16)
+    stats = core.v29.fit_normalization(store, take)
+    model, _ = core.make_specialist(store, config, take)
+    if config['rare_branch']:
+        # Force a branch for architecture QA; the train-only membership rule is
+        # tested separately with 1,000 rows. Here all raw sensors are real-shaped.
+        model.head = core.RareResidualHead(model.head, np.array([2, 3]))
+    x = core.v29.batch_inputs(store, take[:2], stats, torch.device('cpu'))
+    logits, richness = model(x, config['geo'])
+    assert logits.shape == (2, 5016) and richness.shape == (2,)
+    loss = core.asymmetric_loss(logits, torch.as_tensor(store.labels[:2], dtype=torch.float32),
+                               torch.ones(5016), config['negative_clip'], config['negative_gamma'])
+    loss.backward()
+    assert torch.isfinite(loss)
+    assert all(torch.isfinite(p.grad).all() for p in model.parameters() if p.grad is not None)
+
+
 def test_selection_does_not_read_assessment_and_rejects_geographic_regression():
     n = 60
     rows = pd.DataFrame({'surveyId': np.arange(n), 'country': ['Denmark']*30+['France']*30})
