@@ -1,0 +1,64 @@
+{
+  "experiment": "v31_full_data_bagged_habitat_residual",
+  "status": "complete_official_current_best",
+  "recorded_at": "2026-09-26",
+  "score_source": "user-provided Kaggle screenshot; not an API verification",
+  "official": {
+    "public_score": 0.24072,
+    "private_score": 0.21301,
+    "public_delta_from_v29": 0.00172,
+    "private_delta_from_v29": 0.00208,
+    "public_target": 0.27142,
+    "private_target": 0.23021,
+    "target_reached": false,
+    "gap_to_public_target": 0.03070,
+    "gap_to_private_target": 0.01720
+  },
+  "runtime_hours": 3.1844958516902775,
+  "hardware": "Tesla T4",
+  "selected_policy": "seed1_habitat0.25_swap2",
+  "original_submission_gate_passed": true,
+  "repeated_spatial_regression": {
+    "surveys": 31570,
+    "spatial_blocks": 109,
+    "matched_v29_f1": 0.3590565155177304,
+    "v31_f1": 0.3593766168267399,
+    "gain": 0.00032010130900957074,
+    "spatial_ci95": [0.000106452221677997, 0.0006586939863761965],
+    "outside_denmark_netherlands_surveys": 8653,
+    "outside_denmark_netherlands_gain": 0.0008566666233715977,
+    "country_macro_gain_minimum_30_surveys": 0.0006699305155051972,
+    "without_habitat_gain": 0.0003055500273076739,
+    "without_neural_gain": -0.000015951503339846277,
+    "fresh_assessment": false,
+    "all_pa_ids_previously_assessed": 88987
+  },
+  "production": {
+    "training_rows": 88987,
+    "calibration_anchor_rows_removed": 0,
+    "epochs": [12, 15, 18],
+    "changed_test_rows": 7306,
+    "total_replacements": 11262,
+    "maximum_swaps_per_row": 2,
+    "mean_predicted_species_count": 26.86255411255411,
+    "cardinality_equal_to_scored_v29_per_row": true,
+    "compact_output_bytes": 7052095
+  },
+  "diagnosis": {
+    "finding": "Neural seed replicas account for most repeated-development gain; habitat-only ablation is slightly negative.",
+    "next_candidate": "v32: independent seed bag plus asymmetric-loss and rare-species specialists, frozen v31 row counts and leading 60 percent, up to 2/4/8 swaps only if calibration and regression gates pass.",
+    "warning": "Ablations are internal repeated-development evidence, not hidden-test results or a guarantee of further gain."
+  },
+  "artifacts": {
+    "directory": "results/v31_kaggle_output",
+    "source_zip": "C:/Users/nickb/Downloads/results (1).zip",
+    "source_zip_sha256": "5af61b98028302de0f62f37a6a964a6b566daff8e0132cf3dade0d08b865ea7b",
+    "leaderboard_evidence": "results/v31_kaggle_scores.png",
+    "leaderboard_evidence_sha256": "dbcf0ddfaedab91e13305d603a44246e357baaf86dca3e33ba5cbbf0339e6cb2",
+    "GLC25_PA_submission_v31.csv": "da070a8ac5708ef5d7fb38cdbecf862aa9d036e4d246bc1e4b364572bb7fe367",
+    "calibration_top128_v31.npz": "c7191cfcf78c8f53b764311ef3882bc688454d135f96ad6786c9e421b876b1f9",
+    "regression_per_survey_v31.csv": "489d10954b6a9399249184dff5b4c5a073196ef56ae28c202b902a03c8e0d3e9",
+    "v31_manifest.json": "ce3b36f04222aed60a2fa2ff428d8a244be5fcac882b315a5cc397bad7449f8d",
+    "v31_report.json": "b5000b6c34f8eab3a4c78f477fa5014001f5992ee8aeb8d6ef983a74536039cd"
+  }
+}
