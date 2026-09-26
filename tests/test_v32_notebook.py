@@ -108,7 +108,7 @@ def test_standalone_notebook_control_roundtrip_and_frozen_source_integrity(tmp_p
     prediction = space['decode_control'](space['CONTROL_B64'], control, species)
     proof = space['legacy'].write_submission(tmp_path/'roundtrip.csv', control, control.surveyId.to_numpy(), prediction, species)
     assert proof['sha256'] == core.CONTROL_HASH
-    assert core.FROZEN_V31_POLICY == json.loads((ROOT/'results/v31_kaggle_output/v31_report.json').read_text())['policy']
+    assert core.FROZEN_V31_POLICY == json.loads((ROOT/'results/v31_kaggle_output/v31_report.json').read_text())['selected_policy']
     manifest = json.loads((ROOT/'results/v31_kaggle_output/v31_manifest.json').read_text())
     for name, digest in manifest['outputs'].items():
         assert hashlib.sha256((ROOT/'results/v31_kaggle_output'/name).read_bytes()).hexdigest() == digest
