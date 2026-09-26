@@ -1,0 +1,82 @@
+{
+  "experiment": "v32_asymmetric_rare_specialist_ensemble",
+  "recorded_at": "2026-09-26",
+  "status": "local_verification_passed_full_kaggle_run_outstanding",
+  "notebook": "notebooks/geolifeclef_v32_asymmetric_rare_specialist_ensemble.ipynb",
+  "notebook_bytes": 626684,
+  "notebook_sha256": "fed7ba0533a302eaf22bac2c6f8ddac0880abe7100c112aedaa622d0e241c737",
+  "source_sha256_normalized_utf8": "4c61d512e78dbc87c8cb04a8e001a97a615e8156ff836b581d69344cb4735a9f",
+  "verification": {
+    "pythonpath": "src",
+    "runs": [
+      {
+        "command": ".venv/research/Scripts/python.exe -m pytest tests -q -p no:cacheprovider -o addopts=''",
+        "exit_code": 0,
+        "tests_passed": 210,
+        "seconds": 188.65,
+        "scope": "All tests collected before adding the two production-width architecture cases; final v32 core and notebook were tested."
+      },
+      {
+        "command": ".venv/research/Scripts/python.exe -m pytest tests/test_v32_notebook.py -q -p no:cacheprovider -o addopts=''",
+        "exit_code": 0,
+        "tests_passed": 13,
+        "seconds": 63.01,
+        "scope": "All v32 cases, including the two additional production-width cases; overlaps 11 cases in the full-suite run."
+      }
+    ],
+    "unique_test_cases_passed": 212,
+    "warnings": "Two existing PyTorch nested-tensor warnings in older model tests; no failures in the final verification runs.",
+    "notebook_schema_valid": true,
+    "standalone_embedded_code_executed_without_repo_imports": true,
+    "notebook_code_cells_output_free": true,
+    "source_and_frozen_module_hashes_match": true,
+    "exact_scored_v31_csv_round_trip": true,
+    "v31_archived_output_hashes_match": true,
+    "v31_original_report_unmodified": true,
+    "new_model_checks": [
+      "ASL matches weighted BCE with zero clipping/gamma, handles soft mixup labels and finite extreme-logit gradients",
+      "Clipped easy negatives produce zero negative gradient",
+      "Rare branch membership depends only on training labels; held-out-label changes cannot alter it or initialized weights",
+      "Rare residual is identity-initialized and its final layer receives gradients",
+      "Both actual width-192 specialist architectures complete forward/backward passes with 5016 outputs and canonical raw sensor shapes",
+      "22 fusion policies preserve each row count, leading 60 percent and the selected replacement cap",
+      "Policy selection does not inspect assessment predictions and rejects outside-core regression"
+    ],
+    "runtime_and_pipeline": [
+      "GPU error occurs before feature loading",
+      "Runtime estimate includes all active production models and a 1.5x margin plus 45 minutes",
+      "Real miniature training runs frozen reference groups, five new development members on two folds and all five production members",
+      "Every miniature production model uses every PA row; no production calibration anchors are removed",
+      "Production admission failure prevents any production training",
+      "Rejected policy emits byte-identical control under DO_NOT_SUBMIT, not a ready submission",
+      "Real calibration, bounded decoding, submission validation, compact export and output hashing exercised",
+      "Forced export failure revokes the ready CSV and writes an ineligible failure report",
+      "Version-owned temporary runtime directory is removed on success and failures"
+    ],
+    "miniature_scope_warning": "Synthetic 32-row CPU fixture with one epoch and width 16; policy and reference predictions are controlled to exercise acceptance. Full-width architecture checks are separate. These are software checks, not measured model accuracy or full T4 runtime."
+  },
+  "delivery_contract": {
+    "required_input": "geolifeclef-2025",
+    "required_accelerator": "one Kaggle GPU; T4 x1",
+    "internet_required": false,
+    "external_data_or_weights": false,
+    "cooperative_runtime_guard_hours": 10.75,
+    "requested_session_limit_hours": 12,
+    "source_limit_bytes": 1000000,
+    "output_limit_bytes": 16000000,
+    "successful_output_files": 5,
+    "only_eligible_submission": "v32_export/GLC25_PA_submission_v32.csv"
+  },
+  "full_kaggle_runtime_measured": false,
+  "official_submission_made": false,
+  "official_public_score": null,
+  "official_private_score": null,
+  "fresh_assessment": false,
+  "limitations": [
+    "No full T4 execution or guarantee of leaderboard improvement or winning",
+    "The 10.75-hour guard is cooperative and can stop a slow session instead of completing",
+    "All 88987 PA IDs were already consumed in development; gates do not create a fresh independent audit",
+    "Frozen counts and leading species may limit a useful larger improvement",
+    "Full-data probability calibration is transferred from previous seeds or development folds"
+  ]
+}

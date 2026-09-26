@@ -370,6 +370,7 @@
       "fresh_assessment": false,
       "consumed_assessment_union": 88987,
       "candidate": "three new seed replicas and two asymmetric-loss rare specialists; full PA training, frozen v31 counts and leading 60%, calibration-selected 2/4/8 swaps",
+      "notebook_bytes": 626684,
       "runtime_guard_hours": 10.75,
       "notebook_source_limit_bytes": 1000000,
       "output_limit_bytes": 16000000,
