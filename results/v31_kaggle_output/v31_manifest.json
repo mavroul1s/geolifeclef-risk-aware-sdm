@@ -1,0 +1,295 @@
+{
+  "configs": [
+    {
+      "epochs": 48,
+      "gamma": 0.0,
+      "geo": true,
+      "id": "temporal_attention",
+      "kind": "attention",
+      "seed": 20262901,
+      "width": 128
+    },
+    {
+      "epochs": 48,
+      "gamma": 0.0,
+      "geo": true,
+      "id": "multisensor_conv",
+      "kind": "conv",
+      "seed": 20262902,
+      "width": 128
+    },
+    {
+      "epochs": 48,
+      "gamma": 2.0,
+      "geo": false,
+      "id": "ecology_attention",
+      "kind": "attention",
+      "seed": 20262903,
+      "width": 128
+    }
+  ],
+  "control_sha256": "9ec7afb25eb1651b161b0f8c6ecaa64fd553d17dd24b4808b1f07446b85f8194",
+  "embedded_legacy_sha256": "69a2d3952fa6324d9a05f4edb6fa7662388a198df89c407f7f034b94099f1dc0",
+  "embedded_v29_sha256": "bdb162dbc822622d34e9cdc0c4f9e91ee89fd7e11c33ad3113b4b6adccb5f3e1",
+  "embedded_v30_sha256": "faf8f4d9b106097a5de7f11a156f4ea99cee809815970f2d802ae7f72634bc03",
+  "experiment": "v31_full_data_bagged_habitat_residual",
+  "features": {
+    "environment_sources": [
+      {
+        "missing_indicators": 0,
+        "predictors": 19,
+        "test": "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-test-bioclimatic.csv",
+        "train": "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv"
+      },
+      {
+        "missing_indicators": 1,
+        "predictors": 1,
+        "test": "EnvironmentalValues/Elevation/GLC25-PA-test-elevation.csv",
+        "train": "EnvironmentalValues/Elevation/GLC25-PA-train-elevation.csv"
+      },
+      {
+        "missing_indicators": 0,
+        "predictors": 22,
+        "test": "EnvironmentalValues/HumanFootprint/GLC25-PA-test-human_footprint.csv",
+        "train": "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv"
+      },
+      {
+        "missing_indicators": 0,
+        "predictors": 13,
+        "test": "EnvironmentalValues/LandCover/GLC25-PA-test-landcover.csv",
+        "train": "EnvironmentalValues/LandCover/GLC25-PA-train-landcover.csv"
+      },
+      {
+        "missing_indicators": 9,
+        "predictors": 9,
+        "test": "EnvironmentalValues/SoilGrids/GLC25-PA-test-soilgrids.csv",
+        "train": "EnvironmentalValues/SoilGrids/GLC25-PA-train-soilgrids.csv"
+      }
+    ],
+    "external_data_or_weights": false,
+    "modalities": {
+      "bioclim": [
+        76
+      ],
+      "environment": [
+        74
+      ],
+      "landsat": [
+        114
+      ],
+      "sentinel": [
+        115
+      ],
+      "static": [
+        55
+      ]
+    },
+    "official_competition": "geolifeclef-2025",
+    "preparation_seconds": 3751.453571124,
+    "raw_encoder_input": {
+      "bioclim": "unaltered official 4x19x12 tensor",
+      "landsat": "unaltered official 6x4x21 tensor",
+      "sentinel": "official TIFF bilinearly resampled to 4x32x32 and scaled by 10000"
+    },
+    "raw_raster_shapes": {
+      "bioclim": [
+        4,
+        19,
+        12
+      ],
+      "landsat": [
+        6,
+        4,
+        21
+      ],
+      "sentinel": [
+        4,
+        32,
+        32
+      ]
+    },
+    "remote_preparation": {
+      "test": {
+        "rows": 14784,
+        "seconds": 554.3458513630003,
+        "sentinel_pixels": 64
+      },
+      "train": {
+        "rows": 88987,
+        "seconds": 3173.8541540799997,
+        "sentinel_pixels": 64
+      }
+    },
+    "species": 5016,
+    "species_ids_sha256": "4cfb4e44b760ae8feeb817a1788e12f8853f071689a5bf5a47c06587d5090a96",
+    "summary_encoder": {
+      "bioclim": "per-channel distribution plus 12 temporal bins",
+      "landsat": "per-band distribution plus 12 temporal bins",
+      "sentinel": "fixed-reflectance band and NDVI statistics plus 4x4 spatial pooling"
+    },
+    "test_ids_sha256": "43dc449194bbde82d746bd72ef26c04fe99a6e049360b152157d8828db20cd0f",
+    "test_labels_used": false,
+    "test_rows": 14784,
+    "train_ids_sha256": "2938f816ee93f5c53b1fc71a4505f413680018f8dff766ae891df06219286095",
+    "train_rows": 88987
+  },
+  "fixed_epochs": [
+    12,
+    15,
+    18
+  ],
+  "fresh_assessment": false,
+  "no_external_data_or_weights": true,
+  "outputs": {
+    "GLC25_PA_submission_v31.csv": "da070a8ac5708ef5d7fb38cdbecf862aa9d036e4d246bc1e4b364572bb7fe367",
+    "calibration_top128_v31.npz": "c7191cfcf78c8f53b764311ef3882bc688454d135f96ad6786c9e421b876b1f9",
+    "regression_per_survey_v31.csv": "489d10954b6a9399249184dff5b4c5a073196ef56ae28c202b902a03c8e0d3e9",
+    "v31_report.json": "b5000b6c34f8eab3a4c78f477fa5014001f5992ee8aeb8d6ef983a74536039cd"
+  },
+  "policies": [
+    {
+      "habitat": 0.0,
+      "id": "control",
+      "neural": 0.0,
+      "swaps": 0
+    },
+    {
+      "habitat": 0.0,
+      "id": "seed0.5_habitat0_swap2",
+      "neural": 0.5,
+      "swaps": 2
+    },
+    {
+      "habitat": 0.0,
+      "id": "seed0.5_habitat0_swap4",
+      "neural": 0.5,
+      "swaps": 4
+    },
+    {
+      "habitat": 0.25,
+      "id": "seed0.5_habitat0.25_swap2",
+      "neural": 0.5,
+      "swaps": 2
+    },
+    {
+      "habitat": 0.25,
+      "id": "seed0.5_habitat0.25_swap4",
+      "neural": 0.5,
+      "swaps": 4
+    },
+    {
+      "habitat": 0.5,
+      "id": "seed0.5_habitat0.5_swap2",
+      "neural": 0.5,
+      "swaps": 2
+    },
+    {
+      "habitat": 0.5,
+      "id": "seed0.5_habitat0.5_swap4",
+      "neural": 0.5,
+      "swaps": 4
+    },
+    {
+      "habitat": 0.0,
+      "id": "seed1_habitat0_swap2",
+      "neural": 1.0,
+      "swaps": 2
+    },
+    {
+      "habitat": 0.0,
+      "id": "seed1_habitat0_swap4",
+      "neural": 1.0,
+      "swaps": 4
+    },
+    {
+      "habitat": 0.25,
+      "id": "seed1_habitat0.25_swap2",
+      "neural": 1.0,
+      "swaps": 2
+    },
+    {
+      "habitat": 0.25,
+      "id": "seed1_habitat0.25_swap4",
+      "neural": 1.0,
+      "swaps": 4
+    },
+    {
+      "habitat": 0.5,
+      "id": "seed1_habitat0.5_swap2",
+      "neural": 1.0,
+      "swaps": 2
+    },
+    {
+      "habitat": 0.5,
+      "id": "seed1_habitat0.5_swap4",
+      "neural": 1.0,
+      "swaps": 4
+    },
+    {
+      "habitat": 1.0,
+      "id": "seed0_habitat1_swap2",
+      "neural": 0.0,
+      "swaps": 2
+    },
+    {
+      "habitat": 1.0,
+      "id": "seed0_habitat1_swap4",
+      "neural": 0.0,
+      "swaps": 4
+    }
+  ],
+  "runtime_cap_hours": 10.75,
+  "source_sha256": "35b414a5a804ab2eae663ae619d564c5014094d081e01531cec6f781bf934fdb",
+  "splits": [
+    {
+      "blocks": {
+        "assessment": 55,
+        "calibration": 43,
+        "selection": 46,
+        "training": 142
+      },
+      "counts": {
+        "assessment": 15792,
+        "calibration": 8691,
+        "selection": 8816,
+        "training": 35811
+      },
+      "fresh_assessment": false,
+      "id_hashes": {
+        "assessment": "0ac5436ef1ec3b22584a6f491b11d350cced4b66066d763f3fde6f21d61466b3",
+        "calibration": "bfe45bc3865d442279cc867f05a0e16b6e8732def129529be1a2f35caa7ed7aa",
+        "selection": "e9a627552ee53d1bab2eef6e6718bf076cefd45cab2844709b80ee2c25825207",
+        "training": "d7f7b5308f9a6caf482dc75a7cc1d90a5fa46aa5a14360392fab025c80c9d9c8"
+      },
+      "labels_used_for_assignment": false,
+      "minimum_distance_km": 20.002659731640595,
+      "protocol": "previously_consumed_spatial_development_regression_check",
+      "seed": 20260926
+    },
+    {
+      "blocks": {
+        "assessment": 54,
+        "calibration": 43,
+        "selection": 46,
+        "training": 143
+      },
+      "counts": {
+        "assessment": 15778,
+        "calibration": 8691,
+        "selection": 8816,
+        "training": 37487
+      },
+      "fresh_assessment": false,
+      "id_hashes": {
+        "assessment": "4547358ef5b28ee1a2a633f800d7b398554d97bfe52331caf9b92a9fde763121",
+        "calibration": "bfe45bc3865d442279cc867f05a0e16b6e8732def129529be1a2f35caa7ed7aa",
+        "selection": "e9a627552ee53d1bab2eef6e6718bf076cefd45cab2844709b80ee2c25825207",
+        "training": "0a38e07650c16292a4148098306ab57ca0c2dcab25bc2cd869b35a5260793e50"
+      },
+      "labels_used_for_assignment": false,
+      "minimum_distance_km": 20.00039197939593,
+      "protocol": "previously_consumed_spatial_development_regression_check",
+      "seed": 20260926
+    }
+  ]
+}
