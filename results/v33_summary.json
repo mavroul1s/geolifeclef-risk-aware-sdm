@@ -1,0 +1,36 @@
+{
+  "experiment": "v33_diverse_asymmetric_multisensor",
+  "status": "complete_rejected_duplicate_v32",
+  "recorded_at": "2026-09-27",
+  "score_source": "user-provided Kaggle screenshot; not API verified",
+  "public_score": 0.24225,
+  "private_score": 0.21514,
+  "delta_from_v32": 0.0,
+  "runtime_hours": 5.007173894835001,
+  "hardware": "Tesla T4",
+  "selected_policy": "control",
+  "eligible_for_submission": false,
+  "exact_duplicate_of_v32": true,
+  "production_skipped": true,
+  "best_calibration_candidate": {
+    "id": "attention1_conv0.5_swap2",
+    "gain": 0.00023051388433709455,
+    "fold_gains": [0.00048250533587275175, -0.000021477567198562587],
+    "rejection": "Negative fold 1; all 24 non-control policies failed the unchanged gates."
+  },
+  "convolution_member_fixed_4_swap_regression_gains": [-0.005214800004832518, -0.005274497495379694],
+  "diagnosis": "The run completed normally. More similar seeds did not pass the development gate, and the new convolution specialist was consistently harmful. The zero gain and zero-width confidence interval describe the selected identical control, not equality of the new models.",
+  "fresh_assessment": false,
+  "artifacts": {
+    "directory": "results/v33_kaggle_output",
+    "source_zip": "C:/Users/nickb/Downloads/results.zip",
+    "source_zip_sha256": "4463c9b0b16b538f55d8f550b8f309dff5462106808f2128e876288d513e4cd3",
+    "leaderboard_evidence": "results/v33_kaggle_scores.png",
+    "leaderboard_evidence_sha256": "34e8c44215c8879287883dd65527c0ff59d7c985da75abb3310cfff58a69df23",
+    "calibration_top128_v33.npz": "2c946544625de98e6cb2e9234c0788d230b479934b393ed975aaa8ddff0e09a5",
+    "regression_per_survey_v33.csv": "510ec6525904a18ac33bb0f7d277e2c9dcce69ad8737525cbde3445a47d69806",
+    "unchanged_v32_DO_NOT_SUBMIT.csv": "71c863d9cb05f3efc63ac54dd7faa05efd2fc137a11da9adcd2064c82c88dfee",
+    "v33_manifest.json": "8acd581cd669d845f6a4364cd0e0d8b076a8b0953b4454da385d813385039b1c",
+    "v33_report.json": "af4367ec5b27314578cd2cf2fd20939c961ac3e20444929729322dd70e8d4da5"
+  }
+}

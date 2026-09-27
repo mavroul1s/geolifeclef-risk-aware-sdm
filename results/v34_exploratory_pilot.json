@@ -1,0 +1,243 @@
+{
+  "baseline_f1": 0.2987450537371379,
+  "buffer_km": 20,
+  "evaluation_blocks": 14,
+  "evaluation_rows": 1779,
+  "evaluation_unique_surveys": 1614,
+  "fit": {
+    "candidate_pairs": 82544,
+    "country_or_id_features": false,
+    "early_stopping": false,
+    "equal_total_weight_per_survey_before_country_weights": true,
+    "features": [
+      "in_base",
+      "base_position",
+      "base_count",
+      "bag_p",
+      "specialist_p",
+      "bag_rank",
+      "specialist_rank",
+      "bag_missing",
+      "specialist_missing",
+      "probability_product",
+      "probability_difference",
+      "bag_base_mass",
+      "specialist_base_mass",
+      "bag_top128_mass",
+      "specialist_top128_mass",
+      "bag_top10_mass",
+      "specialist_top10_mass",
+      "bag_tail_p",
+      "specialist_tail_p"
+    ],
+    "iterations": 120,
+    "objective": "squared error of exact single-edit sample-F1 deltas; targets scaled by 100",
+    "rows": 1083,
+    "seconds": 1.7339999999385327
+  },
+  "policies": [
+    {
+      "count_delta": 0,
+      "country_macro_gain_min30": 0.0,
+      "fold_gains": [
+        0.0,
+        0.0
+      ],
+      "gain": 0.0,
+      "geographic_gain_positive": false,
+      "id": "control",
+      "margin": 0.0,
+      "mean_count_change": 0.0,
+      "outside_core_gain": 0.0,
+      "outside_core_rows": 362,
+      "robust_gain": 0.0,
+      "supported_countries": 5,
+      "swaps": 0
+    },
+    {
+      "count_delta": 0,
+      "country_macro_gain_min30": -0.0004302441104973872,
+      "fold_gains": [
+        -0.0009857512796275446,
+        -0.00015959163559107358
+      ],
+      "gain": -0.0005152660017059102,
+      "geographic_gain_positive": false,
+      "id": "swap2_margin0",
+      "margin": 0.0,
+      "mean_count_change": 0.0,
+      "outside_core_gain": -0.0007172338063378208,
+      "outside_core_rows": 362,
+      "robust_gain": -0.0005445024800617572,
+      "supported_countries": 5,
+      "swaps": 2
+    },
+    {
+      "count_delta": 0,
+      "country_macro_gain_min30": -0.00025137967218792954,
+      "fold_gains": [
+        -0.000813056609560712,
+        3.0393286803833475e-05
+      ],
+      "gain": -0.0003034995574093385,
+      "geographic_gain_positive": false,
+      "id": "swap2_margin0.0005",
+      "margin": 0.0005,
+      "mean_count_change": 0.0,
+      "outside_core_gain": -0.0002955219939157044,
+      "outside_core_rows": 362,
+      "robust_gain": -0.00028847519523057775,
+      "supported_countries": 5,
+      "swaps": 2
+    },
+    {
+      "count_delta": 0,
+      "country_macro_gain_min30": -0.0006820117748221057,
+      "fold_gains": [
+        -0.0014710568118974753,
+        -0.00011707704967175262
+      ],
+      "gain": -0.0007488473393097032,
+      "geographic_gain_positive": false,
+      "id": "swap4_margin0",
+      "margin": 0.0,
+      "mean_count_change": 0.0,
+      "outside_core_gain": -0.0008458549294340822,
+      "outside_core_rows": 362,
+      "robust_gain": -0.0007563903457188986,
+      "supported_countries": 5,
+      "swaps": 4
+    },
+    {
+      "count_delta": 0,
+      "country_macro_gain_min30": -0.00045854567937926073,
+      "fold_gains": [
+        -0.0012004608476180987,
+        0.00015565947745897564
+      ],
+      "gain": -0.000448761929922398,
+      "geographic_gain_positive": false,
+      "id": "swap4_margin0.0005",
+      "margin": 0.0005,
+      "mean_count_change": 0.0,
+      "outside_core_gain": -0.00032183086000357606,
+      "outside_core_rows": 362,
+      "robust_gain": -0.00041947509980690817,
+      "supported_countries": 5,
+      "swaps": 4
+    },
+    {
+      "count_delta": 1,
+      "country_macro_gain_min30": -0.00015991198537723895,
+      "fold_gains": [
+        3.8178211936608846e-05,
+        -0.0002370326728166911
+      ],
+      "gain": -0.0001541361888939542,
+      "geographic_gain_positive": false,
+      "id": "count1_margin0",
+      "margin": 0.0,
+      "mean_count_change": 0.14558740865654862,
+      "outside_core_gain": -0.00040901904445525506,
+      "outside_core_rows": 362,
+      "robust_gain": -0.0002193008519051006,
+      "supported_countries": 5,
+      "swaps": 0
+    },
+    {
+      "count_delta": 1,
+      "country_macro_gain_min30": -0.00019067907778541195,
+      "fold_gains": [
+        3.4034237193493565e-05,
+        -5.250530975002646e-05
+      ],
+      "gain": -2.712125899520072e-05,
+      "geographic_gain_positive": false,
+      "id": "count1_margin0.0005",
+      "margin": 0.0005,
+      "mean_count_change": 0.09780775716694773,
+      "outside_core_gain": -0.0003646742841425778,
+      "outside_core_rows": 362,
+      "robust_gain": -0.0001523989699795978,
+      "supported_countries": 5,
+      "swaps": 0
+    },
+    {
+      "count_delta": 2,
+      "country_macro_gain_min30": -0.00018045754410347833,
+      "fold_gains": [
+        0.00012317532960392838,
+        1.2599123512631076e-05
+      ],
+      "gain": 1.934309136983536e-05,
+      "geographic_gain_positive": false,
+      "id": "count2_margin0",
+      "margin": 0.0,
+      "mean_count_change": 0.25463743676222594,
+      "outside_core_gain": -0.000802607293522251,
+      "outside_core_rows": 362,
+      "robust_gain": -0.00023609466372151466,
+      "supported_countries": 5,
+      "swaps": 0
+    },
+    {
+      "count_delta": 2,
+      "country_macro_gain_min30": -0.00023986276282521912,
+      "fold_gains": [
+        -1.817003150123905e-07,
+        1.138797386912526e-05
+      ],
+      "gain": -3.7476908887674166e-05,
+      "geographic_gain_positive": false,
+      "id": "count2_margin0.0005",
+      "margin": 0.0005,
+      "mean_count_change": 0.17200674536256325,
+      "outside_core_gain": -0.0004948915757493491,
+      "outside_core_rows": 362,
+      "robust_gain": -0.00020242703908747916,
+      "supported_countries": 5,
+      "swaps": 0
+    },
+    {
+      "count_delta": 2,
+      "country_macro_gain_min30": -0.0005886647705390031,
+      "fold_gains": [
+        -0.001001599156012617,
+        -0.00021310795030509978
+      ],
+      "gain": -0.000588849720366206,
+      "geographic_gain_positive": false,
+      "id": "joint2_margin0",
+      "margin": 0.0,
+      "mean_count_change": 0.26082068577852724,
+      "outside_core_gain": -0.0011656180177460793,
+      "outside_core_rows": 362,
+      "robust_gain": -0.0007329955572543737,
+      "supported_countries": 5,
+      "swaps": 2
+    },
+    {
+      "count_delta": 2,
+      "country_macro_gain_min30": -0.0006477153998397595,
+      "fold_gains": [
+        -0.0009885773356587005,
+        -0.00010161755984304546
+      ],
+      "gain": -0.000505724365730315,
+      "geographic_gain_positive": false,
+      "id": "joint2_margin0.0005",
+      "margin": 0.0005,
+      "mean_count_change": 0.1697582911748173,
+      "outside_core_gain": -0.0007625390184807411,
+      "outside_core_rows": 362,
+      "robust_gain": -0.0006054257874452826,
+      "supported_countries": 5,
+      "swaps": 2
+    }
+  ],
+  "scope": "exploratory on consumed sampled calibration; NOT independent validation; NOT policy selection for Kaggle",
+  "source_sha256": "79c221bd82cf25a50de7eb9e5658824ba3784a6c250df98e613ac49b4bdb2cd8",
+  "training_blocks": 25,
+  "training_rows": 1083,
+  "training_unique_surveys": 969
+}

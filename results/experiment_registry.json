@@ -259,6 +259,19 @@
       "pipeline_hours": 5.768103073328334,
       "summary": "results/v32_summary.json",
       "artifacts": "results/v32_kaggle_output"
+    },
+    {
+      "version": 33,
+      "description": "Rejected development candidate; submitted CSV was the byte-exact v32 control",
+      "score_source": "user-provided Kaggle results screenshot",
+      "public_score": 0.24225,
+      "private_score": 0.21514,
+      "submission_sha256": "71c863d9cb05f3efc63ac54dd7faa05efd2fc137a11da9adcd2064c82c88dfee",
+      "status": "duplicate_of_v32_no_improvement",
+      "registered_submission_gate_passed": false,
+      "pipeline_hours": 5.007173894835001,
+      "summary": "results/v33_summary.json",
+      "artifacts": "results/v33_kaggle_output"
     }
   ],
   "experimental_runs": [
@@ -400,12 +413,12 @@
     },
     {
       "experiment": "v33_diverse_asymmetric_multisensor",
-      "status": "ready_for_kaggle_validation",
+      "status": "complete_rejected_duplicate_v32",
       "notebook": "notebooks/geolifeclef_v33_diverse_asymmetric_multisensor.ipynb",
       "preregistration": "docs/diverse_asymmetric_multisensor_v33.md",
-      "official_submission_made": false,
-      "official_public_score": null,
-      "official_private_score": null,
+      "official_submission_made": true,
+      "official_public_score": 0.24225,
+      "official_private_score": 0.21514,
       "control": "exact scored v32 test CSV; frozen selected v32 recipe refit for development",
       "fresh_assessment": false,
       "consumed_assessment_union": 88987,
@@ -415,7 +428,11 @@
       "notebook_source_limit_bytes": 1000000,
       "output_limit_bytes": 16000000,
       "local_validation": "results/v33_local_validation.json",
-      "full_kaggle_runtime_measured": false
+      "full_kaggle_runtime_measured": true,
+      "pipeline_hours": 5.007173894835001,
+      "eligible_for_submission": false,
+      "summary": "results/v33_summary.json",
+      "artifacts": "results/v33_kaggle_output"
     },
     {
       "experiment": "v26_raw_spatial_raster_ensemble",

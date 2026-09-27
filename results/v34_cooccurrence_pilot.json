@@ -1,0 +1,341 @@
+{
+  "policies": [
+    {
+      "country_macro_gain_min30": 0.0,
+      "fold_gains": [
+        0.0,
+        0.0
+      ],
+      "gain": 0.0,
+      "geographic_gain_positive": false,
+      "id": "graph0.0_weight0.5_swap2",
+      "outside_core_gain": 0.0,
+      "outside_core_rows": 869,
+      "robust_gain": 0.0,
+      "supported_countries": 9
+    },
+    {
+      "country_macro_gain_min30": 0.0,
+      "fold_gains": [
+        0.0,
+        0.0
+      ],
+      "gain": 0.0,
+      "geographic_gain_positive": false,
+      "id": "graph0.0_weight0.5_swap4",
+      "outside_core_gain": 0.0,
+      "outside_core_rows": 869,
+      "robust_gain": 0.0,
+      "supported_countries": 9
+    },
+    {
+      "country_macro_gain_min30": 7.930843048616066e-06,
+      "fold_gains": [
+        0.0,
+        6.594982078853047e-05
+      ],
+      "gain": 2.4239245325004576e-05,
+      "geographic_gain_positive": true,
+      "id": "graph0.0_weight1.0_swap2",
+      "outside_core_gain": 7.54791689867231e-05,
+      "outside_core_rows": 869,
+      "robust_gain": 3.297212567133708e-05,
+      "supported_countries": 9
+    },
+    {
+      "country_macro_gain_min30": 7.930843048616066e-06,
+      "fold_gains": [
+        0.0,
+        6.594982078853047e-05
+      ],
+      "gain": 2.4239245325004576e-05,
+      "geographic_gain_positive": true,
+      "id": "graph0.0_weight1.0_swap4",
+      "outside_core_gain": 7.54791689867231e-05,
+      "outside_core_rows": 869,
+      "robust_gain": 3.297212567133708e-05,
+      "supported_countries": 9
+    },
+    {
+      "country_macro_gain_min30": 0.00036958021631616875,
+      "fold_gains": [
+        9.655477866013142e-05,
+        0.00045330392094074414
+      ],
+      "gain": 0.0002877276740854895,
+      "geographic_gain_positive": true,
+      "id": "graph0.0_weight2.0_swap2",
+      "outside_core_gain": 0.00030004530763999196,
+      "outside_core_rows": 869,
+      "robust_gain": 0.00031127021803178495,
+      "supported_countries": 9
+    },
+    {
+      "country_macro_gain_min30": 0.00026438373785067355,
+      "fold_gains": [
+        9.655477866013142e-05,
+        0.0004047548753708446
+      ],
+      "gain": 0.0002608157862972969,
+      "geographic_gain_positive": true,
+      "id": "graph0.0_weight2.0_swap4",
+      "outside_core_gain": 0.0002566208553308967,
+      "outside_core_rows": 869,
+      "robust_gain": 0.000260659041444041,
+      "supported_countries": 9
+    },
+    {
+      "country_macro_gain_min30": 0.0,
+      "fold_gains": [
+        0.0,
+        0.0
+      ],
+      "gain": 0.0,
+      "geographic_gain_positive": false,
+      "id": "graph0.25_weight0.5_swap2",
+      "outside_core_gain": 0.0,
+      "outside_core_rows": 869,
+      "robust_gain": 0.0,
+      "supported_countries": 9
+    },
+    {
+      "country_macro_gain_min30": 0.0,
+      "fold_gains": [
+        0.0,
+        0.0
+      ],
+      "gain": 0.0,
+      "geographic_gain_positive": false,
+      "id": "graph0.25_weight0.5_swap4",
+      "outside_core_gain": 0.0,
+      "outside_core_rows": 869,
+      "robust_gain": 0.0,
+      "supported_countries": 9
+    },
+    {
+      "country_macro_gain_min30": 1.10662926259759e-05,
+      "fold_gains": [
+        3.1007751937984476e-05,
+        0.0
+      ],
+      "gain": 1.7188332559858356e-05,
+      "geographic_gain_positive": true,
+      "id": "graph0.25_weight1.0_swap2",
+      "outside_core_gain": 5.3523162148419694e-05,
+      "outside_core_rows": 869,
+      "robust_gain": 2.4741529973528075e-05,
+      "supported_countries": 9
+    },
+    {
+      "country_macro_gain_min30": 1.10662926259759e-05,
+      "fold_gains": [
+        3.1007751937984476e-05,
+        0.0
+      ],
+      "gain": 1.7188332559858356e-05,
+      "geographic_gain_positive": true,
+      "id": "graph0.25_weight1.0_swap4",
+      "outside_core_gain": 5.3523162148419694e-05,
+      "outside_core_rows": 869,
+      "robust_gain": 2.4741529973528075e-05,
+      "supported_countries": 9
+    },
+    {
+      "country_macro_gain_min30": 0.0016996212747472195,
+      "fold_gains": [
+        0.0003675247286267707,
+        0.0003696595643573802
+      ],
+      "gain": 0.00038618251758575333,
+      "geographic_gain_positive": true,
+      "id": "graph0.25_weight2.0_swap2",
+      "outside_core_gain": 0.0006679594989485728,
+      "outside_core_rows": 869,
+      "robust_gain": 0.0007849864522168246,
+      "supported_countries": 9
+    },
+    {
+      "country_macro_gain_min30": 0.0017048426615475535,
+      "fold_gains": [
+        0.0003675247286267707,
+        0.00041132623102404684
+      ],
+      "gain": 0.00040927933946306304,
+      "geographic_gain_positive": true,
+      "id": "graph0.25_weight2.0_swap4",
+      "outside_core_gain": 0.0006679594989485728,
+      "outside_core_rows": 869,
+      "robust_gain": 0.000797840209855563,
+      "supported_countries": 9
+    },
+    {
+      "country_macro_gain_min30": 0.0,
+      "fold_gains": [
+        0.0,
+        0.0
+      ],
+      "gain": 0.0,
+      "geographic_gain_positive": false,
+      "id": "graph0.5_weight0.5_swap2",
+      "outside_core_gain": 0.0,
+      "outside_core_rows": 869,
+      "robust_gain": 0.0,
+      "supported_countries": 9
+    },
+    {
+      "country_macro_gain_min30": 0.0,
+      "fold_gains": [
+        0.0,
+        0.0
+      ],
+      "gain": 0.0,
+      "geographic_gain_positive": false,
+      "id": "graph0.5_weight0.5_swap4",
+      "outside_core_gain": 0.0,
+      "outside_core_rows": 869,
+      "robust_gain": 0.0,
+      "supported_countries": 9
+    },
+    {
+      "country_macro_gain_min30": 0.00028906290571282866,
+      "fold_gains": [
+        2.1548821548821615e-05,
+        0.00012567034392342344
+      ],
+      "gain": 6.107656786874058e-05,
+      "geographic_gain_positive": true,
+      "id": "graph0.5_weight1.0_swap2",
+      "outside_core_gain": 0.00022753207599673594,
+      "outside_core_rows": 869,
+      "robust_gain": 0.00015968702936176144,
+      "supported_countries": 9
+    },
+    {
+      "country_macro_gain_min30": 0.00028906290571282866,
+      "fold_gains": [
+        2.1548821548821615e-05,
+        0.00012567034392342344
+      ],
+      "gain": 6.107656786874058e-05,
+      "geographic_gain_positive": true,
+      "id": "graph0.5_weight1.0_swap4",
+      "outside_core_gain": 0.00022753207599673594,
+      "outside_core_rows": 869,
+      "robust_gain": 0.00015968702936176144,
+      "supported_countries": 9
+    },
+    {
+      "country_macro_gain_min30": 0.0013626596452130158,
+      "fold_gains": [
+        0.0005242691972082472,
+        9.896541583602566e-05
+      ],
+      "gain": 0.00027396013906206065,
+      "geographic_gain_positive": true,
+      "id": "graph0.5_weight2.0_swap2",
+      "outside_core_gain": 0.0003317869303071793,
+      "outside_core_rows": 869,
+      "robust_gain": 0.0005605917134110792,
+      "supported_countries": 9
+    },
+    {
+      "country_macro_gain_min30": 0.0014765048281107631,
+      "fold_gains": [
+        0.0005697320086285054,
+        4.890148192042091e-05
+      ],
+      "gain": 0.0002730817958007186,
+      "geographic_gain_positive": true,
+      "id": "graph0.5_weight2.0_swap4",
+      "outside_core_gain": 0.000326872491072182,
+      "outside_core_rows": 869,
+      "robust_gain": 0.0005873852276960956,
+      "supported_countries": 9
+    },
+    {
+      "country_macro_gain_min30": -7.281048470979825e-05,
+      "fold_gains": [
+        -3.0303030303030275e-05,
+        -4.302059496567508e-05
+      ],
+      "gain": -3.2611347918800964e-05,
+      "geographic_gain_positive": false,
+      "id": "graph1.0_weight0.5_swap2",
+      "outside_core_gain": -4.9242533962865365e-05,
+      "outside_core_rows": 869,
+      "robust_gain": -4.681892862756639e-05,
+      "supported_countries": 9
+    },
+    {
+      "country_macro_gain_min30": -7.281048470979825e-05,
+      "fold_gains": [
+        -3.0303030303030275e-05,
+        -4.302059496567508e-05
+      ],
+      "gain": -3.2611347918800964e-05,
+      "geographic_gain_positive": false,
+      "id": "graph1.0_weight0.5_swap4",
+      "outside_core_gain": -4.9242533962865365e-05,
+      "outside_core_rows": 869,
+      "robust_gain": -4.681892862756639e-05,
+      "supported_countries": 9
+    },
+    {
+      "country_macro_gain_min30": 0.0002175308812958436,
+      "fold_gains": [
+        -1.0282024325945864e-05,
+        -0.0001883978568256655
+      ],
+      "gain": -0.00010935865717335923,
+      "geographic_gain_positive": false,
+      "id": "graph1.0_weight1.0_swap2",
+      "outside_core_gain": 0.00010052783886385363,
+      "outside_core_rows": 869,
+      "robust_gain": 2.4835351453244693e-05,
+      "supported_countries": 9
+    },
+    {
+      "country_macro_gain_min30": -6.191994163324016e-05,
+      "fold_gains": [
+        -6.583757988150145e-05,
+        -0.0002173833640720423
+      ],
+      "gain": -0.00014818809685115524,
+      "geographic_gain_positive": false,
+      "id": "graph1.0_weight1.0_swap4",
+      "outside_core_gain": -2.0384087221435132e-05,
+      "outside_core_rows": 869,
+      "robust_gain": -9.467005563924644e-05,
+      "supported_countries": 9
+    },
+    {
+      "country_macro_gain_min30": 0.0008265238812527761,
+      "fold_gains": [
+        -2.5405085993255158e-05,
+        0.0001087884820899833
+      ],
+      "gain": 6.146819960136268e-05,
+      "geographic_gain_positive": true,
+      "id": "graph1.0_weight2.0_swap2",
+      "outside_core_gain": 0.0005620918480074886,
+      "outside_core_rows": 869,
+      "robust_gain": 0.0003778880321157475,
+      "supported_countries": 9
+    },
+    {
+      "country_macro_gain_min30": 0.0002450413219209014,
+      "fold_gains": [
+        -0.00011231024397825648,
+        -8.895350864799804e-05
+      ],
+      "gain": -6.592386276895795e-05,
+      "geographic_gain_positive": false,
+      "id": "graph1.0_weight2.0_swap4",
+      "outside_core_gain": 0.00030368725335793437,
+      "outside_core_rows": 869,
+      "robust_gain": 0.00010422021243522997,
+      "supported_countries": 9
+    }
+  ],
+  "scope": "exploratory reused calibration, not independent evidence; graphs fit only spatial training rows"
+}
