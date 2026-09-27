@@ -1,0 +1,86 @@
+{
+  "experiment": "v33_diverse_asymmetric_multisensor",
+  "recorded_at": "2026-09-27",
+  "status": "local_verification_passed_full_kaggle_run_outstanding",
+  "notebook": "notebooks/geolifeclef_v33_diverse_asymmetric_multisensor.ipynb",
+  "notebook_bytes": 631575,
+  "notebook_sha256": "c9a8494e7474c17898a922482bdcbbb117dea32888167ac4b3b2a8d91d2a225d",
+  "source_sha256_normalized_utf8": "1c688f61856b503c99ade34277811087574fda3c223452a844855db5f63866fc",
+  "verification": {
+    "pythonpath": "src",
+    "runs": [
+      {
+        "command": ".venv/research/Scripts/python.exe -m pytest tests/test_v33_notebook.py -q -p no:cacheprovider -o addopts=''",
+        "exit_code": 0,
+        "tests_passed": 11,
+        "seconds": 93.62
+      },
+      {
+        "command": ".venv/research/Scripts/python.exe -m pytest tests -q -p no:cacheprovider -o addopts=''",
+        "exit_code": 0,
+        "tests_passed": 223,
+        "seconds": 273.49
+      }
+    ],
+    "warnings": "Two existing PyTorch nested-tensor warnings in older model tests; no failures.",
+    "notebook_schema_valid": true,
+    "standalone_embedded_code_executed_without_repo_imports": true,
+    "notebook_code_cells_output_free": true,
+    "source_and_frozen_module_hashes_match": true,
+    "frozen_v27_through_v32_sources_unchanged": true,
+    "exact_scored_v32_csv_round_trip": true,
+    "corrupt_control_payload_rejected": true,
+    "v32_original_output_and_screenshot_hashes_verified": true,
+    "new_model_and_selection_checks": [
+      "Actual width-192 convolution specialist, 5016 outputs and rare residual head complete finite forward/backward passes on canonical sensor shapes",
+      "Existing v32 asymmetric-loss, soft-label, rare-training-membership and specialist architecture tests still pass",
+      "All 25 policies preserve per-row counts, leading 60 percent and replacement limits",
+      "Policy selection does not inspect assessment data and rejects outside-core regression",
+      "The exact previously selected v32 policy is the new frozen reference"
+    ],
+    "runtime_and_pipeline": [
+      "GPU preflight fails before predictor loading",
+      "Remaining-plan admission uses whole-fold wall time, next-fold size and margins",
+      "Production estimate includes every active specialist, 1.5x training margin and 45 minutes overhead",
+      "Miniature real training exercises all eleven frozen reference fits and three new models per fold, plus three production fits",
+      "Every new production model uses all miniature PA rows; development training indices are checked",
+      "Each new member has separate calibration diagnostics and sampled ranks in the export",
+      "Rejected policy emits exact scored-control bytes under DO_NOT_SUBMIT",
+      "Insufficient remaining budget stops before further folds/production and preserves completed-fold diagnostics",
+      "Forced export failure revokes the ready CSV; late failure also marks the report ineligible and renames the invalid manifest",
+      "Version-owned runtime directory is removed on success and failure",
+      "Five-file export, CSV cardinality, NPZ member alignment and output hashes verified"
+    ],
+    "compact_output_capacity_check": {
+      "scope": "Synthetic low-compressibility random ranks/probabilities, 3000 calibration rows, five expert/member axes; existing v32 truth/metadata and CSV sizes; not accuracy evidence or a measured v33 output",
+      "npz_bytes": 6817121,
+      "projected_five_file_total_with_1000000_bytes_json_reserve": 12205476,
+      "within_16000000_bytes": true
+    },
+    "miniature_scope_warning": "32 synthetic CPU rows, one epoch, width 16; baseline predictions, policy and geographic support are controlled to exercise acceptance. Actual-width architecture checks are separate. No local test establishes model accuracy or full T4 runtime."
+  },
+  "delivery_contract": {
+    "required_input": "geolifeclef-2025",
+    "required_accelerator": "one Kaggle GPU; T4 x1",
+    "internet_required": false,
+    "external_data_or_weights": false,
+    "cooperative_runtime_guard_hours": 10.75,
+    "requested_session_limit_hours": 12,
+    "source_limit_bytes": 1000000,
+    "output_limit_bytes": 16000000,
+    "successful_output_files": 5,
+    "only_eligible_submission": "v33_export/GLC25_PA_submission_v33.csv"
+  },
+  "full_kaggle_runtime_measured": false,
+  "official_submission_made": false,
+  "official_public_score": null,
+  "official_private_score": null,
+  "fresh_assessment": false,
+  "limitations": [
+    "No full v33 T4 execution, guaranteed leaderboard gain or established SOTA",
+    "Cooperative runtime control can stop a slow run instead of completing and cannot preempt stalled hardware/I/O",
+    "All 88987 PA IDs were previously assessed; repeated development gates are not an independent audit",
+    "Full-data calibration transfers from smaller folds, and rare branch membership can change",
+    "Frozen counts and protected leading species can prevent useful larger changes"
+  ]
+}

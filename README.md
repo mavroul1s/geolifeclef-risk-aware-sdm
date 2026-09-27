@@ -51,12 +51,12 @@ To create/update a private Kaggle script kernel and start a Phase-1 run directly
 
 The script keeps credentials in memory only, uploads a Git archive of **HEAD** (commit intended source changes first), and attaches `geolifeclef-2025`. It also supports the explicitly user-authorized ignored `api_key/kaggle_2.json`. Audit/schema/frequency runs are CPU-only; neural modes request a T4.
 
-The current official best is v31: **0.24072 public / 0.21301 private**. It gained
-**0.00172 public / 0.00208 private** over the previous best v29 and completed in
-3.1845 hours on a T4. The remaining private-score gap to the competition winner is
-**0.01720**, so SOTA is not established. Exact v31 outputs, hashes, diagnostics and
-leaderboard evidence are preserved under `results/v31_kaggle_output/`; see
-`results/v31_summary.json` and `results/experiment_registry.json`.
+The current official best is v32: **0.24225 public / 0.21514 private**. It gained
+**0.00153 public / 0.00213 private** over v31 and completed in **5.7681 hours on T4**.
+The remaining private-score gap to the competition winner is **0.01507**, so SOTA
+is not established. Its five original outputs total **7.16 MB** and are preserved
+under `results/v32_kaggle_output/`, with screenshot, hashes and diagnostics in
+`results/v32_summary.json` and the history in `results/experiment_registry.json`.
 
 V28 did **not** improve: it selected `control` and emitted the exact same CSV as v27,
 with the same public/private scores. Its report correctly said
@@ -70,27 +70,30 @@ together. Its five original outputs and screenshot are preserved in
 `results/v30_kaggle_output/`, `results/v30_kaggle_scores.png` and `results/v30_summary.json`.
 
 The current candidate is
-`notebooks/geolifeclef_v32_asymmetric_rare_specialist_ensemble.ipynb`. It freezes
-the exact best-v31 CSV and adds three independently seeded models plus two wider
-asymmetric-loss attention specialists, including a training-defined rare-species
-residual head. Production uses all PA rows and preserves **every scored-v31 row
-count and its leading 60% species**. Calibration chooses among seed-only,
-specialist-only and mixed policies, with up to 2/4/8 tail substitutions. The
-comparison is now against a matched **v31** recipe refit, not the older v29.
+`notebooks/geolifeclef_v33_diverse_asymmetric_multisensor.ipynb`. V32 diagnostics
+favor its specialist group, while the combination with the ordinary seed bag was
+strongest. V33 adds two new-seed replicas of those successful attention specialists
+and a pyramid/temporal-convolution model trained with asymmetric loss and a rare
+residual head. It freezes the exact best-v32 CSV, uses all PA production rows and
+preserves **every scored-v32 row count and its leading 60% species**. Calibration
+chooses unchanged, attention-only, convolution-only or mixed policies, with at most
+2/4/8 tail substitutions. The comparison is against a matched **v32** recipe refit.
 Positive country-macro and outside-Denmark/Netherlands gains are required alongside
 the two-fold/spatial-bootstrap gates. All 88,987 PA IDs were assessed previously:
 these are repeated development checks, NOT a fresh holdout or proof of SOTA.
-Production calibration transfer remains an explicit limitation. V31 stays the
+Production calibration transfer remains an explicit limitation. V32 stays the
 best actual submission until a new official result beats it.
 
 The offline single notebook stays below 1 MB, uses one GPU and only official competition
 data, has a 10.75-hour cooperative guard, and exports five compact files capped at 16 MB.
-V31 took 3.1845h on T4; full v32 runtime is **not yet measured**. V32 has 22 development
-fits and at most five production fits. Admission checks use measured training speed
-with margins; the guard may stop a slow session safely instead of completing.
-Submit **only** the eligible `v32_export/GLC25_PA_submission_v32.csv`, never the ZIP,
-reports, NPZ or `DO_NOT_SUBMIT` files. If the gate fails, keep v31. See
-`docs/asymmetric_rare_specialist_ensemble_v32.md` and `results/v32_local_validation.json`.
+V32 took 5.7681h on T4; full v33 runtime is **not yet measured**. V33 has 28 development
+fits and at most three production fits. Admission uses whole-fold wall time and
+per-model training speeds with margins; the guard may stop a slow session safely.
+The compact NPZ now includes each new model as well as both ensemble groups, so
+the next iteration can diagnose individual members. Submit **only** the eligible
+`v33_export/GLC25_PA_submission_v33.csv`, never ZIP, reports, NPZ or DO_NOT_SUBMIT.
+If the gate fails, keep v32. See `docs/diverse_asymmetric_multisensor_v33.md` and
+`results/v33_local_validation.json`.
 
 ## Audit and canonical data contract
 
