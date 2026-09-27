@@ -23,7 +23,7 @@ import scripts.v32_notebook_core as previous
 
 v31, v29, legacy = previous.previous, previous.v29, previous.legacy
 EXPERIMENT = "v33_diverse_asymmetric_multisensor"
-CONTROL_HASH = "79c221bd82cf25a50de7eb9e5658824ba3784a6c250df98e613ac49b4bdb2cd8"
+CONTROL_HASH = "71c863d9cb05f3efc63ac54dd7faa05efd2fc137a11da9adcd2064c82c88dfee"
 MAX_HOURS = 10.75
 FROZEN_V32_POLICY = {"id": "bag1_specialist1_swap4", "bag": 1., "specialist": 1., "swaps": 4}
 ATTENTION_CONFIGS = tuple({**c, "id": "replica_"+c["id"], "seed": c["seed"]+33000} for c in previous.SPECIALISTS)

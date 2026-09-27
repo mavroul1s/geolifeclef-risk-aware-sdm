@@ -1,0 +1,66 @@
+{
+  "experiment": "v32_asymmetric_rare_specialist_ensemble",
+  "status": "complete_official_current_best",
+  "recorded_at": "2026-09-27",
+  "score_source": "user-provided Kaggle screenshot; not an API verification",
+  "official": {
+    "public_score": 0.24225,
+    "private_score": 0.21514,
+    "public_delta_from_v31": 0.00153,
+    "private_delta_from_v31": 0.00213,
+    "public_target": 0.27142,
+    "private_target": 0.23021,
+    "target_reached": false,
+    "gap_to_public_target": 0.02917,
+    "gap_to_private_target": 0.01507
+  },
+  "runtime_hours": 5.768103073328334,
+  "hardware": "Tesla T4",
+  "selected_policy": "bag1_specialist1_swap4",
+  "original_submission_gate_passed": true,
+  "repeated_spatial_regression": {
+    "surveys": 31570,
+    "spatial_blocks": 109,
+    "matched_v31_f1": 0.3592675819939225,
+    "v32_f1": 0.36095918665480337,
+    "gain": 0.0016916046608808151,
+    "spatial_ci95": [0.0012418122401445682, 0.0023583611679438322],
+    "fold_gains": [0.0016097935189412994, 0.0017734883947830105],
+    "outside_denmark_netherlands_surveys": 8653,
+    "outside_denmark_netherlands_gain": 0.0023912236045234236,
+    "country_macro_gain_minimum_30_surveys": 0.0018644220510906893,
+    "without_bag_gain": 0.0010291844556909954,
+    "without_specialist_gain": 0.00014604602291915173,
+    "fresh_assessment": false,
+    "all_pa_ids_previously_assessed": 88987
+  },
+  "production": {
+    "training_rows": 88987,
+    "calibration_anchor_rows_removed": 0,
+    "epochs": [12, 15, 18, 20, 24],
+    "changed_test_rows": 10387,
+    "total_replacements": 23118,
+    "maximum_swaps_per_row": 4,
+    "cardinality_equal_to_scored_v31_per_row": true,
+    "compact_output_bytes": 7159911
+  },
+  "diagnosis": {
+    "finding": "The specialist-only ablation retains substantially more development gain than seed-bag-only, while their combination remains strongest. Four swaps narrowly beat eight on calibration robustness.",
+    "country_caution": "Croatia, Montenegro, Slovakia and Bulgaria show negative mean development gains, with limited survey support; no country-specific filter is fitted from these results.",
+    "causal_limit": "The specialist group changed loss, width, epochs and rare-head architecture together. The outputs do not isolate which component caused its benefit, or the effects of its two individual members.",
+    "next_candidate": "v33: two independently seeded replicas of the successful attention specialists and one pyramid/temporal-convolution asymmetric rare specialist; compare to frozen v32, preserve counts, report each member separately.",
+    "warning": "These are repeated-development diagnostics, not independent evidence or a promise of another hidden-test improvement."
+  },
+  "artifacts": {
+    "directory": "results/v32_kaggle_output",
+    "source_zip": "C:/Users/nickb/Downloads/results (2).zip",
+    "source_zip_sha256": "be94172ec57134a3287a82f583d57fad87faeeb32b0144d6205066abac0c5150",
+    "leaderboard_evidence": "results/v32_kaggle_scores.png",
+    "leaderboard_evidence_sha256": "d2ba7606701253616c0940ffe28eb5313b82474fd1f3157b91c719ded1e48167",
+    "GLC25_PA_submission_v32.csv": "71c863d9cb05f3efc63ac54dd7faa05efd2fc137a11da9adcd2064c82c88dfee",
+    "calibration_top128_v32.npz": "79c221bd82cf25a50de7eb9e5658824ba3784a6c250df98e613ac49b4bdb2cd8",
+    "regression_per_survey_v32.csv": "d2a712d027eadb6b0bb1b5924d92dd0c1e39a28f93b9b27930b2680da8ba1c8b",
+    "v32_manifest.json": "d92c098ffa28960124ae0cf47afc2052dfd8b09a62a4d02f0b8d6a308990fcc6",
+    "v32_report.json": "e149cd2fa1107c3a94d4044458d66c866b24d1f43c16cf88a8f8fd4846a20826"
+  }
+}
