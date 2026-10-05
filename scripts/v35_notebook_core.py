@@ -218,10 +218,21 @@ def load_reference(payload):
     return json.loads(raw)
 
 
+def label_hash(labels):
+    digest = hashlib.sha256()
+    for start in range(0, len(labels), 1024):
+        digest.update(np.asarray(labels[start:start+1024], np.uint8).tobytes())
+    return digest.hexdigest()
+
+
 def bind_reference(reference, rows, species, splits, manifests, labels):
     """Match ALL original training/evaluation IDs before trusting cached scores."""
+    if len(splits) != 2 or len(manifests) != 2 or len(reference["folds"]) != 2:
+        raise ValueError("Exactly two cached folds required")
     if hashlib.sha256(np.asarray(species, '<i8').tobytes()).hexdigest() != reference["species_sha256"]:
         raise ValueError("Reference species vocabulary mismatch")
+    if label_hash(labels) != reference["labels_sha256"]:
+        raise ValueError("Official PA labels changed; cached comparator is invalid")
     lookup = pd.Index(rows.surveyId)
     bound = []
     for f, (split, manifest, saved) in enumerate(zip(splits, manifests, reference["folds"])):
@@ -401,3 +412,138 @@ def self_tests():
         output = decode(np.full((2, 50), .05, np.float32), p["count_mode"])
         assert all(8 <= len(x) <= 40 and len(x) == len(set(x)) for x in output)
     return {"passed": True, "tests": 4}
+
+
+def publish(export, temporary, template, ids, prediction, species, gate):
+    proof, name, differs = None, None, False
+    if prediction is not None:
+        path = temporary/"candidate.csv"
+        proof = legacy.write_submission(path, template, ids, prediction, species)
+        differs = proof["sha256"] != CONTROL_HASH
+        if gate and differs:
+            name = "GLC25_PA_submission_v35.csv"
+            path.replace(export/name)
+    decision = {"eligible_for_submission": name is not None, "prediction_file": name, "different_from_v32": differs,
+        "message": "SUBMIT ONLY GLC25_PA_submission_v35.csv" if name else "NO NEW SUBMISSION; keep the scored v32"}
+    if name is None:
+        legacy.save_json(export/"NO_SUBMISSION.json", decision)
+    return proof, decision
+
+
+def run_v35(reference_b64):
+    guard = legacy.RuntimeGuard(MAX_HOURS)
+    working = Path("/kaggle/working") if Path("/kaggle/working").exists() else Path("artifacts")
+    temporary, export = working/"v35_runtime", working/"v35_export"
+    legacy._clean_directory(temporary, working); legacy._clean_directory(export, working)
+    temporary.mkdir(parents=True); export.mkdir(parents=True)
+    store, bundles = None, []
+    try:
+        device = legacy.require_gpu()
+        torch.set_num_threads(min(os.cpu_count() or 2, 6))
+        tests, reference = self_tests(), load_reference(reference_b64)
+        root = legacy.discover_data_root()
+        if legacy.sha256_file(root/"GLC25_PA_metadata_train.csv") != reference["train_metadata_sha256"]:
+            raise ValueError("Official training metadata changed; cached reference invalid")
+        preflight = pd.read_csv(root/"GLC25_PA_metadata_train.csv", usecols=["surveyId", "lat", "lon", "country"])
+        preflight = preflight.drop_duplicates("surveyId").sort_values("surveyId").reset_index(drop=True)
+        _, manifests = v31.previous.make_splits(preflight)
+        if len(manifests) != len(reference["folds"]) or any(m["id_hashes"] != s["id_hashes"] for m, s in zip(manifests, reference["folds"])):
+            raise ValueError("Cached reference partitions do not match official metadata")
+        guard.stamp("preflight", folds=manifests, cached_reference=True, fresh_assessment=False)
+        original_writer = legacy._write_remote_arrays
+        try:
+            legacy._write_remote_arrays = v29.write_multiresolution
+            features = legacy.prepare_feature_store(root, temporary/"features", guard, workers=6)
+        finally:
+            legacy._write_remote_arrays = original_writer
+        store = legacy.FeatureStore(temporary/"features")
+        store.high_train = np.load(store.cache/"train_sentinel64.npy", mmap_mode="r")
+        store.high_test = np.load(store.cache/"test_sentinel64.npy", mmap_mode="r")
+        rows, test_rows, pairs = legacy.load_rows_and_pairs(root, store.train_ids, store.test_ids)
+        del pairs, preflight
+        store.static_train, store.static_test = v29.candidate_static(rows), v29.candidate_static(test_rows)
+        store.eco_train, store.eco_test = v29.candidate_static(rows, False), v29.candidate_static(test_rows, False)
+        splits, manifests = v31.previous.make_splits(rows)
+        bound = bind_reference(reference, rows, store.species_ids, splits, manifests, store.labels)
+        template = pd.read_csv(root/"GLC25_SAMPLE_SUBMISSION.csv")
+        for i, split in enumerate(splits):
+            if bundles:
+                estimate = remaining_plan_estimate(bundles, len(split["training"]), len(rows))
+                guard.stamp("remaining_plan_admission", estimate_seconds=estimate)
+                guard.require(estimate, "remaining development and longest production plan")
+            bundles.append(fit_fold(i, split, bound[i], rows, store, temporary, guard, device))
+        policy, trials, calibration_pass = select_policy(bundles, rows)
+        epochs = production_epochs(bundles)
+        legacy.save_json(temporary/"frozen_policy.json", {"policy": policy, "trials": trials, "production_epochs": epochs})
+        guard.stamp("policy_frozen", policy=policy, calibration_pass=calibration_pass, production_epochs=epochs)
+        frame, regression = regression_check(bundles, policy, rows, store)
+        gates = {"calibration_pass": calibration_pass,
+            "positive_each_fold": all(f["gain"] > 0 for f in regression["folds"]),
+            "minimum_practical_gain": regression["gain"] >= MIN_GAIN,
+            "spatial_ci_margin": regression["bootstrap"]["ci95"][0] >= MIN_CI,
+            "geographic_transfer_positive": regression["geographic_gain_positive"],
+            "minimum_outside_core_gain": regression["outside_core_gain"] >= MIN_OUTSIDE_GAIN,
+            "geographic_buffers": min(m["minimum_distance_km"] for m in manifests) >= 20,
+            "cached_reference_ids_and_labels_verified": True}
+        prediction, fitted, diagnostics = None, [], {"skipped": "development gates failed; actual candidate diagnostics retained"}
+        if all(gates.values()):
+            prediction, fitted, diagnostics = fit_production(bundles, policy, rows, test_rows, store, temporary, guard, device)
+        gates["within_budget"] = guard.elapsed_hours() < MAX_HOURS
+        proof, decision = publish(export, temporary, template, store.test_ids, prediction, store.species_ids, all(gates.values()))
+        frame.to_csv(export/"regression_per_survey_v35.csv", index=False)
+        save_compact(export/"predictions_top128_v35.npz", bundles, rows, store)
+        report = {"experiment": EXPERIMENT, "status": "complete", **decision, "runtime_hours": guard.elapsed_hours(),
+            "self_tests": tests, "policy": policy, "calibration_trials": trials, "gates": gates,
+            "regression": regression, "submission_validation": proof, "official_submission_made": False,
+            "training": {"development": [{"fold": b["number"], "members": b["records"], "calibrations": b["calibrations"],
+                "wall_seconds": b["wall_seconds"]} for b in bundles], "production": fitted},
+            "production_diagnostics": diagnostics, "production_epochs_frozen_before_assessment": epochs,
+            "cached_reference": {"provenance": reference["provenance"], "payload_hash": REFERENCE_PAYLOAD_HASH,
+                "reference_model_refits_this_run": 0, "calibration_rows_per_fold": [len(b["calibration"]["indices"]) for b in bound]},
+            "hardware": {"gpu": torch.cuda.get_device_name(device) if device.type == "cuda" else None, "torch": torch.__version__},
+            "train_country_counts": rows.country.value_counts().to_dict(), "test_country_counts_unlabeled": test_rows.country.value_counts().to_dict(),
+            "validation_status": "all 88,987 PA surveys consumed before; repeated spatial development, no independent holdout",
+            "limitations": ["No guarantee of hidden-test improvement, winning, or full 12-hour completion.",
+                "Full-set replacement may regress despite passing these repeated development gates.",
+                "Calibration uses the 3000 archived sampled fold views, not the full historical calibration pool.",
+                "The cached comparator is the unchanged v32 RECIPE refit inside the v34 run, not its test score.",
+                "New pooling, auxiliary ranking, training duration, and decoding change together; component causality is not established.",
+                "Countries with no PA labels, including much of Ukraine and the UK, cannot be independently validated here.",
+                "Production uses every PA row; calibration transfers from smaller folds and can shift.",
+                "The ratio-of-expectations count decoder and ranking loss are surrogates, not exact expected-F1 optimization."]}
+        legacy.save_json(export/"v35_report.json", report)
+        manifest = {"experiment": EXPERIMENT, "source_sha256": V35_SOURCE_HASH, "embedded_sources_sha256": FROZEN_SOURCE_HASHES,
+            "splits": manifests, "features": features, "configs": CONFIGS, "checkpoint_epochs": CHECKPOINT_EPOCHS,
+            "ensembles": ENSEMBLES, "policies": POLICIES, "reference_sha256": REFERENCE_PAYLOAD_HASH,
+            "control_submission_sha256": CONTROL_HASH, "runtime_cap_hours": MAX_HOURS,
+            "gate_margins": {"gain": MIN_GAIN, "outside_core": MIN_OUTSIDE_GAIN, "ci_lower": MIN_CI},
+            "no_external_data_or_weights": True, "fresh_assessment": False,
+            "outputs": {p.name: legacy.sha256_file(p) for p in sorted(export.iterdir())}}
+        legacy.save_json(export/"v35_manifest.json", manifest)
+        size = sum(p.stat().st_size for p in export.iterdir())
+        if len(list(export.iterdir())) != 5 or size > 16_000_000:
+            raise ValueError("Compact five-file/16MB export contract exceeded")
+        guard.require(0, "final export")
+        return {"status": "complete", **decision, "runtime_hours": guard.elapsed_hours(), "output_bytes": size,
+            "export_directory": str(export), "regression_gain": regression["gain"], "fresh_assessment": False, "policy": policy}
+    except Exception as error:
+        ready = export/"GLC25_PA_submission_v35.csv"
+        if ready.exists():
+            ready.replace(export/"failed_predictions_DO_NOT_SUBMIT.txt")
+        report_path = export/"v35_report.json"
+        if report_path.exists():
+            failed = json.loads(report_path.read_text(encoding="utf-8"))
+            failed.update(status="failed", eligible_for_submission=False, prediction_file=None, message="DO NOT SUBMIT; export failed")
+            legacy.save_json(report_path, failed)
+        manifest_path = export/"v35_manifest.json"
+        if manifest_path.exists():
+            manifest_path.replace(export/"failed_manifest_not_a_valid_export.json")
+        legacy.save_json(export/"failure_report.json", {"experiment": EXPERIMENT, "status": "failed", "error": str(error),
+            "traceback": traceback.format_exc(), "runtime_hours": guard.elapsed_hours(), "official_submission_made": False,
+            "eligible_for_submission": False, "prediction_file": None,
+            "completed_folds": [{"fold": b["number"], "records": b["records"], "wall_seconds": b["wall_seconds"]} for b in bundles]})
+        raise
+    finally:
+        del store
+        previous.release(torch.device("cuda" if torch.cuda.is_available() else "cpu"))
+        legacy._clean_directory(temporary, working)
