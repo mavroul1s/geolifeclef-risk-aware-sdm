@@ -1,0 +1,106 @@
+{
+  "experiment": "v35_full_set_balanced_attention",
+  "recorded_at": "2026-10-05",
+  "status": "local_verification_passed_full_kaggle_run_outstanding",
+  "notebook": "notebooks/geolifeclef_v35_full_set_balanced_attention.ipynb",
+  "notebook_bytes": 396956,
+  "notebook_sha256": "2af5d684e45636639d650bc9ee4757c5a61b1d0360648659922cc21cf103b546",
+  "source_sha256_normalized_utf8": "afcd2f16466bcbd4ce17b9f93729e2be99754144b97ade7af68e990fedf0635d",
+  "reference_payload_sha256": "dab2a85d76dac12df9581e43370cab811d36541f8f19658360c58b370148f885",
+  "verification": {
+    "pythonpath": "src",
+    "runs": [
+      {
+        "command": ".venv/research/Scripts/python.exe -m pytest tests/test_v35_notebook.py -q -p no:cacheprovider -o addopts=''",
+        "scope": "Initial v35 subset, before adding the production learning-rate-prefix test",
+        "exit_code": 0,
+        "tests_passed": 14,
+        "seconds": 40.33
+      },
+      {
+        "command": ".venv/research/Scripts/python.exe -m pytest tests -q -p no:cacheprovider -o addopts=''",
+        "scope": "Final full suite, including all 15 v35 tests",
+        "exit_code": 0,
+        "tests_passed": 251,
+        "seconds": 466.18
+      }
+    ],
+    "warnings": "Two existing PyTorch nested-tensor warnings in older model tests; no failures.",
+    "notebook_schema_valid": true,
+    "standalone_embedded_code_executed_without_repo_imports": true,
+    "notebook_code_cells_output_free": true,
+    "source_and_frozen_module_hashes_match": true,
+    "deterministic_rebuild_same_bytes_and_sha256": true,
+    "v34_archived_files_hash_verified": true,
+    "model_and_selection_checks": [
+      "Actual width-192 balanced attention with 5016 outputs and rare residual head has finite forward and backward passes",
+      "Per-survey ranking objective handles normalized soft targets and empty-label rows",
+      "All 15 policies produce valid full species sets and bounded cardinalities",
+      "Cached comparator rejects changed labels, species order, split-role identities and calibration scores",
+      "Policy selection cannot inspect assessment and rejects a v34-sized gain or a negative fold",
+      "Selected production epoch transfer preserves the development cosine-schedule prefix and never queries selection labels"
+    ],
+    "runtime_and_pipeline": [
+      "GPU and official-metadata identity checks precede expensive feature loading",
+      "Remaining-plan admission includes full first-fold wall time, training-size scaling, longest production schedule and safety margins",
+      "Miniature actual pipeline executes six new development fits and three production fits; no old reference neural models are refit",
+      "Production training indices include every miniature PA row",
+      "Rejected candidates retain actual attempted scores and emit NO_SUBMISSION.json, not a submission CSV",
+      "Budget exhaustion prevents the next fold and production",
+      "Export failure revokes the ready CSV; late failure also revokes report eligibility and invalidates the manifest",
+      "Temporary runtime files are removed on success and failure",
+      "Five-file export, NPZ role alignment, probability mass, submission cardinality and output hashes are checked"
+    ],
+    "miniature_scope_warning": "32 synthetic CPU rows, 5016 outputs, one epoch, width 16; comparator scores, selected policy and minimum geographic support are controlled to exercise acceptance. These tests validate implementation, not predictive accuracy or full T4 runtime.",
+    "real_data_reference_audit": {
+      "report": "results/v35_reference_validation.json",
+      "pa_surveys": 88987,
+      "species": 5016,
+      "metadata_sha256_verified": true,
+      "all_pa_label_bytes_verified": true,
+      "all_four_role_id_hashes_verified_both_folds": true,
+      "calibration_rows": [1500, 1500],
+      "assessment_rows": [15792, 15778],
+      "calibration_f1_recomputed_from_official_labels": true,
+      "old_reference_neural_fits": 0
+    },
+    "compact_output_capacity_check": {
+      "synthetic_npz_bytes_4000_rows_3_models": 5198437,
+      "submission_reserve_bytes": 4000000,
+      "diagnostic_csv_reserve_bytes": 3000000,
+      "json_reserve_bytes": 1000000,
+      "projected_five_file_bytes": 13198437,
+      "within_16000000_bytes": true,
+      "scope": "Actual compact exporter with synthetic random top128 ranks and broad float16 probabilities; reserves for remaining files. Not a measured full Kaggle output."
+    }
+  },
+  "delivery_contract": {
+    "required_input": "geolifeclef-2025",
+    "required_accelerator": "one Kaggle GPU; T4 x1",
+    "internet_required": false,
+    "external_data_or_weights": false,
+    "cooperative_runtime_guard_hours": 10.75,
+    "requested_session_limit_hours": 12,
+    "source_limit_bytes": 1000000,
+    "output_limit_bytes": 16000000,
+    "successful_output_files": 5,
+    "only_eligible_submission": "v35_export/GLC25_PA_submission_v35.csv",
+    "rejected_output": "NO_SUBMISSION.json; no submission-shaped CSV"
+  },
+  "full_kaggle_runtime_measured": false,
+  "official_submission_made": false,
+  "official_public_score": null,
+  "official_private_score": null,
+  "fresh_assessment": false,
+  "limitations": [
+    "No guaranteed leaderboard improvement, 12-hour completion or established SOTA",
+    "Cooperative runtime checks cannot preempt stalled hardware or I/O",
+    "All 88987 PA surveys were consumed previously; stricter repeated development gates are not fresh independent evidence",
+    "The cached comparator is the unchanged v32 recipe refit during v34, not hidden-test labels or the v34 graph predictions",
+    "Calibration policy search uses 3000 archived views, not the full historical calibration pool",
+    "Pooling, auxiliary ranking, training schedule and full-set decoding change together; component causality is not established",
+    "The ranking loss and ratio-of-expectations count decoder are surrogates, not exact expected-F1 optimization",
+    "Full-data production calibration transfer and poorly represented test countries remain risks",
+    "The full-set model can regress even when all internal gates pass; v32 remains the scored best until an actual new score exceeds it"
+  ]
+}
