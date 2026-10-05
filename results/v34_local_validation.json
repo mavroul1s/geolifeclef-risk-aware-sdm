@@ -1,0 +1,100 @@
+{
+  "experiment": "v34_cooccurrence_community_reranking",
+  "recorded_at": "2026-09-28",
+  "status": "local_verification_passed_full_kaggle_run_outstanding",
+  "notebook": "notebooks/geolifeclef_v34_cooccurrence_community_reranking.ipynb",
+  "notebook_bytes": 633328,
+  "notebook_sha256": "ef5583ee8dd267909cb89fcb65c012ba7dbc72cb4561051fb6079f033ba96725",
+  "source_sha256_normalized_utf8": "343166e4f1ed41707d9cf1e76d12f9b598f376d4e3baba9be09d166bda2324ba",
+  "verification": {
+    "pythonpath": "src",
+    "runs": [
+      {
+        "command": ".venv/research/Scripts/python.exe -m pytest tests/test_v34_notebook.py -q -p no:cacheprovider -o addopts=''",
+        "exit_code": 0,
+        "tests_passed": 13,
+        "seconds": 102.93
+      },
+      {
+        "command": ".venv/research/Scripts/python.exe -m pytest tests -q -p no:cacheprovider -o addopts=''",
+        "exit_code": 0,
+        "tests_passed": 236,
+        "seconds": 317.26
+      }
+    ],
+    "warnings": "Two existing PyTorch nested-tensor warnings in older model tests; no failures.",
+    "notebook_schema_valid": true,
+    "standalone_embedded_code_executed_without_repo_imports": true,
+    "notebook_code_cells_output_free": true,
+    "source_and_frozen_module_hashes_match": true,
+    "exact_scored_v32_csv_round_trip": true,
+    "corrupt_control_payload_rejected": true,
+    "production_calibrations_equal_scored_v32": true,
+    "v33_archived_files_hash_verified": true,
+    "graph_and_selection_checks": [
+      "Exact conditional-frequency shrinkage formula, clipped log lifts and zero self-edges",
+      "Changing non-training labels cannot change the fitted graph",
+      "Batched predicted-anchor context matches a direct formula implementation",
+      "Zero-graph policy isolates probability reranking and keeps deterministic tie handling",
+      "All 17 policies preserve each row count, protected prefix, uniqueness and maximum swaps",
+      "Policy selection cannot inspect assessment and rejects outside-core or one-fold regressions"
+    ],
+    "runtime_and_pipeline": [
+      "GPU preflight precedes expensive feature loading",
+      "Remaining-plan estimate includes complete first-fold wall time, training-size scaling and production with safety margins",
+      "Miniature actual pipeline executes eleven reference neural fits per fold and five full-data production fits",
+      "Graph training indices are checked and production uses all miniature PA rows",
+      "Rejected or unchanged runs export NO_SUBMISSION.json, never a duplicate submission CSV",
+      "Budget exhaustion prevents the next fold and production",
+      "Export failure revokes the ready CSV; late failure also revokes report eligibility and invalidates the manifest",
+      "Temporary runtime files are removed on success and failure",
+      "Five-file export, NPZ alignment, fixed CSV cardinality and output hashes verified"
+    ],
+    "miniature_scope_warning": "32 synthetic CPU rows, 5016 outputs, one epoch, width 16; comparator predictions, policy and minimum geographic support are controlled for deterministic acceptance. This tests plumbing, not predictive accuracy or full T4 runtime.",
+    "archived_replay": {
+      "report": "results/v34_archived_replay.json",
+      "rows": 3000,
+      "unique_surveys": 2706,
+      "spatial_graph_training_rows": [35811, 37487],
+      "best_exploratory_policy": "graph0.25_weight2_swap4",
+      "deduplicated_survey_gain": 0.00040927933946306304,
+      "fold_view_gains": [0.0003675247286267707, 0.00041132623102404684],
+      "outside_core_gain": 0.0006679594989485728,
+      "policy_is_not_frozen_for_notebook_by_this_replay": true,
+      "fresh_evidence": false
+    },
+    "compact_output_capacity_check": {
+      "actual_replayed_six_expert_npz_bytes": 7463694,
+      "diagnostic_csv_bytes_with_random_added_columns": 3469397,
+      "projected_five_file_bytes_with_1000000_bytes_json_reserve": 14068894,
+      "within_16000000_bytes": true,
+      "scope": "Released compact exporter on 3000 archived rows plus a conservative diagnostic-CSV/JSON projection; not a measured full Kaggle output."
+    }
+  },
+  "delivery_contract": {
+    "required_input": "geolifeclef-2025",
+    "required_accelerator": "one Kaggle GPU; T4 x1",
+    "internet_required": false,
+    "external_data_or_weights": false,
+    "cooperative_runtime_guard_hours": 10.75,
+    "requested_session_limit_hours": 12,
+    "source_limit_bytes": 1000000,
+    "output_limit_bytes": 16000000,
+    "successful_output_files": 5,
+    "only_eligible_submission": "v34_export/GLC25_PA_submission_v34.csv",
+    "rejected_output": "NO_SUBMISSION.json; no submission-shaped CSV"
+  },
+  "full_kaggle_runtime_measured": false,
+  "official_submission_made": false,
+  "official_public_score": null,
+  "official_private_score": null,
+  "fresh_assessment": false,
+  "limitations": [
+    "No guaranteed leaderboard improvement, 12-hour completion or established SOTA",
+    "Cooperative guard cannot preempt stalled I/O or hardware",
+    "All PA labels and pilot calibration observations were consumed; repeated spatial gates are not independent evidence",
+    "Co-occurrence is observational and may propagate wrong predicted anchors",
+    "Fold-to-production calibration and feature transfer can differ despite frozen numerical coefficients",
+    "Counts and leading predictions remain fixed, limiting how large a useful correction can be"
+  ]
+}

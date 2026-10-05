@@ -69,31 +69,40 @@ isolated because training-data coverage, model mix, epochs and species counts ch
 together. Its five original outputs and screenshot are preserved in
 `results/v30_kaggle_output/`, `results/v30_kaggle_scores.png` and `results/v30_summary.json`.
 
-The current candidate is
-`notebooks/geolifeclef_v33_diverse_asymmetric_multisensor.ipynb`. V32 diagnostics
-favor its specialist group, while the combination with the ordinary seed bag was
-strongest. V33 adds two new-seed replicas of those successful attention specialists
-and a pyramid/temporal-convolution model trained with asymmetric loss and a rare
-residual head. It freezes the exact best-v32 CSV, uses all PA production rows and
-preserves **every scored-v32 row count and its leading 60% species**. Calibration
-chooses unchanged, attention-only, convolution-only or mixed policies, with at most
-2/4/8 tail substitutions. The comparison is against a matched **v32** recipe refit.
-Positive country-macro and outside-Denmark/Netherlands gains are required alongside
-the two-fold/spatial-bootstrap gates. All 88,987 PA IDs were assessed previously:
-these are repeated development checks, NOT a fresh holdout or proof of SOTA.
-Production calibration transfer remains an explicit limitation. V32 stays the
-best actual submission until a new official result beats it.
+V33 completed in **5.0072 hours**, but all new policies were rejected. Its returned
+CSV was byte-identical to v32, explaining the identical public/private scores.
+The new convolution specialist consistently hurt the repeated development checks.
+The five original outputs and screenshot are preserved in `results/v33_kaggle_output/`,
+`results/v33_kaggle_scores.png` and `results/v33_summary.json`.
 
-The offline single notebook stays below 1 MB, uses one GPU and only official competition
-data, has a 10.75-hour cooperative guard, and exports five compact files capped at 16 MB.
-V32 took 5.7681h on T4; full v33 runtime is **not yet measured**. V33 has 28 development
-fits and at most three production fits. Admission uses whole-fold wall time and
-per-model training speeds with margins; the guard may stop a slow session safely.
-The compact NPZ now includes each new model as well as both ensemble groups, so
-the next iteration can diagnose individual members. Submit **only** the eligible
-`v33_export/GLC25_PA_submission_v33.csv`, never ZIP, reports, NPZ or DO_NOT_SUBMIT.
-If the gate fails, keep v32. See `docs/diverse_asymmetric_multisensor_v33.md` and
-`results/v33_local_validation.json`.
+The current candidate is
+`notebooks/geolifeclef_v34_cooccurrence_community_reranking.ipynb`. It reuses the
+unchanged v32 neural recipe and adds a **shrunk species co-occurrence reranker**:
+predicted high-confidence species provide context for bounded tail substitutions.
+It preserves **every scored-v32 row count and its leading 60% species**. Calibration
+selects among 17 control/probability-only/graph policies, at most 2/4 swaps. A separate
+no-graph ablation distinguishes dependency information from probability reranking.
+An exploratory bounded-cardinality learner was tested locally and rejected; both
+negative and positive pilots remain in `results/v34_*pilot.json`.
+
+Positive country-macro and outside-Denmark/Netherlands gains are required alongside
+the unchanged two-fold/spatial-bootstrap gates. All 88,987 PA IDs were assessed
+previously: these are repeated development checks, NOT fresh evidence or proof of
+SOTA. Observational co-occurrence and fold-to-production transfer remain limitations.
+V32 stays the best actual submission until a new official result beats it.
+
+The offline single notebook is **633,328 bytes**, uses one T4 and only official
+competition data, has a 10.75-hour cooperative guard, and exports five files capped
+at 16 MB. It performs 22 development and at most 5 production neural fits, the same
+count as v32's measured 5.7681h T4 run, plus graph operations. Full v34 runtime is
+**not yet measured**; admission uses whole-fold wall time and per-model training
+speeds with margins, and the guard may safely stop a slow session.
+
+Submit **only** the eligible `v34_export/GLC25_PA_submission_v34.csv`, never ZIP,
+reports, NPZ or diagnostic CSVs. If rejected/unchanged, v34 produces
+**NO_SUBMISSION.json instead of a duplicate submission CSV**; keep your scored v32.
+See `docs/cooccurrence_community_reranking_v34.md`, `results/v34_archived_replay.json`
+and `results/v34_local_validation.json`.
 
 ## Audit and canonical data contract
 
