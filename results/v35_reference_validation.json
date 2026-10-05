@@ -10,14 +10,14 @@
     1500,
     1500
   ],
-  "capacity_npz_bytes_4000_rows_3_models": 3157972,
+  "capacity_npz_bytes_4000_rows_3_models": 5198437,
   "full_kaggle_runtime_measured": false,
   "metadata_sha256_verified": true,
+  "old_reference_neural_fits_this_run": 0,
   "pa_surveys": 88987,
-  "projected_total_bytes_with_4MB_submission_3MB_diagnostics_1MB_JSON": 11157972,
+  "projected_total_bytes_with_4MB_submission_3MB_diagnostics_1MB_JSON": 13198437,
   "reference_payload_sha256": "dab2a85d76dac12df9581e43370cab811d36541f8f19658360c58b370148f885",
   "scope": "real official-metadata/label identity check; capacity uses synthetic probabilities, not accuracy evidence",
-  "six_old_reference_models_retrained": false,
   "source_sha256": "afcd2f16466bcbd4ce17b9f93729e2be99754144b97ade7af68e990fedf0635d",
   "species": 5016,
   "within_16MB": true
