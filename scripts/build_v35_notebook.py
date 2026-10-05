@@ -16,6 +16,9 @@ OUTPUT = ROOT/'notebooks/geolifeclef_v35_full_set_balanced_attention.ipynb'
 def pack_reference():
     folder = ROOT/'results/v34_kaggle_output'
     manifest = json.loads((folder/'v34_manifest.json').read_text())
+    if set(manifest['outputs']) != {'GLC25_PA_submission_v34.csv','calibration_top128_v34.npz',
+                                    'regression_per_survey_v34.csv','v34_report.json'}:
+        raise ValueError('Unexpected archived manifest paths')
     for name, digest in manifest['outputs'].items():
         if hashlib.sha256((folder/name).read_bytes()).hexdigest() != digest:
             raise ValueError(f'Archived reference output changed: {name}')

@@ -1,0 +1,359 @@
+{
+  "artifacts": {
+    "directory": "results/v34_kaggle_output",
+    "hashes": {
+      "GLC25_PA_submission_v34.csv": "354d1dcdbd6a3ba5ffab8b62d0d3d5fd0a13f3d531774d37237957c075eb8d6e",
+      "calibration_top128_v34.npz": "3e89e80b7baa95c382655541ebed3e649ca6320148c19ad5148130318cbd99a3",
+      "regression_per_survey_v34.csv": "7771857730d4b73047b68478e831932969b7b65e52c818748ba27e258dffe2cb",
+      "v34_manifest.json": "79c2bd7a3f634f758fc85f4f9e6d843e139d71b647a1940e1032a05cd66a1557",
+      "v34_report.json": "49933739438e8e3a6984bea893e0ecc624010e8f53c89e2b7c85c3acc9b90b2b"
+    },
+    "screenshot": "results/v34_kaggle_scores.png",
+    "screenshot_sha256": "ea894f38875bddce02187cbe0a1c4b7fec306cbb432675d43bcb7b7adde59ba3",
+    "source_zip_at_ingestion": "C:/Users/nickb/Downloads/results.zip",
+    "source_zip_sha256": "2cf04786c792158e501a51a23c2d76dd2b4818bdc2d544dad15024fd86b14433"
+  },
+  "changed_test_sets": 6143,
+  "development_gates_passed": true,
+  "diagnosis": "The graph policy passed weak repeated-development gates (CI lower ~4.27e-7) but regressed on both hidden splits. No execution/schema defect is established. Country/domain shift and adaptive development are limitations, not proven causal explanations for this small regression.",
+  "every_v32_row_count_preserved": true,
+  "experiment": "v34_cooccurrence_community_reranking",
+  "fresh_assessment": false,
+  "hardware": {
+    "gpu": "Tesla T4",
+    "torch": "2.10.0+cu128"
+  },
+  "next_version": "v35 full-set checkpoint-selected neural ensemble; cached benchmark saves reference retraining; larger promotion margins",
+  "output_bytes": 12623447,
+  "private_delta_from_v32": -0.00031,
+  "private_score": 0.21483,
+  "public_delta_from_v32": -0.00022,
+  "public_score": 0.24203,
+  "recorded_at": "2026-10-05",
+  "repeated_regression": {
+    "bootstrap": {
+      "ci95": [
+        4.268315220238502e-07,
+        0.0007150957666751474
+      ],
+      "iterations": 1000,
+      "mean_difference": 0.00043004150206621297,
+      "seed": 20263407,
+      "spatial_blocks": 109,
+      "unit": "one_degree_spatial_block"
+    },
+    "by_country": {
+      "Austria": {
+        "delta_f1": 0.0008918739923955055,
+        "matched_v32_f1": 0.29359540950471597,
+        "n": 330,
+        "v34_f1": 0.29448728349711145
+      },
+      "Belgium": {
+        "delta_f1": 0.00021165012295262686,
+        "matched_v32_f1": 0.32537220748718104,
+        "n": 952,
+        "v34_f1": 0.32558385761013364
+      },
+      "Bosnia and Herzegovina": {
+        "delta_f1": -0.00022981713122558427,
+        "matched_v32_f1": 0.2449365244957072,
+        "n": 11,
+        "v34_f1": 0.2447067073644816
+      },
+      "Bulgaria": {
+        "delta_f1": -0.00012312504437616396,
+        "matched_v32_f1": 0.22698730674540005,
+        "n": 31,
+        "v34_f1": 0.22686418170102388
+      },
+      "Croatia": {
+        "delta_f1": 6.218470411740518e-05,
+        "matched_v32_f1": 0.27054276076823025,
+        "n": 37,
+        "v34_f1": 0.2706049454723476
+      },
+      "Czech Republic": {
+        "delta_f1": 0.00010984839020328695,
+        "matched_v32_f1": 0.23325080941982615,
+        "n": 404,
+        "v34_f1": 0.23336065781002943
+      },
+      "Denmark": {
+        "delta_f1": 0.0006884512833089529,
+        "matched_v32_f1": 0.3941855191370538,
+        "n": 18061,
+        "v34_f1": 0.39487397042036276
+      },
+      "France": {
+        "delta_f1": 9.91417440078868e-05,
+        "matched_v32_f1": 0.3722297343796483,
+        "n": 4938,
+        "v34_f1": 0.37232887612365617
+      },
+      "Germany": {
+        "delta_f1": 0.0004309018025214848,
+        "matched_v32_f1": 0.31722598219106724,
+        "n": 279,
+        "v34_f1": 0.3176568839935887
+      },
+      "Greece": {
+        "delta_f1": -0.003158650573369886,
+        "matched_v32_f1": 0.2407232286615241,
+        "n": 18,
+        "v34_f1": 0.23756457808815423
+      },
+      "Hungary": {
+        "delta_f1": 0.004115226337448559,
+        "matched_v32_f1": 0.3752581162937312,
+        "n": 6,
+        "v34_f1": 0.3793733426311798
+      },
+      "Italy": {
+        "delta_f1": 0.0004019100479316158,
+        "matched_v32_f1": 0.2528362849789334,
+        "n": 950,
+        "v34_f1": 0.253238195026865
+      },
+      "Latvia": {
+        "delta_f1": 0.0,
+        "matched_v32_f1": 0.47074605973663497,
+        "n": 21,
+        "v34_f1": 0.47074605973663497
+      },
+      "Monaco": {
+        "delta_f1": 0.005847953216374269,
+        "matched_v32_f1": 0.1626677926176673,
+        "n": 6,
+        "v34_f1": 0.16851574583404158
+      },
+      "Montenegro": {
+        "delta_f1": -0.0005472832723256249,
+        "matched_v32_f1": 0.3749667600595742,
+        "n": 138,
+        "v34_f1": 0.37441947678724863
+      },
+      "Netherlands": {
+        "delta_f1": -0.0002468590756170102,
+        "matched_v32_f1": 0.2842686437010407,
+        "n": 4856,
+        "v34_f1": 0.28402178462542377
+      },
+      "Poland": {
+        "delta_f1": -0.0008592725508946177,
+        "matched_v32_f1": 0.33211504757186683,
+        "n": 227,
+        "v34_f1": 0.3312557750209722
+      },
+      "Romania": {
+        "delta_f1": -0.0016823510530524128,
+        "matched_v32_f1": 0.2978532309043951,
+        "n": 21,
+        "v34_f1": 0.29617087985134266
+      },
+      "Serbia": {
+        "delta_f1": 0.000502440424921048,
+        "matched_v32_f1": 0.2501843506307251,
+        "n": 9,
+        "v34_f1": 0.2506867910556462
+      },
+      "Slovakia": {
+        "delta_f1": 0.003361989178159131,
+        "matched_v32_f1": 0.1438490932841081,
+        "n": 44,
+        "v34_f1": 0.14721108246226722
+      },
+      "Slovenia": {
+        "delta_f1": 0.0,
+        "matched_v32_f1": 0.408438726532388,
+        "n": 9,
+        "v34_f1": 0.408438726532388
+      },
+      "Spain": {
+        "delta_f1": 0.005280750635047572,
+        "matched_v32_f1": 0.1470025783892358,
+        "n": 173,
+        "v34_f1": 0.15228332902428335
+      },
+      "Switzerland": {
+        "delta_f1": 0.001025790776258025,
+        "matched_v32_f1": 0.39569245563591626,
+        "n": 49,
+        "v34_f1": 0.3967182464121743
+      }
+    },
+    "country_macro_gain_min30": 0.0007191968489126718,
+    "folds": [
+      {
+        "cooccurrence_increment_not_used_for_selection": 0.0001814614063774992,
+        "fold": 0,
+        "gain": 0.0003679921923423731,
+        "multilabel": {
+          "macro_f1_all_species": 0.04111736293038821,
+          "macro_zero_denominator_value": 0,
+          "micro_f1": 0.3518955123418874,
+          "precision": 0.341513650122794,
+          "recall": 0.3629283725447055,
+          "species_predicted": 1397
+        },
+        "species_groups": {
+          "common_over_25": {
+            "precision": 0.34401112696663716,
+            "predicted_positives": 276805,
+            "recall": 0.3769814248840045,
+            "species": 1486,
+            "target_positives": 252596,
+            "true_positives": 95224
+          },
+          "rare_1_to_25": {
+            "precision": 0.13447139862234203,
+            "predicted_positives": 3339,
+            "recall": 0.04694688414889168,
+            "species": 2630,
+            "target_positives": 9564,
+            "true_positives": 449
+          },
+          "zero_pa": {
+            "precision": null,
+            "predicted_positives": 0,
+            "recall": 0.0,
+            "species": 900,
+            "target_positives": 1454,
+            "true_positives": 0
+          }
+        },
+        "without_cooccurrence_gain": 0.00018653078596487374
+      },
+      {
+        "cooccurrence_increment_not_used_for_selection": 0.0001928829207121579,
+        "fold": 1,
+        "gain": 0.0004921458688528071,
+        "multilabel": {
+          "macro_f1_all_species": 0.04559652865635645,
+          "macro_zero_denominator_value": 0,
+          "micro_f1": 0.37298194175803556,
+          "precision": 0.35124126008720663,
+          "recall": 0.3975915545960506,
+          "species_predicted": 1526
+        },
+        "species_groups": {
+          "common_over_25": {
+            "precision": 0.35394770390096036,
+            "predicted_positives": 282392,
+            "recall": 0.4118267519282748,
+            "species": 1467,
+            "target_positives": 242704,
+            "true_positives": 99952
+          },
+          "rare_1_to_25": {
+            "precision": 0.12418300653594772,
+            "predicted_positives": 3366,
+            "recall": 0.048452532746029904,
+            "species": 2780,
+            "target_positives": 8627,
+            "true_positives": 418
+          },
+          "zero_pa": {
+            "precision": null,
+            "predicted_positives": 0,
+            "recall": 0.0,
+            "species": 769,
+            "target_positives": 1114,
+            "true_positives": 0
+          }
+        },
+        "without_cooccurrence_gain": 0.0002992629481406492
+      }
+    ],
+    "fresh_assessment": false,
+    "gain": 0.00043004150206621297,
+    "geographic_gain_positive": true,
+    "matched_v32_f1": 0.36094689004491187,
+    "outside_core_gain": 0.00027054654612083094,
+    "outside_core_rows": 8653,
+    "robust_gain": 0.0004624565997914822,
+    "supported_countries": 15,
+    "surveys": 31570,
+    "used_for_policy_selection_in_this_run": false,
+    "v34_f1": 0.36137693154697803
+  },
+  "runtime_hours": 5.246789977674722,
+  "score_source": "user-provided Kaggle screenshot; not independently API verified",
+  "selected_policy": {
+    "alpha": 0.25,
+    "id": "graph0.25_weight2_swap2",
+    "swaps": 2,
+    "weight": 2.0
+  },
+  "status": "complete_official_regression_keep_v32",
+  "test_country_counts": {
+    "Albania": 140,
+    "Austria": 238,
+    "Belarus": 268,
+    "Belgium": 71,
+    "Bosnia and Herzegovina": 7,
+    "Bosnia-Herzegovina": 3,
+    "Bulgaria": 3273,
+    "Croatia": 59,
+    "Czech Republic": 10,
+    "Denmark": 1453,
+    "Finland": 51,
+    "France": 1468,
+    "Germany": 2,
+    "Greece": 5,
+    "Italy": 558,
+    "Kosovo": 2,
+    "Latvia": 34,
+    "Malta": 5,
+    "Montenegro": 48,
+    "Netherlands": 846,
+    "Norway": 11,
+    "Poland": 110,
+    "Russian Federation": 65,
+    "Serbia": 2,
+    "Slovak Republic": 1,
+    "Slovakia": 4,
+    "Slovenia": 39,
+    "Spain": 79,
+    "Sweden": 52,
+    "Switzerland": 1982,
+    "Turkey": 143,
+    "Ukraina": 1,
+    "Ukraine": 2911,
+    "United Kingdom": 843
+  },
+  "test_denmark_netherlands_fraction": 0.15550595238095238,
+  "total_test_replacements": 7682,
+  "train_country_counts": {
+    "Andorra": 4,
+    "Austria": 1261,
+    "Belgium": 1849,
+    "Bosnia and Herzegovina": 27,
+    "Bulgaria": 81,
+    "Croatia": 104,
+    "Czech Republic": 1051,
+    "Denmark": 49344,
+    "France": 13501,
+    "Germany": 1120,
+    "Greece": 59,
+    "Hungary": 29,
+    "Ireland": 12,
+    "Italy": 2602,
+    "Latvia": 73,
+    "Luxembourg": 2,
+    "Monaco": 6,
+    "Montenegro": 904,
+    "Netherlands": 15024,
+    "Norway": 5,
+    "Poland": 697,
+    "Portugal": 6,
+    "Romania": 328,
+    "Serbia": 88,
+    "Slovakia": 133,
+    "Slovenia": 41,
+    "Spain": 475,
+    "Switzerland": 155,
+    "The former Yugoslav Republic of Macedonia": 6
+  },
+  "train_denmark_netherlands_fraction": 0.7233416116960905
+}
