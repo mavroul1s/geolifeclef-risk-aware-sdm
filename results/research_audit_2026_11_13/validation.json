@@ -1,0 +1,99 @@
+{
+  "python": "3.12.16",
+  "packages": {
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.5.2",
+    "torch": "2.5.1+cpu",
+    "pytest": "8.3.4",
+    "kaggle": "1.6.17",
+    "matplotlib": "3.11.2",
+    "nbformat": "5.11.1"
+  },
+  "analysis_sources_sha256": {
+    "src/geolifeclef/research_audit.py": "1a9abb918079ab60659825f27d61c53dbbf6f77996e7babd07b1ed2ec8769ff9",
+    "tests/test_research_audit.py": "b3c0ec57468c23e2e39909c869211fe624992d71a28679272ec9b5ed62e4d03c",
+    "scripts/audit_paper_readiness.py": "8d2181dd303628434258ae558876b2ab851a019cac9893c859ef7844a5e6d4e7",
+    "scripts/pilot_cardinality_decisions.py": "b015a298679895f4009ab6fb280bfdfc75cabcfa3c52cab3450ca636d8fc5c6a",
+    "scripts/pilot_selective_prediction.py": "8e796932002755a50a8fa2b77ee2bc9dc4e807d331bc0e0b18d53c3a9cfd7024",
+    "scripts/plot_selective_pilot.py": "c60ffbeb90d6d81d33ce59b50240e67dc48dc8a6f68aaf67bfa9c3eb1a7adf87",
+    "scripts/build_reliability_audit_notebook.py": "292381f9dcc51582a9d9eb5bf1ad66155b83a89139b4c151b00249e0546eb5ee",
+    "scripts/kaggle_reliability_pilot_core.py": "1368dc4110d631827b4ad62d1ef7022e3f4877da0311f262df91ca7fbe802bb3"
+  },
+  "initial_full_suite": {
+    "passed": 227,
+    "failed": 22,
+    "skipped": 2,
+    "seconds": 222.12,
+    "failure_causes": [
+      "missing ignored historical fixtures",
+      "archived CSV hashes depend on original CRLF bytes"
+    ]
+  },
+  "focused_v35_plus_initial_audit": {
+    "passed": 18,
+    "seconds": 18.73
+  },
+  "new_mathematical_and_integrity_tests": {
+    "passed": 4
+  },
+  "gpu_training_launched": false,
+  "competition_submission_made": false,
+  "local_count_model_fits": 4,
+  "local_risk_model_fits": 6,
+  "official_metadata_downloaded": true,
+  "credential_saved_or_printed": false,
+  "final_focused_suite": {
+    "passed": 19,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 17.562
+  },
+  "standalone_notebook_local_reproduction": {
+    "executed": true,
+    "comparison_rows": 126,
+    "maximum_absolute_F1_difference": 0.0,
+    "independent_assessment": false
+  },
+  "kaggle_CPU_reproduction": {
+    "status": "complete",
+    "kernel": "nmavros/glc25-reliability-audit-20261113",
+    "url": "https://www.kaggle.com/code/nmavros/glc25-reliability-audit-20261113",
+    "version": null,
+    "private": true,
+    "GPU_enabled": false,
+    "competition_submission_made": false,
+    "notebook_source_sha256": "cfb47efbeee1a7a3e2535567e153682c54135d2519153412228df69568494b6f",
+    "output_files": [
+      {
+        "name": "reliability_report.json",
+        "bytes": 24604,
+        "sha256": "349163534247c98ec4141966e104b9221d58c94b121ac60e4dd875c5c46d4d56"
+      },
+      {
+        "name": "selective_country_coverage.csv",
+        "bytes": 68693,
+        "sha256": "8584426500e5ac763b687131c89079bd93e304d9f9836dd63d3e800a2ea0ca63"
+      },
+      {
+        "name": "selective_pilot.csv",
+        "bytes": 6948,
+        "sha256": "0840a43069b3b5a1987343dc470bf2c1ddcb924a090be4d4b590254d1d9c36fc"
+      }
+    ],
+    "remote_python": "3.13.18",
+    "remote_packages": {
+      "numpy": "2.1.3",
+      "pandas": "2.3.3",
+      "scikit-learn": "1.6.1",
+      "torch": "2.11.0+cpu"
+    },
+    "remote_pilot_seconds": 33.256291650000094,
+    "remote_results_status": "completed_CPU_reproduction",
+    "local_comparison_rows": 126,
+    "maximum_absolute_F1_difference_from_local": 0.0
+  },
+  "new_model_fits_note": "4 count and 6 risk fits locally; 6 risk fits reproduced in the standalone notebook locally and again on Kaggle",
+  "analysis_notebook_sha256": "cfb47efbeee1a7a3e2535567e153682c54135d2519153412228df69568494b6f"
+}

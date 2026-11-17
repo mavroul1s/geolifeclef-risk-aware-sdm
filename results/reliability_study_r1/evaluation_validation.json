@@ -1,0 +1,54 @@
+{
+  "status": "evaluation_verified",
+  "checked_at_utc": "2026-11-13T21:44:09.705703+00:00",
+  "full_manifest_files_verified": 18,
+  "assessment_unique_surveys": 31570,
+  "frozen_notebook_hash_matches": true,
+  "frozen_sources": {
+    "src/geolifeclef/reliability.py": {
+      "sha256": "3a34882cdf7ff14c31af08b405fdaaed42fca420b35241ecf9d800b52dfeeb1c",
+      "matches_pre_run_record": true
+    },
+    "scripts/reliability_study_core.py": {
+      "sha256": "8bbfaf5200aa25be379a33831892a33408a8be7ef8fc6e66facf3358c4572902",
+      "matches_pre_run_record": true
+    },
+    "scripts/build_reliability_study_notebook.py": {
+      "sha256": "6b5d78a3812125ea3fd526eac52b4efe75d40a2758535a066324fcd7d980eef9",
+      "matches_pre_run_record": true
+    },
+    "scripts/kaggle_research_job.py": {
+      "sha256": "cfc922f3874659b48c12689a3cdf86631c1d287cba89fff14b63195a40bcbbe2",
+      "matches_pre_run_record": true
+    },
+    "tests/test_reliability.py": {
+      "sha256": "4a98290536f071d464343d435cc61138459a8f3ad65d339b1ba6c7cbee657796",
+      "matches_pre_run_record": true
+    },
+    "tests/test_reliability_study.py": {
+      "sha256": "6b48fac26f8c7fa956679eec9bc9b19c0502f6ab757cd50e674090e474e421d6",
+      "matches_pre_run_record": true
+    }
+  },
+  "focused_suite": {
+    "exit_code": 0,
+    "passed": 29,
+    "test_files": [
+      "tests/test_v35_notebook.py",
+      "tests/test_research_audit.py",
+      "tests/test_reliability.py",
+      "tests/test_reliability_study.py",
+      "tests/test_reliability_analysis.py"
+    ],
+    "count_includes_parametrized_cases": true
+  },
+  "analysis_modules_compile": true,
+  "git_diff_check": "passed",
+  "changed_files_checked_for_credential_content": 89,
+  "credential_content_detected": false,
+  "primary_gain_margin_passed": true,
+  "primary_country_safeguard_passed": false,
+  "posthoc_ablations": "exploratory, 14 CPU regressor fits, no new GPU fits",
+  "historical_full_suite": "not rerun; earlier missing-fixture/CRLF limitations remain",
+  "new_competition_submission": false
+}

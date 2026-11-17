@@ -1,0 +1,44 @@
+{
+  "validated_at_utc": "2026-11-16T09:47:49.615981+00:00",
+  "status": "passed",
+  "source_snapshot_and_explicit_serialization_amendment_verified": true,
+  "policies_frozen_before_assessment_target_access": true,
+  "verified_policy_settings": 512,
+  "all_group_budgets_equal": true,
+  "target_published_MD5_matches": true,
+  "prediction_local_hashes_match_retrieval": true,
+  "whole_prediction_TAR_MD5_recomputed": false,
+  "serialization_repair_summary_invariance": {
+    "summary.csv": true,
+    "regional_summary.csv": true
+  },
+  "metadata_validation": {
+    "minimum_cross_role_km": {
+      "assessment__risk_calibration": 50.02756620199465,
+      "assessment__probability_calibration": 50.2867107940597,
+      "risk_calibration__probability_calibration": 50.59322905417319
+    },
+    "locations_and_areas_match": true
+  },
+  "minimum_final_centroid_distance_existing_GLC_PA_km": 567.940619045553,
+  "focused_tests": {
+    "tests": "39",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0"
+  },
+  "python": "3.12.16",
+  "package_versions": {
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.5.2",
+    "h5py": "3.12.1",
+    "hdf5plugin": "5.0.0",
+    "matplotlib": "3.11.2",
+    "pytest": "8.3.4"
+  },
+  "primary_success": false,
+  "new_neural_fits": 0,
+  "scope": "technical validation does not convert a failed scientific hypothesis into success"
+}

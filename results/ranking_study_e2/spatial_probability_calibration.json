@@ -1,0 +1,42 @@
+{
+  "optimized_deepsdm_s0": {
+    "calibration": {
+      "slope": 0.6664048646788542,
+      "intercept": -3.0518549530609413,
+      "eligible_pairs": 867242,
+      "fit_rows": 1165,
+      "binned_nll": 0.07801517694542899
+    },
+    "decoder": "expected_F1_0_80"
+  },
+  "optimized_deepsdm_s1": {
+    "calibration": {
+      "slope": 0.6562647707794932,
+      "intercept": -3.004367170723053,
+      "eligible_pairs": 867242,
+      "fit_rows": 1165,
+      "binned_nll": 0.07790634741770111
+    },
+    "decoder": "expected_F1_0_80"
+  },
+  "randomforest_s0": {
+    "calibration": {
+      "slope": 0.8394793325798185,
+      "intercept": -3.4063241706693934,
+      "eligible_pairs": 867242,
+      "fit_rows": 1165,
+      "binned_nll": 0.08140817767342697
+    },
+    "decoder": "expected_F1_0_80"
+  },
+  "randomforest_s1": {
+    "calibration": {
+      "slope": 0.8392938486141335,
+      "intercept": -3.4068230381111624,
+      "eligible_pairs": 867242,
+      "fit_rows": 1165,
+      "binned_nll": 0.08136974565480487
+    },
+    "decoder": "expected_F1_0_80"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "at_utc": "2026-11-16T17:47:05.158244+00:00",
+  "roles_requested": [
+    "probability_calibration",
+    "risk_calibration"
+  ],
+  "E1_assessment_requested": false,
+  "NEON_outcomes_accessed": false
+}

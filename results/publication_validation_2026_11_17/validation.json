@@ -1,0 +1,26 @@
+{
+  "scope": "research publication and archive portability",
+  "initial_full_suite": {
+    "tests": 374,
+    "failures": 21
+  },
+  "final_full_suite": {
+    "tests": 376,
+    "passed": 376,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 255.628
+  },
+  "historical_manifest_file_counts": {
+    "external_replication_e1": 44,
+    "ranking_study_e2": 24,
+    "confirmation_e3": 48,
+    "neon_confirmation_feasibility": 3,
+    "neon_bridge": 665,
+    "confirmation_e4": 249
+  },
+  "T1_frozen_files_verified": 70,
+  "A1_screen_totals_verified": true,
+  "no_new_model_experiment_or_competition_submission": true
+}

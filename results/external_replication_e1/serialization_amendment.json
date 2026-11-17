@@ -1,0 +1,16 @@
+{
+  "recorded_at_utc": "2026-11-16T09:35:49.213015+00:00",
+  "stage": "after first assessment read, before successful JSON report serialization",
+  "reason": "NumPy boolean success-check value was not JSON serializable. Add NumPy scalar conversion and explicit source-amendment validation only. No predictions, policy, targets, endpoint formulas or thresholds changed.",
+  "source_changes": {
+    "scripts/run_external_e1.py": {
+      "before": "07ab30ca72a6b4d19b056c113186c80e8af890d49ed529fec58056537f672da7",
+      "after": "0f6b8747d2ad694223250a268db985d9b2a731b36859ba2a0f2f5450a84a82c9"
+    }
+  },
+  "pre_repair_summary_sha256": "e14554187de62e00640f9ea0dcd4d3986a889e0a4606e4081d299e179df073f3",
+  "pre_repair_regional_summary_sha256": "01602335802475809e3d8017e4ca490f568148dd881116cb0a63faf615cfdd74",
+  "first_repair_hash": "2ee9626450f7ef935cf7d0f4e62d72f591eb90276158f7636640b6c9954fefdc",
+  "second_repair_reason": "JSON file now saves; same NumPy boolean also affected stdout. Cast success flags to Python bool before both sinks.",
+  "updated_at_utc": "2026-11-16T09:36:25.702113+00:00"
+}

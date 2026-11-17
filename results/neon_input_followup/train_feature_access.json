@@ -1,0 +1,54 @@
+[
+  {
+    "group": "chelsa",
+    "shape": [
+      4100969,
+      19
+    ],
+    "chunks": [
+      1024,
+      19
+    ],
+    "compression": null,
+    "new_bytes": 262144
+  },
+  {
+    "group": "soilgrids",
+    "shape": [
+      4100969,
+      8
+    ],
+    "chunks": [
+      1024,
+      8
+    ],
+    "compression": null,
+    "new_bytes": 262144
+  },
+  {
+    "group": "topography",
+    "shape": [
+      4100969,
+      16
+    ],
+    "chunks": [
+      1024,
+      16
+    ],
+    "compression": null,
+    "new_bytes": 262144
+  },
+  {
+    "group": "human_footprint",
+    "shape": [
+      4100969,
+      9
+    ],
+    "chunks": [
+      1024,
+      9
+    ],
+    "compression": null,
+    "new_bytes": 262144
+  }
+]

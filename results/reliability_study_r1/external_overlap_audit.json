@@ -1,0 +1,83 @@
+{
+  "source": "https://github.com/plantnet/GeoPlant/blob/main/dataset/config.py",
+  "data_root_ignored": "data/external_overlap_audit",
+  "outcomes_unread": true,
+  "results": [
+    {
+      "split": "iid",
+      "status": "metadata_downloaded_outcomes_unread",
+      "bytes": 445245,
+      "sha256": "181f7d9246c4dfbdfa69c7d327fd5592112fea998a0b6cd4bedecddbfede4a4f",
+      "columns": [
+        "lon",
+        "lat",
+        "year",
+        "geoUncertaintyInM",
+        "areaInM2",
+        "region",
+        "country",
+        "surveyId",
+        "county",
+        "district"
+      ],
+      "surveys": 4716,
+      "IDs_in_existing_PA_training": 0,
+      "IDs_in_existing_GLC25_test": 4716,
+      "species_column_present": false,
+      "outcome_values_read": false
+    },
+    {
+      "split": "ood",
+      "status": "metadata_downloaded_outcomes_unread",
+      "bytes": 640561,
+      "sha256": "4b2e986a30e20e0879de805d026f2e3c4ecb9a0de2eeee782e47ebf92b9d4edf",
+      "columns": [
+        "lon",
+        "lat",
+        "year",
+        "geoUncertaintyInM",
+        "areaInM2",
+        "region",
+        "country",
+        "surveyId",
+        "county",
+        "district"
+      ],
+      "surveys": 10068,
+      "IDs_in_existing_PA_training": 0,
+      "IDs_in_existing_GLC25_test": 10068,
+      "species_column_present": false,
+      "outcome_values_read": false
+    },
+    {
+      "split": "glc25",
+      "status": "metadata_downloaded_outcomes_unread",
+      "bytes": 1085725,
+      "sha256": "c118845c8f45695ad199596bb8f02467a2efa98833359e2a27511a49e0a90bd1",
+      "columns": [
+        "lon",
+        "lat",
+        "year",
+        "geoUncertaintyInM",
+        "areaInM2",
+        "region",
+        "country",
+        "surveyId",
+        "county",
+        "district"
+      ],
+      "surveys": 14784,
+      "IDs_in_existing_PA_training": 0,
+      "IDs_in_existing_GLC25_test": 14784,
+      "species_column_present": false,
+      "outcome_values_read": false
+    }
+  ],
+  "independence_established": false,
+  "set_checks": {
+    "IID_OOD_intersection": 0,
+    "IID_OOD_union": 14784,
+    "union_equals_existing_GLC25_test": true,
+    "new_GLC25_equals_existing_GLC25_test": true
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "status": "validated",
+  "earlier_manifests_unchanged": {
+    "external_replication_e1": 44,
+    "ranking_study_e2": 24,
+    "confirmation_e3": 48,
+    "neon_confirmation_feasibility": 3,
+    "neon_bridge": 665
+  },
+  "focused_tests_after_diagnostics": 34,
+  "protocol_and_policy_before_target_access": true,
+  "independent_confusion_matrix_scoring_matches": true,
+  "all_five_selectors_have_identical_group_budgets": true,
+  "assessment_reconstructed_bit_for_bit": true,
+  "original_primary_admission_and_success": false,
+  "original_scorable_cells_sites": [
+    65,
+    10
+  ],
+  "posthoc_documented_morphospecies_join_cells_sites": [
+    77,
+    11
+  ],
+  "posthoc_replay_is_not_fresh_confirmation": true,
+  "GPU_reference_and_export_hashes_verified": true,
+  "credential_scan_passed": true,
+  "new_SDM_training_fits": 0,
+  "NEON_assessment_cells_now_consumed": 163,
+  "scientific_scope": "one fixed model, training-support stratum; partially observed modeled-native-set F1; failed admission"
+}

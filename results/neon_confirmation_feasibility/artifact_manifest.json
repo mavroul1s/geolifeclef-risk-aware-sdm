@@ -1,0 +1,16 @@
+{
+  "files": {
+    "audit.json": {
+      "bytes": 1689,
+      "sha256": "37feb22b68311eb46aaf7032c3366d4db822284e5e8f32bd055e28091b6ce961"
+    },
+    "input_contracts.json": {
+      "bytes": 13715,
+      "sha256": "6210574e82fe40faa71f83e9a8f131b606a16d6e7ad09ae03e87a516f14fa47f"
+    },
+    "validation.json": {
+      "bytes": 290,
+      "sha256": "3f1efced97dbe1b57fc55026249e99c7895c9c2fc1bbc833694ac98fdfd1ab3d"
+    }
+  }
+}

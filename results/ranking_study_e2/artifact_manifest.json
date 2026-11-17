@@ -1,0 +1,100 @@
+{
+  "files": {
+    "development_lock.json": {
+      "bytes": 1297,
+      "sha256": "34248548748917c2b7d24ab7ed678286e4a918331645aa87abf81cb8d95c11ee"
+    },
+    "fit_audits.json": {
+      "bytes": 10519,
+      "sha256": "ee30d0eea544243f85e4b791a05b6270888359566ef92936399ae8da509cbfcb"
+    },
+    "focused_tests.xml": {
+      "bytes": 7225,
+      "sha256": "f207957b8d5ebaa800b23aa8e6211ac92984ced79acaadfac655c1b4aa57c3ea"
+    },
+    "gpu_admission.json": {
+      "bytes": 826,
+      "sha256": "c04922f1cfe0150a8e64161e5d4769fd1b3f66fcb2446ef388232c2abde8f727"
+    },
+    "heldout_development_rows.csv": {
+      "bytes": 4687680,
+      "sha256": "ba73f63ded64bec5709f70594b6aa4bb7f07f288d38e7a59efd61b32641c020c"
+    },
+    "inner_candidate_results.csv": {
+      "bytes": 2230,
+      "sha256": "e89c1405b3c3dcffc85ed4a901f5f6d568428f5ab7edb232328742346a4a6fde"
+    },
+    "inner_ranking_admission.pdf": {
+      "bytes": 18930,
+      "sha256": "254bccd8bb6c6a2bf53193f4067fd85d4e1b40cd4b621cd16849a22e1f60b5e1"
+    },
+    "inner_ranking_admission.png": {
+      "bytes": 157522,
+      "sha256": "98c2d51d0890208fce04c04bc85fb63dbdad6a5cee71799df71e876785da48c4"
+    },
+    "label_oracle_headroom.csv": {
+      "bytes": 1435,
+      "sha256": "938c44fc26caa388295c102f97b4faa4bc0f472be793cab68c7047bd4b48b2aa"
+    },
+    "label_oracle_headroom.json": {
+      "bytes": 399,
+      "sha256": "f8a55269c04eca500012e27ebbc3c08dbc5075cfeb97c351b864cc3790a46547"
+    },
+    "magnitude_calibration_comparison.json": {
+      "bytes": 967,
+      "sha256": "93db031757100ecc388a56d7110283926c185aee8165d422703ce44bcefaa35a"
+    },
+    "magnitude_calibration_control.pdf": {
+      "bytes": 18467,
+      "sha256": "9cf5e04d929ecef927b59f45c5af1bdf42d578ec685ac7f586a379fd378363db"
+    },
+    "magnitude_calibration_control.png": {
+      "bytes": 102267,
+      "sha256": "651a882156f7fec12fd5e4909a3d28ebb8934aa08059f8986641db1541a69936"
+    },
+    "metadata_split_design.json": {
+      "bytes": 1755,
+      "sha256": "2058cfbb513e0644e5e4ed67f7030c6f8509cb61ea257e9c4ac99437eedd7d73"
+    },
+    "report.json": {
+      "bytes": 30300,
+      "sha256": "b551a93c8f471341ea58e0040916bad9b8d34758b0b85e616a95031498980fe2"
+    },
+    "source_snapshot/configs/ranking_study_e2.json": {
+      "bytes": 3350,
+      "sha256": "34ce32e4e16dbc98a43447e4e3b9542ac60abfe7e1c97cccc0f3bf88117a8fba"
+    },
+    "source_snapshot/docs/ranking_study_e2_protocol.md": {
+      "bytes": 4683,
+      "sha256": "283abba0fa53cd219ab604c664c5e4cda4fa3ece324fcf3ef43b47cbe93690e3"
+    },
+    "source_snapshot/scripts/study_ranking_e2.py": {
+      "bytes": 18825,
+      "sha256": "db127603883e5a4dac7699b5330c24070a005dcf55a8dce533c329ac0bcb342e"
+    },
+    "source_snapshot/src/geolifeclef/ecological_selection.py": {
+      "bytes": 5282,
+      "sha256": "67e646fb011f987c05aec1a174f06c6d95805de3aa8f08dd72e0bbdddafd9685"
+    },
+    "source_snapshot/src/geolifeclef/external_reliability.py": {
+      "bytes": 9673,
+      "sha256": "7ba86d1501dfbcd415ccbebca8f0258c8e85ca6ab1de5bb2cac7b8c98653d296"
+    },
+    "source_snapshot/src/geolifeclef/ranking_selection.py": {
+      "bytes": 6865,
+      "sha256": "d7a0ca4f14315d0f149139187d2d88bce25eb0c0f09b8e6b3edc3cfe9b48d9fb"
+    },
+    "spatial_probability_calibration.json": {
+      "bytes": 1056,
+      "sha256": "6aa6bd33d328d87031b31f33991cdb06027c823d511c045ff82a0e23be5972ac"
+    },
+    "summary.csv": {
+      "bytes": 4872,
+      "sha256": "7b720777b2669f425b9bdca309f2dc411a5fc3fbc3294d066d66409fd49a7aab"
+    },
+    "validation.json": {
+      "bytes": 917,
+      "sha256": "3f21ba66c3d68f4369fd46c2c04ffca777e3fb6fb9213b8248ef327a27d9896c"
+    }
+  }
+}

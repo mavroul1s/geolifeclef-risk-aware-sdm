@@ -1,0 +1,25 @@
+{
+  "definition": "1 minus ratio of fixed-model mean MSE to training-mean-only mean MSE",
+  "posthoc": true,
+  "skills": {
+    "E2_source": {
+      "HGB": -0.4451820148372585,
+      "SDC": -0.5817724951141128,
+      "affine_SDC": -0.030810669965230186,
+      "training_mean_only": 0.0
+    },
+    "E2_spatial": {
+      "HGB": -0.03255074804026137,
+      "SDC": -0.1965173235241271,
+      "affine_SDC": -0.013026353496553567,
+      "training_mean_only": 0.0
+    },
+    "E3_domain": {
+      "HGB": 0.30355743562247295,
+      "SDC": -1.1260150643508742,
+      "affine_SDC": -0.057393639930498175,
+      "training_mean_only": 0.0
+    }
+  },
+  "primary_result_changed": false
+}

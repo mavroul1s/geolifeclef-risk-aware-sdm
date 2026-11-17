@@ -1,0 +1,28 @@
+{
+  "status": "complete",
+  "kernel": "nmavros/sage-reference-neon-20261116",
+  "requested_kernel": "nmavros/sage-reference-neon-20261116",
+  "url": "https://www.kaggle.com/code/nmavros/sage-reference-neon-20261116",
+  "private": true,
+  "GPU_requested": true,
+  "competition_submission_made": false,
+  "internet_enabled": true,
+  "public_inputs_only": true,
+  "kernel_sources": [],
+  "requested_at_utc": "2026-11-16T16:07:03.978606+00:00",
+  "notebook_sha256": "5b3dff66087fb03feb51a69713d4e7debbf456022968c991563203f40de3abbd",
+  "checked_at_utc": "2026-11-16T16:09:24.533168+00:00",
+  "output_files": [
+    {
+      "name": "gpu_probabilities.npz",
+      "bytes": 2851212,
+      "sha256": "2c1307f2e7d9b7337f07a9fbe057a9fa93b3ce9509d8cca07e662f8725f055c4"
+    },
+    {
+      "name": "gpu_report.json",
+      "bytes": 728,
+      "sha256": "f11394273bf7f89364072e438beab620efcaded8e369839d4aaf03467b40a652"
+    }
+  ],
+  "output_bytes": 2851940
+}

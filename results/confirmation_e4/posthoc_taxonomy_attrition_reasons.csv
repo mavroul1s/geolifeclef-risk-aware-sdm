@@ -1,0 +1,6 @@
+reason,records,distinct_cell_taxon_qualifier_keys,cells_with_possible_unknown_labels,unknown_eligible_label_pairs_potentially_affected
+identified_infraspecific_rank,1578,354,80,802
+unresolved_higher_rank,4844,1520,151,34582
+unmapped_species_name,15662,4178,158,4366
+identification_qualifier,2730,1520,137,5139
+positive_without_taxon_ID,46,25,25,11123

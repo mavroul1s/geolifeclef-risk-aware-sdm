@@ -1,0 +1,62 @@
+{
+  "status": "verified_public_numeric_payload",
+  "upload_notebook_sha256": "a5a5590cff05c486a574ff105f5fbf8f1c0d9ee84becba294f881e9520e85c7e",
+  "arrays": {
+    "reference": {
+      "shape": [
+        128,
+        52
+      ],
+      "dtype": "float32",
+      "numeric_only": true,
+      "sha256": "c5dd89c74e03a72d627eb326e3c0c281875706011796bd77fc4ae0fa72a7fc71"
+    },
+    "source": {
+      "shape": [
+        2226,
+        52
+      ],
+      "dtype": "float32",
+      "numeric_only": true,
+      "sha256": "47d0f00f0cfc2fd36ea873f1add53f11979c5595bb5e41f87804ec3607a32772"
+    },
+    "neon": {
+      "shape": [
+        163,
+        52
+      ],
+      "dtype": "float32",
+      "numeric_only": true,
+      "sha256": "2d5adea8d9264f6c8ea2e0499958d2592a8d4edaa49c2799bfa5ee864e1f32c2"
+    },
+    "means": {
+      "shape": [
+        52
+      ],
+      "dtype": "float32",
+      "numeric_only": true,
+      "sha256": "0a8175f281c04b74dd2af3d76fa430faa4235106b929cde3cd0c3412e3850d60"
+    },
+    "stds": {
+      "shape": [
+        52
+      ],
+      "dtype": "float32",
+      "numeric_only": true,
+      "sha256": "466b0b98af26461cfb79e2dce9281edd05fa0b9c86ebb2a64bc6e44910d21f36"
+    }
+  },
+  "public_data_source": "https://doi.org/10.5281/zenodo.21297133",
+  "normalization_source": "https://doi.org/10.5281/zenodo.21335338",
+  "provenance": "reference/source are exact public SAGE evaluation covariates; neon is an exact subset of already-public SAGE training covariates, not NEON-authenticated input measurements; means/stds are public model constants",
+  "contains_NEON_observations": false,
+  "contains_NEON_coordinates_site_or_plot_IDs": false,
+  "contains_NEON_API_responses": false,
+  "contains_user_personal_data_or_credentials": false,
+  "NEON_private_or_RTE_data_accessed": false,
+  "selection_metadata_public_policy": "https://www.neonscience.org/usage-policies",
+  "authentication_is_not_confidentiality": "https://www.neonscience.org/about/user-accounts",
+  "user_authorization": "User explicitly requested continuing thesis experiments and GPU tests when checks pass, using their Kaggle account privately.",
+  "destination": "one private Kaggle notebook, <=20 minutes; no training or competition submission",
+  "prior_review_rejection": "Review treated the NEON-named numeric array as nonpublic authenticated NEON data; exact source comparison above establishes it is existing public SAGE data."
+}

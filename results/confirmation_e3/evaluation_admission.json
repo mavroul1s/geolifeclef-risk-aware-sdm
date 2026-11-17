@@ -1,0 +1,25 @@
+{
+  "admitted_at_utc": "2026-11-16T10:44:58.753233+00:00",
+  "all_policies_frozen": true,
+  "policy_hashes": {
+    "optimized_deepsdm_s0": {
+      "npz": "bb480921f1c6540b287807166fa5856e435c69e768fed35226d90001d6284dc6",
+      "json": "84b2997027f2b4cb0cc7e4ccc238ecac96633def24a5676b86a1ea7419eafab2"
+    },
+    "optimized_deepsdm_s1": {
+      "npz": "770abedb50de640634df353b96a34cec216f38a5446a4aaffd60ee9edce698fd",
+      "json": "f3bff2037e3b40401f1d8bfdb9491c935b80fdf46a82fc28e8fc2d202c38c797"
+    },
+    "randomforest_s0": {
+      "npz": "4dcf46154726b15ce6ab34c71cf5b7464ed60db82d3c5ab269c811fdea5aab75",
+      "json": "7020971c1cb1e00cb04fe2c5f00912f907bf7e3bd49b2e95bf59f81410c9370c"
+    },
+    "randomforest_s1": {
+      "npz": "7282dd67248c5da1c89ff74712ebba1f27dff125ff4100093a6b91862140f239",
+      "json": "85b9088170eca526a9ce4185a51af4d39e6dec123e93c50eac91d8257f9dd08f"
+    }
+  },
+  "cohort_ID_sha256": "8edacda24b589392611e2cd1cc873d8fefd0997589adbf43f9a24cdc21e79f6e",
+  "protocol_lock_sha256": "fbe388cf00084136917f58dad874e50c67830266b254e25bc881da2d445bf6c2",
+  "E3_outcomes_accessed": false
+}

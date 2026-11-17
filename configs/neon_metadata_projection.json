@@ -1,0 +1,15 @@
+{
+  "stage": "outcome_closed_survey_metadata_projection",
+  "release": "RELEASE-2026",
+  "year": 2023,
+  "allowed_fields": ["namedLocation", "domainID", "siteID", "decimalLatitude", "decimalLongitude", "geodeticDatum", "coordinateUncertainty", "plotType", "plotID", "subplotID", "endDate", "boutNumber", "eventID", "samplingProtocolVersion", "samplingImpractical", "biophysicalCriteria"],
+  "allowed_tables": ["div_1m2Data", "div_10m2Data100m2Data"],
+  "raw_transport_byte_limit": 80000000,
+  "raw_file_byte_limit": 2000000,
+  "raw_files_retained": false,
+  "composition_fields_decoded_or_retained": false,
+  "transport_note": "NEON distributes metadata and composition in the same CSV. A byte-level projection traverses authenticated-manifest file bytes, discards unselected field bytes without text decoding, and deduplicates metadata before saving. This is computational projection, not physical non-access to observation files.",
+  "outcomes_closed": ["taxonID", "scientificName", "taxonRank", "family", "nativeStatusCode", "identificationQualifier", "morphospeciesID", "targetTaxaPresent", "additionalSpecies", "percentCover", "remarks"],
+  "full_plot_completeness_candidate": "four 100m2, six 10m2 and six 1m2 subplots within the same plot and bout; samplingImpractical and biophysicalCriteria must be acceptable; do not add nested areas",
+  "cohort_roles_or_claims_frozen": false
+}

@@ -1,0 +1,360 @@
+{
+  "area_edges_log1p": [
+    2.302585092994046,
+    4.382026634673881
+  ],
+  "fold": 0,
+  "maximum_survey_F1_difference": 0.09090909090909091,
+  "mean_F1_difference": -1.3827956702487724e-05,
+  "member_sets": [
+    {
+      "original_top18_set_match_fraction": 0.9954662418821223,
+      "seed": 2026111301
+    },
+    {
+      "original_top18_set_match_fraction": 0.9956704652207654,
+      "seed": 2026111302
+    },
+    {
+      "original_top18_set_match_fraction": 0.9959563778948658,
+      "seed": 2026111303
+    }
+  ],
+  "normalization_training_surveys": 35811,
+  "passed": false,
+  "survey_F1_match_fraction": 0.999113475177305,
+  "thresholds": [
+    {
+      "fitting_role": "probability_calibration",
+      "grid": [
+        {
+          "sample_F1": 0.303807311771904,
+          "threshold": 0.01
+        },
+        {
+          "sample_F1": 0.303962146306825,
+          "threshold": 0.02
+        },
+        {
+          "sample_F1": 0.30478147404095096,
+          "threshold": 0.03
+        },
+        {
+          "sample_F1": 0.3063775930942236,
+          "threshold": 0.04
+        },
+        {
+          "sample_F1": 0.30920413309336653,
+          "threshold": 0.05
+        },
+        {
+          "sample_F1": 0.31826977040444526,
+          "threshold": 0.075
+        },
+        {
+          "sample_F1": 0.3281680229326901,
+          "threshold": 0.1
+        },
+        {
+          "sample_F1": 0.33661266675505885,
+          "threshold": 0.125
+        },
+        {
+          "sample_F1": 0.34224222376572155,
+          "threshold": 0.15
+        },
+        {
+          "sample_F1": 0.3443648285823459,
+          "threshold": 0.175
+        },
+        {
+          "sample_F1": 0.3443201993265535,
+          "threshold": 0.2
+        },
+        {
+          "sample_F1": 0.3415472712076058,
+          "threshold": 0.225
+        },
+        {
+          "sample_F1": 0.3374804782236955,
+          "threshold": 0.25
+        },
+        {
+          "sample_F1": 0.33156645474904584,
+          "threshold": 0.275
+        },
+        {
+          "sample_F1": 0.32646490741395934,
+          "threshold": 0.3
+        },
+        {
+          "sample_F1": 0.3180601708730812,
+          "threshold": 0.35
+        },
+        {
+          "sample_F1": 0.31200280876408887,
+          "threshold": 0.4
+        },
+        {
+          "sample_F1": 0.3085877662582264,
+          "threshold": 0.45
+        },
+        {
+          "sample_F1": 0.3068362747015418,
+          "threshold": 0.5
+        }
+      ],
+      "predictor": "seed_2026111301",
+      "threshold": 0.175
+    },
+    {
+      "fitting_role": "probability_calibration",
+      "grid": [
+        {
+          "sample_F1": 0.29919095911358395,
+          "threshold": 0.01
+        },
+        {
+          "sample_F1": 0.29928136866132365,
+          "threshold": 0.02
+        },
+        {
+          "sample_F1": 0.2998990849163564,
+          "threshold": 0.03
+        },
+        {
+          "sample_F1": 0.3016829473559718,
+          "threshold": 0.04
+        },
+        {
+          "sample_F1": 0.3040291047653886,
+          "threshold": 0.05
+        },
+        {
+          "sample_F1": 0.3115969703930923,
+          "threshold": 0.075
+        },
+        {
+          "sample_F1": 0.32010537529411487,
+          "threshold": 0.1
+        },
+        {
+          "sample_F1": 0.3278874445897408,
+          "threshold": 0.125
+        },
+        {
+          "sample_F1": 0.3335546581572187,
+          "threshold": 0.15
+        },
+        {
+          "sample_F1": 0.3367769867503266,
+          "threshold": 0.175
+        },
+        {
+          "sample_F1": 0.3368298617465076,
+          "threshold": 0.2
+        },
+        {
+          "sample_F1": 0.33407925943548294,
+          "threshold": 0.225
+        },
+        {
+          "sample_F1": 0.32987286283226813,
+          "threshold": 0.25
+        },
+        {
+          "sample_F1": 0.324468086097422,
+          "threshold": 0.275
+        },
+        {
+          "sample_F1": 0.3187076729382804,
+          "threshold": 0.3
+        },
+        {
+          "sample_F1": 0.3096569017458699,
+          "threshold": 0.35
+        },
+        {
+          "sample_F1": 0.30412437283641947,
+          "threshold": 0.4
+        },
+        {
+          "sample_F1": 0.30136193527329136,
+          "threshold": 0.45
+        },
+        {
+          "sample_F1": 0.3004392166613918,
+          "threshold": 0.5
+        }
+      ],
+      "predictor": "seed_2026111302",
+      "threshold": 0.2
+    },
+    {
+      "fitting_role": "probability_calibration",
+      "grid": [
+        {
+          "sample_F1": 0.29978259595915674,
+          "threshold": 0.01
+        },
+        {
+          "sample_F1": 0.2999221176112295,
+          "threshold": 0.02
+        },
+        {
+          "sample_F1": 0.30058907155904535,
+          "threshold": 0.03
+        },
+        {
+          "sample_F1": 0.3022258717835527,
+          "threshold": 0.04
+        },
+        {
+          "sample_F1": 0.30485340086139645,
+          "threshold": 0.05
+        },
+        {
+          "sample_F1": 0.312754971424683,
+          "threshold": 0.075
+        },
+        {
+          "sample_F1": 0.32151654145756725,
+          "threshold": 0.1
+        },
+        {
+          "sample_F1": 0.3291604718376413,
+          "threshold": 0.125
+        },
+        {
+          "sample_F1": 0.3346983422808466,
+          "threshold": 0.15
+        },
+        {
+          "sample_F1": 0.33683788301526885,
+          "threshold": 0.175
+        },
+        {
+          "sample_F1": 0.33653186115596523,
+          "threshold": 0.2
+        },
+        {
+          "sample_F1": 0.33427236912193875,
+          "threshold": 0.225
+        },
+        {
+          "sample_F1": 0.3303208596713736,
+          "threshold": 0.25
+        },
+        {
+          "sample_F1": 0.3256256711771,
+          "threshold": 0.275
+        },
+        {
+          "sample_F1": 0.32061235251714754,
+          "threshold": 0.3
+        },
+        {
+          "sample_F1": 0.31257988428274713,
+          "threshold": 0.35
+        },
+        {
+          "sample_F1": 0.3062573229886909,
+          "threshold": 0.4
+        },
+        {
+          "sample_F1": 0.3026966846877767,
+          "threshold": 0.45
+        },
+        {
+          "sample_F1": 0.30117591843893793,
+          "threshold": 0.5
+        }
+      ],
+      "predictor": "seed_2026111303",
+      "threshold": 0.175
+    },
+    {
+      "fitting_role": "probability_calibration",
+      "grid": [
+        {
+          "sample_F1": 0.3062811899884619,
+          "threshold": 0.01
+        },
+        {
+          "sample_F1": 0.3063626171404315,
+          "threshold": 0.02
+        },
+        {
+          "sample_F1": 0.30691111138391325,
+          "threshold": 0.03
+        },
+        {
+          "sample_F1": 0.30849705729276644,
+          "threshold": 0.04
+        },
+        {
+          "sample_F1": 0.31121775134740437,
+          "threshold": 0.05
+        },
+        {
+          "sample_F1": 0.319776806861642,
+          "threshold": 0.075
+        },
+        {
+          "sample_F1": 0.33002082334580235,
+          "threshold": 0.1
+        },
+        {
+          "sample_F1": 0.3382682169466332,
+          "threshold": 0.125
+        },
+        {
+          "sample_F1": 0.3450097264003591,
+          "threshold": 0.15
+        },
+        {
+          "sample_F1": 0.34752740014248534,
+          "threshold": 0.175
+        },
+        {
+          "sample_F1": 0.34759501836305506,
+          "threshold": 0.2
+        },
+        {
+          "sample_F1": 0.3446551007595053,
+          "threshold": 0.225
+        },
+        {
+          "sample_F1": 0.3405126582940968,
+          "threshold": 0.25
+        },
+        {
+          "sample_F1": 0.3345763004506567,
+          "threshold": 0.275
+        },
+        {
+          "sample_F1": 0.3294596166507868,
+          "threshold": 0.3
+        },
+        {
+          "sample_F1": 0.3208270309057005,
+          "threshold": 0.35
+        },
+        {
+          "sample_F1": 0.3150988048536161,
+          "threshold": 0.4
+        },
+        {
+          "sample_F1": 0.3119261443642562,
+          "threshold": 0.45
+        },
+        {
+          "sample_F1": 0.31087409904220237,
+          "threshold": 0.5
+        }
+      ],
+      "predictor": "ensemble",
+      "threshold": 0.2
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "full_F1": 0.2537972586033498,
+  "cells": 5251,
+  "spatial_blocks": 73,
+  "countries": 32,
+  "rare_occurrences": 3653,
+  "selected_F1": {
+    "HGB": 0.2660883648178761,
+    "SDC": 0.2706366411728781,
+    "random": 0.25326780545004923,
+    "mean_confidence": 0.2711990765033977,
+    "entropy": 0.2439955552159931
+  },
+  "accepted_cells": {
+    "HGB": 4201,
+    "SDC": 4201,
+    "random": 4201,
+    "mean_confidence": 4201,
+    "entropy": 4201
+  },
+  "contrasts": {
+    "HGB_SDC": {
+      "point": -0.00454827635500199,
+      "interval": [
+        -0.011808964823713136,
+        0.00318075684800728
+      ],
+      "clusters": 73,
+      "valid_draws": 4000,
+      "confidence": 0.975
+    },
+    "HGB_random": {
+      "point": 0.01282055936782689,
+      "interval": [
+        0.005674011634566869,
+        0.023802463102303717
+      ],
+      "clusters": 73,
+      "valid_draws": 4000,
+      "confidence": 0.975
+    },
+    "SDC_random": {
+      "point": 0.01736883572282888,
+      "interval": [
+        0.00978628277714696,
+        0.02805345960189775
+      ],
+      "clusters": 73,
+      "valid_draws": 4000,
+      "confidence": 0.975
+    }
+  }
+}

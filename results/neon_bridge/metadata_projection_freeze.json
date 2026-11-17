@@ -1,0 +1,10 @@
+{
+  "at_utc": "2026-11-16T16:11:00.093300+00:00",
+  "identity": {
+    "config_sha256": "988092275415eb27e1efc46ab5f11e298cff4edb7f227d74b12acb9597c810a2",
+    "script_sha256": "2723547403cffb0586a9c53e1ecd77c4af227d7461e7d11146ec43ff585ff361",
+    "projection_source_sha256": "691f6d4eacc9d5acabcc9f3b0ce6a9d2f6e2ba34bfc364ce220814f478a3802d",
+    "manifest_sha256": "53759e1e4f486589f985ac9735daac95c7bb9e78e16403ef5da024d74bfd6754"
+  },
+  "composition_fields_closed": true
+}

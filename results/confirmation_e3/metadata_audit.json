@@ -1,0 +1,92 @@
+{
+  "status": "metadata_only_feasibility_completed",
+  "at_utc": "2026-11-16T10:35:36.523693+00:00",
+  "config": {
+    "stage": "metadata_only_confirmation_feasibility",
+    "date": "2026-11-16",
+    "source_record": 21297133,
+    "prediction_record": 21335338,
+    "minimum_existing_GLC_PA_distance_km": 500,
+    "minimum_consumed_SAGE_distance_km": 100,
+    "exclude_consumed_spatial_blocks": true,
+    "maximum_plot_uncertainty_m": 1000,
+    "source_cohort_plot_area_m2": [
+      10,
+      10000
+    ],
+    "large_plot_domain_area_m2": [
+      400,
+      10000
+    ],
+    "large_plot_lower_bound_is_exclusive": true,
+    "non_European_known_continent_required": true,
+    "known_non_EU_prefixed_source_required": true,
+    "all_linked_plot_contributors_must_qualify": true,
+    "area_consistency_atol_m2": 0.1,
+    "area_consistency_rtol": 0.0001,
+    "source_disjoint_definition": "no contributing GIVD source occurs in any E1 probability/risk-calibration or assessment cell",
+    "outcomes_and_prediction_values_may_be_read": false,
+    "source_and_large_plot_counts_are_metadata_feasibility_only": true
+  },
+  "metadata_sha256": "27118ac038e31e5096c99ce2b5d9fb2ba4cdd2261a0e55fd1ed10a96074577a4",
+  "script_sha256": "f08f39e5e2c29545521eb0f4b7a12d6aae73609099165b4cabefa753afdfdc18",
+  "consumed_cells": 7477,
+  "consumed_sources": 35,
+  "pre_distance_area_block_admission_cells": 4985,
+  "post_admission_cells": 654,
+  "outcome_rows_requested": 0,
+  "prediction_values_read": false,
+  "cohorts": {
+    "new_source": {
+      "cells": 364,
+      "blocks": 3,
+      "sources": 2,
+      "countries": {
+        "Brazil": 363,
+        "Turkey": 1
+      },
+      "continents": {
+        "South America": 363,
+        "Asia": 1
+      },
+      "source_counts": {
+        "SA-BR-002": 363,
+        "00-TR-001": 1
+      },
+      "minimum_distance_consumed_km": 568.9481017707415,
+      "cell_ID_sha256": "0ce5d503f58657beaf4621e5146618f6d70f5ed2f151c54cb4716c7b5d0c90b3"
+    },
+    "large_plot_domain": {
+      "cells": 654,
+      "blocks": 19,
+      "sources": 8,
+      "countries": {
+        "Brazil": 363,
+        "Saudi Arabia": 108,
+        "Australia": 100,
+        "United States": 77,
+        "Canada": 5,
+        "Turkey": 1
+      },
+      "continents": {
+        "South America": 363,
+        "Asia": 109,
+        "Oceania": 100,
+        "North America": 82
+      },
+      "source_counts": {
+        "SA-BR-002": 363,
+        "AS-SA-001": 108,
+        "AU-AU-002": 100,
+        "NA-US-006": 68,
+        "NA-US-002": 6,
+        "NA-CA-004": 5,
+        "NA-US-002|NA-US-006": 3,
+        "00-TR-001": 1
+      },
+      "minimum_distance_consumed_km": 107.506824394648,
+      "cell_ID_sha256": "8edacda24b589392611e2cd1cc873d8fefd0997589adbf43f9a24cdc21e79f6e"
+    }
+  },
+  "scope": "uninspected analysis subset within published SAGE, not a new independent data release; published backbone overlap unchanged"
+}

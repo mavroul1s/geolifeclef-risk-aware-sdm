@@ -1,0 +1,18 @@
+version,description,public_score,private_score,status
+18,CompetitiveFusionSDM full-PA three-seed top-18 ensemble,0.21594,0.189,superseded_best
+19,Single rare-aware adaptive-cardinality OOD spatial model,0.19891,0.17516,regression
+20,"Environmental challenger frozen 75/25 ensemble, top-20",0.21601,0.1936,superseded_best
+21,"Frozen v20 plus competition-only PO expert, distance gate up to 2.5%, top-20",0.21633,0.19426,superseded_best
+22,"Frozen v21 plus retained-PO expert, two-fold cross-fit gate, top-20",0.21684,0.19491,superseded_best
+23,Diverse single-head spatial cross-fit model,0.22052,0.1973,superseded_best
+24,Multimodal rare-species SDM with risk-aware composition,0.22397,0.20094,superseded_best
+25,Fresh-holdout two-seed adaptive-cardinality ensemble,0.22812,0.20503,superseded_best
+26,Raw spatial-raster ensemble with adaptive rank and cardinality fusion,0.23052,0.20693,superseded_best
+27,Multi-scale raw-raster pyramid with adaptive rank and cardinality fusion,0.23339,0.20831,superseded_best
+28,PO shift experiment selected unchanged v27 control,0.23339,0.20831,duplicate_v27_control_no_improvement
+29,"Full-PA heterogeneous multisensor ensemble, 100% new model predictions",0.239,0.21093,superseded_best
+30,Calibrated multiscale ensemble with held-out production anchors and adaptive counts,0.23451,0.20942,regression_keep_v29
+31,Full-PA independent seed bag and habitat residual; fixed per-row v29 counts,0.24072,0.21301,superseded_best
+32,Seed bag plus asymmetric-loss rare specialists; bounded swaps and fixed v31 row counts,0.24225,0.21514,current_best
+33,Rejected development candidate; submitted CSV was the byte-exact v32 control,0.24225,0.21514,duplicate_of_v32_no_improvement
+34,Shrunk community co-occurrence reranking; passed weak repeated gates but regressed on hidden tests,0.24203,0.21483,regression_keep_v32

@@ -1,0 +1,88 @@
+{
+  "archive_files_restored_to_existing_hash": [
+    {
+      "file": "results/v24_kaggle_output/GLC25_PA_submission_v24.csv",
+      "before_sha256": "7132a645e1263a2938d43c141cf792662d819881cdd43f2cba5aa88437382c13",
+      "recovered_original_sha256": "31ce8fcc93d5831f1ecfdffb255c5eec14f0b8a40981f2f16f2ab6cf4b45a111",
+      "transformation": "restore CRLF; exact pre-existing archival hash required",
+      "record_values_changed": false
+    },
+    {
+      "file": "results/v25_kaggle_output/GLC25_PA_submission_v25.csv",
+      "before_sha256": "98b7daacca4f919bb71dd1311ad306b0175c3db98ed5f9c9521bb08571789d6b",
+      "recovered_original_sha256": "c450107d5219bb3a99f37741142ea40cf9320c87e851173ec50f1e899ada48c5",
+      "transformation": "restore CRLF; exact pre-existing archival hash required",
+      "record_values_changed": false
+    },
+    {
+      "file": "results/v26_kaggle_output/GLC25_PA_submission_v26.csv",
+      "before_sha256": "3ad5580626ff7f0ea98ef6c525ae69cfe544c89987b9b0a47224bd689f50e305",
+      "recovered_original_sha256": "67937cf92f0b4626b7b3c643ababbd0c7a4f39801909e4bd5646b532371c21a9",
+      "transformation": "restore CRLF; exact pre-existing archival hash required",
+      "record_values_changed": false
+    },
+    {
+      "file": "results/v27_kaggle_output/GLC25_PA_submission_v27.csv",
+      "before_sha256": "01f42f7b6d5482771a122e04a26da159a6422268e3a074a15fed64e419c0f33a",
+      "recovered_original_sha256": "32cd02788d910abe0cd18715da00f201a52a371a2135d17399301dd7e532f710",
+      "transformation": "restore CRLF; exact pre-existing archival hash required",
+      "record_values_changed": false
+    },
+    {
+      "file": "results/v28_kaggle_output/GLC25_PA_submission_v28.csv",
+      "before_sha256": "01f42f7b6d5482771a122e04a26da159a6422268e3a074a15fed64e419c0f33a",
+      "recovered_original_sha256": "32cd02788d910abe0cd18715da00f201a52a371a2135d17399301dd7e532f710",
+      "transformation": "restore CRLF; exact pre-existing archival hash required",
+      "record_values_changed": false
+    },
+    {
+      "file": "results/v29_kaggle_output/GLC25_PA_submission_v29.csv",
+      "before_sha256": "405758f87082cce8a0706ba3008dd78f18fbb148beae2e804a2810b1d0cd91e4",
+      "recovered_original_sha256": "9ec7afb25eb1651b161b0f8c6ecaa64fd553d17dd24b4808b1f07446b85f8194",
+      "transformation": "restore CRLF; exact pre-existing archival hash required",
+      "record_values_changed": false
+    },
+    {
+      "file": "results/v30_kaggle_output/GLC25_PA_submission_v30.csv",
+      "before_sha256": "50c2bb3238f494cdfd402ba9d15bdab438df0b7865d9e916de3a41723197645a",
+      "recovered_original_sha256": "95a57131f8494320cec86d50bcdf6112998656497d9adc34ba826eb7c1086479",
+      "transformation": "restore CRLF; exact pre-existing archival hash required",
+      "record_values_changed": false
+    },
+    {
+      "file": "results/v31_kaggle_output/GLC25_PA_submission_v31.csv",
+      "before_sha256": "13295c3c6aa1397dd0e2615d4369affd26b7c96e6bd7855992b1adc8018cb8e6",
+      "recovered_original_sha256": "da070a8ac5708ef5d7fb38cdbecf862aa9d036e4d246bc1e4b364572bb7fe367",
+      "transformation": "restore CRLF; exact pre-existing archival hash required",
+      "record_values_changed": false
+    },
+    {
+      "file": "results/v32_kaggle_output/GLC25_PA_submission_v32.csv",
+      "before_sha256": "170a16cc1947b2479a6bedc26ccbe1eb301f9bfd4afb818246b2d529f7b93a77",
+      "recovered_original_sha256": "71c863d9cb05f3efc63ac54dd7faa05efd2fc137a11da9adcd2064c82c88dfee",
+      "transformation": "restore CRLF; exact pre-existing archival hash required",
+      "record_values_changed": false
+    },
+    {
+      "file": "results/v33_kaggle_output/unchanged_v32_DO_NOT_SUBMIT.csv",
+      "before_sha256": "170a16cc1947b2479a6bedc26ccbe1eb301f9bfd4afb818246b2d529f7b93a77",
+      "recovered_original_sha256": "71c863d9cb05f3efc63ac54dd7faa05efd2fc137a11da9adcd2064c82c88dfee",
+      "transformation": "restore CRLF; exact pre-existing archival hash required",
+      "record_values_changed": false
+    },
+    {
+      "file": "results/v34_kaggle_output/GLC25_PA_submission_v34.csv",
+      "before_sha256": "f4c02f4aedec2134f64a2dcdf5c8e9ff78f49620ce04a5ab529a59c4bf882602",
+      "recovered_original_sha256": "354d1dcdbd6a3ba5ffab8b62d0d3d5fd0a13f3d531774d37237957c075eb8d6e",
+      "transformation": "restore CRLF; exact pre-existing archival hash required",
+      "record_values_changed": false
+    }
+  ],
+  "v23_fixture": {
+    "source": "tracked v24 notebook embedded canonical v23 control",
+    "canonical_sha256": "9da01ce45a3478e8073cd93e22dbf69dde65def0f86b7ef2700e84630f2c30f8",
+    "fixture_sha256": "206a0bf4746839f9943f80560e7e8b8c44036ec5e12e77de9acdd5d10045f941",
+    "fixture_variant": "remove final CRLF to reproduce the legacy newline-restoration test; not claimed to be newly downloaded raw original"
+  },
+  "historical_metrics_or_predictions_changed": false
+}

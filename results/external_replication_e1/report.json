@@ -1,0 +1,120 @@
+{
+  "status": "completed_locked_external_analysis",
+  "completed_at_utc": "2026-11-16T09:36:33.714246+00:00",
+  "assessment_cells": 5251,
+  "rare_occurrences": 10117,
+  "rare_species": 1155,
+  "primary_success": false,
+  "primary_checks": {
+    "calibration_admitted": true,
+    "minimum_mean_rare_gain": false,
+    "rare_gain_interval_positive": false,
+    "F1_interval_noninferior": true,
+    "all_model_point_F1_noninferior": true,
+    "all_models_minimum_realized_rare_coverage": true
+  },
+  "primary_joint_comparison": {
+    "F1_gain": -4.9646490890856154e-05,
+    "rare_coverage_gain": 0.005362261539982208,
+    "F1_interval": [
+      -0.0005421496690518349,
+      0.00037080498392536135
+    ],
+    "rare_coverage_interval": [
+      -0.003569271386771049,
+      0.013881771463991235
+    ],
+    "confidence": 0.975,
+    "clusters": 73,
+    "models": 4,
+    "valid_draws": 2000,
+    "model_F1_gains": [
+      -0.0007180121677527462,
+      0.0005194262041893216,
+      0.0,
+      0.0
+    ],
+    "model_rare_coverage_gains": [
+      0.0058317683107640605,
+      0.015617277849164772,
+      0.0,
+      0.0
+    ],
+    "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+  },
+  "model_primary_comparisons": {
+    "optimized_deepsdm_s0": {
+      "F1_gain": -0.0007180121677527462,
+      "rare_coverage_gain": 0.0058317683107640605,
+      "F1_interval": [
+        -0.0022413725450458376,
+        0.00046004990208759595
+      ],
+      "rare_coverage_interval": [
+        -0.016929848586979022,
+        0.02593862250429518
+      ],
+      "confidence": 0.975,
+      "clusters": 73,
+      "valid_draws": 2000,
+      "interpretation": "spatial cluster interval conditional on the fitted predictions and selection rules"
+    },
+    "optimized_deepsdm_s1": {
+      "F1_gain": 0.0005194262041893216,
+      "rare_coverage_gain": 0.015617277849164772,
+      "F1_interval": [
+        -0.00042276684630187936,
+        0.0015229730401789675
+      ],
+      "rare_coverage_interval": [
+        -0.005462810114475077,
+        0.036854542076817425
+      ],
+      "confidence": 0.975,
+      "clusters": 73,
+      "valid_draws": 2000,
+      "interpretation": "spatial cluster interval conditional on the fitted predictions and selection rules"
+    },
+    "randomforest_s0": {
+      "F1_gain": 0.0,
+      "rare_coverage_gain": 0.0,
+      "F1_interval": [
+        0.0,
+        0.0
+      ],
+      "rare_coverage_interval": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.975,
+      "clusters": 73,
+      "valid_draws": 2000,
+      "interpretation": "spatial cluster interval conditional on the fitted predictions and selection rules"
+    },
+    "randomforest_s1": {
+      "F1_gain": 0.0,
+      "rare_coverage_gain": 0.0,
+      "F1_interval": [
+        0.0,
+        0.0
+      ],
+      "rare_coverage_interval": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.975,
+      "clusters": 73,
+      "valid_draws": 2000,
+      "interpretation": "spatial cluster interval conditional on the fitted predictions and selection rules"
+    }
+  },
+  "new_neural_fits": 0,
+  "competition_submissions": 0,
+  "limitations": [
+    "Published pretrained backbone training can include evaluation cells",
+    "Public benchmark subset; locally locked analysis, not secret test",
+    "Fixed-model conditional spatial intervals; not biological causality or coverage guarantee",
+    "Rarity means low recorded PO prevalence, not conservation threat status",
+    "Other decoder and method contrasts are descriptive secondary analyses"
+  ]
+}

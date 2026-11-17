@@ -1,0 +1,29 @@
+{
+  "locked_at_utc": "2026-11-16T10:44:48.814467+00:00",
+  "source_hashes": {
+    "configs/confirmation_e3.json": "0b3ac173958141b6888af658b836b55231121b714fd71b32f4f8121249ce0625",
+    "configs/confirmation_e3_audit.json": "f4ca415542798b0384d116c094d904edbe3e18a7977ce1e8059c3ecb707089bf",
+    "configs/external_reliability_e1.json": "0944dbd2be33ebd39547e9c791545abde8bfad0fa07d3850c61ed571d3ebda99",
+    "docs/confirmation_e3_protocol.md": "4d01e5a6932c5868839b223d3676f53374c9d9a51c49c83cea3d49b2f93ae254",
+    "scripts/run_confirmation_e3.py": "926be57ffcb8c431d3ce3e23044f1703e2a5c0626310c32b3bdccb4b3bdc3abe",
+    "scripts/audit_confirmation_e3.py": "f08f39e5e2c29545521eb0f4b7a12d6aae73609099165b4cabefa753afdfdc18",
+    "scripts/run_external_e1.py": "0f6b8747d2ad694223250a268db985d9b2a731b36859ba2a0f2f5450a84a82c9",
+    "src/geolifeclef/confirmation.py": "8741313c9f71d6a267d0f3096a089cc8d5f0b1c09198d73a383935bdafae587c",
+    "src/geolifeclef/external_reliability.py": "7ba86d1501dfbcd415ccbebca8f0258c8e85ca6ab1de5bb2cac7b8c98653d296",
+    "src/geolifeclef/ecological_selection.py": "67e646fb011f987c05aec1a174f06c6d95805de3aa8f08dd72e0bbdddafd9685",
+    "src/geolifeclef/ranking_selection.py": "d7a0ca4f14315d0f149139187d2d88bce25eb0c0f09b8e6b3edc3cfe9b48d9fb",
+    "src/geolifeclef/reliability.py": "3a34882cdf7ff14c31af08b405fdaaed42fca420b35241ecf9d800b52dfeeb1c"
+  },
+  "input_hashes": {
+    "locked_cohort.csv": "1cec54a4c63c3366949335246ccd5b746b13d7c0d5cc4853710b0928fac8fd4c",
+    "eligible_species.npy": "6ab1049feefeb7af566475184bfd2cae14276c72094ee611c9135dc72174f76a"
+  },
+  "prior_input_hashes": {
+    "cohort_roles.csv": "246f71d750e590a81eb37c903ec8cab7f80931498c44f975d89c4381554cd4ef",
+    "eligible_species.npy": "f53a09dd18edaeed9275d1a24f7fdab37ac5398bfa858a587289ef8243406f0b",
+    "rare_species_mask.npy": "450022f589338ee0fa5cc83f7354c9dabd941fa63bf8a22bc76d01357e96e3ad",
+    "sealed_eval_test_targets.h5": "bf52746612d1d784d10a8696be94096d1162eaf3bb43a38011087d5af8730da6"
+  },
+  "E3_outcomes_accessed": false,
+  "metadata_audit_sha256": "25459f279114692a395712bfce9f957e6b5b970f5610feb2d54703daff60933a"
+}

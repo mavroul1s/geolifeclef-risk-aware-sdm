@@ -1,0 +1,15 @@
+{
+  "designed_at_utc": "2026-11-16T09:10:47.207129+00:00",
+  "fresh_data": false,
+  "external_outcomes_inspected": false,
+  "source_sha256": "71a455a2b868d1164a8f0f6f8d442954ae4f1e46066410cce3c4217cf47c209e",
+  "target": "80% predicted rare occurrence mass, base score 1-SDC, same quotas",
+  "primary_candidate": "rare_count_constraint",
+  "controls": [
+    "SDC",
+    "mean_confidence",
+    "lean_risk",
+    "raw_rare_constraint",
+    "total_count_constraint"
+  ]
+}

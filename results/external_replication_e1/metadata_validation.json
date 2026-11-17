@@ -1,0 +1,8 @@
+{
+  "minimum_cross_role_km": {
+    "assessment__risk_calibration": 50.02756620199465,
+    "assessment__probability_calibration": 50.2867107940597,
+    "risk_calibration__probability_calibration": 50.59322905417319
+  },
+  "locations_and_areas_match": true
+}

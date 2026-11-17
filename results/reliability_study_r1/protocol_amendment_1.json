@@ -1,0 +1,9 @@
+{
+  "amended_at_utc": "2026-11-13T17:22:41Z",
+  "reason": "Before inspecting any new GPU accuracy results: isolate uncertainty by adding model signals to the same metadata-plus-distance baseline; environmental novelty remains a separate ablation.",
+  "initial_config_sha256": "c4f911136e825ca684f84561c19040f18b89056e88398cb8fbeae4502c170efd",
+  "amended_config_sha256": "a45db6144388fbc77dc2411cd56a29d6c66531ee5d67ccc78722f7ad2d695b69",
+  "new_GPU_accuracy_results_inspected": false,
+  "neural_architecture_seeds_epochs_and_roles_changed": false,
+  "smoke_promotion_remains_technical_only": true
+}

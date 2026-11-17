@@ -1,0 +1,19 @@
+{
+  "status": "technical_probe_passed",
+  "gpu": "Tesla T4",
+  "gpu_memory_bytes": 15636037632,
+  "peak_gpu_allocated_bytes": 106728960,
+  "species": 5016,
+  "real_surveys_checked": 16,
+  "io_seconds": 0.8278169139999818,
+  "toy_backward_losses_not_accuracy": [
+    0.7348659038543701,
+    0.7029597759246826,
+    0.6731999516487122
+  ],
+  "seconds": 13.085960776999968,
+  "torch": "2.11.0+cu130",
+  "sklearn": "1.6.1",
+  "scientific_performance_claim": false,
+  "submission_made": false
+}

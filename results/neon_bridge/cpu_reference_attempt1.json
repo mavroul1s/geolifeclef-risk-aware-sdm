@@ -1,0 +1,54 @@
+{
+  "status": "failed",
+  "at_utc": "2026-11-16T16:03:08.846282+00:00",
+  "elapsed_seconds": 11.541941770999983,
+  "torch_version": "2.5.1+cpu",
+  "device": "CPU",
+  "dtype": "float32",
+  "selection_fixed_before_comparison": "first 128 published test rows; all 5771 classes",
+  "target_labels_read": false,
+  "NEON_outcomes_read": false,
+  "runs": [
+    {
+      "run": "aggregation_s0",
+      "rows": 128,
+      "classes": 5771,
+      "max_absolute_probability_error": 9.238719940185547e-07,
+      "mean_absolute_probability_error": 1.0833158411718341e-09,
+      "reference_probability_array_sha256": "d193a699e99070858c2fa0d517fff3be629fab155693dadcacc46517606393c1",
+      "new_reference_network_bytes": 10485760,
+      "reference_range_requests": 10,
+      "reference_passed": true,
+      "checkpoint_sha256": "771055f5ab82d32f2923d1c2aeb78b0e534697b01a67a32c80a27279c7659454"
+    },
+    {
+      "run": "optimized_deepsdm_s0",
+      "rows": 128,
+      "classes": 5771,
+      "max_absolute_probability_error": 0.4383653402328491,
+      "mean_absolute_probability_error": 0.0068269006434142285,
+      "reference_probability_array_sha256": "e1c8e793ee1dbbb244737c58dda0c2dcf79f467c39a7aa307b9c32ff1445c8ad",
+      "new_reference_network_bytes": 0,
+      "reference_range_requests": 0,
+      "reference_passed": false,
+      "checkpoint_sha256": "323e5fcc70c2f2cf82a1709f229e8b0125bd1b46fe9e064c2a3e2ce8bc8c5127"
+    }
+  ],
+  "input_source_sha256": {
+    "configs/neon_bridge.json": "eb521d0681fb8d1588b56715f38c766c1fe8ebbfc533aad6ef16696cc75a654b",
+    "scripts/check_sage_reference.py": "cfeffe214b82274f9f4533d8f9afdcb77811c5044b9d44fa0926c2a210423801",
+    "src/geolifeclef/sage_inference.py": "394374174d1ea1ce8ed0d67a93bc8129629f866dc5b1eb587ee04fc6bc1a9d95",
+    "src/geolifeclef/range_io.py": "425568a324787457078a7c584da4729bfe89e745d59e6d72fb650f84f9d03019",
+    "data/neon_confirmation_feasibility/sage_configs.tar": "09c0f6604d3f31dafa28a490e6bdec6b74cfd0c4cf7c77df5b82daebcd940a0f",
+    "data/neon_bridge/published_source/src/data_modules/datamodule.py": "bf8d4de519498aadb51390820cf5a1514e85ee179c79e7be9aa55ce5d1f108ef",
+    "data/external_replication_e1/test_indices.npy": "47c7261ee36c216a49567792242a16ac05da345165355ceebd69c1ef6a601838",
+    "data/neon_bridge/reference_predictors/eval_chelsa.h5": "49483d07b275fc3f7d7942b39fe656daa40b7c47c2e533eca833023498bffa41",
+    "data/neon_bridge/reference_predictors/eval_soilgrids.h5": "05114ad7f9f53411310c9f9a09ecc4e693f25621cc2cbaa38f5d7049788abfc2",
+    "data/neon_bridge/reference_predictors/eval_topography.h5": "3ff8c6cdd8ca1c60b3053a40722342bd1f2139616643a6e07f864fd3965ace2e",
+    "data/neon_bridge/reference_predictors/eval_human_footprint.h5": "3f9b6c2a088b7f835a912b39946bf23ec5ba4308f4df351663b219b8c0d803e2",
+    "data/neon_bridge/checkpoints/aggregation_s0/best.ckpt": "771055f5ab82d32f2923d1c2aeb78b0e534697b01a67a32c80a27279c7659454",
+    "data/external_replication_e1/optimized_deepsdm_s0/test_predictions.h5": "372f2248df97ee6c2a800263ea83e6fc465f5a52662a094efff35cf610502607",
+    "data/neon_bridge/checkpoints/optimized_deepsdm_s0/best.ckpt": "323e5fcc70c2f2cf82a1709f229e8b0125bd1b46fe9e064c2a3e2ce8bc8c5127"
+  },
+  "reference_bundle_sha256": "b652ecda8bf3d87fc84cbfd41bae2fc89490601680d4feb23ff5f53fed5b5e98"
+}

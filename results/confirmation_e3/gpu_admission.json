@@ -1,0 +1,8 @@
+{
+  "user_authorized": true,
+  "primary_scientific_success": false,
+  "correctness_tests_passed": true,
+  "GPU_job_launched": false,
+  "reason": "co-primary confirmation and model guards failed",
+  "future_qualifying_GPU_authorization_remains": true
+}

@@ -1,0 +1,331 @@
+{
+  "status": "completed_posthoc_CPU_ablation",
+  "designed_after_R1_assessment_inspection": true,
+  "independent_confirmation": false,
+  "new_GPU_fits": 0,
+  "risk_regressor_fits": 14,
+  "features": {
+    "metadata_distance": [
+      "log_area",
+      "year",
+      "log_geo_uncertainty",
+      "log_pa_distance"
+    ],
+    "plus_mass_only": [
+      "log_area",
+      "year",
+      "log_geo_uncertainty",
+      "log_pa_distance",
+      "probability_mass"
+    ],
+    "plus_decision_confidence": [
+      "log_area",
+      "year",
+      "log_geo_uncertainty",
+      "log_pa_distance",
+      "probability_mass",
+      "max_probability",
+      "mean_top18_confidence",
+      "expected_F1_surrogate"
+    ],
+    "plus_decision_and_entropy": [
+      "log_area",
+      "year",
+      "log_geo_uncertainty",
+      "log_pa_distance",
+      "probability_mass",
+      "max_probability",
+      "mean_top18_confidence",
+      "expected_F1_surrogate",
+      "top18_entropy",
+      "all_label_entropy"
+    ],
+    "plus_ensemble_only": [
+      "log_area",
+      "year",
+      "log_geo_uncertainty",
+      "log_pa_distance",
+      "ensemble_variance",
+      "top18_variance",
+      "ensemble_mutual_information",
+      "set_disagreement"
+    ],
+    "full_model_signals": [
+      "log_area",
+      "year",
+      "log_geo_uncertainty",
+      "log_pa_distance",
+      "probability_mass",
+      "max_probability",
+      "mean_top18_confidence",
+      "expected_F1_surrogate",
+      "top18_entropy",
+      "all_label_entropy",
+      "ensemble_variance",
+      "top18_variance",
+      "ensemble_mutual_information",
+      "set_disagreement"
+    ],
+    "full_model_and_environment": [
+      "log_area",
+      "year",
+      "log_geo_uncertainty",
+      "log_pa_distance",
+      "probability_mass",
+      "max_probability",
+      "mean_top18_confidence",
+      "expected_F1_surrogate",
+      "top18_entropy",
+      "all_label_entropy",
+      "ensemble_variance",
+      "top18_variance",
+      "ensemble_mutual_information",
+      "set_disagreement",
+      "environment_novelty"
+    ]
+  },
+  "risk_regressor": {
+    "max_iter": 80,
+    "max_leaf_nodes": 7,
+    "min_samples_leaf": 50,
+    "l2_regularization": 5,
+    "learning_rate": 0.05,
+    "early_stopping": false,
+    "random_state": 20261113
+  },
+  "results": [
+    {
+      "fold": 0,
+      "variant": "metadata_distance",
+      "F1": 0.35411424387857116,
+      "retained": 12634,
+      "rare_hits": 214
+    },
+    {
+      "fold": 0,
+      "variant": "plus_mass_only",
+      "F1": 0.352989436049311,
+      "retained": 12634,
+      "rare_hits": 219
+    },
+    {
+      "fold": 0,
+      "variant": "plus_decision_confidence",
+      "F1": 0.3677870600033437,
+      "retained": 12634,
+      "rare_hits": 240
+    },
+    {
+      "fold": 0,
+      "variant": "plus_decision_and_entropy",
+      "F1": 0.36720015317378096,
+      "retained": 12634,
+      "rare_hits": 242
+    },
+    {
+      "fold": 0,
+      "variant": "plus_ensemble_only",
+      "F1": 0.3648064080234035,
+      "retained": 12634,
+      "rare_hits": 238
+    },
+    {
+      "fold": 0,
+      "variant": "full_model_signals",
+      "F1": 0.3672468596745668,
+      "retained": 12634,
+      "rare_hits": 240
+    },
+    {
+      "fold": 0,
+      "variant": "full_model_and_environment",
+      "F1": 0.36713568041501016,
+      "retained": 12634,
+      "rare_hits": 240
+    },
+    {
+      "fold": 1,
+      "variant": "metadata_distance",
+      "F1": 0.3671727887308472,
+      "retained": 12623,
+      "rare_hits": 206
+    },
+    {
+      "fold": 1,
+      "variant": "plus_mass_only",
+      "F1": 0.36868446746533284,
+      "retained": 12623,
+      "rare_hits": 206
+    },
+    {
+      "fold": 1,
+      "variant": "plus_decision_confidence",
+      "F1": 0.3834983718385379,
+      "retained": 12623,
+      "rare_hits": 188
+    },
+    {
+      "fold": 1,
+      "variant": "plus_decision_and_entropy",
+      "F1": 0.3836758888192551,
+      "retained": 12623,
+      "rare_hits": 197
+    },
+    {
+      "fold": 1,
+      "variant": "plus_ensemble_only",
+      "F1": 0.38088839988268003,
+      "retained": 12623,
+      "rare_hits": 196
+    },
+    {
+      "fold": 1,
+      "variant": "full_model_signals",
+      "F1": 0.3835244386928521,
+      "retained": 12623,
+      "rare_hits": 199
+    },
+    {
+      "fold": 1,
+      "variant": "full_model_and_environment",
+      "F1": 0.3836469070894333,
+      "retained": 12623,
+      "rare_hits": 198
+    },
+    {
+      "fold": "pooled",
+      "variant": "metadata_distance",
+      "F1": 0.36064067265753463,
+      "retained": 25257,
+      "rare_hits": 420
+    },
+    {
+      "fold": "pooled",
+      "variant": "plus_mass_only",
+      "F1": 0.3608335339851088,
+      "retained": 25257,
+      "rare_hits": 425
+    },
+    {
+      "fold": "pooled",
+      "variant": "plus_decision_confidence",
+      "F1": 0.3756392946034806,
+      "retained": 25257,
+      "rare_hits": 428
+    },
+    {
+      "fold": "pooled",
+      "variant": "plus_decision_and_entropy",
+      "F1": 0.375434433217049,
+      "retained": 25257,
+      "rare_hits": 439
+    },
+    {
+      "fold": "pooled",
+      "variant": "plus_ensemble_only",
+      "F1": 0.3728439019157758,
+      "retained": 25257,
+      "rare_hits": 434
+    },
+    {
+      "fold": "pooled",
+      "variant": "full_model_signals",
+      "F1": 0.3753821045551074,
+      "retained": 25257,
+      "rare_hits": 439
+    },
+    {
+      "fold": "pooled",
+      "variant": "full_model_and_environment",
+      "F1": 0.37538769824417606,
+      "retained": 25257,
+      "rare_hits": 438
+    }
+  ],
+  "comparisons_against_decision_and_entropy": {
+    "metadata_distance": {
+      "gain": -0.014793760559514368,
+      "ci95": [
+        -0.018367821592510512,
+        -0.010966545896273043
+      ],
+      "clusters": 109,
+      "valid_repetitions": 2000,
+      "repetitions": 2000,
+      "interpretation": "conditional descriptive spatial interval on historically consumed data"
+    },
+    "plus_mass_only": {
+      "gain": -0.01460089923194019,
+      "ci95": [
+        -0.018868670522486815,
+        -0.01082911360455168
+      ],
+      "clusters": 109,
+      "valid_repetitions": 2000,
+      "repetitions": 2000,
+      "interpretation": "conditional descriptive spatial interval on historically consumed data"
+    },
+    "plus_decision_confidence": {
+      "gain": 0.00020486138643160956,
+      "ci95": [
+        -0.0002289794308216533,
+        0.0006682462973726447
+      ],
+      "clusters": 109,
+      "valid_repetitions": 2000,
+      "repetitions": 2000,
+      "interpretation": "conditional descriptive spatial interval on historically consumed data"
+    },
+    "plus_decision_and_entropy": {
+      "gain": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "clusters": 109,
+      "valid_repetitions": 2000,
+      "repetitions": 2000,
+      "interpretation": "conditional descriptive spatial interval on historically consumed data"
+    },
+    "plus_ensemble_only": {
+      "gain": -0.00259053130127318,
+      "ci95": [
+        -0.003515362903475239,
+        -0.001192493547515711
+      ],
+      "clusters": 109,
+      "valid_repetitions": 2000,
+      "repetitions": 2000,
+      "interpretation": "conditional descriptive spatial interval on historically consumed data"
+    },
+    "full_model_signals": {
+      "gain": -5.2328661941603016e-05,
+      "ci95": [
+        -0.0005289114868782224,
+        0.0003951185105163911
+      ],
+      "clusters": 109,
+      "valid_repetitions": 2000,
+      "repetitions": 2000,
+      "interpretation": "conditional descriptive spatial interval on historically consumed data"
+    },
+    "full_model_and_environment": {
+      "gain": -4.6734972872941594e-05,
+      "ci95": [
+        -0.0005328094774068551,
+        0.0003313376624081875
+      ],
+      "clusters": 109,
+      "valid_repetitions": 2000,
+      "repetitions": 2000,
+      "interpretation": "conditional descriptive spatial interval on historically consumed data"
+    }
+  },
+  "seconds": 1.8371662069985177,
+  "limitations": [
+    "Exploratory post-hoc comparisons; not registered primary hypotheses.",
+    "Correlated-feature ablations measure predictive utility, not causal mechanisms.",
+    "All fits use risk-calibration labels only; assessment outcomes evaluate the fixed feature families.",
+    "Local library versions can differ from Kaggle; all ablations are refit in the same local environment."
+  ]
+}

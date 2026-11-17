@@ -1,0 +1,64 @@
+{
+  "status": "post_primary_diagnostic_complete",
+  "primary_result_sha256": "97f7492a76c32f54e6a348ba6f5147a83a4d2ac49fadbefe836d3e9c829462e4",
+  "primary_scientific_admission_unchanged": false,
+  "primary_success_unchanged": false,
+  "all_input_cells": 163,
+  "scorable_cells": 65,
+  "excluded_cells": 98,
+  "all_cells_median_known_fraction": 0.6531531531531531,
+  "all_cells_mean_F1_identification_width": 0.5298918542270461,
+  "scorable_mean_F1_identification_width": 0.23510944393478342,
+  "selection_difference_identification_bounds_scorable": [
+    -0.062504034016644,
+    0.06289688895679481
+  ],
+  "MSE_gain_identification_bounds_scorable": [
+    -0.06888257720921265,
+    -0.012460725989056698
+  ],
+  "magnitude_bias_variance_identity": {
+    "HGB": {
+      "prediction_mean": 0.1387073504176567,
+      "quality_mean": 0.4248015542569359,
+      "mean_bias": -0.2860942038392792,
+      "squared_bias": 0.08184989347043103,
+      "prediction_variance": 0.0020531778099120573,
+      "quality_variance": 0.01885126214021893,
+      "minus_twice_covariance": 0.0019197829632679063,
+      "MSE": 0.10467411638382994
+    },
+    "training_mean": {
+      "prediction_mean": 0.2506271241593416,
+      "quality_mean": 0.4248015542569359,
+      "mean_bias": -0.1741744300975943,
+      "squared_bias": 0.030336732099821767,
+      "prediction_variance": 0.0,
+      "quality_variance": 0.01885126214021893,
+      "minus_twice_covariance": -0.0,
+      "MSE": 0.049187994240040694
+    },
+    "affine_SDC": {
+      "prediction_mean": 0.24751444937558484,
+      "quality_mean": 0.4248015542569359,
+      "mean_bias": -0.17728710488135105,
+      "squared_bias": 0.03143071755721117,
+      "prediction_variance": 0.0034543456355162457,
+      "quality_variance": 0.01885126214021893,
+      "minus_twice_covariance": -0.0024789781181848774,
+      "MSE": 0.05125734721476146
+    },
+    "raw_SDC": {
+      "prediction_mean": 0.26863124856967013,
+      "quality_mean": 0.4248015542569359,
+      "mean_bias": -0.15617030568726575,
+      "squared_bias": 0.02438916437845403,
+      "prediction_variance": 0.007060296175878339,
+      "quality_variance": 0.01885126214021893,
+      "minus_twice_covariance": -0.003544061570052083,
+      "MSE": 0.04675666112449922
+    }
+  },
+  "no_policy_refit_or_threshold_relaxation": true,
+  "interpretation": "Elementary sharp bounds under independent unknown binary labels, conditional on native/class/missingness contracts; not statistical confidence intervals or new theory. Additional taxonomic constraints may tighten them. This post-primary diagnostic cannot rescue failed admission."
+}

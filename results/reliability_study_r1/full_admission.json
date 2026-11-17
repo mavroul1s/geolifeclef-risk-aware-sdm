@@ -1,0 +1,21 @@
+{
+  "status": "admitted",
+  "technical_smoke_verified": true,
+  "smoke_manifest_verified": true,
+  "smoke_rows": 3712,
+  "full_feature_surveys": 81827,
+  "full_fold_training_surveys": [
+    35811,
+    37487
+  ],
+  "smoke_steady_epoch_seconds": 1.133294439000025,
+  "estimate_hours": 2.4648260357394207,
+  "preparation_estimate_seconds": 2900.4142679102197,
+  "training_estimate_seconds": 3285.412831531118,
+  "other_estimate_seconds": 1787.5466292205765,
+  "overhead_reserve_seconds": 900,
+  "guard_hours": 5.5,
+  "accuracy_scores_used_for_admission": false,
+  "smoke_config_is_initial_pre_amendment": true,
+  "primary_amendment_changes_only_CPU_risk_comparisons": true
+}

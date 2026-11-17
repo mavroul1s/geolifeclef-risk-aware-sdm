@@ -1,0 +1,65 @@
+{
+  "at_utc": "2026-11-17T07:49:24.223907+00:00",
+  "identity": {
+    "configs/taxonomic_resolution_t1.json": "cd42af8335cdd6d2f489f902b28d6206562871a5000e09642ffdf432516294cc",
+    "docs/taxonomic_resolution_t1_protocol.md": "3f14a799419f0156ddd6fbd7cf18d3b065cb1c6754bebace8b518b13e55eed8c",
+    "scripts/run_taxonomic_resolution_t1.py": "88fbc9536fac1565c1cc820e36d36ba4ba6fe6b4c91d79b94a411c084b29fd94",
+    "scripts/validate_taxonomic_resolution_t1.py": "2318be22d529a8792bdeb2aa7ca07b9eaf20d3ad03acc11dd1b807107b9fc947",
+    "src/geolifeclef/taxonomic_censoring.py": "3fb02877dfa379c24813bc86bef6f0333eb3f7fa8459914b6e39dfecb13f103a",
+    "tests/test_taxonomic_censoring.py": "76b9a30c6052fe3a7a2a74de8c1cf88af7c032319282f62c7f7cb1a428bf5d0f",
+    "src/geolifeclef/external_reliability.py": "7ba86d1501dfbcd415ccbebca8f0258c8e85ca6ab1de5bb2cac7b8c98653d296",
+    "src/geolifeclef/ecological_selection.py": "67e646fb011f987c05aec1a174f06c6d95805de3aa8f08dd72e0bbdddafd9685",
+    "src/geolifeclef/neon_assessment.py": "8215215e423b29ad1cb6665cc477d8647b6ab550635b77575701e5bcf80e6605",
+    "src/geolifeclef/partial_set_bounds.py": "558cccd4598e3d8413623f94d18f2802a857e049d72dea82f196b49b9e1cf920",
+    "src/geolifeclef/reliability.py": "3a34882cdf7ff14c31af08b405fdaaed42fca420b35241ecf9d800b52dfeeb1c",
+    "src/geolifeclef/sage_inference.py": "394374174d1ea1ce8ed0d67a93bc8129629f866dc5b1eb587ee04fc6bc1a9d95",
+    "configs/confirmation_e4.json": "035cc048269f349aa45b6f1e75f5cf140944aa17cb376a98b26ab646da62519e",
+    "results/confirmation_e4/fit_parameters.json": "c5975b1ac7fd98bef499e2e51c1dada94498f2bc269e26f0ae27f60c35353a8b",
+    "data/confirmation_e4/label_contract.npz": "b6cba9b42fa7d0fbb61939b7303bef09672b55853af5583a513d0e26bb00be38",
+    "data/confirmation_e4/source_calibration_roles.csv": "599a5167cbe979db6bf747692523ce9ed1a605ddc2ab8732cb3023e8e385d019",
+    "data/confirmation_e4/neon_assessment_roles.csv": "90a9bb1f77d042dafc33b66b7e86f1fe375a092fa2c51e32548d46c594be4645",
+    "data/confirmation_e4/frozen_policy.npz": "8af4c858171d703fed8e6ff45adafc44b668c5aad47885350ddaa0632d3e4488",
+    "artifacts/neon_e4_gpu/e4_probabilities.npz": "0dd3a46bc532bff5444daebd2f691c6a5239b80c2977c5a3ddee082626010094",
+    "data/neon_bridge/model_configs.json": "8bd288a02f26457e8c18634cd62c6f04f8a0b4703f0deebec306e6ff34860237",
+    "data/neon_bridge/checkpoints/aggregation_s0/best.ckpt": "771055f5ab82d32f2923d1c2aeb78b0e534697b01a67a32c80a27279c7659454",
+    "data/neon_bridge/cpu_reference.npz": "b652ecda8bf3d87fc84cbfd41bae2fc89490601680d4feb23ff5f53fed5b5e98",
+    "data/neon_bridge/species_names.csv": "82e7631c6b9d884582047892898faddff123bc52c1f0ac3517faeb2b4c082557",
+    "data/external_replication_e1/cohort_roles.csv": "246f71d750e590a81eb37c903ec8cab7f80931498c44f975d89c4381554cd4ef",
+    "data/external_replication_e1/eligible_species.npy": "f53a09dd18edaeed9275d1a24f7fdab37ac5398bfa858a587289ef8243406f0b",
+    "data/external_replication_e1/rare_species_mask.npy": "450022f589338ee0fa5cc83f7354c9dabd941fa63bf8a22bc76d01357e96e3ad",
+    "data/external_replication_e1/targets/species_properties_1km.csv": "3d27c15f895d9cb9054ae14c06cbaba346a27e916dda741043bfadd3181de5b0",
+    "data/external_replication_e1/sealed_eval_test_targets.h5": "bf52746612d1d784d10a8696be94096d1162eaf3bb43a38011087d5af8730da6",
+    "data/neon_bridge/reference_predictors/eval_chelsa.h5": "49483d07b275fc3f7d7942b39fe656daa40b7c47c2e533eca833023498bffa41",
+    "data/neon_bridge/reference_predictors/eval_soilgrids.h5": "05114ad7f9f53411310c9f9a09ecc4e693f25621cc2cbaa38f5d7049788abfc2",
+    "data/neon_bridge/reference_predictors/eval_topography.h5": "3ff8c6cdd8ca1c60b3053a40722342bd1f2139616643a6e07f864fd3965ace2e",
+    "data/neon_bridge/reference_predictors/eval_human_footprint.h5": "3f9b6c2a088b7f835a912b39946bf23ec5ba4308f4df351663b219b8c0d803e2"
+  },
+  "historical_artifacts": {
+    "external_replication_e1": {
+      "files_verified": 44,
+      "manifest_sha256": "7944e637cab4cef53215dbd5476e6106d8d2a179944909ac103a77f90a6fff57"
+    },
+    "ranking_study_e2": {
+      "files_verified": 24,
+      "manifest_sha256": "c760f223caca3497634983dbc2764c91f9fe48b861b252ffa92ba8c8b01c0cd6"
+    },
+    "confirmation_e3": {
+      "files_verified": 48,
+      "manifest_sha256": "a1477d4d4e8cadd2cc0ac55c9a7e1c983d8e5fbdd71ed790833028c418b765e5"
+    },
+    "neon_confirmation_feasibility": {
+      "files_verified": 3,
+      "manifest_sha256": "c1d2589a1128ee851e58295fabb7efd1dd3c0cb1a0821f4417bdf43cb0e5482f"
+    },
+    "neon_bridge": {
+      "files_verified": 665,
+      "manifest_sha256": "b295a90f12bc6699b2b979e5ab8a682a0711d217d6280749452a515a1930cdbe"
+    },
+    "confirmation_e4": {
+      "files_verified": 249,
+      "manifest_sha256": "968c557c73a9e7fb2a37e2bb6f8602d13e2d208aa488e5606b101d9a3ce8a3a9"
+    }
+  },
+  "assessment_labels_materialized_by_T1": false,
+  "data_reuse": "all assessment outcomes historically consumed; local development lock only"
+}

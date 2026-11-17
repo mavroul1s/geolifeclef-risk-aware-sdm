@@ -1,0 +1,26 @@
+[
+  {
+    "file": "level3.dbf",
+    "bytes": 36693,
+    "github_blob_sha1_verified": true,
+    "sha256": "c9509d9678ffd118922651d129dc15f2af34052fcf988080449ff5905c759506"
+  },
+  {
+    "file": "level3.prj",
+    "bytes": 145,
+    "github_blob_sha1_verified": true,
+    "sha256": "a02a27b1d1982c8516d83398e85a3c8b1aef1713c13ef4d84d7bde17430c07c4"
+  },
+  {
+    "file": "level3.shp",
+    "bytes": 7282396,
+    "github_blob_sha1_verified": true,
+    "sha256": "df202da01ea58a46c6f7a7674bd61f438fbef6c43f3ca1f05855852fab6eb8a5"
+  },
+  {
+    "file": "level3.shx",
+    "bytes": 3052,
+    "github_blob_sha1_verified": true,
+    "sha256": "664641ae7afd886367f380d92bb3ba7ae0b380546ab1884d3cb11c9b163d568a"
+  }
+]

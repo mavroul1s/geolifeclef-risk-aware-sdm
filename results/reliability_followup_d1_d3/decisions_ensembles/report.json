@@ -1,0 +1,146 @@
+{
+  "status": "completed_exploratory_D1_D2",
+  "new_neural_fits": 0,
+  "inference_status": "complete_with_numerical_tie_sensitivity",
+  "numerical_tie_sensitivity": true,
+  "original_exact_member_set_guard_passed": false,
+  "original_immutable_R1_averaging_reference": {
+    "ensemble_full_F1": 0.3526878286926852,
+    "mean_individual_full_F1": 0.34575539432403785,
+    "contrast": {
+      "gain": 0.006932434368647329,
+      "ci95": [
+        0.005989605493973181,
+        0.008527834148952737
+      ],
+      "clusters": 109,
+      "interpretation": "descriptive conditional spatial interval on reused development data"
+    },
+    "source": "original immutable R1 CSV and member species sets, not regenerated predictions"
+  },
+  "checkpoint_inferences": 6,
+  "fresh_assessment": false,
+  "verified_inference_outputs": 9,
+  "contrasts": {
+    "calibrated_threshold__lean_vs__mean_set_confidence": {
+      "gain": 0.0030475334543839105,
+      "ci95": [
+        0.0009071877424438477,
+        0.006412453809621305
+      ],
+      "clusters": 109,
+      "valid_repetitions": 2000,
+      "repetitions": 2000,
+      "interpretation": "conditional descriptive spatial interval on historically consumed data"
+    },
+    "calibrated_threshold__lean_vs__metadata_distance": {
+      "gain": 0.01965607032166905,
+      "ci95": [
+        0.014978885323309798,
+        0.022985415976186765
+      ],
+      "clusters": 109,
+      "valid_repetitions": 2000,
+      "repetitions": 2000,
+      "interpretation": "conditional descriptive spatial interval on historically consumed data"
+    },
+    "expected_F1_surrogate__lean_vs__mean_set_confidence": {
+      "gain": 0.0008852995030160238,
+      "ci95": [
+        -0.0005710764586147055,
+        0.002516256824065202
+      ],
+      "clusters": 109,
+      "valid_repetitions": 2000,
+      "repetitions": 2000,
+      "interpretation": "conditional descriptive spatial interval on historically consumed data"
+    },
+    "expected_F1_surrogate__lean_vs__metadata_distance": {
+      "gain": 0.01599397523888635,
+      "ci95": [
+        0.011815421273103309,
+        0.019368417525797654
+      ],
+      "clusters": 109,
+      "valid_repetitions": 2000,
+      "repetitions": 2000,
+      "interpretation": "conditional descriptive spatial interval on historically consumed data"
+    },
+    "top18__lean_vs__mean_set_confidence": {
+      "gain": 0.004585342149634575,
+      "ci95": [
+        0.0016541956637526362,
+        0.00932772156462416
+      ],
+      "clusters": 109,
+      "valid_repetitions": 2000,
+      "repetitions": 2000,
+      "interpretation": "conditional descriptive spatial interval on historically consumed data"
+    },
+    "top18__lean_vs__metadata_distance": {
+      "gain": 0.01476216611090514,
+      "ci95": [
+        0.010757058000162436,
+        0.01826071435654228
+      ],
+      "clusters": 109,
+      "valid_repetitions": 2000,
+      "repetitions": 2000,
+      "interpretation": "conditional descriptive spatial interval on historically consumed data"
+    },
+    "top18__ensemble_vs_mean_individual_F1": {
+      "gain": 0.006929413171053957,
+      "ci95": [
+        0.00598422457467152,
+        0.008527422800923454
+      ],
+      "clusters": 109,
+      "interpretation": "descriptive conditional spatial interval on reused development data"
+    },
+    "calibrated_threshold__ensemble_vs_mean_individual_F1": {
+      "gain": 0.005781192811436662,
+      "ci95": [
+        0.0031805559120266424,
+        0.008727349881466714
+      ],
+      "clusters": 109,
+      "interpretation": "descriptive conditional spatial interval on reused development data"
+    },
+    "expected_F1_surrogate__ensemble_vs_mean_individual_F1": {
+      "gain": 0.008135955032014034,
+      "ci95": [
+        0.006867542616728497,
+        0.009899645088977714
+      ],
+      "clusters": 109,
+      "interpretation": "descriptive conditional spatial interval on reused development data"
+    },
+    "calibrated_threshold__vs_top18_full_coverage": {
+      "gain": 0.001274622730836078,
+      "ci95": [
+        -0.005366676931394601,
+        0.007448338110227219
+      ],
+      "clusters": 109,
+      "interpretation": "descriptive conditional spatial interval on reused development data"
+    },
+    "expected_F1_surrogate__vs_top18_full_coverage": {
+      "gain": 0.011848262769138895,
+      "ci95": [
+        0.008054876440566927,
+        0.015584948565367109
+      ],
+      "clusters": 109,
+      "interpretation": "descriptive conditional spatial interval on reused development data"
+    }
+  },
+  "seconds": 21.719879652999225,
+  "limitations": [
+    "Methods and feature families designed after R1",
+    "Member mean is expected individual-model F1, not a fourth prediction model",
+    "Three members are not three independent ensemble trials",
+    "Thresholds use probability calibration only; errors use disjoint risk-calibration labels",
+    "No independent confirmation or competition submission",
+    "Any failed exact-set reproduction is preserved; numerical rank-equivalence audit is separate"
+  ]
+}

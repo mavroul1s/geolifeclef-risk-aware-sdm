@@ -1,0 +1,35 @@
+{
+  "prepared_at_utc": "2026-11-16T10:44:48.757728+00:00",
+  "cells": 654,
+  "blocks": 19,
+  "cohort_ID_sha256": "8edacda24b589392611e2cd1cc873d8fefd0997589adbf43f9a24cdc21e79f6e",
+  "countries": {
+    "Brazil": 363,
+    "Saudi Arabia": 108,
+    "Australia": 100,
+    "United States": 77,
+    "Canada": 5,
+    "Turkey": 1
+  },
+  "sources": {
+    "SA-BR-002": 363,
+    "AS-SA-001": 108,
+    "AU-AU-002": 100,
+    "NA-US-006": 68,
+    "NA-US-002": 6,
+    "NA-CA-004": 5,
+    "NA-US-002|NA-US-006": 3,
+    "00-TR-001": 1
+  },
+  "original_area_bin_counts": {
+    "3": 654
+  },
+  "secondary_area_edges_log1p": [
+    7.313886831633462,
+    8.006700845440367,
+    8.294299608857235
+  ],
+  "minimum_distance_consumed_km": 107.506824394648,
+  "outcome_values_read": false,
+  "prediction_values_read": false
+}

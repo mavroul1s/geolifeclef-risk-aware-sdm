@@ -9,4 +9,25 @@ __pycache__/
 .pytest_cache/
 .venv/
 *.py[cod]
+results/reliability_study_r1/full_output/
+results/reliability_followup_d1_d3/inference_output/
+results/reliability_followup_d1_d3/regional/assessment_audit.csv
+
+# Credentials and machine-local agent context stay on this computer.
+.env.*
+!.env.example
+kaggle_api_key/
+neon_api_key/
+.agents/
+.codex/
+.claude/
+AGENTS.md
+**/AGENTS.md
+CLAUDE.md
+GEMINI.md
+docs/*HANDOFF*.md
+docs/NEXT_CHAT_PROMPT.md
+docs/gpu_experiment_authorization.md
+results/**/obsidian_update.json
+results/**/upload_review_note.md
 

@@ -1,0 +1,10 @@
+{
+  "label_oracle_is_deployable": false,
+  "model_conditional_F1_headroom": {
+    "optimized_deepsdm_s0": 0.03165962505399071,
+    "optimized_deepsdm_s1": 0.03261522614989887,
+    "randomforest_s0": 0.026699842394295785,
+    "randomforest_s1": 0.025517730490348976
+  },
+  "interpretation": "optimistic same-quota ceiling using validation outcomes; not an achieved method or benchmark improvement"
+}

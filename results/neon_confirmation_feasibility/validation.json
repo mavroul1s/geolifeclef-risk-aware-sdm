@@ -1,0 +1,9 @@
+{
+  "status": "metadata_only_passed",
+  "sites": 47,
+  "outcomes_read": false,
+  "prediction_ready": false,
+  "plot_level_nonoverlap_established": false,
+  "metadata_hashes_match": true,
+  "required_next_step": "plot/taxonomy/environmental predictor bridge and reference inference tests"
+}

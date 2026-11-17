@@ -1,0 +1,40 @@
+{
+  "status": "covariate_roles_prepared_outcomes_closed",
+  "prepared_at_utc": "2026-11-16T09:33:06.665596+00:00",
+  "source_candidate_cells": 11130,
+  "external_published_test_cohort": 7477,
+  "buffer_excluded_rows": 708,
+  "role_counts": {
+    "assessment": 5251,
+    "probability_calibration": 1165,
+    "risk_calibration": 1061
+  },
+  "role_ID_hashes": {
+    "probability_calibration": "b59f2a46d4c50d3039e840cb05f127267b299f5dfee549aa6b7f22048317eff5",
+    "risk_calibration": "7984d0e7e031107d69c9e49afdc10a10d90bb02cc54832796e244f1b6134781a",
+    "assessment": "b0d3381ffd0a9d898a7ea7fde06b382ef905b36d4c587fae0d12da6ba8913506"
+  },
+  "area_provenance_excluded_cells": 530,
+  "area_admission_before_species_outcomes": true,
+  "role_blocks": {
+    "assessment": 73,
+    "probability_calibration": 29,
+    "risk_calibration": 30
+  },
+  "area_edges_log1p": [
+    4.61512051684126,
+    5.303304908059076,
+    5.993961427306569
+  ],
+  "rare_relative_prevalence_cutoff": 0.2350182693188984,
+  "rare_species_count": 1155,
+  "species_properties_fields_read": [
+    "species_id",
+    "relative_prevalence",
+    "n_species_obs",
+    "sampling_effort"
+  ],
+  "test_derived_species_properties_used": false,
+  "species_outcomes_inspected": false,
+  "calibration_holdout_scope": "reliability calibration and assessment; pretrained SAGE models follow their original PO overlap protocol"
+}

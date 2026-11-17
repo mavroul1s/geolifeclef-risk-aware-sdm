@@ -1,0 +1,163 @@
+{
+  "scope": "Three of 52 feature columns, eight fixed input rows; no full feature-vector, nearest-valid fill, or NEON-input equivalence claim.",
+  "all_three_sampled_columns_match": false,
+  "results": [
+    {
+      "source": "chelsa_bio01",
+      "predictor_group": "chelsa",
+      "feature_index": 0,
+      "reference_cell_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8
+      ],
+      "per_handle_network_byte_cap": 16777216,
+      "raster_shape": [
+        20880,
+        43200
+      ],
+      "CRS": "EPSG:4326",
+      "nodata": 65535.0,
+      "block_shapes": [
+        [
+          512,
+          512
+        ]
+      ],
+      "nodata_samples": 0,
+      "raw_values": [
+        2660.0,
+        2637.0,
+        2673.0,
+        2671.0,
+        2637.0,
+        2672.0,
+        2679.0,
+        2626.0
+      ],
+      "published_input_values": [
+        2660.0,
+        2637.0,
+        2673.0,
+        2671.0,
+        2637.0,
+        2672.0,
+        2679.0,
+        2626.0
+      ],
+      "status": "eight_direct_samples_match",
+      "new_network_bytes": 0,
+      "new_range_requests": 0
+    },
+    {
+      "source": "soilgrids_bdticm",
+      "predictor_group": "soilgrids",
+      "feature_index": 0,
+      "reference_cell_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8
+      ],
+      "per_handle_network_byte_cap": 16777216,
+      "raster_shape": [
+        67200,
+        172800
+      ],
+      "CRS": "EPSG:4326",
+      "nodata": -32768.0,
+      "block_shapes": [
+        [
+          1,
+          172800
+        ]
+      ],
+      "nodata_samples": 1,
+      "raw_values": [
+        794.0,
+        799.0,
+        -32768.0,
+        1265.0,
+        1041.0,
+        2075.0,
+        2275.0,
+        1642.0
+      ],
+      "published_input_values": [
+        794.0,
+        799.0,
+        1576.0,
+        1265.0,
+        1041.0,
+        2075.0,
+        2275.0,
+        1642.0
+      ],
+      "status": "not_reproduced_or_fill_required",
+      "new_network_bytes": 2571827,
+      "new_range_requests": 40
+    },
+    {
+      "source": "earthenv_elevation",
+      "predictor_group": "topography",
+      "feature_index": 0,
+      "reference_cell_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8
+      ],
+      "per_handle_network_byte_cap": 16777216,
+      "raster_shape": [
+        16800,
+        43200
+      ],
+      "CRS": "EPSG:4326",
+      "nodata": -32768.0,
+      "block_shapes": [
+        [
+          1,
+          43200
+        ]
+      ],
+      "nodata_samples": 0,
+      "raw_values": [
+        53.0,
+        186.0,
+        0.0,
+        48.0,
+        291.0,
+        30.0,
+        53.0,
+        80.5
+      ],
+      "published_input_values": [
+        53.0,
+        186.0,
+        0.0,
+        48.0,
+        291.0,
+        30.0,
+        53.0,
+        80.5
+      ],
+      "status": "eight_direct_samples_match",
+      "new_network_bytes": 1263554,
+      "new_range_requests": 20
+    }
+  ],
+  "NEON_observations_or_predictions_read": false
+}

@@ -1,0 +1,22 @@
+{
+  "user_authorized_automatic_GPU_after_passing_tests": true,
+  "correctness_tests_passed": true,
+  "scientific_checks": {
+    "spatial_practical_F1_gain": false,
+    "spatial_F1_interval_positive": false,
+    "spatial_all_model_F1_guard": true,
+    "spatial_rare_interval_guard": true,
+    "spatial_all_model_rare_guard": true,
+    "source_practical_F1_gain": false,
+    "source_F1_interval_positive": false,
+    "source_all_model_F1_guard": true,
+    "source_rare_interval_guard": true,
+    "source_all_model_rare_guard": true,
+    "supported_source_guard": true,
+    "correctness_tests": true,
+    "all_required_folds_admitted": true
+  },
+  "GPU_job_launched": false,
+  "reason": "scientific promotion failed; all pairwise corrections rejected in inner CV",
+  "authorization_for_future_passing_candidates_remains": true
+}

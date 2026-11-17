@@ -1,0 +1,14 @@
+{
+  "frozen_at_utc": "2026-11-13T22:19:05.772148+00:00",
+  "fresh_assessment": false,
+  "config_sha256": "fcb535d38d9fcbbbcc42c570512b1b552be652813f8c06ec77b268fe91d183cd",
+  "source_manifest_sha256": "1743994216010ddb8281bd65b83a5a16e352628b0c334530317dc97fbc3129c3",
+  "new_neural_training_permitted": false,
+  "notebook_sha256": "d315f7794d49ae59ddd170e7e15212aafc2f234f716da7741ba811d76025cc17",
+  "designed_after_R1_assessment_inspection": true,
+  "source_sha256": {
+    "src/geolifeclef/decision_reliability.py": "f6025066cffc97b15d180e32c4c69aa3d26215e02287f268d627d0c610c0c8db",
+    "scripts/reliability_inference_core.py": "f59cb28ab31396c7b5fc742f0fa273d6d8da2a6e53f38303041f58da801117e0",
+    "scripts/build_reliability_inference_notebook.py": "8073c2891d0789ad2ef412e3f396a1bf0c983e77b262a54d17ba2baf3bf497b3"
+  }
+}

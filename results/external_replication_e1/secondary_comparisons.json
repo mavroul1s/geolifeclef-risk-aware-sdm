@@ -1,0 +1,904 @@
+{
+  "status": "descriptive_secondary_analyses",
+  "multiplicity": "95% descriptive intervals, not primary success tests; no selection of a replacement primary claim",
+  "contrasts": [
+    {
+      "decoder": "top18",
+      "candidate": "lean_risk",
+      "baseline": "SDC",
+      "F1_gain": -0.0024378930467116727,
+      "rare_coverage_gain": -0.007635662745873282,
+      "F1_interval": [
+        -0.004717182336428057,
+        -8.7549800015537e-05
+      ],
+      "rare_coverage_interval": [
+        -0.04738077109361607,
+        0.037124651306688065
+      ],
+      "confidence": 0.95,
+      "clusters": 73,
+      "models": 4,
+      "valid_draws": 2000,
+      "model_F1_gains": [
+        -0.003725037509076795,
+        -0.0044270225155564336,
+        -0.0014626881060831876,
+        -0.0001368240561302747
+      ],
+      "model_rare_coverage_gains": [
+        -0.01196006721360087,
+        -0.011861223682909953,
+        -0.008204013047346052,
+        0.0014826529603637441
+      ],
+      "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+    },
+    {
+      "decoder": "top18",
+      "candidate": "entropy",
+      "baseline": "random",
+      "F1_gain": -0.00591221102860872,
+      "rare_coverage_gain": -0.011070475437382623,
+      "F1_interval": [
+        -0.007952594389392411,
+        -0.004079126578952101
+      ],
+      "rare_coverage_interval": [
+        -0.050365959031388054,
+        0.027881613322670667
+      ],
+      "confidence": 0.95,
+      "clusters": 73,
+      "models": 4,
+      "valid_draws": 2000,
+      "model_F1_gains": [
+        -0.00779726793818547,
+        -0.007971343363592315,
+        -0.0036213571282047163,
+        -0.004258875684452379
+      ],
+      "model_rare_coverage_gains": [
+        -0.003854897696945735,
+        -0.005930611841454977,
+        -0.018286053177819513,
+        -0.01621033903331027
+      ],
+      "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+    },
+    {
+      "decoder": "top18",
+      "candidate": "SDC",
+      "baseline": "mean_confidence",
+      "F1_gain": 0.0007801025092713867,
+      "rare_coverage_gain": -0.019447464663437778,
+      "F1_interval": [
+        -0.0005972509510119337,
+        0.0019862518137691546
+      ],
+      "rare_coverage_interval": [
+        -0.03376435573447151,
+        -0.004809264826876463
+      ],
+      "confidence": 0.95,
+      "clusters": 73,
+      "models": 4,
+      "valid_draws": 2000,
+      "model_F1_gains": [
+        0.0012873890209351146,
+        0.0011621231491636685,
+        0.0004794984910564959,
+        0.0001913993759302679
+      ],
+      "model_rare_coverage_gains": [
+        -0.023425916773747158,
+        -0.02312938618167441,
+        -0.01512306019571019,
+        -0.016111495502619352
+      ],
+      "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+    },
+    {
+      "decoder": "top18",
+      "candidate": "SDC",
+      "baseline": "random",
+      "F1_gain": 0.008251121722455249,
+      "rare_coverage_gain": 0.006671938321636849,
+      "F1_interval": [
+        0.005664873726762687,
+        0.010849066213938092
+      ],
+      "rare_coverage_interval": [
+        -0.03258601340630063,
+        0.04003117621345739
+      ],
+      "confidence": 0.95,
+      "clusters": 73,
+      "models": 4,
+      "valid_draws": 2000,
+      "model_F1_gains": [
+        0.00825221539014348,
+        0.00912936856649016,
+        0.007947333131172796,
+        0.007675569802014559
+      ],
+      "model_rare_coverage_gains": [
+        -0.0019768706138183255,
+        -0.009093604823564298,
+        0.0206582979144015,
+        0.017099930809528516
+      ],
+      "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+    },
+    {
+      "decoder": "top18",
+      "candidate": "total_count_constraint",
+      "baseline": "SDC",
+      "F1_gain": -0.00029462308345380717,
+      "rare_coverage_gain": 0.01386280517940101,
+      "F1_interval": [
+        -0.0011276711634558556,
+        0.0004289504545442142
+      ],
+      "rare_coverage_interval": [
+        -0.000897687272736079,
+        0.0280237245452196
+      ],
+      "confidence": 0.95,
+      "clusters": 73,
+      "models": 4,
+      "valid_draws": 2000,
+      "model_F1_gains": [
+        -0.00047936350095581504,
+        -0.0005858775696791774,
+        1.5370854721419303e-05,
+        -0.00012862211790165556
+      ],
+      "model_rare_coverage_gains": [
+        0.014035781358110112,
+        0.027280814470692895,
+        0.007808638924582386,
+        0.006325985964218642
+      ],
+      "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+    },
+    {
+      "decoder": "top18",
+      "candidate": "raw_rare_constraint",
+      "baseline": "SDC",
+      "F1_gain": 0.0,
+      "rare_coverage_gain": 0.0,
+      "F1_interval": [
+        0.0,
+        0.0
+      ],
+      "rare_coverage_interval": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.95,
+      "clusters": 73,
+      "models": 4,
+      "valid_draws": 2000,
+      "model_F1_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_rare_coverage_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+    },
+    {
+      "decoder": "threshold_0_80",
+      "candidate": "lean_risk",
+      "baseline": "SDC",
+      "F1_gain": -0.003792499296575297,
+      "rare_coverage_gain": 0.024241375901947217,
+      "F1_interval": [
+        -0.0068838837326988,
+        -0.0012954458261656228
+      ],
+      "rare_coverage_interval": [
+        -0.008714022562006202,
+        0.06126430018688097
+      ],
+      "confidence": 0.95,
+      "clusters": 73,
+      "models": 4,
+      "valid_draws": 2000,
+      "model_F1_gains": [
+        -0.006294178764314928,
+        -0.007951003948164198,
+        0.00017191282932510488,
+        -0.0010967273031471658
+      ],
+      "model_rare_coverage_gains": [
+        0.0022734012058910746,
+        0.03024612039142038,
+        0.03321142631214787,
+        0.031234555698329544
+      ],
+      "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+    },
+    {
+      "decoder": "threshold_0_80",
+      "candidate": "entropy",
+      "baseline": "random",
+      "F1_gain": -0.008399592037374226,
+      "rare_coverage_gain": -0.0056093703667094985,
+      "F1_interval": [
+        -0.011256708712260068,
+        -0.004738847630094539
+      ],
+      "rare_coverage_interval": [
+        -0.05122402188091726,
+        0.04159023885307593
+      ],
+      "confidence": 0.95,
+      "clusters": 73,
+      "models": 4,
+      "valid_draws": 2000,
+      "model_F1_gains": [
+        -0.009778882326217514,
+        -0.008892964738034331,
+        -0.007385006913888409,
+        -0.00754151417135665
+      ],
+      "model_rare_coverage_gains": [
+        -0.0007907482455273302,
+        0.013146189581891865,
+        -0.014826529603637442,
+        -0.01996639319956509
+      ],
+      "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+    },
+    {
+      "decoder": "threshold_0_80",
+      "candidate": "SDC",
+      "baseline": "mean_confidence",
+      "F1_gain": 0.003006452759963328,
+      "rare_coverage_gain": 0.01601265197192844,
+      "F1_interval": [
+        0.0014644571596741658,
+        0.004625883560427099
+      ],
+      "rare_coverage_interval": [
+        -0.0005441965957465118,
+        0.031667770176862335
+      ],
+      "confidence": 0.95,
+      "clusters": 73,
+      "models": 4,
+      "valid_draws": 2000,
+      "model_F1_gains": [
+        0.0011902982561864672,
+        0.003936785679851257,
+        0.003798117296674619,
+        0.0031006098071409693
+      ],
+      "model_rare_coverage_gains": [
+        0.01541959078778294,
+        0.011762380152219037,
+        0.01966986260749234,
+        0.017198774340219432
+      ],
+      "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+    },
+    {
+      "decoder": "threshold_0_80",
+      "candidate": "SDC",
+      "baseline": "random",
+      "F1_gain": 0.013494508299263117,
+      "rare_coverage_gain": 0.020287634674310565,
+      "F1_interval": [
+        0.009235494173591834,
+        0.01821676769067646
+      ],
+      "rare_coverage_interval": [
+        -0.023985078583095336,
+        0.05840958281930278
+      ],
+      "confidence": 0.95,
+      "clusters": 73,
+      "models": 4,
+      "valid_draws": 2000,
+      "model_F1_gains": [
+        0.01084175841052315,
+        0.017751735418884695,
+        0.013218843137922792,
+        0.012165696229721829
+      ],
+      "model_rare_coverage_gains": [
+        0.021449046159928833,
+        0.007215577740436889,
+        0.02787387565483839,
+        0.024612039142038154
+      ],
+      "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+    },
+    {
+      "decoder": "threshold_0_80",
+      "candidate": "total_count_constraint",
+      "baseline": "SDC",
+      "F1_gain": -0.00014582402967365515,
+      "rare_coverage_gain": 0.0063012750815459135,
+      "F1_interval": [
+        -0.0007707468595070388,
+        0.00038058655546478916
+      ],
+      "rare_coverage_interval": [
+        0.000760877560416668,
+        0.0112000679768503
+      ],
+      "confidence": 0.95,
+      "clusters": 73,
+      "models": 4,
+      "valid_draws": 2000,
+      "model_F1_gains": [
+        -2.879562006816161e-05,
+        -0.0010669449912469042,
+        -9.368956662619832e-06,
+        0.0005218134492830651
+      ],
+      "model_rare_coverage_gains": [
+        -0.00019768706138183255,
+        0.02174557675200158,
+        0.001087278837600079,
+        0.002569931797963823
+      ],
+      "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+    },
+    {
+      "decoder": "threshold_0_80",
+      "candidate": "raw_rare_constraint",
+      "baseline": "SDC",
+      "F1_gain": 0.0,
+      "rare_coverage_gain": 0.0,
+      "F1_interval": [
+        0.0,
+        0.0
+      ],
+      "rare_coverage_interval": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.95,
+      "clusters": 73,
+      "models": 4,
+      "valid_draws": 2000,
+      "model_F1_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_rare_coverage_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+    },
+    {
+      "decoder": "expected_F1_8_40",
+      "candidate": "lean_risk",
+      "baseline": "SDC",
+      "F1_gain": -0.003756589614539327,
+      "rare_coverage_gain": 0.010699812197291686,
+      "F1_interval": [
+        -0.006413456677413875,
+        -0.001548645890449331
+      ],
+      "rare_coverage_interval": [
+        -0.023505496621503343,
+        0.050414995826062736
+      ],
+      "confidence": 0.95,
+      "clusters": 73,
+      "models": 4,
+      "valid_draws": 2000,
+      "model_F1_gains": [
+        -0.007862810845742557,
+        -0.006852647777804033,
+        -0.00013071483212845347,
+        -0.00018018500248226377
+      ],
+      "model_rare_coverage_gains": [
+        0.01966986260749234,
+        -0.009686666007709795,
+        0.027972719185529307,
+        0.004843333003854897
+      ],
+      "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+    },
+    {
+      "decoder": "expected_F1_8_40",
+      "candidate": "entropy",
+      "baseline": "random",
+      "F1_gain": -0.007605591012577177,
+      "rare_coverage_gain": -0.003113571216763863,
+      "F1_interval": [
+        -0.009995134699559382,
+        -0.004800209229876556
+      ],
+      "rare_coverage_interval": [
+        -0.039571152696809414,
+        0.033751531320850035
+      ],
+      "confidence": 0.95,
+      "clusters": 73,
+      "models": 4,
+      "valid_draws": 2000,
+      "model_F1_gains": [
+        -0.009465617988426628,
+        -0.008664523475529873,
+        -0.0066935468169336265,
+        -0.005598675769418582
+      ],
+      "model_rare_coverage_gains": [
+        9.884353069091628e-05,
+        -0.001087278837600079,
+        -0.007512108332509637,
+        -0.003953741227636651
+      ],
+      "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+    },
+    {
+      "decoder": "expected_F1_8_40",
+      "candidate": "SDC",
+      "baseline": "mean_confidence",
+      "F1_gain": 0.00013293389745213519,
+      "rare_coverage_gain": 0.004423247998418504,
+      "F1_interval": [
+        -0.0008766137430381245,
+        0.0012125946675129984
+      ],
+      "rare_coverage_interval": [
+        -0.0025585715697193064,
+        0.01271684639783163
+      ],
+      "confidence": 0.95,
+      "clusters": 73,
+      "models": 4,
+      "valid_draws": 2000,
+      "model_F1_gains": [
+        0.0003127634231105403,
+        -0.00043611801607951195,
+        0.0005202385590114822,
+        0.00013485162376603022
+      ],
+      "model_rare_coverage_gains": [
+        0.007413264801818721,
+        -0.0015814964910546604,
+        0.0057329247800731445,
+        0.0061282989028368096
+      ],
+      "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+    },
+    {
+      "decoder": "expected_F1_8_40",
+      "candidate": "SDC",
+      "baseline": "random",
+      "F1_gain": 0.00932131236068865,
+      "rare_coverage_gain": 0.019225066719383215,
+      "F1_interval": [
+        0.006741294125729777,
+        0.012291566118085491
+      ],
+      "rare_coverage_interval": [
+        -0.02303376073280333,
+        0.05680031518756243
+      ],
+      "confidence": 0.95,
+      "clusters": 73,
+      "models": 4,
+      "valid_draws": 2000,
+      "model_F1_gains": [
+        0.010477368669766118,
+        0.010024286517000824,
+        0.008591981041529112,
+        0.008191613214458549
+      ],
+      "model_rare_coverage_gains": [
+        0.01650686962538302,
+        0.0056340812493822275,
+        0.02866462390036572,
+        0.0260946921024019
+      ],
+      "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+    },
+    {
+      "decoder": "expected_F1_8_40",
+      "candidate": "total_count_constraint",
+      "baseline": "SDC",
+      "F1_gain": 0.0001533337820619693,
+      "rare_coverage_gain": 0.007512108332509638,
+      "F1_interval": [
+        -0.00029139210658958104,
+        0.0005433537609107859
+      ],
+      "rare_coverage_interval": [
+        0.0008282880328664323,
+        0.014136980448890078
+      ],
+      "confidence": 0.95,
+      "clusters": 73,
+      "models": 4,
+      "valid_draws": 2000,
+      "model_F1_gains": [
+        -9.725928556086894e-05,
+        0.0004459349043883787,
+        0.0002547023408034643,
+        9.9571686169031e-06
+      ],
+      "model_rare_coverage_gains": [
+        0.006820203617673224,
+        0.020262923791637837,
+        0.0028664623900365722,
+        9.884353069091628e-05
+      ],
+      "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+    },
+    {
+      "decoder": "expected_F1_8_40",
+      "candidate": "raw_rare_constraint",
+      "baseline": "SDC",
+      "F1_gain": 0.0,
+      "rare_coverage_gain": 0.0,
+      "F1_interval": [
+        0.0,
+        0.0
+      ],
+      "rare_coverage_interval": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.95,
+      "clusters": 73,
+      "models": 4,
+      "valid_draws": 2000,
+      "model_F1_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_rare_coverage_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+    },
+    {
+      "decoder": "expected_F1_0_80",
+      "candidate": "lean_risk",
+      "baseline": "SDC",
+      "F1_gain": -0.004174679448497538,
+      "rare_coverage_gain": 0.008599387170109716,
+      "F1_interval": [
+        -0.006997787328105788,
+        -0.0016857326234737487
+      ],
+      "rare_coverage_interval": [
+        -0.022599400463110902,
+        0.047850997000540796
+      ],
+      "confidence": 0.95,
+      "clusters": 73,
+      "models": 4,
+      "valid_draws": 2000,
+      "model_F1_gains": [
+        -0.007019407059836141,
+        -0.008001318388189682,
+        -0.0016277964307685189,
+        -5.01959151958109e-05
+      ],
+      "model_rare_coverage_gains": [
+        0.016704556686764852,
+        -0.009192448354255214,
+        0.01887911436196501,
+        0.008006325985964218
+      ],
+      "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+    },
+    {
+      "decoder": "expected_F1_0_80",
+      "candidate": "entropy",
+      "baseline": "random",
+      "F1_gain": -0.008227554476142145,
+      "rare_coverage_gain": 0.00210042502718197,
+      "F1_interval": [
+        -0.010827761903942213,
+        -0.0051497935692282285
+      ],
+      "rare_coverage_interval": [
+        -0.03050842726834429,
+        0.03614394398768228
+      ],
+      "confidence": 0.95,
+      "clusters": 73,
+      "models": 4,
+      "valid_draws": 2000,
+      "model_F1_gains": [
+        -0.010866038646200393,
+        -0.009379180751360766,
+        -0.007203234217977417,
+        -0.005461764289030002
+      ],
+      "model_rare_coverage_gains": [
+        0.010378570722546209,
+        0.0061282989028368096,
+        -0.005930611841454977,
+        -0.002174557675200158
+      ],
+      "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+    },
+    {
+      "decoder": "expected_F1_0_80",
+      "candidate": "SDC",
+      "baseline": "mean_confidence",
+      "F1_gain": 0.00035047400894363395,
+      "rare_coverage_gain": 0.010378570722546209,
+      "F1_interval": [
+        -0.0003805813326608908,
+        0.0012193262638529759
+      ],
+      "rare_coverage_interval": [
+        0.004365129081167789,
+        0.016045347685614022
+      ],
+      "confidence": 0.95,
+      "clusters": 73,
+      "models": 4,
+      "valid_draws": 2000,
+      "model_F1_gains": [
+        0.0003908836445331021,
+        0.00016082860917632225,
+        0.0004935603743332351,
+        0.0003566234077318764
+      ],
+      "model_rare_coverage_gains": [
+        0.01591380844123752,
+        0.011465849560146289,
+        0.006721360086982307,
+        0.007413264801818721
+      ],
+      "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+    },
+    {
+      "decoder": "expected_F1_0_80",
+      "candidate": "SDC",
+      "baseline": "random",
+      "F1_gain": 0.009626628910514926,
+      "rare_coverage_gain": 0.02179499851734704,
+      "F1_interval": [
+        0.007059367569426591,
+        0.012641032348398203
+      ],
+      "rare_coverage_interval": [
+        -0.02105970868593898,
+        0.05956582696641437
+      ],
+      "confidence": 0.95,
+      "clusters": 73,
+      "models": 4,
+      "valid_draws": 2000,
+      "model_F1_gains": [
+        0.010547964719029718,
+        0.011210740589501084,
+        0.008695641099224938,
+        0.008052169234303963
+      ],
+      "model_rare_coverage_gains": [
+        0.021646733221310666,
+        0.010477414253237125,
+        0.028862310961747555,
+        0.026193535633092815
+      ],
+      "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+    },
+    {
+      "decoder": "expected_F1_0_80",
+      "candidate": "total_count_constraint",
+      "baseline": "SDC",
+      "F1_gain": 0.00011095554610509456,
+      "rare_coverage_gain": 0.0055105268360185825,
+      "F1_interval": [
+        -0.0003488656545564078,
+        0.0005012317228838069
+      ],
+      "rare_coverage_interval": [
+        0.0005064310518566523,
+        0.010191648490426104
+      ],
+      "confidence": 0.95,
+      "clusters": 73,
+      "models": 4,
+      "valid_draws": 2000,
+      "model_F1_gains": [
+        0.00018064143633805818,
+        0.0001493319101674162,
+        0.00011384883791490386,
+        0.0
+      ],
+      "model_rare_coverage_gains": [
+        0.002075714144509242,
+        0.017692991993674013,
+        0.0022734012058910746,
+        0.0
+      ],
+      "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+    },
+    {
+      "decoder": "expected_F1_0_80",
+      "candidate": "raw_rare_constraint",
+      "baseline": "SDC",
+      "F1_gain": 0.0,
+      "rare_coverage_gain": 0.0,
+      "F1_interval": [
+        0.0,
+        0.0
+      ],
+      "rare_coverage_interval": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.95,
+      "clusters": 73,
+      "models": 4,
+      "valid_draws": 2000,
+      "model_F1_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_rare_coverage_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+    }
+  ],
+  "mechanism_diagnostics": [
+    {
+      "model": "optimized_deepsdm_s0",
+      "decoder": "top18",
+      "median_mean_selected_probability": 0.17901675403118134,
+      "fraction_mean_selected_probability_below_half": 0.9920015235193297,
+      "mean_predicted_richness": 18.0,
+      "observed_empty_fraction": 0.02132927061512093
+    },
+    {
+      "model": "optimized_deepsdm_s1",
+      "decoder": "top18",
+      "median_mean_selected_probability": 0.17565393447875977,
+      "fraction_mean_selected_probability_below_half": 0.9944772424300133,
+      "mean_predicted_richness": 18.0,
+      "observed_empty_fraction": 0.02132927061512093
+    },
+    {
+      "model": "randomforest_s0",
+      "decoder": "top18",
+      "median_mean_selected_probability": 0.17142769694328308,
+      "fraction_mean_selected_probability_below_half": 0.9741001713959246,
+      "mean_predicted_richness": 18.0,
+      "observed_empty_fraction": 0.02132927061512093
+    },
+    {
+      "model": "randomforest_s1",
+      "decoder": "top18",
+      "median_mean_selected_probability": 0.17255674302577972,
+      "fraction_mean_selected_probability_below_half": 0.9758141306417825,
+      "mean_predicted_richness": 18.0,
+      "observed_empty_fraction": 0.02132927061512093
+    },
+    {
+      "model": "optimized_deepsdm_s0",
+      "decoder": "threshold_0_80",
+      "median_mean_selected_probability": 0.13179118931293488,
+      "fraction_mean_selected_probability_below_half": 0.9958103218434584,
+      "mean_predicted_richness": 52.788230813178444,
+      "observed_empty_fraction": 0.02132927061512093
+    },
+    {
+      "model": "optimized_deepsdm_s1",
+      "decoder": "threshold_0_80",
+      "median_mean_selected_probability": 0.15364651381969452,
+      "fraction_mean_selected_probability_below_half": 0.9965720815082841,
+      "mean_predicted_richness": 38.5324700057132,
+      "observed_empty_fraction": 0.02132927061512093
+    },
+    {
+      "model": "randomforest_s0",
+      "decoder": "threshold_0_80",
+      "median_mean_selected_probability": 0.1274370551109314,
+      "fraction_mean_selected_probability_below_half": 0.9973338411731099,
+      "mean_predicted_richness": 45.43020377071034,
+      "observed_empty_fraction": 0.02132927061512093
+    },
+    {
+      "model": "randomforest_s1",
+      "decoder": "threshold_0_80",
+      "median_mean_selected_probability": 0.12780854105949402,
+      "fraction_mean_selected_probability_below_half": 0.9975242810893163,
+      "mean_predicted_richness": 45.34222052942297,
+      "observed_empty_fraction": 0.02132927061512093
+    },
+    {
+      "model": "optimized_deepsdm_s0",
+      "decoder": "expected_F1_8_40",
+      "median_mean_selected_probability": 0.1622214913368225,
+      "fraction_mean_selected_probability_below_half": 0.9940963625976005,
+      "mean_predicted_richness": 31.10531327366216,
+      "observed_empty_fraction": 0.02132927061512093
+    },
+    {
+      "model": "optimized_deepsdm_s1",
+      "decoder": "expected_F1_8_40",
+      "median_mean_selected_probability": 0.16134105622768402,
+      "fraction_mean_selected_probability_below_half": 0.9965720815082841,
+      "mean_predicted_richness": 30.531517806132165,
+      "observed_empty_fraction": 0.02132927061512093
+    },
+    {
+      "model": "randomforest_s0",
+      "decoder": "expected_F1_8_40",
+      "median_mean_selected_probability": 0.15441112220287323,
+      "fraction_mean_selected_probability_below_half": 0.9910493239382975,
+      "mean_predicted_richness": 29.163968767853742,
+      "observed_empty_fraction": 0.02132927061512093
+    },
+    {
+      "model": "randomforest_s1",
+      "decoder": "expected_F1_8_40",
+      "median_mean_selected_probability": 0.15608333051204681,
+      "fraction_mean_selected_probability_below_half": 0.9906684441058846,
+      "mean_predicted_richness": 29.023233669777184,
+      "observed_empty_fraction": 0.02132927061512093
+    },
+    {
+      "model": "optimized_deepsdm_s0",
+      "decoder": "expected_F1_0_80",
+      "median_mean_selected_probability": 0.1592804491519928,
+      "fraction_mean_selected_probability_below_half": 0.9958103218434584,
+      "mean_predicted_richness": 36.12740430394211,
+      "observed_empty_fraction": 0.02132927061512093
+    },
+    {
+      "model": "optimized_deepsdm_s1",
+      "decoder": "expected_F1_0_80",
+      "median_mean_selected_probability": 0.1590927392244339,
+      "fraction_mean_selected_probability_below_half": 0.9965720815082841,
+      "mean_predicted_richness": 35.42563321272139,
+      "observed_empty_fraction": 0.02132927061512093
+    },
+    {
+      "model": "randomforest_s0",
+      "decoder": "expected_F1_0_80",
+      "median_mean_selected_probability": 0.15419858694076538,
+      "fraction_mean_selected_probability_below_half": 0.9921919634355361,
+      "mean_predicted_richness": 30.376118834507714,
+      "observed_empty_fraction": 0.02132927061512093
+    },
+    {
+      "model": "randomforest_s1",
+      "decoder": "expected_F1_0_80",
+      "median_mean_selected_probability": 0.15589578449726105,
+      "fraction_mean_selected_probability_below_half": 0.9925728432679489,
+      "mean_predicted_richness": 30.19920015235193,
+      "observed_empty_fraction": 0.02132927061512093
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "experiment": "reliability_study_r1",
+  "frozen_at_utc": "2026-11-13T17:02:12Z",
+  "scope": "controlled development study on historically consumed PA labels",
+  "fresh_assessment": false,
+  "official_competition": "geolifeclef-2025",
+  "metadata_sha256": "9081dba275285b2aff7345ff1ace6540acffc9c040a54b651b192363da63b709",
+  "folds": [0, 1],
+  "neural_seeds": [2026111301, 2026111302, 2026111303],
+  "model": {
+    "kind": "attention",
+    "id": "fixed_multisensor_attention",
+    "width": 128,
+    "epochs": 18,
+    "geo": true,
+    "gamma": 0.0
+  },
+  "training": {
+    "checkpoint": "last EMA after exactly 18 epochs",
+    "learning_rate": 0.0003,
+    "weight_decay": 0.02,
+    "schedule": "cosine to 0.00001 over the same fixed 18 epochs",
+    "augmentation": "unchanged v29 mixup, rotation, sensor dropout, partial country balancing",
+    "external_pretraining": false,
+    "architecture_search": false
+  },
+  "role_mapping": {
+    "training": "unchanged v30 fold training with 20 km exclusion",
+    "probability_calibration": "original v30 selection role; never used for checkpoint selection in this study",
+    "risk_calibration": "original v30 calibration role",
+    "assessment": "unchanged v30 assessment role"
+  },
+  "probability_calibration": "shared per-member Platt fit on probability_calibration only",
+  "primary_decoder": "fixed top18 on mean calibrated probabilities",
+  "secondary_decoder": "expected-F1 ratio surrogate with sizes 8..40; descriptive only",
+  "risk_regressor": {
+    "max_iter": 80,
+    "max_leaf_nodes": 7,
+    "min_samples_leaf": 50,
+    "l2_regularization": 5,
+    "learning_rate": 0.05,
+    "early_stopping": false,
+    "random_state": 20261113
+  },
+  "selectors": [
+    "random", "distance_only", "area_only", "metadata_only", "metadata_distance",
+    "mean_top18_confidence", "top18_entropy", "all_label_entropy",
+    "ensemble_variance", "ensemble_mutual_information", "set_disagreement",
+    "environment_novelty", "model_only_risk", "metadata_model_risk", "full_risk"
+  ],
+  "coverage_policies": ["unconstrained", "country", "country_area"],
+  "coverage_grid": [1.0, 0.9, 0.8, 0.6, 0.4, 0.2],
+  "area_bin_quantiles": [0.2, 0.4, 0.6, 0.8],
+  "primary_contrast": {
+    "candidate": "full_risk",
+    "baseline": "metadata_distance",
+    "coverage_policy": "country_area",
+    "overall_coverage": 0.8,
+    "minimum_absolute_F1_gain": 0.005,
+    "supported_country_minimum_surveys": 30,
+    "maximum_supported_country_F1_regression": 0.005,
+    "inference": "paired spatial cluster bootstrap, 2000 repeats, descriptive under adaptive reuse"
+  },
+  "assessment_labels_select_methods_or_hyperparameters": false,
+  "maximum_runtime_hours": 5.5,
+  "maximum_output_bytes": 1500000000,
+  "full_run_admission": "technical GPU probe and real-data smoke must pass; measured remaining-plan estimate must fit runtime guard",
+  "smoke": {
+    "folds": [0],
+    "training_surveys": 2048,
+    "probability_calibration_surveys": 384,
+    "risk_calibration_surveys": 512,
+    "assessment_surveys": 768,
+    "seeds": [2026111301, 2026111302],
+    "epochs": 2,
+    "maximum_runtime_hours": 0.75,
+    "statistical_claims_permitted": false
+  },
+  "competition_submission": false
+}

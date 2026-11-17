@@ -1,0 +1,20 @@
+{
+  "classes": 5771,
+  "universe_classes": 2453,
+  "canonical_genera": 1884,
+  "universe_genera": 957,
+  "first_token_genus_identity_all_classes": true,
+  "missing_or_ambiguous_genus": 0,
+  "columns_read": [
+    "species_name",
+    "species_id",
+    "genus",
+    "relative_prevalence"
+  ],
+  "test_prevalence_used": false,
+  "eligible_class_count_range": [
+    51,
+    744
+  ],
+  "NEON_parent_rank_name_history_semantics_resolved": false
+}

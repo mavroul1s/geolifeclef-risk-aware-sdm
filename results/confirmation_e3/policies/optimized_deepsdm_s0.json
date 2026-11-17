@@ -1,0 +1,41 @@
+{
+  "model": "optimized_deepsdm_s0",
+  "frozen_at_utc": "2026-11-16T10:44:52.184243+00:00",
+  "probability_calibration": {
+    "slope": 0.6664048646788542,
+    "intercept": -3.0518549530609413,
+    "eligible_pairs": 867242,
+    "fit_rows": 1165,
+    "binned_nll": 0.07801517694542899
+  },
+  "affine_quality_calibration": {
+    "slope": 1e-09,
+    "intercept": 0.1843447616412671
+  },
+  "HGB_parameters": {
+    "max_iter": 80,
+    "max_leaf_nodes": 7,
+    "min_samples_leaf": 50,
+    "l2_regularization": 5,
+    "learning_rate": 0.05,
+    "early_stopping": false,
+    "random_state": 20261116
+  },
+  "risk_features": [
+    "log_area",
+    "year",
+    "log_geo_uncertainty",
+    "log_calibration_distance",
+    "eligible_labels",
+    "probability_mass",
+    "max_probability",
+    "mean_set_confidence",
+    "SDC",
+    "predicted_richness",
+    "predicted_rare_mass",
+    "empty_probability"
+  ],
+  "training_cell_ID_sha256": "7984d0e7e031107d69c9e49afdc10a10d90bb02cc54832796e244f1b6134781a",
+  "E3_outcomes_accessed": false,
+  "seconds": 2.419990857999437
+}

@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "GPU_name": "Tesla T4",
+  "torch_version": "2.11.0+cu130",
+  "notebook_elapsed_seconds": 42.80859374400001,
+  "runs": [
+    {
+      "run": "aggregation_s0",
+      "probabilities_compared": 738688,
+      "comparisons": {
+        "cpu": {
+          "max_absolute_error": 1.1026859283447266e-06,
+          "mean_absolute_error": 8.612824099642195e-10,
+          "passed": true
+        },
+        "published": {
+          "max_absolute_error": 1.1026859283447266e-06,
+          "mean_absolute_error": 1.028567193031856e-09,
+          "passed": true
+        }
+      }
+    }
+  ],
+  "input_contract_and_output_hashes_verified": true,
+  "outputs": [
+    {
+      "name": "gpu_probabilities.npz",
+      "bytes": 2851212,
+      "sha256": "2c1307f2e7d9b7337f07a9fbe057a9fa93b3ce9509d8cca07e662f8725f055c4"
+    },
+    {
+      "name": "gpu_report.json",
+      "bytes": 728,
+      "sha256": "f11394273bf7f89364072e438beab620efcaded8e369839d4aaf03467b40a652"
+    }
+  ],
+  "scope": "Published-input inference reproduction only; no fresh field-data performance or new scientific effect.",
+  "ResNet_excluded_due_to_failed_CPU_reference": [
+    "optimized_deepsdm_s0"
+  ]
+}

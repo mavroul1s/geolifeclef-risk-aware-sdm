@@ -1,0 +1,19 @@
+{
+  "locked_at_utc": "2026-11-16T10:01:57.120075+00:00",
+  "source_hashes": {
+    "configs/ranking_study_e2.json": "34ce32e4e16dbc98a43447e4e3b9542ac60abfe7e1c97cccc0f3bf88117a8fba",
+    "docs/ranking_study_e2_protocol.md": "283abba0fa53cd219ab604c664c5e4cda4fa3ece324fcf3ef43b47cbe93690e3",
+    "scripts/study_ranking_e2.py": "db127603883e5a4dac7699b5330c24070a005dcf55a8dce533c329ac0bcb342e",
+    "src/geolifeclef/ranking_selection.py": "d7a0ca4f14315d0f149139187d2d88bce25eb0c0f09b8e6b3edc3cfe9b48d9fb",
+    "src/geolifeclef/external_reliability.py": "7ba86d1501dfbcd415ccbebca8f0258c8e85ca6ab1de5bb2cac7b8c98653d296",
+    "src/geolifeclef/ecological_selection.py": "67e646fb011f987c05aec1a174f06c6d95805de3aa8f08dd72e0bbdddafd9685"
+  },
+  "E1_assessment_targets_read_in_E2": false,
+  "evidence_scope": "development after E1 outcomes consumed; no independent confirmation claim",
+  "E1_cohort_sha256": "246f71d750e590a81eb37c903ec8cab7f80931498c44f975d89c4381554cd4ef",
+  "E1_input_hashes": {
+    "rare_species_mask.npy": "450022f589338ee0fa5cc83f7354c9dabd941fa63bf8a22bc76d01357e96e3ad",
+    "eligible_species.npy": "f53a09dd18edaeed9275d1a24f7fdab37ac5398bfa858a587289ef8243406f0b",
+    "sealed_eval_test_targets.h5": "bf52746612d1d784d10a8696be94096d1162eaf3bb43a38011087d5af8730da6"
+  }
+}

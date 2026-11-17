@@ -1,0 +1,1182 @@
+{
+  "at_utc": "2026-11-17T07:57:23.548229+00:00",
+  "posthoc": true,
+  "primary_unchanged": true,
+  "empty_prediction_cells": 1384,
+  "complete_empty_empty_cells": 523,
+  "complete_positive_truth_empty_prediction_cells": 861,
+  "oracle_zero_empty": {
+    "full_F1": 0.1541971824273833,
+    "contrasts": {
+      "HGB_SDC": {
+        "point": -0.006214546290731593,
+        "interval": [
+          -0.01235623947908516,
+          -0.00024003221942853258
+        ],
+        "clusters": 73,
+        "valid_draws": 4000,
+        "confidence": 0.975
+      },
+      "HGB_random": {
+        "point": 0.0004425541309785175,
+        "interval": [
+          -0.0069308587702935995,
+          0.005963036055308259
+        ],
+        "clusters": 73,
+        "valid_draws": 4000,
+        "confidence": 0.975
+      },
+      "SDC_random": {
+        "point": 0.00665710042171011,
+        "interval": [
+          -0.000929813211832243,
+          0.013195187498255415
+        ],
+        "clusters": 73,
+        "valid_draws": 4000,
+        "confidence": 0.975
+      }
+    }
+  },
+  "sections": [
+    {
+      "mechanism": "uniform_positive_genera",
+      "dose": 0.0,
+      "false_perfect_empty_cells_range": [
+        0,
+        0
+      ],
+      "independent_bound_width": 0.0,
+      "genus_positive_bound_width": 0.0,
+      "treatments_zero_empty": {
+        "unknown_as_absence": {
+          "bias": {
+            "point": -1.7317502306361498e-18,
+            "interval": [
+              -3.597313295526927e-18,
+              -1.6777084444432894e-19
+            ],
+            "clusters": 73,
+            "valid_draws": 4000,
+            "confidence": 0.975
+          },
+          "contrasts": {
+            "HGB_SDC": {
+              "observed": {
+                "point": -0.006214546290731593,
+                "interval": [
+                  -0.01235623947908516,
+                  -0.00024003221942853293
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 2.5766899524149655e-19,
+                "interval": [
+                  -4.0287454390374136e-19,
+                  8.685219172235679e-19
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              }
+            },
+            "HGB_random": {
+              "observed": {
+                "point": 0.0004425541309785175,
+                "interval": [
+                  -0.0069308587702935995,
+                  0.005963036055308259
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": -2.5932071956996784e-19,
+                "interval": [
+                  -8.395099142090774e-19,
+                  4.55036149585107e-19
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              }
+            },
+            "SDC_random": {
+              "observed": {
+                "point": 0.00665710042171011,
+                "interval": [
+                  -0.000929813211832243,
+                  0.013195187498255415
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": -5.169897148114644e-19,
+                "interval": [
+                  -1.192435527095566e-18,
+                  4.2285977054363095e-19
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              }
+            }
+          }
+        },
+        "known_labels_only": {
+          "bias": {
+            "point": -1.7317502306361498e-18,
+            "interval": [
+              -3.597313295526927e-18,
+              -1.6777084444432894e-19
+            ],
+            "clusters": 73,
+            "valid_draws": 4000,
+            "confidence": 0.975
+          },
+          "contrasts": {
+            "HGB_SDC": {
+              "observed": {
+                "point": -0.006214546290731593,
+                "interval": [
+                  -0.01235623947908516,
+                  -0.00024003221942853293
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 2.5766899524149655e-19,
+                "interval": [
+                  -4.0287454390374136e-19,
+                  8.685219172235679e-19
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              }
+            },
+            "HGB_random": {
+              "observed": {
+                "point": 0.0004425541309785175,
+                "interval": [
+                  -0.0069308587702935995,
+                  0.005963036055308259
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": -2.5932071956996784e-19,
+                "interval": [
+                  -8.395099142090774e-19,
+                  4.55036149585107e-19
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              }
+            },
+            "SDC_random": {
+              "observed": {
+                "point": 0.00665710042171011,
+                "interval": [
+                  -0.000929813211832243,
+                  0.013195187498255415
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": -5.169897148114644e-19,
+                "interval": [
+                  -1.192435527095566e-18,
+                  4.2285977054363095e-19
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              }
+            }
+          }
+        }
+      },
+      "genus_contrasts": {
+        "HGB_SDC": {
+          "lower_seed_mean": -0.004548276355002038,
+          "upper_seed_mean": -0.004548276355002038,
+          "sign_identified_seeds": 10
+        },
+        "HGB_random": {
+          "lower_seed_mean": 0.012820559367826861,
+          "upper_seed_mean": 0.012820559367826861,
+          "sign_identified_seeds": 10
+        },
+        "SDC_random": {
+          "lower_seed_mean": 0.0173688357228289,
+          "upper_seed_mean": 0.0173688357228289,
+          "sign_identified_seeds": 10
+        }
+      }
+    },
+    {
+      "mechanism": "uniform_positive_genera",
+      "dose": 0.2,
+      "false_perfect_empty_cells_range": [
+        268,
+        268
+      ],
+      "independent_bound_width": 0.1229583768780095,
+      "genus_positive_bound_width": 0.04195054005958484,
+      "treatments_zero_empty": {
+        "unknown_as_absence": {
+          "bias": {
+            "point": -0.0383598419259708,
+            "interval": [
+              -0.049847314321831704,
+              -0.02382570555970162
+            ],
+            "clusters": 73,
+            "valid_draws": 4000,
+            "confidence": 0.975
+          },
+          "contrasts": {
+            "HGB_SDC": {
+              "observed": {
+                "point": -0.00481709059215607,
+                "interval": [
+                  -0.010628567649825994,
+                  0.0003572701117206583
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 0.001397455698575585,
+                "interval": [
+                  6.34897171857949e-05,
+                  0.0023745605872782624
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              }
+            },
+            "HGB_random": {
+              "observed": {
+                "point": 0.0008205910546848078,
+                "interval": [
+                  -0.005206345725007658,
+                  0.005025692333185732
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 0.00037803692370632497,
+                "interval": [
+                  -0.0013367361075840602,
+                  0.0021737094015005314
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              }
+            },
+            "SDC_random": {
+              "observed": {
+                "point": 0.005637681646840878,
+                "interval": [
+                  -0.00032785434361587727,
+                  0.011180385265972412
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": -0.0010194187748692601,
+                "interval": [
+                  -0.002882259963501701,
+                  0.001071748269587983
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              }
+            }
+          }
+        },
+        "known_labels_only": {
+          "bias": {
+            "point": -0.03165460759121023,
+            "interval": [
+              -0.04199728767341379,
+              -0.019186428392101773
+            ],
+            "clusters": 73,
+            "valid_draws": 4000,
+            "confidence": 0.975
+          },
+          "contrasts": {
+            "HGB_SDC": {
+              "observed": {
+                "point": -0.005252310506172322,
+                "interval": [
+                  -0.011306683344820243,
+                  0.00016335077257553427
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 0.0009622357845592774,
+                "interval": [
+                  -0.00035447109416026425,
+                  0.0018903599065460725
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              }
+            },
+            "HGB_random": {
+              "observed": {
+                "point": 0.001052618824942439,
+                "interval": [
+                  -0.005418770441413876,
+                  0.0055867476484614915
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 0.0006100646939639284,
+                "interval": [
+                  -0.0008308878140395618,
+                  0.0021271449947918826
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              }
+            },
+            "SDC_random": {
+              "observed": {
+                "point": 0.006304929331114761,
+                "interval": [
+                  -0.00010265307873224741,
+                  0.012293308162291914
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": -0.000352171090595349,
+                "interval": [
+                  -0.0018419130152099602,
+                  0.00143347929043222
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              }
+            }
+          }
+        }
+      },
+      "genus_contrasts": {
+        "HGB_SDC": {
+          "lower_seed_mean": -0.011577844509349572,
+          "upper_seed_mean": 0.0031039890799490753,
+          "sign_identified_seeds": 0
+        },
+        "HGB_random": {
+          "lower_seed_mean": 0.004768352750666695,
+          "upper_seed_mean": 0.02170736176943363,
+          "sign_identified_seeds": 10
+        },
+        "SDC_random": {
+          "lower_seed_mean": 0.00922348202102105,
+          "upper_seed_mean": 0.025726087928479767,
+          "sign_identified_seeds": 10
+        }
+      }
+    },
+    {
+      "mechanism": "uniform_positive_genera",
+      "dose": 0.5,
+      "false_perfect_empty_cells_range": [
+        268,
+        268
+      ],
+      "independent_bound_width": 0.18033829662778508,
+      "genus_positive_bound_width": 0.07521864087862515,
+      "treatments_zero_empty": {
+        "unknown_as_absence": {
+          "bias": {
+            "point": -0.07180812667827698,
+            "interval": [
+              -0.08962897204515628,
+              -0.04622794490296966
+            ],
+            "clusters": 73,
+            "valid_draws": 4000,
+            "confidence": 0.975
+          },
+          "contrasts": {
+            "HGB_SDC": {
+              "observed": {
+                "point": -0.003136532223320096,
+                "interval": [
+                  -0.007109606273803201,
+                  0.0003235867589839091
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 0.0030780140674115247,
+                "interval": [
+                  0.00048390034609787746,
+                  0.005479896573826019
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              }
+            },
+            "HGB_random": {
+              "observed": {
+                "point": 0.00025044806694105026,
+                "interval": [
+                  -0.003961186444915036,
+                  0.0032040958752141135
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": -0.00019210606403742558,
+                "interval": [
+                  -0.0029760794340641444,
+                  0.003248163615483593
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              }
+            },
+            "SDC_random": {
+              "observed": {
+                "point": 0.0033869802902611462,
+                "interval": [
+                  -0.0007037790703789542,
+                  0.0071992181516986765
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": -0.0032701201314489503,
+                "interval": [
+                  -0.006405090495795965,
+                  0.0004668926971949398
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              }
+            }
+          }
+        },
+        "known_labels_only": {
+          "bias": {
+            "point": -0.05964639511423762,
+            "interval": [
+              -0.07377660588501665,
+              -0.0385487624589955
+            ],
+            "clusters": 73,
+            "valid_draws": 4000,
+            "confidence": 0.975
+          },
+          "contrasts": {
+            "HGB_SDC": {
+              "observed": {
+                "point": -0.003848879620805948,
+                "interval": [
+                  -0.008427387009624778,
+                  0.00021029619696280978
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 0.0023656666699256937,
+                "interval": [
+                  0.0002189622043562027,
+                  0.004297793832866736
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              }
+            },
+            "HGB_random": {
+              "observed": {
+                "point": 0.0007259447634685029,
+                "interval": [
+                  -0.004243987086709981,
+                  0.004408711233422026
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 0.00028339063249001317,
+                "interval": [
+                  -0.001956783158896356,
+                  0.0031771236893196383
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              }
+            },
+            "SDC_random": {
+              "observed": {
+                "point": 0.004574824384274451,
+                "interval": [
+                  -0.00046910713532793226,
+                  0.009376565979640315
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": -0.0020822760374356805,
+                "interval": [
+                  -0.0044495112928588515,
+                  0.000820578144449518
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              }
+            }
+          }
+        }
+      },
+      "genus_contrasts": {
+        "HGB_SDC": {
+          "lower_seed_mean": -0.016968448750511036,
+          "upper_seed_mean": 0.008993533686701874,
+          "sign_identified_seeds": 0
+        },
+        "HGB_random": {
+          "lower_seed_mean": -0.0019701481328764344,
+          "upper_seed_mean": 0.02850513033437633,
+          "sign_identified_seeds": 0
+        },
+        "SDC_random": {
+          "lower_seed_mean": 0.0023866719026701066,
+          "upper_seed_mean": 0.032123225362638945,
+          "sign_identified_seeds": 10
+        }
+      }
+    },
+    {
+      "mechanism": "rarity_weighted_positive_genera",
+      "dose": 0.0,
+      "false_perfect_empty_cells_range": [
+        0,
+        0
+      ],
+      "independent_bound_width": 0.0,
+      "genus_positive_bound_width": 0.0,
+      "treatments_zero_empty": {
+        "unknown_as_absence": {
+          "bias": {
+            "point": -1.7317502306361498e-18,
+            "interval": [
+              -3.597313295526927e-18,
+              -1.6777084444432894e-19
+            ],
+            "clusters": 73,
+            "valid_draws": 4000,
+            "confidence": 0.975
+          },
+          "contrasts": {
+            "HGB_SDC": {
+              "observed": {
+                "point": -0.006214546290731593,
+                "interval": [
+                  -0.01235623947908516,
+                  -0.00024003221942853293
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 2.5766899524149655e-19,
+                "interval": [
+                  -4.0287454390374136e-19,
+                  8.685219172235679e-19
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              }
+            },
+            "HGB_random": {
+              "observed": {
+                "point": 0.0004425541309785175,
+                "interval": [
+                  -0.0069308587702935995,
+                  0.005963036055308259
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": -2.5932071956996784e-19,
+                "interval": [
+                  -8.395099142090774e-19,
+                  4.55036149585107e-19
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              }
+            },
+            "SDC_random": {
+              "observed": {
+                "point": 0.00665710042171011,
+                "interval": [
+                  -0.000929813211832243,
+                  0.013195187498255415
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": -5.169897148114644e-19,
+                "interval": [
+                  -1.192435527095566e-18,
+                  4.2285977054363095e-19
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              }
+            }
+          }
+        },
+        "known_labels_only": {
+          "bias": {
+            "point": -1.7317502306361498e-18,
+            "interval": [
+              -3.597313295526927e-18,
+              -1.6777084444432894e-19
+            ],
+            "clusters": 73,
+            "valid_draws": 4000,
+            "confidence": 0.975
+          },
+          "contrasts": {
+            "HGB_SDC": {
+              "observed": {
+                "point": -0.006214546290731593,
+                "interval": [
+                  -0.01235623947908516,
+                  -0.00024003221942853293
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 2.5766899524149655e-19,
+                "interval": [
+                  -4.0287454390374136e-19,
+                  8.685219172235679e-19
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              }
+            },
+            "HGB_random": {
+              "observed": {
+                "point": 0.0004425541309785175,
+                "interval": [
+                  -0.0069308587702935995,
+                  0.005963036055308259
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": -2.5932071956996784e-19,
+                "interval": [
+                  -8.395099142090774e-19,
+                  4.55036149585107e-19
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              }
+            },
+            "SDC_random": {
+              "observed": {
+                "point": 0.00665710042171011,
+                "interval": [
+                  -0.000929813211832243,
+                  0.013195187498255415
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": -5.169897148114644e-19,
+                "interval": [
+                  -1.192435527095566e-18,
+                  4.2285977054363095e-19
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              }
+            }
+          }
+        }
+      },
+      "genus_contrasts": {
+        "HGB_SDC": {
+          "lower_seed_mean": -0.004548276355002038,
+          "upper_seed_mean": -0.004548276355002038,
+          "sign_identified_seeds": 10
+        },
+        "HGB_random": {
+          "lower_seed_mean": 0.012820559367826861,
+          "upper_seed_mean": 0.012820559367826861,
+          "sign_identified_seeds": 10
+        },
+        "SDC_random": {
+          "lower_seed_mean": 0.0173688357228289,
+          "upper_seed_mean": 0.0173688357228289,
+          "sign_identified_seeds": 10
+        }
+      }
+    },
+    {
+      "mechanism": "rarity_weighted_positive_genera",
+      "dose": 0.2,
+      "false_perfect_empty_cells_range": [
+        268,
+        268
+      ],
+      "independent_bound_width": 0.12261834936374486,
+      "genus_positive_bound_width": 0.044704760472714704,
+      "treatments_zero_empty": {
+        "unknown_as_absence": {
+          "bias": {
+            "point": -0.034472605158463426,
+            "interval": [
+              -0.045771481476775795,
+              -0.02083438933636704
+            ],
+            "clusters": 73,
+            "valid_draws": 4000,
+            "confidence": 0.975
+          },
+          "contrasts": {
+            "HGB_SDC": {
+              "observed": {
+                "point": -0.005166144865899239,
+                "interval": [
+                  -0.01118486480011883,
+                  0.00014886936844766025
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 0.0010484014248323542,
+                "interval": [
+                  -0.00025686824690035205,
+                  0.001989220606228213
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              }
+            },
+            "HGB_random": {
+              "observed": {
+                "point": 0.000914527913300725,
+                "interval": [
+                  -0.00525779925017484,
+                  0.005277700335653511
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 0.00047197378232222836,
+                "interval": [
+                  -0.001075813171517012,
+                  0.002154496553130677
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              }
+            },
+            "SDC_random": {
+              "observed": {
+                "point": 0.006080672779199964,
+                "interval": [
+                  -0.00016940632897027063,
+                  0.01180372372875603
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": -0.0005764276425101258,
+                "interval": [
+                  -0.002364013357993189,
+                  0.0014213237096175962
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              }
+            }
+          }
+        },
+        "known_labels_only": {
+          "bias": {
+            "point": -0.02805629121441554,
+            "interval": [
+              -0.03839864319483286,
+              -0.016374586334087726
+            ],
+            "clusters": 73,
+            "valid_draws": 4000,
+            "confidence": 0.975
+          },
+          "contrasts": {
+            "HGB_SDC": {
+              "observed": {
+                "point": -0.005569142865003762,
+                "interval": [
+                  -0.011835947272203917,
+                  -4.319861247304025e-05
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 0.0006454034257278515,
+                "interval": [
+                  -0.0006366072876101496,
+                  0.00152238295108825
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              }
+            },
+            "HGB_random": {
+              "observed": {
+                "point": 0.0011472616449220707,
+                "interval": [
+                  -0.005432765261384827,
+                  0.005817501136699396
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 0.000704707513943581,
+                "interval": [
+                  -0.0006071012351694415,
+                  0.0021403597840511427
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              }
+            },
+            "SDC_random": {
+              "observed": {
+                "point": 0.006716404509925833,
+                "interval": [
+                  -2.778135398707208e-06,
+                  0.01291815837097867
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 5.930408821572947e-05,
+                "interval": [
+                  -0.0014165113028293897,
+                  0.0018089451707703603
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              }
+            }
+          }
+        }
+      },
+      "genus_contrasts": {
+        "HGB_SDC": {
+          "lower_seed_mean": -0.011921645775898732,
+          "upper_seed_mean": 0.00350195979786472,
+          "sign_identified_seeds": 0
+        },
+        "HGB_random": {
+          "lower_seed_mean": 0.004282839853133229,
+          "upper_seed_mean": 0.022168725611160373,
+          "sign_identified_seeds": 10
+        },
+        "SDC_random": {
+          "lower_seed_mean": 0.008664388810824404,
+          "upper_seed_mean": 0.02620686263150321,
+          "sign_identified_seeds": 10
+        }
+      }
+    },
+    {
+      "mechanism": "rarity_weighted_positive_genera",
+      "dose": 0.5,
+      "false_perfect_empty_cells_range": [
+        268,
+        268
+      ],
+      "independent_bound_width": 0.17915654296337152,
+      "genus_positive_bound_width": 0.07836696917870063,
+      "treatments_zero_empty": {
+        "unknown_as_absence": {
+          "bias": {
+            "point": -0.06525587752447862,
+            "interval": [
+              -0.08198628602433988,
+              -0.04169768086608547
+            ],
+            "clusters": 73,
+            "valid_draws": 4000,
+            "confidence": 0.975
+          },
+          "contrasts": {
+            "HGB_SDC": {
+              "observed": {
+                "point": -0.0035144364361511665,
+                "interval": [
+                  -0.007661339662127666,
+                  0.00019260389218341727
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 0.002700109854580454,
+                "interval": [
+                  0.0003085852010362985,
+                  0.005065563212430542
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              }
+            },
+            "HGB_random": {
+              "observed": {
+                "point": 0.0004889046966783384,
+                "interval": [
+                  -0.004021805611232948,
+                  0.0038831673253227903
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 4.6350565699834756e-05,
+                "interval": [
+                  -0.0024863560563095537,
+                  0.00332747860958166
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              }
+            },
+            "SDC_random": {
+              "observed": {
+                "point": 0.004003341132829505,
+                "interval": [
+                  -0.0004743087880703624,
+                  0.008227071715915382
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": -0.0026537592888806194,
+                "interval": [
+                  -0.0057059058002038405,
+                  0.0008517331969267784
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              }
+            }
+          }
+        },
+        "known_labels_only": {
+          "bias": {
+            "point": -0.05292521640675546,
+            "interval": [
+              -0.06622179413677051,
+              -0.03369238410858373
+            ],
+            "clusters": 73,
+            "valid_draws": 4000,
+            "confidence": 0.975
+          },
+          "contrasts": {
+            "HGB_SDC": {
+              "observed": {
+                "point": -0.004240131867944516,
+                "interval": [
+                  -0.008990671918665248,
+                  9.588882092344557e-05
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 0.0019744144227871255,
+                "interval": [
+                  1.1102387796332403e-05,
+                  0.0038278556486659645
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              }
+            },
+            "HGB_random": {
+              "observed": {
+                "point": 0.0009727296697412263,
+                "interval": [
+                  -0.004387179812785976,
+                  0.005093905843097907
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 0.0005301755387627505,
+                "interval": [
+                  -0.001597573773522311,
+                  0.003267847990373751
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              }
+            },
+            "SDC_random": {
+              "observed": {
+                "point": 0.005212861537685742,
+                "interval": [
+                  -0.0002526173010812918,
+                  0.010316262399204005
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": -0.001444238884024375,
+                "interval": [
+                  -0.0038170648454802247,
+                  0.0013275206830786518
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              }
+            }
+          }
+        }
+      },
+      "genus_contrasts": {
+        "HGB_SDC": {
+          "lower_seed_mean": -0.01744461501169201,
+          "upper_seed_mean": 0.009527523893702965,
+          "sign_identified_seeds": 0
+        },
+        "HGB_random": {
+          "lower_seed_mean": -0.00251745058560029,
+          "upper_seed_mean": 0.02910275519110033,
+          "sign_identified_seeds": 0
+        },
+        "SDC_random": {
+          "lower_seed_mean": 0.001834889628580659,
+          "upper_seed_mean": 0.03266750609490843,
+          "sign_identified_seeds": 10
+        }
+      }
+    }
+  ],
+  "validated_oracle_containment_and_nested_bounds": 315060,
+  "assumption": "simulator supplies at least one eligible positive in every fully censored genus; not inferred for NEON",
+  "new_method_or_primary_success": false
+}

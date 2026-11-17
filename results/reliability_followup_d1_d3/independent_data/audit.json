@@ -1,0 +1,154 @@
+{
+  "status": "completed_covariate_feasibility_audit",
+  "checked_at_utc": "2026-11-13T22:54:33.833371+00:00",
+  "species_outcomes_downloaded_or_inspected": false,
+  "model_predictions_downloaded_or_inspected": false,
+  "metadata_columns_read": [
+    "cell_row",
+    "PlotObservationID",
+    "GIVD_ID",
+    "Dataset",
+    "Continent",
+    "Country",
+    "Date_of_recording",
+    "Latitude",
+    "Longitude",
+    "Location_uncertainty",
+    "Releve_area"
+  ],
+  "metadata_sha256": "27118ac038e31e5096c99ce2b5d9fb2ba4cdd2261a0e55fd1ed10a96074577a4",
+  "metadata_source": "https://zenodo.org/records/21297133",
+  "metadata_rows": 77444,
+  "evaluation_cells": 53336,
+  "unique_plot_observation_IDs": 77443,
+  "missing_plot_observation_ID_rows": 1,
+  "duplicate_plot_ID_rows": 0,
+  "known_non_Europe_cells": 30904,
+  "metadata_rows_with_unknown_continent": 1,
+  "all_metadata_rows_within_1km_of_existing_GLC_PA": 2398,
+  "all_metadata_rows_within_20km_of_existing_GLC_PA": 20543,
+  "candidate_cohort": {
+    "definition": "all contributing plots: known non-Europe continent, finite coordinates, >=500 km from every existing GLC25 PA train/test location, recorded positional uncertainty <=1 km, area 10..400 m2, known non-EU-prefixed source",
+    "unique_candidate_cells": 11130,
+    "source_plot_rows": 15654,
+    "unique_plot_observation_IDs": 15654,
+    "unique_source_groups": 36,
+    "countries": {
+      "Angola": 67,
+      "Argentina": 62,
+      "Australia": 3396,
+      "Botswana": 3,
+      "Burkina Faso": 233,
+      "Canada": 35,
+      "Chile": 22,
+      "China": 53,
+      "Colombia": 66,
+      "Ecuador": 83,
+      "Egypt": 83,
+      "Ethiopia": 57,
+      "Greenland": 1,
+      "Iran": 54,
+      "Kazakhstan": 73,
+      "Kenya": 104,
+      "Kyrgyz Republic (Kyrgyzstan)": 7,
+      "Mongolia": 738,
+      "Morocco": 298,
+      "Namibia": 16,
+      "Peru": 16,
+      "Russian Federation": 1465,
+      "Rwanda": 11,
+      "Saudi Arabia": 98,
+      "South Africa": 74,
+      "South Korea": 189,
+      "Tadjikistan": 215,
+      "Taiwan": 622,
+      "Tanzania": 16,
+      "Thailand": 5,
+      "Uganda": 15,
+      "United States": 2790,
+      "Venezuela": 36,
+      "Yemen": 127
+    },
+    "continents": {
+      "Africa": 976,
+      "Asia": 3648,
+      "North America": 2825,
+      "Oceania": 3396,
+      "South America": 285
+    },
+    "cell_IDs_sha256": "6503024635a63b70b7c4c98ef76df791d6b1d913269f6da31ee92c2fb60bc0cf",
+    "minimum_distance_to_existing_PA_km": 567.9406011357141,
+    "final_confirmation_cohort_locked": false
+  },
+  "splotopen_access_policy": "Open (CC BY 4.0)",
+  "SAGE_API_access_right": "open",
+  "SAGE_API_license_field": null,
+  "SAGE_HTML_license_evidence": [],
+  "raw_splotopen_download_status": "individual metadata links return HTTP 200 with empty bodies; archive HEAD timed out; empty files are not counted as retrieved data",
+  "released_model_inventory": [
+    [
+      "metrics.tar",
+      3614720
+    ],
+    [
+      "eval_test_targets.h5",
+      43412687
+    ],
+    [
+      "predictions.tar",
+      42652856320
+    ],
+    [
+      "configs.tar",
+      184320
+    ],
+    [
+      "checkpoints.tar",
+      5476823040
+    ],
+    [
+      "sage-sdm-benchmark_code.zip",
+      16750803
+    ],
+    [
+      "MANIFEST.txt",
+      409
+    ],
+    [
+      "SHA256SUMS",
+      577
+    ],
+    [
+      "README.md",
+      8230
+    ]
+  ],
+  "novelty_relevant_primary_source": "https://arxiv.org/abs/2609.31082",
+  "independent_confirmation_completed": false,
+  "remaining_requirements": [
+    "Verify original source/completeness fields and predictor/target join semantics",
+    "Respect SAGE -1 out-of-native-range targets; never treat them as observed absences",
+    "SAGE aggregates plots within 1 km and collapses time, unlike GLC25 plot-level predictions",
+    "No Sentinel/Landsat inputs in the released 52-feature tabular external design; use compatible model families",
+    "Specify calibration, selector fitting, geographic evaluation, species support and final source-cohort protocol before opening labels",
+    "Audit potential PO/source overlap for any future PO-trained system; this distance check covers existing PA train/test only",
+    "Code MIT and upstream sPlotOpen CC BY 4.0 are distinct from any missing downstream archive license field"
+  ],
+  "archive_header_only_inventory": {
+    "sage_benchmark_data.tar": {
+      "status": "complete_header_index",
+      "members": 42,
+      "bytes_downloaded": 22016,
+      "species_or_prediction_values_read": false
+    },
+    "predictions.tar": {
+      "status": "complete_header_index",
+      "members": 50,
+      "bytes_downloaded": 26112,
+      "species_or_prediction_values_read": false
+    }
+  },
+  "ready_made_external_covariate_files_bytes": 7348036,
+  "released_predictions_can_be_retrieved_by_HTTP_range": true,
+  "completed_vs_pending": "Covariate-only feasibility and spatial-proximity audit completed. Species outcomes, exact confirmation protocol, target-mask semantics and confirmation results pending."
+}

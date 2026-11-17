@@ -1,0 +1,20 @@
+{
+  "at_utc": "2026-11-17T07:56:28.644416+00:00",
+  "posthoc_after_primary": true,
+  "primary_and_cache_identities": {
+    "results/taxonomic_resolution_t1/summary.json": "eacf95ac624664b2b9ee8e4b79f2ce4e95ccad7b70d49c8bdeb8259a165f3cb0",
+    "results/taxonomic_resolution_t1/replay_summary.csv": "608fbe1ca9b6822dd6895fa49316455323748cd2f305b3f7345a39a616d65038",
+    "results/taxonomic_resolution_t1/mask_receipts.json": "852e0de64fb7eda8fcb5b8db5416b5faa4919aa88952159f5abfb89dce918838",
+    "results/taxonomic_resolution_t1/validation.json": "f65f76e3f52c74e285486d64ed4c1bb291966c8d113dee88a8c540ba2e19ec91",
+    "data/taxonomic_resolution_t1/oracle.npz": "a8450a377af5331d698d5799288c79c97b07ba8211dcb2634d5c31929f2f5864",
+    "data/taxonomic_resolution_t1/replay_cells.npz": "4862b31f81eef286c178f4080861155a80ece5f9d9f0d23f000e5203015502de",
+    "data/taxonomic_resolution_t1/fixed_policy.npz": "b1cf2dbaaacc3411fdb26c556bae686e3a5941b55cd3e953892a519eaa6f7154",
+    "data/taxonomic_resolution_t1/contract.npz": "fae27a9c81cd30abfc1e468b5d46ab3d0815e29a923376c533cb068bb1bdd0a2"
+  },
+  "sources": {
+    "scripts/analyze_taxonomic_resolution_t1.py": "92db9e62eb22f129f2f14c77a5f2c6a5e0b5ab607974abbeb6445477c41ac0d5",
+    "src/geolifeclef/genus_completion_bounds.py": "66feb66cfa1f4f39ed46e14efc49e5347577b5a9b9082312144935622e7480c9",
+    "tests/test_genus_completion_bounds.py": "7d4ec583b3809f86cdd0a112397d736816d46c5319da3352185e9eb92b9c5647",
+    "docs/taxonomic_resolution_t1_posthoc.md": "f6011a52f65958bd7021c0672f72d1d449c4cac5c034e8aef5d273f1b5fb3760"
+  }
+}

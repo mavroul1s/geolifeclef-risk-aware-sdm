@@ -1,0 +1,50 @@
+{
+  "scope": "one exact source raster per group, access-only; no feature equivalence established",
+  "results": [
+    {
+      "source": "chelsa_bio01",
+      "url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/bioclim/bio01/1981-2010/CHELSA_bio01_1981-2010_V.2.1.tif",
+      "http_status": 206,
+      "exact_64KiB_range": true,
+      "headers": {
+        "Content-Range": "bytes 0-65535/152228318",
+        "Content-Length": "65536",
+        "Content-Type": "image/tiff",
+        "ETag": "\"3379aa16d29ba9c4fe1a342f4a7ca170-14\"",
+        "Last-Modified": "Sun, 07 Sep 2025 10:21:04 GMT"
+      },
+      "maximum_body_bytes_read": 65536,
+      "header_sha256": "3d28a644ff429e4ea2e1cf472ce6bf055ed486275ac992b22f86e67230cbf2dc"
+    },
+    {
+      "source": "soilgrids_bdticm",
+      "url": "https://files.isric.org/soilgrids/former/2017-03-10/data/BDTICM_M_250m_ll.tif",
+      "http_status": 206,
+      "exact_64KiB_range": true,
+      "headers": {
+        "Content-Range": "bytes 0-65535/8480439859",
+        "Content-Length": "65536",
+        "Content-Type": "image/tiff",
+        "ETag": "\"10771069791-1492505508-8480439859\"",
+        "Last-Modified": "Tue, 18 Apr 2017 08:51:48 GMT"
+      },
+      "maximum_body_bytes_read": 65536,
+      "header_sha256": "6f8f0db504ed335031fe2f2b2458f3e4741da56a214803abaa5cc3fa34949e0d"
+    },
+    {
+      "source": "earthenv_elevation",
+      "url": "https://data.earthenv.org/topography/elevation_1KMmd_GMTEDmd.tif",
+      "http_status": 206,
+      "exact_64KiB_range": true,
+      "headers": {
+        "Content-Range": "bytes 0-65535/397232066",
+        "Content-Length": "65536",
+        "Content-Type": "image/tiff",
+        "ETag": "\"c9d63d8f1e75577320f754912be64a8b\"",
+        "Last-Modified": "Mon, 16 May 2016 18:37:51 GMT"
+      },
+      "maximum_body_bytes_read": 65536,
+      "header_sha256": "664aeff6fc9780ab54a8808e7b94d52cfe71440756b3c43206cbad1db630eb8b"
+    }
+  ]
+}

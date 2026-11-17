@@ -1,0 +1,42 @@
+{
+  "retrieved_at_utc": "2026-11-16T09:29:44.964107+00:00",
+  "mode": "predictions",
+  "files": [
+    {
+      "file": "data/external_replication_e1/optimized_deepsdm_s0/test_predictions.h5",
+      "archive": "predictions.tar",
+      "member": "optimized_deepsdm_s0/test_predictions.h5",
+      "bytes": 928230158,
+      "sha256": "372f2248df97ee6c2a800263ea83e6fc465f5a52662a094efff35cf610502607",
+      "whole_archive_checksum_recomputed": false,
+      "archive_declared_checksum": "md5:b21383c40ba0aeb48bd9eb4ce008b87b",
+      "range_and_tar_header_checked": true
+    },
+    {
+      "file": "data/external_replication_e1/optimized_deepsdm_s1/test_predictions.h5",
+      "archive": "predictions.tar",
+      "member": "optimized_deepsdm_s1/test_predictions.h5",
+      "bytes": 930246666,
+      "sha256": "8edf43fcf0a5f3a49321ad7568ddb7d17c6c0942ede5cec6fc5e2667af8dd0da",
+      "whole_archive_checksum_recomputed": false,
+      "archive_declared_checksum": "md5:b21383c40ba0aeb48bd9eb4ce008b87b",
+      "range_and_tar_header_checked": true
+    },
+    {
+      "file": "data/external_replication_e1/randomforest_s0/test_predictions.h5",
+      "bytes": 443475171,
+      "sha256": "49b44d467f2e225105f41494d517d28786019fdcf9ced4e68687d11251ce0ee1",
+      "cached": true
+    },
+    {
+      "file": "data/external_replication_e1/randomforest_s1/test_predictions.h5",
+      "archive": "predictions.tar",
+      "member": "randomforest_s1/test_predictions.h5",
+      "bytes": 443334931,
+      "sha256": "7f317ac23a98f16e9dbe7630c53e8d065225aeb52ea53fc75075ca7fbb10417f",
+      "whole_archive_checksum_recomputed": false,
+      "archive_declared_checksum": "md5:b21383c40ba0aeb48bd9eb4ce008b87b",
+      "range_and_tar_header_checked": true
+    }
+  ]
+}

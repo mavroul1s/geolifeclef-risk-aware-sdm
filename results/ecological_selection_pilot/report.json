@@ -1,0 +1,155 @@
+{
+  "status": "completed_development_pilot",
+  "new_neural_fits": 0,
+  "external_assessment_opened": false,
+  "numerical_tie_sensitivity": true,
+  "comparisons_vs_SDC": {
+    "SDC": {
+      "F1_gain": 0.0,
+      "rare_coverage_gain": 0.0,
+      "F1_interval": [
+        0.0,
+        0.0
+      ],
+      "rare_coverage_interval": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.95,
+      "clusters": 109,
+      "valid_draws": 2000,
+      "interpretation": "spatial cluster interval conditional on the fitted predictions and selection rules"
+    },
+    "mean_confidence": {
+      "F1_gain": -0.0003643996166565189,
+      "rare_coverage_gain": 0.0023088340388104007,
+      "F1_interval": [
+        -0.0009599898982880604,
+        0.00016067091606837273
+      ],
+      "rare_coverage_interval": [
+        -0.003455876220146145,
+        0.007374000394302072
+      ],
+      "confidence": 0.95,
+      "clusters": 109,
+      "valid_draws": 2000,
+      "interpretation": "spatial cluster interval conditional on the fitted predictions and selection rules"
+    },
+    "lean_risk": {
+      "F1_gain": 0.0005208998863594494,
+      "rare_coverage_gain": -0.0072563355505469735,
+      "F1_interval": [
+        -0.0006530976573178162,
+        0.00200072998008624
+      ],
+      "rare_coverage_interval": [
+        -0.01973092319704487,
+        0.002847730645380109
+      ],
+      "confidence": 0.95,
+      "clusters": 109,
+      "valid_draws": 2000,
+      "interpretation": "spatial cluster interval conditional on the fitted predictions and selection rules"
+    },
+    "raw_rare_constraint": {
+      "F1_gain": -0.0014938079555832928,
+      "rare_coverage_gain": 0.03655653894783135,
+      "F1_interval": [
+        -0.003575219681716052,
+        -0.00045661319598077515
+      ],
+      "rare_coverage_interval": [
+        0.01643813351614506,
+        0.05956214008076383
+      ],
+      "confidence": 0.95,
+      "clusters": 109,
+      "valid_draws": 2000,
+      "interpretation": "spatial cluster interval conditional on the fitted predictions and selection rules"
+    },
+    "rare_count_constraint": {
+      "F1_gain": -0.0034611947505823193,
+      "rare_coverage_gain": 0.05409268319498653,
+      "F1_interval": [
+        -0.008476095918288316,
+        -0.0011743942462443865
+      ],
+      "rare_coverage_interval": [
+        0.02889064102589787,
+        0.08200431643647052
+      ],
+      "confidence": 0.95,
+      "clusters": 109,
+      "valid_draws": 2000,
+      "interpretation": "spatial cluster interval conditional on the fitted predictions and selection rules"
+    },
+    "total_count_constraint": {
+      "F1_gain": 0.0,
+      "rare_coverage_gain": 0.0,
+      "F1_interval": [
+        0.0,
+        0.0
+      ],
+      "rare_coverage_interval": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.95,
+      "clusters": 109,
+      "valid_draws": 2000,
+      "interpretation": "spatial cluster interval conditional on the fitted predictions and selection rules"
+    }
+  },
+  "proxy_constraint_records": [
+    {
+      "fold": 0,
+      "method": "raw_rare_constraint",
+      "feasible": true,
+      "lambda": 0.018035289397782428,
+      "predicted_mass_retention": 0.8002159692941772
+    },
+    {
+      "fold": 0,
+      "method": "rare_count_constraint",
+      "feasible": true,
+      "lambda": 0.02731580977879222,
+      "predicted_mass_retention": 0.8000999133421798
+    },
+    {
+      "fold": 0,
+      "method": "total_count_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 0.8107782981862753
+    },
+    {
+      "fold": 1,
+      "method": "raw_rare_constraint",
+      "feasible": true,
+      "lambda": 0.021811590373373768,
+      "predicted_mass_retention": 0.80017908522585
+    },
+    {
+      "fold": 1,
+      "method": "rare_count_constraint",
+      "feasible": true,
+      "lambda": 0.021528094550801846,
+      "predicted_mass_retention": 0.8001187583278389
+    },
+    {
+      "fold": 1,
+      "method": "total_count_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 0.8072469484336011
+    }
+  ],
+  "seconds": 6.859796245000098,
+  "limitations": [
+    "All PA labels historically consumed",
+    "Development pilot, no independent confirmation",
+    "A proxy constraint is not a guarantee about actual rare occurrences",
+    "Rarity is training PA prevalence 1..25; external primary rarity is PO relative prevalence"
+  ]
+}

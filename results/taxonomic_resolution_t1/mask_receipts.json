@@ -1,0 +1,362 @@
+[
+  {
+    "mechanism": "uniform_positive_genera",
+    "dose": 0.0,
+    "seed": 202611170,
+    "known_mask_sha256": "d8fbd8eea4f9dbe6f27ddf6208ab8c19602df51b03ccb4f85f25cb62743db673"
+  },
+  {
+    "mechanism": "uniform_positive_genera",
+    "dose": 0.0,
+    "seed": 202611171,
+    "known_mask_sha256": "d8fbd8eea4f9dbe6f27ddf6208ab8c19602df51b03ccb4f85f25cb62743db673"
+  },
+  {
+    "mechanism": "uniform_positive_genera",
+    "dose": 0.0,
+    "seed": 202611172,
+    "known_mask_sha256": "d8fbd8eea4f9dbe6f27ddf6208ab8c19602df51b03ccb4f85f25cb62743db673"
+  },
+  {
+    "mechanism": "uniform_positive_genera",
+    "dose": 0.0,
+    "seed": 202611173,
+    "known_mask_sha256": "d8fbd8eea4f9dbe6f27ddf6208ab8c19602df51b03ccb4f85f25cb62743db673"
+  },
+  {
+    "mechanism": "uniform_positive_genera",
+    "dose": 0.0,
+    "seed": 202611174,
+    "known_mask_sha256": "d8fbd8eea4f9dbe6f27ddf6208ab8c19602df51b03ccb4f85f25cb62743db673"
+  },
+  {
+    "mechanism": "uniform_positive_genera",
+    "dose": 0.0,
+    "seed": 202611175,
+    "known_mask_sha256": "d8fbd8eea4f9dbe6f27ddf6208ab8c19602df51b03ccb4f85f25cb62743db673"
+  },
+  {
+    "mechanism": "uniform_positive_genera",
+    "dose": 0.0,
+    "seed": 202611176,
+    "known_mask_sha256": "d8fbd8eea4f9dbe6f27ddf6208ab8c19602df51b03ccb4f85f25cb62743db673"
+  },
+  {
+    "mechanism": "uniform_positive_genera",
+    "dose": 0.0,
+    "seed": 202611177,
+    "known_mask_sha256": "d8fbd8eea4f9dbe6f27ddf6208ab8c19602df51b03ccb4f85f25cb62743db673"
+  },
+  {
+    "mechanism": "uniform_positive_genera",
+    "dose": 0.0,
+    "seed": 202611178,
+    "known_mask_sha256": "d8fbd8eea4f9dbe6f27ddf6208ab8c19602df51b03ccb4f85f25cb62743db673"
+  },
+  {
+    "mechanism": "uniform_positive_genera",
+    "dose": 0.0,
+    "seed": 202611179,
+    "known_mask_sha256": "d8fbd8eea4f9dbe6f27ddf6208ab8c19602df51b03ccb4f85f25cb62743db673"
+  },
+  {
+    "mechanism": "uniform_positive_genera",
+    "dose": 0.2,
+    "seed": 202611170,
+    "known_mask_sha256": "e1cdc44653f5f705c52e9de87730da4835eef71cf51785bca93ac201c58d449e"
+  },
+  {
+    "mechanism": "uniform_positive_genera",
+    "dose": 0.2,
+    "seed": 202611171,
+    "known_mask_sha256": "822dc1d2e36f57f39f8fc8d5c8cb37ad7db65b256d6e39f32907eeffc731feb4"
+  },
+  {
+    "mechanism": "uniform_positive_genera",
+    "dose": 0.2,
+    "seed": 202611172,
+    "known_mask_sha256": "7094442938e90d34fb22c7277fd4d2f82e21cf918b87b23476666acce108d57f"
+  },
+  {
+    "mechanism": "uniform_positive_genera",
+    "dose": 0.2,
+    "seed": 202611173,
+    "known_mask_sha256": "ef4e3c3375d43b7af3b3accb0903a788fbbc7e64e9e7a4d8226648b1d45a1f3c"
+  },
+  {
+    "mechanism": "uniform_positive_genera",
+    "dose": 0.2,
+    "seed": 202611174,
+    "known_mask_sha256": "607cf8e346d0e066f8fc67bf4cc90b5375ae69a029154c25d3078eb5b4a8eb34"
+  },
+  {
+    "mechanism": "uniform_positive_genera",
+    "dose": 0.2,
+    "seed": 202611175,
+    "known_mask_sha256": "e987d43c35c69ef97e605e466b9dcf981abba9351488a57544ee140610ea5b40"
+  },
+  {
+    "mechanism": "uniform_positive_genera",
+    "dose": 0.2,
+    "seed": 202611176,
+    "known_mask_sha256": "6e9070fca48d989d7571536e0f0ecc122e14ee48d00db81d3c5a6813528766f9"
+  },
+  {
+    "mechanism": "uniform_positive_genera",
+    "dose": 0.2,
+    "seed": 202611177,
+    "known_mask_sha256": "0116a76748545a1f322f4985ce5d12f2bfcd644a6e89214fa75cc0991ccbd23f"
+  },
+  {
+    "mechanism": "uniform_positive_genera",
+    "dose": 0.2,
+    "seed": 202611178,
+    "known_mask_sha256": "3917e9550bb26d7ef9d1545f894a20327c392a28aa8461fc002e683a7b6abe00"
+  },
+  {
+    "mechanism": "uniform_positive_genera",
+    "dose": 0.2,
+    "seed": 202611179,
+    "known_mask_sha256": "96f45bb881db2428ca323ac60f87ff9a14884d1f679882976a0e7c8f1ba6a6df"
+  },
+  {
+    "mechanism": "uniform_positive_genera",
+    "dose": 0.5,
+    "seed": 202611170,
+    "known_mask_sha256": "44b11f17c52af1938f18c2573af39dc2c7f779a07cc37cfd12fd9d1453cf0912"
+  },
+  {
+    "mechanism": "uniform_positive_genera",
+    "dose": 0.5,
+    "seed": 202611171,
+    "known_mask_sha256": "292be2098a7c1096701f21d80bdd2c07b237725d02b92ccf3857048d9eb72577"
+  },
+  {
+    "mechanism": "uniform_positive_genera",
+    "dose": 0.5,
+    "seed": 202611172,
+    "known_mask_sha256": "3602765a8fc3f1e6b2c15bedcd81cdc3d29b9d8c0e46440f80be7952fac1e874"
+  },
+  {
+    "mechanism": "uniform_positive_genera",
+    "dose": 0.5,
+    "seed": 202611173,
+    "known_mask_sha256": "7d081cbadeb548a651e7685573c5043325cab50d3332c87de725418a4739a184"
+  },
+  {
+    "mechanism": "uniform_positive_genera",
+    "dose": 0.5,
+    "seed": 202611174,
+    "known_mask_sha256": "657d7f524ba2916073d07d9ba20c7dabdec289bb26a87ae10825c28bd29c8459"
+  },
+  {
+    "mechanism": "uniform_positive_genera",
+    "dose": 0.5,
+    "seed": 202611175,
+    "known_mask_sha256": "c2ceb5fb0397aa0235b9d7e38d029b728b805eaa6cc386d979e531b0aed39087"
+  },
+  {
+    "mechanism": "uniform_positive_genera",
+    "dose": 0.5,
+    "seed": 202611176,
+    "known_mask_sha256": "876c8b55293999b43f5668893a2c217f9176e3b53a9211ed04305a87eb59a18d"
+  },
+  {
+    "mechanism": "uniform_positive_genera",
+    "dose": 0.5,
+    "seed": 202611177,
+    "known_mask_sha256": "3ba38bdb7ec2e5b7a6843b3cc23f30001ffe9e6776d61c275ba717129d777d1d"
+  },
+  {
+    "mechanism": "uniform_positive_genera",
+    "dose": 0.5,
+    "seed": 202611178,
+    "known_mask_sha256": "5dc14cdb9f92c0f63423d0a64c3e820e00c26b1d28019d0effe2fa6319ccbcf7"
+  },
+  {
+    "mechanism": "uniform_positive_genera",
+    "dose": 0.5,
+    "seed": 202611179,
+    "known_mask_sha256": "e768ff08a0fb4544d5d9a2201166d3802117ebde19dced24c738ab5119e538ec"
+  },
+  {
+    "mechanism": "rarity_weighted_positive_genera",
+    "dose": 0.0,
+    "seed": 202611170,
+    "known_mask_sha256": "d8fbd8eea4f9dbe6f27ddf6208ab8c19602df51b03ccb4f85f25cb62743db673"
+  },
+  {
+    "mechanism": "rarity_weighted_positive_genera",
+    "dose": 0.0,
+    "seed": 202611171,
+    "known_mask_sha256": "d8fbd8eea4f9dbe6f27ddf6208ab8c19602df51b03ccb4f85f25cb62743db673"
+  },
+  {
+    "mechanism": "rarity_weighted_positive_genera",
+    "dose": 0.0,
+    "seed": 202611172,
+    "known_mask_sha256": "d8fbd8eea4f9dbe6f27ddf6208ab8c19602df51b03ccb4f85f25cb62743db673"
+  },
+  {
+    "mechanism": "rarity_weighted_positive_genera",
+    "dose": 0.0,
+    "seed": 202611173,
+    "known_mask_sha256": "d8fbd8eea4f9dbe6f27ddf6208ab8c19602df51b03ccb4f85f25cb62743db673"
+  },
+  {
+    "mechanism": "rarity_weighted_positive_genera",
+    "dose": 0.0,
+    "seed": 202611174,
+    "known_mask_sha256": "d8fbd8eea4f9dbe6f27ddf6208ab8c19602df51b03ccb4f85f25cb62743db673"
+  },
+  {
+    "mechanism": "rarity_weighted_positive_genera",
+    "dose": 0.0,
+    "seed": 202611175,
+    "known_mask_sha256": "d8fbd8eea4f9dbe6f27ddf6208ab8c19602df51b03ccb4f85f25cb62743db673"
+  },
+  {
+    "mechanism": "rarity_weighted_positive_genera",
+    "dose": 0.0,
+    "seed": 202611176,
+    "known_mask_sha256": "d8fbd8eea4f9dbe6f27ddf6208ab8c19602df51b03ccb4f85f25cb62743db673"
+  },
+  {
+    "mechanism": "rarity_weighted_positive_genera",
+    "dose": 0.0,
+    "seed": 202611177,
+    "known_mask_sha256": "d8fbd8eea4f9dbe6f27ddf6208ab8c19602df51b03ccb4f85f25cb62743db673"
+  },
+  {
+    "mechanism": "rarity_weighted_positive_genera",
+    "dose": 0.0,
+    "seed": 202611178,
+    "known_mask_sha256": "d8fbd8eea4f9dbe6f27ddf6208ab8c19602df51b03ccb4f85f25cb62743db673"
+  },
+  {
+    "mechanism": "rarity_weighted_positive_genera",
+    "dose": 0.0,
+    "seed": 202611179,
+    "known_mask_sha256": "d8fbd8eea4f9dbe6f27ddf6208ab8c19602df51b03ccb4f85f25cb62743db673"
+  },
+  {
+    "mechanism": "rarity_weighted_positive_genera",
+    "dose": 0.2,
+    "seed": 202611170,
+    "known_mask_sha256": "26aeba2ba232efdca73623b3dc6b98c0fc7fd201b4de35ca7a5669d5f7126145"
+  },
+  {
+    "mechanism": "rarity_weighted_positive_genera",
+    "dose": 0.2,
+    "seed": 202611171,
+    "known_mask_sha256": "6560138d2fca81f00379bd5c06e6c439fecdaa4e9967ea9db5a8c0114039a00f"
+  },
+  {
+    "mechanism": "rarity_weighted_positive_genera",
+    "dose": 0.2,
+    "seed": 202611172,
+    "known_mask_sha256": "f0e5a9b165509b2e60e5cba56c43b8826814449b65c20e5930eb5aa8328d4092"
+  },
+  {
+    "mechanism": "rarity_weighted_positive_genera",
+    "dose": 0.2,
+    "seed": 202611173,
+    "known_mask_sha256": "e8b8a427b418f2a6ad0ca65dc40fa6b16788f0aef2e6e266fa7f273a119af676"
+  },
+  {
+    "mechanism": "rarity_weighted_positive_genera",
+    "dose": 0.2,
+    "seed": 202611174,
+    "known_mask_sha256": "fe561f9969623c1917deeb4fcf41810d95c172657cc06ffe953b1f51dd9c39e1"
+  },
+  {
+    "mechanism": "rarity_weighted_positive_genera",
+    "dose": 0.2,
+    "seed": 202611175,
+    "known_mask_sha256": "31c95569b989c9c000dc3db1d6f86119d5737b40279a5b9a3986d33b7822e1a9"
+  },
+  {
+    "mechanism": "rarity_weighted_positive_genera",
+    "dose": 0.2,
+    "seed": 202611176,
+    "known_mask_sha256": "981a88de6fc358ec14a3057013e67b48b6f1cd5a69f2322d573509df73d9bc13"
+  },
+  {
+    "mechanism": "rarity_weighted_positive_genera",
+    "dose": 0.2,
+    "seed": 202611177,
+    "known_mask_sha256": "61a18a060cdbf5a42df5696a19c5130168eef18f6198168dd44e1a990529521e"
+  },
+  {
+    "mechanism": "rarity_weighted_positive_genera",
+    "dose": 0.2,
+    "seed": 202611178,
+    "known_mask_sha256": "60545e8debe09d3c22e7f3ebab5a7c3583307ec8a37aea2a2f7b386f4f161d25"
+  },
+  {
+    "mechanism": "rarity_weighted_positive_genera",
+    "dose": 0.2,
+    "seed": 202611179,
+    "known_mask_sha256": "b9c31b8c2face3b85f9646a93d0681bfc31766e724740d8b0e0a9fe834c7e299"
+  },
+  {
+    "mechanism": "rarity_weighted_positive_genera",
+    "dose": 0.5,
+    "seed": 202611170,
+    "known_mask_sha256": "fc7091378c8957777466e9e598ce4bada517fb6495037edd360ea1800ea15c53"
+  },
+  {
+    "mechanism": "rarity_weighted_positive_genera",
+    "dose": 0.5,
+    "seed": 202611171,
+    "known_mask_sha256": "dff3fc6a2c07c5e96e32478af7d80e8a5f87a17b35d5c41e87d92c524ae5ff54"
+  },
+  {
+    "mechanism": "rarity_weighted_positive_genera",
+    "dose": 0.5,
+    "seed": 202611172,
+    "known_mask_sha256": "4dfcf183551d902174c9c3c81e6b5da2236993d8b3aa79196f3f2f9e57cfe84e"
+  },
+  {
+    "mechanism": "rarity_weighted_positive_genera",
+    "dose": 0.5,
+    "seed": 202611173,
+    "known_mask_sha256": "f6333d82214eac77fb13503363cb14532616dac4d03106c6cac2ec511c3609f6"
+  },
+  {
+    "mechanism": "rarity_weighted_positive_genera",
+    "dose": 0.5,
+    "seed": 202611174,
+    "known_mask_sha256": "56cee5987d9b8c0fe90df2910a263f815616433ddbb8803d26100de233b540eb"
+  },
+  {
+    "mechanism": "rarity_weighted_positive_genera",
+    "dose": 0.5,
+    "seed": 202611175,
+    "known_mask_sha256": "654375c6b1e3a0ded1cdc1a333e7b568a3685b87557b562ec09a9a093a62e14a"
+  },
+  {
+    "mechanism": "rarity_weighted_positive_genera",
+    "dose": 0.5,
+    "seed": 202611176,
+    "known_mask_sha256": "260e5b7f15bd6bcb600078153cacb53d028ee88201b6c7a5853085b7a9587c3f"
+  },
+  {
+    "mechanism": "rarity_weighted_positive_genera",
+    "dose": 0.5,
+    "seed": 202611177,
+    "known_mask_sha256": "6be9ff417eb40b779adc7e0a12c867df74d39ab0f89cf6d37d820210884c82b7"
+  },
+  {
+    "mechanism": "rarity_weighted_positive_genera",
+    "dose": 0.5,
+    "seed": 202611178,
+    "known_mask_sha256": "4d0a825de5e12631e518c6a1c0864b13bb49e14222b6209406956791178a1598"
+  },
+  {
+    "mechanism": "rarity_weighted_positive_genera",
+    "dose": 0.5,
+    "seed": 202611179,
+    "known_mask_sha256": "39e260ea9d8a280aab786113114d69255af1d07ba5acd56b703e8d45840c5499"
+  }
+]

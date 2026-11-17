@@ -1,0 +1,515 @@
+{
+  "model": "randomforest_s0",
+  "frozen_at_utc": "2026-11-16T09:34:12.203826+00:00",
+  "prediction_sha256": "49b44d467f2e225105f41494d517d28786019fdcf9ced4e68687d11251ce0ee1",
+  "calibration": {
+    "slope": 0.8394793325798185,
+    "intercept": -3.4063241706693934,
+    "eligible_pairs": 867242,
+    "fit_rows": 1165,
+    "binned_nll": 0.08140817767342697
+  },
+  "threshold": 0.075,
+  "threshold_grid": [
+    {
+      "threshold": 0.01,
+      "sample_F1": 0.18344163535796065
+    },
+    {
+      "threshold": 0.02,
+      "sample_F1": 0.18358550783845728
+    },
+    {
+      "threshold": 0.03,
+      "sample_F1": 0.18468200645019436
+    },
+    {
+      "threshold": 0.04,
+      "sample_F1": 0.18903049871355967
+    },
+    {
+      "threshold": 0.05,
+      "sample_F1": 0.19675508597889985
+    },
+    {
+      "threshold": 0.075,
+      "sample_F1": 0.20442677345814406
+    },
+    {
+      "threshold": 0.1,
+      "sample_F1": 0.1898154105567
+    },
+    {
+      "threshold": 0.125,
+      "sample_F1": 0.1702435846463143
+    },
+    {
+      "threshold": 0.15,
+      "sample_F1": 0.15428356117212277
+    },
+    {
+      "threshold": 0.175,
+      "sample_F1": 0.13581386093757583
+    },
+    {
+      "threshold": 0.2,
+      "sample_F1": 0.12317455766993712
+    },
+    {
+      "threshold": 0.225,
+      "sample_F1": 0.11046350741280138
+    },
+    {
+      "threshold": 0.25,
+      "sample_F1": 0.09757984134164534
+    },
+    {
+      "threshold": 0.275,
+      "sample_F1": 0.08835791352061458
+    },
+    {
+      "threshold": 0.3,
+      "sample_F1": 0.08222788362115671
+    },
+    {
+      "threshold": 0.35,
+      "sample_F1": 0.06687215997034965
+    },
+    {
+      "threshold": 0.4,
+      "sample_F1": 0.05645853146302896
+    },
+    {
+      "threshold": 0.45,
+      "sample_F1": 0.049854108548738986
+    },
+    {
+      "threshold": 0.5,
+      "sample_F1": 0.044265770601424614
+    }
+  ],
+  "riskcal_metrics": [
+    {
+      "decoder": "top18",
+      "riskcal_F1": 0.1590250750310593,
+      "mean_riskcal_richness": 14.36286522148916
+    },
+    {
+      "decoder": "threshold_0_80",
+      "riskcal_F1": 0.1582518699521525,
+      "mean_riskcal_richness": 14.36286522148916
+    },
+    {
+      "decoder": "expected_F1_8_40",
+      "riskcal_F1": 0.17053179703380603,
+      "mean_riskcal_richness": 14.36286522148916
+    },
+    {
+      "decoder": "expected_F1_0_80",
+      "riskcal_F1": 0.17351184043648624,
+      "mean_riskcal_richness": 14.36286522148916
+    }
+  ],
+  "proxy_constraints": [
+    {
+      "decoder": "top18",
+      "coverage": 1.0,
+      "method": "raw_rare_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 1.0
+    },
+    {
+      "decoder": "top18",
+      "coverage": 1.0,
+      "method": "rare_count_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 1.0
+    },
+    {
+      "decoder": "top18",
+      "coverage": 1.0,
+      "method": "total_count_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 1.0
+    },
+    {
+      "decoder": "top18",
+      "coverage": 0.9,
+      "method": "raw_rare_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 0.9181497256825418
+    },
+    {
+      "decoder": "top18",
+      "coverage": 0.9,
+      "method": "rare_count_constraint",
+      "feasible": true,
+      "lambda": 0.0008760123548698928,
+      "predicted_mass_retention": 0.9002295421526262
+    },
+    {
+      "decoder": "top18",
+      "coverage": 0.9,
+      "method": "total_count_constraint",
+      "feasible": true,
+      "lambda": 0.011135157102081905,
+      "predicted_mass_retention": 0.900050760722837
+    },
+    {
+      "decoder": "top18",
+      "coverage": 0.8,
+      "method": "raw_rare_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 0.8325396002456186
+    },
+    {
+      "decoder": "top18",
+      "coverage": 0.8,
+      "method": "rare_count_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 0.8027877813409283
+    },
+    {
+      "decoder": "top18",
+      "coverage": 0.8,
+      "method": "total_count_constraint",
+      "feasible": true,
+      "lambda": 0.009623642393049359,
+      "predicted_mass_retention": 0.8000066867773815
+    },
+    {
+      "decoder": "top18",
+      "coverage": 0.6,
+      "method": "raw_rare_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 0.6515619049426603
+    },
+    {
+      "decoder": "top18",
+      "coverage": 0.6,
+      "method": "rare_count_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 0.6104897099009795
+    },
+    {
+      "decoder": "top18",
+      "coverage": 0.6,
+      "method": "total_count_constraint",
+      "feasible": true,
+      "lambda": 0.002245422361375482,
+      "predicted_mass_retention": 0.6000492618890456
+    },
+    {
+      "decoder": "threshold_0_80",
+      "coverage": 1.0,
+      "method": "raw_rare_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 1.0
+    },
+    {
+      "decoder": "threshold_0_80",
+      "coverage": 1.0,
+      "method": "rare_count_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 1.0
+    },
+    {
+      "decoder": "threshold_0_80",
+      "coverage": 1.0,
+      "method": "total_count_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 1.0
+    },
+    {
+      "decoder": "threshold_0_80",
+      "coverage": 0.9,
+      "method": "raw_rare_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 0.9209898482330132
+    },
+    {
+      "decoder": "threshold_0_80",
+      "coverage": 0.9,
+      "method": "rare_count_constraint",
+      "feasible": true,
+      "lambda": 0.0008372136666903174,
+      "predicted_mass_retention": 0.9001246886103557
+    },
+    {
+      "decoder": "threshold_0_80",
+      "coverage": 0.9,
+      "method": "total_count_constraint",
+      "feasible": true,
+      "lambda": 0.00018349724304123072,
+      "predicted_mass_retention": 0.900044526744794
+    },
+    {
+      "decoder": "threshold_0_80",
+      "coverage": 0.8,
+      "method": "raw_rare_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 0.8388052974146966
+    },
+    {
+      "decoder": "threshold_0_80",
+      "coverage": 0.8,
+      "method": "rare_count_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 0.8053359831857102
+    },
+    {
+      "decoder": "threshold_0_80",
+      "coverage": 0.8,
+      "method": "total_count_constraint",
+      "feasible": true,
+      "lambda": 0.00041496646054817177,
+      "predicted_mass_retention": 0.8000775998564266
+    },
+    {
+      "decoder": "threshold_0_80",
+      "coverage": 0.6,
+      "method": "raw_rare_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 0.6605667955999455
+    },
+    {
+      "decoder": "threshold_0_80",
+      "coverage": 0.6,
+      "method": "rare_count_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 0.6137857689178987
+    },
+    {
+      "decoder": "threshold_0_80",
+      "coverage": 0.6,
+      "method": "total_count_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 0.6095399269455243
+    },
+    {
+      "decoder": "expected_F1_8_40",
+      "coverage": 1.0,
+      "method": "raw_rare_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 1.0
+    },
+    {
+      "decoder": "expected_F1_8_40",
+      "coverage": 1.0,
+      "method": "rare_count_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 1.0
+    },
+    {
+      "decoder": "expected_F1_8_40",
+      "coverage": 1.0,
+      "method": "total_count_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 1.0
+    },
+    {
+      "decoder": "expected_F1_8_40",
+      "coverage": 0.9,
+      "method": "raw_rare_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 0.9207882431057417
+    },
+    {
+      "decoder": "expected_F1_8_40",
+      "coverage": 0.9,
+      "method": "rare_count_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 0.9014126828959267
+    },
+    {
+      "decoder": "expected_F1_8_40",
+      "coverage": 0.9,
+      "method": "total_count_constraint",
+      "feasible": true,
+      "lambda": 0.0055291103143364495,
+      "predicted_mass_retention": 0.9000519281836196
+    },
+    {
+      "decoder": "expected_F1_8_40",
+      "coverage": 0.8,
+      "method": "raw_rare_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 0.8387270058207177
+    },
+    {
+      "decoder": "expected_F1_8_40",
+      "coverage": 0.8,
+      "method": "rare_count_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 0.8088480929555918
+    },
+    {
+      "decoder": "expected_F1_8_40",
+      "coverage": 0.8,
+      "method": "total_count_constraint",
+      "feasible": true,
+      "lambda": 0.0034105511119539855,
+      "predicted_mass_retention": 0.8000460690384599
+    },
+    {
+      "decoder": "expected_F1_8_40",
+      "coverage": 0.6,
+      "method": "raw_rare_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 0.6609909753114419
+    },
+    {
+      "decoder": "expected_F1_8_40",
+      "coverage": 0.6,
+      "method": "rare_count_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 0.6167299452313886
+    },
+    {
+      "decoder": "expected_F1_8_40",
+      "coverage": 0.6,
+      "method": "total_count_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 0.601657106161574
+    },
+    {
+      "decoder": "expected_F1_0_80",
+      "coverage": 1.0,
+      "method": "raw_rare_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 1.0
+    },
+    {
+      "decoder": "expected_F1_0_80",
+      "coverage": 1.0,
+      "method": "rare_count_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 1.0
+    },
+    {
+      "decoder": "expected_F1_0_80",
+      "coverage": 1.0,
+      "method": "total_count_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 1.0
+    },
+    {
+      "decoder": "expected_F1_0_80",
+      "coverage": 0.9,
+      "method": "raw_rare_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 0.9207773948268082
+    },
+    {
+      "decoder": "expected_F1_0_80",
+      "coverage": 0.9,
+      "method": "rare_count_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 0.9010680842506399
+    },
+    {
+      "decoder": "expected_F1_0_80",
+      "coverage": 0.9,
+      "method": "total_count_constraint",
+      "feasible": true,
+      "lambda": 0.005499472306170539,
+      "predicted_mass_retention": 0.9002238026522454
+    },
+    {
+      "decoder": "expected_F1_0_80",
+      "coverage": 0.8,
+      "method": "raw_rare_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 0.8385904739062414
+    },
+    {
+      "decoder": "expected_F1_0_80",
+      "coverage": 0.8,
+      "method": "rare_count_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 0.8070270243449006
+    },
+    {
+      "decoder": "expected_F1_0_80",
+      "coverage": 0.8,
+      "method": "total_count_constraint",
+      "feasible": true,
+      "lambda": 0.004233886030115208,
+      "predicted_mass_retention": 0.8000787977782653
+    },
+    {
+      "decoder": "expected_F1_0_80",
+      "coverage": 0.6,
+      "method": "raw_rare_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 0.6615099141417786
+    },
+    {
+      "decoder": "expected_F1_0_80",
+      "coverage": 0.6,
+      "method": "rare_count_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 0.6168983424282859
+    },
+    {
+      "decoder": "expected_F1_0_80",
+      "coverage": 0.6,
+      "method": "total_count_constraint",
+      "feasible": true,
+      "lambda": 0.0,
+      "predicted_mass_retention": 0.6007752559791113
+    }
+  ],
+  "risk_features": [
+    "log_area",
+    "year",
+    "log_geo_uncertainty",
+    "log_calibration_distance",
+    "eligible_labels",
+    "probability_mass",
+    "max_probability",
+    "mean_set_confidence",
+    "SDC",
+    "predicted_richness",
+    "predicted_rare_mass",
+    "empty_probability"
+  ],
+  "seconds": 6.142562993999945,
+  "assessment_targets_accessed": false
+}

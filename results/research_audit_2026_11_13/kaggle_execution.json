@@ -1,0 +1,38 @@
+{
+  "status": "complete",
+  "kernel": "nmavros/glc25-reliability-audit-20261113",
+  "url": "https://www.kaggle.com/code/nmavros/glc25-reliability-audit-20261113",
+  "version": null,
+  "private": true,
+  "GPU_enabled": false,
+  "competition_submission_made": false,
+  "notebook_source_sha256": "cfb47efbeee1a7a3e2535567e153682c54135d2519153412228df69568494b6f",
+  "output_files": [
+    {
+      "name": "reliability_report.json",
+      "bytes": 24604,
+      "sha256": "349163534247c98ec4141966e104b9221d58c94b121ac60e4dd875c5c46d4d56"
+    },
+    {
+      "name": "selective_country_coverage.csv",
+      "bytes": 68693,
+      "sha256": "8584426500e5ac763b687131c89079bd93e304d9f9836dd63d3e800a2ea0ca63"
+    },
+    {
+      "name": "selective_pilot.csv",
+      "bytes": 6948,
+      "sha256": "0840a43069b3b5a1987343dc470bf2c1ddcb924a090be4d4b590254d1d9c36fc"
+    }
+  ],
+  "remote_python": "3.13.18",
+  "remote_packages": {
+    "numpy": "2.1.3",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.6.1",
+    "torch": "2.11.0+cpu"
+  },
+  "remote_pilot_seconds": 33.256291650000094,
+  "remote_results_status": "completed_CPU_reproduction",
+  "local_comparison_rows": 126,
+  "maximum_absolute_F1_difference_from_local": 0.0
+}

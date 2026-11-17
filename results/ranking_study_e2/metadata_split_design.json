@@ -1,0 +1,59 @@
+{
+  "selected_sources": [
+    {
+      "source": "AU-AU-002",
+      "cells": 480,
+      "blocks": 6
+    },
+    {
+      "source": "NA-US-002",
+      "cells": 232,
+      "blocks": 5
+    },
+    {
+      "source": "AS-RU-002",
+      "cells": 83,
+      "blocks": 4
+    }
+  ],
+  "spatial_folds": [
+    {
+      "fold": 0,
+      "training": 848,
+      "validation": 213,
+      "training_ids_sha256": "6034731c6e616e32878cb1861ef88fc1004a396ef5cfb4593bb8d3d00fd6abb1",
+      "validation_ids_sha256": "32d29c0a442aeabe2fffcfe5d464186531ec2e68a094ea61c72f31ebd98a26ac"
+    },
+    {
+      "fold": 1,
+      "training": 849,
+      "validation": 212,
+      "training_ids_sha256": "168d7b5da34d8453db5d7a832ac30df48d03c53fa2f5c5e2287e9975f9c6e12d",
+      "validation_ids_sha256": "da5d7493dc8199f9cfc859111d7bdf4b133b1bf5e6357fc22827ca0ec4692a8f"
+    },
+    {
+      "fold": 2,
+      "training": 849,
+      "validation": 212,
+      "training_ids_sha256": "bc320dd6121bccf02a5036c0cd34d0c25e8aa577bcf12a15e85da8b95863400e",
+      "validation_ids_sha256": "f29d7fd453c8bfb3721cec426b528e0f7516a4e4ff6ec984921c180337890c07"
+    },
+    {
+      "fold": 3,
+      "training": 849,
+      "validation": 212,
+      "training_ids_sha256": "84b5331f1f6c3aac911060a0b96f8a2cff5a3f8e53d6a07c877175bdc0d59b86",
+      "validation_ids_sha256": "0fffa61af7045d3f0d1d0982c704ecd5fb8948cbfd658033855a1efa3e55602a"
+    },
+    {
+      "fold": 4,
+      "training": 849,
+      "validation": 212,
+      "training_ids_sha256": "b75681062c6f54035fe855b0958c9771d327c8bfabdbd28489cc41ee45c3879a",
+      "validation_ids_sha256": "d376093e23d2d052c47c164ede15636bca8a6481a104f1a86366db303d9781ad"
+    }
+  ],
+  "calibration_cells": 1165,
+  "riskcal_cells": 1061,
+  "assessment_target_rows_requested": 0
+}

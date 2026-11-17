@@ -1,0 +1,8 @@
+# Local CPU study, Python 3.12.16. Supplemental research dependencies.
+numpy==1.26.4
+pandas==2.2.3
+scipy==1.17.1
+scikit-learn==1.5.2
+h5py==3.12.1
+hdf5plugin==5.0.0
+matplotlib==3.11.2

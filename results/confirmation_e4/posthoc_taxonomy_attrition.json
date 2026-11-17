@@ -1,0 +1,86 @@
+{
+  "status": "post_primary_taxonomy_diagnostic_complete",
+  "same_assessment_labels_reproduced_bit_for_bit": true,
+  "record_reason_counts": {
+    "identified_infraspecific_rank": 1578,
+    "resolved_mapped": 20887,
+    "unresolved_higher_rank": 4844,
+    "unmapped_species_name": 15662,
+    "identification_qualifier": 2730,
+    "positive_without_taxon_ID": 46
+  },
+  "distinct_cell_taxon_key_reason_counts": {
+    "identified_infraspecific_rank": 354,
+    "resolved_mapped": 4547,
+    "unresolved_higher_rank": 1520,
+    "unmapped_species_name": 4178,
+    "identification_qualifier": 1520,
+    "positive_without_taxon_ID": 25
+  },
+  "rank_record_counts": {
+    "subspecies": 426,
+    "species": 38797,
+    "genus": 4532,
+    "variety": 1179,
+    "family": 328,
+    "missing": 46,
+    "kingdom": 198,
+    "speciesGroup": 236,
+    "order": 5
+  },
+  "identification_qualifier_record_counts": {
+    "(blank)": 43017,
+    "cf. species": 2234,
+    "cf. genus": 377,
+    "cf. variety": 3,
+    "cf. family": 82,
+    "cf. subspecies": 12,
+    "aff. species": 14,
+    "aff. family": 3,
+    "aff. genus": 5
+  },
+  "data_quality_flag_record_counts": {
+    "(blank)": 45747
+  },
+  "potential_missingness_by_reason": [
+    {
+      "reason": "identified_infraspecific_rank",
+      "records": 1578,
+      "distinct_cell_taxon_qualifier_keys": 354,
+      "cells_with_possible_unknown_labels": 80,
+      "unknown_eligible_label_pairs_potentially_affected": 802
+    },
+    {
+      "reason": "unresolved_higher_rank",
+      "records": 4844,
+      "distinct_cell_taxon_qualifier_keys": 1520,
+      "cells_with_possible_unknown_labels": 151,
+      "unknown_eligible_label_pairs_potentially_affected": 34582
+    },
+    {
+      "reason": "unmapped_species_name",
+      "records": 15662,
+      "distinct_cell_taxon_qualifier_keys": 4178,
+      "cells_with_possible_unknown_labels": 158,
+      "unknown_eligible_label_pairs_potentially_affected": 4366
+    },
+    {
+      "reason": "identification_qualifier",
+      "records": 2730,
+      "distinct_cell_taxon_qualifier_keys": 1520,
+      "cells_with_possible_unknown_labels": 137,
+      "unknown_eligible_label_pairs_potentially_affected": 5139
+    },
+    {
+      "reason": "positive_without_taxon_ID",
+      "records": 46,
+      "distinct_cell_taxon_qualifier_keys": 25,
+      "cells_with_possible_unknown_labels": 25,
+      "unknown_eligible_label_pairs_potentially_affected": 11123
+    }
+  ],
+  "reason_masks_overlap_and_are_not_additive": true,
+  "scientific_primary_or_thresholds_changed": false,
+  "new_plots_or_bouts_exposed": false,
+  "interpretation": "Attrition belongs to this conservative taxonomic bridge and missing-label rule; it is not proof that NEON itself lacks useful plant identifications. Identified infraspecific taxa need an explicit rank-aware species mapping in future work, not a post-hoc rescue of E4."
+}

@@ -1,0 +1,7 @@
+{
+  "source": "official Kaggle geolifeclef-2025 GLC25_SAMPLE_SUBMISSION.csv",
+  "destination": "ignored legacy test input",
+  "bytes": 1045427,
+  "sha256": "ad24de54bc0ea1e469c7bf0637562a576f4d4af21871b31ae2d3d285df7b902f",
+  "new_experiment_or_submission": false
+}

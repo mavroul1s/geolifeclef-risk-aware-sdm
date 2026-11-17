@@ -7,6 +7,7 @@ import hashlib
 import json
 import lzma
 from pathlib import Path
+from geolifeclef.assessment_history import historical_consumed_paths
 import subprocess
 
 import numpy as np
@@ -143,10 +144,7 @@ def main() -> None:
                         default=repository / "notebooks/geolifeclef_v25_fresh_holdout_adaptive_ensemble.ipynb")
     args = parser.parse_args()
     consumed_paths = [
-        repository / "artifacts/v21_review/assessment_per_survey.csv",
-        repository / "artifacts/v22_review/assessment_per_survey.csv",
-        repository / "artifacts/manual_upload_v23_retry2/user_provided_v25_exports/assessment_per_survey.csv",
-        args.v24_output / "assessment_per_survey_v24.csv",
+        *historical_consumed_paths(repository, 24),
     ]
     control = packed_v24_submission(args.v24_output / "GLC25_PA_submission_v24.csv", args.species)
     consumed = packed_consumed_ids(consumed_paths)

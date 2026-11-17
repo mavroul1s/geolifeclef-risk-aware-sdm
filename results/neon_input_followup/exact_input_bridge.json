@@ -1,0 +1,54 @@
+{
+  "status": "partial_full_candidate_inputs",
+  "candidate_cells": 209,
+  "exact_all_52_feature_cells": 163,
+  "candidate_plots_with_exact_inputs": 301,
+  "sites_with_exact_inputs": 16,
+  "remaining_cells": 46,
+  "raw_nan_values_in_valid_vectors": 0,
+  "raw_infinite_values_in_valid_vectors": 0,
+  "identical_float32_coordinates_verified": true,
+  "method": "exact released SAGE training input rows at identical canonical EPSG:6933 cell centers; not nearest-point sampling",
+  "groups": [
+    {
+      "group": "chelsa",
+      "member": "predictors/train_chelsa_1km.h5",
+      "rows": 163,
+      "width": 19,
+      "new_network_bytes": 8126464,
+      "new_range_requests": 31,
+      "array_sha256": "0032e70cfd37bf908f5d5d32d6b5bcd97fa20d9d7d57bd62635e81c5674b3b0d"
+    },
+    {
+      "group": "soilgrids",
+      "member": "predictors/train_soilgrids_1km.h5",
+      "rows": 163,
+      "width": 8,
+      "new_network_bytes": 6815744,
+      "new_range_requests": 26,
+      "array_sha256": "869949ce01fc62c9e2ed199765ac35a738c5dcbc07a7d8d8205cb77f44c32e2b"
+    },
+    {
+      "group": "topography",
+      "member": "predictors/train_topography_1km.h5",
+      "rows": 163,
+      "width": 16,
+      "new_network_bytes": 8126464,
+      "new_range_requests": 31,
+      "array_sha256": "73bc08f5d338df09f924e434f8e177ef8784ca0b5efe0b5a23c477917a2e20b8"
+    },
+    {
+      "group": "human_footprint",
+      "member": "predictors/train_human_footprint_1km.h5",
+      "rows": 163,
+      "width": 9,
+      "new_network_bytes": 7340032,
+      "new_range_requests": 28,
+      "array_sha256": "5be9f17822c1e82a6c6e80fa6ded31737bc37de7a4da819c714cd36fe1c7ae3c"
+    }
+  ],
+  "bundle_sha256": "bb20438a3a6fc0024481c4e3da67688f602dfe3158ac285f53e782b81a0f4854",
+  "NEON_species_outcomes_read": false,
+  "ecological_study_admitted": false,
+  "restriction": "The exact-cache subset is a training-support stratum, not a new-location generalization test; full 209-cell inputs remain incomplete."
+}

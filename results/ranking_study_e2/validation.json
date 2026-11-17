@@ -1,0 +1,27 @@
+{
+  "validated_at_utc": "2026-11-16T10:08:30.160229+00:00",
+  "status": "passed",
+  "E1_artifact_manifest_unchanged": true,
+  "locked_sources_and_inputs_match": true,
+  "outer_spatial_folds": 5,
+  "outer_source_folds": 3,
+  "inner_folds": 24,
+  "source_removed_from_both_reliability_calibration_roles": true,
+  "minimum_audited_crossfold_distance_km": 51.64907519239607,
+  "buffer_checks": 35,
+  "only_original_riskcal_rows_evaluated": true,
+  "assessment_targets_requested": 0,
+  "all_policy_counts_equal": true,
+  "tests": {
+    "tests": "50",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0"
+  },
+  "scientific_GPU_admission": false,
+  "GPU_job_launched": false,
+  "helper_source_hashes": {
+    "scripts/run_external_e1.py": "0f6b8747d2ad694223250a268db985d9b2a731b36859ba2a0f2f5450a84a82c9",
+    "src/geolifeclef/reliability.py": "3a34882cdf7ff14c31af08b405fdaaed42fca420b35241ecf9d800b52dfeeb1c"
+  }
+}

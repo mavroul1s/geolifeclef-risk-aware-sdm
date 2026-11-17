@@ -1,0 +1,28 @@
+{
+  "status": "complete",
+  "kernel": "nmavros/neon-e4-inference-20261116",
+  "requested_kernel": "nmavros/neon-e4-inference-20261116",
+  "url": "https://www.kaggle.com/code/nmavros/neon-e4-inference-20261116",
+  "private": true,
+  "GPU_requested": true,
+  "competition_submission_made": false,
+  "internet_enabled": true,
+  "public_inputs_only": true,
+  "kernel_sources": [],
+  "requested_at_utc": "2026-11-16T17:43:20.335424+00:00",
+  "notebook_sha256": "a5a5590cff05c486a574ff105f5fbf8f1c0d9ee84becba294f881e9520e85c7e",
+  "checked_at_utc": "2026-11-16T17:45:55.392855+00:00",
+  "output_files": [
+    {
+      "name": "e4_gpu_report.json",
+      "bytes": 633,
+      "sha256": "ca85469527d9e5bdc983f26783ef1fd7e76e0b39c0582ab3014e2c643a851cf0"
+    },
+    {
+      "name": "e4_probabilities.npz",
+      "bytes": 55578434,
+      "sha256": "0dd3a46bc532bff5444daebd2f691c6a5239b80c2977c5a3ddee082626010094"
+    }
+  ],
+  "output_bytes": 55579067
+}

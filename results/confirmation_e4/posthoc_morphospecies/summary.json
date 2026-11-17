@@ -1,0 +1,48 @@
+{
+  "status": "posthoc_replay_complete",
+  "original_primary_sha256": "97f7492a76c32f54e6a348ba6f5147a83a4d2ac49fadbefe836d3e9c829462e4",
+  "original_primary_changed": false,
+  "fresh_confirmation_claim": false,
+  "new_model_or_policy_fit": false,
+  "selected_morphospecies_keys": 389,
+  "resolution_status_counts": {
+    "dated_resolution": 349,
+    "no_dated_resolution": 40
+  },
+  "observation_records_changed_by_join": 411,
+  "conflicting_resolved_species_records_left_unknown": 8,
+  "known_fraction_median": 0.7680180180180181,
+  "scorable_cells": 77,
+  "scorable_sites": 11,
+  "record_counts": {
+    "selected_plant_records": 45742,
+    "uncertain_or_unmapped_records": 24704,
+    "mapped_resolved_records": 20991,
+    "positive_without_taxon_id": 44,
+    "mapped_outside_native_universe": 1803
+  },
+  "source": "Official NEON quick-start join by siteID,morphospeciesID; latest dated resolution, conflicts not picked for favorable mapping.",
+  "qualification": "Recommended join was omitted in the conservative first pass. This replay corrects that limitation but is post-hoc and cannot rescue original confirmation or establish intrinsic taxonomic unobservability.",
+  "descriptive_comparison": {
+    "MSE_gain_mean_minus_HGB": -0.0494479038992789,
+    "HGB_minus_SDC_selective_F1": 0.0017997704172774132,
+    "MSE_gain_interval": [
+      -0.07157542684867377,
+      -0.02235326370633772
+    ],
+    "F1_difference_interval": [
+      -0.01963555475756524,
+      0.022638395094237714
+    ],
+    "sites": 11,
+    "cells": 77,
+    "valid_draws": 4000,
+    "confidence": 0.975
+  },
+  "quality_MSE": {
+    "training_mean": 0.04403609960864836,
+    "HGB": 0.09348400350792728,
+    "affine_SDC": 0.0480948672785754,
+    "raw_SDC": 0.044786441225498484
+  }
+}

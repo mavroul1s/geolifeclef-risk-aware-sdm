@@ -1,0 +1,41 @@
+{
+  "status": "completed_exploratory_followup_with_numerical_sensitivity",
+  "checked_at_utc": "2026-11-14T10:34:35.575537+00:00",
+  "focused_tests_passed": 50,
+  "test_failures": 0,
+  "frozen_sources_and_configurations_match": {
+    "src/geolifeclef/decision_reliability.py": true,
+    "scripts/reliability_inference_core.py": true,
+    "scripts/build_reliability_inference_notebook.py": true,
+    "scripts/reliability_aligned_inference.py": true,
+    "src/geolifeclef/inference_reproduction.py": true,
+    "scripts/build_aligned_reliability_inference_notebook.py": true,
+    "scientific_config": true,
+    "alignment_config": true,
+    "initial_notebook": true,
+    "aligned_notebook": true
+  },
+  "verified_output_manifests": {
+    "original_R1": 18,
+    "aligned": 9
+  },
+  "statistical_analysis_source_snapshot_matches": true,
+  "initial_exact_set_guard_passed": false,
+  "aligned_exact_set_guard_passed": false,
+  "aligned_numerical_rank_audit_passed": true,
+  "new_neural_fits": 0,
+  "inference_sessions": 2,
+  "checkpoint_inferences_per_session": 6,
+  "total_inference_session_minutes": 61.37573513431668,
+  "D1_D2_completed_as_exploratory_sensitivity": "completed_exploratory_D1_D2",
+  "D3_completed": true,
+  "external_covariate_audit_completed": true,
+  "candidate_external_cells": 11130,
+  "external_species_outcomes_opened": false,
+  "independent_confirmation_completed": false,
+  "credential_content_detected": false,
+  "changed_files_scanned": 155,
+  "persistent_project_python": "/home/mavroul1s/Projects/geolifeclef-risk-aware-sdm/repo/artifacts/python-runtime/cpython-3.12.16-linux-x86_64-gnu",
+  "system_configuration_changed": false,
+  "historical_full_suite": "not rerun; documented fixture/hash limitations remain"
+}

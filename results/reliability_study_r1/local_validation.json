@@ -1,0 +1,53 @@
+{
+  "status": "local_checks_passed",
+  "mathematical_and_integrity_tests_passed": 9,
+  "synthetic_neural_pipeline": "passed",
+  "synthetic_species_outputs": 5016,
+  "synthetic_member_fits": 2,
+  "smoke_notebook_validates": true,
+  "smoke_notebook_sha256": "b6f7bea4ee58beab906142959ad9626c2aecf3fcd3e337bdcdbe327bf509c8d0",
+  "scientific_accuracy_claim": false,
+  "focused_tests_passed": 10,
+  "synthetic_pipeline_is_persisted_test": "tests/test_reliability_study.py",
+  "gpu_probe": "passed, Tesla T4, finite real-data gradients",
+  "real_data_smoke": "passed, 2 neural fits x 2 epochs, calibrated outputs and manifest verified",
+  "full_admission": {
+    "status": "admitted",
+    "technical_smoke_verified": true,
+    "smoke_manifest_verified": true,
+    "smoke_rows": 3712,
+    "full_feature_surveys": 81827,
+    "full_fold_training_surveys": [
+      35811,
+      37487
+    ],
+    "smoke_steady_epoch_seconds": 1.133294439000025,
+    "estimate_hours": 2.4648260357394207,
+    "preparation_estimate_seconds": 2900.4142679102197,
+    "training_estimate_seconds": 3285.412831531118,
+    "other_estimate_seconds": 1787.5466292205765,
+    "overhead_reserve_seconds": 900,
+    "guard_hours": 5.5,
+    "accuracy_scores_used_for_admission": false,
+    "smoke_config_is_initial_pre_amendment": true,
+    "primary_amendment_changes_only_CPU_risk_comparisons": true
+  },
+  "amendment": {
+    "amended_at_utc": "2026-11-13T17:22:41Z",
+    "reason": "Before inspecting any new GPU accuracy results: isolate uncertainty by adding model signals to the same metadata-plus-distance baseline; environmental novelty remains a separate ablation.",
+    "initial_config_sha256": "c4f911136e825ca684f84561c19040f18b89056e88398cb8fbeae4502c170efd",
+    "amended_config_sha256": "a45db6144388fbc77dc2411cd56a29d6c66531ee5d67ccc78722f7ad2d695b69",
+    "new_GPU_accuracy_results_inspected": false,
+    "neural_architecture_seeds_epochs_and_roles_changed": false,
+    "smoke_promotion_remains_technical_only": true
+  },
+  "full_config_sha256": "a45db6144388fbc77dc2411cd56a29d6c66531ee5d67ccc78722f7ad2d695b69",
+  "source_sha256": {
+    "src/geolifeclef/reliability.py": "3a34882cdf7ff14c31af08b405fdaaed42fca420b35241ecf9d800b52dfeeb1c",
+    "scripts/reliability_study_core.py": "8bbfaf5200aa25be379a33831892a33408a8be7ef8fc6e66facf3358c4572902",
+    "scripts/build_reliability_study_notebook.py": "6b5d78a3812125ea3fd526eac52b4efe75d40a2758535a066324fcd7d980eef9",
+    "scripts/kaggle_research_job.py": "cfc922f3874659b48c12689a3cdf86631c1d287cba89fff14b63195a40bcbbe2",
+    "tests/test_reliability.py": "4a98290536f071d464343d435cc61138459a8f3ad65d339b1ba6c7cbee657796",
+    "tests/test_reliability_study.py": "6b48fac26f8c7fa956679eec9bc9b19c0502f6ab757cd50e674090e474e421d6"
+  }
+}

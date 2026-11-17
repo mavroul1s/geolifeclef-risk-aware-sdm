@@ -1,0 +1,1921 @@
+mechanism,dose,seed,country,cells,admitted_cells,retention,rare_occurrence_retention
+uniform_positive_genera,0.0,202611170,Angola,43,43,1.0,1.0
+uniform_positive_genera,0.0,202611170,Argentina,34,34,1.0,1.0
+uniform_positive_genera,0.0,202611170,Australia,1469,1469,1.0,1.0
+uniform_positive_genera,0.0,202611170,Botswana,2,2,1.0,
+uniform_positive_genera,0.0,202611170,Burkina Faso,173,173,1.0,1.0
+uniform_positive_genera,0.0,202611170,Canada,15,15,1.0,1.0
+uniform_positive_genera,0.0,202611170,Chile,12,12,1.0,
+uniform_positive_genera,0.0,202611170,China,22,22,1.0,1.0
+uniform_positive_genera,0.0,202611170,Colombia,27,27,1.0,
+uniform_positive_genera,0.0,202611170,Ecuador,30,30,1.0,1.0
+uniform_positive_genera,0.0,202611170,Egypt,45,45,1.0,
+uniform_positive_genera,0.0,202611170,Ethiopia,44,44,1.0,1.0
+uniform_positive_genera,0.0,202611170,Iran,27,27,1.0,1.0
+uniform_positive_genera,0.0,202611170,Kazakhstan,45,45,1.0,1.0
+uniform_positive_genera,0.0,202611170,Kenya,67,67,1.0,1.0
+uniform_positive_genera,0.0,202611170,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+uniform_positive_genera,0.0,202611170,Mongolia,338,338,1.0,1.0
+uniform_positive_genera,0.0,202611170,Morocco,176,176,1.0,1.0
+uniform_positive_genera,0.0,202611170,Namibia,8,8,1.0,
+uniform_positive_genera,0.0,202611170,Peru,10,10,1.0,1.0
+uniform_positive_genera,0.0,202611170,Russian Federation,571,571,1.0,1.0
+uniform_positive_genera,0.0,202611170,Rwanda,3,3,1.0,
+uniform_positive_genera,0.0,202611170,Saudi Arabia,57,57,1.0,1.0
+uniform_positive_genera,0.0,202611170,South Africa,45,45,1.0,1.0
+uniform_positive_genera,0.0,202611170,South Korea,93,93,1.0,1.0
+uniform_positive_genera,0.0,202611170,Tadjikistan,136,136,1.0,1.0
+uniform_positive_genera,0.0,202611170,Taiwan,470,470,1.0,1.0
+uniform_positive_genera,0.0,202611170,Tanzania,10,10,1.0,1.0
+uniform_positive_genera,0.0,202611170,Uganda,8,8,1.0,
+uniform_positive_genera,0.0,202611170,United States,1162,1162,1.0,1.0
+uniform_positive_genera,0.0,202611170,Venezuela,18,18,1.0,1.0
+uniform_positive_genera,0.0,202611170,Yemen,87,87,1.0,1.0
+uniform_positive_genera,0.0,202611171,Angola,43,43,1.0,1.0
+uniform_positive_genera,0.0,202611171,Argentina,34,34,1.0,1.0
+uniform_positive_genera,0.0,202611171,Australia,1469,1469,1.0,1.0
+uniform_positive_genera,0.0,202611171,Botswana,2,2,1.0,
+uniform_positive_genera,0.0,202611171,Burkina Faso,173,173,1.0,1.0
+uniform_positive_genera,0.0,202611171,Canada,15,15,1.0,1.0
+uniform_positive_genera,0.0,202611171,Chile,12,12,1.0,
+uniform_positive_genera,0.0,202611171,China,22,22,1.0,1.0
+uniform_positive_genera,0.0,202611171,Colombia,27,27,1.0,
+uniform_positive_genera,0.0,202611171,Ecuador,30,30,1.0,1.0
+uniform_positive_genera,0.0,202611171,Egypt,45,45,1.0,
+uniform_positive_genera,0.0,202611171,Ethiopia,44,44,1.0,1.0
+uniform_positive_genera,0.0,202611171,Iran,27,27,1.0,1.0
+uniform_positive_genera,0.0,202611171,Kazakhstan,45,45,1.0,1.0
+uniform_positive_genera,0.0,202611171,Kenya,67,67,1.0,1.0
+uniform_positive_genera,0.0,202611171,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+uniform_positive_genera,0.0,202611171,Mongolia,338,338,1.0,1.0
+uniform_positive_genera,0.0,202611171,Morocco,176,176,1.0,1.0
+uniform_positive_genera,0.0,202611171,Namibia,8,8,1.0,
+uniform_positive_genera,0.0,202611171,Peru,10,10,1.0,1.0
+uniform_positive_genera,0.0,202611171,Russian Federation,571,571,1.0,1.0
+uniform_positive_genera,0.0,202611171,Rwanda,3,3,1.0,
+uniform_positive_genera,0.0,202611171,Saudi Arabia,57,57,1.0,1.0
+uniform_positive_genera,0.0,202611171,South Africa,45,45,1.0,1.0
+uniform_positive_genera,0.0,202611171,South Korea,93,93,1.0,1.0
+uniform_positive_genera,0.0,202611171,Tadjikistan,136,136,1.0,1.0
+uniform_positive_genera,0.0,202611171,Taiwan,470,470,1.0,1.0
+uniform_positive_genera,0.0,202611171,Tanzania,10,10,1.0,1.0
+uniform_positive_genera,0.0,202611171,Uganda,8,8,1.0,
+uniform_positive_genera,0.0,202611171,United States,1162,1162,1.0,1.0
+uniform_positive_genera,0.0,202611171,Venezuela,18,18,1.0,1.0
+uniform_positive_genera,0.0,202611171,Yemen,87,87,1.0,1.0
+uniform_positive_genera,0.0,202611172,Angola,43,43,1.0,1.0
+uniform_positive_genera,0.0,202611172,Argentina,34,34,1.0,1.0
+uniform_positive_genera,0.0,202611172,Australia,1469,1469,1.0,1.0
+uniform_positive_genera,0.0,202611172,Botswana,2,2,1.0,
+uniform_positive_genera,0.0,202611172,Burkina Faso,173,173,1.0,1.0
+uniform_positive_genera,0.0,202611172,Canada,15,15,1.0,1.0
+uniform_positive_genera,0.0,202611172,Chile,12,12,1.0,
+uniform_positive_genera,0.0,202611172,China,22,22,1.0,1.0
+uniform_positive_genera,0.0,202611172,Colombia,27,27,1.0,
+uniform_positive_genera,0.0,202611172,Ecuador,30,30,1.0,1.0
+uniform_positive_genera,0.0,202611172,Egypt,45,45,1.0,
+uniform_positive_genera,0.0,202611172,Ethiopia,44,44,1.0,1.0
+uniform_positive_genera,0.0,202611172,Iran,27,27,1.0,1.0
+uniform_positive_genera,0.0,202611172,Kazakhstan,45,45,1.0,1.0
+uniform_positive_genera,0.0,202611172,Kenya,67,67,1.0,1.0
+uniform_positive_genera,0.0,202611172,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+uniform_positive_genera,0.0,202611172,Mongolia,338,338,1.0,1.0
+uniform_positive_genera,0.0,202611172,Morocco,176,176,1.0,1.0
+uniform_positive_genera,0.0,202611172,Namibia,8,8,1.0,
+uniform_positive_genera,0.0,202611172,Peru,10,10,1.0,1.0
+uniform_positive_genera,0.0,202611172,Russian Federation,571,571,1.0,1.0
+uniform_positive_genera,0.0,202611172,Rwanda,3,3,1.0,
+uniform_positive_genera,0.0,202611172,Saudi Arabia,57,57,1.0,1.0
+uniform_positive_genera,0.0,202611172,South Africa,45,45,1.0,1.0
+uniform_positive_genera,0.0,202611172,South Korea,93,93,1.0,1.0
+uniform_positive_genera,0.0,202611172,Tadjikistan,136,136,1.0,1.0
+uniform_positive_genera,0.0,202611172,Taiwan,470,470,1.0,1.0
+uniform_positive_genera,0.0,202611172,Tanzania,10,10,1.0,1.0
+uniform_positive_genera,0.0,202611172,Uganda,8,8,1.0,
+uniform_positive_genera,0.0,202611172,United States,1162,1162,1.0,1.0
+uniform_positive_genera,0.0,202611172,Venezuela,18,18,1.0,1.0
+uniform_positive_genera,0.0,202611172,Yemen,87,87,1.0,1.0
+uniform_positive_genera,0.0,202611173,Angola,43,43,1.0,1.0
+uniform_positive_genera,0.0,202611173,Argentina,34,34,1.0,1.0
+uniform_positive_genera,0.0,202611173,Australia,1469,1469,1.0,1.0
+uniform_positive_genera,0.0,202611173,Botswana,2,2,1.0,
+uniform_positive_genera,0.0,202611173,Burkina Faso,173,173,1.0,1.0
+uniform_positive_genera,0.0,202611173,Canada,15,15,1.0,1.0
+uniform_positive_genera,0.0,202611173,Chile,12,12,1.0,
+uniform_positive_genera,0.0,202611173,China,22,22,1.0,1.0
+uniform_positive_genera,0.0,202611173,Colombia,27,27,1.0,
+uniform_positive_genera,0.0,202611173,Ecuador,30,30,1.0,1.0
+uniform_positive_genera,0.0,202611173,Egypt,45,45,1.0,
+uniform_positive_genera,0.0,202611173,Ethiopia,44,44,1.0,1.0
+uniform_positive_genera,0.0,202611173,Iran,27,27,1.0,1.0
+uniform_positive_genera,0.0,202611173,Kazakhstan,45,45,1.0,1.0
+uniform_positive_genera,0.0,202611173,Kenya,67,67,1.0,1.0
+uniform_positive_genera,0.0,202611173,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+uniform_positive_genera,0.0,202611173,Mongolia,338,338,1.0,1.0
+uniform_positive_genera,0.0,202611173,Morocco,176,176,1.0,1.0
+uniform_positive_genera,0.0,202611173,Namibia,8,8,1.0,
+uniform_positive_genera,0.0,202611173,Peru,10,10,1.0,1.0
+uniform_positive_genera,0.0,202611173,Russian Federation,571,571,1.0,1.0
+uniform_positive_genera,0.0,202611173,Rwanda,3,3,1.0,
+uniform_positive_genera,0.0,202611173,Saudi Arabia,57,57,1.0,1.0
+uniform_positive_genera,0.0,202611173,South Africa,45,45,1.0,1.0
+uniform_positive_genera,0.0,202611173,South Korea,93,93,1.0,1.0
+uniform_positive_genera,0.0,202611173,Tadjikistan,136,136,1.0,1.0
+uniform_positive_genera,0.0,202611173,Taiwan,470,470,1.0,1.0
+uniform_positive_genera,0.0,202611173,Tanzania,10,10,1.0,1.0
+uniform_positive_genera,0.0,202611173,Uganda,8,8,1.0,
+uniform_positive_genera,0.0,202611173,United States,1162,1162,1.0,1.0
+uniform_positive_genera,0.0,202611173,Venezuela,18,18,1.0,1.0
+uniform_positive_genera,0.0,202611173,Yemen,87,87,1.0,1.0
+uniform_positive_genera,0.0,202611174,Angola,43,43,1.0,1.0
+uniform_positive_genera,0.0,202611174,Argentina,34,34,1.0,1.0
+uniform_positive_genera,0.0,202611174,Australia,1469,1469,1.0,1.0
+uniform_positive_genera,0.0,202611174,Botswana,2,2,1.0,
+uniform_positive_genera,0.0,202611174,Burkina Faso,173,173,1.0,1.0
+uniform_positive_genera,0.0,202611174,Canada,15,15,1.0,1.0
+uniform_positive_genera,0.0,202611174,Chile,12,12,1.0,
+uniform_positive_genera,0.0,202611174,China,22,22,1.0,1.0
+uniform_positive_genera,0.0,202611174,Colombia,27,27,1.0,
+uniform_positive_genera,0.0,202611174,Ecuador,30,30,1.0,1.0
+uniform_positive_genera,0.0,202611174,Egypt,45,45,1.0,
+uniform_positive_genera,0.0,202611174,Ethiopia,44,44,1.0,1.0
+uniform_positive_genera,0.0,202611174,Iran,27,27,1.0,1.0
+uniform_positive_genera,0.0,202611174,Kazakhstan,45,45,1.0,1.0
+uniform_positive_genera,0.0,202611174,Kenya,67,67,1.0,1.0
+uniform_positive_genera,0.0,202611174,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+uniform_positive_genera,0.0,202611174,Mongolia,338,338,1.0,1.0
+uniform_positive_genera,0.0,202611174,Morocco,176,176,1.0,1.0
+uniform_positive_genera,0.0,202611174,Namibia,8,8,1.0,
+uniform_positive_genera,0.0,202611174,Peru,10,10,1.0,1.0
+uniform_positive_genera,0.0,202611174,Russian Federation,571,571,1.0,1.0
+uniform_positive_genera,0.0,202611174,Rwanda,3,3,1.0,
+uniform_positive_genera,0.0,202611174,Saudi Arabia,57,57,1.0,1.0
+uniform_positive_genera,0.0,202611174,South Africa,45,45,1.0,1.0
+uniform_positive_genera,0.0,202611174,South Korea,93,93,1.0,1.0
+uniform_positive_genera,0.0,202611174,Tadjikistan,136,136,1.0,1.0
+uniform_positive_genera,0.0,202611174,Taiwan,470,470,1.0,1.0
+uniform_positive_genera,0.0,202611174,Tanzania,10,10,1.0,1.0
+uniform_positive_genera,0.0,202611174,Uganda,8,8,1.0,
+uniform_positive_genera,0.0,202611174,United States,1162,1162,1.0,1.0
+uniform_positive_genera,0.0,202611174,Venezuela,18,18,1.0,1.0
+uniform_positive_genera,0.0,202611174,Yemen,87,87,1.0,1.0
+uniform_positive_genera,0.0,202611175,Angola,43,43,1.0,1.0
+uniform_positive_genera,0.0,202611175,Argentina,34,34,1.0,1.0
+uniform_positive_genera,0.0,202611175,Australia,1469,1469,1.0,1.0
+uniform_positive_genera,0.0,202611175,Botswana,2,2,1.0,
+uniform_positive_genera,0.0,202611175,Burkina Faso,173,173,1.0,1.0
+uniform_positive_genera,0.0,202611175,Canada,15,15,1.0,1.0
+uniform_positive_genera,0.0,202611175,Chile,12,12,1.0,
+uniform_positive_genera,0.0,202611175,China,22,22,1.0,1.0
+uniform_positive_genera,0.0,202611175,Colombia,27,27,1.0,
+uniform_positive_genera,0.0,202611175,Ecuador,30,30,1.0,1.0
+uniform_positive_genera,0.0,202611175,Egypt,45,45,1.0,
+uniform_positive_genera,0.0,202611175,Ethiopia,44,44,1.0,1.0
+uniform_positive_genera,0.0,202611175,Iran,27,27,1.0,1.0
+uniform_positive_genera,0.0,202611175,Kazakhstan,45,45,1.0,1.0
+uniform_positive_genera,0.0,202611175,Kenya,67,67,1.0,1.0
+uniform_positive_genera,0.0,202611175,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+uniform_positive_genera,0.0,202611175,Mongolia,338,338,1.0,1.0
+uniform_positive_genera,0.0,202611175,Morocco,176,176,1.0,1.0
+uniform_positive_genera,0.0,202611175,Namibia,8,8,1.0,
+uniform_positive_genera,0.0,202611175,Peru,10,10,1.0,1.0
+uniform_positive_genera,0.0,202611175,Russian Federation,571,571,1.0,1.0
+uniform_positive_genera,0.0,202611175,Rwanda,3,3,1.0,
+uniform_positive_genera,0.0,202611175,Saudi Arabia,57,57,1.0,1.0
+uniform_positive_genera,0.0,202611175,South Africa,45,45,1.0,1.0
+uniform_positive_genera,0.0,202611175,South Korea,93,93,1.0,1.0
+uniform_positive_genera,0.0,202611175,Tadjikistan,136,136,1.0,1.0
+uniform_positive_genera,0.0,202611175,Taiwan,470,470,1.0,1.0
+uniform_positive_genera,0.0,202611175,Tanzania,10,10,1.0,1.0
+uniform_positive_genera,0.0,202611175,Uganda,8,8,1.0,
+uniform_positive_genera,0.0,202611175,United States,1162,1162,1.0,1.0
+uniform_positive_genera,0.0,202611175,Venezuela,18,18,1.0,1.0
+uniform_positive_genera,0.0,202611175,Yemen,87,87,1.0,1.0
+uniform_positive_genera,0.0,202611176,Angola,43,43,1.0,1.0
+uniform_positive_genera,0.0,202611176,Argentina,34,34,1.0,1.0
+uniform_positive_genera,0.0,202611176,Australia,1469,1469,1.0,1.0
+uniform_positive_genera,0.0,202611176,Botswana,2,2,1.0,
+uniform_positive_genera,0.0,202611176,Burkina Faso,173,173,1.0,1.0
+uniform_positive_genera,0.0,202611176,Canada,15,15,1.0,1.0
+uniform_positive_genera,0.0,202611176,Chile,12,12,1.0,
+uniform_positive_genera,0.0,202611176,China,22,22,1.0,1.0
+uniform_positive_genera,0.0,202611176,Colombia,27,27,1.0,
+uniform_positive_genera,0.0,202611176,Ecuador,30,30,1.0,1.0
+uniform_positive_genera,0.0,202611176,Egypt,45,45,1.0,
+uniform_positive_genera,0.0,202611176,Ethiopia,44,44,1.0,1.0
+uniform_positive_genera,0.0,202611176,Iran,27,27,1.0,1.0
+uniform_positive_genera,0.0,202611176,Kazakhstan,45,45,1.0,1.0
+uniform_positive_genera,0.0,202611176,Kenya,67,67,1.0,1.0
+uniform_positive_genera,0.0,202611176,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+uniform_positive_genera,0.0,202611176,Mongolia,338,338,1.0,1.0
+uniform_positive_genera,0.0,202611176,Morocco,176,176,1.0,1.0
+uniform_positive_genera,0.0,202611176,Namibia,8,8,1.0,
+uniform_positive_genera,0.0,202611176,Peru,10,10,1.0,1.0
+uniform_positive_genera,0.0,202611176,Russian Federation,571,571,1.0,1.0
+uniform_positive_genera,0.0,202611176,Rwanda,3,3,1.0,
+uniform_positive_genera,0.0,202611176,Saudi Arabia,57,57,1.0,1.0
+uniform_positive_genera,0.0,202611176,South Africa,45,45,1.0,1.0
+uniform_positive_genera,0.0,202611176,South Korea,93,93,1.0,1.0
+uniform_positive_genera,0.0,202611176,Tadjikistan,136,136,1.0,1.0
+uniform_positive_genera,0.0,202611176,Taiwan,470,470,1.0,1.0
+uniform_positive_genera,0.0,202611176,Tanzania,10,10,1.0,1.0
+uniform_positive_genera,0.0,202611176,Uganda,8,8,1.0,
+uniform_positive_genera,0.0,202611176,United States,1162,1162,1.0,1.0
+uniform_positive_genera,0.0,202611176,Venezuela,18,18,1.0,1.0
+uniform_positive_genera,0.0,202611176,Yemen,87,87,1.0,1.0
+uniform_positive_genera,0.0,202611177,Angola,43,43,1.0,1.0
+uniform_positive_genera,0.0,202611177,Argentina,34,34,1.0,1.0
+uniform_positive_genera,0.0,202611177,Australia,1469,1469,1.0,1.0
+uniform_positive_genera,0.0,202611177,Botswana,2,2,1.0,
+uniform_positive_genera,0.0,202611177,Burkina Faso,173,173,1.0,1.0
+uniform_positive_genera,0.0,202611177,Canada,15,15,1.0,1.0
+uniform_positive_genera,0.0,202611177,Chile,12,12,1.0,
+uniform_positive_genera,0.0,202611177,China,22,22,1.0,1.0
+uniform_positive_genera,0.0,202611177,Colombia,27,27,1.0,
+uniform_positive_genera,0.0,202611177,Ecuador,30,30,1.0,1.0
+uniform_positive_genera,0.0,202611177,Egypt,45,45,1.0,
+uniform_positive_genera,0.0,202611177,Ethiopia,44,44,1.0,1.0
+uniform_positive_genera,0.0,202611177,Iran,27,27,1.0,1.0
+uniform_positive_genera,0.0,202611177,Kazakhstan,45,45,1.0,1.0
+uniform_positive_genera,0.0,202611177,Kenya,67,67,1.0,1.0
+uniform_positive_genera,0.0,202611177,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+uniform_positive_genera,0.0,202611177,Mongolia,338,338,1.0,1.0
+uniform_positive_genera,0.0,202611177,Morocco,176,176,1.0,1.0
+uniform_positive_genera,0.0,202611177,Namibia,8,8,1.0,
+uniform_positive_genera,0.0,202611177,Peru,10,10,1.0,1.0
+uniform_positive_genera,0.0,202611177,Russian Federation,571,571,1.0,1.0
+uniform_positive_genera,0.0,202611177,Rwanda,3,3,1.0,
+uniform_positive_genera,0.0,202611177,Saudi Arabia,57,57,1.0,1.0
+uniform_positive_genera,0.0,202611177,South Africa,45,45,1.0,1.0
+uniform_positive_genera,0.0,202611177,South Korea,93,93,1.0,1.0
+uniform_positive_genera,0.0,202611177,Tadjikistan,136,136,1.0,1.0
+uniform_positive_genera,0.0,202611177,Taiwan,470,470,1.0,1.0
+uniform_positive_genera,0.0,202611177,Tanzania,10,10,1.0,1.0
+uniform_positive_genera,0.0,202611177,Uganda,8,8,1.0,
+uniform_positive_genera,0.0,202611177,United States,1162,1162,1.0,1.0
+uniform_positive_genera,0.0,202611177,Venezuela,18,18,1.0,1.0
+uniform_positive_genera,0.0,202611177,Yemen,87,87,1.0,1.0
+uniform_positive_genera,0.0,202611178,Angola,43,43,1.0,1.0
+uniform_positive_genera,0.0,202611178,Argentina,34,34,1.0,1.0
+uniform_positive_genera,0.0,202611178,Australia,1469,1469,1.0,1.0
+uniform_positive_genera,0.0,202611178,Botswana,2,2,1.0,
+uniform_positive_genera,0.0,202611178,Burkina Faso,173,173,1.0,1.0
+uniform_positive_genera,0.0,202611178,Canada,15,15,1.0,1.0
+uniform_positive_genera,0.0,202611178,Chile,12,12,1.0,
+uniform_positive_genera,0.0,202611178,China,22,22,1.0,1.0
+uniform_positive_genera,0.0,202611178,Colombia,27,27,1.0,
+uniform_positive_genera,0.0,202611178,Ecuador,30,30,1.0,1.0
+uniform_positive_genera,0.0,202611178,Egypt,45,45,1.0,
+uniform_positive_genera,0.0,202611178,Ethiopia,44,44,1.0,1.0
+uniform_positive_genera,0.0,202611178,Iran,27,27,1.0,1.0
+uniform_positive_genera,0.0,202611178,Kazakhstan,45,45,1.0,1.0
+uniform_positive_genera,0.0,202611178,Kenya,67,67,1.0,1.0
+uniform_positive_genera,0.0,202611178,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+uniform_positive_genera,0.0,202611178,Mongolia,338,338,1.0,1.0
+uniform_positive_genera,0.0,202611178,Morocco,176,176,1.0,1.0
+uniform_positive_genera,0.0,202611178,Namibia,8,8,1.0,
+uniform_positive_genera,0.0,202611178,Peru,10,10,1.0,1.0
+uniform_positive_genera,0.0,202611178,Russian Federation,571,571,1.0,1.0
+uniform_positive_genera,0.0,202611178,Rwanda,3,3,1.0,
+uniform_positive_genera,0.0,202611178,Saudi Arabia,57,57,1.0,1.0
+uniform_positive_genera,0.0,202611178,South Africa,45,45,1.0,1.0
+uniform_positive_genera,0.0,202611178,South Korea,93,93,1.0,1.0
+uniform_positive_genera,0.0,202611178,Tadjikistan,136,136,1.0,1.0
+uniform_positive_genera,0.0,202611178,Taiwan,470,470,1.0,1.0
+uniform_positive_genera,0.0,202611178,Tanzania,10,10,1.0,1.0
+uniform_positive_genera,0.0,202611178,Uganda,8,8,1.0,
+uniform_positive_genera,0.0,202611178,United States,1162,1162,1.0,1.0
+uniform_positive_genera,0.0,202611178,Venezuela,18,18,1.0,1.0
+uniform_positive_genera,0.0,202611178,Yemen,87,87,1.0,1.0
+uniform_positive_genera,0.0,202611179,Angola,43,43,1.0,1.0
+uniform_positive_genera,0.0,202611179,Argentina,34,34,1.0,1.0
+uniform_positive_genera,0.0,202611179,Australia,1469,1469,1.0,1.0
+uniform_positive_genera,0.0,202611179,Botswana,2,2,1.0,
+uniform_positive_genera,0.0,202611179,Burkina Faso,173,173,1.0,1.0
+uniform_positive_genera,0.0,202611179,Canada,15,15,1.0,1.0
+uniform_positive_genera,0.0,202611179,Chile,12,12,1.0,
+uniform_positive_genera,0.0,202611179,China,22,22,1.0,1.0
+uniform_positive_genera,0.0,202611179,Colombia,27,27,1.0,
+uniform_positive_genera,0.0,202611179,Ecuador,30,30,1.0,1.0
+uniform_positive_genera,0.0,202611179,Egypt,45,45,1.0,
+uniform_positive_genera,0.0,202611179,Ethiopia,44,44,1.0,1.0
+uniform_positive_genera,0.0,202611179,Iran,27,27,1.0,1.0
+uniform_positive_genera,0.0,202611179,Kazakhstan,45,45,1.0,1.0
+uniform_positive_genera,0.0,202611179,Kenya,67,67,1.0,1.0
+uniform_positive_genera,0.0,202611179,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+uniform_positive_genera,0.0,202611179,Mongolia,338,338,1.0,1.0
+uniform_positive_genera,0.0,202611179,Morocco,176,176,1.0,1.0
+uniform_positive_genera,0.0,202611179,Namibia,8,8,1.0,
+uniform_positive_genera,0.0,202611179,Peru,10,10,1.0,1.0
+uniform_positive_genera,0.0,202611179,Russian Federation,571,571,1.0,1.0
+uniform_positive_genera,0.0,202611179,Rwanda,3,3,1.0,
+uniform_positive_genera,0.0,202611179,Saudi Arabia,57,57,1.0,1.0
+uniform_positive_genera,0.0,202611179,South Africa,45,45,1.0,1.0
+uniform_positive_genera,0.0,202611179,South Korea,93,93,1.0,1.0
+uniform_positive_genera,0.0,202611179,Tadjikistan,136,136,1.0,1.0
+uniform_positive_genera,0.0,202611179,Taiwan,470,470,1.0,1.0
+uniform_positive_genera,0.0,202611179,Tanzania,10,10,1.0,1.0
+uniform_positive_genera,0.0,202611179,Uganda,8,8,1.0,
+uniform_positive_genera,0.0,202611179,United States,1162,1162,1.0,1.0
+uniform_positive_genera,0.0,202611179,Venezuela,18,18,1.0,1.0
+uniform_positive_genera,0.0,202611179,Yemen,87,87,1.0,1.0
+uniform_positive_genera,0.2,202611170,Angola,43,43,1.0,1.0
+uniform_positive_genera,0.2,202611170,Argentina,34,34,1.0,1.0
+uniform_positive_genera,0.2,202611170,Australia,1469,1469,1.0,1.0
+uniform_positive_genera,0.2,202611170,Botswana,2,2,1.0,
+uniform_positive_genera,0.2,202611170,Burkina Faso,173,173,1.0,1.0
+uniform_positive_genera,0.2,202611170,Canada,15,15,1.0,1.0
+uniform_positive_genera,0.2,202611170,Chile,12,12,1.0,
+uniform_positive_genera,0.2,202611170,China,22,22,1.0,1.0
+uniform_positive_genera,0.2,202611170,Colombia,27,27,1.0,
+uniform_positive_genera,0.2,202611170,Ecuador,30,30,1.0,1.0
+uniform_positive_genera,0.2,202611170,Egypt,45,45,1.0,
+uniform_positive_genera,0.2,202611170,Ethiopia,44,44,1.0,1.0
+uniform_positive_genera,0.2,202611170,Iran,27,27,1.0,1.0
+uniform_positive_genera,0.2,202611170,Kazakhstan,45,45,1.0,1.0
+uniform_positive_genera,0.2,202611170,Kenya,67,67,1.0,1.0
+uniform_positive_genera,0.2,202611170,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+uniform_positive_genera,0.2,202611170,Mongolia,338,338,1.0,1.0
+uniform_positive_genera,0.2,202611170,Morocco,176,176,1.0,1.0
+uniform_positive_genera,0.2,202611170,Namibia,8,8,1.0,
+uniform_positive_genera,0.2,202611170,Peru,10,10,1.0,1.0
+uniform_positive_genera,0.2,202611170,Russian Federation,571,571,1.0,1.0
+uniform_positive_genera,0.2,202611170,Rwanda,3,3,1.0,
+uniform_positive_genera,0.2,202611170,Saudi Arabia,57,57,1.0,1.0
+uniform_positive_genera,0.2,202611170,South Africa,45,45,1.0,1.0
+uniform_positive_genera,0.2,202611170,South Korea,93,93,1.0,1.0
+uniform_positive_genera,0.2,202611170,Tadjikistan,136,136,1.0,1.0
+uniform_positive_genera,0.2,202611170,Taiwan,470,470,1.0,1.0
+uniform_positive_genera,0.2,202611170,Tanzania,10,10,1.0,1.0
+uniform_positive_genera,0.2,202611170,Uganda,8,8,1.0,
+uniform_positive_genera,0.2,202611170,United States,1162,1162,1.0,1.0
+uniform_positive_genera,0.2,202611170,Venezuela,18,18,1.0,1.0
+uniform_positive_genera,0.2,202611170,Yemen,87,87,1.0,1.0
+uniform_positive_genera,0.2,202611171,Angola,43,43,1.0,1.0
+uniform_positive_genera,0.2,202611171,Argentina,34,34,1.0,1.0
+uniform_positive_genera,0.2,202611171,Australia,1469,1469,1.0,1.0
+uniform_positive_genera,0.2,202611171,Botswana,2,2,1.0,
+uniform_positive_genera,0.2,202611171,Burkina Faso,173,173,1.0,1.0
+uniform_positive_genera,0.2,202611171,Canada,15,15,1.0,1.0
+uniform_positive_genera,0.2,202611171,Chile,12,12,1.0,
+uniform_positive_genera,0.2,202611171,China,22,22,1.0,1.0
+uniform_positive_genera,0.2,202611171,Colombia,27,27,1.0,
+uniform_positive_genera,0.2,202611171,Ecuador,30,30,1.0,1.0
+uniform_positive_genera,0.2,202611171,Egypt,45,45,1.0,
+uniform_positive_genera,0.2,202611171,Ethiopia,44,44,1.0,1.0
+uniform_positive_genera,0.2,202611171,Iran,27,27,1.0,1.0
+uniform_positive_genera,0.2,202611171,Kazakhstan,45,45,1.0,1.0
+uniform_positive_genera,0.2,202611171,Kenya,67,67,1.0,1.0
+uniform_positive_genera,0.2,202611171,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+uniform_positive_genera,0.2,202611171,Mongolia,338,338,1.0,1.0
+uniform_positive_genera,0.2,202611171,Morocco,176,176,1.0,1.0
+uniform_positive_genera,0.2,202611171,Namibia,8,8,1.0,
+uniform_positive_genera,0.2,202611171,Peru,10,10,1.0,1.0
+uniform_positive_genera,0.2,202611171,Russian Federation,571,571,1.0,1.0
+uniform_positive_genera,0.2,202611171,Rwanda,3,3,1.0,
+uniform_positive_genera,0.2,202611171,Saudi Arabia,57,57,1.0,1.0
+uniform_positive_genera,0.2,202611171,South Africa,45,45,1.0,1.0
+uniform_positive_genera,0.2,202611171,South Korea,93,93,1.0,1.0
+uniform_positive_genera,0.2,202611171,Tadjikistan,136,136,1.0,1.0
+uniform_positive_genera,0.2,202611171,Taiwan,470,470,1.0,1.0
+uniform_positive_genera,0.2,202611171,Tanzania,10,10,1.0,1.0
+uniform_positive_genera,0.2,202611171,Uganda,8,8,1.0,
+uniform_positive_genera,0.2,202611171,United States,1162,1162,1.0,1.0
+uniform_positive_genera,0.2,202611171,Venezuela,18,18,1.0,1.0
+uniform_positive_genera,0.2,202611171,Yemen,87,87,1.0,1.0
+uniform_positive_genera,0.2,202611172,Angola,43,43,1.0,1.0
+uniform_positive_genera,0.2,202611172,Argentina,34,34,1.0,1.0
+uniform_positive_genera,0.2,202611172,Australia,1469,1469,1.0,1.0
+uniform_positive_genera,0.2,202611172,Botswana,2,2,1.0,
+uniform_positive_genera,0.2,202611172,Burkina Faso,173,173,1.0,1.0
+uniform_positive_genera,0.2,202611172,Canada,15,15,1.0,1.0
+uniform_positive_genera,0.2,202611172,Chile,12,12,1.0,
+uniform_positive_genera,0.2,202611172,China,22,22,1.0,1.0
+uniform_positive_genera,0.2,202611172,Colombia,27,27,1.0,
+uniform_positive_genera,0.2,202611172,Ecuador,30,30,1.0,1.0
+uniform_positive_genera,0.2,202611172,Egypt,45,45,1.0,
+uniform_positive_genera,0.2,202611172,Ethiopia,44,44,1.0,1.0
+uniform_positive_genera,0.2,202611172,Iran,27,27,1.0,1.0
+uniform_positive_genera,0.2,202611172,Kazakhstan,45,45,1.0,1.0
+uniform_positive_genera,0.2,202611172,Kenya,67,67,1.0,1.0
+uniform_positive_genera,0.2,202611172,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+uniform_positive_genera,0.2,202611172,Mongolia,338,338,1.0,1.0
+uniform_positive_genera,0.2,202611172,Morocco,176,176,1.0,1.0
+uniform_positive_genera,0.2,202611172,Namibia,8,8,1.0,
+uniform_positive_genera,0.2,202611172,Peru,10,10,1.0,1.0
+uniform_positive_genera,0.2,202611172,Russian Federation,571,571,1.0,1.0
+uniform_positive_genera,0.2,202611172,Rwanda,3,3,1.0,
+uniform_positive_genera,0.2,202611172,Saudi Arabia,57,57,1.0,1.0
+uniform_positive_genera,0.2,202611172,South Africa,45,45,1.0,1.0
+uniform_positive_genera,0.2,202611172,South Korea,93,93,1.0,1.0
+uniform_positive_genera,0.2,202611172,Tadjikistan,136,136,1.0,1.0
+uniform_positive_genera,0.2,202611172,Taiwan,470,470,1.0,1.0
+uniform_positive_genera,0.2,202611172,Tanzania,10,10,1.0,1.0
+uniform_positive_genera,0.2,202611172,Uganda,8,8,1.0,
+uniform_positive_genera,0.2,202611172,United States,1162,1162,1.0,1.0
+uniform_positive_genera,0.2,202611172,Venezuela,18,18,1.0,1.0
+uniform_positive_genera,0.2,202611172,Yemen,87,87,1.0,1.0
+uniform_positive_genera,0.2,202611173,Angola,43,43,1.0,1.0
+uniform_positive_genera,0.2,202611173,Argentina,34,34,1.0,1.0
+uniform_positive_genera,0.2,202611173,Australia,1469,1469,1.0,1.0
+uniform_positive_genera,0.2,202611173,Botswana,2,2,1.0,
+uniform_positive_genera,0.2,202611173,Burkina Faso,173,173,1.0,1.0
+uniform_positive_genera,0.2,202611173,Canada,15,15,1.0,1.0
+uniform_positive_genera,0.2,202611173,Chile,12,12,1.0,
+uniform_positive_genera,0.2,202611173,China,22,22,1.0,1.0
+uniform_positive_genera,0.2,202611173,Colombia,27,27,1.0,
+uniform_positive_genera,0.2,202611173,Ecuador,30,30,1.0,1.0
+uniform_positive_genera,0.2,202611173,Egypt,45,45,1.0,
+uniform_positive_genera,0.2,202611173,Ethiopia,44,44,1.0,1.0
+uniform_positive_genera,0.2,202611173,Iran,27,27,1.0,1.0
+uniform_positive_genera,0.2,202611173,Kazakhstan,45,45,1.0,1.0
+uniform_positive_genera,0.2,202611173,Kenya,67,67,1.0,1.0
+uniform_positive_genera,0.2,202611173,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+uniform_positive_genera,0.2,202611173,Mongolia,338,338,1.0,1.0
+uniform_positive_genera,0.2,202611173,Morocco,176,176,1.0,1.0
+uniform_positive_genera,0.2,202611173,Namibia,8,8,1.0,
+uniform_positive_genera,0.2,202611173,Peru,10,10,1.0,1.0
+uniform_positive_genera,0.2,202611173,Russian Federation,571,571,1.0,1.0
+uniform_positive_genera,0.2,202611173,Rwanda,3,3,1.0,
+uniform_positive_genera,0.2,202611173,Saudi Arabia,57,57,1.0,1.0
+uniform_positive_genera,0.2,202611173,South Africa,45,45,1.0,1.0
+uniform_positive_genera,0.2,202611173,South Korea,93,93,1.0,1.0
+uniform_positive_genera,0.2,202611173,Tadjikistan,136,136,1.0,1.0
+uniform_positive_genera,0.2,202611173,Taiwan,470,470,1.0,1.0
+uniform_positive_genera,0.2,202611173,Tanzania,10,10,1.0,1.0
+uniform_positive_genera,0.2,202611173,Uganda,8,8,1.0,
+uniform_positive_genera,0.2,202611173,United States,1162,1162,1.0,1.0
+uniform_positive_genera,0.2,202611173,Venezuela,18,18,1.0,1.0
+uniform_positive_genera,0.2,202611173,Yemen,87,87,1.0,1.0
+uniform_positive_genera,0.2,202611174,Angola,43,43,1.0,1.0
+uniform_positive_genera,0.2,202611174,Argentina,34,34,1.0,1.0
+uniform_positive_genera,0.2,202611174,Australia,1469,1469,1.0,1.0
+uniform_positive_genera,0.2,202611174,Botswana,2,2,1.0,
+uniform_positive_genera,0.2,202611174,Burkina Faso,173,173,1.0,1.0
+uniform_positive_genera,0.2,202611174,Canada,15,15,1.0,1.0
+uniform_positive_genera,0.2,202611174,Chile,12,12,1.0,
+uniform_positive_genera,0.2,202611174,China,22,22,1.0,1.0
+uniform_positive_genera,0.2,202611174,Colombia,27,27,1.0,
+uniform_positive_genera,0.2,202611174,Ecuador,30,30,1.0,1.0
+uniform_positive_genera,0.2,202611174,Egypt,45,45,1.0,
+uniform_positive_genera,0.2,202611174,Ethiopia,44,44,1.0,1.0
+uniform_positive_genera,0.2,202611174,Iran,27,27,1.0,1.0
+uniform_positive_genera,0.2,202611174,Kazakhstan,45,45,1.0,1.0
+uniform_positive_genera,0.2,202611174,Kenya,67,67,1.0,1.0
+uniform_positive_genera,0.2,202611174,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+uniform_positive_genera,0.2,202611174,Mongolia,338,338,1.0,1.0
+uniform_positive_genera,0.2,202611174,Morocco,176,176,1.0,1.0
+uniform_positive_genera,0.2,202611174,Namibia,8,8,1.0,
+uniform_positive_genera,0.2,202611174,Peru,10,10,1.0,1.0
+uniform_positive_genera,0.2,202611174,Russian Federation,571,571,1.0,1.0
+uniform_positive_genera,0.2,202611174,Rwanda,3,3,1.0,
+uniform_positive_genera,0.2,202611174,Saudi Arabia,57,57,1.0,1.0
+uniform_positive_genera,0.2,202611174,South Africa,45,45,1.0,1.0
+uniform_positive_genera,0.2,202611174,South Korea,93,93,1.0,1.0
+uniform_positive_genera,0.2,202611174,Tadjikistan,136,136,1.0,1.0
+uniform_positive_genera,0.2,202611174,Taiwan,470,470,1.0,1.0
+uniform_positive_genera,0.2,202611174,Tanzania,10,10,1.0,1.0
+uniform_positive_genera,0.2,202611174,Uganda,8,8,1.0,
+uniform_positive_genera,0.2,202611174,United States,1162,1162,1.0,1.0
+uniform_positive_genera,0.2,202611174,Venezuela,18,18,1.0,1.0
+uniform_positive_genera,0.2,202611174,Yemen,87,87,1.0,1.0
+uniform_positive_genera,0.2,202611175,Angola,43,43,1.0,1.0
+uniform_positive_genera,0.2,202611175,Argentina,34,34,1.0,1.0
+uniform_positive_genera,0.2,202611175,Australia,1469,1469,1.0,1.0
+uniform_positive_genera,0.2,202611175,Botswana,2,2,1.0,
+uniform_positive_genera,0.2,202611175,Burkina Faso,173,173,1.0,1.0
+uniform_positive_genera,0.2,202611175,Canada,15,15,1.0,1.0
+uniform_positive_genera,0.2,202611175,Chile,12,12,1.0,
+uniform_positive_genera,0.2,202611175,China,22,22,1.0,1.0
+uniform_positive_genera,0.2,202611175,Colombia,27,27,1.0,
+uniform_positive_genera,0.2,202611175,Ecuador,30,30,1.0,1.0
+uniform_positive_genera,0.2,202611175,Egypt,45,45,1.0,
+uniform_positive_genera,0.2,202611175,Ethiopia,44,44,1.0,1.0
+uniform_positive_genera,0.2,202611175,Iran,27,27,1.0,1.0
+uniform_positive_genera,0.2,202611175,Kazakhstan,45,45,1.0,1.0
+uniform_positive_genera,0.2,202611175,Kenya,67,67,1.0,1.0
+uniform_positive_genera,0.2,202611175,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+uniform_positive_genera,0.2,202611175,Mongolia,338,338,1.0,1.0
+uniform_positive_genera,0.2,202611175,Morocco,176,176,1.0,1.0
+uniform_positive_genera,0.2,202611175,Namibia,8,8,1.0,
+uniform_positive_genera,0.2,202611175,Peru,10,10,1.0,1.0
+uniform_positive_genera,0.2,202611175,Russian Federation,571,571,1.0,1.0
+uniform_positive_genera,0.2,202611175,Rwanda,3,3,1.0,
+uniform_positive_genera,0.2,202611175,Saudi Arabia,57,57,1.0,1.0
+uniform_positive_genera,0.2,202611175,South Africa,45,45,1.0,1.0
+uniform_positive_genera,0.2,202611175,South Korea,93,93,1.0,1.0
+uniform_positive_genera,0.2,202611175,Tadjikistan,136,136,1.0,1.0
+uniform_positive_genera,0.2,202611175,Taiwan,470,470,1.0,1.0
+uniform_positive_genera,0.2,202611175,Tanzania,10,10,1.0,1.0
+uniform_positive_genera,0.2,202611175,Uganda,8,8,1.0,
+uniform_positive_genera,0.2,202611175,United States,1162,1162,1.0,1.0
+uniform_positive_genera,0.2,202611175,Venezuela,18,18,1.0,1.0
+uniform_positive_genera,0.2,202611175,Yemen,87,87,1.0,1.0
+uniform_positive_genera,0.2,202611176,Angola,43,43,1.0,1.0
+uniform_positive_genera,0.2,202611176,Argentina,34,34,1.0,1.0
+uniform_positive_genera,0.2,202611176,Australia,1469,1469,1.0,1.0
+uniform_positive_genera,0.2,202611176,Botswana,2,2,1.0,
+uniform_positive_genera,0.2,202611176,Burkina Faso,173,173,1.0,1.0
+uniform_positive_genera,0.2,202611176,Canada,15,15,1.0,1.0
+uniform_positive_genera,0.2,202611176,Chile,12,12,1.0,
+uniform_positive_genera,0.2,202611176,China,22,22,1.0,1.0
+uniform_positive_genera,0.2,202611176,Colombia,27,27,1.0,
+uniform_positive_genera,0.2,202611176,Ecuador,30,30,1.0,1.0
+uniform_positive_genera,0.2,202611176,Egypt,45,45,1.0,
+uniform_positive_genera,0.2,202611176,Ethiopia,44,44,1.0,1.0
+uniform_positive_genera,0.2,202611176,Iran,27,27,1.0,1.0
+uniform_positive_genera,0.2,202611176,Kazakhstan,45,45,1.0,1.0
+uniform_positive_genera,0.2,202611176,Kenya,67,67,1.0,1.0
+uniform_positive_genera,0.2,202611176,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+uniform_positive_genera,0.2,202611176,Mongolia,338,338,1.0,1.0
+uniform_positive_genera,0.2,202611176,Morocco,176,176,1.0,1.0
+uniform_positive_genera,0.2,202611176,Namibia,8,8,1.0,
+uniform_positive_genera,0.2,202611176,Peru,10,10,1.0,1.0
+uniform_positive_genera,0.2,202611176,Russian Federation,571,571,1.0,1.0
+uniform_positive_genera,0.2,202611176,Rwanda,3,3,1.0,
+uniform_positive_genera,0.2,202611176,Saudi Arabia,57,57,1.0,1.0
+uniform_positive_genera,0.2,202611176,South Africa,45,45,1.0,1.0
+uniform_positive_genera,0.2,202611176,South Korea,93,93,1.0,1.0
+uniform_positive_genera,0.2,202611176,Tadjikistan,136,136,1.0,1.0
+uniform_positive_genera,0.2,202611176,Taiwan,470,470,1.0,1.0
+uniform_positive_genera,0.2,202611176,Tanzania,10,10,1.0,1.0
+uniform_positive_genera,0.2,202611176,Uganda,8,8,1.0,
+uniform_positive_genera,0.2,202611176,United States,1162,1162,1.0,1.0
+uniform_positive_genera,0.2,202611176,Venezuela,18,18,1.0,1.0
+uniform_positive_genera,0.2,202611176,Yemen,87,87,1.0,1.0
+uniform_positive_genera,0.2,202611177,Angola,43,43,1.0,1.0
+uniform_positive_genera,0.2,202611177,Argentina,34,34,1.0,1.0
+uniform_positive_genera,0.2,202611177,Australia,1469,1469,1.0,1.0
+uniform_positive_genera,0.2,202611177,Botswana,2,2,1.0,
+uniform_positive_genera,0.2,202611177,Burkina Faso,173,173,1.0,1.0
+uniform_positive_genera,0.2,202611177,Canada,15,15,1.0,1.0
+uniform_positive_genera,0.2,202611177,Chile,12,12,1.0,
+uniform_positive_genera,0.2,202611177,China,22,22,1.0,1.0
+uniform_positive_genera,0.2,202611177,Colombia,27,27,1.0,
+uniform_positive_genera,0.2,202611177,Ecuador,30,30,1.0,1.0
+uniform_positive_genera,0.2,202611177,Egypt,45,45,1.0,
+uniform_positive_genera,0.2,202611177,Ethiopia,44,44,1.0,1.0
+uniform_positive_genera,0.2,202611177,Iran,27,27,1.0,1.0
+uniform_positive_genera,0.2,202611177,Kazakhstan,45,45,1.0,1.0
+uniform_positive_genera,0.2,202611177,Kenya,67,67,1.0,1.0
+uniform_positive_genera,0.2,202611177,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+uniform_positive_genera,0.2,202611177,Mongolia,338,338,1.0,1.0
+uniform_positive_genera,0.2,202611177,Morocco,176,176,1.0,1.0
+uniform_positive_genera,0.2,202611177,Namibia,8,8,1.0,
+uniform_positive_genera,0.2,202611177,Peru,10,10,1.0,1.0
+uniform_positive_genera,0.2,202611177,Russian Federation,571,571,1.0,1.0
+uniform_positive_genera,0.2,202611177,Rwanda,3,3,1.0,
+uniform_positive_genera,0.2,202611177,Saudi Arabia,57,57,1.0,1.0
+uniform_positive_genera,0.2,202611177,South Africa,45,45,1.0,1.0
+uniform_positive_genera,0.2,202611177,South Korea,93,93,1.0,1.0
+uniform_positive_genera,0.2,202611177,Tadjikistan,136,136,1.0,1.0
+uniform_positive_genera,0.2,202611177,Taiwan,470,470,1.0,1.0
+uniform_positive_genera,0.2,202611177,Tanzania,10,10,1.0,1.0
+uniform_positive_genera,0.2,202611177,Uganda,8,8,1.0,
+uniform_positive_genera,0.2,202611177,United States,1162,1162,1.0,1.0
+uniform_positive_genera,0.2,202611177,Venezuela,18,18,1.0,1.0
+uniform_positive_genera,0.2,202611177,Yemen,87,87,1.0,1.0
+uniform_positive_genera,0.2,202611178,Angola,43,43,1.0,1.0
+uniform_positive_genera,0.2,202611178,Argentina,34,34,1.0,1.0
+uniform_positive_genera,0.2,202611178,Australia,1469,1469,1.0,1.0
+uniform_positive_genera,0.2,202611178,Botswana,2,2,1.0,
+uniform_positive_genera,0.2,202611178,Burkina Faso,173,173,1.0,1.0
+uniform_positive_genera,0.2,202611178,Canada,15,15,1.0,1.0
+uniform_positive_genera,0.2,202611178,Chile,12,12,1.0,
+uniform_positive_genera,0.2,202611178,China,22,22,1.0,1.0
+uniform_positive_genera,0.2,202611178,Colombia,27,27,1.0,
+uniform_positive_genera,0.2,202611178,Ecuador,30,30,1.0,1.0
+uniform_positive_genera,0.2,202611178,Egypt,45,45,1.0,
+uniform_positive_genera,0.2,202611178,Ethiopia,44,44,1.0,1.0
+uniform_positive_genera,0.2,202611178,Iran,27,27,1.0,1.0
+uniform_positive_genera,0.2,202611178,Kazakhstan,45,45,1.0,1.0
+uniform_positive_genera,0.2,202611178,Kenya,67,67,1.0,1.0
+uniform_positive_genera,0.2,202611178,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+uniform_positive_genera,0.2,202611178,Mongolia,338,338,1.0,1.0
+uniform_positive_genera,0.2,202611178,Morocco,176,176,1.0,1.0
+uniform_positive_genera,0.2,202611178,Namibia,8,8,1.0,
+uniform_positive_genera,0.2,202611178,Peru,10,10,1.0,1.0
+uniform_positive_genera,0.2,202611178,Russian Federation,571,571,1.0,1.0
+uniform_positive_genera,0.2,202611178,Rwanda,3,3,1.0,
+uniform_positive_genera,0.2,202611178,Saudi Arabia,57,57,1.0,1.0
+uniform_positive_genera,0.2,202611178,South Africa,45,45,1.0,1.0
+uniform_positive_genera,0.2,202611178,South Korea,93,93,1.0,1.0
+uniform_positive_genera,0.2,202611178,Tadjikistan,136,136,1.0,1.0
+uniform_positive_genera,0.2,202611178,Taiwan,470,470,1.0,1.0
+uniform_positive_genera,0.2,202611178,Tanzania,10,10,1.0,1.0
+uniform_positive_genera,0.2,202611178,Uganda,8,8,1.0,
+uniform_positive_genera,0.2,202611178,United States,1162,1162,1.0,1.0
+uniform_positive_genera,0.2,202611178,Venezuela,18,18,1.0,1.0
+uniform_positive_genera,0.2,202611178,Yemen,87,87,1.0,1.0
+uniform_positive_genera,0.2,202611179,Angola,43,43,1.0,1.0
+uniform_positive_genera,0.2,202611179,Argentina,34,34,1.0,1.0
+uniform_positive_genera,0.2,202611179,Australia,1469,1469,1.0,1.0
+uniform_positive_genera,0.2,202611179,Botswana,2,2,1.0,
+uniform_positive_genera,0.2,202611179,Burkina Faso,173,173,1.0,1.0
+uniform_positive_genera,0.2,202611179,Canada,15,15,1.0,1.0
+uniform_positive_genera,0.2,202611179,Chile,12,12,1.0,
+uniform_positive_genera,0.2,202611179,China,22,22,1.0,1.0
+uniform_positive_genera,0.2,202611179,Colombia,27,27,1.0,
+uniform_positive_genera,0.2,202611179,Ecuador,30,30,1.0,1.0
+uniform_positive_genera,0.2,202611179,Egypt,45,45,1.0,
+uniform_positive_genera,0.2,202611179,Ethiopia,44,44,1.0,1.0
+uniform_positive_genera,0.2,202611179,Iran,27,27,1.0,1.0
+uniform_positive_genera,0.2,202611179,Kazakhstan,45,45,1.0,1.0
+uniform_positive_genera,0.2,202611179,Kenya,67,67,1.0,1.0
+uniform_positive_genera,0.2,202611179,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+uniform_positive_genera,0.2,202611179,Mongolia,338,338,1.0,1.0
+uniform_positive_genera,0.2,202611179,Morocco,176,176,1.0,1.0
+uniform_positive_genera,0.2,202611179,Namibia,8,8,1.0,
+uniform_positive_genera,0.2,202611179,Peru,10,10,1.0,1.0
+uniform_positive_genera,0.2,202611179,Russian Federation,571,571,1.0,1.0
+uniform_positive_genera,0.2,202611179,Rwanda,3,3,1.0,
+uniform_positive_genera,0.2,202611179,Saudi Arabia,57,57,1.0,1.0
+uniform_positive_genera,0.2,202611179,South Africa,45,45,1.0,1.0
+uniform_positive_genera,0.2,202611179,South Korea,93,93,1.0,1.0
+uniform_positive_genera,0.2,202611179,Tadjikistan,136,136,1.0,1.0
+uniform_positive_genera,0.2,202611179,Taiwan,470,470,1.0,1.0
+uniform_positive_genera,0.2,202611179,Tanzania,10,10,1.0,1.0
+uniform_positive_genera,0.2,202611179,Uganda,8,8,1.0,
+uniform_positive_genera,0.2,202611179,United States,1162,1162,1.0,1.0
+uniform_positive_genera,0.2,202611179,Venezuela,18,18,1.0,1.0
+uniform_positive_genera,0.2,202611179,Yemen,87,87,1.0,1.0
+uniform_positive_genera,0.5,202611170,Angola,43,43,1.0,1.0
+uniform_positive_genera,0.5,202611170,Argentina,34,34,1.0,1.0
+uniform_positive_genera,0.5,202611170,Australia,1469,1469,1.0,1.0
+uniform_positive_genera,0.5,202611170,Botswana,2,2,1.0,
+uniform_positive_genera,0.5,202611170,Burkina Faso,173,173,1.0,1.0
+uniform_positive_genera,0.5,202611170,Canada,15,15,1.0,1.0
+uniform_positive_genera,0.5,202611170,Chile,12,12,1.0,
+uniform_positive_genera,0.5,202611170,China,22,22,1.0,1.0
+uniform_positive_genera,0.5,202611170,Colombia,27,27,1.0,
+uniform_positive_genera,0.5,202611170,Ecuador,30,30,1.0,1.0
+uniform_positive_genera,0.5,202611170,Egypt,45,45,1.0,
+uniform_positive_genera,0.5,202611170,Ethiopia,44,44,1.0,1.0
+uniform_positive_genera,0.5,202611170,Iran,27,27,1.0,1.0
+uniform_positive_genera,0.5,202611170,Kazakhstan,45,45,1.0,1.0
+uniform_positive_genera,0.5,202611170,Kenya,67,67,1.0,1.0
+uniform_positive_genera,0.5,202611170,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+uniform_positive_genera,0.5,202611170,Mongolia,338,338,1.0,1.0
+uniform_positive_genera,0.5,202611170,Morocco,176,176,1.0,1.0
+uniform_positive_genera,0.5,202611170,Namibia,8,8,1.0,
+uniform_positive_genera,0.5,202611170,Peru,10,10,1.0,1.0
+uniform_positive_genera,0.5,202611170,Russian Federation,571,571,1.0,1.0
+uniform_positive_genera,0.5,202611170,Rwanda,3,3,1.0,
+uniform_positive_genera,0.5,202611170,Saudi Arabia,57,57,1.0,1.0
+uniform_positive_genera,0.5,202611170,South Africa,45,45,1.0,1.0
+uniform_positive_genera,0.5,202611170,South Korea,93,93,1.0,1.0
+uniform_positive_genera,0.5,202611170,Tadjikistan,136,136,1.0,1.0
+uniform_positive_genera,0.5,202611170,Taiwan,470,470,1.0,1.0
+uniform_positive_genera,0.5,202611170,Tanzania,10,10,1.0,1.0
+uniform_positive_genera,0.5,202611170,Uganda,8,8,1.0,
+uniform_positive_genera,0.5,202611170,United States,1162,1162,1.0,1.0
+uniform_positive_genera,0.5,202611170,Venezuela,18,18,1.0,1.0
+uniform_positive_genera,0.5,202611170,Yemen,87,87,1.0,1.0
+uniform_positive_genera,0.5,202611171,Angola,43,43,1.0,1.0
+uniform_positive_genera,0.5,202611171,Argentina,34,34,1.0,1.0
+uniform_positive_genera,0.5,202611171,Australia,1469,1469,1.0,1.0
+uniform_positive_genera,0.5,202611171,Botswana,2,2,1.0,
+uniform_positive_genera,0.5,202611171,Burkina Faso,173,173,1.0,1.0
+uniform_positive_genera,0.5,202611171,Canada,15,15,1.0,1.0
+uniform_positive_genera,0.5,202611171,Chile,12,12,1.0,
+uniform_positive_genera,0.5,202611171,China,22,22,1.0,1.0
+uniform_positive_genera,0.5,202611171,Colombia,27,27,1.0,
+uniform_positive_genera,0.5,202611171,Ecuador,30,30,1.0,1.0
+uniform_positive_genera,0.5,202611171,Egypt,45,45,1.0,
+uniform_positive_genera,0.5,202611171,Ethiopia,44,44,1.0,1.0
+uniform_positive_genera,0.5,202611171,Iran,27,27,1.0,1.0
+uniform_positive_genera,0.5,202611171,Kazakhstan,45,45,1.0,1.0
+uniform_positive_genera,0.5,202611171,Kenya,67,67,1.0,1.0
+uniform_positive_genera,0.5,202611171,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+uniform_positive_genera,0.5,202611171,Mongolia,338,338,1.0,1.0
+uniform_positive_genera,0.5,202611171,Morocco,176,176,1.0,1.0
+uniform_positive_genera,0.5,202611171,Namibia,8,8,1.0,
+uniform_positive_genera,0.5,202611171,Peru,10,10,1.0,1.0
+uniform_positive_genera,0.5,202611171,Russian Federation,571,571,1.0,1.0
+uniform_positive_genera,0.5,202611171,Rwanda,3,3,1.0,
+uniform_positive_genera,0.5,202611171,Saudi Arabia,57,57,1.0,1.0
+uniform_positive_genera,0.5,202611171,South Africa,45,45,1.0,1.0
+uniform_positive_genera,0.5,202611171,South Korea,93,93,1.0,1.0
+uniform_positive_genera,0.5,202611171,Tadjikistan,136,136,1.0,1.0
+uniform_positive_genera,0.5,202611171,Taiwan,470,470,1.0,1.0
+uniform_positive_genera,0.5,202611171,Tanzania,10,10,1.0,1.0
+uniform_positive_genera,0.5,202611171,Uganda,8,8,1.0,
+uniform_positive_genera,0.5,202611171,United States,1162,1159,0.9974182444061962,0.9914712153518124
+uniform_positive_genera,0.5,202611171,Venezuela,18,18,1.0,1.0
+uniform_positive_genera,0.5,202611171,Yemen,87,87,1.0,1.0
+uniform_positive_genera,0.5,202611172,Angola,43,43,1.0,1.0
+uniform_positive_genera,0.5,202611172,Argentina,34,34,1.0,1.0
+uniform_positive_genera,0.5,202611172,Australia,1469,1469,1.0,1.0
+uniform_positive_genera,0.5,202611172,Botswana,2,2,1.0,
+uniform_positive_genera,0.5,202611172,Burkina Faso,173,173,1.0,1.0
+uniform_positive_genera,0.5,202611172,Canada,15,15,1.0,1.0
+uniform_positive_genera,0.5,202611172,Chile,12,12,1.0,
+uniform_positive_genera,0.5,202611172,China,22,22,1.0,1.0
+uniform_positive_genera,0.5,202611172,Colombia,27,27,1.0,
+uniform_positive_genera,0.5,202611172,Ecuador,30,30,1.0,1.0
+uniform_positive_genera,0.5,202611172,Egypt,45,45,1.0,
+uniform_positive_genera,0.5,202611172,Ethiopia,44,44,1.0,1.0
+uniform_positive_genera,0.5,202611172,Iran,27,27,1.0,1.0
+uniform_positive_genera,0.5,202611172,Kazakhstan,45,45,1.0,1.0
+uniform_positive_genera,0.5,202611172,Kenya,67,67,1.0,1.0
+uniform_positive_genera,0.5,202611172,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+uniform_positive_genera,0.5,202611172,Mongolia,338,338,1.0,1.0
+uniform_positive_genera,0.5,202611172,Morocco,176,176,1.0,1.0
+uniform_positive_genera,0.5,202611172,Namibia,8,8,1.0,
+uniform_positive_genera,0.5,202611172,Peru,10,10,1.0,1.0
+uniform_positive_genera,0.5,202611172,Russian Federation,571,571,1.0,1.0
+uniform_positive_genera,0.5,202611172,Rwanda,3,3,1.0,
+uniform_positive_genera,0.5,202611172,Saudi Arabia,57,57,1.0,1.0
+uniform_positive_genera,0.5,202611172,South Africa,45,45,1.0,1.0
+uniform_positive_genera,0.5,202611172,South Korea,93,93,1.0,1.0
+uniform_positive_genera,0.5,202611172,Tadjikistan,136,136,1.0,1.0
+uniform_positive_genera,0.5,202611172,Taiwan,470,470,1.0,1.0
+uniform_positive_genera,0.5,202611172,Tanzania,10,10,1.0,1.0
+uniform_positive_genera,0.5,202611172,Uganda,8,8,1.0,
+uniform_positive_genera,0.5,202611172,United States,1162,1161,0.9991394148020654,0.9984008528784648
+uniform_positive_genera,0.5,202611172,Venezuela,18,18,1.0,1.0
+uniform_positive_genera,0.5,202611172,Yemen,87,87,1.0,1.0
+uniform_positive_genera,0.5,202611173,Angola,43,43,1.0,1.0
+uniform_positive_genera,0.5,202611173,Argentina,34,34,1.0,1.0
+uniform_positive_genera,0.5,202611173,Australia,1469,1469,1.0,1.0
+uniform_positive_genera,0.5,202611173,Botswana,2,2,1.0,
+uniform_positive_genera,0.5,202611173,Burkina Faso,173,173,1.0,1.0
+uniform_positive_genera,0.5,202611173,Canada,15,15,1.0,1.0
+uniform_positive_genera,0.5,202611173,Chile,12,12,1.0,
+uniform_positive_genera,0.5,202611173,China,22,22,1.0,1.0
+uniform_positive_genera,0.5,202611173,Colombia,27,27,1.0,
+uniform_positive_genera,0.5,202611173,Ecuador,30,30,1.0,1.0
+uniform_positive_genera,0.5,202611173,Egypt,45,45,1.0,
+uniform_positive_genera,0.5,202611173,Ethiopia,44,44,1.0,1.0
+uniform_positive_genera,0.5,202611173,Iran,27,27,1.0,1.0
+uniform_positive_genera,0.5,202611173,Kazakhstan,45,45,1.0,1.0
+uniform_positive_genera,0.5,202611173,Kenya,67,67,1.0,1.0
+uniform_positive_genera,0.5,202611173,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+uniform_positive_genera,0.5,202611173,Mongolia,338,338,1.0,1.0
+uniform_positive_genera,0.5,202611173,Morocco,176,176,1.0,1.0
+uniform_positive_genera,0.5,202611173,Namibia,8,8,1.0,
+uniform_positive_genera,0.5,202611173,Peru,10,10,1.0,1.0
+uniform_positive_genera,0.5,202611173,Russian Federation,571,570,0.9982486865148862,0.9920477137176938
+uniform_positive_genera,0.5,202611173,Rwanda,3,3,1.0,
+uniform_positive_genera,0.5,202611173,Saudi Arabia,57,57,1.0,1.0
+uniform_positive_genera,0.5,202611173,South Africa,45,45,1.0,1.0
+uniform_positive_genera,0.5,202611173,South Korea,93,93,1.0,1.0
+uniform_positive_genera,0.5,202611173,Tadjikistan,136,136,1.0,1.0
+uniform_positive_genera,0.5,202611173,Taiwan,470,470,1.0,1.0
+uniform_positive_genera,0.5,202611173,Tanzania,10,10,1.0,1.0
+uniform_positive_genera,0.5,202611173,Uganda,8,8,1.0,
+uniform_positive_genera,0.5,202611173,United States,1162,1161,0.9991394148020654,0.9968017057569296
+uniform_positive_genera,0.5,202611173,Venezuela,18,18,1.0,1.0
+uniform_positive_genera,0.5,202611173,Yemen,87,87,1.0,1.0
+uniform_positive_genera,0.5,202611174,Angola,43,43,1.0,1.0
+uniform_positive_genera,0.5,202611174,Argentina,34,34,1.0,1.0
+uniform_positive_genera,0.5,202611174,Australia,1469,1469,1.0,1.0
+uniform_positive_genera,0.5,202611174,Botswana,2,2,1.0,
+uniform_positive_genera,0.5,202611174,Burkina Faso,173,173,1.0,1.0
+uniform_positive_genera,0.5,202611174,Canada,15,15,1.0,1.0
+uniform_positive_genera,0.5,202611174,Chile,12,12,1.0,
+uniform_positive_genera,0.5,202611174,China,22,22,1.0,1.0
+uniform_positive_genera,0.5,202611174,Colombia,27,27,1.0,
+uniform_positive_genera,0.5,202611174,Ecuador,30,30,1.0,1.0
+uniform_positive_genera,0.5,202611174,Egypt,45,45,1.0,
+uniform_positive_genera,0.5,202611174,Ethiopia,44,44,1.0,1.0
+uniform_positive_genera,0.5,202611174,Iran,27,27,1.0,1.0
+uniform_positive_genera,0.5,202611174,Kazakhstan,45,45,1.0,1.0
+uniform_positive_genera,0.5,202611174,Kenya,67,67,1.0,1.0
+uniform_positive_genera,0.5,202611174,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+uniform_positive_genera,0.5,202611174,Mongolia,338,338,1.0,1.0
+uniform_positive_genera,0.5,202611174,Morocco,176,176,1.0,1.0
+uniform_positive_genera,0.5,202611174,Namibia,8,8,1.0,
+uniform_positive_genera,0.5,202611174,Peru,10,10,1.0,1.0
+uniform_positive_genera,0.5,202611174,Russian Federation,571,571,1.0,1.0
+uniform_positive_genera,0.5,202611174,Rwanda,3,3,1.0,
+uniform_positive_genera,0.5,202611174,Saudi Arabia,57,57,1.0,1.0
+uniform_positive_genera,0.5,202611174,South Africa,45,45,1.0,1.0
+uniform_positive_genera,0.5,202611174,South Korea,93,93,1.0,1.0
+uniform_positive_genera,0.5,202611174,Tadjikistan,136,136,1.0,1.0
+uniform_positive_genera,0.5,202611174,Taiwan,470,470,1.0,1.0
+uniform_positive_genera,0.5,202611174,Tanzania,10,10,1.0,1.0
+uniform_positive_genera,0.5,202611174,Uganda,8,8,1.0,
+uniform_positive_genera,0.5,202611174,United States,1162,1160,0.9982788296041308,0.9957356076759062
+uniform_positive_genera,0.5,202611174,Venezuela,18,18,1.0,1.0
+uniform_positive_genera,0.5,202611174,Yemen,87,87,1.0,1.0
+uniform_positive_genera,0.5,202611175,Angola,43,43,1.0,1.0
+uniform_positive_genera,0.5,202611175,Argentina,34,34,1.0,1.0
+uniform_positive_genera,0.5,202611175,Australia,1469,1469,1.0,1.0
+uniform_positive_genera,0.5,202611175,Botswana,2,2,1.0,
+uniform_positive_genera,0.5,202611175,Burkina Faso,173,173,1.0,1.0
+uniform_positive_genera,0.5,202611175,Canada,15,15,1.0,1.0
+uniform_positive_genera,0.5,202611175,Chile,12,12,1.0,
+uniform_positive_genera,0.5,202611175,China,22,22,1.0,1.0
+uniform_positive_genera,0.5,202611175,Colombia,27,27,1.0,
+uniform_positive_genera,0.5,202611175,Ecuador,30,30,1.0,1.0
+uniform_positive_genera,0.5,202611175,Egypt,45,45,1.0,
+uniform_positive_genera,0.5,202611175,Ethiopia,44,44,1.0,1.0
+uniform_positive_genera,0.5,202611175,Iran,27,27,1.0,1.0
+uniform_positive_genera,0.5,202611175,Kazakhstan,45,45,1.0,1.0
+uniform_positive_genera,0.5,202611175,Kenya,67,67,1.0,1.0
+uniform_positive_genera,0.5,202611175,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+uniform_positive_genera,0.5,202611175,Mongolia,338,338,1.0,1.0
+uniform_positive_genera,0.5,202611175,Morocco,176,176,1.0,1.0
+uniform_positive_genera,0.5,202611175,Namibia,8,8,1.0,
+uniform_positive_genera,0.5,202611175,Peru,10,10,1.0,1.0
+uniform_positive_genera,0.5,202611175,Russian Federation,571,571,1.0,1.0
+uniform_positive_genera,0.5,202611175,Rwanda,3,3,1.0,
+uniform_positive_genera,0.5,202611175,Saudi Arabia,57,57,1.0,1.0
+uniform_positive_genera,0.5,202611175,South Africa,45,45,1.0,1.0
+uniform_positive_genera,0.5,202611175,South Korea,93,93,1.0,1.0
+uniform_positive_genera,0.5,202611175,Tadjikistan,136,136,1.0,1.0
+uniform_positive_genera,0.5,202611175,Taiwan,470,470,1.0,1.0
+uniform_positive_genera,0.5,202611175,Tanzania,10,10,1.0,1.0
+uniform_positive_genera,0.5,202611175,Uganda,8,8,1.0,
+uniform_positive_genera,0.5,202611175,United States,1162,1161,0.9991394148020654,0.9957356076759062
+uniform_positive_genera,0.5,202611175,Venezuela,18,18,1.0,1.0
+uniform_positive_genera,0.5,202611175,Yemen,87,87,1.0,1.0
+uniform_positive_genera,0.5,202611176,Angola,43,43,1.0,1.0
+uniform_positive_genera,0.5,202611176,Argentina,34,34,1.0,1.0
+uniform_positive_genera,0.5,202611176,Australia,1469,1469,1.0,1.0
+uniform_positive_genera,0.5,202611176,Botswana,2,2,1.0,
+uniform_positive_genera,0.5,202611176,Burkina Faso,173,173,1.0,1.0
+uniform_positive_genera,0.5,202611176,Canada,15,15,1.0,1.0
+uniform_positive_genera,0.5,202611176,Chile,12,12,1.0,
+uniform_positive_genera,0.5,202611176,China,22,22,1.0,1.0
+uniform_positive_genera,0.5,202611176,Colombia,27,27,1.0,
+uniform_positive_genera,0.5,202611176,Ecuador,30,30,1.0,1.0
+uniform_positive_genera,0.5,202611176,Egypt,45,45,1.0,
+uniform_positive_genera,0.5,202611176,Ethiopia,44,44,1.0,1.0
+uniform_positive_genera,0.5,202611176,Iran,27,27,1.0,1.0
+uniform_positive_genera,0.5,202611176,Kazakhstan,45,45,1.0,1.0
+uniform_positive_genera,0.5,202611176,Kenya,67,67,1.0,1.0
+uniform_positive_genera,0.5,202611176,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+uniform_positive_genera,0.5,202611176,Mongolia,338,338,1.0,1.0
+uniform_positive_genera,0.5,202611176,Morocco,176,176,1.0,1.0
+uniform_positive_genera,0.5,202611176,Namibia,8,8,1.0,
+uniform_positive_genera,0.5,202611176,Peru,10,10,1.0,1.0
+uniform_positive_genera,0.5,202611176,Russian Federation,571,571,1.0,1.0
+uniform_positive_genera,0.5,202611176,Rwanda,3,3,1.0,
+uniform_positive_genera,0.5,202611176,Saudi Arabia,57,57,1.0,1.0
+uniform_positive_genera,0.5,202611176,South Africa,45,45,1.0,1.0
+uniform_positive_genera,0.5,202611176,South Korea,93,93,1.0,1.0
+uniform_positive_genera,0.5,202611176,Tadjikistan,136,136,1.0,1.0
+uniform_positive_genera,0.5,202611176,Taiwan,470,470,1.0,1.0
+uniform_positive_genera,0.5,202611176,Tanzania,10,10,1.0,1.0
+uniform_positive_genera,0.5,202611176,Uganda,8,8,1.0,
+uniform_positive_genera,0.5,202611176,United States,1162,1159,0.9974182444061962,0.9914712153518124
+uniform_positive_genera,0.5,202611176,Venezuela,18,18,1.0,1.0
+uniform_positive_genera,0.5,202611176,Yemen,87,87,1.0,1.0
+uniform_positive_genera,0.5,202611177,Angola,43,43,1.0,1.0
+uniform_positive_genera,0.5,202611177,Argentina,34,34,1.0,1.0
+uniform_positive_genera,0.5,202611177,Australia,1469,1469,1.0,1.0
+uniform_positive_genera,0.5,202611177,Botswana,2,2,1.0,
+uniform_positive_genera,0.5,202611177,Burkina Faso,173,173,1.0,1.0
+uniform_positive_genera,0.5,202611177,Canada,15,15,1.0,1.0
+uniform_positive_genera,0.5,202611177,Chile,12,12,1.0,
+uniform_positive_genera,0.5,202611177,China,22,22,1.0,1.0
+uniform_positive_genera,0.5,202611177,Colombia,27,27,1.0,
+uniform_positive_genera,0.5,202611177,Ecuador,30,30,1.0,1.0
+uniform_positive_genera,0.5,202611177,Egypt,45,45,1.0,
+uniform_positive_genera,0.5,202611177,Ethiopia,44,44,1.0,1.0
+uniform_positive_genera,0.5,202611177,Iran,27,27,1.0,1.0
+uniform_positive_genera,0.5,202611177,Kazakhstan,45,45,1.0,1.0
+uniform_positive_genera,0.5,202611177,Kenya,67,67,1.0,1.0
+uniform_positive_genera,0.5,202611177,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+uniform_positive_genera,0.5,202611177,Mongolia,338,338,1.0,1.0
+uniform_positive_genera,0.5,202611177,Morocco,176,176,1.0,1.0
+uniform_positive_genera,0.5,202611177,Namibia,8,8,1.0,
+uniform_positive_genera,0.5,202611177,Peru,10,10,1.0,1.0
+uniform_positive_genera,0.5,202611177,Russian Federation,571,571,1.0,1.0
+uniform_positive_genera,0.5,202611177,Rwanda,3,3,1.0,
+uniform_positive_genera,0.5,202611177,Saudi Arabia,57,57,1.0,1.0
+uniform_positive_genera,0.5,202611177,South Africa,45,45,1.0,1.0
+uniform_positive_genera,0.5,202611177,South Korea,93,93,1.0,1.0
+uniform_positive_genera,0.5,202611177,Tadjikistan,136,136,1.0,1.0
+uniform_positive_genera,0.5,202611177,Taiwan,470,470,1.0,1.0
+uniform_positive_genera,0.5,202611177,Tanzania,10,10,1.0,1.0
+uniform_positive_genera,0.5,202611177,Uganda,8,8,1.0,
+uniform_positive_genera,0.5,202611177,United States,1162,1162,1.0,1.0
+uniform_positive_genera,0.5,202611177,Venezuela,18,18,1.0,1.0
+uniform_positive_genera,0.5,202611177,Yemen,87,87,1.0,1.0
+uniform_positive_genera,0.5,202611178,Angola,43,43,1.0,1.0
+uniform_positive_genera,0.5,202611178,Argentina,34,34,1.0,1.0
+uniform_positive_genera,0.5,202611178,Australia,1469,1469,1.0,1.0
+uniform_positive_genera,0.5,202611178,Botswana,2,2,1.0,
+uniform_positive_genera,0.5,202611178,Burkina Faso,173,173,1.0,1.0
+uniform_positive_genera,0.5,202611178,Canada,15,15,1.0,1.0
+uniform_positive_genera,0.5,202611178,Chile,12,12,1.0,
+uniform_positive_genera,0.5,202611178,China,22,22,1.0,1.0
+uniform_positive_genera,0.5,202611178,Colombia,27,27,1.0,
+uniform_positive_genera,0.5,202611178,Ecuador,30,30,1.0,1.0
+uniform_positive_genera,0.5,202611178,Egypt,45,45,1.0,
+uniform_positive_genera,0.5,202611178,Ethiopia,44,44,1.0,1.0
+uniform_positive_genera,0.5,202611178,Iran,27,27,1.0,1.0
+uniform_positive_genera,0.5,202611178,Kazakhstan,45,45,1.0,1.0
+uniform_positive_genera,0.5,202611178,Kenya,67,67,1.0,1.0
+uniform_positive_genera,0.5,202611178,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+uniform_positive_genera,0.5,202611178,Mongolia,338,338,1.0,1.0
+uniform_positive_genera,0.5,202611178,Morocco,176,176,1.0,1.0
+uniform_positive_genera,0.5,202611178,Namibia,8,8,1.0,
+uniform_positive_genera,0.5,202611178,Peru,10,10,1.0,1.0
+uniform_positive_genera,0.5,202611178,Russian Federation,571,571,1.0,1.0
+uniform_positive_genera,0.5,202611178,Rwanda,3,3,1.0,
+uniform_positive_genera,0.5,202611178,Saudi Arabia,57,57,1.0,1.0
+uniform_positive_genera,0.5,202611178,South Africa,45,45,1.0,1.0
+uniform_positive_genera,0.5,202611178,South Korea,93,93,1.0,1.0
+uniform_positive_genera,0.5,202611178,Tadjikistan,136,136,1.0,1.0
+uniform_positive_genera,0.5,202611178,Taiwan,470,470,1.0,1.0
+uniform_positive_genera,0.5,202611178,Tanzania,10,10,1.0,1.0
+uniform_positive_genera,0.5,202611178,Uganda,8,8,1.0,
+uniform_positive_genera,0.5,202611178,United States,1162,1160,0.9982788296041308,0.9930703624733476
+uniform_positive_genera,0.5,202611178,Venezuela,18,18,1.0,1.0
+uniform_positive_genera,0.5,202611178,Yemen,87,87,1.0,1.0
+uniform_positive_genera,0.5,202611179,Angola,43,43,1.0,1.0
+uniform_positive_genera,0.5,202611179,Argentina,34,34,1.0,1.0
+uniform_positive_genera,0.5,202611179,Australia,1469,1469,1.0,1.0
+uniform_positive_genera,0.5,202611179,Botswana,2,2,1.0,
+uniform_positive_genera,0.5,202611179,Burkina Faso,173,173,1.0,1.0
+uniform_positive_genera,0.5,202611179,Canada,15,15,1.0,1.0
+uniform_positive_genera,0.5,202611179,Chile,12,12,1.0,
+uniform_positive_genera,0.5,202611179,China,22,22,1.0,1.0
+uniform_positive_genera,0.5,202611179,Colombia,27,27,1.0,
+uniform_positive_genera,0.5,202611179,Ecuador,30,30,1.0,1.0
+uniform_positive_genera,0.5,202611179,Egypt,45,45,1.0,
+uniform_positive_genera,0.5,202611179,Ethiopia,44,44,1.0,1.0
+uniform_positive_genera,0.5,202611179,Iran,27,27,1.0,1.0
+uniform_positive_genera,0.5,202611179,Kazakhstan,45,45,1.0,1.0
+uniform_positive_genera,0.5,202611179,Kenya,67,67,1.0,1.0
+uniform_positive_genera,0.5,202611179,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+uniform_positive_genera,0.5,202611179,Mongolia,338,338,1.0,1.0
+uniform_positive_genera,0.5,202611179,Morocco,176,176,1.0,1.0
+uniform_positive_genera,0.5,202611179,Namibia,8,8,1.0,
+uniform_positive_genera,0.5,202611179,Peru,10,10,1.0,1.0
+uniform_positive_genera,0.5,202611179,Russian Federation,571,571,1.0,1.0
+uniform_positive_genera,0.5,202611179,Rwanda,3,3,1.0,
+uniform_positive_genera,0.5,202611179,Saudi Arabia,57,57,1.0,1.0
+uniform_positive_genera,0.5,202611179,South Africa,45,45,1.0,1.0
+uniform_positive_genera,0.5,202611179,South Korea,93,93,1.0,1.0
+uniform_positive_genera,0.5,202611179,Tadjikistan,136,136,1.0,1.0
+uniform_positive_genera,0.5,202611179,Taiwan,470,470,1.0,1.0
+uniform_positive_genera,0.5,202611179,Tanzania,10,10,1.0,1.0
+uniform_positive_genera,0.5,202611179,Uganda,8,8,1.0,
+uniform_positive_genera,0.5,202611179,United States,1162,1160,0.9982788296041308,0.9952025586353944
+uniform_positive_genera,0.5,202611179,Venezuela,18,18,1.0,1.0
+uniform_positive_genera,0.5,202611179,Yemen,87,87,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611170,Angola,43,43,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611170,Argentina,34,34,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611170,Australia,1469,1469,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611170,Botswana,2,2,1.0,
+rarity_weighted_positive_genera,0.0,202611170,Burkina Faso,173,173,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611170,Canada,15,15,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611170,Chile,12,12,1.0,
+rarity_weighted_positive_genera,0.0,202611170,China,22,22,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611170,Colombia,27,27,1.0,
+rarity_weighted_positive_genera,0.0,202611170,Ecuador,30,30,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611170,Egypt,45,45,1.0,
+rarity_weighted_positive_genera,0.0,202611170,Ethiopia,44,44,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611170,Iran,27,27,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611170,Kazakhstan,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611170,Kenya,67,67,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611170,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611170,Mongolia,338,338,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611170,Morocco,176,176,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611170,Namibia,8,8,1.0,
+rarity_weighted_positive_genera,0.0,202611170,Peru,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611170,Russian Federation,571,571,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611170,Rwanda,3,3,1.0,
+rarity_weighted_positive_genera,0.0,202611170,Saudi Arabia,57,57,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611170,South Africa,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611170,South Korea,93,93,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611170,Tadjikistan,136,136,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611170,Taiwan,470,470,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611170,Tanzania,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611170,Uganda,8,8,1.0,
+rarity_weighted_positive_genera,0.0,202611170,United States,1162,1162,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611170,Venezuela,18,18,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611170,Yemen,87,87,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611171,Angola,43,43,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611171,Argentina,34,34,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611171,Australia,1469,1469,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611171,Botswana,2,2,1.0,
+rarity_weighted_positive_genera,0.0,202611171,Burkina Faso,173,173,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611171,Canada,15,15,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611171,Chile,12,12,1.0,
+rarity_weighted_positive_genera,0.0,202611171,China,22,22,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611171,Colombia,27,27,1.0,
+rarity_weighted_positive_genera,0.0,202611171,Ecuador,30,30,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611171,Egypt,45,45,1.0,
+rarity_weighted_positive_genera,0.0,202611171,Ethiopia,44,44,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611171,Iran,27,27,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611171,Kazakhstan,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611171,Kenya,67,67,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611171,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611171,Mongolia,338,338,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611171,Morocco,176,176,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611171,Namibia,8,8,1.0,
+rarity_weighted_positive_genera,0.0,202611171,Peru,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611171,Russian Federation,571,571,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611171,Rwanda,3,3,1.0,
+rarity_weighted_positive_genera,0.0,202611171,Saudi Arabia,57,57,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611171,South Africa,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611171,South Korea,93,93,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611171,Tadjikistan,136,136,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611171,Taiwan,470,470,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611171,Tanzania,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611171,Uganda,8,8,1.0,
+rarity_weighted_positive_genera,0.0,202611171,United States,1162,1162,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611171,Venezuela,18,18,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611171,Yemen,87,87,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611172,Angola,43,43,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611172,Argentina,34,34,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611172,Australia,1469,1469,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611172,Botswana,2,2,1.0,
+rarity_weighted_positive_genera,0.0,202611172,Burkina Faso,173,173,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611172,Canada,15,15,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611172,Chile,12,12,1.0,
+rarity_weighted_positive_genera,0.0,202611172,China,22,22,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611172,Colombia,27,27,1.0,
+rarity_weighted_positive_genera,0.0,202611172,Ecuador,30,30,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611172,Egypt,45,45,1.0,
+rarity_weighted_positive_genera,0.0,202611172,Ethiopia,44,44,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611172,Iran,27,27,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611172,Kazakhstan,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611172,Kenya,67,67,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611172,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611172,Mongolia,338,338,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611172,Morocco,176,176,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611172,Namibia,8,8,1.0,
+rarity_weighted_positive_genera,0.0,202611172,Peru,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611172,Russian Federation,571,571,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611172,Rwanda,3,3,1.0,
+rarity_weighted_positive_genera,0.0,202611172,Saudi Arabia,57,57,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611172,South Africa,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611172,South Korea,93,93,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611172,Tadjikistan,136,136,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611172,Taiwan,470,470,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611172,Tanzania,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611172,Uganda,8,8,1.0,
+rarity_weighted_positive_genera,0.0,202611172,United States,1162,1162,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611172,Venezuela,18,18,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611172,Yemen,87,87,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611173,Angola,43,43,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611173,Argentina,34,34,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611173,Australia,1469,1469,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611173,Botswana,2,2,1.0,
+rarity_weighted_positive_genera,0.0,202611173,Burkina Faso,173,173,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611173,Canada,15,15,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611173,Chile,12,12,1.0,
+rarity_weighted_positive_genera,0.0,202611173,China,22,22,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611173,Colombia,27,27,1.0,
+rarity_weighted_positive_genera,0.0,202611173,Ecuador,30,30,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611173,Egypt,45,45,1.0,
+rarity_weighted_positive_genera,0.0,202611173,Ethiopia,44,44,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611173,Iran,27,27,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611173,Kazakhstan,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611173,Kenya,67,67,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611173,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611173,Mongolia,338,338,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611173,Morocco,176,176,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611173,Namibia,8,8,1.0,
+rarity_weighted_positive_genera,0.0,202611173,Peru,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611173,Russian Federation,571,571,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611173,Rwanda,3,3,1.0,
+rarity_weighted_positive_genera,0.0,202611173,Saudi Arabia,57,57,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611173,South Africa,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611173,South Korea,93,93,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611173,Tadjikistan,136,136,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611173,Taiwan,470,470,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611173,Tanzania,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611173,Uganda,8,8,1.0,
+rarity_weighted_positive_genera,0.0,202611173,United States,1162,1162,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611173,Venezuela,18,18,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611173,Yemen,87,87,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611174,Angola,43,43,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611174,Argentina,34,34,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611174,Australia,1469,1469,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611174,Botswana,2,2,1.0,
+rarity_weighted_positive_genera,0.0,202611174,Burkina Faso,173,173,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611174,Canada,15,15,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611174,Chile,12,12,1.0,
+rarity_weighted_positive_genera,0.0,202611174,China,22,22,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611174,Colombia,27,27,1.0,
+rarity_weighted_positive_genera,0.0,202611174,Ecuador,30,30,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611174,Egypt,45,45,1.0,
+rarity_weighted_positive_genera,0.0,202611174,Ethiopia,44,44,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611174,Iran,27,27,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611174,Kazakhstan,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611174,Kenya,67,67,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611174,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611174,Mongolia,338,338,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611174,Morocco,176,176,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611174,Namibia,8,8,1.0,
+rarity_weighted_positive_genera,0.0,202611174,Peru,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611174,Russian Federation,571,571,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611174,Rwanda,3,3,1.0,
+rarity_weighted_positive_genera,0.0,202611174,Saudi Arabia,57,57,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611174,South Africa,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611174,South Korea,93,93,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611174,Tadjikistan,136,136,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611174,Taiwan,470,470,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611174,Tanzania,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611174,Uganda,8,8,1.0,
+rarity_weighted_positive_genera,0.0,202611174,United States,1162,1162,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611174,Venezuela,18,18,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611174,Yemen,87,87,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611175,Angola,43,43,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611175,Argentina,34,34,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611175,Australia,1469,1469,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611175,Botswana,2,2,1.0,
+rarity_weighted_positive_genera,0.0,202611175,Burkina Faso,173,173,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611175,Canada,15,15,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611175,Chile,12,12,1.0,
+rarity_weighted_positive_genera,0.0,202611175,China,22,22,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611175,Colombia,27,27,1.0,
+rarity_weighted_positive_genera,0.0,202611175,Ecuador,30,30,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611175,Egypt,45,45,1.0,
+rarity_weighted_positive_genera,0.0,202611175,Ethiopia,44,44,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611175,Iran,27,27,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611175,Kazakhstan,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611175,Kenya,67,67,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611175,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611175,Mongolia,338,338,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611175,Morocco,176,176,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611175,Namibia,8,8,1.0,
+rarity_weighted_positive_genera,0.0,202611175,Peru,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611175,Russian Federation,571,571,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611175,Rwanda,3,3,1.0,
+rarity_weighted_positive_genera,0.0,202611175,Saudi Arabia,57,57,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611175,South Africa,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611175,South Korea,93,93,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611175,Tadjikistan,136,136,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611175,Taiwan,470,470,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611175,Tanzania,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611175,Uganda,8,8,1.0,
+rarity_weighted_positive_genera,0.0,202611175,United States,1162,1162,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611175,Venezuela,18,18,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611175,Yemen,87,87,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611176,Angola,43,43,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611176,Argentina,34,34,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611176,Australia,1469,1469,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611176,Botswana,2,2,1.0,
+rarity_weighted_positive_genera,0.0,202611176,Burkina Faso,173,173,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611176,Canada,15,15,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611176,Chile,12,12,1.0,
+rarity_weighted_positive_genera,0.0,202611176,China,22,22,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611176,Colombia,27,27,1.0,
+rarity_weighted_positive_genera,0.0,202611176,Ecuador,30,30,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611176,Egypt,45,45,1.0,
+rarity_weighted_positive_genera,0.0,202611176,Ethiopia,44,44,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611176,Iran,27,27,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611176,Kazakhstan,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611176,Kenya,67,67,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611176,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611176,Mongolia,338,338,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611176,Morocco,176,176,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611176,Namibia,8,8,1.0,
+rarity_weighted_positive_genera,0.0,202611176,Peru,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611176,Russian Federation,571,571,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611176,Rwanda,3,3,1.0,
+rarity_weighted_positive_genera,0.0,202611176,Saudi Arabia,57,57,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611176,South Africa,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611176,South Korea,93,93,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611176,Tadjikistan,136,136,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611176,Taiwan,470,470,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611176,Tanzania,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611176,Uganda,8,8,1.0,
+rarity_weighted_positive_genera,0.0,202611176,United States,1162,1162,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611176,Venezuela,18,18,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611176,Yemen,87,87,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611177,Angola,43,43,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611177,Argentina,34,34,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611177,Australia,1469,1469,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611177,Botswana,2,2,1.0,
+rarity_weighted_positive_genera,0.0,202611177,Burkina Faso,173,173,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611177,Canada,15,15,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611177,Chile,12,12,1.0,
+rarity_weighted_positive_genera,0.0,202611177,China,22,22,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611177,Colombia,27,27,1.0,
+rarity_weighted_positive_genera,0.0,202611177,Ecuador,30,30,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611177,Egypt,45,45,1.0,
+rarity_weighted_positive_genera,0.0,202611177,Ethiopia,44,44,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611177,Iran,27,27,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611177,Kazakhstan,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611177,Kenya,67,67,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611177,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611177,Mongolia,338,338,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611177,Morocco,176,176,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611177,Namibia,8,8,1.0,
+rarity_weighted_positive_genera,0.0,202611177,Peru,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611177,Russian Federation,571,571,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611177,Rwanda,3,3,1.0,
+rarity_weighted_positive_genera,0.0,202611177,Saudi Arabia,57,57,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611177,South Africa,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611177,South Korea,93,93,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611177,Tadjikistan,136,136,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611177,Taiwan,470,470,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611177,Tanzania,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611177,Uganda,8,8,1.0,
+rarity_weighted_positive_genera,0.0,202611177,United States,1162,1162,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611177,Venezuela,18,18,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611177,Yemen,87,87,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611178,Angola,43,43,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611178,Argentina,34,34,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611178,Australia,1469,1469,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611178,Botswana,2,2,1.0,
+rarity_weighted_positive_genera,0.0,202611178,Burkina Faso,173,173,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611178,Canada,15,15,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611178,Chile,12,12,1.0,
+rarity_weighted_positive_genera,0.0,202611178,China,22,22,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611178,Colombia,27,27,1.0,
+rarity_weighted_positive_genera,0.0,202611178,Ecuador,30,30,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611178,Egypt,45,45,1.0,
+rarity_weighted_positive_genera,0.0,202611178,Ethiopia,44,44,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611178,Iran,27,27,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611178,Kazakhstan,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611178,Kenya,67,67,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611178,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611178,Mongolia,338,338,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611178,Morocco,176,176,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611178,Namibia,8,8,1.0,
+rarity_weighted_positive_genera,0.0,202611178,Peru,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611178,Russian Federation,571,571,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611178,Rwanda,3,3,1.0,
+rarity_weighted_positive_genera,0.0,202611178,Saudi Arabia,57,57,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611178,South Africa,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611178,South Korea,93,93,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611178,Tadjikistan,136,136,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611178,Taiwan,470,470,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611178,Tanzania,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611178,Uganda,8,8,1.0,
+rarity_weighted_positive_genera,0.0,202611178,United States,1162,1162,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611178,Venezuela,18,18,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611178,Yemen,87,87,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611179,Angola,43,43,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611179,Argentina,34,34,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611179,Australia,1469,1469,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611179,Botswana,2,2,1.0,
+rarity_weighted_positive_genera,0.0,202611179,Burkina Faso,173,173,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611179,Canada,15,15,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611179,Chile,12,12,1.0,
+rarity_weighted_positive_genera,0.0,202611179,China,22,22,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611179,Colombia,27,27,1.0,
+rarity_weighted_positive_genera,0.0,202611179,Ecuador,30,30,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611179,Egypt,45,45,1.0,
+rarity_weighted_positive_genera,0.0,202611179,Ethiopia,44,44,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611179,Iran,27,27,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611179,Kazakhstan,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611179,Kenya,67,67,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611179,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611179,Mongolia,338,338,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611179,Morocco,176,176,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611179,Namibia,8,8,1.0,
+rarity_weighted_positive_genera,0.0,202611179,Peru,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611179,Russian Federation,571,571,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611179,Rwanda,3,3,1.0,
+rarity_weighted_positive_genera,0.0,202611179,Saudi Arabia,57,57,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611179,South Africa,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611179,South Korea,93,93,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611179,Tadjikistan,136,136,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611179,Taiwan,470,470,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611179,Tanzania,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611179,Uganda,8,8,1.0,
+rarity_weighted_positive_genera,0.0,202611179,United States,1162,1162,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611179,Venezuela,18,18,1.0,1.0
+rarity_weighted_positive_genera,0.0,202611179,Yemen,87,87,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611170,Angola,43,43,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611170,Argentina,34,34,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611170,Australia,1469,1469,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611170,Botswana,2,2,1.0,
+rarity_weighted_positive_genera,0.2,202611170,Burkina Faso,173,173,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611170,Canada,15,15,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611170,Chile,12,12,1.0,
+rarity_weighted_positive_genera,0.2,202611170,China,22,22,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611170,Colombia,27,27,1.0,
+rarity_weighted_positive_genera,0.2,202611170,Ecuador,30,30,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611170,Egypt,45,45,1.0,
+rarity_weighted_positive_genera,0.2,202611170,Ethiopia,44,44,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611170,Iran,27,27,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611170,Kazakhstan,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611170,Kenya,67,67,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611170,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611170,Mongolia,338,338,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611170,Morocco,176,176,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611170,Namibia,8,8,1.0,
+rarity_weighted_positive_genera,0.2,202611170,Peru,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611170,Russian Federation,571,571,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611170,Rwanda,3,3,1.0,
+rarity_weighted_positive_genera,0.2,202611170,Saudi Arabia,57,57,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611170,South Africa,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611170,South Korea,93,93,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611170,Tadjikistan,136,136,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611170,Taiwan,470,470,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611170,Tanzania,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611170,Uganda,8,8,1.0,
+rarity_weighted_positive_genera,0.2,202611170,United States,1162,1162,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611170,Venezuela,18,18,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611170,Yemen,87,87,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611171,Angola,43,43,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611171,Argentina,34,34,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611171,Australia,1469,1469,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611171,Botswana,2,2,1.0,
+rarity_weighted_positive_genera,0.2,202611171,Burkina Faso,173,173,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611171,Canada,15,15,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611171,Chile,12,12,1.0,
+rarity_weighted_positive_genera,0.2,202611171,China,22,22,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611171,Colombia,27,27,1.0,
+rarity_weighted_positive_genera,0.2,202611171,Ecuador,30,30,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611171,Egypt,45,45,1.0,
+rarity_weighted_positive_genera,0.2,202611171,Ethiopia,44,44,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611171,Iran,27,27,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611171,Kazakhstan,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611171,Kenya,67,67,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611171,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611171,Mongolia,338,338,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611171,Morocco,176,176,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611171,Namibia,8,8,1.0,
+rarity_weighted_positive_genera,0.2,202611171,Peru,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611171,Russian Federation,571,571,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611171,Rwanda,3,3,1.0,
+rarity_weighted_positive_genera,0.2,202611171,Saudi Arabia,57,57,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611171,South Africa,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611171,South Korea,93,93,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611171,Tadjikistan,136,136,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611171,Taiwan,470,470,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611171,Tanzania,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611171,Uganda,8,8,1.0,
+rarity_weighted_positive_genera,0.2,202611171,United States,1162,1162,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611171,Venezuela,18,18,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611171,Yemen,87,87,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611172,Angola,43,43,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611172,Argentina,34,34,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611172,Australia,1469,1469,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611172,Botswana,2,2,1.0,
+rarity_weighted_positive_genera,0.2,202611172,Burkina Faso,173,173,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611172,Canada,15,15,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611172,Chile,12,12,1.0,
+rarity_weighted_positive_genera,0.2,202611172,China,22,22,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611172,Colombia,27,27,1.0,
+rarity_weighted_positive_genera,0.2,202611172,Ecuador,30,30,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611172,Egypt,45,45,1.0,
+rarity_weighted_positive_genera,0.2,202611172,Ethiopia,44,44,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611172,Iran,27,27,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611172,Kazakhstan,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611172,Kenya,67,67,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611172,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611172,Mongolia,338,338,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611172,Morocco,176,176,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611172,Namibia,8,8,1.0,
+rarity_weighted_positive_genera,0.2,202611172,Peru,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611172,Russian Federation,571,571,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611172,Rwanda,3,3,1.0,
+rarity_weighted_positive_genera,0.2,202611172,Saudi Arabia,57,57,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611172,South Africa,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611172,South Korea,93,93,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611172,Tadjikistan,136,136,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611172,Taiwan,470,470,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611172,Tanzania,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611172,Uganda,8,8,1.0,
+rarity_weighted_positive_genera,0.2,202611172,United States,1162,1162,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611172,Venezuela,18,18,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611172,Yemen,87,87,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611173,Angola,43,43,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611173,Argentina,34,34,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611173,Australia,1469,1469,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611173,Botswana,2,2,1.0,
+rarity_weighted_positive_genera,0.2,202611173,Burkina Faso,173,173,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611173,Canada,15,15,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611173,Chile,12,12,1.0,
+rarity_weighted_positive_genera,0.2,202611173,China,22,22,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611173,Colombia,27,27,1.0,
+rarity_weighted_positive_genera,0.2,202611173,Ecuador,30,30,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611173,Egypt,45,45,1.0,
+rarity_weighted_positive_genera,0.2,202611173,Ethiopia,44,44,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611173,Iran,27,27,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611173,Kazakhstan,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611173,Kenya,67,67,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611173,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611173,Mongolia,338,338,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611173,Morocco,176,176,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611173,Namibia,8,8,1.0,
+rarity_weighted_positive_genera,0.2,202611173,Peru,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611173,Russian Federation,571,571,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611173,Rwanda,3,3,1.0,
+rarity_weighted_positive_genera,0.2,202611173,Saudi Arabia,57,57,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611173,South Africa,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611173,South Korea,93,93,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611173,Tadjikistan,136,136,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611173,Taiwan,470,470,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611173,Tanzania,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611173,Uganda,8,8,1.0,
+rarity_weighted_positive_genera,0.2,202611173,United States,1162,1162,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611173,Venezuela,18,18,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611173,Yemen,87,87,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611174,Angola,43,43,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611174,Argentina,34,34,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611174,Australia,1469,1469,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611174,Botswana,2,2,1.0,
+rarity_weighted_positive_genera,0.2,202611174,Burkina Faso,173,173,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611174,Canada,15,15,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611174,Chile,12,12,1.0,
+rarity_weighted_positive_genera,0.2,202611174,China,22,22,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611174,Colombia,27,27,1.0,
+rarity_weighted_positive_genera,0.2,202611174,Ecuador,30,30,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611174,Egypt,45,45,1.0,
+rarity_weighted_positive_genera,0.2,202611174,Ethiopia,44,44,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611174,Iran,27,27,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611174,Kazakhstan,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611174,Kenya,67,67,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611174,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611174,Mongolia,338,338,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611174,Morocco,176,176,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611174,Namibia,8,8,1.0,
+rarity_weighted_positive_genera,0.2,202611174,Peru,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611174,Russian Federation,571,571,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611174,Rwanda,3,3,1.0,
+rarity_weighted_positive_genera,0.2,202611174,Saudi Arabia,57,57,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611174,South Africa,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611174,South Korea,93,93,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611174,Tadjikistan,136,136,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611174,Taiwan,470,470,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611174,Tanzania,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611174,Uganda,8,8,1.0,
+rarity_weighted_positive_genera,0.2,202611174,United States,1162,1162,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611174,Venezuela,18,18,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611174,Yemen,87,87,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611175,Angola,43,43,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611175,Argentina,34,34,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611175,Australia,1469,1469,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611175,Botswana,2,2,1.0,
+rarity_weighted_positive_genera,0.2,202611175,Burkina Faso,173,173,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611175,Canada,15,15,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611175,Chile,12,12,1.0,
+rarity_weighted_positive_genera,0.2,202611175,China,22,22,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611175,Colombia,27,27,1.0,
+rarity_weighted_positive_genera,0.2,202611175,Ecuador,30,30,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611175,Egypt,45,45,1.0,
+rarity_weighted_positive_genera,0.2,202611175,Ethiopia,44,44,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611175,Iran,27,27,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611175,Kazakhstan,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611175,Kenya,67,67,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611175,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611175,Mongolia,338,338,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611175,Morocco,176,176,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611175,Namibia,8,8,1.0,
+rarity_weighted_positive_genera,0.2,202611175,Peru,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611175,Russian Federation,571,571,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611175,Rwanda,3,3,1.0,
+rarity_weighted_positive_genera,0.2,202611175,Saudi Arabia,57,57,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611175,South Africa,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611175,South Korea,93,93,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611175,Tadjikistan,136,136,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611175,Taiwan,470,470,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611175,Tanzania,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611175,Uganda,8,8,1.0,
+rarity_weighted_positive_genera,0.2,202611175,United States,1162,1162,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611175,Venezuela,18,18,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611175,Yemen,87,87,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611176,Angola,43,43,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611176,Argentina,34,34,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611176,Australia,1469,1469,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611176,Botswana,2,2,1.0,
+rarity_weighted_positive_genera,0.2,202611176,Burkina Faso,173,173,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611176,Canada,15,15,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611176,Chile,12,12,1.0,
+rarity_weighted_positive_genera,0.2,202611176,China,22,22,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611176,Colombia,27,27,1.0,
+rarity_weighted_positive_genera,0.2,202611176,Ecuador,30,30,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611176,Egypt,45,45,1.0,
+rarity_weighted_positive_genera,0.2,202611176,Ethiopia,44,44,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611176,Iran,27,27,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611176,Kazakhstan,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611176,Kenya,67,67,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611176,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611176,Mongolia,338,338,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611176,Morocco,176,176,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611176,Namibia,8,8,1.0,
+rarity_weighted_positive_genera,0.2,202611176,Peru,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611176,Russian Federation,571,571,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611176,Rwanda,3,3,1.0,
+rarity_weighted_positive_genera,0.2,202611176,Saudi Arabia,57,57,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611176,South Africa,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611176,South Korea,93,93,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611176,Tadjikistan,136,136,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611176,Taiwan,470,470,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611176,Tanzania,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611176,Uganda,8,8,1.0,
+rarity_weighted_positive_genera,0.2,202611176,United States,1162,1162,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611176,Venezuela,18,18,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611176,Yemen,87,87,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611177,Angola,43,43,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611177,Argentina,34,34,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611177,Australia,1469,1469,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611177,Botswana,2,2,1.0,
+rarity_weighted_positive_genera,0.2,202611177,Burkina Faso,173,173,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611177,Canada,15,15,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611177,Chile,12,12,1.0,
+rarity_weighted_positive_genera,0.2,202611177,China,22,22,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611177,Colombia,27,27,1.0,
+rarity_weighted_positive_genera,0.2,202611177,Ecuador,30,30,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611177,Egypt,45,45,1.0,
+rarity_weighted_positive_genera,0.2,202611177,Ethiopia,44,44,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611177,Iran,27,27,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611177,Kazakhstan,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611177,Kenya,67,67,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611177,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611177,Mongolia,338,338,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611177,Morocco,176,176,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611177,Namibia,8,8,1.0,
+rarity_weighted_positive_genera,0.2,202611177,Peru,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611177,Russian Federation,571,571,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611177,Rwanda,3,3,1.0,
+rarity_weighted_positive_genera,0.2,202611177,Saudi Arabia,57,57,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611177,South Africa,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611177,South Korea,93,93,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611177,Tadjikistan,136,136,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611177,Taiwan,470,470,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611177,Tanzania,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611177,Uganda,8,8,1.0,
+rarity_weighted_positive_genera,0.2,202611177,United States,1162,1162,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611177,Venezuela,18,18,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611177,Yemen,87,87,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611178,Angola,43,43,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611178,Argentina,34,34,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611178,Australia,1469,1469,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611178,Botswana,2,2,1.0,
+rarity_weighted_positive_genera,0.2,202611178,Burkina Faso,173,173,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611178,Canada,15,15,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611178,Chile,12,12,1.0,
+rarity_weighted_positive_genera,0.2,202611178,China,22,22,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611178,Colombia,27,27,1.0,
+rarity_weighted_positive_genera,0.2,202611178,Ecuador,30,30,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611178,Egypt,45,45,1.0,
+rarity_weighted_positive_genera,0.2,202611178,Ethiopia,44,44,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611178,Iran,27,27,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611178,Kazakhstan,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611178,Kenya,67,67,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611178,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611178,Mongolia,338,338,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611178,Morocco,176,176,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611178,Namibia,8,8,1.0,
+rarity_weighted_positive_genera,0.2,202611178,Peru,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611178,Russian Federation,571,571,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611178,Rwanda,3,3,1.0,
+rarity_weighted_positive_genera,0.2,202611178,Saudi Arabia,57,57,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611178,South Africa,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611178,South Korea,93,93,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611178,Tadjikistan,136,136,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611178,Taiwan,470,470,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611178,Tanzania,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611178,Uganda,8,8,1.0,
+rarity_weighted_positive_genera,0.2,202611178,United States,1162,1162,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611178,Venezuela,18,18,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611178,Yemen,87,87,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611179,Angola,43,43,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611179,Argentina,34,34,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611179,Australia,1469,1469,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611179,Botswana,2,2,1.0,
+rarity_weighted_positive_genera,0.2,202611179,Burkina Faso,173,173,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611179,Canada,15,15,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611179,Chile,12,12,1.0,
+rarity_weighted_positive_genera,0.2,202611179,China,22,22,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611179,Colombia,27,27,1.0,
+rarity_weighted_positive_genera,0.2,202611179,Ecuador,30,30,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611179,Egypt,45,45,1.0,
+rarity_weighted_positive_genera,0.2,202611179,Ethiopia,44,44,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611179,Iran,27,27,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611179,Kazakhstan,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611179,Kenya,67,67,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611179,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611179,Mongolia,338,338,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611179,Morocco,176,176,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611179,Namibia,8,8,1.0,
+rarity_weighted_positive_genera,0.2,202611179,Peru,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611179,Russian Federation,571,571,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611179,Rwanda,3,3,1.0,
+rarity_weighted_positive_genera,0.2,202611179,Saudi Arabia,57,57,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611179,South Africa,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611179,South Korea,93,93,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611179,Tadjikistan,136,136,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611179,Taiwan,470,470,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611179,Tanzania,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611179,Uganda,8,8,1.0,
+rarity_weighted_positive_genera,0.2,202611179,United States,1162,1162,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611179,Venezuela,18,18,1.0,1.0
+rarity_weighted_positive_genera,0.2,202611179,Yemen,87,87,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611170,Angola,43,43,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611170,Argentina,34,34,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611170,Australia,1469,1469,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611170,Botswana,2,2,1.0,
+rarity_weighted_positive_genera,0.5,202611170,Burkina Faso,173,173,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611170,Canada,15,15,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611170,Chile,12,12,1.0,
+rarity_weighted_positive_genera,0.5,202611170,China,22,22,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611170,Colombia,27,27,1.0,
+rarity_weighted_positive_genera,0.5,202611170,Ecuador,30,30,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611170,Egypt,45,45,1.0,
+rarity_weighted_positive_genera,0.5,202611170,Ethiopia,44,44,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611170,Iran,27,27,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611170,Kazakhstan,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611170,Kenya,67,67,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611170,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611170,Mongolia,338,338,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611170,Morocco,176,176,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611170,Namibia,8,8,1.0,
+rarity_weighted_positive_genera,0.5,202611170,Peru,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611170,Russian Federation,571,571,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611170,Rwanda,3,3,1.0,
+rarity_weighted_positive_genera,0.5,202611170,Saudi Arabia,57,57,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611170,South Africa,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611170,South Korea,93,93,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611170,Tadjikistan,136,136,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611170,Taiwan,470,470,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611170,Tanzania,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611170,Uganda,8,8,1.0,
+rarity_weighted_positive_genera,0.5,202611170,United States,1162,1161,0.9991394148020654,0.9973347547974414
+rarity_weighted_positive_genera,0.5,202611170,Venezuela,18,18,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611170,Yemen,87,87,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611171,Angola,43,43,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611171,Argentina,34,34,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611171,Australia,1469,1469,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611171,Botswana,2,2,1.0,
+rarity_weighted_positive_genera,0.5,202611171,Burkina Faso,173,173,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611171,Canada,15,15,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611171,Chile,12,12,1.0,
+rarity_weighted_positive_genera,0.5,202611171,China,22,22,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611171,Colombia,27,27,1.0,
+rarity_weighted_positive_genera,0.5,202611171,Ecuador,30,30,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611171,Egypt,45,45,1.0,
+rarity_weighted_positive_genera,0.5,202611171,Ethiopia,44,44,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611171,Iran,27,27,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611171,Kazakhstan,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611171,Kenya,67,67,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611171,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611171,Mongolia,338,338,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611171,Morocco,176,176,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611171,Namibia,8,8,1.0,
+rarity_weighted_positive_genera,0.5,202611171,Peru,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611171,Russian Federation,571,570,0.9982486865148862,0.9920477137176938
+rarity_weighted_positive_genera,0.5,202611171,Rwanda,3,3,1.0,
+rarity_weighted_positive_genera,0.5,202611171,Saudi Arabia,57,57,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611171,South Africa,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611171,South Korea,93,93,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611171,Tadjikistan,136,136,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611171,Taiwan,470,470,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611171,Tanzania,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611171,Uganda,8,8,1.0,
+rarity_weighted_positive_genera,0.5,202611171,United States,1162,1158,0.9965576592082617,0.9877398720682303
+rarity_weighted_positive_genera,0.5,202611171,Venezuela,18,18,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611171,Yemen,87,87,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611172,Angola,43,43,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611172,Argentina,34,34,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611172,Australia,1469,1469,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611172,Botswana,2,2,1.0,
+rarity_weighted_positive_genera,0.5,202611172,Burkina Faso,173,173,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611172,Canada,15,15,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611172,Chile,12,12,1.0,
+rarity_weighted_positive_genera,0.5,202611172,China,22,22,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611172,Colombia,27,27,1.0,
+rarity_weighted_positive_genera,0.5,202611172,Ecuador,30,30,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611172,Egypt,45,45,1.0,
+rarity_weighted_positive_genera,0.5,202611172,Ethiopia,44,44,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611172,Iran,27,27,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611172,Kazakhstan,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611172,Kenya,67,67,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611172,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611172,Mongolia,338,338,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611172,Morocco,176,176,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611172,Namibia,8,8,1.0,
+rarity_weighted_positive_genera,0.5,202611172,Peru,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611172,Russian Federation,571,570,0.9982486865148862,0.9920477137176938
+rarity_weighted_positive_genera,0.5,202611172,Rwanda,3,3,1.0,
+rarity_weighted_positive_genera,0.5,202611172,Saudi Arabia,57,57,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611172,South Africa,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611172,South Korea,93,93,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611172,Tadjikistan,136,136,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611172,Taiwan,470,470,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611172,Tanzania,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611172,Uganda,8,8,1.0,
+rarity_weighted_positive_genera,0.5,202611172,United States,1162,1161,0.9991394148020654,0.9984008528784648
+rarity_weighted_positive_genera,0.5,202611172,Venezuela,18,18,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611172,Yemen,87,87,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611173,Angola,43,43,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611173,Argentina,34,34,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611173,Australia,1469,1469,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611173,Botswana,2,2,1.0,
+rarity_weighted_positive_genera,0.5,202611173,Burkina Faso,173,173,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611173,Canada,15,15,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611173,Chile,12,12,1.0,
+rarity_weighted_positive_genera,0.5,202611173,China,22,22,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611173,Colombia,27,27,1.0,
+rarity_weighted_positive_genera,0.5,202611173,Ecuador,30,30,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611173,Egypt,45,45,1.0,
+rarity_weighted_positive_genera,0.5,202611173,Ethiopia,44,44,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611173,Iran,27,27,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611173,Kazakhstan,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611173,Kenya,67,67,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611173,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611173,Mongolia,338,338,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611173,Morocco,176,176,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611173,Namibia,8,8,1.0,
+rarity_weighted_positive_genera,0.5,202611173,Peru,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611173,Russian Federation,571,570,0.9982486865148862,0.9920477137176938
+rarity_weighted_positive_genera,0.5,202611173,Rwanda,3,3,1.0,
+rarity_weighted_positive_genera,0.5,202611173,Saudi Arabia,57,57,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611173,South Africa,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611173,South Korea,93,93,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611173,Tadjikistan,136,136,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611173,Taiwan,470,470,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611173,Tanzania,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611173,Uganda,8,8,1.0,
+rarity_weighted_positive_genera,0.5,202611173,United States,1162,1160,0.9982788296041308,0.9957356076759062
+rarity_weighted_positive_genera,0.5,202611173,Venezuela,18,18,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611173,Yemen,87,87,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611174,Angola,43,43,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611174,Argentina,34,34,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611174,Australia,1469,1469,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611174,Botswana,2,2,1.0,
+rarity_weighted_positive_genera,0.5,202611174,Burkina Faso,173,173,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611174,Canada,15,15,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611174,Chile,12,12,1.0,
+rarity_weighted_positive_genera,0.5,202611174,China,22,22,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611174,Colombia,27,27,1.0,
+rarity_weighted_positive_genera,0.5,202611174,Ecuador,30,30,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611174,Egypt,45,45,1.0,
+rarity_weighted_positive_genera,0.5,202611174,Ethiopia,44,44,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611174,Iran,27,27,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611174,Kazakhstan,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611174,Kenya,67,67,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611174,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611174,Mongolia,338,338,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611174,Morocco,176,176,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611174,Namibia,8,8,1.0,
+rarity_weighted_positive_genera,0.5,202611174,Peru,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611174,Russian Federation,571,568,0.9947460595446584,0.9880715705765407
+rarity_weighted_positive_genera,0.5,202611174,Rwanda,3,3,1.0,
+rarity_weighted_positive_genera,0.5,202611174,Saudi Arabia,57,57,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611174,South Africa,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611174,South Korea,93,93,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611174,Tadjikistan,136,136,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611174,Taiwan,470,470,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611174,Tanzania,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611174,Uganda,8,8,1.0,
+rarity_weighted_positive_genera,0.5,202611174,United States,1162,1160,0.9982788296041308,0.9957356076759062
+rarity_weighted_positive_genera,0.5,202611174,Venezuela,18,18,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611174,Yemen,87,87,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611175,Angola,43,43,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611175,Argentina,34,34,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611175,Australia,1469,1468,0.9993192648059904,1.0
+rarity_weighted_positive_genera,0.5,202611175,Botswana,2,2,1.0,
+rarity_weighted_positive_genera,0.5,202611175,Burkina Faso,173,173,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611175,Canada,15,15,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611175,Chile,12,12,1.0,
+rarity_weighted_positive_genera,0.5,202611175,China,22,22,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611175,Colombia,27,27,1.0,
+rarity_weighted_positive_genera,0.5,202611175,Ecuador,30,30,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611175,Egypt,45,45,1.0,
+rarity_weighted_positive_genera,0.5,202611175,Ethiopia,44,44,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611175,Iran,27,27,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611175,Kazakhstan,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611175,Kenya,67,67,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611175,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611175,Mongolia,338,338,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611175,Morocco,176,176,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611175,Namibia,8,8,1.0,
+rarity_weighted_positive_genera,0.5,202611175,Peru,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611175,Russian Federation,571,570,0.9982486865148862,0.9920477137176938
+rarity_weighted_positive_genera,0.5,202611175,Rwanda,3,3,1.0,
+rarity_weighted_positive_genera,0.5,202611175,Saudi Arabia,57,57,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611175,South Africa,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611175,South Korea,93,93,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611175,Tadjikistan,136,136,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611175,Taiwan,470,470,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611175,Tanzania,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611175,Uganda,8,8,1.0,
+rarity_weighted_positive_genera,0.5,202611175,United States,1162,1161,0.9991394148020654,0.9957356076759062
+rarity_weighted_positive_genera,0.5,202611175,Venezuela,18,18,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611175,Yemen,87,87,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611176,Angola,43,43,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611176,Argentina,34,34,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611176,Australia,1469,1469,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611176,Botswana,2,2,1.0,
+rarity_weighted_positive_genera,0.5,202611176,Burkina Faso,173,173,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611176,Canada,15,15,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611176,Chile,12,12,1.0,
+rarity_weighted_positive_genera,0.5,202611176,China,22,22,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611176,Colombia,27,27,1.0,
+rarity_weighted_positive_genera,0.5,202611176,Ecuador,30,30,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611176,Egypt,45,45,1.0,
+rarity_weighted_positive_genera,0.5,202611176,Ethiopia,44,44,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611176,Iran,27,27,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611176,Kazakhstan,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611176,Kenya,67,67,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611176,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611176,Mongolia,338,338,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611176,Morocco,176,176,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611176,Namibia,8,8,1.0,
+rarity_weighted_positive_genera,0.5,202611176,Peru,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611176,Russian Federation,571,571,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611176,Rwanda,3,3,1.0,
+rarity_weighted_positive_genera,0.5,202611176,Saudi Arabia,57,57,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611176,South Africa,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611176,South Korea,93,93,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611176,Tadjikistan,136,136,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611176,Taiwan,470,470,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611176,Tanzania,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611176,Uganda,8,8,1.0,
+rarity_weighted_positive_genera,0.5,202611176,United States,1162,1159,0.9974182444061962,0.9914712153518124
+rarity_weighted_positive_genera,0.5,202611176,Venezuela,18,18,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611176,Yemen,87,87,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611177,Angola,43,43,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611177,Argentina,34,34,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611177,Australia,1469,1469,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611177,Botswana,2,2,1.0,
+rarity_weighted_positive_genera,0.5,202611177,Burkina Faso,173,173,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611177,Canada,15,15,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611177,Chile,12,12,1.0,
+rarity_weighted_positive_genera,0.5,202611177,China,22,22,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611177,Colombia,27,27,1.0,
+rarity_weighted_positive_genera,0.5,202611177,Ecuador,30,30,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611177,Egypt,45,45,1.0,
+rarity_weighted_positive_genera,0.5,202611177,Ethiopia,44,44,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611177,Iran,27,27,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611177,Kazakhstan,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611177,Kenya,67,67,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611177,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611177,Mongolia,338,338,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611177,Morocco,176,176,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611177,Namibia,8,8,1.0,
+rarity_weighted_positive_genera,0.5,202611177,Peru,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611177,Russian Federation,571,571,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611177,Rwanda,3,3,1.0,
+rarity_weighted_positive_genera,0.5,202611177,Saudi Arabia,57,57,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611177,South Africa,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611177,South Korea,93,93,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611177,Tadjikistan,136,136,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611177,Taiwan,470,470,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611177,Tanzania,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611177,Uganda,8,8,1.0,
+rarity_weighted_positive_genera,0.5,202611177,United States,1162,1162,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611177,Venezuela,18,18,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611177,Yemen,87,87,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611178,Angola,43,43,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611178,Argentina,34,34,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611178,Australia,1469,1469,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611178,Botswana,2,2,1.0,
+rarity_weighted_positive_genera,0.5,202611178,Burkina Faso,173,173,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611178,Canada,15,15,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611178,Chile,12,12,1.0,
+rarity_weighted_positive_genera,0.5,202611178,China,22,22,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611178,Colombia,27,27,1.0,
+rarity_weighted_positive_genera,0.5,202611178,Ecuador,30,30,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611178,Egypt,45,45,1.0,
+rarity_weighted_positive_genera,0.5,202611178,Ethiopia,44,44,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611178,Iran,27,27,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611178,Kazakhstan,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611178,Kenya,67,67,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611178,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611178,Mongolia,338,338,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611178,Morocco,176,176,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611178,Namibia,8,8,1.0,
+rarity_weighted_positive_genera,0.5,202611178,Peru,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611178,Russian Federation,571,571,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611178,Rwanda,3,3,1.0,
+rarity_weighted_positive_genera,0.5,202611178,Saudi Arabia,57,57,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611178,South Africa,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611178,South Korea,93,93,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611178,Tadjikistan,136,136,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611178,Taiwan,470,470,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611178,Tanzania,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611178,Uganda,8,8,1.0,
+rarity_weighted_positive_genera,0.5,202611178,United States,1162,1160,0.9982788296041308,0.9930703624733476
+rarity_weighted_positive_genera,0.5,202611178,Venezuela,18,18,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611178,Yemen,87,87,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611179,Angola,43,43,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611179,Argentina,34,34,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611179,Australia,1469,1469,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611179,Botswana,2,2,1.0,
+rarity_weighted_positive_genera,0.5,202611179,Burkina Faso,173,173,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611179,Canada,15,15,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611179,Chile,12,12,1.0,
+rarity_weighted_positive_genera,0.5,202611179,China,22,22,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611179,Colombia,27,27,1.0,
+rarity_weighted_positive_genera,0.5,202611179,Ecuador,30,30,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611179,Egypt,45,45,1.0,
+rarity_weighted_positive_genera,0.5,202611179,Ethiopia,44,44,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611179,Iran,27,27,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611179,Kazakhstan,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611179,Kenya,67,67,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611179,Kyrgyz Republic (Kyrgyzstan),4,4,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611179,Mongolia,338,338,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611179,Morocco,176,176,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611179,Namibia,8,8,1.0,
+rarity_weighted_positive_genera,0.5,202611179,Peru,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611179,Russian Federation,571,571,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611179,Rwanda,3,3,1.0,
+rarity_weighted_positive_genera,0.5,202611179,Saudi Arabia,57,57,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611179,South Africa,45,45,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611179,South Korea,93,93,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611179,Tadjikistan,136,136,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611179,Taiwan,470,470,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611179,Tanzania,10,10,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611179,Uganda,8,8,1.0,
+rarity_weighted_positive_genera,0.5,202611179,United States,1162,1159,0.9974182444061962,0.9920042643923241
+rarity_weighted_positive_genera,0.5,202611179,Venezuela,18,18,1.0,1.0
+rarity_weighted_positive_genera,0.5,202611179,Yemen,87,87,1.0,1.0

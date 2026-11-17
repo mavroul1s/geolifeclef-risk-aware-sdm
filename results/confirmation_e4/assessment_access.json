@@ -1,0 +1,8 @@
+{
+  "first_request_at_utc": "2026-11-16T17:48:06.329798+00:00",
+  "policy_freeze_sha256": "9bd9b83f1201b2f1cb3398f3e1bc206b1c5ea65dc40f3c4f60becf82ae1d79b8",
+  "selected_cells": 163,
+  "selected_plots": 301,
+  "raw_files_retained": false,
+  "unselected_plot_or_bout_taxon_values_decoded": false
+}

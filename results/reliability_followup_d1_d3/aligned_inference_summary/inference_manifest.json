@@ -1,0 +1,17 @@
+{
+  "alignment_config_sha256": "72f2edaed3f301fab949c7ca78ad78745631b1b70cb12bd7542423ceb280f486",
+  "bytes_before_manifest": 990279462,
+  "config_sha256": "fcb535d38d9fcbbbcc42c570512b1b552be652813f8c06ec77b268fe91d183cd",
+  "outputs": {
+    "fold0_decisions.csv": "b419c7971a055b683cefae521858b3b1b707597d5f7a29a11921f9a6c49dfdcb",
+    "fold0_mean_probability.npz": "987a62fec274d3deb7bf14401aa479d11470f1d524ca5e323569710cfb741f68",
+    "fold0_normalization.json": "002009e0ab4d0fa3d2e159e73c2ad94993c81e4477e7a82daffa21e909ac2569",
+    "fold0_reproduction.json": "d6e480eb926b50d7369e5723e3bf8518e78040f6a9bd4662778716b936fc5af8",
+    "fold1_decisions.csv": "727da925ff12afad6faf26b13bf823ebb996fc914e66916b68e4dfe760947068",
+    "fold1_mean_probability.npz": "fff65345ac7f3e2b717b40bb87dad5ad7bb5bfe0863e76171da1587443cbc605",
+    "fold1_normalization.json": "5243d436ede523f87a1e3a3e80a895eaeb030a41921300d493c5fc4da85d665d",
+    "fold1_reproduction.json": "0a96cdf997d6cea43a97f0cbed32dc58795ddf61bf8e767a55e229e92e0a52ea",
+    "inference_report.json": "a7e732291bb615da38503fbf3b0705be97298bee8a60b3e483ad03fc56f4c720"
+  },
+  "source_manifest_sha256": "1743994216010ddb8281bd65b83a5a16e352628b0c334530317dc97fbc3129c3"
+}

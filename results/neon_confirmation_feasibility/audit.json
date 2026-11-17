@@ -1,0 +1,33 @@
+{
+  "status": "official_metadata_feasibility_completed",
+  "at_utc": "2026-11-16T10:55:54.521783+00:00",
+  "product": "DP1.10058.001",
+  "product_name": "Plant presence and percent cover",
+  "sites": 47,
+  "release": {
+    "release": "RELEASE-2026",
+    "generationDate": "2026-01-23T00:07:49Z",
+    "url": "https://data.neonscience.org/api/v0/releases/RELEASE-2026",
+    "productDoi": {
+      "generationDate": "2026-01-23T01:10:15Z",
+      "url": "https://doi.org/10.48443/9g4s-hq52"
+    }
+  },
+  "product_metadata_sha256": "722d1876cd0956dd756afacb27560ed5f14b2f60a4d68d6718d8c29d07d35167",
+  "site_projection_sha256": "b16c14935b1cae50e122c59e13430fd3516ada5923b8e5034d5f3c4de673505b",
+  "projected_site_metadata_bytes_read": 192512,
+  "site_centroids_within_1km_any_published_SAGE_cell": 3,
+  "site_centroids_within_10km_any_published_SAGE_cell": 14,
+  "site_centroids_at_least_100km_from_consumed_SAGE": 32,
+  "plant_observation_outcomes_downloaded_or_inspected": false,
+  "no_plot_level_overlap_or_completeness_claim": true,
+  "prediction_compatibility_established": false,
+  "next_requirements": [
+    "Plot-level coordinates/ID/date and completeness audit using non-composition metadata",
+    "Respect full-plot versus 1 m2-only surveys and repeated visits",
+    "Versioned taxonomy mapping to the public SAGE class list; do not identify anonymous GLC taxa",
+    "Extract matching 52 environmental predictors and reuse versioned model/preprocessing artifacts",
+    "Lock source/site roles, quality and service hypotheses before NEON composition values"
+  ],
+  "download_note": "full all-sites API exceeds metadata cap; used bounded <=64 KiB prefix projections per site instead"
+}

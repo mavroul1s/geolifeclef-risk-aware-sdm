@@ -1,0 +1,23 @@
+{
+  "probability_calibration": {
+    "slope": 0.6891913288354157,
+    "intercept": -0.18725144117629944,
+    "eligible_pairs": 442206,
+    "fit_rows": 1165,
+    "binned_nll": 0.07473115678861937
+  },
+  "source_riskcal_mean_quality": 0.2506271241593416,
+  "positive_affine_SDC": {
+    "slope": 0.6994737730102264,
+    "intercept": 0.0596139363901097
+  },
+  "HGB_config": {
+    "max_iter": 80,
+    "max_leaf_nodes": 7,
+    "min_samples_leaf": 50,
+    "l2_regularization": 5,
+    "learning_rate": 0.05,
+    "early_stopping": false,
+    "random_state": 20261116
+  }
+}

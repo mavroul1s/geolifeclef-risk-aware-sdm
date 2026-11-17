@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "new_selector_family_runs_on_real_smoke_confidence_features": true,
+  "selectors": 17,
+  "primary_group_budgets_match": true,
+  "assessment_outcomes_not_used_in_replay": true,
+  "scientific_accuracy_claim": false
+}

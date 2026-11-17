@@ -1,0 +1,56 @@
+{
+  "retrieved_at_utc": "2026-11-16T09:07:25.809891+00:00",
+  "mode": "metadata",
+  "files": [
+    {
+      "file": "data/external_replication_e1/val_indices.npy",
+      "archive": "sage_benchmark_data.tar",
+      "member": "val_indices.npy",
+      "bytes": 88672,
+      "sha256": "ddc20f139e648678ffff5084ab274128e5f76522c8bfd5dc90ccb383075c8836",
+      "whole_archive_checksum_recomputed": false,
+      "archive_declared_checksum": "md5:eacf65e7344871ca4d0b6212c851c832",
+      "range_and_tar_header_checked": true
+    },
+    {
+      "file": "data/external_replication_e1/test_indices.npy",
+      "archive": "sage_benchmark_data.tar",
+      "member": "test_indices.npy",
+      "bytes": 338272,
+      "sha256": "47c7261ee36c216a49567792242a16ac05da345165355ceebd69c1ef6a601838",
+      "whole_archive_checksum_recomputed": false,
+      "archive_declared_checksum": "md5:eacf65e7344871ca4d0b6212c851c832",
+      "range_and_tar_header_checked": true
+    },
+    {
+      "file": "data/external_replication_e1/targets/species_properties_1km.csv",
+      "archive": "sage_benchmark_data.tar",
+      "member": "targets/species_properties_1km.csv",
+      "bytes": 1298963,
+      "sha256": "3d27c15f895d9cb9054ae14c06cbaba346a27e916dda741043bfadd3181de5b0",
+      "whole_archive_checksum_recomputed": false,
+      "archive_declared_checksum": "md5:eacf65e7344871ca4d0b6212c851c832",
+      "range_and_tar_header_checked": true
+    },
+    {
+      "file": "data/external_replication_e1/range_masks_1km/eval_range_mask.h5",
+      "archive": "sage_benchmark_data.tar",
+      "member": "range_masks_1km/eval_range_mask.h5",
+      "bytes": 6748054,
+      "sha256": "1884580b462204743b162759051f2fdfc8954ee68fe95bad18ef38d64e6dfee4",
+      "whole_archive_checksum_recomputed": false,
+      "archive_declared_checksum": "md5:eacf65e7344871ca4d0b6212c851c832",
+      "range_and_tar_header_checked": true
+    },
+    {
+      "file": "data/external_replication_e1/predictors/eval_location.h5",
+      "archive": "sage_benchmark_data.tar",
+      "member": "predictors/eval_location.h5",
+      "bytes": 326765,
+      "sha256": "8c3c25bac22eab9b7c445d9620e1545f795e71c84a6f5bffcf798874040ee71f",
+      "whole_archive_checksum_recomputed": false,
+      "archive_declared_checksum": "md5:eacf65e7344871ca4d0b6212c851c832",
+      "range_and_tar_header_checked": true
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "scope": "completed metadata audit, not a prospective field confirmation",
+  "path_base": "repository root",
+  "files": {
+    "docs/neon_taxonomy_a1.md": {
+      "bytes": 5106,
+      "sha256": "853e3db1b28f6b355180c4778b5b76ddb99fddcc23a11fb53f8e0ac484431fae"
+    },
+    "results/neon_taxonomy_a1/focused_tests.xml": {
+      "bytes": 4262,
+      "sha256": "89b121cbb8e7ff3885dac7dd1484c189e030123486ec56d819c6a4406d8afae7"
+    },
+    "results/neon_taxonomy_a1/source_snapshot/docs/neon_taxonomy_a1.md": {
+      "bytes": 5106,
+      "sha256": "853e3db1b28f6b355180c4778b5b76ddb99fddcc23a11fb53f8e0ac484431fae"
+    },
+    "results/neon_taxonomy_a1/source_snapshot/scripts/audit_neon_taxonomy_contract.py": {
+      "bytes": 5906,
+      "sha256": "aa862473d88ab9993213d79103a163d0f4a1a2e75cf315f2a0adcab07cb8c82c"
+    },
+    "results/neon_taxonomy_a1/source_snapshot/src/geolifeclef/taxonomy_contract.py": {
+      "bytes": 2947,
+      "sha256": "1a98b6e9ee7375895e5959060b3dea87d22f1aa9752c936bfd4950cc65f79ecc"
+    },
+    "results/neon_taxonomy_a1/source_snapshot/tests/test_taxonomy_contract.py": {
+      "bytes": 2539,
+      "sha256": "89ccc7c50d928f2b187c8a1ff3debaa1e6932848018001ff41fd7add99e92454"
+    },
+    "results/neon_taxonomy_a1/species_catalog_screen.csv": {
+      "bytes": 2018609,
+      "sha256": "619b4838bdf7a4705ada1dac52f458a6efcdf6455c422b17a45d5ceb0a7a91bc"
+    },
+    "results/neon_taxonomy_a1/summary.json": {
+      "bytes": 2200,
+      "sha256": "847826382605c13a0b30223249d69953040377aea7868d73dc11dca193054e8d"
+    },
+    "scripts/audit_neon_taxonomy_contract.py": {
+      "bytes": 5906,
+      "sha256": "aa862473d88ab9993213d79103a163d0f4a1a2e75cf315f2a0adcab07cb8c82c"
+    },
+    "src/geolifeclef/taxonomy_contract.py": {
+      "bytes": 2947,
+      "sha256": "1a98b6e9ee7375895e5959060b3dea87d22f1aa9752c936bfd4950cc65f79ecc"
+    },
+    "tests/test_taxonomy_contract.py": {
+      "bytes": 2539,
+      "sha256": "89ccc7c50d928f2b187c8a1ff3debaa1e6932848018001ff41fd7add99e92454"
+    }
+  }
+}

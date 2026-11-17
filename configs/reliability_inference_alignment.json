@@ -1,0 +1,19 @@
+{
+  "purpose": "one bounded technical alignment rerun after attempt 1 failed its exact member-set guard",
+  "date": "2026-11-14",
+  "scientific_followup_configuration_changed": false,
+  "attempt_1_original_failure_preserved": true,
+  "changes": ["restore original probability-calibration versus evaluation batch boundaries", "freeze parameter gradients as in the saved EMA", "reuse exported training-only normalization objects", "read imagery only for inference-role surveys", "audit reference top-k boundaries in raw float16 probability units"],
+  "exact_set_guard_still_reported": true,
+  "numerical_sensitivity_admission": {
+    "ensemble_survey_F1_match_fraction": 0.999,
+    "ensemble_absolute_mean_F1_difference": 0.0001,
+    "member_reference_rank_equivalence_fraction": 0.999,
+    "maximum_raw_float16_boundary_gap_ULPs": 2,
+    "interpretation": "two boundary ULPs allow one rounding-unit perturbation in each compared score; outcomes never determine this rank-equivalence test"
+  },
+  "if_exact_guard_fails_but_numerical_audit_passes": "retain failed exact guard; label all regenerated-result analyses exploratory with numerical tie sensitivity",
+  "new_neural_training": false,
+  "new_scientific_reliability_results_inspected_before_this_amendment": false,
+  "R1_scientific_success_margins_or_failed_regional_safeguard_changed": false
+}

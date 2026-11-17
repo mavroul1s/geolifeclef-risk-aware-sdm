@@ -1,0 +1,18 @@
+{
+  "at_utc": "2026-11-16T16:06:24.427062+00:00",
+  "admitted_runs": [
+    "aggregation_s0"
+  ],
+  "excluded_runs": [
+    "optimized_deepsdm_s0"
+  ],
+  "admission": "CPU reference passes per pipeline; failed pipelines remain excluded without relaxed tolerances",
+  "GPU_job_limit": 1,
+  "wall_time_limit_minutes": 20,
+  "neural_training": false,
+  "CPU_reference_report_sha256": "cff2142bbd02e2ede53cc39d1a72f4abdfe1dedbbdcd2cd04ac56f9d8f9cdcb8",
+  "notebook_sha256": "5b3dff66087fb03feb51a69713d4e7debbf456022968c991563203f40de3abbd",
+  "full_local_comparison_required": true,
+  "NEON_outcomes_read": false,
+  "note": "A reference check of the admitted pipeline; does not establish fresh NEON input compatibility or ecological gains."
+}

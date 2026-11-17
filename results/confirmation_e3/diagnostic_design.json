@@ -1,0 +1,11 @@
+{
+  "status": "post_primary_explanatory_analysis",
+  "primary_failure_already_known": true,
+  "source_sha256": "06cadcc64ecab44f7bdc45be7fed161d10b64dfdc75ffe67acf5f7e0eca3a586",
+  "questions": [
+    "Do fitted scalar heads collapse toward training means?",
+    "Which exact MSE identity terms change between E2 and E3?"
+  ],
+  "new_primary_or_parameter_choices": false,
+  "training_mean_control_is_posthoc": true
+}

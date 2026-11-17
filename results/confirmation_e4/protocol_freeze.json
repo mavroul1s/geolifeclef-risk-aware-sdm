@@ -1,0 +1,34 @@
+{
+  "locked_at_utc": "2026-11-16T17:41:20.912655+00:00",
+  "identity": {
+    "sources": {
+      "configs/confirmation_e4.json": "035cc048269f349aa45b6f1e75f5cf140944aa17cb376a98b26ab646da62519e",
+      "docs/confirmation_e4_protocol.md": "2347a38387aef1759b86765257874d6cbb87cd69017a181bc2329373e0c41ce0",
+      "scripts/prepare_neon_e4.py": "c3f18d4608346fd0d4744cec3eb46f3597aed046c9e217dd90ac9c3b8bd74fb4",
+      "scripts/build_neon_e4_gpu.py": "36b16bf6979ffeab392727f2e48dfce107375d5f167b0e50c86a7ecbfac493fb",
+      "scripts/run_neon_e4.py": "8ef9c76bafbadd2e8b9dba85699e303b176dcbc888e1e42ff9d93a57b3e10502",
+      "src/geolifeclef/neon_assessment.py": "8215215e423b29ad1cb6665cc477d8647b6ab550635b77575701e5bcf80e6605",
+      "src/geolifeclef/external_reliability.py": "7ba86d1501dfbcd415ccbebca8f0258c8e85ca6ab1de5bb2cac7b8c98653d296",
+      "src/geolifeclef/ecological_selection.py": "67e646fb011f987c05aec1a174f06c6d95805de3aa8f08dd72e0bbdddafd9685",
+      "src/geolifeclef/reliability.py": "3a34882cdf7ff14c31af08b405fdaaed42fca420b35241ecf9d800b52dfeeb1c",
+      "src/geolifeclef/sage_inference.py": "394374174d1ea1ce8ed0d67a93bc8129629f866dc5b1eb587ee04fc6bc1a9d95",
+      "notebooks/neon_e4_inference.ipynb": "a5a5590cff05c486a574ff105f5fbf8f1c0d9ee84becba294f881e9520e85c7e"
+    },
+    "inputs": {
+      "input_bundle.npz": "4d31fbdbe01b217aa5042b9109e3e84bc1de9782a656b81594f84f97d10a05e1",
+      "label_contract.npz": "b6cba9b42fa7d0fbb61939b7303bef09672b55853af5583a513d0e26bb00be38",
+      "source_calibration_roles.csv": "599a5167cbe979db6bf747692523ce9ed1a605ddc2ab8732cb3023e8e385d019",
+      "neon_assessment_roles.csv": "90a9bb1f77d042dafc33b66b7e86f1fe375a092fa2c51e32548d46c594be4645",
+      "selected_plots.csv": "a6650c8916b89adb7d1b404fdd56d1726e85269c27f0a84cda32af7567a1c5b4"
+    },
+    "external_inputs": {
+      "data/neon_bridge/neon_to_sage_taxonomy.csv": "f702b288dccda6d843a2e5ac5a608915ff013de052e029229af1c68a5ca1e3bb",
+      "data/neon_bridge/species_names.csv": "82e7631c6b9d884582047892898faddff123bc52c1f0ac3517faeb2b4c082557",
+      "data/neon_bridge/neon_2023_manifest.json": "53759e1e4f486589f985ac9735daac95c7bb9e78e16403ef5da024d74bfd6754",
+      "results/neon_bridge/artifact_manifest.json": "b295a90f12bc6699b2b979e5ab8a682a0711d217d6280749452a515a1930cdbe",
+      "data/external_replication_e1/sealed_eval_test_targets.h5": "bf52746612d1d784d10a8696be94096d1162eaf3bb43a38011087d5af8730da6"
+    }
+  },
+  "NEON_outcomes_accessed": false,
+  "scope": "local prospective lock, one-model training-support stratum, not external registration"
+}

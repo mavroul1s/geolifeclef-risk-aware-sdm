@@ -1,0 +1,6 @@
+{
+  "first_materialized_at_utc": "2026-11-17T07:49:59.080421+00:00",
+  "policy_freeze_sha256": "f258566da0c022fb2ed7cd3b3239693bea27a0c300d3890b4cb49f9bdba74789",
+  "rows": 5251,
+  "role": "historically consumed E1 assessment; adaptive development, not fresh confirmation"
+}

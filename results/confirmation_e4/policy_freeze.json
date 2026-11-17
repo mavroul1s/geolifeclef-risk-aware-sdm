@@ -1,0 +1,8 @@
+{
+  "at_utc": "2026-11-16T17:47:06.981438+00:00",
+  "NEON_outcomes_accessed": false,
+  "policy_sha256": "8af4c858171d703fed8e6ff45adafc44b668c5aad47885350ddaa0632d3e4488",
+  "features_sha256": "5b7aef65b6273a1ff7d645b054b9e2d6acf0469d2fc76a4fb47cbfbb704f2c73",
+  "fit_parameters_sha256": "c5975b1ac7fd98bef499e2e51c1dada94498f2bc269e26f0ae27f60c35353a8b",
+  "protocol_freeze_sha256": "30e01748583ec6d2249b3528b756e98baf562751e538fc6efb94eed18c7f9c96"
+}

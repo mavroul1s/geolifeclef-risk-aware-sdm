@@ -1,0 +1,10 @@
+{
+  "status": "post_assessment_explanatory_analysis",
+  "primary_result_already_known": true,
+  "source_sha256": "e753408470b0146a88be4820d3461b7a910ab7cf0c60a3c3a5d988eac3b6c69e",
+  "question": "Does fixed learned risk fail during spatial riskcal CV, assessment, or both?",
+  "choice": "five GroupKFold splits of riskcal 5-degree blocks, unchanged HGB hyperparameters/features",
+  "new_neural_fits": 0,
+  "diagnostic_HGB_fits": 24,
+  "original_frozen_policies_will_change": false
+}

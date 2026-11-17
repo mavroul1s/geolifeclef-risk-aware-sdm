@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "at_utc": "2026-11-17T07:52:19.076248+00:00",
+  "settings_independently_scored": 60,
+  "cell_replay_oracle_containment_checks": 315060,
+  "maximum_scoring_error": 0.0,
+  "mask_hashes_verified": 60,
+  "fixed_policy_quotas_verified": 83,
+  "all_selectors_accepted_cells": 4201,
+  "zero_dose_identity": true,
+  "chronology_and_input_identities": true,
+  "independent_spatial_interval_reproduction": true,
+  "historical_manifests": {
+    "external_replication_e1": {
+      "files_verified": 44,
+      "manifest_sha256": "7944e637cab4cef53215dbd5476e6106d8d2a179944909ac103a77f90a6fff57"
+    },
+    "ranking_study_e2": {
+      "files_verified": 24,
+      "manifest_sha256": "c760f223caca3497634983dbc2764c91f9fe48b861b252ffa92ba8c8b01c0cd6"
+    },
+    "confirmation_e3": {
+      "files_verified": 48,
+      "manifest_sha256": "a1477d4d4e8cadd2cc0ac55c9a7e1c983d8e5fbdd71ed790833028c418b765e5"
+    },
+    "neon_confirmation_feasibility": {
+      "files_verified": 3,
+      "manifest_sha256": "c1d2589a1128ee851e58295fabb7efd1dd3c0cb1a0821f4417bdf43cb0e5482f"
+    },
+    "neon_bridge": {
+      "files_verified": 665,
+      "manifest_sha256": "b295a90f12bc6699b2b979e5ab8a682a0711d217d6280749452a515a1930cdbe"
+    },
+    "confirmation_e4": {
+      "files_verified": 249,
+      "manifest_sha256": "968c557c73a9e7fb2a37e2bb6f8602d13e2d208aa488e5606b101d9a3ce8a3a9"
+    }
+  },
+  "scope": "correctness/integrity, not novelty or new independent ecological confirmation"
+}

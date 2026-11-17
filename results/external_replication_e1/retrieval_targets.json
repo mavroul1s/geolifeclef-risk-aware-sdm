@@ -1,0 +1,12 @@
+{
+  "retrieved_at_utc": "2026-11-16T09:21:14.175811+00:00",
+  "mode": "targets",
+  "files": [
+    {
+      "file": "data/external_replication_e1/sealed_eval_test_targets.h5",
+      "bytes": 43412687,
+      "sha256": "bf52746612d1d784d10a8696be94096d1162eaf3bb43a38011087d5af8730da6",
+      "target_values_inspected": false
+    }
+  ]
+}

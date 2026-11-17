@@ -1,0 +1,454 @@
+[
+  {
+    "model": "optimized_deepsdm_s0",
+    "study": "spatial",
+    "fold": 0,
+    "objective": "pairwise",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "optimized_deepsdm_s0",
+    "study": "spatial",
+    "fold": 0,
+    "objective": "mse",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "optimized_deepsdm_s1",
+    "study": "spatial",
+    "fold": 0,
+    "objective": "pairwise",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "optimized_deepsdm_s1",
+    "study": "spatial",
+    "fold": 0,
+    "objective": "mse",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "randomforest_s0",
+    "study": "spatial",
+    "fold": 0,
+    "objective": "pairwise",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "randomforest_s0",
+    "study": "spatial",
+    "fold": 0,
+    "objective": "mse",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "randomforest_s1",
+    "study": "spatial",
+    "fold": 0,
+    "objective": "pairwise",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "randomforest_s1",
+    "study": "spatial",
+    "fold": 0,
+    "objective": "mse",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "optimized_deepsdm_s0",
+    "study": "spatial",
+    "fold": 1,
+    "objective": "pairwise",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "optimized_deepsdm_s0",
+    "study": "spatial",
+    "fold": 1,
+    "objective": "mse",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "optimized_deepsdm_s1",
+    "study": "spatial",
+    "fold": 1,
+    "objective": "pairwise",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "optimized_deepsdm_s1",
+    "study": "spatial",
+    "fold": 1,
+    "objective": "mse",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "randomforest_s0",
+    "study": "spatial",
+    "fold": 1,
+    "objective": "pairwise",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "randomforest_s0",
+    "study": "spatial",
+    "fold": 1,
+    "objective": "mse",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "randomforest_s1",
+    "study": "spatial",
+    "fold": 1,
+    "objective": "pairwise",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "randomforest_s1",
+    "study": "spatial",
+    "fold": 1,
+    "objective": "mse",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "optimized_deepsdm_s0",
+    "study": "spatial",
+    "fold": 2,
+    "objective": "pairwise",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "optimized_deepsdm_s0",
+    "study": "spatial",
+    "fold": 2,
+    "objective": "mse",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "optimized_deepsdm_s1",
+    "study": "spatial",
+    "fold": 2,
+    "objective": "pairwise",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "optimized_deepsdm_s1",
+    "study": "spatial",
+    "fold": 2,
+    "objective": "mse",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "randomforest_s0",
+    "study": "spatial",
+    "fold": 2,
+    "objective": "pairwise",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "randomforest_s0",
+    "study": "spatial",
+    "fold": 2,
+    "objective": "mse",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "randomforest_s1",
+    "study": "spatial",
+    "fold": 2,
+    "objective": "pairwise",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "randomforest_s1",
+    "study": "spatial",
+    "fold": 2,
+    "objective": "mse",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "optimized_deepsdm_s0",
+    "study": "spatial",
+    "fold": 3,
+    "objective": "pairwise",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "optimized_deepsdm_s0",
+    "study": "spatial",
+    "fold": 3,
+    "objective": "mse",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "optimized_deepsdm_s1",
+    "study": "spatial",
+    "fold": 3,
+    "objective": "pairwise",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "optimized_deepsdm_s1",
+    "study": "spatial",
+    "fold": 3,
+    "objective": "mse",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "randomforest_s0",
+    "study": "spatial",
+    "fold": 3,
+    "objective": "pairwise",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "randomforest_s0",
+    "study": "spatial",
+    "fold": 3,
+    "objective": "mse",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "randomforest_s1",
+    "study": "spatial",
+    "fold": 3,
+    "objective": "pairwise",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "randomforest_s1",
+    "study": "spatial",
+    "fold": 3,
+    "objective": "mse",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "optimized_deepsdm_s0",
+    "study": "spatial",
+    "fold": 4,
+    "objective": "pairwise",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "optimized_deepsdm_s0",
+    "study": "spatial",
+    "fold": 4,
+    "objective": "mse",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "optimized_deepsdm_s1",
+    "study": "spatial",
+    "fold": 4,
+    "objective": "pairwise",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "optimized_deepsdm_s1",
+    "study": "spatial",
+    "fold": 4,
+    "objective": "mse",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "randomforest_s0",
+    "study": "spatial",
+    "fold": 4,
+    "objective": "pairwise",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "randomforest_s0",
+    "study": "spatial",
+    "fold": 4,
+    "objective": "mse",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "randomforest_s1",
+    "study": "spatial",
+    "fold": 4,
+    "objective": "pairwise",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "randomforest_s1",
+    "study": "spatial",
+    "fold": 4,
+    "objective": "mse",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "optimized_deepsdm_s0",
+    "study": "source",
+    "fold": "AU-AU-002",
+    "objective": "pairwise",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "optimized_deepsdm_s0",
+    "study": "source",
+    "fold": "AU-AU-002",
+    "objective": "mse",
+    "rows": 581,
+    "penalty": 1.0
+  },
+  {
+    "model": "optimized_deepsdm_s1",
+    "study": "source",
+    "fold": "AU-AU-002",
+    "objective": "pairwise",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "optimized_deepsdm_s1",
+    "study": "source",
+    "fold": "AU-AU-002",
+    "objective": "mse",
+    "rows": 581,
+    "penalty": 1.0
+  },
+  {
+    "model": "randomforest_s0",
+    "study": "source",
+    "fold": "AU-AU-002",
+    "objective": "pairwise",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "randomforest_s0",
+    "study": "source",
+    "fold": "AU-AU-002",
+    "objective": "mse",
+    "rows": 581,
+    "penalty": 1.0
+  },
+  {
+    "model": "randomforest_s1",
+    "study": "source",
+    "fold": "AU-AU-002",
+    "objective": "pairwise",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "randomforest_s1",
+    "study": "source",
+    "fold": "AU-AU-002",
+    "objective": "mse",
+    "rows": 581,
+    "penalty": 1.0
+  },
+  {
+    "model": "optimized_deepsdm_s0",
+    "study": "source",
+    "fold": "NA-US-002",
+    "objective": "pairwise",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "optimized_deepsdm_s0",
+    "study": "source",
+    "fold": "NA-US-002",
+    "objective": "mse",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "optimized_deepsdm_s1",
+    "study": "source",
+    "fold": "NA-US-002",
+    "objective": "pairwise",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "optimized_deepsdm_s1",
+    "study": "source",
+    "fold": "NA-US-002",
+    "objective": "mse",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "randomforest_s0",
+    "study": "source",
+    "fold": "NA-US-002",
+    "objective": "pairwise",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "randomforest_s0",
+    "study": "source",
+    "fold": "NA-US-002",
+    "objective": "mse",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "randomforest_s1",
+    "study": "source",
+    "fold": "NA-US-002",
+    "objective": "pairwise",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "randomforest_s1",
+    "study": "source",
+    "fold": "NA-US-002",
+    "objective": "mse",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "optimized_deepsdm_s0",
+    "study": "source",
+    "fold": "AS-RU-002",
+    "objective": "pairwise",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "optimized_deepsdm_s0",
+    "study": "source",
+    "fold": "AS-RU-002",
+    "objective": "mse",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "optimized_deepsdm_s1",
+    "study": "source",
+    "fold": "AS-RU-002",
+    "objective": "pairwise",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "optimized_deepsdm_s1",
+    "study": "source",
+    "fold": "AS-RU-002",
+    "objective": "mse",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "randomforest_s0",
+    "study": "source",
+    "fold": "AS-RU-002",
+    "objective": "pairwise",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "randomforest_s0",
+    "study": "source",
+    "fold": "AS-RU-002",
+    "objective": "mse",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "randomforest_s1",
+    "study": "source",
+    "fold": "AS-RU-002",
+    "objective": "pairwise",
+    "fallback": "unchanged SDC selected by inner CV"
+  },
+  {
+    "model": "randomforest_s1",
+    "study": "source",
+    "fold": "AS-RU-002",
+    "objective": "mse",
+    "fallback": "unchanged SDC selected by inner CV"
+  }
+]

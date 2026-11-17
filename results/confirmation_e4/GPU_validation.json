@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "reference_comparisons": {
+    "cpu": {
+      "maximum_absolute_error": 1.1026859283447266e-06,
+      "mean_absolute_error": 8.612824099642195e-10
+    },
+    "published": {
+      "maximum_absolute_error": 1.1026859283447266e-06,
+      "mean_absolute_error": 1.028567193031856e-09
+    }
+  },
+  "GPU_report": {
+    "status": "inference_complete_pending_local_reference_verification",
+    "GPU": "Tesla T4",
+    "torch": "2.11.0+cu130",
+    "CUDA": "13.0",
+    "elapsed_seconds": 52.139200254,
+    "input_bundle_sha256": "4d31fbdbe01b217aa5042b9109e3e84bc1de9782a656b81594f84f97d10a05e1",
+    "checkpoint_sha256": "771055f5ab82d32f2923d1c2aeb78b0e534697b01a67a32c80a27279c7659454",
+    "shapes": {
+      "reference": [
+        128,
+        5771
+      ],
+      "source": [
+        2226,
+        5771
+      ],
+      "neon": [
+        163,
+        5771
+      ]
+    },
+    "training_performed": false,
+    "NEON_credentials_or_labels_included": false,
+    "competition_submission_made": false
+  },
+  "output_hashes_verified": true
+}

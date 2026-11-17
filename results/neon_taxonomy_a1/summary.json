@@ -1,0 +1,40 @@
+{
+  "at_utc": "2026-11-17T08:41:17.486705+00:00",
+  "status": "metadata_audit_complete_field_contract_partial",
+  "dictionary_entries": 93698,
+  "dictionary_pages_verified": 94,
+  "accepted_chain_status": {
+    "resolved_accepted_concept": 93698
+  },
+  "infraspecific_dictionary_status": {
+    "explicit_accepted_species_concept": 9047,
+    "nomenclatural_candidates_require_validation": 15853,
+    "no_unambiguous_parent_evidence": 40
+  },
+  "cell_genus_pairs_screened": 44721,
+  "candidate_cells": 163,
+  "pairs_passing_necessary_species_catalog_condition": 4995,
+  "pairs_with_unmapped_catalog_species": 36839,
+  "pairs_with_mapped_outside_eligible_species": 24653,
+  "pairs_with_unresolved_infraspecific_contract": 30263,
+  "field_positive_genus_guarantees_established": 0,
+  "new_plot_composition_reads": 0,
+  "new_F1_evaluations": 0,
+  "model_or_label_changes": false,
+  "history_semantics": "current published records retain current determinations; identificationHistory archives prior determinations, not a replacement-label source",
+  "limits": [
+    "acceptedTaxonID is accepted-name linkage, not an infraspecific parent key",
+    "lexical species-parent candidates require validation; no automatic rank collapse",
+    "unmapped named concepts remain unresolved, not certified outside-universe absences",
+    "species-only catalog closure is a necessary screen, not complete botanical or field observation coverage",
+    "protected/higher-rank identifications are not reverse-resolved",
+    "selected-key history and species-parent harmonization remain pending; E4 outcomes remain consumed"
+  ],
+  "input_sha256": {
+    "results/neon_bridge/taxonomy_retrieval.json": "9c412248c4b85ad7ef26983d37f29a98a9ccac13214e948c41c682eff76a8c5b",
+    "data/neon_bridge/neon_to_sage_taxonomy.csv": "f702b288dccda6d843a2e5ac5a608915ff013de052e029229af1c68a5ca1e3bb",
+    "data/confirmation_e4/label_contract.npz": "b6cba9b42fa7d0fbb61939b7303bef09672b55853af5583a513d0e26bb00be38",
+    "data/neon_bridge/BARRreadme.txt": "b037ee4792430869e1f247780c08aa5765316c88b1e46d841340b39efff598b3",
+    "data/neon_bridge/BARRvariables.csv": "da018593c169d403704ce4806d97f26e40f12a13acd9f3338eeea030e7449eb2"
+  }
+}

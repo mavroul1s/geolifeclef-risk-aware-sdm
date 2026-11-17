@@ -1,0 +1,17 @@
+study,fold,model,slope,intercept
+E2_source,AU-AU-002,optimized_deepsdm_s0,1e-09,0.19858524384927115
+E2_source,AU-AU-002,optimized_deepsdm_s1,0.28059393278041284,0.1476877900298188
+E2_source,AU-AU-002,randomforest_s0,0.24980289408426354,0.11843875508592024
+E2_source,AU-AU-002,randomforest_s1,0.19899294601332054,0.12830500227514258
+E2_source,NA-US-002,optimized_deepsdm_s0,1e-09,0.17137959217153176
+E2_source,NA-US-002,optimized_deepsdm_s1,0.028404881449839364,0.1734019580851168
+E2_source,NA-US-002,randomforest_s0,0.4419851748584003,0.07287621085273291
+E2_source,NA-US-002,randomforest_s1,0.4291778664995219,0.07734126963030914
+E2_source,AS-RU-002,optimized_deepsdm_s0,1e-09,0.18426127384858043
+E2_source,AS-RU-002,optimized_deepsdm_s1,1e-09,0.19236824051619852
+E2_source,AS-RU-002,randomforest_s0,0.2383546030680608,0.12884446039411432
+E2_source,AS-RU-002,randomforest_s1,0.23713461248793172,0.13217044053783117
+E3_domain,full_calibration,optimized_deepsdm_s0,1e-09,0.1843447616412671
+E3_domain,full_calibration,optimized_deepsdm_s1,1e-09,0.19223973614994927
+E3_domain,full_calibration,randomforest_s0,0.23613336580231675,0.12343961326384523
+E3_domain,full_calibration,randomforest_s1,0.24125518799001594,0.12496588462971503

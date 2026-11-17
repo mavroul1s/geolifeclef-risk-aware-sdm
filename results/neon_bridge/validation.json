@@ -1,0 +1,25 @@
+{
+  "status": "engineering_and_provenance_audit_passed",
+  "focused_tests": 21,
+  "prior_manifest_files_unchanged": {
+    "external_replication_e1": 44,
+    "ranking_study_e2": 24,
+    "confirmation_e3": 48,
+    "neon_confirmation_feasibility": 3
+  },
+  "metadata_projection_freeze_verified": true,
+  "independent_completeness_and_distance_checks_passed": true,
+  "MLP_CPU_and_GPU_reference_passed": true,
+  "ResNet_CPU_reference_failure_preserved": true,
+  "taxonomy_mapping_hash_verified": true,
+  "three_raster_column_checks_passed": true,
+  "credentials_absent_from_code_reports_docs_and_upload": true,
+  "NEON_composition_values_inspected": false,
+  "NEON_ecological_performance_experiment_run": false,
+  "fresh_NEON_inference_admitted": false,
+  "remaining": [
+    "ResNet reference or prospective single-model scope",
+    "full 52-feature/native-mask bridge",
+    "outcome-free role/label/claim freeze with original-training overlap disclosed"
+  ]
+}

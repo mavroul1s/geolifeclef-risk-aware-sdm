@@ -1,0 +1,508 @@
+{
+  "record_counts": {
+    "selected_plant_records": 45750,
+    "uncertain_or_unmapped_records": 24814,
+    "mapped_resolved_records": 20887,
+    "positive_without_taxon_id": 46,
+    "mapped_outside_native_universe": 1791
+  },
+  "input_cells": 163,
+  "scorable_cells": 65,
+  "scorable_sites": 10,
+  "minimum_known_fraction": 0.0,
+  "median_known_fraction": 0.6531531531531531,
+  "MD5_receipts": [
+    {
+      "name": "NEON.D01.BART.DP1.10058.001.div_10m2Data100m2Data.2023-06.basic.20251206T145940Z.csv",
+      "bytes": 292571,
+      "MD5_verified": "0e05a60ec46f80cba4342293ce0bd20c"
+    },
+    {
+      "name": "NEON.D01.BART.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T145940Z.csv",
+      "bytes": 337985,
+      "MD5_verified": "fabf00d5a3d69670cfff8f09a4f81b5f"
+    },
+    {
+      "name": "NEON.D01.BART.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T090952Z.csv",
+      "bytes": 356872,
+      "MD5_verified": "580095b4c685095a961535e4c8f69fb9"
+    },
+    {
+      "name": "NEON.D01.BART.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T090952Z.csv",
+      "bytes": 242148,
+      "MD5_verified": "902c7414a314ef184933a98d6d76c04a"
+    },
+    {
+      "name": "NEON.D02.BLAN.DP1.10058.001.div_10m2Data100m2Data.2023-05.basic.20251206T142604Z.csv",
+      "bytes": 94258,
+      "MD5_verified": "91e6edc9227ed668df1f404fff1727af"
+    },
+    {
+      "name": "NEON.D02.BLAN.DP1.10058.001.div_1m2Data.2023-05.basic.20251206T142604Z.csv",
+      "bytes": 69385,
+      "MD5_verified": "ce91e16c8ba6dc9ae3ea2b7bf6422c45"
+    },
+    {
+      "name": "NEON.D02.BLAN.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T085733Z.csv",
+      "bytes": 197674,
+      "MD5_verified": "fbf053bfb0a2bb668be001c8431a3890"
+    },
+    {
+      "name": "NEON.D02.BLAN.DP1.10058.001.div_10m2Data100m2Data.2023-06.basic.20251206T085733Z.csv",
+      "bytes": 204326,
+      "MD5_verified": "3a3c53d1345f1f7b712a672a621247b1"
+    },
+    {
+      "name": "NEON.D02.BLAN.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T151820Z.csv",
+      "bytes": 532709,
+      "MD5_verified": "127b96816b73ef2d440bed0cee8f60ec"
+    },
+    {
+      "name": "NEON.D02.BLAN.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T151820Z.csv",
+      "bytes": 492000,
+      "MD5_verified": "271ba3e9717d047820b8095978c8c6e3"
+    },
+    {
+      "name": "NEON.D19.BONA.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T150533Z.csv",
+      "bytes": 610402,
+      "MD5_verified": "b9115c4e515871850e9cf70bdf398ace"
+    },
+    {
+      "name": "NEON.D19.BONA.DP1.10058.001.div_10m2Data100m2Data.2023-06.basic.20251206T150533Z.csv",
+      "bytes": 332134,
+      "MD5_verified": "0a053845b71a466d461507d4b8c04c11"
+    },
+    {
+      "name": "NEON.D19.BONA.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T125728Z.csv",
+      "bytes": 171474,
+      "MD5_verified": "14f4b7ea380cc7e95d29ba39c5c590cb"
+    },
+    {
+      "name": "NEON.D19.BONA.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T125728Z.csv",
+      "bytes": 306792,
+      "MD5_verified": "bb2e692976f774c3d205b0478f13eb76"
+    },
+    {
+      "name": "NEON.D09.DCFS.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T115053Z.csv",
+      "bytes": 244202,
+      "MD5_verified": "3e1d4e649346c2edbd9d219a084f28bb"
+    },
+    {
+      "name": "NEON.D09.DCFS.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T115053Z.csv",
+      "bytes": 232199,
+      "MD5_verified": "8b82a0ef70115a4048df4d8835818c05"
+    },
+    {
+      "name": "NEON.D09.DCFS.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T143109Z.csv",
+      "bytes": 206263,
+      "MD5_verified": "d43901c0877949007ef5fdd71ac1c655"
+    },
+    {
+      "name": "NEON.D09.DCFS.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T143109Z.csv",
+      "bytes": 145002,
+      "MD5_verified": "25897cf0bc9d36e8c7a1729ba0667d3a"
+    },
+    {
+      "name": "NEON.D03.JERC.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T095123Z.csv",
+      "bytes": 437707,
+      "MD5_verified": "c7ffa09e91ab949dc88f0a632eaa36af"
+    },
+    {
+      "name": "NEON.D03.JERC.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T095123Z.csv",
+      "bytes": 360178,
+      "MD5_verified": "ddb3bd87b56626ee0f32444a0eab3712"
+    },
+    {
+      "name": "NEON.D03.JERC.DP1.10058.001.div_10m2Data100m2Data.2023-09.basic.20251206T142316Z.csv",
+      "bytes": 642436,
+      "MD5_verified": "784eea23f658946cfbffb898839237ca"
+    },
+    {
+      "name": "NEON.D03.JERC.DP1.10058.001.div_1m2Data.2023-09.basic.20251206T142316Z.csv",
+      "bytes": 522338,
+      "MD5_verified": "8af3cc88bcb427531938f91a76eb5dd7"
+    },
+    {
+      "name": "NEON.D03.JERC.DP1.10058.001.div_1m2Data.2023-10.basic.20251206T134435Z.csv",
+      "bytes": 319561,
+      "MD5_verified": "4d6cddfc148bb10fca6ae0b8cd7afb47"
+    },
+    {
+      "name": "NEON.D03.JERC.DP1.10058.001.div_10m2Data100m2Data.2023-10.basic.20251206T134435Z.csv",
+      "bytes": 398601,
+      "MD5_verified": "19686c8407de319c803a6be49b19c649"
+    },
+    {
+      "name": "NEON.D06.KONZ.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T090300Z.csv",
+      "bytes": 108739,
+      "MD5_verified": "812a3660aa9745b20ad150461a7ee47b"
+    },
+    {
+      "name": "NEON.D06.KONZ.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T090300Z.csv",
+      "bytes": 88590,
+      "MD5_verified": "9ad165164c0c650f2e60ca45bf1355c4"
+    },
+    {
+      "name": "NEON.D06.KONZ.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T095245Z.csv",
+      "bytes": 389841,
+      "MD5_verified": "28f6036274d3ce13fb6f1cb6005e33f6"
+    },
+    {
+      "name": "NEON.D06.KONZ.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T095245Z.csv",
+      "bytes": 369522,
+      "MD5_verified": "7f747a5b045c96aeca1b050a86b731b8"
+    },
+    {
+      "name": "NEON.D06.KONZ.DP1.10058.001.div_1m2Data.2023-09.basic.20251206T110845Z.csv",
+      "bytes": 352341,
+      "MD5_verified": "0c6445fd1a9f2fb382cbb4278ed15969"
+    },
+    {
+      "name": "NEON.D06.KONZ.DP1.10058.001.div_10m2Data100m2Data.2023-09.basic.20251206T110845Z.csv",
+      "bytes": 330005,
+      "MD5_verified": "ad3ce12d3e1e3f8d2ba7683ab9b1beee"
+    },
+    {
+      "name": "NEON.D04.LAJA.DP1.10058.001.div_10m2Data100m2Data.2023-09.basic.20251210T225755Z.csv",
+      "bytes": 326354,
+      "MD5_verified": "d7388ce2b6f7eb5ca6561e781adbe26d"
+    },
+    {
+      "name": "NEON.D04.LAJA.DP1.10058.001.div_1m2Data.2023-09.basic.20251210T225755Z.csv",
+      "bytes": 249387,
+      "MD5_verified": "1a47ef9a6e2fd48b03b722d30d226810"
+    },
+    {
+      "name": "NEON.D08.LENO.DP1.10058.001.div_10m2Data100m2Data.2023-06.basic.20251206T081149Z.csv",
+      "bytes": 572030,
+      "MD5_verified": "1843806e04635772259dc66482a3436c"
+    },
+    {
+      "name": "NEON.D08.LENO.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T081149Z.csv",
+      "bytes": 360886,
+      "MD5_verified": "d3ba73f38c3e0c50397da8efd95ffb1b"
+    },
+    {
+      "name": "NEON.D08.LENO.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T110117Z.csv",
+      "bytes": 941715,
+      "MD5_verified": "33483d112d9dbbc36b4c6b03191a9a1d"
+    },
+    {
+      "name": "NEON.D08.LENO.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T110117Z.csv",
+      "bytes": 524222,
+      "MD5_verified": "4bef373c830ac75d9b35dbd7e8ea964a"
+    },
+    {
+      "name": "NEON.D08.LENO.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T153703Z.csv",
+      "bytes": 217122,
+      "MD5_verified": "8db836eed41cb08bb8207fd3f49d3644"
+    },
+    {
+      "name": "NEON.D08.LENO.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T153703Z.csv",
+      "bytes": 130529,
+      "MD5_verified": "842b00f09748adda2e74c9dc8e12a7b9"
+    },
+    {
+      "name": "NEON.D07.MLBS.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T131917Z.csv",
+      "bytes": 366910,
+      "MD5_verified": "b8863cb2d0ee32b12b2b7477ab5cba1f"
+    },
+    {
+      "name": "NEON.D07.MLBS.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T131917Z.csv",
+      "bytes": 448486,
+      "MD5_verified": "cd414deeedaea0c37dd660cb640712f7"
+    },
+    {
+      "name": "NEON.D07.MLBS.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T122817Z.csv",
+      "bytes": 614744,
+      "MD5_verified": "f228373a920a4c68029d0dc2ce67752c"
+    },
+    {
+      "name": "NEON.D07.MLBS.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T122817Z.csv",
+      "bytes": 464081,
+      "MD5_verified": "f0ee6e229b253c9f6cb12486d6e6cfc3"
+    },
+    {
+      "name": "NEON.D11.OAES.DP1.10058.001.div_10m2Data100m2Data.2023-04.basic.20251206T082939Z.csv",
+      "bytes": 242674,
+      "MD5_verified": "8a1bcd486cc3811e03ee7ffa5257ef49"
+    },
+    {
+      "name": "NEON.D11.OAES.DP1.10058.001.div_1m2Data.2023-04.basic.20251206T082939Z.csv",
+      "bytes": 347952,
+      "MD5_verified": "1ad017a4e9c908a4cfe1c4992dd337b2"
+    },
+    {
+      "name": "NEON.D11.OAES.DP1.10058.001.div_10m2Data100m2Data.2023-05.basic.20251206T152849Z.csv",
+      "bytes": 134322,
+      "MD5_verified": "7a0004dfbfb7a8a9e37de99aeef1c7d0"
+    },
+    {
+      "name": "NEON.D11.OAES.DP1.10058.001.div_1m2Data.2023-05.basic.20251206T152849Z.csv",
+      "bytes": 141217,
+      "MD5_verified": "0a822ee6031788c518faf43ea7b94b92"
+    },
+    {
+      "name": "NEON.D11.OAES.DP1.10058.001.div_10m2Data100m2Data.2023-06.basic.20251206T150919Z.csv",
+      "bytes": 134027,
+      "MD5_verified": "7dc2c527cc9942f43725f70e76b5b533"
+    },
+    {
+      "name": "NEON.D11.OAES.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T150919Z.csv",
+      "bytes": 153736,
+      "MD5_verified": "f1d30e472de53a88c5a6b0f174395982"
+    },
+    {
+      "name": "NEON.D11.OAES.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T140337Z.csv",
+      "bytes": 87066,
+      "MD5_verified": "dd3027bf91734d256665271c557204c1"
+    },
+    {
+      "name": "NEON.D11.OAES.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T140337Z.csv",
+      "bytes": 133469,
+      "MD5_verified": "df6a072f6f7c35cf0bd57f63a48d901b"
+    },
+    {
+      "name": "NEON.D11.OAES.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T140700Z.csv",
+      "bytes": 371053,
+      "MD5_verified": "30ec10a11d480aa4bf3c73c89801cd12"
+    },
+    {
+      "name": "NEON.D11.OAES.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T140700Z.csv",
+      "bytes": 401323,
+      "MD5_verified": "ec780ba68aef09f1b854e0cce48bba1f"
+    },
+    {
+      "name": "NEON.D11.OAES.DP1.10058.001.div_10m2Data100m2Data.2023-09.basic.20251206T093925Z.csv",
+      "bytes": 124378,
+      "MD5_verified": "12001b78ad5cc5e33ab6ce375ceaecf0"
+    },
+    {
+      "name": "NEON.D11.OAES.DP1.10058.001.div_1m2Data.2023-09.basic.20251206T093925Z.csv",
+      "bytes": 113767,
+      "MD5_verified": "69cf578fb2bd64b0465498bb06f95d8b"
+    },
+    {
+      "name": "NEON.D11.OAES.DP1.10058.001.div_1m2Data.2023-12.basic.20251206T124651Z.csv",
+      "bytes": 57538,
+      "MD5_verified": "d95eca9e04135830bb6a3770e8cf9cb8"
+    },
+    {
+      "name": "NEON.D11.OAES.DP1.10058.001.div_10m2Data100m2Data.2023-12.basic.20251206T124651Z.csv",
+      "bytes": 93946,
+      "MD5_verified": "0b93e60cb947ca28034de0710a794298"
+    },
+    {
+      "name": "NEON.D20.PUUM.DP1.10058.001.div_1m2Data.2023-05.basic.20251206T133527Z.csv",
+      "bytes": 241280,
+      "MD5_verified": "7cef98a8e59f6dac2d3e8a43059a1f45"
+    },
+    {
+      "name": "NEON.D20.PUUM.DP1.10058.001.div_10m2Data100m2Data.2023-05.basic.20251206T133527Z.csv",
+      "bytes": 226388,
+      "MD5_verified": "f4ae67c8af130fbd63b809fd2a8c6c34"
+    },
+    {
+      "name": "NEON.D20.PUUM.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T145922Z.csv",
+      "bytes": 153935,
+      "MD5_verified": "1b47e7322dd6b230b326e996c6da6e46"
+    },
+    {
+      "name": "NEON.D20.PUUM.DP1.10058.001.div_10m2Data100m2Data.2023-06.basic.20251206T145922Z.csv",
+      "bytes": 247791,
+      "MD5_verified": "d5164b67e0f21060d8404d85d75f50e8"
+    },
+    {
+      "name": "NEON.D20.PUUM.DP1.10058.001.div_10m2Data100m2Data.2023-12.basic.20251206T082425Z.csv",
+      "bytes": 23306,
+      "MD5_verified": "6b91007c94e98036cc3ea9f4f16fce95"
+    },
+    {
+      "name": "NEON.D20.PUUM.DP1.10058.001.div_1m2Data.2023-12.basic.20251206T082425Z.csv",
+      "bytes": 14494,
+      "MD5_verified": "6cf9c3c6aadff4b98fb168042d0be9d6"
+    },
+    {
+      "name": "NEON.D02.SERC.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T125944Z.csv",
+      "bytes": 515150,
+      "MD5_verified": "1aeb23bd8d05ab64c6385c9a4fd31a41"
+    },
+    {
+      "name": "NEON.D02.SERC.DP1.10058.001.div_10m2Data100m2Data.2023-06.basic.20251206T125944Z.csv",
+      "bytes": 780272,
+      "MD5_verified": "45e151c1784ad2c8db3014f60d44eaf7"
+    },
+    {
+      "name": "NEON.D02.SERC.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T135516Z.csv",
+      "bytes": 257942,
+      "MD5_verified": "20d7dfa2dc4ef12c9812ebe19cca9328"
+    },
+    {
+      "name": "NEON.D02.SERC.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T135516Z.csv",
+      "bytes": 332724,
+      "MD5_verified": "52591f21c901a75ff2fcfd4d74111a47"
+    },
+    {
+      "name": "NEON.D02.SERC.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T111336Z.csv",
+      "bytes": 252496,
+      "MD5_verified": "c54c64040ab12eb05d374edc3ccf14ad"
+    },
+    {
+      "name": "NEON.D02.SERC.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T111336Z.csv",
+      "bytes": 323952,
+      "MD5_verified": "60f03d6b4d5939075f5f4ea5ae4cfa0b"
+    },
+    {
+      "name": "NEON.D17.SJER.DP1.10058.001.div_1m2Data.2023-02.basic.20251206T114945Z.csv",
+      "bytes": 376631,
+      "MD5_verified": "11a4895179bfb4c483369f005e875249"
+    },
+    {
+      "name": "NEON.D17.SJER.DP1.10058.001.div_10m2Data100m2Data.2023-02.basic.20251206T114945Z.csv",
+      "bytes": 177984,
+      "MD5_verified": "6a67384afb179ff7b8a44e7bc481bb6b"
+    },
+    {
+      "name": "NEON.D17.SJER.DP1.10058.001.div_1m2Data.2023-03.basic.20251206T114737Z.csv",
+      "bytes": 994374,
+      "MD5_verified": "5962b3f7dee3be6d56872a8f3c31dbc1"
+    },
+    {
+      "name": "NEON.D17.SJER.DP1.10058.001.div_10m2Data100m2Data.2023-03.basic.20251206T114737Z.csv",
+      "bytes": 551932,
+      "MD5_verified": "f86213bbf477fb64d0f1c06a1bfeadb9"
+    },
+    {
+      "name": "NEON.D17.SJER.DP1.10058.001.div_10m2Data100m2Data.2023-04.basic.20251206T111750Z.csv",
+      "bytes": 150503,
+      "MD5_verified": "03c68dfe44f7394ac029edff3870cf15"
+    },
+    {
+      "name": "NEON.D17.SJER.DP1.10058.001.div_1m2Data.2023-04.basic.20251206T111750Z.csv",
+      "bytes": 232616,
+      "MD5_verified": "16cf27214d57869fc1b7f9ddff5ab940"
+    },
+    {
+      "name": "NEON.D14.SRER.DP1.10058.001.div_1m2Data.2023-03.basic.20251206T080713Z.csv",
+      "bytes": 784945,
+      "MD5_verified": "991c0c5e04f698bff20a4453945e157d"
+    },
+    {
+      "name": "NEON.D14.SRER.DP1.10058.001.div_10m2Data100m2Data.2023-03.basic.20251206T080713Z.csv",
+      "bytes": 915985,
+      "MD5_verified": "bd28878622dc86dea112b4448e60fbc3"
+    },
+    {
+      "name": "NEON.D14.SRER.DP1.10058.001.div_1m2Data.2023-04.basic.20251206T102035Z.csv",
+      "bytes": 381528,
+      "MD5_verified": "a15ec4c4ad8eb713812f4b58f9110a3b"
+    },
+    {
+      "name": "NEON.D14.SRER.DP1.10058.001.div_10m2Data100m2Data.2023-04.basic.20251206T102035Z.csv",
+      "bytes": 461268,
+      "MD5_verified": "37c28d0b38f2fbb98b6ff0bd512e6240"
+    },
+    {
+      "name": "NEON.D14.SRER.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T092550Z.csv",
+      "bytes": 1010467,
+      "MD5_verified": "627af28834b1ea2554c3abee00cf92e2"
+    },
+    {
+      "name": "NEON.D14.SRER.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T092550Z.csv",
+      "bytes": 1043935,
+      "MD5_verified": "4c6a42fbc8fb04d7f68b7c943ad51dfd"
+    },
+    {
+      "name": "NEON.D14.SRER.DP1.10058.001.div_1m2Data.2023-09.basic.20251206T132757Z.csv",
+      "bytes": 171678,
+      "MD5_verified": "003c1f4130c0d4ddfdf19b6e3abe5240"
+    },
+    {
+      "name": "NEON.D14.SRER.DP1.10058.001.div_10m2Data100m2Data.2023-09.basic.20251206T132757Z.csv",
+      "bytes": 224163,
+      "MD5_verified": "d6d4b34723b476a2689a53ab9b042ed3"
+    },
+    {
+      "name": "NEON.D14.SRER.DP1.10058.001.div_10m2Data100m2Data.2023-12.basic.20251206T080615Z.csv",
+      "bytes": 2495,
+      "MD5_verified": "f203771eb5a5af63c0f99ab5227a025d"
+    },
+    {
+      "name": "NEON.D14.SRER.DP1.10058.001.div_1m2Data.2023-12.basic.20251206T080615Z.csv",
+      "bytes": 1758,
+      "MD5_verified": "95bb270cd8ea784d4ac329ab77677266"
+    },
+    {
+      "name": "NEON.D05.STEI.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T134018Z.csv",
+      "bytes": 547749,
+      "MD5_verified": "dcbb2c95dbb4dfcb696858aaacdfaf5c"
+    },
+    {
+      "name": "NEON.D05.STEI.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T134018Z.csv",
+      "bytes": 372009,
+      "MD5_verified": "a636ac36fb6d131ae5fdcfedfdc35feb"
+    },
+    {
+      "name": "NEON.D05.STEI.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T114552Z.csv",
+      "bytes": 56461,
+      "MD5_verified": "d6038ea59ef43350c57de3a1c3a96d38"
+    },
+    {
+      "name": "NEON.D05.STEI.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T114552Z.csv",
+      "bytes": 79164,
+      "MD5_verified": "6379ec274eb20079558ca2d632afaa82"
+    },
+    {
+      "name": "NEON.D05.STEI.DP1.10058.001.div_1m2Data.2023-12.basic.20251206T093238Z.csv",
+      "bytes": 42946,
+      "MD5_verified": "1a38674c8b3a58fcdae366e8d5aba533"
+    },
+    {
+      "name": "NEON.D05.STEI.DP1.10058.001.div_10m2Data100m2Data.2023-12.basic.20251206T093238Z.csv",
+      "bytes": 70066,
+      "MD5_verified": "32ca87a5885f660a1d5e9aa82daacc51"
+    },
+    {
+      "name": "NEON.D17.TEAK.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T123440Z.csv",
+      "bytes": 313659,
+      "MD5_verified": "be734211ac71cad647469dc45400f109"
+    },
+    {
+      "name": "NEON.D17.TEAK.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T123440Z.csv",
+      "bytes": 285668,
+      "MD5_verified": "af779f82e40be535a8f5334dcdbe5ffb"
+    },
+    {
+      "name": "NEON.D17.TEAK.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T135444Z.csv",
+      "bytes": 37192,
+      "MD5_verified": "017e58f48742aebe8291f029ba39f283"
+    },
+    {
+      "name": "NEON.D17.TEAK.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T135444Z.csv",
+      "bytes": 37705,
+      "MD5_verified": "afe267f8fe34f8f7d4ec4293f76d6338"
+    },
+    {
+      "name": "NEON.D17.TEAK.DP1.10058.001.div_1m2Data.2023-12.basic.20251206T124424Z.csv",
+      "bytes": 19606,
+      "MD5_verified": "62b83eb748549690ad8f50198fc893e5"
+    },
+    {
+      "name": "NEON.D17.TEAK.DP1.10058.001.div_10m2Data100m2Data.2023-12.basic.20251206T124424Z.csv",
+      "bytes": 31694,
+      "MD5_verified": "6eb34c8b44a97156aa02f34b0966a7c3"
+    }
+  ],
+  "per_site_scorable_cells": {
+    "BART": 7,
+    "BLAN": 4,
+    "BONA": 10,
+    "KONZ": 13,
+    "LENO": 2,
+    "MLBS": 13,
+    "PUUM": 2,
+    "SERC": 5,
+    "SRER": 6,
+    "STEI": 3
+  }
+}

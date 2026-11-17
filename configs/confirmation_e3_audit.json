@@ -1,0 +1,21 @@
+{
+  "stage": "metadata_only_confirmation_feasibility",
+  "date": "2026-11-16",
+  "source_record": 21297133,
+  "prediction_record": 21335338,
+  "minimum_existing_GLC_PA_distance_km": 500,
+  "minimum_consumed_SAGE_distance_km": 100,
+  "exclude_consumed_spatial_blocks": true,
+  "maximum_plot_uncertainty_m": 1000,
+  "source_cohort_plot_area_m2": [10, 10000],
+  "large_plot_domain_area_m2": [400, 10000],
+  "large_plot_lower_bound_is_exclusive": true,
+  "non_European_known_continent_required": true,
+  "known_non_EU_prefixed_source_required": true,
+  "all_linked_plot_contributors_must_qualify": true,
+  "area_consistency_atol_m2": 0.1,
+  "area_consistency_rtol": 0.0001,
+  "source_disjoint_definition": "no contributing GIVD source occurs in any E1 probability/risk-calibration or assessment cell",
+  "outcomes_and_prediction_values_may_be_read": false,
+  "source_and_large_plot_counts_are_metadata_feasibility_only": true
+}

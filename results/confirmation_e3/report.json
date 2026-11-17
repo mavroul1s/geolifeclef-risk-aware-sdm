@@ -1,0 +1,188 @@
+{
+  "status": "completed_locked_domain_confirmation",
+  "completed_at_utc": "2026-11-16T10:45:53.680584+00:00",
+  "primary_success": false,
+  "primary_checks": {
+    "practical_F1_gain": true,
+    "practical_MSE_gain": false,
+    "F1_interval_positive": false,
+    "MSE_interval_positive": false,
+    "model_F1_guard": true,
+    "model_MSE_guard": false
+  },
+  "primary_comparison": {
+    "F1_gain": 0.0024713533340780802,
+    "MSE_gain": -0.01058262636174507,
+    "F1_interval": [
+      -0.010983835395448543,
+      0.0117438567889351
+    ],
+    "MSE_interval": [
+      -0.016076292260874994,
+      0.004051724520058494
+    ],
+    "model_F1_gains": [
+      0.003650947847548991,
+      0.003566943511765175,
+      0.002379429941824329,
+      0.00028809203517382587
+    ],
+    "model_MSE_gains": [
+      -0.010747209324490864,
+      -0.011989147188607321,
+      -0.010930898802391146,
+      -0.00866325013149095
+    ],
+    "models": 4,
+    "cells": 654,
+    "clusters": 19,
+    "confidence_each_endpoint": 0.975,
+    "valid_draws": 5000,
+    "draws": 5000,
+    "scope": "fixed cohort, predictors and heads; shared spatial resampling, not independent model trials"
+  },
+  "secondary_comparisons": {
+    "new_area_quotas": {
+      "F1_gain": 0.0013585790457804614,
+      "MSE_gain": -0.01058262636174507,
+      "F1_interval": [
+        -0.012951463081068733,
+        0.011069743093782416
+      ],
+      "MSE_interval": [
+        -0.016076292260874994,
+        0.004051724520058494
+      ],
+      "model_F1_gains": [
+        0.004867198010282847,
+        0.004166546348899347,
+        -0.00246990385603868,
+        -0.0011295243200216687
+      ],
+      "model_MSE_gains": [
+        -0.010747209324490864,
+        -0.011989147188607321,
+        -0.010930898802391146,
+        -0.00866325013149095
+      ],
+      "models": 4,
+      "cells": 654,
+      "clusters": 19,
+      "confidence_each_endpoint": 0.975,
+      "valid_draws": 5000,
+      "draws": 5000,
+      "scope": "fixed cohort, predictors and heads; shared spatial resampling, not independent model trials"
+    },
+    "unclipped_magnitude": {
+      "F1_gain": 0.0024713533340780802,
+      "MSE_gain": -0.01058262636174507,
+      "F1_interval": [
+        -0.010983835395448543,
+        0.0117438567889351
+      ],
+      "MSE_interval": [
+        -0.016076292260874994,
+        0.004051724520058494
+      ],
+      "model_F1_gains": [
+        0.003650947847548991,
+        0.003566943511765175,
+        0.002379429941824329,
+        0.00028809203517382587
+      ],
+      "model_MSE_gains": [
+        -0.010747209324490864,
+        -0.011989147188607321,
+        -0.010930898802391146,
+        -0.00866325013149095
+      ],
+      "models": 4,
+      "cells": 654,
+      "clusters": 19,
+      "confidence_each_endpoint": 0.975,
+      "valid_draws": 5000,
+      "draws": 5000,
+      "scope": "fixed cohort, predictors and heads; shared spatial resampling, not independent model trials"
+    },
+    "non_Brazil": {
+      "F1_gain": 0.0033508548708197916,
+      "MSE_gain": -0.0022134060784011183,
+      "F1_interval": [
+        -0.012775003175280727,
+        0.012413970510098217
+      ],
+      "MSE_interval": [
+        -0.01209247304078948,
+        0.005781270353527397
+      ],
+      "model_F1_gains": [
+        0.007065076500473333,
+        0.0007476043924670162,
+        0.005689650159470677,
+        -9.891156913185983e-05
+      ],
+      "model_MSE_gains": [
+        -0.0003982479308628967,
+        -0.0012553301440840717,
+        -0.004449910705381061,
+        -0.0027501355332764433
+      ],
+      "models": 4,
+      "cells": 291,
+      "clusters": 17,
+      "confidence_each_endpoint": 0.975,
+      "valid_draws": 5000,
+      "draws": 5000,
+      "scope": "fixed cohort, predictors and heads; shared spatial resampling, not independent model trials",
+      "too_few_blocks_for_source_population_inference": false
+    },
+    "Brazil": {
+      "F1_gain": 0.001767147636274627,
+      "MSE_gain": -0.01729183601037617,
+      "F1_interval": [
+        0.0017671476362746408,
+        0.0027124350680773346
+      ],
+      "MSE_interval": [
+        -0.020134155034244112,
+        -0.014896785462345324
+      ],
+      "model_F1_gains": [
+        0.0009172984450357968,
+        0.005824352497320107,
+        -0.0002710212977344306,
+        0.0005979609004770348
+      ],
+      "model_MSE_gains": [
+        -0.019043484160705008,
+        -0.020593942670580505,
+        -0.016126401657019052,
+        -0.013403515553200115
+      ],
+      "models": 4,
+      "cells": 363,
+      "clusters": 2,
+      "confidence_each_endpoint": 0.975,
+      "valid_draws": 5000,
+      "draws": 5000,
+      "scope": "fixed cohort, predictors and heads; shared spatial resampling, not independent model trials",
+      "too_few_blocks_for_source_population_inference": true
+    }
+  },
+  "assessment_cells": 654,
+  "rare_occurrences": 1488,
+  "evidence_scope": "locally locked confirmation on uninspected outcome rows of a published benchmark, new plot-area/geographic domain; not a new independent data release or secret test",
+  "correctness_tests_passed": true,
+  "GPU_scientifically_admitted": false,
+  "GPU_job_launched": false,
+  "user_GPU_authorization_recorded": true,
+  "new_neural_backbone_fits": 0,
+  "E3_outcomes_now_consumed": true,
+  "original_E1_E2_assessment_results_modified": false,
+  "limitations": [
+    "Published benchmark subset, not a new independent data release",
+    "Some GIVD source IDs overlap calibration; pretrained PO backbone overlap unchanged",
+    "Brazil contributes many cells in only two spatial blocks",
+    "Primary intervals condition on fixed models and heads; secondary findings cannot replace primary"
+  ]
+}

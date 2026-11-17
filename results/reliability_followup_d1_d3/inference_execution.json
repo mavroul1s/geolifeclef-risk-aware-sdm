@@ -1,0 +1,47 @@
+{
+  "status": "complete",
+  "kernel": "nmavros/glc25-r1-checkpoint-diagnostics",
+  "url": "https://www.kaggle.com/code/nmavros/glc25-r1-checkpoint-diagnostics",
+  "private": true,
+  "GPU_requested": true,
+  "competition_submission_made": false,
+  "kernel_sources": [
+    "nmavros/glc25-reliability-r1-full"
+  ],
+  "requested_at_utc": "2026-11-13T22:19:14.339456+00:00",
+  "notebook_sha256": "d315f7794d49ae59ddd170e7e15212aafc2f234f716da7741ba811d76025cc17",
+  "checked_at_utc": "2026-11-13T22:56:58.556226+00:00",
+  "output_files": [
+    {
+      "name": "inference_export/fold0_normalization.json",
+      "bytes": 6485,
+      "sha256": "002009e0ab4d0fa3d2e159e73c2ad94993c81e4477e7a82daffa21e909ac2569"
+    },
+    {
+      "name": "inference_export/fold0_reproduction.json",
+      "bytes": 8253,
+      "sha256": "84a2ac44e5dfc53c1e53731608384a9515510666da5185a7363a126f2e0b249e"
+    },
+    {
+      "name": "inference_export/fold1_normalization.json",
+      "bytes": 6600,
+      "sha256": "5243d436ede523f87a1e3a3e80a895eaeb030a41921300d493c5fc4da85d665d"
+    },
+    {
+      "name": "inference_export/fold1_reproduction.json",
+      "bytes": 8269,
+      "sha256": "939f931d619ed6679844e24a19ac86b4e1892220c7e8ca3dcd7cc952f3b36b75"
+    },
+    {
+      "name": "inference_export/inference_manifest.json",
+      "bytes": 1132,
+      "sha256": "96a72965c787f201b1af19dddf8d89e76faf11111ba657d442738b8a7eee81c5"
+    },
+    {
+      "name": "inference_export/inference_report.json",
+      "bytes": 32419,
+      "sha256": "b1fc578ca960a9e9241c02c03f626c08c4369eecee1ab97bab0ba7d460089075"
+    }
+  ],
+  "output_bytes": 63158
+}

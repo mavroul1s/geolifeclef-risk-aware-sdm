@@ -1,0 +1,11 @@
+{
+  "frozen_at_utc": "2026-11-13T17:02:12Z",
+  "config_sha256": "c4f911136e825ca684f84561c19040f18b89056e88398cb8fbeae4502c170efd",
+  "before_new_GPU_accuracy_results": true,
+  "probe_is_technical_only": true,
+  "protocol": "docs/reliability_study_r1.md",
+  "prior_data_reuse_disclosed": true,
+  "initial_configuration_file": "protocol_initial_config.json",
+  "current_config_sha256": "a45db6144388fbc77dc2411cd56a29d6c66531ee5d67ccc78722f7ad2d695b69",
+  "amendment_record": "protocol_amendment_1.json"
+}

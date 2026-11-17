@@ -1,0 +1,8 @@
+{
+  "scope": "exact union of consumed v21-v24 assessment IDs; no per-version scores or records reconstructed",
+  "source_notebook": "notebooks/geolifeclef_v25_fresh_holdout_adaptive_ensemble.ipynb",
+  "source_notebook_sha256": "0271f60b3748527a6b1f4e57dba575fcbb990c4ba77ca33cc892bf744b805355",
+  "embedded_compressed_sha256": "b418fc90bedf0989f6e9c56b5c807af16d43a60183a914262eb699a6d43ece03",
+  "ids": 55325,
+  "csv_sha256": "2e39294c8d0b2c3fda0cd4a46dc87e9149b3d933c6d6fe4b23f0f6a1ab3f21d1"
+}

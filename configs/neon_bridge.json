@@ -1,0 +1,23 @@
+{
+  "stage": "outcome_closed_NEON_bridge_and_model_reference",
+  "date": "2026-11-16",
+  "NEON_product": "DP1.10058.001",
+  "NEON_release": "RELEASE-2026",
+  "NEON_year": 2023,
+  "NEON_composition_values_may_be_read": false,
+  "credential_environment_names": ["NEON_TOKEN", "NEON_API_TOKEN"],
+  "credential_file": "../neon_api_key/neon_api_key",
+  "credential_in_reports_or_notebooks": false,
+  "model_runs": ["aggregation_s0", "optimized_deepsdm_s0"],
+  "model_selection": "two released neural architectures chosen from configuration metadata before NEON outcomes; not an isolated architecture-effect claim",
+  "reference_rows": "first 128 released test-prediction rows, no target labels required",
+  "reference_max_absolute_probability_error": 0.00001,
+  "reference_mean_absolute_probability_error": 0.000001,
+  "maximum_new_artifact_bytes": 800000000,
+  "maximum_remote_reference_bytes": 67108864,
+  "maximum_checkpoint_headers": 220,
+  "model_loading": "ZIP-serialized checkpoint, weights_only=True; no execution of downloaded source or unsafe pickle fallback",
+  "GPU_if_reference_passes": "one private GPU reference/inference smoke notebook, <=20 minutes, models/reference inputs only and no NEON credential; fresh NEON inference requires its separate input/role contract",
+  "GPU_requires_favorable_ecological_outcomes": false,
+  "fresh_NEON_evaluation_requires": ["plot completeness and overlap", "taxonomy mapping with unresolved taxa", "exact raster inputs and native masks", "frozen roles and scientific claim"]
+}

@@ -1,0 +1,105 @@
+{
+  "status": "complete",
+  "kernel": "nmavros/glc25-reliability-r1-full",
+  "url": "https://www.kaggle.com/code/nmavros/glc25-reliability-r1-full",
+  "private": true,
+  "GPU_requested": true,
+  "competition_submission_made": false,
+  "requested_at_utc": "2026-11-13T17:27:25.007882+00:00",
+  "notebook_sha256": "5748a579d452fbd3dd88f3087dcec5438e46fcce1f9e8af3b19f221e174aded8",
+  "checked_at_utc": "2026-11-13T21:28:44.549137+00:00",
+  "output_files": [
+    {
+      "name": "r1_export/country_coverage.csv",
+      "bytes": 1081680,
+      "sha256": "b4b447ccf3cad1f7ba417350d47c5136f3db5aaf75af1f588684ce48cca3cace"
+    },
+    {
+      "name": "r1_export/fixed_r1_r1_fold0_seed2026111301.pt",
+      "bytes": 8094145,
+      "sha256": "61a9293688e27cd2b5c2de7548bb6b7a2dfae31b0616beebef8804e8bf78cc28"
+    },
+    {
+      "name": "r1_export/fixed_r1_r1_fold0_seed2026111302.pt",
+      "bytes": 8094145,
+      "sha256": "9600a50c36dc9def5d24b4a237072effd71a27e1e4a35a09d6ba5ce944ccf483"
+    },
+    {
+      "name": "r1_export/fixed_r1_r1_fold0_seed2026111303.pt",
+      "bytes": 8094145,
+      "sha256": "ee558f0034a7730325739b11e7be91ca7277ec021c9512fa4b4821769356769c"
+    },
+    {
+      "name": "r1_export/fixed_r1_r1_fold1_seed2026111301.pt",
+      "bytes": 8094145,
+      "sha256": "41789b415602bdf4daa45be952c42e44857214ffe70bc9895b49c7bfc7de8402"
+    },
+    {
+      "name": "r1_export/fixed_r1_r1_fold1_seed2026111302.pt",
+      "bytes": 8094145,
+      "sha256": "60a4b39de0a80154bc47e4eeabda5ac17d1807f664763947be0021bd2a5a80da"
+    },
+    {
+      "name": "r1_export/fixed_r1_r1_fold1_seed2026111303.pt",
+      "bytes": 8094145,
+      "sha256": "02864ed87ca9e3e620536ce6207077ea8108189595eb55462600a9a747668d49"
+    },
+    {
+      "name": "r1_export/fold0_assessment.csv",
+      "bytes": 11354299,
+      "sha256": "277708d024be4654ccb4069ff38d936b218eb55e09f3676f90b6c7b358f69a77"
+    },
+    {
+      "name": "r1_export/fold0_confidence_roles.csv",
+      "bytes": 8367277,
+      "sha256": "9bd07359d270039bd205d7b40bc0959f0b768e5d5f6efcf7c236166f3054f016"
+    },
+    {
+      "name": "r1_export/fold0_predictions.npz",
+      "bytes": 199607467,
+      "sha256": "b8c76b0f616afa2e41e7bcd3424093f0a73ef47ca37535fb700211af5269d86a"
+    },
+    {
+      "name": "r1_export/fold0_report.json",
+      "bytes": 2046456,
+      "sha256": "2cdef99c3d96a76758ea4174e40712ade8c1dacbbb82eed9b6360b4c0b9d36cd"
+    },
+    {
+      "name": "r1_export/fold1_assessment.csv",
+      "bytes": 11336829,
+      "sha256": "1bba76a2d1ef712eed55cf4c5405d0b6532663a4a77beddebc36f749cb7fa8fc"
+    },
+    {
+      "name": "r1_export/fold1_confidence_roles.csv",
+      "bytes": 8353589,
+      "sha256": "5e8ff2103f9e4d465a525da01007f57974b8b10086d627e65e6ff5c7f3e2798d"
+    },
+    {
+      "name": "r1_export/fold1_predictions.npz",
+      "bytes": 201652742,
+      "sha256": "240a8f72b4bd04f9d9e9e039b33ae28eff86b2b96cb5ca7a5aebc308c8906355"
+    },
+    {
+      "name": "r1_export/fold1_report.json",
+      "bytes": 2065209,
+      "sha256": "bbfa507472a3682b78403ce4c57c72083491d2f0cad3b489b52484ca9f064496"
+    },
+    {
+      "name": "r1_export/r1_report.json",
+      "bytes": 16992,
+      "sha256": "847a0c5e98f2aa0bb6ee75e6f45f02e972ed03271afadcb258a3b24a95648d81"
+    },
+    {
+      "name": "r1_export/risk_coverage.csv",
+      "bytes": 154495,
+      "sha256": "4b6824420deee5c01faea76f95f5f780ae4ff35ca5c11c67e36043363ce163ae"
+    },
+    {
+      "name": "r1_export/species_ids.npy",
+      "bytes": 40256,
+      "sha256": "eef8a61d8caea7add0937382d1370f885a8fbfb623796893a22bc54c70ef154d"
+    }
+  ],
+  "output_bytes": 494642161,
+  "all_manifest_outputs_downloaded": true
+}

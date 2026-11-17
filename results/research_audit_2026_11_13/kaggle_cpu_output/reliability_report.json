@@ -1,0 +1,941 @@
+{
+  "status": "completed_CPU_reproduction",
+  "fresh_assessment": false,
+  "scope": "reused matched-v32 recipe development scores from v34; no new hidden-test result",
+  "risk_model_fits": 6,
+  "neural_fits": 0,
+  "competition_submission_made": false,
+  "calibration_scores_recomputed_from_official_metadata": true,
+  "training_metadata_sha256": "9081dba275285b2aff7345ff1ace6540acffc9c040a54b651b192363da63b709",
+  "split_hashes_verified": true,
+  "assessment_surveys": 31570,
+  "packages": {
+    "numpy": "2.1.3",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.6.1",
+    "torch": "2.11.0+cpu"
+  },
+  "python": "3.13.18",
+  "seed": 20261113,
+  "area_under_risk_coverage": [
+    {
+      "method": "random",
+      "AURC": 0.6377620007376645
+    },
+    {
+      "method": "distance_only",
+      "AURC": 0.6283808628659303
+    },
+    {
+      "method": "area_only",
+      "AURC": 0.5904377970214707
+    },
+    {
+      "method": "metadata_only",
+      "AURC": 0.5905432698106418
+    },
+    {
+      "method": "metadata_distance",
+      "AURC": 0.5929224891829465
+    },
+    {
+      "method": "distance_only_country_balanced",
+      "AURC": 0.633732392565317
+    },
+    {
+      "method": "metadata_distance_country_balanced",
+      "AURC": 0.6194770902109532
+    }
+  ],
+  "results": [
+    {
+      "method": "random",
+      "overall_retained_fraction": 1.0,
+      "group": "all",
+      "surveys": 31570,
+      "mean_sample_F1": 0.36094689004491187
+    },
+    {
+      "method": "random",
+      "overall_retained_fraction": 1.0,
+      "group": "core",
+      "surveys": 22917,
+      "mean_sample_F1": 0.37089467185698743
+    },
+    {
+      "method": "random",
+      "overall_retained_fraction": 1.0,
+      "group": "outside_core",
+      "surveys": 8653,
+      "mean_sample_F1": 0.3346007308183616
+    },
+    {
+      "method": "random",
+      "overall_retained_fraction": 0.9,
+      "group": "all",
+      "surveys": 28413,
+      "mean_sample_F1": 0.36056397546432684
+    },
+    {
+      "method": "random",
+      "overall_retained_fraction": 0.9,
+      "group": "core",
+      "surveys": 20627,
+      "mean_sample_F1": 0.370641247769421
+    },
+    {
+      "method": "random",
+      "overall_retained_fraction": 0.9,
+      "group": "outside_core",
+      "surveys": 7786,
+      "mean_sample_F1": 0.3338668401140602
+    },
+    {
+      "method": "random",
+      "overall_retained_fraction": 0.8,
+      "group": "all",
+      "surveys": 25256,
+      "mean_sample_F1": 0.36142603208332
+    },
+    {
+      "method": "random",
+      "overall_retained_fraction": 0.8,
+      "group": "core",
+      "surveys": 18300,
+      "mean_sample_F1": 0.37174896317190964
+    },
+    {
+      "method": "random",
+      "overall_retained_fraction": 0.8,
+      "group": "outside_core",
+      "surveys": 6956,
+      "mean_sample_F1": 0.3342682346535917
+    },
+    {
+      "method": "random",
+      "overall_retained_fraction": 0.6,
+      "group": "all",
+      "surveys": 18942,
+      "mean_sample_F1": 0.3612906158998255
+    },
+    {
+      "method": "random",
+      "overall_retained_fraction": 0.6,
+      "group": "core",
+      "surveys": 13744,
+      "mean_sample_F1": 0.37191304808240966
+    },
+    {
+      "method": "random",
+      "overall_retained_fraction": 0.6,
+      "group": "outside_core",
+      "surveys": 5198,
+      "mean_sample_F1": 0.33320390795110755
+    },
+    {
+      "method": "random",
+      "overall_retained_fraction": 0.4,
+      "group": "all",
+      "surveys": 12628,
+      "mean_sample_F1": 0.3611764787478279
+    },
+    {
+      "method": "random",
+      "overall_retained_fraction": 0.4,
+      "group": "core",
+      "surveys": 9148,
+      "mean_sample_F1": 0.37220494583932506
+    },
+    {
+      "method": "random",
+      "overall_retained_fraction": 0.4,
+      "group": "outside_core",
+      "surveys": 3480,
+      "mean_sample_F1": 0.3321855543360416
+    },
+    {
+      "method": "random",
+      "overall_retained_fraction": 0.2,
+      "group": "all",
+      "surveys": 6314,
+      "mean_sample_F1": 0.3623215972964946
+    },
+    {
+      "method": "random",
+      "overall_retained_fraction": 0.2,
+      "group": "core",
+      "surveys": 4588,
+      "mean_sample_F1": 0.3731251176646645
+    },
+    {
+      "method": "random",
+      "overall_retained_fraction": 0.2,
+      "group": "outside_core",
+      "surveys": 1726,
+      "mean_sample_F1": 0.3336040124476165
+    },
+    {
+      "method": "distance_only",
+      "overall_retained_fraction": 1.0,
+      "group": "all",
+      "surveys": 31570,
+      "mean_sample_F1": 0.36094689004491187
+    },
+    {
+      "method": "distance_only",
+      "overall_retained_fraction": 1.0,
+      "group": "core",
+      "surveys": 22917,
+      "mean_sample_F1": 0.37089467185698743
+    },
+    {
+      "method": "distance_only",
+      "overall_retained_fraction": 1.0,
+      "group": "outside_core",
+      "surveys": 8653,
+      "mean_sample_F1": 0.3346007308183617
+    },
+    {
+      "method": "distance_only",
+      "overall_retained_fraction": 0.9,
+      "group": "all",
+      "surveys": 28413,
+      "mean_sample_F1": 0.3695437452972482
+    },
+    {
+      "method": "distance_only",
+      "overall_retained_fraction": 0.9,
+      "group": "core",
+      "surveys": 20875,
+      "mean_sample_F1": 0.3793900038178033
+    },
+    {
+      "method": "distance_only",
+      "overall_retained_fraction": 0.9,
+      "group": "outside_core",
+      "surveys": 7538,
+      "mean_sample_F1": 0.34227647989308385
+    },
+    {
+      "method": "distance_only",
+      "overall_retained_fraction": 0.8,
+      "group": "all",
+      "surveys": 25256,
+      "mean_sample_F1": 0.3709037505186913
+    },
+    {
+      "method": "distance_only",
+      "overall_retained_fraction": 0.8,
+      "group": "core",
+      "surveys": 18779,
+      "mean_sample_F1": 0.3788852522239563
+    },
+    {
+      "method": "distance_only",
+      "overall_retained_fraction": 0.8,
+      "group": "outside_core",
+      "surveys": 6477,
+      "mean_sample_F1": 0.3477626943934521
+    },
+    {
+      "method": "distance_only",
+      "overall_retained_fraction": 0.6,
+      "group": "all",
+      "surveys": 18942,
+      "mean_sample_F1": 0.36455884308595166
+    },
+    {
+      "method": "distance_only",
+      "overall_retained_fraction": 0.6,
+      "group": "core",
+      "surveys": 14143,
+      "mean_sample_F1": 0.37063822836061744
+    },
+    {
+      "method": "distance_only",
+      "overall_retained_fraction": 0.6,
+      "group": "outside_core",
+      "surveys": 4799,
+      "mean_sample_F1": 0.3466424551010381
+    },
+    {
+      "method": "distance_only",
+      "overall_retained_fraction": 0.4,
+      "group": "all",
+      "surveys": 12628,
+      "mean_sample_F1": 0.36950179439699515
+    },
+    {
+      "method": "distance_only",
+      "overall_retained_fraction": 0.4,
+      "group": "core",
+      "surveys": 9727,
+      "mean_sample_F1": 0.3735606893181397
+    },
+    {
+      "method": "distance_only",
+      "overall_retained_fraction": 0.4,
+      "group": "outside_core",
+      "surveys": 2901,
+      "mean_sample_F1": 0.35589239388063076
+    },
+    {
+      "method": "distance_only",
+      "overall_retained_fraction": 0.2,
+      "group": "all",
+      "surveys": 6314,
+      "mean_sample_F1": 0.3805147619240442
+    },
+    {
+      "method": "distance_only",
+      "overall_retained_fraction": 0.2,
+      "group": "core",
+      "surveys": 4918,
+      "mean_sample_F1": 0.3819509023497415
+    },
+    {
+      "method": "distance_only",
+      "overall_retained_fraction": 0.2,
+      "group": "outside_core",
+      "surveys": 1396,
+      "mean_sample_F1": 0.37545535030973287
+    },
+    {
+      "method": "area_only",
+      "overall_retained_fraction": 1.0,
+      "group": "all",
+      "surveys": 31570,
+      "mean_sample_F1": 0.36094689004491187
+    },
+    {
+      "method": "area_only",
+      "overall_retained_fraction": 1.0,
+      "group": "core",
+      "surveys": 22917,
+      "mean_sample_F1": 0.37089467185698743
+    },
+    {
+      "method": "area_only",
+      "overall_retained_fraction": 1.0,
+      "group": "outside_core",
+      "surveys": 8653,
+      "mean_sample_F1": 0.3346007308183616
+    },
+    {
+      "method": "area_only",
+      "overall_retained_fraction": 0.9,
+      "group": "all",
+      "surveys": 28413,
+      "mean_sample_F1": 0.37305757980920173
+    },
+    {
+      "method": "area_only",
+      "overall_retained_fraction": 0.9,
+      "group": "core",
+      "surveys": 20914,
+      "mean_sample_F1": 0.37950912707062145
+    },
+    {
+      "method": "area_only",
+      "overall_retained_fraction": 0.9,
+      "group": "outside_core",
+      "surveys": 7499,
+      "mean_sample_F1": 0.3550648261853403
+    },
+    {
+      "method": "area_only",
+      "overall_retained_fraction": 0.8,
+      "group": "all",
+      "surveys": 25256,
+      "mean_sample_F1": 0.38753556933046374
+    },
+    {
+      "method": "area_only",
+      "overall_retained_fraction": 0.8,
+      "group": "core",
+      "surveys": 19516,
+      "mean_sample_F1": 0.3866663010680482
+    },
+    {
+      "method": "area_only",
+      "overall_retained_fraction": 0.8,
+      "group": "outside_core",
+      "surveys": 5740,
+      "mean_sample_F1": 0.39049108142267597
+    },
+    {
+      "method": "area_only",
+      "overall_retained_fraction": 0.6,
+      "group": "all",
+      "surveys": 18942,
+      "mean_sample_F1": 0.4060861564130217
+    },
+    {
+      "method": "area_only",
+      "overall_retained_fraction": 0.6,
+      "group": "core",
+      "surveys": 14891,
+      "mean_sample_F1": 0.3982361994839835
+    },
+    {
+      "method": "area_only",
+      "overall_retained_fraction": 0.6,
+      "group": "outside_core",
+      "surveys": 4051,
+      "mean_sample_F1": 0.4349416756996939
+    },
+    {
+      "method": "area_only",
+      "overall_retained_fraction": 0.4,
+      "group": "all",
+      "surveys": 12628,
+      "mean_sample_F1": 0.41683173381127014
+    },
+    {
+      "method": "area_only",
+      "overall_retained_fraction": 0.4,
+      "group": "core",
+      "surveys": 8579,
+      "mean_sample_F1": 0.40827287499062304
+    },
+    {
+      "method": "area_only",
+      "overall_retained_fraction": 0.4,
+      "group": "outside_core",
+      "surveys": 4049,
+      "mean_sample_F1": 0.43496619906746514
+    },
+    {
+      "method": "area_only",
+      "overall_retained_fraction": 0.2,
+      "group": "all",
+      "surveys": 6314,
+      "mean_sample_F1": 0.43162166361287213
+    },
+    {
+      "method": "area_only",
+      "overall_retained_fraction": 0.2,
+      "group": "core",
+      "surveys": 2450,
+      "mean_sample_F1": 0.4155179291162947
+    },
+    {
+      "method": "area_only",
+      "overall_retained_fraction": 0.2,
+      "group": "outside_core",
+      "surveys": 3864,
+      "mean_sample_F1": 0.44183236483352806
+    },
+    {
+      "method": "metadata_only",
+      "overall_retained_fraction": 1.0,
+      "group": "all",
+      "surveys": 31570,
+      "mean_sample_F1": 0.36094689004491187
+    },
+    {
+      "method": "metadata_only",
+      "overall_retained_fraction": 1.0,
+      "group": "core",
+      "surveys": 22917,
+      "mean_sample_F1": 0.37089467185698743
+    },
+    {
+      "method": "metadata_only",
+      "overall_retained_fraction": 1.0,
+      "group": "outside_core",
+      "surveys": 8653,
+      "mean_sample_F1": 0.3346007308183617
+    },
+    {
+      "method": "metadata_only",
+      "overall_retained_fraction": 0.9,
+      "group": "all",
+      "surveys": 28413,
+      "mean_sample_F1": 0.373049845860159
+    },
+    {
+      "method": "metadata_only",
+      "overall_retained_fraction": 0.9,
+      "group": "core",
+      "surveys": 21269,
+      "mean_sample_F1": 0.3775717222635385
+    },
+    {
+      "method": "metadata_only",
+      "overall_retained_fraction": 0.9,
+      "group": "outside_core",
+      "surveys": 7144,
+      "mean_sample_F1": 0.3595873893619115
+    },
+    {
+      "method": "metadata_only",
+      "overall_retained_fraction": 0.8,
+      "group": "all",
+      "surveys": 25256,
+      "mean_sample_F1": 0.3901550438548962
+    },
+    {
+      "method": "metadata_only",
+      "overall_retained_fraction": 0.8,
+      "group": "core",
+      "surveys": 19489,
+      "mean_sample_F1": 0.38941158267732445
+    },
+    {
+      "method": "metadata_only",
+      "overall_retained_fraction": 0.8,
+      "group": "outside_core",
+      "surveys": 5767,
+      "mean_sample_F1": 0.3926674965841651
+    },
+    {
+      "method": "metadata_only",
+      "overall_retained_fraction": 0.6,
+      "group": "all",
+      "surveys": 18942,
+      "mean_sample_F1": 0.4056520478486908
+    },
+    {
+      "method": "metadata_only",
+      "overall_retained_fraction": 0.6,
+      "group": "core",
+      "surveys": 14677,
+      "mean_sample_F1": 0.3992575681410174
+    },
+    {
+      "method": "metadata_only",
+      "overall_retained_fraction": 0.6,
+      "group": "outside_core",
+      "surveys": 4265,
+      "mean_sample_F1": 0.4276571542190363
+    },
+    {
+      "method": "metadata_only",
+      "overall_retained_fraction": 0.4,
+      "group": "all",
+      "surveys": 12628,
+      "mean_sample_F1": 0.4172694185259005
+    },
+    {
+      "method": "metadata_only",
+      "overall_retained_fraction": 0.4,
+      "group": "core",
+      "surveys": 8492,
+      "mean_sample_F1": 0.41012836903690664
+    },
+    {
+      "method": "metadata_only",
+      "overall_retained_fraction": 0.4,
+      "group": "outside_core",
+      "surveys": 4136,
+      "mean_sample_F1": 0.4319313605618136
+    },
+    {
+      "method": "metadata_only",
+      "overall_retained_fraction": 0.2,
+      "group": "all",
+      "surveys": 6314,
+      "mean_sample_F1": 0.4338966376565987
+    },
+    {
+      "method": "metadata_only",
+      "overall_retained_fraction": 0.2,
+      "group": "core",
+      "surveys": 2536,
+      "mean_sample_F1": 0.4168132344141491
+    },
+    {
+      "method": "metadata_only",
+      "overall_retained_fraction": 0.2,
+      "group": "outside_core",
+      "surveys": 3778,
+      "mean_sample_F1": 0.4453639512147912
+    },
+    {
+      "method": "metadata_distance",
+      "overall_retained_fraction": 1.0,
+      "group": "all",
+      "surveys": 31570,
+      "mean_sample_F1": 0.36094689004491187
+    },
+    {
+      "method": "metadata_distance",
+      "overall_retained_fraction": 1.0,
+      "group": "core",
+      "surveys": 22917,
+      "mean_sample_F1": 0.37089467185698755
+    },
+    {
+      "method": "metadata_distance",
+      "overall_retained_fraction": 1.0,
+      "group": "outside_core",
+      "surveys": 8653,
+      "mean_sample_F1": 0.3346007308183616
+    },
+    {
+      "method": "metadata_distance",
+      "overall_retained_fraction": 0.9,
+      "group": "all",
+      "surveys": 28413,
+      "mean_sample_F1": 0.3736286093214993
+    },
+    {
+      "method": "metadata_distance",
+      "overall_retained_fraction": 0.9,
+      "group": "core",
+      "surveys": 21461,
+      "mean_sample_F1": 0.37789840648542805
+    },
+    {
+      "method": "metadata_distance",
+      "overall_retained_fraction": 0.9,
+      "group": "outside_core",
+      "surveys": 6952,
+      "mean_sample_F1": 0.36044763738032093
+    },
+    {
+      "method": "metadata_distance",
+      "overall_retained_fraction": 0.8,
+      "group": "all",
+      "surveys": 25256,
+      "mean_sample_F1": 0.38806354085268546
+    },
+    {
+      "method": "metadata_distance",
+      "overall_retained_fraction": 0.8,
+      "group": "core",
+      "surveys": 19469,
+      "mean_sample_F1": 0.3879213906981217
+    },
+    {
+      "method": "metadata_distance",
+      "overall_retained_fraction": 0.8,
+      "group": "outside_core",
+      "surveys": 5787,
+      "mean_sample_F1": 0.38854177160423264
+    },
+    {
+      "method": "metadata_distance",
+      "overall_retained_fraction": 0.6,
+      "group": "all",
+      "surveys": 18942,
+      "mean_sample_F1": 0.3986852086787943
+    },
+    {
+      "method": "metadata_distance",
+      "overall_retained_fraction": 0.6,
+      "group": "core",
+      "surveys": 14507,
+      "mean_sample_F1": 0.39100782173256965
+    },
+    {
+      "method": "metadata_distance",
+      "overall_retained_fraction": 0.6,
+      "group": "outside_core",
+      "surveys": 4435,
+      "mean_sample_F1": 0.42379814045531794
+    },
+    {
+      "method": "metadata_distance",
+      "overall_retained_fraction": 0.4,
+      "group": "all",
+      "surveys": 12628,
+      "mean_sample_F1": 0.40815427717077957
+    },
+    {
+      "method": "metadata_distance",
+      "overall_retained_fraction": 0.4,
+      "group": "core",
+      "surveys": 8417,
+      "mean_sample_F1": 0.39636987336938967
+    },
+    {
+      "method": "metadata_distance",
+      "overall_retained_fraction": 0.4,
+      "group": "outside_core",
+      "surveys": 4211,
+      "mean_sample_F1": 0.43170909236819055
+    },
+    {
+      "method": "metadata_distance",
+      "overall_retained_fraction": 0.2,
+      "group": "all",
+      "surveys": 6314,
+      "mean_sample_F1": 0.430320657326557
+    },
+    {
+      "method": "metadata_distance",
+      "overall_retained_fraction": 0.2,
+      "group": "core",
+      "surveys": 2808,
+      "mean_sample_F1": 0.4120193516364299
+    },
+    {
+      "method": "metadata_distance",
+      "overall_retained_fraction": 0.2,
+      "group": "outside_core",
+      "surveys": 3506,
+      "mean_sample_F1": 0.4449784058655979
+    },
+    {
+      "method": "distance_only_country_balanced",
+      "overall_retained_fraction": 1.0,
+      "group": "all",
+      "surveys": 31570,
+      "mean_sample_F1": 0.36094689004491187
+    },
+    {
+      "method": "distance_only_country_balanced",
+      "overall_retained_fraction": 1.0,
+      "group": "core",
+      "surveys": 22917,
+      "mean_sample_F1": 0.37089467185698743
+    },
+    {
+      "method": "distance_only_country_balanced",
+      "overall_retained_fraction": 1.0,
+      "group": "outside_core",
+      "surveys": 8653,
+      "mean_sample_F1": 0.3346007308183616
+    },
+    {
+      "method": "distance_only_country_balanced",
+      "overall_retained_fraction": 0.9,
+      "group": "all",
+      "surveys": 28413,
+      "mean_sample_F1": 0.3653758391867181
+    },
+    {
+      "method": "distance_only_country_balanced",
+      "overall_retained_fraction": 0.9,
+      "group": "core",
+      "surveys": 20626,
+      "mean_sample_F1": 0.37459488687127873
+    },
+    {
+      "method": "distance_only_country_balanced",
+      "overall_retained_fraction": 0.9,
+      "group": "outside_core",
+      "surveys": 7787,
+      "mean_sample_F1": 0.3409566690901791
+    },
+    {
+      "method": "distance_only_country_balanced",
+      "overall_retained_fraction": 0.8,
+      "group": "all",
+      "surveys": 25256,
+      "mean_sample_F1": 0.3650412428033176
+    },
+    {
+      "method": "distance_only_country_balanced",
+      "overall_retained_fraction": 0.8,
+      "group": "core",
+      "surveys": 18334,
+      "mean_sample_F1": 0.37319482660535475
+    },
+    {
+      "method": "distance_only_country_balanced",
+      "overall_retained_fraction": 0.8,
+      "group": "outside_core",
+      "surveys": 6922,
+      "mean_sample_F1": 0.34344520041288873
+    },
+    {
+      "method": "distance_only_country_balanced",
+      "overall_retained_fraction": 0.6,
+      "group": "all",
+      "surveys": 18942,
+      "mean_sample_F1": 0.3648752163650181
+    },
+    {
+      "method": "distance_only_country_balanced",
+      "overall_retained_fraction": 0.6,
+      "group": "core",
+      "surveys": 13750,
+      "mean_sample_F1": 0.3707312997236173
+    },
+    {
+      "method": "distance_only_country_balanced",
+      "overall_retained_fraction": 0.6,
+      "group": "outside_core",
+      "surveys": 5192,
+      "mean_sample_F1": 0.34936652102974464
+    },
+    {
+      "method": "distance_only_country_balanced",
+      "overall_retained_fraction": 0.4,
+      "group": "all",
+      "surveys": 12628,
+      "mean_sample_F1": 0.36565074287154375
+    },
+    {
+      "method": "distance_only_country_balanced",
+      "overall_retained_fraction": 0.4,
+      "group": "core",
+      "surveys": 9167,
+      "mean_sample_F1": 0.3696735271020566
+    },
+    {
+      "method": "distance_only_country_balanced",
+      "overall_retained_fraction": 0.4,
+      "group": "outside_core",
+      "surveys": 3461,
+      "mean_sample_F1": 0.35499576944157785
+    },
+    {
+      "method": "distance_only_country_balanced",
+      "overall_retained_fraction": 0.2,
+      "group": "all",
+      "surveys": 6314,
+      "mean_sample_F1": 0.3696066037650706
+    },
+    {
+      "method": "distance_only_country_balanced",
+      "overall_retained_fraction": 0.2,
+      "group": "core",
+      "surveys": 4583,
+      "mean_sample_F1": 0.3714203735833086
+    },
+    {
+      "method": "distance_only_country_balanced",
+      "overall_retained_fraction": 0.2,
+      "group": "outside_core",
+      "surveys": 1731,
+      "mean_sample_F1": 0.3648044621839128
+    },
+    {
+      "method": "metadata_distance_country_balanced",
+      "overall_retained_fraction": 1.0,
+      "group": "all",
+      "surveys": 31570,
+      "mean_sample_F1": 0.36094689004491187
+    },
+    {
+      "method": "metadata_distance_country_balanced",
+      "overall_retained_fraction": 1.0,
+      "group": "core",
+      "surveys": 22917,
+      "mean_sample_F1": 0.37089467185698743
+    },
+    {
+      "method": "metadata_distance_country_balanced",
+      "overall_retained_fraction": 1.0,
+      "group": "outside_core",
+      "surveys": 8653,
+      "mean_sample_F1": 0.3346007308183616
+    },
+    {
+      "method": "metadata_distance_country_balanced",
+      "overall_retained_fraction": 0.9,
+      "group": "all",
+      "surveys": 28413,
+      "mean_sample_F1": 0.3648830407490997
+    },
+    {
+      "method": "metadata_distance_country_balanced",
+      "overall_retained_fraction": 0.9,
+      "group": "core",
+      "surveys": 20626,
+      "mean_sample_F1": 0.3704666556006908
+    },
+    {
+      "method": "metadata_distance_country_balanced",
+      "overall_retained_fraction": 0.9,
+      "group": "outside_core",
+      "surveys": 7787,
+      "mean_sample_F1": 0.3500933091542725
+    },
+    {
+      "method": "metadata_distance_country_balanced",
+      "overall_retained_fraction": 0.8,
+      "group": "all",
+      "surveys": 25256,
+      "mean_sample_F1": 0.36931857947279323
+    },
+    {
+      "method": "metadata_distance_country_balanced",
+      "overall_retained_fraction": 0.8,
+      "group": "core",
+      "surveys": 18334,
+      "mean_sample_F1": 0.3692408489196254
+    },
+    {
+      "method": "metadata_distance_country_balanced",
+      "overall_retained_fraction": 0.8,
+      "group": "outside_core",
+      "surveys": 6922,
+      "mean_sample_F1": 0.3695244610043995
+    },
+    {
+      "method": "metadata_distance_country_balanced",
+      "overall_retained_fraction": 0.6,
+      "group": "all",
+      "surveys": 18942,
+      "mean_sample_F1": 0.3780056369419599
+    },
+    {
+      "method": "metadata_distance_country_balanced",
+      "overall_retained_fraction": 0.6,
+      "group": "core",
+      "surveys": 13750,
+      "mean_sample_F1": 0.3743120967604412
+    },
+    {
+      "method": "metadata_distance_country_balanced",
+      "overall_retained_fraction": 0.6,
+      "group": "outside_core",
+      "surveys": 5192,
+      "mean_sample_F1": 0.3877872581853883
+    },
+    {
+      "method": "metadata_distance_country_balanced",
+      "overall_retained_fraction": 0.4,
+      "group": "all",
+      "surveys": 12628,
+      "mean_sample_F1": 0.3830212855709857
+    },
+    {
+      "method": "metadata_distance_country_balanced",
+      "overall_retained_fraction": 0.4,
+      "group": "core",
+      "surveys": 9167,
+      "mean_sample_F1": 0.38082454236732144
+    },
+    {
+      "method": "metadata_distance_country_balanced",
+      "overall_retained_fraction": 0.4,
+      "group": "outside_core",
+      "surveys": 3461,
+      "mean_sample_F1": 0.3888397036432161
+    },
+    {
+      "method": "metadata_distance_country_balanced",
+      "overall_retained_fraction": 0.2,
+      "group": "all",
+      "surveys": 6314,
+      "mean_sample_F1": 0.3900251537155828
+    },
+    {
+      "method": "metadata_distance_country_balanced",
+      "overall_retained_fraction": 0.2,
+      "group": "core",
+      "surveys": 4583,
+      "mean_sample_F1": 0.38766476872006694
+    },
+    {
+      "method": "metadata_distance_country_balanced",
+      "overall_retained_fraction": 0.2,
+      "group": "outside_core",
+      "surveys": 1731,
+      "mean_sample_F1": 0.3962745150295336
+    }
+  ],
+  "seconds": 33.256291650000094,
+  "limitations": [
+    "Retrospective adaptively reused data.",
+    "No conformal or distribution-free risk guarantee.",
+    "Selective F1 does not measure full-coverage Kaggle performance.",
+    "Country coverage and plot-area confounding must accompany pooled curves."
+  ]
+}

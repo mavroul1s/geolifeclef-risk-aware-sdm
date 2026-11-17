@@ -1,0 +1,49 @@
+{
+  "status": "assessment_complete",
+  "scientific_admission": false,
+  "joint_primary_success": false,
+  "primary": {
+    "MSE_gain_mean_minus_HGB": -0.05548612214378925,
+    "HGB_minus_SDC_selective_F1": 0.007477761276778683,
+    "MSE_gain_interval": [
+      -0.07590327905558705,
+      -0.02771068091451289
+    ],
+    "F1_difference_interval": [
+      -0.010459343418826268,
+      0.030027155464868054
+    ],
+    "sites": 10,
+    "cells": 65,
+    "valid_draws": 4000,
+    "confidence": 0.975
+  },
+  "quality_MSE": {
+    "training_mean": 0.049187994240040694,
+    "affine_SDC": 0.051257347214761474,
+    "HGB": 0.10467411638382995,
+    "raw_SDC": 0.04675666112449922
+  },
+  "selective_F1": {
+    "HGB": 0.4278298724684744,
+    "SDC": 0.42035211119169574,
+    "mean_confidence": 0.42218361302319757,
+    "entropy": 0.4182981770072143,
+    "random": 0.43566619290731
+  },
+  "rare_occurrence_retention_secondary": {
+    "HGB": 0.7804878048780488,
+    "SDC": 0.8170731707317073,
+    "mean_confidence": 0.8170731707317073,
+    "entropy": 0.7560975609756098,
+    "random": 0.8048780487804879
+  },
+  "full_coverage_F1": 0.4248015542569359,
+  "full_coverage_F1_zero_empty": 0.4248015542569359,
+  "input_cells": 163,
+  "scored_cells": 65,
+  "sites": 10,
+  "scored_known_truth_occurrences": 1620,
+  "neural_training_fits": 0,
+  "scope": "one fixed pretrained MLP, training-support/input-availability stratum, partially observed modeled-native-set F1, site-conditioned inference; no unseen-training-location or new-algorithm claim"
+}

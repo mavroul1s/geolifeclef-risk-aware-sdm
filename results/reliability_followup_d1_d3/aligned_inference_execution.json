@@ -1,0 +1,70 @@
+{
+  "status": "complete",
+  "kernel": "nmavros/glc25-r1-aligned-checkpoint-inference",
+  "url": "https://www.kaggle.com/code/nmavros/glc25-r1-aligned-checkpoint-inference",
+  "private": true,
+  "GPU_requested": true,
+  "competition_submission_made": false,
+  "kernel_sources": [
+    "nmavros/glc25-reliability-r1-full",
+    "nmavros/glc25-r1-checkpoint-diagnostics"
+  ],
+  "requested_at_utc": "2026-11-13T23:10:14.993527+00:00",
+  "notebook_sha256": "9c321dd9a045e536c5f589273e629d92204cb2bc278a33a0f0d3176639e500a9",
+  "requested_kernel": "nmavros/glc25-r1-aligned-inference-check",
+  "canonical_reference_corrected_from_push_response": true,
+  "checked_at_utc": "2026-11-14T10:19:38.761762+00:00",
+  "output_files": [
+    {
+      "name": "inference_export/fold0_decisions.csv",
+      "bytes": 90313146,
+      "sha256": "b419c7971a055b683cefae521858b3b1b707597d5f7a29a11921f9a6c49dfdcb"
+    },
+    {
+      "name": "inference_export/fold0_mean_probability.npz",
+      "bytes": 400566635,
+      "sha256": "987a62fec274d3deb7bf14401aa479d11470f1d524ca5e323569710cfb741f68"
+    },
+    {
+      "name": "inference_export/fold0_normalization.json",
+      "bytes": 6485,
+      "sha256": "002009e0ab4d0fa3d2e159e73c2ad94993c81e4477e7a82daffa21e909ac2569"
+    },
+    {
+      "name": "inference_export/fold0_reproduction.json",
+      "bytes": 8254,
+      "sha256": "d6e480eb926b50d7369e5723e3bf8518e78040f6a9bd4662778716b936fc5af8"
+    },
+    {
+      "name": "inference_export/fold1_decisions.csv",
+      "bytes": 90232813,
+      "sha256": "727da925ff12afad6faf26b13bf823ebb996fc914e66916b68e4dfe760947068"
+    },
+    {
+      "name": "inference_export/fold1_mean_probability.npz",
+      "bytes": 409103273,
+      "sha256": "fff65345ac7f3e2b717b40bb87dad5ad7bb5bfe0863e76171da1587443cbc605"
+    },
+    {
+      "name": "inference_export/fold1_normalization.json",
+      "bytes": 6600,
+      "sha256": "5243d436ede523f87a1e3a3e80a895eaeb030a41921300d493c5fc4da85d665d"
+    },
+    {
+      "name": "inference_export/fold1_reproduction.json",
+      "bytes": 8260,
+      "sha256": "0a96cdf997d6cea43a97f0cbed32dc58795ddf61bf8e767a55e229e92e0a52ea"
+    },
+    {
+      "name": "inference_export/inference_manifest.json",
+      "bytes": 1229,
+      "sha256": "3e47cda9b0556b3d68069cfe82691d2304ae981ddcb0dab345b870ac961ac4bb"
+    },
+    {
+      "name": "inference_export/inference_report.json",
+      "bytes": 33996,
+      "sha256": "a7e732291bb615da38503fbf3b0705be97298bee8a60b3e483ad03fc56f4c720"
+    }
+  ],
+  "output_bytes": 990280691
+}

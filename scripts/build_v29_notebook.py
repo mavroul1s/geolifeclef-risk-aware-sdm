@@ -6,6 +6,7 @@ import hashlib
 import json
 import lzma
 from pathlib import Path
+from geolifeclef.assessment_history import historical_consumed_paths
 
 from scripts.build_v28_notebook import packed_consumed_ids, packed_v27_submission
 
@@ -15,11 +16,7 @@ LIMIT = 1_000_000
 
 
 def consumed_paths(root=ROOT):
-    return [root / "artifacts/v21_review/assessment_per_survey.csv",
-            root / "artifacts/v22_review/assessment_per_survey.csv",
-            root / "artifacts/manual_upload_v23_retry2/user_provided_v25_exports/assessment_per_survey.csv",
-            *[root / f"results/v{version}_kaggle_output/assessment_per_survey_v{version}.csv"
-              for version in range(24, 29)]]
+    return historical_consumed_paths(root, 28)
 
 
 def make_notebook(core, reference, control, consumed):

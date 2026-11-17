@@ -1,0 +1,25 @@
+{
+  "admitted_at_utc": "2026-11-16T09:34:18.547259+00:00",
+  "protocol_sha256": "0b48af93870400be21d9ed4573ba811af2f7168fd52b3a48fe0d965b50a55a03",
+  "policy_hashes": {
+    "optimized_deepsdm_s0": {
+      "npz": "c9160a15498a249035b9a584a452fdd9f1b0d564324c10b4b370a1de9ced6697",
+      "json": "49a11a87fe784abd09082ef1460d520ab079936d491c59920ea909777ad746c8"
+    },
+    "optimized_deepsdm_s1": {
+      "npz": "b88beba3004452d14352614787578a9e285c6dd0c63cdd455de619f7c6a888c6",
+      "json": "8978b9a9d721484b54ee6e0d0c8b4c2bede730155b9499281d67ccb343f85ad1"
+    },
+    "randomforest_s0": {
+      "npz": "318c4ce65764673d5aa66383ea97ef91963d451623f6a817870181bd6ac12e82",
+      "json": "eaa7e10fc09e5dbb36c10387793093a88dedbaf4436f484a31f5b2fdc1064049"
+    },
+    "randomforest_s1": {
+      "npz": "ab0f075dbd9d1ea2dcedbbea6841b1d26967dfbae9414e413d8bb7ad01691f67",
+      "json": "c45899d73b9f19f9cd00d10a75924455c65b6a51d3541e46d0396d28e750c7eb"
+    }
+  },
+  "assessment_targets_accessed": false,
+  "secondary_rare_mask_sha256": "c778c737550859ff012fdc6f1ba20b6dcea0eebd0528215bd319a1f931da0379",
+  "primary_calibration_admitted": true
+}

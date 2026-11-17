@@ -20,7 +20,15 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["pytest==8.3.4", "ruff==0.8.4"]
+dev = ["pytest==8.3.4", "ruff==0.8.4", "nbformat==5.11.1"]
+research = [
+  "h5py==3.12.1",
+  "hdf5plugin==5.0.0",
+  "matplotlib==3.11.2",
+  "rasterio==1.4.4",
+  "shapely==2.0.6",
+  "pyshp==2.3.1",
+]
 
 [tool.setuptools]
 package-dir = {"" = "src"}
@@ -31,6 +39,7 @@ where = ["src"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-q"
+pythonpath = ["src", "scripts"]
 
 [tool.ruff]
 line-length = 100

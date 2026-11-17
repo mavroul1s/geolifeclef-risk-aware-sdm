@@ -1,0 +1,975 @@
+{
+  "status": "completed_development_studies",
+  "completed_at_utc": "2026-11-16T10:02:27.408586+00:00",
+  "evidence_scope": "development after E1 outcomes consumed; no independent confirmation claim",
+  "E1_assessment_targets_read_in_E2": false,
+  "gpu_scientifically_admitted": false,
+  "gpu_checks": {
+    "spatial_practical_F1_gain": false,
+    "spatial_F1_interval_positive": false,
+    "spatial_all_model_F1_guard": true,
+    "spatial_rare_interval_guard": true,
+    "spatial_all_model_rare_guard": true,
+    "source_practical_F1_gain": false,
+    "source_F1_interval_positive": false,
+    "source_all_model_F1_guard": true,
+    "source_rare_interval_guard": true,
+    "source_all_model_rare_guard": true,
+    "supported_source_guard": true,
+    "correctness_tests": true,
+    "all_required_folds_admitted": true
+  },
+  "user_GPU_authorization_recorded": true,
+  "primary_comparisons": {
+    "source": {
+      "F1_gain": 0.0,
+      "rare_coverage_gain": 0.0,
+      "F1_interval": [
+        0.0,
+        0.0
+      ],
+      "rare_coverage_interval": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.95,
+      "clusters": 15,
+      "models": 4,
+      "valid_draws": 2000,
+      "model_F1_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_rare_coverage_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+    },
+    "spatial": {
+      "F1_gain": 0.0,
+      "rare_coverage_gain": 0.0,
+      "F1_interval": [
+        0.0,
+        0.0
+      ],
+      "rare_coverage_interval": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.95,
+      "clusters": 30,
+      "models": 4,
+      "valid_draws": 2000,
+      "model_F1_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_rare_coverage_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+    }
+  },
+  "all_comparisons": {
+    "source": {
+      "mean_confidence": {
+        "F1_gain": -0.00021755403420338493,
+        "rare_coverage_gain": -0.001509271237602415,
+        "F1_interval": [
+          -0.0014151478474266604,
+          0.0005802067168932982
+        ],
+        "rare_coverage_interval": [
+          -0.007382621292231975,
+          0.0053059489286649535
+        ],
+        "confidence": 0.95,
+        "clusters": 15,
+        "models": 4,
+        "valid_draws": 2000,
+        "model_F1_gains": [
+          0.00045364157162394725,
+          -0.0020653571160568207,
+          -3.3204229147099085e-05,
+          0.0007747036367664328
+        ],
+        "model_rare_coverage_gains": [
+          -0.0034497628288055198,
+          0.0,
+          -0.0017248814144027599,
+          -0.0008624407072013799
+        ],
+        "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+      },
+      "HGB": {
+        "F1_gain": -0.007245551045494424,
+        "rare_coverage_gain": 0.019836136265631736,
+        "F1_interval": [
+          -0.013155939670862676,
+          -0.0005621600343491984
+        ],
+        "rare_coverage_interval": [
+          -0.2163916087068825,
+          0.11778299890578188
+        ],
+        "confidence": 0.95,
+        "clusters": 15,
+        "models": 4,
+        "valid_draws": 2000,
+        "model_F1_gains": [
+          -0.011838084602393911,
+          -0.007298556732512729,
+          -0.003962264675157784,
+          -0.00588329817191327
+        ],
+        "model_rare_coverage_gains": [
+          0.018542475204829666,
+          -0.00129366106080207,
+          0.03406640793445451,
+          0.028029322984044848
+        ],
+        "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+      },
+      "affine_SDC": {
+        "F1_gain": 0.0,
+        "rare_coverage_gain": 0.0,
+        "F1_interval": [
+          0.0,
+          0.0
+        ],
+        "rare_coverage_interval": [
+          0.0,
+          0.0
+        ],
+        "confidence": 0.95,
+        "clusters": 15,
+        "models": 4,
+        "valid_draws": 2000,
+        "model_F1_gains": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "model_rare_coverage_gains": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+      },
+      "mse_residual": {
+        "F1_gain": -0.0016839465568307746,
+        "rare_coverage_gain": -0.018865890470030185,
+        "F1_interval": [
+          -0.004674796754159197,
+          0.00016292910054602533
+        ],
+        "rare_coverage_interval": [
+          -0.05408612782234105,
+          0.0005144965777521904
+        ],
+        "confidence": 0.95,
+        "clusters": 15,
+        "models": 4,
+        "valid_draws": 2000,
+        "model_F1_gains": [
+          -0.003250972036740102,
+          -0.0015201720035491473,
+          -0.0017439539395342207,
+          -0.00022068824749962856
+        ],
+        "model_rare_coverage_gains": [
+          -0.02285467874083657,
+          -0.018973695558430356,
+          -0.02026735661923243,
+          -0.013367830961621389
+        ],
+        "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+      },
+      "pairwise": {
+        "F1_gain": 0.0,
+        "rare_coverage_gain": 0.0,
+        "F1_interval": [
+          0.0,
+          0.0
+        ],
+        "rare_coverage_interval": [
+          0.0,
+          0.0
+        ],
+        "confidence": 0.95,
+        "clusters": 15,
+        "models": 4,
+        "valid_draws": 2000,
+        "model_F1_gains": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "model_rare_coverage_gains": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+      }
+    },
+    "spatial": {
+      "mean_confidence": {
+        "F1_gain": 0.0001073085430693399,
+        "rare_coverage_gain": 0.0002952755905511811,
+        "F1_interval": [
+          -0.0008181359912091492,
+          0.0010051843167430644
+        ],
+        "rare_coverage_interval": [
+          -0.007194859613828693,
+          0.006906487330771353
+        ],
+        "confidence": 0.95,
+        "clusters": 30,
+        "models": 4,
+        "valid_draws": 2000,
+        "model_F1_gains": [
+          0.0013088106339733674,
+          -0.0004527715250667308,
+          -0.00032888470598946284,
+          -9.792023063981414e-05
+        ],
+        "model_rare_coverage_gains": [
+          0.002362204724409449,
+          -0.0031496062992125984,
+          -0.0003937007874015748,
+          0.002362204724409449
+        ],
+        "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+      },
+      "HGB": {
+        "F1_gain": -0.0027325459200002247,
+        "rare_coverage_gain": -0.011220472440944883,
+        "F1_interval": [
+          -0.007068707222561149,
+          0.0027059574687433264
+        ],
+        "rare_coverage_interval": [
+          -0.09213518222594902,
+          0.052167812562698784
+        ],
+        "confidence": 0.95,
+        "clusters": 30,
+        "models": 4,
+        "valid_draws": 2000,
+        "model_F1_gains": [
+          -0.0015003811648183762,
+          -0.002442367808134588,
+          -0.003627707730616353,
+          -0.003359726976431582
+        ],
+        "model_rare_coverage_gains": [
+          0.0,
+          -0.011023622047244094,
+          -0.023228346456692913,
+          -0.01062992125984252
+        ],
+        "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+      },
+      "affine_SDC": {
+        "F1_gain": 0.0,
+        "rare_coverage_gain": 0.0,
+        "F1_interval": [
+          0.0,
+          0.0
+        ],
+        "rare_coverage_interval": [
+          0.0,
+          0.0
+        ],
+        "confidence": 0.95,
+        "clusters": 30,
+        "models": 4,
+        "valid_draws": 2000,
+        "model_F1_gains": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "model_rare_coverage_gains": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+      },
+      "mse_residual": {
+        "F1_gain": 0.0,
+        "rare_coverage_gain": 0.0,
+        "F1_interval": [
+          0.0,
+          0.0
+        ],
+        "rare_coverage_interval": [
+          0.0,
+          0.0
+        ],
+        "confidence": 0.95,
+        "clusters": 30,
+        "models": 4,
+        "valid_draws": 2000,
+        "model_F1_gains": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "model_rare_coverage_gains": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+      },
+      "pairwise": {
+        "F1_gain": 0.0,
+        "rare_coverage_gain": 0.0,
+        "F1_interval": [
+          0.0,
+          0.0
+        ],
+        "rare_coverage_interval": [
+          0.0,
+          0.0
+        ],
+        "confidence": 0.95,
+        "clusters": 30,
+        "models": 4,
+        "valid_draws": 2000,
+        "model_F1_gains": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "model_rare_coverage_gains": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+      }
+    }
+  },
+  "source_primary_comparisons": {
+    "AS-RU-002": {
+      "F1_gain": 0.0,
+      "rare_coverage_gain": 0.0,
+      "F1_interval": [
+        0.0,
+        0.0
+      ],
+      "rare_coverage_interval": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.95,
+      "clusters": 4,
+      "models": 4,
+      "valid_draws": 2000,
+      "model_F1_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_rare_coverage_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+    },
+    "AU-AU-002": {
+      "F1_gain": 0.0,
+      "rare_coverage_gain": 0.0,
+      "F1_interval": [
+        0.0,
+        0.0
+      ],
+      "rare_coverage_interval": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.95,
+      "clusters": 6,
+      "models": 4,
+      "valid_draws": 2000,
+      "model_F1_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_rare_coverage_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+    },
+    "NA-US-002": {
+      "F1_gain": 0.0,
+      "rare_coverage_gain": 0.0,
+      "F1_interval": [
+        0.0,
+        0.0
+      ],
+      "rare_coverage_interval": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.95,
+      "clusters": 5,
+      "models": 4,
+      "valid_draws": 1980,
+      "model_F1_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_rare_coverage_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "interpretation": "fixed model average, shared spatial block resampling; not independent model trials"
+    }
+  },
+  "splits": [
+    {
+      "study": "spatial",
+      "fold": 0,
+      "train_cells": 848,
+      "validation_cells": 213,
+      "training_ids_sha256": "6034731c6e616e32878cb1861ef88fc1004a396ef5cfb4593bb8d3d00fd6abb1",
+      "validation_ids_sha256": "32d29c0a442aeabe2fffcfe5d464186531ec2e68a094ea61c72f31ebd98a26ac",
+      "inner": {
+        "inner_values": {
+          "baseline": 0.182520624277492,
+          "pairwise:0.1": 0.1790617633002193,
+          "pairwise:1.0": 0.1781732774834426,
+          "pairwise:10.0": 0.1779935683282804,
+          "mse:0.1": 0.17802050552123008,
+          "mse:1.0": 0.1787317544810019,
+          "mse:10.0": 0.18137408543930103
+        },
+        "chosen": {
+          "pairwise": null,
+          "mse": null
+        },
+        "audits": [
+          {
+            "inner": 0,
+            "training": 565,
+            "validation": 283,
+            "train_ids_sha256": "ad5b32dc7386095810f51916db550d79c81a40c2bff66841adb5493e30f1b1a0",
+            "validation_ids_sha256": "24c4cc8f6bcc8355ca7fccef73b03772e9ad6d12e4e2cdfb58ceb58b969a1f0f"
+          },
+          {
+            "inner": 1,
+            "training": 565,
+            "validation": 283,
+            "train_ids_sha256": "f4571362d48f03ed55b332c59560bf0828236ec5505250d00c72f7a763533dff",
+            "validation_ids_sha256": "d3aa6046eb328ae2c9194cdd065fca655b2412cde4fbc3dcf5343c6cb9ccb89d"
+          },
+          {
+            "inner": 2,
+            "training": 566,
+            "validation": 282,
+            "train_ids_sha256": "e33774f16861603a7577f60510cbc99b680f7781854205f8f47cf3a8150ecc44",
+            "validation_ids_sha256": "968214939c22f6001a0dca6dfb07e5ca35e4ee191ec890dd06d2a576dd1689e2"
+          }
+        ]
+      }
+    },
+    {
+      "study": "spatial",
+      "fold": 1,
+      "train_cells": 849,
+      "validation_cells": 212,
+      "training_ids_sha256": "168d7b5da34d8453db5d7a832ac30df48d03c53fa2f5c5e2287e9975f9c6e12d",
+      "validation_ids_sha256": "da5d7493dc8199f9cfc859111d7bdf4b133b1bf5e6357fc22827ca0ec4692a8f",
+      "inner": {
+        "inner_values": {
+          "baseline": 0.18353738631066796,
+          "pairwise:0.1": 0.17891853712868835,
+          "pairwise:1.0": 0.18125677976814566,
+          "pairwise:10.0": 0.18210711111502995,
+          "mse:0.1": 0.17958777411380386,
+          "mse:1.0": 0.18161711921101886,
+          "mse:10.0": 0.18316247860428012
+        },
+        "chosen": {
+          "pairwise": null,
+          "mse": null
+        },
+        "audits": [
+          {
+            "inner": 0,
+            "training": 568,
+            "validation": 281,
+            "train_ids_sha256": "e22f72beacbf700a1cfa669c06deb000ace752eddf44c9874c1e88054898e7bc",
+            "validation_ids_sha256": "6e44e7fcd2f696aea532574b040dd33a7e83afedac91e6aaa616e3194cbfd952"
+          },
+          {
+            "inner": 1,
+            "training": 568,
+            "validation": 281,
+            "train_ids_sha256": "37dc34d22ee398cb2c6457797636865d4bee83eff09dacb18ad2870bdabc211b",
+            "validation_ids_sha256": "236fd97ffbaf9f739b285e3061c4d2d873fb0fd68199bfd735070dd259653cc6"
+          },
+          {
+            "inner": 2,
+            "training": 562,
+            "validation": 287,
+            "train_ids_sha256": "bc2f34ae399e08f3e3938622f3daf644a7550547e8609ee660dc0cc96a8c9abb",
+            "validation_ids_sha256": "becf88047a62cd22b420e6d647150cd69017ec2e8c8a45bf1c1f41b32d02d17c"
+          }
+        ]
+      }
+    },
+    {
+      "study": "spatial",
+      "fold": 2,
+      "train_cells": 849,
+      "validation_cells": 212,
+      "training_ids_sha256": "bc320dd6121bccf02a5036c0cd34d0c25e8aa577bcf12a15e85da8b95863400e",
+      "validation_ids_sha256": "f29d7fd453c8bfb3721cec426b528e0f7516a4e4ff6ec984921c180337890c07",
+      "inner": {
+        "inner_values": {
+          "baseline": 0.19187119611986345,
+          "pairwise:0.1": 0.1886565028933357,
+          "pairwise:1.0": 0.19166280664320945,
+          "pairwise:10.0": 0.19217101884756516,
+          "mse:0.1": 0.19064760935662486,
+          "mse:1.0": 0.19100016249163962,
+          "mse:10.0": 0.19285547004062176
+        },
+        "chosen": {
+          "pairwise": null,
+          "mse": null
+        },
+        "audits": [
+          {
+            "inner": 0,
+            "training": 566,
+            "validation": 283,
+            "train_ids_sha256": "040becc154cb56118d6e43582e6ebde20abd38fe3b970d8f8f053305df10a8b7",
+            "validation_ids_sha256": "3e4a08fdd716e6ca9ec3b6c23249b9b6e8c7922067429b9428d754f547ad49c9"
+          },
+          {
+            "inner": 1,
+            "training": 566,
+            "validation": 283,
+            "train_ids_sha256": "06290e15592edef5ad9ebd7442860347eab4f792461fbae27684f07ffbbd16d5",
+            "validation_ids_sha256": "610e766715a99340b5a08c7a9b44e15bd56c767783437184d9e804e85c698bac"
+          },
+          {
+            "inner": 2,
+            "training": 566,
+            "validation": 283,
+            "train_ids_sha256": "e016df9db6c6576bd030d0de314195f2c84dba1a7d88eb0cee8c965b267b2f9f",
+            "validation_ids_sha256": "354bb61e33afbbbf0fc36dc71fce1cbdc98a76d511cd73eb213da3ddebdff682"
+          }
+        ]
+      }
+    },
+    {
+      "study": "spatial",
+      "fold": 3,
+      "train_cells": 849,
+      "validation_cells": 212,
+      "training_ids_sha256": "84b5331f1f6c3aac911060a0b96f8a2cff5a3f8e53d6a07c877175bdc0d59b86",
+      "validation_ids_sha256": "0fffa61af7045d3f0d1d0982c704ecd5fb8948cbfd658033855a1efa3e55602a",
+      "inner": {
+        "inner_values": {
+          "baseline": 0.17535572401342997,
+          "pairwise:0.1": 0.16689148412968116,
+          "pairwise:1.0": 0.16829016545928663,
+          "pairwise:10.0": 0.1694119553675427,
+          "mse:0.1": 0.16959558664791663,
+          "mse:1.0": 0.1718123151800983,
+          "mse:10.0": 0.175136159039875
+        },
+        "chosen": {
+          "pairwise": null,
+          "mse": null
+        },
+        "audits": [
+          {
+            "inner": 0,
+            "training": 566,
+            "validation": 283,
+            "train_ids_sha256": "8b2685853ec6c82b6a15ff37b4bf18394de266efd44c3bcd673371a444f674d2",
+            "validation_ids_sha256": "4ca1b2e979c9ad3ef040353654d09b5206eafedcc4cab4d05e77f63f1abe8388"
+          },
+          {
+            "inner": 1,
+            "training": 566,
+            "validation": 283,
+            "train_ids_sha256": "2392e619487ad7f276577c36c1ac2371b66e375706683a722d221eddf889a834",
+            "validation_ids_sha256": "05ad8dcaeaa92ec3b759ccc62ff871add852b3a5a89d09a3162b1f44dbb10297"
+          },
+          {
+            "inner": 2,
+            "training": 566,
+            "validation": 283,
+            "train_ids_sha256": "ba5f57d3d12d56a666a58c24e7889cec5e063a778af2d3d85d53b1cacae0db8d",
+            "validation_ids_sha256": "89a8470535899cfdc70c9cec0ca43ac0e945a7ae8bd7c1f3ec981ecb458d9fbd"
+          }
+        ]
+      }
+    },
+    {
+      "study": "spatial",
+      "fold": 4,
+      "train_cells": 849,
+      "validation_cells": 212,
+      "training_ids_sha256": "b75681062c6f54035fe855b0958c9771d327c8bfabdbd28489cc41ee45c3879a",
+      "validation_ids_sha256": "d376093e23d2d052c47c164ede15636bca8a6481a104f1a86366db303d9781ad",
+      "inner": {
+        "inner_values": {
+          "baseline": 0.20109632009842332,
+          "pairwise:0.1": 0.1953950664264812,
+          "pairwise:1.0": 0.19719014146100886,
+          "pairwise:10.0": 0.19894463247110106,
+          "mse:0.1": 0.19500055775946584,
+          "mse:1.0": 0.19811154399241857,
+          "mse:10.0": 0.20087991273929157
+        },
+        "chosen": {
+          "pairwise": null,
+          "mse": null
+        },
+        "audits": [
+          {
+            "inner": 0,
+            "training": 566,
+            "validation": 283,
+            "train_ids_sha256": "c3720aee18cdca82c7520d86655fcb70312433fa5c8870a1299e22db34112aaa",
+            "validation_ids_sha256": "fe97c1a5471964225c7e7b790db7dd869cec6ae2371be201b3bcb30f1c291ff0"
+          },
+          {
+            "inner": 1,
+            "training": 566,
+            "validation": 283,
+            "train_ids_sha256": "67a71bae99b47f8192200f648c0d8f165a8b4db313f73ae7cb6e985bb4471e54",
+            "validation_ids_sha256": "82b1d0d6c94abe21bc7019f1b99311aaea50561f5d99cb7e46379625905e1606"
+          },
+          {
+            "inner": 2,
+            "training": 566,
+            "validation": 283,
+            "train_ids_sha256": "4307b10d4aad5219ff62815dd82a470e006fb862ab7b205e754631962fabafab",
+            "validation_ids_sha256": "8e5e354ea197dff4dd39e082740eb027ffa3a8a1b3acb9478b2528d0d1e3b5ca"
+          }
+        ]
+      }
+    },
+    {
+      "study": "source",
+      "fold": "AU-AU-002",
+      "train_cells": 581,
+      "validation_cells": 480,
+      "probability_calibration_cells": 806,
+      "excluded_source_from_both_calibration_roles": true,
+      "training_ids_sha256": "cc966460c79b065cb21c44c037dad52bea00581d20c9fa25bda6ef19bf310140",
+      "validation_ids_sha256": "fa7bd32f97b078fb07fbfdc60a558ad28d6634602b50ae4dc872f111f4c94a8b",
+      "probability_calibration_ids_sha256": "b33eff719d829a586b869ebd09772d525925f5c93668a483e26ed6d2540dd961",
+      "probability_calibration": {
+        "optimized_deepsdm_s0": {
+          "calibration": {
+            "slope": 0.7375105593443202,
+            "intercept": -3.0732264332866635,
+            "eligible_pairs": 518427,
+            "fit_rows": 806,
+            "binned_nll": 0.07838357425206231
+          },
+          "decoder": "expected_F1_0_80"
+        },
+        "optimized_deepsdm_s1": {
+          "calibration": {
+            "slope": 0.745623657587458,
+            "intercept": -3.011166271690244,
+            "eligible_pairs": 518427,
+            "fit_rows": 806,
+            "binned_nll": 0.07764479737002182
+          },
+          "decoder": "expected_F1_0_80"
+        },
+        "randomforest_s0": {
+          "calibration": {
+            "slope": 0.9654345620831453,
+            "intercept": -3.531199417350786,
+            "eligible_pairs": 518427,
+            "fit_rows": 806,
+            "binned_nll": 0.0816146216890512
+          },
+          "decoder": "expected_F1_0_80"
+        },
+        "randomforest_s1": {
+          "calibration": {
+            "slope": 0.9661199884234658,
+            "intercept": -3.5305113129148062,
+            "eligible_pairs": 518427,
+            "fit_rows": 806,
+            "binned_nll": 0.08155573137469614
+          },
+          "decoder": "expected_F1_0_80"
+        }
+      },
+      "inner": {
+        "inner_values": {
+          "baseline": 0.18723455153045934,
+          "pairwise:0.1": 0.18510669577132166,
+          "pairwise:1.0": 0.184385763063748,
+          "pairwise:10.0": 0.18529188724334308,
+          "mse:0.1": 0.18673652327042423,
+          "mse:1.0": 0.18918258354633244,
+          "mse:10.0": 0.18799867148622385
+        },
+        "chosen": {
+          "pairwise": null,
+          "mse": 1.0
+        },
+        "audits": [
+          {
+            "inner": 0,
+            "training": 387,
+            "validation": 194,
+            "train_ids_sha256": "9215ed908cbddf91c99ea31c729cc2d9c931e9689c3aa8bce02f2c54b1cc5955",
+            "validation_ids_sha256": "085941e56f1ca4da9d490e01966e85070aa26f3fd8ba6c9cc82d604cae94aeba"
+          },
+          {
+            "inner": 1,
+            "training": 387,
+            "validation": 194,
+            "train_ids_sha256": "b418202c93a32ad0058ab27470ceb4a51fddeec9b3a4f67e5addd1579c8a2629",
+            "validation_ids_sha256": "2f8ab8afc7b1e955206773ac01e8e5850c72d5e99d20a235ee8d6b3e79678a11"
+          },
+          {
+            "inner": 2,
+            "training": 388,
+            "validation": 193,
+            "train_ids_sha256": "4d5e51dc4d7a0ee9ab02f86e6d2a7f9e1885abb4de981200e62a4c026d001255",
+            "validation_ids_sha256": "8f67c2db518e9c56035051c466137588b7a61a5c85c6dc041c825cda6984a19b"
+          }
+        ]
+      }
+    },
+    {
+      "study": "source",
+      "fold": "NA-US-002",
+      "train_cells": 829,
+      "validation_cells": 232,
+      "probability_calibration_cells": 814,
+      "excluded_source_from_both_calibration_roles": true,
+      "training_ids_sha256": "1e531c4e2cb58dfd172b1078de8032097764a35d1f23fe77933975e5af290fa7",
+      "validation_ids_sha256": "fbe6ab0930ef33f88ab0df5ae2299a985c9865338b0f08dd65bf2d474bc9ad97",
+      "probability_calibration_ids_sha256": "125b6cde3141b4de0d25e5e4f590b8765db925b7b63fcde87f53e75123ef71e7",
+      "probability_calibration": {
+        "optimized_deepsdm_s0": {
+          "calibration": {
+            "slope": 0.6222027074757024,
+            "intercept": -3.086456753663029,
+            "eligible_pairs": 700247,
+            "fit_rows": 814,
+            "binned_nll": 0.07424867378770275
+          },
+          "decoder": "expected_F1_0_80"
+        },
+        "optimized_deepsdm_s1": {
+          "calibration": {
+            "slope": 0.613481127940998,
+            "intercept": -3.0048166836341217,
+            "eligible_pairs": 700247,
+            "fit_rows": 814,
+            "binned_nll": 0.07415391030670397
+          },
+          "decoder": "expected_F1_0_80"
+        },
+        "randomforest_s0": {
+          "calibration": {
+            "slope": 0.8006127118758849,
+            "intercept": -3.459489479425907,
+            "eligible_pairs": 700247,
+            "fit_rows": 814,
+            "binned_nll": 0.07709069615416342
+          },
+          "decoder": "expected_F1_0_80"
+        },
+        "randomforest_s1": {
+          "calibration": {
+            "slope": 0.7992561001568077,
+            "intercept": -3.4604971946268024,
+            "eligible_pairs": 700247,
+            "fit_rows": 814,
+            "binned_nll": 0.07708321511691525
+          },
+          "decoder": "expected_F1_0_80"
+        }
+      },
+      "inner": {
+        "inner_values": {
+          "baseline": 0.17717411785550127,
+          "pairwise:0.1": 0.16780302255136317,
+          "pairwise:1.0": 0.1667865827991723,
+          "pairwise:10.0": 0.16983966287253868,
+          "mse:0.1": 0.1694139117916277,
+          "mse:1.0": 0.17277637783052666,
+          "mse:10.0": 0.1764590460612914
+        },
+        "chosen": {
+          "pairwise": null,
+          "mse": null
+        },
+        "audits": [
+          {
+            "inner": 0,
+            "training": 552,
+            "validation": 277,
+            "train_ids_sha256": "8b398225bfdce8a1f483434baeb5520edff9ad2d478915b8f8d02b83d963ba47",
+            "validation_ids_sha256": "fa876a5550753e5ab673b21985637ec130d21c4443b74f856d9eae005322cd15"
+          },
+          {
+            "inner": 1,
+            "training": 553,
+            "validation": 276,
+            "train_ids_sha256": "9ac9a8e8ae6acf15e58e3e9c109745a7a550e8be8c5273a089ace13cd6466ec0",
+            "validation_ids_sha256": "138ee95abbc73e60044a008e1e1dc002e4bcee297965b3997842fda19eab1c7e"
+          },
+          {
+            "inner": 2,
+            "training": 553,
+            "validation": 276,
+            "train_ids_sha256": "3969a34c1269265b9b83c37af37765aacdf7c0065a4a5834dd42a1678912d755",
+            "validation_ids_sha256": "ac5f313d7983392cff2a28b557a38b85ef86ff32a162fa8302882738c71368c5"
+          }
+        ]
+      }
+    },
+    {
+      "study": "source",
+      "fold": "AS-RU-002",
+      "train_cells": 953,
+      "validation_cells": 83,
+      "probability_calibration_cells": 1019,
+      "excluded_source_from_both_calibration_roles": true,
+      "training_ids_sha256": "c7fcbc807f9b92f566b0972be8da79b62a471b96c3fe3293ab3b11c644559f29",
+      "validation_ids_sha256": "650f6077fc6fec6a93c6dcecc94e1a0084e04b137ed6c292e73ea5dcd58ddfb9",
+      "probability_calibration_ids_sha256": "94d1f0389c932a9849b493cf83d22233fbfed6e954c6156648811f146c471a59",
+      "probability_calibration": {
+        "optimized_deepsdm_s0": {
+          "calibration": {
+            "slope": 0.6319772600430262,
+            "intercept": -3.0619250004113736,
+            "eligible_pairs": 737598,
+            "fit_rows": 1019,
+            "binned_nll": 0.07962825015701946
+          },
+          "decoder": "expected_F1_0_80"
+        },
+        "optimized_deepsdm_s1": {
+          "calibration": {
+            "slope": 0.6265002332312217,
+            "intercept": -3.019366453315575,
+            "eligible_pairs": 737598,
+            "fit_rows": 1019,
+            "binned_nll": 0.07954732641416128
+          },
+          "decoder": "expected_F1_0_80"
+        },
+        "randomforest_s0": {
+          "calibration": {
+            "slope": 0.8046625633479931,
+            "intercept": -3.376147452620251,
+            "eligible_pairs": 737598,
+            "fit_rows": 1019,
+            "binned_nll": 0.08251825803790623
+          },
+          "decoder": "expected_F1_0_80"
+        },
+        "randomforest_s1": {
+          "calibration": {
+            "slope": 0.8051649765271571,
+            "intercept": -3.3772748515091564,
+            "eligible_pairs": 737598,
+            "fit_rows": 1019,
+            "binned_nll": 0.08246195923069508
+          },
+          "decoder": "expected_F1_0_80"
+        }
+      },
+      "inner": {
+        "inner_values": {
+          "baseline": 0.19063854245721676,
+          "pairwise:0.1": 0.18698696024856823,
+          "pairwise:1.0": 0.1874275587017668,
+          "pairwise:10.0": 0.18625411364927985,
+          "mse:0.1": 0.183894513202298,
+          "mse:1.0": 0.1870046410100103,
+          "mse:10.0": 0.1907077744913114
+        },
+        "chosen": {
+          "pairwise": null,
+          "mse": null
+        },
+        "audits": [
+          {
+            "inner": 0,
+            "training": 635,
+            "validation": 318,
+            "train_ids_sha256": "621f20dbd018ef89dd53cf49121bc22d13d2332946c2e643b33f78bc77c9d554",
+            "validation_ids_sha256": "bb930052df9bd8dc419e1dce03567db7fad11e21a4f5915c4dc7ecd280d1471a"
+          },
+          {
+            "inner": 1,
+            "training": 635,
+            "validation": 318,
+            "train_ids_sha256": "8ac95ef7603f8476f3f4405514b9a334f89c7c73e31a15d4f60a6e3bfd1717a8",
+            "validation_ids_sha256": "da01ac5398cbe0e8a4dbf95c9d44985c44bffca4b1228deea9b1b6e68fcd73e0"
+          },
+          {
+            "inner": 2,
+            "training": 636,
+            "validation": 317,
+            "train_ids_sha256": "25587938ec67a2988169625478a198f6fffd6d996e298ac898afe75388f1c686",
+            "validation_ids_sha256": "11812f20aefecd1fc35ee1ebae560b6a830501b533899d0fcc09a6f1b0252af8"
+          }
+        ]
+      }
+    }
+  ],
+  "new_neural_backbone_fits": 0,
+  "multiple_model_settings_are_independent_datasets": false
+}

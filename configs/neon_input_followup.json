@@ -1,0 +1,18 @@
+{
+  "stage": "outcome_closed_full_input_and_model_followup",
+  "date": "2026-11-16",
+  "data_directory": "data/neon_input_followup",
+  "results_directory": "results/neon_input_followup",
+  "previous_665_file_manifest_must_remain_unchanged": true,
+  "NEON_composition_values_may_be_read": false,
+  "maximum_new_retained_bytes": 2500000000,
+  "maximum_network_bytes": 4000000000,
+  "single_remote_raster_network_cap_bytes": 100663296,
+  "reference_input_rows": "first eight previously fixed reference cells, all 52 features",
+  "NEON_predictor_locations": "209 unique candidate EPSG:6933 cell centers, metadata-defined before outcomes",
+  "human_footprint_source": "Dryad doi:10.5061/dryad.052q5; inspect archive metadata before selecting exact provider files",
+  "native_range_mask": "reproduce published POWO region assignment and class order; no nearest-mask substitution",
+  "new_neural_training_fits": 0,
+  "GPU_reference_if_new_pipeline_passes_CPU": "at most one private <=20 minute job, no NEON credential or outcomes",
+  "scientific_role_or_outcome_evaluation_admitted": false
+}

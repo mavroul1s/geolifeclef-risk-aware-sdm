@@ -1,0 +1,195 @@
+{
+  "status": "completed_exploratory_D3",
+  "fresh_assessment": false,
+  "new_neural_fits": 0,
+  "selected_using_assessment_outcomes": false,
+  "chosen_variant": "country_balanced_lean",
+  "contrasts": {
+    "country_balanced_lean__vs__global_lean": {
+      "gain": -0.0005447668965845587,
+      "ci95": [
+        -0.0019291956267977375,
+        0.0004500035977661181
+      ],
+      "clusters": 109,
+      "valid_repetitions": 2000,
+      "repetitions": 2000,
+      "interpretation": "conditional descriptive spatial interval on historically consumed data"
+    },
+    "country_balanced_lean__vs__mean_set_confidence": {
+      "gain": 0.004167912148800024,
+      "ci95": [
+        0.0015975529239690659,
+        0.008020015479754748
+      ],
+      "clusters": 109,
+      "valid_repetitions": 2000,
+      "repetitions": 2000,
+      "interpretation": "conditional descriptive spatial interval on historically consumed data"
+    }
+  },
+  "supported_country_minimum_gain_vs_global": -0.005306466855083958,
+  "country_regression_margin_met_vs_global": false,
+  "country_intercept_control_changed_acceptance": 0,
+  "fitting": [
+    {
+      "fold": 0,
+      "variant": "global_lean",
+      "calibration_surveys": 8691,
+      "local_models": []
+    },
+    {
+      "fold": 0,
+      "variant": "country_balanced_lean",
+      "calibration_surveys": 8691,
+      "local_models": []
+    },
+    {
+      "fold": 0,
+      "variant": "country_blend",
+      "calibration_surveys": 8691,
+      "local_models": [
+        {
+          "group": "Belgium",
+          "calibration_surveys": 110,
+          "local_weight": 0.3548387096774194
+        },
+        {
+          "group": "Czech Republic",
+          "calibration_surveys": 110,
+          "local_weight": 0.3548387096774194
+        },
+        {
+          "group": "Denmark",
+          "calibration_surveys": 5135,
+          "local_weight": 0.9625117150890347
+        },
+        {
+          "group": "France",
+          "calibration_surveys": 1380,
+          "local_weight": 0.8734177215189873
+        },
+        {
+          "group": "Italy",
+          "calibration_surveys": 266,
+          "local_weight": 0.5708154506437768
+        },
+        {
+          "group": "Netherlands",
+          "calibration_surveys": 1371,
+          "local_weight": 0.8726925525143221
+        }
+      ]
+    },
+    {
+      "fold": 0,
+      "variant": "bioregion_blend",
+      "calibration_surveys": 8691,
+      "local_models": [
+        {
+          "group": "ALPINE",
+          "calibration_surveys": 155,
+          "local_weight": 0.43661971830985913
+        },
+        {
+          "group": "ATLANTIC",
+          "calibration_surveys": 1918,
+          "local_weight": 0.9055712936732767
+        },
+        {
+          "group": "CONTINENTAL",
+          "calibration_surveys": 5820,
+          "local_weight": 0.9667774086378738
+        },
+        {
+          "group": "MEDITERRANEAN",
+          "calibration_surveys": 791,
+          "local_weight": 0.798183652875883
+        }
+      ]
+    },
+    {
+      "fold": 1,
+      "variant": "global_lean",
+      "calibration_surveys": 8691,
+      "local_models": []
+    },
+    {
+      "fold": 1,
+      "variant": "country_balanced_lean",
+      "calibration_surveys": 8691,
+      "local_models": []
+    },
+    {
+      "fold": 1,
+      "variant": "country_blend",
+      "calibration_surveys": 8691,
+      "local_models": [
+        {
+          "group": "Belgium",
+          "calibration_surveys": 110,
+          "local_weight": 0.3548387096774194
+        },
+        {
+          "group": "Czech Republic",
+          "calibration_surveys": 110,
+          "local_weight": 0.3548387096774194
+        },
+        {
+          "group": "Denmark",
+          "calibration_surveys": 5135,
+          "local_weight": 0.9625117150890347
+        },
+        {
+          "group": "France",
+          "calibration_surveys": 1380,
+          "local_weight": 0.8734177215189873
+        },
+        {
+          "group": "Italy",
+          "calibration_surveys": 266,
+          "local_weight": 0.5708154506437768
+        },
+        {
+          "group": "Netherlands",
+          "calibration_surveys": 1371,
+          "local_weight": 0.8726925525143221
+        }
+      ]
+    },
+    {
+      "fold": 1,
+      "variant": "bioregion_blend",
+      "calibration_surveys": 8691,
+      "local_models": [
+        {
+          "group": "ALPINE",
+          "calibration_surveys": 155,
+          "local_weight": 0.43661971830985913
+        },
+        {
+          "group": "ATLANTIC",
+          "calibration_surveys": 1918,
+          "local_weight": 0.9055712936732767
+        },
+        {
+          "group": "CONTINENTAL",
+          "calibration_surveys": 5820,
+          "local_weight": 0.9667774086378738
+        },
+        {
+          "group": "MEDITERRANEAN",
+          "calibration_surveys": 791,
+          "local_weight": 0.798183652875883
+        }
+      ]
+    }
+  ],
+  "seconds": 6.1751073680025,
+  "limitations": [
+    "Exploratory method design after R1",
+    "Shared calibration cohort across outer model folds",
+    "No independent confirmation or risk guarantee",
+    "Referral costs are hypothetical, not measured conservation costs"
+  ]
+}

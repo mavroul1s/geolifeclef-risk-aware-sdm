@@ -1,0 +1,945 @@
+{
+  "alignment_config_sha256": "72f2edaed3f301fab949c7ca78ad78745631b1b70cb12bd7542423ceb280f486",
+  "checkpoint_inferences": 6,
+  "competition_submission_made": false,
+  "config_sha256": "fcb535d38d9fcbbbcc42c570512b1b552be652813f8c06ec77b268fe91d183cd",
+  "features": {
+    "environment_columns": [
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:Bio1",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:Bio2",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:Bio3",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:Bio4",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:Bio5",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:Bio6",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:Bio7",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:Bio8",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:Bio9",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:Bio10",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:Bio11",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:Bio12",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:Bio13",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:Bio14",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:Bio15",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:Bio16",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:Bio17",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:Bio18",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:Bio19",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:missing:Bio1",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:missing:Bio2",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:missing:Bio3",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:missing:Bio4",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:missing:Bio5",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:missing:Bio6",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:missing:Bio7",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:missing:Bio8",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:missing:Bio9",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:missing:Bio10",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:missing:Bio11",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:missing:Bio12",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:missing:Bio13",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:missing:Bio14",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:missing:Bio15",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:missing:Bio16",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:missing:Bio17",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:missing:Bio18",
+      "EnvironmentalValues/ClimateAverage_1981-2010/GLC25-PA-train-bioclimatic.csv:missing:Bio19",
+      "EnvironmentalValues/Elevation/GLC25-PA-train-elevation.csv:Elevation",
+      "EnvironmentalValues/Elevation/GLC25-PA-train-elevation.csv:missing:Elevation",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:HumanFootprint-cemetery",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:HumanFootprint-reservoir",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:HumanFootprint-greenhouse",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:HumanFootprint-farmland",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:HumanFootprint-building-copernicus",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:HumanFootprint-forest",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:HumanFootprint-harbour",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:HumanFootprint-building-residential",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:HumanFootprint-building-commercial",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:HumanFootprint-grass",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:HumanFootprint-quarry",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:HumanFootprint-road",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:HumanFootprint-salt",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:HumanFootprint-building-industrial",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:HumanFootprint-vineyard",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:HumanFootprint-military",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:HumanFootprint-construction-site",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:HumanFootprint-orchard",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:HumanFootprint-meadow",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:HumanFootprint-farmyard",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:HumanFootprint-dump-site",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:HumanFootprint-railway",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:missing:HumanFootprint-cemetery",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:missing:HumanFootprint-reservoir",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:missing:HumanFootprint-greenhouse",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:missing:HumanFootprint-farmland",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:missing:HumanFootprint-building-copernicus",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:missing:HumanFootprint-forest",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:missing:HumanFootprint-harbour",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:missing:HumanFootprint-building-residential",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:missing:HumanFootprint-building-commercial",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:missing:HumanFootprint-grass",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:missing:HumanFootprint-quarry",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:missing:HumanFootprint-road",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:missing:HumanFootprint-salt",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:missing:HumanFootprint-building-industrial",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:missing:HumanFootprint-vineyard",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:missing:HumanFootprint-military",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:missing:HumanFootprint-construction-site",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:missing:HumanFootprint-orchard",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:missing:HumanFootprint-meadow",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:missing:HumanFootprint-farmyard",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:missing:HumanFootprint-dump-site",
+      "EnvironmentalValues/HumanFootprint/GLC25-PA-train-human_footprint.csv:missing:HumanFootprint-railway",
+      "EnvironmentalValues/LandCover/GLC25-PA-train-landcover.csv:LandCover-1",
+      "EnvironmentalValues/LandCover/GLC25-PA-train-landcover.csv:LandCover-2",
+      "EnvironmentalValues/LandCover/GLC25-PA-train-landcover.csv:LandCover-3",
+      "EnvironmentalValues/LandCover/GLC25-PA-train-landcover.csv:LandCover-4",
+      "EnvironmentalValues/LandCover/GLC25-PA-train-landcover.csv:LandCover-5",
+      "EnvironmentalValues/LandCover/GLC25-PA-train-landcover.csv:LandCover-6",
+      "EnvironmentalValues/LandCover/GLC25-PA-train-landcover.csv:LandCover-7",
+      "EnvironmentalValues/LandCover/GLC25-PA-train-landcover.csv:LandCover-8",
+      "EnvironmentalValues/LandCover/GLC25-PA-train-landcover.csv:LandCover-9",
+      "EnvironmentalValues/LandCover/GLC25-PA-train-landcover.csv:LandCover-10",
+      "EnvironmentalValues/LandCover/GLC25-PA-train-landcover.csv:LandCover-11",
+      "EnvironmentalValues/LandCover/GLC25-PA-train-landcover.csv:LandCover-12",
+      "EnvironmentalValues/LandCover/GLC25-PA-train-landcover.csv:LandCover-13",
+      "EnvironmentalValues/LandCover/GLC25-PA-train-landcover.csv:missing:LandCover-1",
+      "EnvironmentalValues/LandCover/GLC25-PA-train-landcover.csv:missing:LandCover-2",
+      "EnvironmentalValues/LandCover/GLC25-PA-train-landcover.csv:missing:LandCover-3",
+      "EnvironmentalValues/LandCover/GLC25-PA-train-landcover.csv:missing:LandCover-4",
+      "EnvironmentalValues/LandCover/GLC25-PA-train-landcover.csv:missing:LandCover-5",
+      "EnvironmentalValues/LandCover/GLC25-PA-train-landcover.csv:missing:LandCover-6",
+      "EnvironmentalValues/LandCover/GLC25-PA-train-landcover.csv:missing:LandCover-7",
+      "EnvironmentalValues/LandCover/GLC25-PA-train-landcover.csv:missing:LandCover-8",
+      "EnvironmentalValues/LandCover/GLC25-PA-train-landcover.csv:missing:LandCover-9",
+      "EnvironmentalValues/LandCover/GLC25-PA-train-landcover.csv:missing:LandCover-10",
+      "EnvironmentalValues/LandCover/GLC25-PA-train-landcover.csv:missing:LandCover-11",
+      "EnvironmentalValues/LandCover/GLC25-PA-train-landcover.csv:missing:LandCover-12",
+      "EnvironmentalValues/LandCover/GLC25-PA-train-landcover.csv:missing:LandCover-13",
+      "EnvironmentalValues/SoilGrids/GLC25-PA-train-soilgrids.csv:Soilgrid-bdod",
+      "EnvironmentalValues/SoilGrids/GLC25-PA-train-soilgrids.csv:Soilgrid-cec",
+      "EnvironmentalValues/SoilGrids/GLC25-PA-train-soilgrids.csv:Soilgrid-cfvo",
+      "EnvironmentalValues/SoilGrids/GLC25-PA-train-soilgrids.csv:Soilgrid-clay",
+      "EnvironmentalValues/SoilGrids/GLC25-PA-train-soilgrids.csv:Soilgrid-nitrogen",
+      "EnvironmentalValues/SoilGrids/GLC25-PA-train-soilgrids.csv:Soilgrid-phh2o",
+      "EnvironmentalValues/SoilGrids/GLC25-PA-train-soilgrids.csv:Soilgrid-sand",
+      "EnvironmentalValues/SoilGrids/GLC25-PA-train-soilgrids.csv:Soilgrid-silt",
+      "EnvironmentalValues/SoilGrids/GLC25-PA-train-soilgrids.csv:Soilgrid-soc",
+      "EnvironmentalValues/SoilGrids/GLC25-PA-train-soilgrids.csv:missing:Soilgrid-bdod",
+      "EnvironmentalValues/SoilGrids/GLC25-PA-train-soilgrids.csv:missing:Soilgrid-cec",
+      "EnvironmentalValues/SoilGrids/GLC25-PA-train-soilgrids.csv:missing:Soilgrid-cfvo",
+      "EnvironmentalValues/SoilGrids/GLC25-PA-train-soilgrids.csv:missing:Soilgrid-clay",
+      "EnvironmentalValues/SoilGrids/GLC25-PA-train-soilgrids.csv:missing:Soilgrid-nitrogen",
+      "EnvironmentalValues/SoilGrids/GLC25-PA-train-soilgrids.csv:missing:Soilgrid-phh2o",
+      "EnvironmentalValues/SoilGrids/GLC25-PA-train-soilgrids.csv:missing:Soilgrid-sand",
+      "EnvironmentalValues/SoilGrids/GLC25-PA-train-soilgrids.csv:missing:Soilgrid-silt",
+      "EnvironmentalValues/SoilGrids/GLC25-PA-train-soilgrids.csv:missing:Soilgrid-soc"
+    ],
+    "missing_indicator_policy": "every environmental column; normalization fitted within training fold",
+    "seconds": 872.9021308729999,
+    "surveys": 81827,
+    "test_predictors_loaded": false
+  },
+  "fresh_assessment": false,
+  "hardware": {
+    "gpu": "Tesla T4",
+    "torch": "2.11.0+cu130"
+  },
+  "new_neural_fits": 0,
+  "normalization_reused_from_attempt_1": true,
+  "numerical_sensitivity_audit_passed": true,
+  "original_exact_member_set_guard_passed": false,
+  "predictor_surveys_read": 49077,
+  "reference_topk_audit": [
+    {
+      "fold": 0,
+      "gap_ULPs_quantiles": [
+        0.0,
+        0.0,
+        1.0,
+        4.0
+      ],
+      "reference_sets_within_two_raw_ULPs": 0.9997957766613569,
+      "seed": 2026111301
+    },
+    {
+      "fold": 0,
+      "gap_ULPs_quantiles": [
+        0.0,
+        0.0,
+        1.0,
+        3.0
+      ],
+      "reference_sets_within_two_raw_ULPs": 0.9997957766613569,
+      "seed": 2026111302
+    },
+    {
+      "fold": 0,
+      "gap_ULPs_quantiles": [
+        0.0,
+        0.0,
+        1.0,
+        5.0
+      ],
+      "reference_sets_within_two_raw_ULPs": 0.9997549319936282,
+      "seed": 2026111303
+    },
+    {
+      "fold": 1,
+      "gap_ULPs_quantiles": [
+        0.0,
+        0.0,
+        1.0,
+        3.0
+      ],
+      "reference_sets_within_two_raw_ULPs": 0.9997547917773509,
+      "seed": 2026111301
+    },
+    {
+      "fold": 1,
+      "gap_ULPs_quantiles": [
+        0.0,
+        0.0,
+        1.0,
+        4.0
+      ],
+      "reference_sets_within_two_raw_ULPs": 0.9994687155175936,
+      "seed": 2026111302
+    },
+    {
+      "fold": 1,
+      "gap_ULPs_quantiles": [
+        0.0,
+        0.0,
+        1.0,
+        4.0
+      ],
+      "reference_sets_within_two_raw_ULPs": 0.9996321876660264,
+      "seed": 2026111303
+    }
+  ],
+  "reproduction": [
+    {
+      "area_edges_log1p": [
+        2.302585092994046,
+        4.382026634673881
+      ],
+      "fold": 0,
+      "maximum_survey_F1_difference": 0.09090909090909091,
+      "mean_F1_difference": -1.3827956702487724e-05,
+      "member_sets": [
+        {
+          "original_top18_set_match_fraction": 0.9954662418821223,
+          "seed": 2026111301
+        },
+        {
+          "original_top18_set_match_fraction": 0.9956704652207654,
+          "seed": 2026111302
+        },
+        {
+          "original_top18_set_match_fraction": 0.9959563778948658,
+          "seed": 2026111303
+        }
+      ],
+      "normalization_training_surveys": 35811,
+      "passed": false,
+      "survey_F1_match_fraction": 0.999113475177305,
+      "thresholds": [
+        {
+          "fitting_role": "probability_calibration",
+          "grid": [
+            {
+              "sample_F1": 0.303807311771904,
+              "threshold": 0.01
+            },
+            {
+              "sample_F1": 0.303962146306825,
+              "threshold": 0.02
+            },
+            {
+              "sample_F1": 0.30478147404095096,
+              "threshold": 0.03
+            },
+            {
+              "sample_F1": 0.3063775930942236,
+              "threshold": 0.04
+            },
+            {
+              "sample_F1": 0.30920413309336653,
+              "threshold": 0.05
+            },
+            {
+              "sample_F1": 0.31826977040444526,
+              "threshold": 0.075
+            },
+            {
+              "sample_F1": 0.3281680229326901,
+              "threshold": 0.1
+            },
+            {
+              "sample_F1": 0.33661266675505885,
+              "threshold": 0.125
+            },
+            {
+              "sample_F1": 0.34224222376572155,
+              "threshold": 0.15
+            },
+            {
+              "sample_F1": 0.3443648285823459,
+              "threshold": 0.175
+            },
+            {
+              "sample_F1": 0.3443201993265535,
+              "threshold": 0.2
+            },
+            {
+              "sample_F1": 0.3415472712076058,
+              "threshold": 0.225
+            },
+            {
+              "sample_F1": 0.3374804782236955,
+              "threshold": 0.25
+            },
+            {
+              "sample_F1": 0.33156645474904584,
+              "threshold": 0.275
+            },
+            {
+              "sample_F1": 0.32646490741395934,
+              "threshold": 0.3
+            },
+            {
+              "sample_F1": 0.3180601708730812,
+              "threshold": 0.35
+            },
+            {
+              "sample_F1": 0.31200280876408887,
+              "threshold": 0.4
+            },
+            {
+              "sample_F1": 0.3085877662582264,
+              "threshold": 0.45
+            },
+            {
+              "sample_F1": 0.3068362747015418,
+              "threshold": 0.5
+            }
+          ],
+          "predictor": "seed_2026111301",
+          "threshold": 0.175
+        },
+        {
+          "fitting_role": "probability_calibration",
+          "grid": [
+            {
+              "sample_F1": 0.29919095911358395,
+              "threshold": 0.01
+            },
+            {
+              "sample_F1": 0.29928136866132365,
+              "threshold": 0.02
+            },
+            {
+              "sample_F1": 0.2998990849163564,
+              "threshold": 0.03
+            },
+            {
+              "sample_F1": 0.3016829473559718,
+              "threshold": 0.04
+            },
+            {
+              "sample_F1": 0.3040291047653886,
+              "threshold": 0.05
+            },
+            {
+              "sample_F1": 0.3115969703930923,
+              "threshold": 0.075
+            },
+            {
+              "sample_F1": 0.32010537529411487,
+              "threshold": 0.1
+            },
+            {
+              "sample_F1": 0.3278874445897408,
+              "threshold": 0.125
+            },
+            {
+              "sample_F1": 0.3335546581572187,
+              "threshold": 0.15
+            },
+            {
+              "sample_F1": 0.3367769867503266,
+              "threshold": 0.175
+            },
+            {
+              "sample_F1": 0.3368298617465076,
+              "threshold": 0.2
+            },
+            {
+              "sample_F1": 0.33407925943548294,
+              "threshold": 0.225
+            },
+            {
+              "sample_F1": 0.32987286283226813,
+              "threshold": 0.25
+            },
+            {
+              "sample_F1": 0.324468086097422,
+              "threshold": 0.275
+            },
+            {
+              "sample_F1": 0.3187076729382804,
+              "threshold": 0.3
+            },
+            {
+              "sample_F1": 0.3096569017458699,
+              "threshold": 0.35
+            },
+            {
+              "sample_F1": 0.30412437283641947,
+              "threshold": 0.4
+            },
+            {
+              "sample_F1": 0.30136193527329136,
+              "threshold": 0.45
+            },
+            {
+              "sample_F1": 0.3004392166613918,
+              "threshold": 0.5
+            }
+          ],
+          "predictor": "seed_2026111302",
+          "threshold": 0.2
+        },
+        {
+          "fitting_role": "probability_calibration",
+          "grid": [
+            {
+              "sample_F1": 0.29978259595915674,
+              "threshold": 0.01
+            },
+            {
+              "sample_F1": 0.2999221176112295,
+              "threshold": 0.02
+            },
+            {
+              "sample_F1": 0.30058907155904535,
+              "threshold": 0.03
+            },
+            {
+              "sample_F1": 0.3022258717835527,
+              "threshold": 0.04
+            },
+            {
+              "sample_F1": 0.30485340086139645,
+              "threshold": 0.05
+            },
+            {
+              "sample_F1": 0.312754971424683,
+              "threshold": 0.075
+            },
+            {
+              "sample_F1": 0.32151654145756725,
+              "threshold": 0.1
+            },
+            {
+              "sample_F1": 0.3291604718376413,
+              "threshold": 0.125
+            },
+            {
+              "sample_F1": 0.3346983422808466,
+              "threshold": 0.15
+            },
+            {
+              "sample_F1": 0.33683788301526885,
+              "threshold": 0.175
+            },
+            {
+              "sample_F1": 0.33653186115596523,
+              "threshold": 0.2
+            },
+            {
+              "sample_F1": 0.33427236912193875,
+              "threshold": 0.225
+            },
+            {
+              "sample_F1": 0.3303208596713736,
+              "threshold": 0.25
+            },
+            {
+              "sample_F1": 0.3256256711771,
+              "threshold": 0.275
+            },
+            {
+              "sample_F1": 0.32061235251714754,
+              "threshold": 0.3
+            },
+            {
+              "sample_F1": 0.31257988428274713,
+              "threshold": 0.35
+            },
+            {
+              "sample_F1": 0.3062573229886909,
+              "threshold": 0.4
+            },
+            {
+              "sample_F1": 0.3026966846877767,
+              "threshold": 0.45
+            },
+            {
+              "sample_F1": 0.30117591843893793,
+              "threshold": 0.5
+            }
+          ],
+          "predictor": "seed_2026111303",
+          "threshold": 0.175
+        },
+        {
+          "fitting_role": "probability_calibration",
+          "grid": [
+            {
+              "sample_F1": 0.3062811899884619,
+              "threshold": 0.01
+            },
+            {
+              "sample_F1": 0.3063626171404315,
+              "threshold": 0.02
+            },
+            {
+              "sample_F1": 0.30691111138391325,
+              "threshold": 0.03
+            },
+            {
+              "sample_F1": 0.30849705729276644,
+              "threshold": 0.04
+            },
+            {
+              "sample_F1": 0.31121775134740437,
+              "threshold": 0.05
+            },
+            {
+              "sample_F1": 0.319776806861642,
+              "threshold": 0.075
+            },
+            {
+              "sample_F1": 0.33002082334580235,
+              "threshold": 0.1
+            },
+            {
+              "sample_F1": 0.3382682169466332,
+              "threshold": 0.125
+            },
+            {
+              "sample_F1": 0.3450097264003591,
+              "threshold": 0.15
+            },
+            {
+              "sample_F1": 0.34752740014248534,
+              "threshold": 0.175
+            },
+            {
+              "sample_F1": 0.34759501836305506,
+              "threshold": 0.2
+            },
+            {
+              "sample_F1": 0.3446551007595053,
+              "threshold": 0.225
+            },
+            {
+              "sample_F1": 0.3405126582940968,
+              "threshold": 0.25
+            },
+            {
+              "sample_F1": 0.3345763004506567,
+              "threshold": 0.275
+            },
+            {
+              "sample_F1": 0.3294596166507868,
+              "threshold": 0.3
+            },
+            {
+              "sample_F1": 0.3208270309057005,
+              "threshold": 0.35
+            },
+            {
+              "sample_F1": 0.3150988048536161,
+              "threshold": 0.4
+            },
+            {
+              "sample_F1": 0.3119261443642562,
+              "threshold": 0.45
+            },
+            {
+              "sample_F1": 0.31087409904220237,
+              "threshold": 0.5
+            }
+          ],
+          "predictor": "ensemble",
+          "threshold": 0.2
+        }
+      ]
+    },
+    {
+      "area_edges_log1p": [
+        3.258096538021482,
+        4.382026634673881
+      ],
+      "fold": 1,
+      "maximum_survey_F1_difference": 0.07692307692307693,
+      "mean_F1_difference": -1.241524374795672e-05,
+      "member_sets": [
+        {
+          "original_top18_set_match_fraction": 0.9954636478809923,
+          "seed": 2026111301
+        },
+        {
+          "original_top18_set_match_fraction": 0.9947688912501532,
+          "seed": 2026111302
+        },
+        {
+          "original_top18_set_match_fraction": 0.9951367035841269,
+          "seed": 2026111303
+        }
+      ],
+      "normalization_training_surveys": 37487,
+      "passed": false,
+      "survey_F1_match_fraction": 0.9991760679427051,
+      "thresholds": [
+        {
+          "fitting_role": "probability_calibration",
+          "grid": [
+            {
+              "sample_F1": 0.30823521331504766,
+              "threshold": 0.01
+            },
+            {
+              "sample_F1": 0.30849163452238154,
+              "threshold": 0.02
+            },
+            {
+              "sample_F1": 0.30925297933663465,
+              "threshold": 0.03
+            },
+            {
+              "sample_F1": 0.31053508307991473,
+              "threshold": 0.04
+            },
+            {
+              "sample_F1": 0.3126410280885688,
+              "threshold": 0.05
+            },
+            {
+              "sample_F1": 0.3214179395858547,
+              "threshold": 0.075
+            },
+            {
+              "sample_F1": 0.3314818263890694,
+              "threshold": 0.1
+            },
+            {
+              "sample_F1": 0.34031084504145487,
+              "threshold": 0.125
+            },
+            {
+              "sample_F1": 0.3464323267982343,
+              "threshold": 0.15
+            },
+            {
+              "sample_F1": 0.3487602034774969,
+              "threshold": 0.175
+            },
+            {
+              "sample_F1": 0.3489491034771862,
+              "threshold": 0.2
+            },
+            {
+              "sample_F1": 0.34630011819950207,
+              "threshold": 0.225
+            },
+            {
+              "sample_F1": 0.3424854200474484,
+              "threshold": 0.25
+            },
+            {
+              "sample_F1": 0.33823619209635725,
+              "threshold": 0.275
+            },
+            {
+              "sample_F1": 0.3345233656658462,
+              "threshold": 0.3
+            },
+            {
+              "sample_F1": 0.3257894334445883,
+              "threshold": 0.35
+            },
+            {
+              "sample_F1": 0.31911453070635,
+              "threshold": 0.4
+            },
+            {
+              "sample_F1": 0.31479458139800914,
+              "threshold": 0.45
+            },
+            {
+              "sample_F1": 0.31225846343721547,
+              "threshold": 0.5
+            }
+          ],
+          "predictor": "seed_2026111301",
+          "threshold": 0.2
+        },
+        {
+          "fitting_role": "probability_calibration",
+          "grid": [
+            {
+              "sample_F1": 0.3085621574253315,
+              "threshold": 0.01
+            },
+            {
+              "sample_F1": 0.3089492874693009,
+              "threshold": 0.02
+            },
+            {
+              "sample_F1": 0.3100499842288035,
+              "threshold": 0.03
+            },
+            {
+              "sample_F1": 0.3122130748607345,
+              "threshold": 0.04
+            },
+            {
+              "sample_F1": 0.31558757070012855,
+              "threshold": 0.05
+            },
+            {
+              "sample_F1": 0.32534582427915215,
+              "threshold": 0.075
+            },
+            {
+              "sample_F1": 0.33547201405474847,
+              "threshold": 0.1
+            },
+            {
+              "sample_F1": 0.3435964409327907,
+              "threshold": 0.125
+            },
+            {
+              "sample_F1": 0.34896466291936745,
+              "threshold": 0.15
+            },
+            {
+              "sample_F1": 0.3506421409870988,
+              "threshold": 0.175
+            },
+            {
+              "sample_F1": 0.3503215629883133,
+              "threshold": 0.2
+            },
+            {
+              "sample_F1": 0.347396752522333,
+              "threshold": 0.225
+            },
+            {
+              "sample_F1": 0.34353355644026096,
+              "threshold": 0.25
+            },
+            {
+              "sample_F1": 0.3383748866021878,
+              "threshold": 0.275
+            },
+            {
+              "sample_F1": 0.33392414771532747,
+              "threshold": 0.3
+            },
+            {
+              "sample_F1": 0.32525326261801185,
+              "threshold": 0.35
+            },
+            {
+              "sample_F1": 0.31931862027638197,
+              "threshold": 0.4
+            },
+            {
+              "sample_F1": 0.31531431734042703,
+              "threshold": 0.45
+            },
+            {
+              "sample_F1": 0.312654745199846,
+              "threshold": 0.5
+            }
+          ],
+          "predictor": "seed_2026111302",
+          "threshold": 0.175
+        },
+        {
+          "fitting_role": "probability_calibration",
+          "grid": [
+            {
+              "sample_F1": 0.30812328997653315,
+              "threshold": 0.01
+            },
+            {
+              "sample_F1": 0.30831064521589513,
+              "threshold": 0.02
+            },
+            {
+              "sample_F1": 0.3089807118956073,
+              "threshold": 0.03
+            },
+            {
+              "sample_F1": 0.3106271192646169,
+              "threshold": 0.04
+            },
+            {
+              "sample_F1": 0.3136476763797065,
+              "threshold": 0.05
+            },
+            {
+              "sample_F1": 0.3234199731802647,
+              "threshold": 0.075
+            },
+            {
+              "sample_F1": 0.33396958709211694,
+              "threshold": 0.1
+            },
+            {
+              "sample_F1": 0.34213376507490645,
+              "threshold": 0.125
+            },
+            {
+              "sample_F1": 0.34748024583629855,
+              "threshold": 0.15
+            },
+            {
+              "sample_F1": 0.3497343827301834,
+              "threshold": 0.175
+            },
+            {
+              "sample_F1": 0.34944851381837005,
+              "threshold": 0.2
+            },
+            {
+              "sample_F1": 0.34647756520964107,
+              "threshold": 0.225
+            },
+            {
+              "sample_F1": 0.342493501249235,
+              "threshold": 0.25
+            },
+            {
+              "sample_F1": 0.33774870810583774,
+              "threshold": 0.275
+            },
+            {
+              "sample_F1": 0.33361577573222884,
+              "threshold": 0.3
+            },
+            {
+              "sample_F1": 0.32531648317796075,
+              "threshold": 0.35
+            },
+            {
+              "sample_F1": 0.3181078838739178,
+              "threshold": 0.4
+            },
+            {
+              "sample_F1": 0.313810325656731,
+              "threshold": 0.45
+            },
+            {
+              "sample_F1": 0.31101653847838157,
+              "threshold": 0.5
+            }
+          ],
+          "predictor": "seed_2026111303",
+          "threshold": 0.175
+        },
+        {
+          "fitting_role": "probability_calibration",
+          "grid": [
+            {
+              "sample_F1": 0.3142912645997557,
+              "threshold": 0.01
+            },
+            {
+              "sample_F1": 0.3145090553759087,
+              "threshold": 0.02
+            },
+            {
+              "sample_F1": 0.3151916664254617,
+              "threshold": 0.03
+            },
+            {
+              "sample_F1": 0.3166134676273993,
+              "threshold": 0.04
+            },
+            {
+              "sample_F1": 0.3192970889971406,
+              "threshold": 0.05
+            },
+            {
+              "sample_F1": 0.3295310300149878,
+              "threshold": 0.075
+            },
+            {
+              "sample_F1": 0.3400171103960292,
+              "threshold": 0.1
+            },
+            {
+              "sample_F1": 0.34909724541002035,
+              "threshold": 0.125
+            },
+            {
+              "sample_F1": 0.3556791858570372,
+              "threshold": 0.15
+            },
+            {
+              "sample_F1": 0.3580648469060059,
+              "threshold": 0.175
+            },
+            {
+              "sample_F1": 0.35786800744529446,
+              "threshold": 0.2
+            },
+            {
+              "sample_F1": 0.3548051443384975,
+              "threshold": 0.225
+            },
+            {
+              "sample_F1": 0.35011513353590246,
+              "threshold": 0.25
+            },
+            {
+              "sample_F1": 0.34505769846657847,
+              "threshold": 0.275
+            },
+            {
+              "sample_F1": 0.34073059648556275,
+              "threshold": 0.3
+            },
+            {
+              "sample_F1": 0.3319201064093933,
+              "threshold": 0.35
+            },
+            {
+              "sample_F1": 0.3251019186750377,
+              "threshold": 0.4
+            },
+            {
+              "sample_F1": 0.3211757227334527,
+              "threshold": 0.45
+            },
+            {
+              "sample_F1": 0.3187937687420486,
+              "threshold": 0.5
+            }
+          ],
+          "predictor": "ensemble",
+          "threshold": 0.175
+        }
+      ]
+    }
+  ],
+  "runtime_hours": 0.4147203796830556,
+  "source_manifest_sha256": "1743994216010ddb8281bd65b83a5a16e352628b0c334530317dc97fbc3129c3",
+  "status": "complete_with_numerical_tie_sensitivity"
+}

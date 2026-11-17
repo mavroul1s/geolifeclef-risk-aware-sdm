@@ -1,0 +1,46 @@
+{
+  "status": "completed_post_primary_diagnostics",
+  "E2_source_affine_heads_exactly_reproduced": true,
+  "original_primary_modified": false,
+  "MSE_means": {
+    "E2_source": {
+      "HGB": 0.024550755684191537,
+      "SDC": 0.026871155104911604,
+      "affine_SDC": 0.01751141424066504,
+      "training_mean_only": 0.016988002502201213
+    },
+    "E2_spatial": {
+      "HGB": 0.02096794373094714,
+      "SDC": 0.024297602767103042,
+      "affine_SDC": 0.020571463066969824,
+      "training_mean_only": 0.02030693771782494
+    },
+    "E3_domain": {
+      "HGB": 0.020418810028289686,
+      "SDC": 0.06233205713821152,
+      "affine_SDC": 0.031001436390034755,
+      "training_mean_only": 0.029318727878931125
+    }
+  },
+  "HGB_minus_affine_components": {
+    "E2_source": {
+      "MSE": 0.0070393414435264996,
+      "squared_bias": 0.0011467524161434216,
+      "prediction_variance": 0.004815189905939337,
+      "minus_twice_covariance": 0.0010773991214437435
+    },
+    "E2_spatial": {
+      "MSE": 0.00039648066397731264,
+      "squared_bias": 1.4962443833004116e-06,
+      "prediction_variance": 0.0016779104013042822,
+      "minus_twice_covariance": -0.0012829259817102717
+    },
+    "E3_domain": {
+      "MSE": -0.01058262636174507,
+      "squared_bias": -0.006672429764576862,
+      "prediction_variance": 0.0013712622614204383,
+      "minus_twice_covariance": -0.005281458858588644
+    }
+  },
+  "limits": "algebraic descriptive explanation, not causal identification of plot-area or source effects; constant control posthoc"
+}

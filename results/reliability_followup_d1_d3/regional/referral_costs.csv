@@ -1,0 +1,25 @@
+method,cost_per_referral_in_sample_loss_units,system_loss,full_coverage_loss,assumption
+global_lean,0.0,0.4995083413430438,0.6473121713073148,referred surveys incur the stated cost and zero residual prediction loss
+global_lean,0.25,0.5495004224326858,0.6473121713073148,referred surveys incur the stated cost and zero residual prediction loss
+global_lean,0.5,0.599492503522328,0.6473121713073148,referred surveys incur the stated cost and zero residual prediction loss
+global_lean,1.0,0.699476665701612,0.6473121713073148,referred surveys incur the stated cost and zero residual prediction loss
+country_balanced_lean,0.0,0.4999441721161523,0.6473121713073148,referred surveys incur the stated cost and zero residual prediction loss
+country_balanced_lean,0.25,0.5499362532057943,0.6473121713073148,referred surveys incur the stated cost and zero residual prediction loss
+country_balanced_lean,0.5,0.5999283342954363,0.6473121713073148,referred surveys incur the stated cost and zero residual prediction loss
+country_balanced_lean,1.0,0.6999124964747204,0.6473121713073148,referred surveys incur the stated cost and zero residual prediction loss
+country_blend,0.0,0.5002304368065935,0.6473121713073148,referred surveys incur the stated cost and zero residual prediction loss
+country_blend,0.25,0.5502225178962356,0.6473121713073148,referred surveys incur the stated cost and zero residual prediction loss
+country_blend,0.5,0.6002145989858776,0.6473121713073148,referred surveys incur the stated cost and zero residual prediction loss
+country_blend,1.0,0.7001987611651618,0.6473121713073148,referred surveys incur the stated cost and zero residual prediction loss
+bioregion_blend,0.0,0.5005795195789475,0.6473121713073148,referred surveys incur the stated cost and zero residual prediction loss
+bioregion_blend,0.25,0.5505716006685896,0.6473121713073148,referred surveys incur the stated cost and zero residual prediction loss
+bioregion_blend,0.5,0.6005636817582317,0.6473121713073148,referred surveys incur the stated cost and zero residual prediction loss
+bioregion_blend,1.0,0.7005478439375158,0.6473121713073148,referred surveys incur the stated cost and zero residual prediction loss
+mean_set_confidence,0.0,0.503278633856483,0.6473121713073148,referred surveys incur the stated cost and zero residual prediction loss
+mean_set_confidence,0.25,0.5532707149461251,0.6473121713073148,referred surveys incur the stated cost and zero residual prediction loss
+mean_set_confidence,0.5,0.6032627960357672,0.6473121713073148,referred surveys incur the stated cost and zero residual prediction loss
+mean_set_confidence,1.0,0.7032469582150513,0.6473121713073148,referred surveys incur the stated cost and zero residual prediction loss
+metadata_distance,0.0,0.5115077139907712,0.6473121713073148,referred surveys incur the stated cost and zero residual prediction loss
+metadata_distance,0.25,0.5614997950804133,0.6473121713073148,referred surveys incur the stated cost and zero residual prediction loss
+metadata_distance,0.5,0.6114918761700554,0.6473121713073148,referred surveys incur the stated cost and zero residual prediction loss
+metadata_distance,1.0,0.7114760383493395,0.6473121713073148,referred surveys incur the stated cost and zero residual prediction loss

@@ -1,0 +1,102 @@
+{
+  "optimized_deepsdm_s0": {
+    "F1_gain": 0.003650947847548991,
+    "MSE_gain": -0.010747209324490864,
+    "F1_interval": [
+      -0.017239234679265813,
+      0.02146017046829099
+    ],
+    "MSE_interval": [
+      -0.01924484443610949,
+      0.010811809785929473
+    ],
+    "model_F1_gains": [
+      0.003650947847548991
+    ],
+    "model_MSE_gains": [
+      -0.010747209324490864
+    ],
+    "models": 1,
+    "cells": 654,
+    "clusters": 19,
+    "confidence_each_endpoint": 0.975,
+    "valid_draws": 5000,
+    "draws": 5000,
+    "scope": "fixed cohort, predictors and heads; shared spatial resampling, not independent model trials"
+  },
+  "optimized_deepsdm_s1": {
+    "F1_gain": 0.003566943511765175,
+    "MSE_gain": -0.011989147188607321,
+    "F1_interval": [
+      -0.023233412541985854,
+      0.018500707454976822
+    ],
+    "MSE_interval": [
+      -0.01898347116482875,
+      0.006548740659816793
+    ],
+    "model_F1_gains": [
+      0.003566943511765175
+    ],
+    "model_MSE_gains": [
+      -0.011989147188607321
+    ],
+    "models": 1,
+    "cells": 654,
+    "clusters": 19,
+    "confidence_each_endpoint": 0.975,
+    "valid_draws": 5000,
+    "draws": 5000,
+    "scope": "fixed cohort, predictors and heads; shared spatial resampling, not independent model trials"
+  },
+  "randomforest_s0": {
+    "F1_gain": 0.002379429941824329,
+    "MSE_gain": -0.010930898802391146,
+    "F1_interval": [
+      -0.008320306300040227,
+      0.01797949637636725
+    ],
+    "MSE_interval": [
+      -0.016005436729802973,
+      0.0014854508912523089
+    ],
+    "model_F1_gains": [
+      0.002379429941824329
+    ],
+    "model_MSE_gains": [
+      -0.010930898802391146
+    ],
+    "models": 1,
+    "cells": 654,
+    "clusters": 19,
+    "confidence_each_endpoint": 0.975,
+    "valid_draws": 5000,
+    "draws": 5000,
+    "scope": "fixed cohort, predictors and heads; shared spatial resampling, not independent model trials"
+  },
+  "randomforest_s1": {
+    "F1_gain": 0.00028809203517382587,
+    "MSE_gain": -0.00866325013149095,
+    "F1_interval": [
+      -0.009414857720033403,
+      0.013828064381272112
+    ],
+    "MSE_interval": [
+      -0.01255663350971314,
+      0.0022254455761828726
+    ],
+    "model_F1_gains": [
+      0.00028809203517382587
+    ],
+    "model_MSE_gains": [
+      -0.00866325013149095
+    ],
+    "models": 1,
+    "cells": 654,
+    "clusters": 19,
+    "confidence_each_endpoint": 0.975,
+    "valid_draws": 5000,
+    "draws": 5000,
+    "scope": "fixed cohort, predictors and heads; shared spatial resampling, not independent model trials"
+  }
+}

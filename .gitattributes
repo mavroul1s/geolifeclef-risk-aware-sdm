@@ -1,0 +1,9 @@
+# Canonical source text; preserve scientific artifact bytes across checkouts.
+* text=auto eol=lf
+# Generated/frozen result formatting is retained exactly, including SVG paths.
+results/** -text -whitespace
+notebooks/*.ipynb -text
+*.npz -text
+*.npy -text
+*.png -text
+*.pdf -text

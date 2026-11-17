@@ -7,6 +7,7 @@ import hashlib
 import json
 import lzma
 from pathlib import Path
+from geolifeclef.assessment_history import historical_consumed_paths
 import subprocess
 
 import numpy as np
@@ -151,10 +152,7 @@ def main() -> None:
                         default=repository / "notebooks/geolifeclef_v27_multiscale_shift_aware_ensemble.ipynb")
     args = parser.parse_args()
     consumed_paths = [
-        repository / "artifacts/v21_review/assessment_per_survey.csv",
-        repository / "artifacts/v22_review/assessment_per_survey.csv",
-        repository / "artifacts/manual_upload_v23_retry2/user_provided_v25_exports/assessment_per_survey.csv",
-        repository / "results/v24_kaggle_output/assessment_per_survey_v24.csv",
+        *historical_consumed_paths(repository, 24),
         repository / "results/v25_kaggle_output/assessment_per_survey_v25.csv",
         args.v26_output / "assessment_per_survey_v26.csv",
     ]

@@ -1,0 +1,7 @@
+{
+  "independent_functional_vs_adapter_maximum_probability_error": 0.0,
+  "functional_vs_published_maximum_probability_error": 0.4383653402328491,
+  "cause": "unresolved; no adapter-forward discrepancy found",
+  "new_data_inference_admitted": false,
+  "downloaded_source_executed": false
+}

@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+from geolifeclef.assessment_history import historical_consumed_paths
 from types import SimpleNamespace
 
 import numpy as np
@@ -42,13 +43,7 @@ from scripts.v26_notebook_core import (
 ROOT = Path(__file__).resolve().parents[1]
 V25 = ROOT / "results/v25_kaggle_output"
 SPECIES = ROOT / "artifacts/v20_frozen_bundle_v21/species_ids.npy"
-CONSUMED_PATHS = [
-    ROOT / "artifacts/v21_review/assessment_per_survey.csv",
-    ROOT / "artifacts/v22_review/assessment_per_survey.csv",
-    ROOT / "artifacts/manual_upload_v23_retry2/user_provided_v25_exports/assessment_per_survey.csv",
-    ROOT / "results/v24_kaggle_output/assessment_per_survey_v24.csv",
-    V25 / "assessment_per_survey_v25.csv",
-]
+CONSUMED_PATHS = historical_consumed_paths(ROOT, 25)
 
 
 def test_remote_summary_dimensions_are_frozen():

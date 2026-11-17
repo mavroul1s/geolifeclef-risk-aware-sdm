@@ -1,0 +1,73 @@
+{
+  "status": "completed",
+  "files": [
+    {
+      "file": "data/neon_bridge/checkpoints/aggregation_s0/best.ckpt",
+      "archive": "checkpoints.tar",
+      "member": "aggregation_s0/checkpoints/best.ckpt",
+      "bytes": 48479690,
+      "sha256": "771055f5ab82d32f2923d1c2aeb78b0e534697b01a67a32c80a27279c7659454",
+      "whole_archive_checksum_recomputed": false,
+      "archive_declared_checksum": "md5:5db5b457ece1223f8e5cc3f8f2d254f3",
+      "range_and_tar_header_checked": true
+    },
+    {
+      "file": "data/neon_bridge/checkpoints/optimized_deepsdm_s0/best.ckpt",
+      "archive": "checkpoints.tar",
+      "member": "optimized_deepsdm_s0/checkpoints/best.ckpt",
+      "bytes": 474956819,
+      "sha256": "323e5fcc70c2f2cf82a1709f229e8b0125bd1b46fe9e064c2a3e2ce8bc8c5127",
+      "whole_archive_checksum_recomputed": false,
+      "archive_declared_checksum": "md5:5db5b457ece1223f8e5cc3f8f2d254f3",
+      "range_and_tar_header_checked": true
+    },
+    {
+      "file": "data/neon_bridge/reference_predictors/eval_chelsa.h5",
+      "archive": "sage_benchmark_data.tar",
+      "member": "predictors/eval_chelsa.h5",
+      "bytes": 2095300,
+      "sha256": "49483d07b275fc3f7d7942b39fe656daa40b7c47c2e533eca833023498bffa41",
+      "whole_archive_checksum_recomputed": false,
+      "archive_declared_checksum": "md5:eacf65e7344871ca4d0b6212c851c832",
+      "range_and_tar_header_checked": true
+    },
+    {
+      "file": "data/neon_bridge/reference_predictors/eval_soilgrids.h5",
+      "archive": "sage_benchmark_data.tar",
+      "member": "predictors/eval_soilgrids.h5",
+      "bytes": 763366,
+      "sha256": "05114ad7f9f53411310c9f9a09ecc4e693f25621cc2cbaa38f5d7049788abfc2",
+      "whole_archive_checksum_recomputed": false,
+      "archive_declared_checksum": "md5:eacf65e7344871ca4d0b6212c851c832",
+      "range_and_tar_header_checked": true
+    },
+    {
+      "file": "data/neon_bridge/reference_predictors/eval_topography.h5",
+      "archive": "sage_benchmark_data.tar",
+      "member": "predictors/eval_topography.h5",
+      "bytes": 3222012,
+      "sha256": "3ff8c6cdd8ca1c60b3053a40722342bd1f2139616643a6e07f864fd3965ace2e",
+      "whole_archive_checksum_recomputed": false,
+      "archive_declared_checksum": "md5:eacf65e7344871ca4d0b6212c851c832",
+      "range_and_tar_header_checked": true
+    },
+    {
+      "file": "data/neon_bridge/reference_predictors/eval_human_footprint.h5",
+      "archive": "sage_benchmark_data.tar",
+      "member": "predictors/eval_human_footprint.h5",
+      "bytes": 940593,
+      "sha256": "3f9b6c2a088b7f835a912b39946bf23ec5ba4308f4df351663b219b8c0d803e2",
+      "whole_archive_checksum_recomputed": false,
+      "archive_declared_checksum": "md5:eacf65e7344871ca4d0b6212c851c832",
+      "range_and_tar_header_checked": true
+    },
+    {
+      "file": "data/neon_bridge/sage_published_source.zip",
+      "bytes": 16750803,
+      "published_MD5_verified": true,
+      "sha256": "ba4fbc2eac3dc171af768c9ce64e278930454e355d3bc2d762b8cc585d7e2b7c"
+    }
+  ],
+  "logical_bytes": 547208583,
+  "no_NEON_outcomes_requested": true
+}

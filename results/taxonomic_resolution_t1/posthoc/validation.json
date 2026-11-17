@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "at_utc": "2026-11-17T08:12:33.858141+00:00",
+  "primary_files_and_posthoc_sources_unchanged": true,
+  "independent_fixed_selectors_verified": 5,
+  "independent_country_area_allocations": 83,
+  "feasible_endpoint_witness_pairs": 12000,
+  "maximum_endpoint_witness_error": 0.0,
+  "constraint_scope": "simulator-known eligible positive genera; not a validated NEON assumption"
+}

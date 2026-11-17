@@ -1,0 +1,8 @@
+{
+  "analysis_started_utc": "2026-11-13T22:22:13.076282+00:00",
+  "config_sha256": "fcb535d38d9fcbbbcc42c570512b1b552be652813f8c06ec77b268fe91d183cd",
+  "script_sha256": "29c10a8093f152b252089c334aa122e692dc55d99faf1a2fd04521823ff41f95",
+  "designed_after_R1": true,
+  "independent_confirmation": false,
+  "candidate_selection": "highest mean supported-country macro selective F1 on spatial out-of-fold risk-calibration predictions; fixed ordering breaks ties, global first"
+}

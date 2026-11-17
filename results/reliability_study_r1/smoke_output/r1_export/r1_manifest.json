@@ -1,0 +1,53 @@
+{
+  "config_sha256": "c4f911136e825ca684f84561c19040f18b89056e88398cb8fbeae4502c170efd",
+  "effective_role_hashes": [
+    {
+      "assessment": "80e3d2c4cc535ee8b2cf8094021eb4b7621134f22cc1365b2c54086aee09538a",
+      "probability_calibration": "249776d6ff306a86d60fbaf2ae6f213fad5e1d2017c4b65fb7a7cda3ee3ac97e",
+      "risk_calibration": "d9f93f8e062854dd34cc6f6ccacf7653622202e429d417715498ca03f5f8b15f",
+      "training": "07b7dbebbdd57c8aac0b90ac989e41e25e8225feee98ad8bd47ead769deefabb"
+    }
+  ],
+  "experiment": "reliability_study_r1",
+  "mode": "smoke",
+  "official_submission_made": false,
+  "original_split_manifests": [
+    {
+      "blocks": {
+        "assessment": 55,
+        "calibration": 43,
+        "selection": 46,
+        "training": 142
+      },
+      "counts": {
+        "assessment": 15792,
+        "calibration": 8691,
+        "selection": 8816,
+        "training": 35811
+      },
+      "fresh_assessment": false,
+      "id_hashes": {
+        "assessment": "0ac5436ef1ec3b22584a6f491b11d350cced4b66066d763f3fde6f21d61466b3",
+        "calibration": "bfe45bc3865d442279cc867f05a0e16b6e8732def129529be1a2f35caa7ed7aa",
+        "selection": "e9a627552ee53d1bab2eef6e6718bf076cefd45cab2844709b80ee2c25825207",
+        "training": "d7f7b5308f9a6caf482dc75a7cc1d90a5fa46aa5a14360392fab025c80c9d9c8"
+      },
+      "labels_used_for_assignment": false,
+      "minimum_distance_km": 20.002659731640595,
+      "protocol": "previously_consumed_spatial_development_regression_check",
+      "seed": 20260926
+    }
+  ],
+  "output_bytes_before_manifest": 14136012,
+  "outputs": {
+    "country_coverage.csv": "d3a7f8ca2a99a23c2980ea869be07116927217542ca1348bcd8e2a97e193192e",
+    "fold0_assessment.csv": "8fadaf1c45525a8b74bf49ce71dea9a70613549546e41543bad22b2792ca434f",
+    "fold0_confidence_roles.csv": "5fc1df6e54de15d8cfba130f023376cfb05ca49c790a357a22a170893fb18b6d",
+    "fold0_predictions.npz": "0c1348a608183a78bb3bde25b4b85eb039e190cd98cd7c87c01a4b8e52290c65",
+    "fold0_report.json": "5db5bd927602e0cb8ac6418850c5adf5fd759b09d0102d90f6327e8567d1d849",
+    "r1_report.json": "2e16028ec9a2e9ad7e6821708593c558d6d82a42e9a364a3c11326918a42dbfd",
+    "risk_coverage.csv": "16dfeec4e1e4f820fd352fed436e640acdf57d8415710738d84e95b34c591ea6",
+    "species_ids.npy": "eef8a61d8caea7add0937382d1370f885a8fbfb623796893a22bc54c70ef154d"
+  },
+  "test_predictors_loaded": false
+}

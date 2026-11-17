@@ -1,0 +1,61 @@
+{
+  "status": "partial",
+  "method": "TDWG region equality plus verification of every released eval mask within region; no nearest-mask substitution",
+  "reference_eval_cells": 53336,
+  "represented_regions": 143,
+  "consistent_regions": 143,
+  "inconsistent_regions": [],
+  "reference_polygon_fallbacks": 820,
+  "candidate_cells": 209,
+  "candidate_mask_valid_cells": 121,
+  "candidate_polygon_fallbacks": 0,
+  "candidate_regions": {
+    "ALA": 12,
+    "ARI": 29,
+    "ASK": 24,
+    "CAL": 33,
+    "GEO": 10,
+    "HAW": 12,
+    "KAN": 13,
+    "MRY": 14,
+    "NDA": 5,
+    "NWH": 15,
+    "OKL": 6,
+    "PUE": 7,
+    "VRG": 20,
+    "WIS": 9
+  },
+  "unavailable_candidate_regions": [
+    "HAW",
+    "MRY",
+    "NDA",
+    "NWH",
+    "OKL",
+    "PUE",
+    "VRG",
+    "WIS"
+  ],
+  "native_species_per_candidate_cell_range": [
+    322,
+    738
+  ],
+  "published_reference_counts_per_candidate_region": {
+    "ALA": 86,
+    "ARI": 3256,
+    "ASK": 163,
+    "CAL": 63,
+    "GEO": 196,
+    "HAW": 0,
+    "KAN": 1,
+    "MRY": 0,
+    "NDA": 0,
+    "NWH": 0,
+    "OKL": 0,
+    "PUE": 0,
+    "VRG": 0,
+    "WIS": 0
+  },
+  "native_mask_sha256": "70f009f6424456e48279a1e17be16291b7f41cdf08c75c08b4365f75f788b499",
+  "NEON_composition_values_read": false,
+  "fresh_predictor_or_scientific_evaluation_admission": false
+}

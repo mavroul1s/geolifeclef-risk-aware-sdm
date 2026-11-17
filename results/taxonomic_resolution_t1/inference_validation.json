@@ -1,0 +1,26 @@
+{
+  "reference": {
+    "cpu": {
+      "max": 0.0,
+      "mean": 0.0
+    },
+    "published": {
+      "max": 9.238719940185547e-07,
+      "mean": 1.0833158411718341e-09
+    }
+  },
+  "reconstructed_E4_HGB_max_error": 0.0,
+  "new_HGB_fits": 1,
+  "new_probability_calibration_fits": 0,
+  "new_backbone_fits": 0,
+  "new_GPU_jobs": 0,
+  "elapsed_seconds_CPU_policy": 5.813963312999931,
+  "probability_calibration": {
+    "slope": 0.6891913288354157,
+    "intercept": -0.18725144117629944,
+    "eligible_pairs": 442206,
+    "fit_rows": 1165,
+    "binned_nll": 0.07473115678861937
+  },
+  "parameters_reused_from": "results/confirmation_e4/fit_parameters.json"
+}

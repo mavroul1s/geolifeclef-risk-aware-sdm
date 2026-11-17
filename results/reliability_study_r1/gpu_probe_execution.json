@@ -1,0 +1,19 @@
+{
+  "status": "complete",
+  "kernel": "nmavros/glc25-reliability-r1-gpu-probe",
+  "url": "https://www.kaggle.com/code/nmavros/glc25-reliability-r1-gpu-probe",
+  "private": true,
+  "GPU_requested": true,
+  "competition_submission_made": false,
+  "requested_at_utc": "2026-11-13T17:04:47.987484+00:00",
+  "notebook_sha256": "c50d29da74e9f6184fa975b99cd62b9a5471e21d5ae128957792650bca4d77a8",
+  "checked_at_utc": "2026-11-13T17:19:13.887667+00:00",
+  "output_files": [
+    {
+      "name": "gpu_probe.json",
+      "bytes": 490,
+      "sha256": "26db9900c73219227428f9cc96d73f05ac0dbfafb9dac23bd794e1b5c736fd2b"
+    }
+  ],
+  "output_bytes": 490
+}

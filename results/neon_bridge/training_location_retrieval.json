@@ -1,0 +1,10 @@
+{
+  "file": "data/neon_bridge/train_location_1km.h5",
+  "archive": "sage_benchmark_data.tar",
+  "member": "predictors/train_location_1km.h5",
+  "bytes": 20703599,
+  "sha256": "194cab7983ca48bc33170da0f0276d010c7273f8fc67427c95a638bd8c85038f",
+  "whole_archive_checksum_recomputed": false,
+  "archive_declared_checksum": "md5:eacf65e7344871ca4d0b6212c851c832",
+  "range_and_tar_header_checked": true
+}

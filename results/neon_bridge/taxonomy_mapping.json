@@ -1,0 +1,20 @@
+{
+  "status": "dictionary_mapping_complete",
+  "dictionary_entries": 93698,
+  "status_counts": {
+    "unmapped_name": 53386,
+    "unmapped_rank": 35942,
+    "exact_name_after_declared_authorship_removal": 2476,
+    "exact_NEON_accepted_name": 1870,
+    "ambiguous": 24
+  },
+  "distinct_SAGE_classes_matched": 2453,
+  "SAGE_classes_total": 5771,
+  "observation_weighted_coverage_computed": false,
+  "NEON_species_occurrences_read": false,
+  "no_automatic_infraspecific_or_higher_rank_collapse": true,
+  "mapping_sha256": "f702b288dccda6d843a2e5ac5a608915ff013de052e029229af1c68a5ca1e3bb",
+  "sage_class_file_sha256": "82e7631c6b9d884582047892898faddff123bc52c1f0ac3517faeb2b4c082557",
+  "source_sha256": "77e14c620abebf2c1b3e79e11a70cbb8e4d9f7f9c4a6d796e92d7d5a99881243",
+  "warning": "Dictionary-level matches do not measure observed taxonomic coverage, native masks, or complete absence semantics."
+}

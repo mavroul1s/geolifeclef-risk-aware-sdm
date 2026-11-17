@@ -1,0 +1,2666 @@
+{
+  "at_utc": "2026-11-16T16:29:39.478318+00:00",
+  "scope": "Local engineering-stage files; hashes do not establish publisher-level whole-TAR checksums.",
+  "files": {
+    "artifacts/neon_bridge_gpu/gpu_probabilities.npz": {
+      "bytes": 2851212,
+      "sha256": "2c1307f2e7d9b7337f07a9fbe057a9fa93b3ce9509d8cca07e662f8725f055c4"
+    },
+    "artifacts/neon_bridge_gpu/gpu_report.json": {
+      "bytes": 728,
+      "sha256": "f11394273bf7f89364072e438beab620efcaded8e369839d4aaf03467b40a652"
+    },
+    "configs/neon_bridge.json": {
+      "bytes": 1525,
+      "sha256": "eb521d0681fb8d1588b56715f38c766c1fe8ebbfc533aad6ef16696cc75a654b"
+    },
+    "configs/neon_metadata_projection.json": {
+      "bytes": 1389,
+      "sha256": "988092275415eb27e1efc46ab5f11e298cff4edb7f227d74b12acb9597c810a2"
+    },
+    "data/neon_bridge/BARRreadme.txt": {
+      "bytes": 19948,
+      "sha256": "b037ee4792430869e1f247780c08aa5765316c88b1e46d841340b39efff598b3"
+    },
+    "data/neon_bridge/BARRvariables.csv": {
+      "bytes": 27677,
+      "sha256": "da018593c169d403704ce4806d97f26e40f12a13acd9f3338eeea030e7449eb2"
+    },
+    "data/neon_bridge/candidate_training_overlap.csv": {
+      "bytes": 84568,
+      "sha256": "2f80fb3090416f36e7cc004e358b3622f35ffb01fe4e3c0f079bc198604e5a78"
+    },
+    "data/neon_bridge/checkpoint_index.json": {
+      "bytes": 7064,
+      "sha256": "33dcbd54ecb1243f336a27da0033689cbf3fc43d8fd28d3aaecb855d65ac2f37"
+    },
+    "data/neon_bridge/checkpoints/aggregation_s0/best.ckpt": {
+      "bytes": 48479690,
+      "sha256": "771055f5ab82d32f2923d1c2aeb78b0e534697b01a67a32c80a27279c7659454"
+    },
+    "data/neon_bridge/checkpoints/optimized_deepsdm_s0/best.ckpt": {
+      "bytes": 474956819,
+      "sha256": "323e5fcc70c2f2cf82a1709f229e8b0125bd1b46fe9e064c2a3e2ce8bc8c5127"
+    },
+    "data/neon_bridge/chelsa_bio01_header.bin": {
+      "bytes": 65536,
+      "sha256": "3d28a644ff429e4ea2e1cf472ce6bf055ed486275ac992b22f86e67230cbf2dc"
+    },
+    "data/neon_bridge/cpu_reference.npz": {
+      "bytes": 11341503,
+      "sha256": "b652ecda8bf3d87fc84cbfd41bae2fc89490601680d4feb23ff5f53fed5b5e98"
+    },
+    "data/neon_bridge/earthenv_elevation_header.bin": {
+      "bytes": 65536,
+      "sha256": "664aeff6fc9780ab54a8808e7b94d52cfe71440756b3c43206cbad1db630eb8b"
+    },
+    "data/neon_bridge/full_plot_metadata_candidates.csv": {
+      "bytes": 65823,
+      "sha256": "7021e3b4d148aefcf4c236fa9682cd363a268a98baa40c03c0cdede84f49350f"
+    },
+    "data/neon_bridge/model_configs.json": {
+      "bytes": 18452,
+      "sha256": "8bd288a02f26457e8c18634cd62c6f04f8a0b4703f0deebec306e6ff34860237"
+    },
+    "data/neon_bridge/neon_2023_manifest.json": {
+      "bytes": 946879,
+      "sha256": "53759e1e4f486589f985ac9735daac95c7bb9e78e16403ef5da024d74bfd6754"
+    },
+    "data/neon_bridge/neon_manifest_BARR_2023-07.json": {
+      "bytes": 17367,
+      "sha256": "b530c94e0ac9fe873a6b2e729c968419e69c19effd16a01d06656d9376c1c475"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_000000.json": {
+      "bytes": 517949,
+      "sha256": "42aa46cb0732402056418252496dd7abddb2ab9ac7f50d34ab24a83cb50a49f1"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_001000.json": {
+      "bytes": 520085,
+      "sha256": "47ac4b291622698bcae0befb7569a3d85457369d266020398b2f5eb0c62c1eda"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_002000.json": {
+      "bytes": 515000,
+      "sha256": "d55d9953c572827ec4652df739e16a6dd2507d6bfb43b9ab9c9dcc6e9866acf4"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_003000.json": {
+      "bytes": 517144,
+      "sha256": "a0769e700e75d6fc6878c98803f73c2348b91f21a8afbbe3dd51dac81417fdef"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_004000.json": {
+      "bytes": 515230,
+      "sha256": "b1152fea2c2ced488f99c9f70701c5a458756176c3c3310a8ee2cab0ab3628a5"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_005000.json": {
+      "bytes": 523477,
+      "sha256": "40f3c783c9373385a18340b7dea72336271071bca0e7943263dadb049aa44720"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_006000.json": {
+      "bytes": 527058,
+      "sha256": "56969857632029599a8c916c5007ddcd4b37972840e64043b4ccc7f4eb8e971a"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_007000.json": {
+      "bytes": 520371,
+      "sha256": "ad9bb6f4d65c3c414f34c26c8f65020e2873ea2ae1b043ca63ff84e78a7bbd02"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_008000.json": {
+      "bytes": 522959,
+      "sha256": "bb6c39fe08bde0844180c9f403e8e07e988a76d21cddca59ce535852548bf6d8"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_009000.json": {
+      "bytes": 521044,
+      "sha256": "b6048224b8c1cd9e76794767ebd9cd5dedb6d2ca63d1b00210bd11a8afe85695"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_010000.json": {
+      "bytes": 513797,
+      "sha256": "e1c5dc98488e811d9f7f3d86c9fe7e5fef81e3e9f4302e08b9bd96a5419d07ff"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_011000.json": {
+      "bytes": 519336,
+      "sha256": "a22e333729b335f94af1d8da1dea955be5093d9fd85ed83cf3f4e98be1977162"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_012000.json": {
+      "bytes": 514171,
+      "sha256": "ca4913a7ecd72fa7904d8fbf34377ddbe96c8e315fa4dde07ca15b6db74781f4"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_013000.json": {
+      "bytes": 522942,
+      "sha256": "11194e5caf523d440fdcbafe4aebb87dde3c350917b31d423961497591259197"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_014000.json": {
+      "bytes": 521234,
+      "sha256": "cb4d44af2e1d00950bbb629e2cc561b67ea47ab7750cd0df38f1c30e35bf033b"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_015000.json": {
+      "bytes": 523302,
+      "sha256": "e3e05483ae013aee6442ef5eb10cc335ca425f47394280bcf5e918625cd4a0e2"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_016000.json": {
+      "bytes": 522100,
+      "sha256": "067fed49b289e0da7ee63b9eae969b14636de484d0682189cfc3026ae3c63766"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_017000.json": {
+      "bytes": 520047,
+      "sha256": "71a2440b60deb4c41b377f326e0828b3f7b658248eaf119f059b88b638690eb3"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_018000.json": {
+      "bytes": 525004,
+      "sha256": "be8bb5c4488c01656ac03aff0f677d2dc7499e56ca6257c154547fe50c3e66e1"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_019000.json": {
+      "bytes": 532557,
+      "sha256": "67569e577d2b6f21a0f5cd3f13c3961bf6722d733e719413e249312bbac44499"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_020000.json": {
+      "bytes": 523619,
+      "sha256": "799012e8efeb44b167a63245297cbf8a42704629319f289c8a08d37a3fc7be69"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_021000.json": {
+      "bytes": 521219,
+      "sha256": "3e865b7b02f060190b245471ed7ee8d5706843223345e08f68263f3d7c6df101"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_022000.json": {
+      "bytes": 520364,
+      "sha256": "17c2ea694fc8b50cf65b9764c8fc7fdbc9c35363c4ab978afc199c26ce2c40f5"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_023000.json": {
+      "bytes": 518317,
+      "sha256": "45029d3d9ddf42e45c45c27e1e0a76fe5d2a01a6f8d6b692b31fb69b6feb1212"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_024000.json": {
+      "bytes": 521206,
+      "sha256": "b0eda6bd6f156006caad3f1527a876b3af820824e3b1936a6915d28e6854495b"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_025000.json": {
+      "bytes": 523436,
+      "sha256": "dfc52ab13b6aa130462e9d0d28be71d29c90fcf8a5f6297cfc1e16d2c9d3a5b5"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_026000.json": {
+      "bytes": 528929,
+      "sha256": "3fb74dbe35c3dff5d847bcaec061714ec624d5bc5ecf5a7c3f1ef69a1847919c"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_027000.json": {
+      "bytes": 522393,
+      "sha256": "36665804a9666f43039aabc80a9799f3527d650a8ee2c14dbbc408ff85e28cf6"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_028000.json": {
+      "bytes": 523750,
+      "sha256": "9a09dc007d5f6325dd9225145d67fe2abebff90f8c43b6d17fbf537eeb0725c0"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_029000.json": {
+      "bytes": 531733,
+      "sha256": "a46dae94399463a27794d87574e901abae03f3662b71077d1c2989c632191f30"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_030000.json": {
+      "bytes": 522282,
+      "sha256": "c07c1be0adad50436accba28d374e2eac5878dc5846aa7e4a63580ea3fd7e511"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_031000.json": {
+      "bytes": 531647,
+      "sha256": "7d62d13fdaa0e599e26ae93f613035cf15869fc81ce28a1d6bd0a932d158d73d"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_032000.json": {
+      "bytes": 540685,
+      "sha256": "c2fb371b0c93f26c5aa05776e9e2b2e07a90b330591fe1138fbd848e1ab85e1f"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_033000.json": {
+      "bytes": 524341,
+      "sha256": "8af122dadb4785df43607e16cd95c1378a6313486e09d8287ec6e3e2282c546a"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_034000.json": {
+      "bytes": 514351,
+      "sha256": "2df2ece0b8d21a1e8f5db9b6a2f4ea4edc5f0d4c6f628a8e0fde1a5890647fad"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_035000.json": {
+      "bytes": 521772,
+      "sha256": "97e1a9a79379be03a9e006c17f10029a408e9ed115919850f2d3ddf3c4c5185a"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_036000.json": {
+      "bytes": 518162,
+      "sha256": "9989ecd818a768e4182a99e68e06ab1408ca53bfcbec6b613865f30c2ea7056b"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_037000.json": {
+      "bytes": 515345,
+      "sha256": "066a01499f5bc06ffd24668f866a2dbb62ce3d1f4963f29c47fec941f2a2ed68"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_038000.json": {
+      "bytes": 516870,
+      "sha256": "007434377210799b46409ad21fe2facc03b4eff098a48cdf19e34c1a9f3086e8"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_039000.json": {
+      "bytes": 525955,
+      "sha256": "4c6e211bbf09921f7031c92008dbe727e2b87b7d190fc8178e82af3243695bff"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_040000.json": {
+      "bytes": 526227,
+      "sha256": "a0cb47bf731211266b14e93c36cec671f12357a5d43dd851d547419fa43f5f83"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_041000.json": {
+      "bytes": 519187,
+      "sha256": "ad96146a2c4f9014ed18205cf08fda3c4f737f746c6719eda041b7341fe91e7b"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_042000.json": {
+      "bytes": 519822,
+      "sha256": "70f25c15d79387a6598fd9ed0dc894ae4ca970cb3c9b38c62b57fc0ae1f21c4f"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_043000.json": {
+      "bytes": 519317,
+      "sha256": "155bf0c2f8256c32fa60ed6645114b7c3c4fc44d11c15af33aa5b316895e0072"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_044000.json": {
+      "bytes": 517037,
+      "sha256": "07a99714059a257775297183fe10ebc861128d1e4251aa542ad04c59dbe2e3c8"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_045000.json": {
+      "bytes": 515904,
+      "sha256": "a098071291568ce15fa4125819da098cb84f6ba80275515373d0b6279960d6c3"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_046000.json": {
+      "bytes": 517315,
+      "sha256": "df918e06e1f82b03468b782b967b01b5c0790b8f05fea0f73d1591543085ac0c"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_047000.json": {
+      "bytes": 514902,
+      "sha256": "101c5bb9ac0318b9cb5d660a3d9a870c93fffedfae789c7d7c7ca247d48739d5"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_048000.json": {
+      "bytes": 522296,
+      "sha256": "23c12bb1f78d36f5f611180274cea215e0564381169be2071b0a59f90b4a8cd7"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_049000.json": {
+      "bytes": 531903,
+      "sha256": "5f2a397be89381d96284f5f8e189ec436bed201ef598d8e3a88053a57fa075e8"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_050000.json": {
+      "bytes": 522204,
+      "sha256": "db1f3613c59ac2033a5ed00d3d34e61f00c8f23d353e53f3748319b5ef4bb058"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_051000.json": {
+      "bytes": 522022,
+      "sha256": "bda423eac38da1a3c96a17c97dd2e88fdbd6dbd4f9cec4422df9bc78af0353fc"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_052000.json": {
+      "bytes": 522801,
+      "sha256": "7469cde22afac5f1246bf0b99ba28e2a0634c4b6a9949e2e22968ea4a5a4bcbc"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_053000.json": {
+      "bytes": 521323,
+      "sha256": "e8802d9354c202eb29f440ee0fd70aa470bdd1ff42c15561d526f1a645f4b3b1"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_054000.json": {
+      "bytes": 520332,
+      "sha256": "34ae769af6f99119c739e40377abfc7d494210afa29e1b75ab6aa9e01db5b65b"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_055000.json": {
+      "bytes": 519024,
+      "sha256": "2cd6f8f0d96b69c8505251f14361a2e3f4d51c46c4e40107af9bf8c1458b5b8e"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_056000.json": {
+      "bytes": 530482,
+      "sha256": "65ea2bb0b87510ef8b884e74b747a9e6f742ce2965e58f95209719454e50b5c2"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_057000.json": {
+      "bytes": 542870,
+      "sha256": "9414e1a936327926bc6bd4af0869d5fb20085af94ee8676f656f6ba43885dd1e"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_058000.json": {
+      "bytes": 545923,
+      "sha256": "b5bcaa90c1cac8df9befe58b209577131c4ef9cb21c2cc48a5985e9b0befdd95"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_059000.json": {
+      "bytes": 541879,
+      "sha256": "4bf5837a814a46896cde6449dbb8849fa7d4623345d30e99c17a8100a908ac7a"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_060000.json": {
+      "bytes": 521442,
+      "sha256": "c56e638b5aa0836f430f3824e95fbb9f1c74fca5076d6a9837511ae6831e7d54"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_061000.json": {
+      "bytes": 518423,
+      "sha256": "51e16a799318dcf63f6c0f5b1e57d94ff1ee33715e44871f5325ee04610c507e"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_062000.json": {
+      "bytes": 514313,
+      "sha256": "d877de8c2fd7956cf7678a62dadd64c71c617d37ef973df200d7f5e096295ec3"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_063000.json": {
+      "bytes": 511031,
+      "sha256": "075b4869152d2b8db3116f1ed1469f3662327cff44f7bb892161dfdccbad69ac"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_064000.json": {
+      "bytes": 523716,
+      "sha256": "6284f848d76b4e90a0238798f8bb7830409de88547fa25f8c48037a16decdb6f"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_065000.json": {
+      "bytes": 529444,
+      "sha256": "76661b0d748d505a6fad5f66eb732e1f99de69f15e08a69ea0d4e54085fb2438"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_066000.json": {
+      "bytes": 525370,
+      "sha256": "713d06ab28cb18a46867037737193343244b3fe31370e040f2be35ebda14c9f0"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_067000.json": {
+      "bytes": 526890,
+      "sha256": "b257da32ef073146382ef5d311688e328da2fb630dc31f1114b64628c0d624e6"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_068000.json": {
+      "bytes": 519487,
+      "sha256": "6c3201c1926d1ac9ccda5da9e36c150a188ad6060c85425aa7c332a53bde3814"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_069000.json": {
+      "bytes": 526818,
+      "sha256": "5255de0ead0132970bdbd64c38ee3a58d2f8715dd733452b177ba219a5a5c837"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_070000.json": {
+      "bytes": 520090,
+      "sha256": "87f8ec8cc3c31fa745667f9ad6dbc2095dbdf6364b7e9880be5fa1af41c60a7f"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_071000.json": {
+      "bytes": 515467,
+      "sha256": "9e5c665313ad0af7b078852b1723eb75fd93b6d41e64e53deb6b68cdf24489eb"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_072000.json": {
+      "bytes": 523842,
+      "sha256": "bb4428eaff0dea0af228bcf6e543bab949d12f48b6653d711fbee29f9b05204a"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_073000.json": {
+      "bytes": 520098,
+      "sha256": "5758a9dc94a4706b1ac5d2e59daf89e0a19169c56f156a5a5c53e6d900632693"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_074000.json": {
+      "bytes": 516811,
+      "sha256": "8e0bbc37097142024789a5a8299869032ed97fc29968e92538e133e0fbc12991"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_075000.json": {
+      "bytes": 520097,
+      "sha256": "e9f76cde6b3b563d49b63d43cb74aaee231bff221ec8add70ff5625abd17fb2f"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_076000.json": {
+      "bytes": 511909,
+      "sha256": "2415d9fe807887c432a1481d2a237693ddadea3ea9a05d6ecdadeeffe70d2e95"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_077000.json": {
+      "bytes": 509835,
+      "sha256": "e2d4ccd2b0aa2f83f27a64d1be26092fe03e2c072b1a1bf70dd95aff3f233c2d"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_078000.json": {
+      "bytes": 517486,
+      "sha256": "e21afe1371f17b989a60cb7609ec9642605464c54f7a0ad1c6e57256da4c9ede"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_079000.json": {
+      "bytes": 516526,
+      "sha256": "10b4dd7a39630560713a4b7187b47781f409cdf06cb3d3323723e2ccac13dac5"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_080000.json": {
+      "bytes": 522768,
+      "sha256": "a3a328aeee6e13961296b611855cd47d9fefe02f1a02853d93c6d0ab42f194cf"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_081000.json": {
+      "bytes": 521099,
+      "sha256": "99cf92555cadca1cc45896282034b5647981187130e2625c6c916be0e0cc0885"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_082000.json": {
+      "bytes": 525971,
+      "sha256": "f207dae0242b7952ebb76a75724a39eeaf3764ebd7b1eac524a8e3c4f1a54b00"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_083000.json": {
+      "bytes": 518758,
+      "sha256": "1555e3e3c2b73b8b35eb72198cd3016018d6b6cf1da9ee8b540ce10690c88300"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_084000.json": {
+      "bytes": 522611,
+      "sha256": "555d2e86056f5cdbf2aca17ac001c740ef6ed7b1b2e991cbcda6d8000ca31b61"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_085000.json": {
+      "bytes": 522138,
+      "sha256": "019c1b9673c0c4e5d50edfcbd738fc80a638c7f04b5871b1e6d88be5b2779b43"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_086000.json": {
+      "bytes": 525786,
+      "sha256": "3b4c486bc44802ef37a8c7636e37b37fe60cd4c9a725d90a89522eb6043a9d1f"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_087000.json": {
+      "bytes": 525398,
+      "sha256": "8f0fd002aa2f6261882e7c1d041221983c0290bc29b3eaa42f6e42ba8adac09b"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_088000.json": {
+      "bytes": 519862,
+      "sha256": "8b24956bd87739986d4b301b42e3ce699505b29885358ca8434689a40819da26"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_089000.json": {
+      "bytes": 524125,
+      "sha256": "aba0fbdebd01834d383a5bf28cf093eb4f1f7ee655f59053ddff4311ed5ce6de"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_090000.json": {
+      "bytes": 511729,
+      "sha256": "6fc610a0d4ecef9f8f3537e177b49eaf714c4078016c1154fb419570420fa926"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_091000.json": {
+      "bytes": 515060,
+      "sha256": "e8170cb9342b1e89a6f0afbaa96c02932a4aed73a70c47985cc812103e468fd6"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_092000.json": {
+      "bytes": 516252,
+      "sha256": "8c89dda821ebc7087f651cc60b53c6e3ad65b10242b388bc15de283b816d51cb"
+    },
+    "data/neon_bridge/neon_taxonomy/offset_093000.json": {
+      "bytes": 360244,
+      "sha256": "c43bec2a46fa60a1dd13952d7ff07656dd8708307b672082ad50d9206c44489f"
+    },
+    "data/neon_bridge/neon_taxonomy_0.json": {
+      "bytes": 698697,
+      "sha256": "2dbb6543381063934d9ef26e9a30ff170a32f6e4b40f7810bd92390f62801cd9"
+    },
+    "data/neon_bridge/neon_taxonomy_compact_0.json": {
+      "bytes": 517949,
+      "sha256": "42aa46cb0732402056418252496dd7abddb2ab9ac7f50d34ab24a83cb50a49f1"
+    },
+    "data/neon_bridge/neon_to_sage_taxonomy.csv": {
+      "bytes": 3509159,
+      "sha256": "f702b288dccda6d843a2e5ac5a608915ff013de052e029229af1c68a5ca1e3bb"
+    },
+    "data/neon_bridge/optimized_checkpoint_origin.txt": {
+      "bytes": 93,
+      "sha256": "11f73313bcc10ed8a1470f6516a8b6872ef885ad63c35863e65fe1627bd6bb4c"
+    },
+    "data/neon_bridge/plot_bout_metadata_audit.csv": {
+      "bytes": 285363,
+      "sha256": "d027ecb16c109ec38068f0db6d130db077c977ce43af8f3884c6f389aef75d47"
+    },
+    "data/neon_bridge/published_source/README.md": {
+      "bytes": 18266,
+      "sha256": "acd7bf593fbf34df5f23c3d3e0f165dad25b7eeee51b74e736bb6926d944531e"
+    },
+    "data/neon_bridge/published_source/configs/paper_runs.yaml": {
+      "bytes": 3282,
+      "sha256": "eeb0baeca2b1183301de6f9876a611c8fb9b83f295edc7379e8bc75fb8be95ce"
+    },
+    "data/neon_bridge/published_source/docs/MODELS.md": {
+      "bytes": 12276,
+      "sha256": "a403ffb46ff220a6bd5961a9e15508c471de705ee97815f488f749bd10979ab4"
+    },
+    "data/neon_bridge/published_source/scripts/data_prep_scripts/geo_utils.py": {
+      "bytes": 1564,
+      "sha256": "8b43ed3b071d0a1324c704270466233f8a7bb1ad697e300b379cc8c6cb5d03c9"
+    },
+    "data/neon_bridge/published_source/scripts/data_prep_scripts/predictors.py": {
+      "bytes": 25515,
+      "sha256": "cfb62f0da5870438becd23797129efc77a62e2da26e6848fedf74d24aa86ac6d"
+    },
+    "data/neon_bridge/published_source/src/criteria/bce.py": {
+      "bytes": 4837,
+      "sha256": "a8fafa560be3e5a31e4b50e5ce3b96901013e7203e0421507c0b31e417cffa92"
+    },
+    "data/neon_bridge/published_source/src/data_modules/datamodule.py": {
+      "bytes": 37013,
+      "sha256": "bf8d4de519498aadb51390820cf5a1514e85ee179c79e7be9aa55ce5d1f108ef"
+    },
+    "data/neon_bridge/published_source/src/main.py": {
+      "bytes": 10960,
+      "sha256": "5c8770b2447457c4c159786297a2d852cc25b87c3f8a2172a704809b2590e1bc"
+    },
+    "data/neon_bridge/published_source/src/models/resnet.py": {
+      "bytes": 3810,
+      "sha256": "43cc8a06fae31e1b49dfa0584793f8ad2bb5a4972fff6693f4ca395915c28005"
+    },
+    "data/neon_bridge/published_source/src/models/simple_mlp.py": {
+      "bytes": 2169,
+      "sha256": "bf2aee6032288a1e350261722a5b1b996dee955db2e50ea821e51a21ca7697f1"
+    },
+    "data/neon_bridge/published_source/src/modules/lightning_module.py": {
+      "bytes": 14528,
+      "sha256": "10200eed6237be0bc4ff84d80c86a84ff5c7396cac8c883ac2144ea4956b3bd0"
+    },
+    "data/neon_bridge/raster_cache/chelsa_bio01/block_0000000.bin": {
+      "bytes": 65536,
+      "sha256": "3d28a644ff429e4ea2e1cf472ce6bf055ed486275ac992b22f86e67230cbf2dc"
+    },
+    "data/neon_bridge/raster_cache/chelsa_bio01/block_0000807.bin": {
+      "bytes": 65536,
+      "sha256": "24a2693a63f151b35ccfafe282f2c1113bef38a28a223eec6ed8bc877aa00f1e"
+    },
+    "data/neon_bridge/raster_cache/chelsa_bio01/block_0000808.bin": {
+      "bytes": 65536,
+      "sha256": "3fcfa18b9ec4dc80260a979dd17d50c8354709977e3e8ef8b35eaa24fcb619d5"
+    },
+    "data/neon_bridge/raster_cache/chelsa_bio01/block_0000809.bin": {
+      "bytes": 65536,
+      "sha256": "68f64b65c3196d52145812f84e13011c21b90c8a29436aa6e08294a5bd5c9c5f"
+    },
+    "data/neon_bridge/raster_cache/chelsa_bio01/block_0000856.bin": {
+      "bytes": 65536,
+      "sha256": "768a60d0edfadcc963262807739eb76162659d25711e6fe854519a0cab0af6f3"
+    },
+    "data/neon_bridge/raster_cache/chelsa_bio01/block_0000857.bin": {
+      "bytes": 65536,
+      "sha256": "ee1d98f140fe0313d2519b1d07cd8b3f3b788b068054f2e3e67d9f8d8de8fb35"
+    },
+    "data/neon_bridge/raster_cache/chelsa_bio01/identity.json": {
+      "bytes": 186,
+      "sha256": "d0cba4c315e2a8df52edbbe7334a725b5a5954c7aa64774acbd53b7b52cf76f1"
+    },
+    "data/neon_bridge/raster_cache/earthenv_elevation/block_0000000.bin": {
+      "bytes": 65536,
+      "sha256": "664aeff6fc9780ab54a8808e7b94d52cfe71440756b3c43206cbad1db630eb8b"
+    },
+    "data/neon_bridge/raster_cache/earthenv_elevation/block_0000454.bin": {
+      "bytes": 65536,
+      "sha256": "75689ec3d961d161cf724d73e0acaf5bfefdabdd076dd33af50e1542cc8b5794"
+    },
+    "data/neon_bridge/raster_cache/earthenv_elevation/block_0000455.bin": {
+      "bytes": 65536,
+      "sha256": "e4d1123fb6fbe494879b22f6ac7c023eba15ca131a01da70c0f6718da8f24b06"
+    },
+    "data/neon_bridge/raster_cache/earthenv_elevation/block_0000609.bin": {
+      "bytes": 65536,
+      "sha256": "cb7078c117ea746430d455ec3deb29435ad2ca13f157739dd3f67ceeb12d4f87"
+    },
+    "data/neon_bridge/raster_cache/earthenv_elevation/block_0000610.bin": {
+      "bytes": 65536,
+      "sha256": "006295538ecc9954c6fba440918a29542aef4425042f2547e75e40628e019628"
+    },
+    "data/neon_bridge/raster_cache/earthenv_elevation/block_0000623.bin": {
+      "bytes": 65536,
+      "sha256": "19ced8deb0a7b6d78aa4094fe1f18a086ae8d10a7c0ba98eba0891bd77ba7170"
+    },
+    "data/neon_bridge/raster_cache/earthenv_elevation/block_0000624.bin": {
+      "bytes": 65536,
+      "sha256": "ea0143a572929f2b8a9761e351a90abb44cb6991630c0150f185cbf4ae684ad6"
+    },
+    "data/neon_bridge/raster_cache/earthenv_elevation/block_0000631.bin": {
+      "bytes": 65536,
+      "sha256": "e82064517d7a3dd5448678f647250147f89fd7b7ea0ab8c652486accd29169ca"
+    },
+    "data/neon_bridge/raster_cache/earthenv_elevation/block_0000632.bin": {
+      "bytes": 65536,
+      "sha256": "3541935eff97f966e072d426500794c7040c145428126eeb0f38c8ca7d565bc3"
+    },
+    "data/neon_bridge/raster_cache/earthenv_elevation/block_0000695.bin": {
+      "bytes": 65536,
+      "sha256": "4890120a6ce0e85ce83356f347db6eff466243f2a6efab57c07296d7ca1cf2c8"
+    },
+    "data/neon_bridge/raster_cache/earthenv_elevation/block_0000696.bin": {
+      "bytes": 65536,
+      "sha256": "167d7ffd5afc001c384ae6b584f2822e575ee2c313ac711bbd21603f7ea3cac7"
+    },
+    "data/neon_bridge/raster_cache/earthenv_elevation/block_0000709.bin": {
+      "bytes": 65536,
+      "sha256": "4ce64d1ab9a35369234ab213611445f946ef794c2271d65a94b0a286ddc62b06"
+    },
+    "data/neon_bridge/raster_cache/earthenv_elevation/block_0000710.bin": {
+      "bytes": 65536,
+      "sha256": "a2f85c84ee7f90b765eae3f5a973e7450b32973a2f6c685064887d121008fa6a"
+    },
+    "data/neon_bridge/raster_cache/earthenv_elevation/block_0000716.bin": {
+      "bytes": 65536,
+      "sha256": "893bf5be6e6fccbc72aa15a52f2428427f837832f26036614119d386138195b7"
+    },
+    "data/neon_bridge/raster_cache/earthenv_elevation/block_0000717.bin": {
+      "bytes": 65536,
+      "sha256": "3a7202bd44b46a84e353da321357b167730beb4a2b4de3691bf19a5fccabdce8"
+    },
+    "data/neon_bridge/raster_cache/earthenv_elevation/block_0000729.bin": {
+      "bytes": 65536,
+      "sha256": "a7ab652ea2190bfeb91b5cee50a37f456eb220e98f8da6d135e0aa709cf094ef"
+    },
+    "data/neon_bridge/raster_cache/earthenv_elevation/block_0000730.bin": {
+      "bytes": 65536,
+      "sha256": "e9bf0a6e588a27f01da6eea53bf8ef4ffa176fb4d9d65e7182ea3678c2b57939"
+    },
+    "data/neon_bridge/raster_cache/earthenv_elevation/block_0006059.bin": {
+      "bytes": 65536,
+      "sha256": "96655e3d1003178610db01ada50044e8f794523c47794af995251ff11ab8b43b"
+    },
+    "data/neon_bridge/raster_cache/earthenv_elevation/block_0006060.bin": {
+      "bytes": 65536,
+      "sha256": "b1605106b81771aed825bd6749e01fdaced4ed6b4e6cee1554107e88b2d8c39a"
+    },
+    "data/neon_bridge/raster_cache/earthenv_elevation/block_0006061.bin": {
+      "bytes": 18370,
+      "sha256": "dd2bdf5bc9af5d1c88575d5c91679a744328d62f728031a5d1e4bb5e397f1a13"
+    },
+    "data/neon_bridge/raster_cache/earthenv_elevation/identity.json": {
+      "bytes": 139,
+      "sha256": "f37c304b9276b4ad71b9b0dd4ccecb864cf7233d5d3d779148c1f4045c09dfe7"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0000000.bin": {
+      "bytes": 65536,
+      "sha256": "6f8f0db504ed335031fe2f2b2458f3e4741da56a214803abaa5cc3fa34949e0d"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0003606.bin": {
+      "bytes": 65536,
+      "sha256": "4fc5e3de1259c61486bf48355dc42b2df38c7b41a2b1c405202a21a1bb0eedc9"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0003607.bin": {
+      "bytes": 65536,
+      "sha256": "2dc2705fab8f7d95a02e620b3b0a7a87750b4292b20a5f171d123b4294475652"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0005600.bin": {
+      "bytes": 65536,
+      "sha256": "8b7e8558fe6ae9c5430b8400e5ab57549956415fa816cb31fc41c80cb5bad982"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0005601.bin": {
+      "bytes": 65536,
+      "sha256": "02f2d085586b5834ff63074ee1e279329c7d90e3e368f47de62af7f67e3064df"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0005602.bin": {
+      "bytes": 65536,
+      "sha256": "49fe7273f1cd16fc5c7a641530454e5004be18d0af5a5320846f29fd38d09c82"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0005788.bin": {
+      "bytes": 65536,
+      "sha256": "7a9acfdfdbe509fb6e129f9df608dd5d4901687a33bab42784c58ef7271d9fc2"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0005789.bin": {
+      "bytes": 65536,
+      "sha256": "36906ac809f95b2214d7544b167ec6af4d7c791608791285a5d0929c48ee4b12"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0005790.bin": {
+      "bytes": 65536,
+      "sha256": "43ce24b6aa0e35cbb4a4836cee68be4d3e30696919d1c13c6c9cbc646d3b1633"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0005791.bin": {
+      "bytes": 65536,
+      "sha256": "b315b865fe95b84989ca1b6bb3b8a249786c783b17a6e2aeb2d12f27cd47d1be"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0005895.bin": {
+      "bytes": 65536,
+      "sha256": "f92c9c35a6fa5e8e3afc5a7c39c6f7254a698271faae7432ee5d8eef04c758c4"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0005896.bin": {
+      "bytes": 65536,
+      "sha256": "f90f6380159b2597574a0743b8e6c9d7a3003a0a21895d7e94e6106fd9f0c649"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0005897.bin": {
+      "bytes": 65536,
+      "sha256": "d2612b439f7b5650dee8315148e855118c2e78dcb62c22c63648c96cd9bf48dd"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0006740.bin": {
+      "bytes": 65536,
+      "sha256": "59b8b70be0ecfeb42328df72c282e6a94820c3e26beab81591f503aa0b522a6e"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0006741.bin": {
+      "bytes": 65536,
+      "sha256": "e7201629bd9cb02aaa682f5a62482581ff07eaadb99dff385e20e33d9e618382"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0006742.bin": {
+      "bytes": 65536,
+      "sha256": "50c5089381b0dbf2bc92b371ea97103457e72ada84aaf107dd1d63dbddbe87dd"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0006743.bin": {
+      "bytes": 65536,
+      "sha256": "0170d5e568476f51de7663e3c14cb555f7b35a86a844085ce565db6fc11bdc3c"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0006744.bin": {
+      "bytes": 65536,
+      "sha256": "dc0ce5706970b081ae0b7cc10151dfb127e62177a7bd1ceeeffa286ca631eeda"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0006745.bin": {
+      "bytes": 65536,
+      "sha256": "5668baf3603e4880de3815edd6c03efd2653af94422a06814230e160d7859eb9"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0006746.bin": {
+      "bytes": 65536,
+      "sha256": "1cfedfac25c15642c03d5ef63d39ac3831bbbc8fa7bf3adade2043649a8b607e"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0006747.bin": {
+      "bytes": 65536,
+      "sha256": "e87a8fcc2970cc6f3e198812c0059d911a7e5a5ba245fc6265272523c7d564c9"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0006748.bin": {
+      "bytes": 65536,
+      "sha256": "fd4a04c88eb1fdee45bd0e5b6731e772835c6fb1d6b40b19610ce23b1471da29"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0006749.bin": {
+      "bytes": 65536,
+      "sha256": "cfab35e271832a41a794fe443508c82a9af2265908daf478ca4dba37310581b2"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0006937.bin": {
+      "bytes": 65536,
+      "sha256": "886deed6da56f515190d06486d9248f49f029551f1318e9229a84ee518e8392d"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0006938.bin": {
+      "bytes": 65536,
+      "sha256": "aaf2dd45aed224ca9a64b54e9646af69e454abeb208d67a4efd7357aa40afd57"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0006939.bin": {
+      "bytes": 65536,
+      "sha256": "771e34e60977f9b3af935a83df5e6e0c16d316399a6d3d16bb81e7529dde7a3b"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0006940.bin": {
+      "bytes": 65536,
+      "sha256": "469c4c4f2a7ac439b1dd2407443e3a8fe8d19ab6a968098d248851418bb98add"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0007018.bin": {
+      "bytes": 65536,
+      "sha256": "813283c173415540a62f36077adb3082a67048e6cf03205256886ba43f8b1ec6"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0007019.bin": {
+      "bytes": 65536,
+      "sha256": "8430ba354668bbeecf264a4a606954afbee89983955dc2c151585bb5ec83633d"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0007020.bin": {
+      "bytes": 65536,
+      "sha256": "e206fd9943324ade5903626672c65f7e2cc306f36c25110e48c4a94c2afaa0d7"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0007021.bin": {
+      "bytes": 65536,
+      "sha256": "18c926e3ef2ce1b1890d691076a811e8ea29c14f47daaeeebc355fb934e92329"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0007212.bin": {
+      "bytes": 65536,
+      "sha256": "f3547349303a1923858f0d1eb62824aad8d5d5619a585b6068f1e7ccdad1e1dc"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0007213.bin": {
+      "bytes": 65536,
+      "sha256": "63477331449ffef007f80e02fc412469e027011c0e40ce17e328294b2c08de7a"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0007214.bin": {
+      "bytes": 65536,
+      "sha256": "d244c692d2ed331595953331e4f981763c83b89feb829c7e416cc8f7267cfed1"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0007215.bin": {
+      "bytes": 65536,
+      "sha256": "b5f375bcb114c2ea1b51397aea9f240bdfb4ff7f5acff0107b5f5ecde228e233"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0096867.bin": {
+      "bytes": 65536,
+      "sha256": "9488bc3fc03fd78745ca4f670901a5127741c54cb48d28d6830d31fc91762443"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0120941.bin": {
+      "bytes": 65536,
+      "sha256": "e5e7767bfb6b95f65c66900fbcf272c1085b215486e1c7d1435713eda610351b"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0127204.bin": {
+      "bytes": 65536,
+      "sha256": "797e72a266c994e4a922220536279b47a5ea9a198560453d84a569ac8ce71523"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0128823.bin": {
+      "bytes": 65536,
+      "sha256": "45943280a7b1ed064a7de042bfd2abf640bc008c6a166ad308948e9e64eb1b82"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0129241.bin": {
+      "bytes": 65536,
+      "sha256": "4c446f72e7e30f5458940330dfde3488630c25b2748a23b84177c8bd54afed3e"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0129349.bin": {
+      "bytes": 65536,
+      "sha256": "f44da839c81bec8d933c5f80f7a1d534bf66a34031520035593eb7c4bca033f3"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0129384.bin": {
+      "bytes": 65536,
+      "sha256": "63df470a8aef68c4fe1e7057b5015f4758996cb43677a431e065b2ee58cb5b8e"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0129385.bin": {
+      "bytes": 65536,
+      "sha256": "e76fa5aeb5aec39f6045a1160fd42b97ecb35b05ef53a151eb89ee1f218e66e2"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0129393.bin": {
+      "bytes": 65536,
+      "sha256": "3062262982e98b7a61c4297bd3af417785acb8ce3eac40d5b9d3d04687015194"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0129394.bin": {
+      "bytes": 65536,
+      "sha256": "6a74f625c2ef84c034dbf8a7bf209c773b0f855b6d8aec753099225b616721e4"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/block_0129401.bin": {
+      "bytes": 15923,
+      "sha256": "63cefa5f24d84b21331405b15c7ad317aa7ee6246a060373f0d739f711f4bc8b"
+    },
+    "data/neon_bridge/raster_cache/soilgrids_bdticm/identity.json": {
+      "bytes": 153,
+      "sha256": "cb8125f8644c24bd31bdc5228174563c8d22da37029032c0c2622968ce4b12f4"
+    },
+    "data/neon_bridge/reference_cache/aggregation_s0/block_0000000.bin": {
+      "bytes": 1048576,
+      "sha256": "238cc39c98e40e909cd0bbb9ce270e472979563454977f0f4317962b23fcc9fb"
+    },
+    "data/neon_bridge/reference_cache/aggregation_s0/block_0000001.bin": {
+      "bytes": 1048576,
+      "sha256": "fda8b3a23caae977d346fc9e5d6ab78733bb35f184a8d9962af1a9e94d0e4570"
+    },
+    "data/neon_bridge/reference_cache/aggregation_s0/block_0000002.bin": {
+      "bytes": 1048576,
+      "sha256": "2e9581d0615537660b682046b9ac5ed82170792f6fc810815c9e0b68d1f17ec8"
+    },
+    "data/neon_bridge/reference_cache/aggregation_s0/block_0000003.bin": {
+      "bytes": 1048576,
+      "sha256": "a12f094a390ba03733978785956a2b33848fd5eb42ad7225ff5928cf3b4589b1"
+    },
+    "data/neon_bridge/reference_cache/aggregation_s0/block_0000004.bin": {
+      "bytes": 1048576,
+      "sha256": "addc4f496c182ee30c4d222ff091a9024eee05bbdbec5d99154831dad2457893"
+    },
+    "data/neon_bridge/reference_cache/aggregation_s0/block_0000005.bin": {
+      "bytes": 1048576,
+      "sha256": "208f0566912a72d9e54872c34ac2e1e1e7fdd798de5b338e99e6041aff892259"
+    },
+    "data/neon_bridge/reference_cache/aggregation_s0/block_0000006.bin": {
+      "bytes": 1048576,
+      "sha256": "67dfc0e2695cdaf668ac8b76b918ff69a5a4d1145dfe65f52e379440543cbdc2"
+    },
+    "data/neon_bridge/reference_cache/aggregation_s0/block_0000007.bin": {
+      "bytes": 1048576,
+      "sha256": "3466461b278815633c5bd061b43e5c6a44bd6471df011461ba52d3d7ce4b0ee3"
+    },
+    "data/neon_bridge/reference_cache/aggregation_s0/block_0000360.bin": {
+      "bytes": 1048576,
+      "sha256": "14f7407f8e8242d1262856d2dcfc87d6082ced7d817d74e6366803deceb08eb6"
+    },
+    "data/neon_bridge/reference_cache/aggregation_s0/block_0000402.bin": {
+      "bytes": 1048576,
+      "sha256": "d74d98ead10234e2d7572a9630d54a6e1b02c57cdf7f195d5eba810e7a168291"
+    },
+    "data/neon_bridge/reference_cache/aggregation_s0/identity.json": {
+      "bytes": 148,
+      "sha256": "ec167dd3e4d26ce814c904ea6f18030bff264dde44dfd871fe473d8f73a39e51"
+    },
+    "data/neon_bridge/reference_predictors/eval_chelsa.h5": {
+      "bytes": 2095300,
+      "sha256": "49483d07b275fc3f7d7942b39fe656daa40b7c47c2e533eca833023498bffa41"
+    },
+    "data/neon_bridge/reference_predictors/eval_human_footprint.h5": {
+      "bytes": 940593,
+      "sha256": "3f9b6c2a088b7f835a912b39946bf23ec5ba4308f4df351663b219b8c0d803e2"
+    },
+    "data/neon_bridge/reference_predictors/eval_soilgrids.h5": {
+      "bytes": 763366,
+      "sha256": "05114ad7f9f53411310c9f9a09ecc4e693f25621cc2cbaa38f5d7049788abfc2"
+    },
+    "data/neon_bridge/reference_predictors/eval_topography.h5": {
+      "bytes": 3222012,
+      "sha256": "3ff8c6cdd8ca1c60b3053a40722342bd1f2139616643a6e07f864fd3965ace2e"
+    },
+    "data/neon_bridge/sage_published_source.zip": {
+      "bytes": 16750803,
+      "sha256": "ba4fbc2eac3dc171af768c9ce64e278930454e355d3bc2d762b8cc585d7e2b7c"
+    },
+    "data/neon_bridge/soilgrids_bdticm_header.bin": {
+      "bytes": 65536,
+      "sha256": "6f8f0db504ed335031fe2f2b2458f3e4741da56a214803abaa5cc3fa34949e0d"
+    },
+    "data/neon_bridge/source/scripts/data_prep_scripts/geo_utils.py": {
+      "bytes": 1564,
+      "sha256": "8b43ed3b071d0a1324c704270466233f8a7bb1ad697e300b379cc8c6cb5d03c9"
+    },
+    "data/neon_bridge/source/src/data_modules/datamodule.py": {
+      "bytes": 37013,
+      "sha256": "bf8d4de519498aadb51390820cf5a1514e85ee179c79e7be9aa55ce5d1f108ef"
+    },
+    "data/neon_bridge/source/src/models/__init__.py": {
+      "bytes": 250,
+      "sha256": "243f4d7c7bfd84b5b8b9867c7098fd76d244109640e6619f26a88ad5a026a0f9"
+    },
+    "data/neon_bridge/source/src/models/resnet.py": {
+      "bytes": 3810,
+      "sha256": "43cc8a06fae31e1b49dfa0584793f8ad2bb5a4972fff6693f4ca395915c28005"
+    },
+    "data/neon_bridge/source/src/models/simple_mlp.py": {
+      "bytes": 2169,
+      "sha256": "bf2aee6032288a1e350261722a5b1b996dee955db2e50ea821e51a21ca7697f1"
+    },
+    "data/neon_bridge/species_names.csv": {
+      "bytes": 139752,
+      "sha256": "82e7631c6b9d884582047892898faddff123bc52c1f0ac3517faeb2b4c082557"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D01.BART.DP1.10058.001.div_10m2Data100m2Data.2023-06.basic.20251206T145940Z.csv.metadata.csv": {
+      "bytes": 27196,
+      "sha256": "3866d9a1e56d59b0bcb19415d0f330a09dbd2ed735ca93a99cef8e9bd16ac754"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D01.BART.DP1.10058.001.div_10m2Data100m2Data.2023-06.basic.20251206T145940Z.csv.metadata.receipt.json": {
+      "bytes": 630,
+      "sha256": "2ed5085fe55af1e9e5f092dadc461e663c1314e918a0b91ec11a7986919f45e9"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D01.BART.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T090952Z.csv.metadata.csv": {
+      "bytes": 27376,
+      "sha256": "6a359a112b79136e3c553ab4e714b2656fc23ccd5c6b1a1288fde3a884e10e2e"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D01.BART.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T090952Z.csv.metadata.receipt.json": {
+      "bytes": 630,
+      "sha256": "b1618fc0105e123849f507fa0c5e6293e3243667ccbeaf2d22ba26d70e857306"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D01.BART.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T145940Z.csv.metadata.csv": {
+      "bytes": 16345,
+      "sha256": "10cf1a6905e60eab649c51367aac1f239f6dd87521c06d54d656555ea9463dd8"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D01.BART.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T145940Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "36704b216bd7d3a3b2f07c1600a7ed56720f7158d95b0ac6dd6699abf829b028"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D01.BART.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T090952Z.csv.metadata.csv": {
+      "bytes": 16453,
+      "sha256": "231e2271bc0e4573c4bf8e35a8c703e99254ec02e4b74b301ededdef5216bbae"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D01.BART.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T090952Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "70fe84873dd7c045365d27155129b3fb82a5354d11e8ba12be5671317990402c"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D01.HARV.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T102131Z.csv.metadata.csv": {
+      "bytes": 23725,
+      "sha256": "6b3330aba1f68aee34edcbbf4864e8dbf87fc1787c765e9387a9a1b1269c9751"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D01.HARV.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T102131Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "c81d6e0e0f73417fddb4fd1f2d687f500b8056546262915922fe8a5d0b6808bf"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D01.HARV.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T123420Z.csv.metadata.csv": {
+      "bytes": 9073,
+      "sha256": "421b8d1260c1e0fc7bdfb540ef58f2016d03922746212dbde1c1412e119590f3"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D01.HARV.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T123420Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "1e2d4f9f9551cb494eedb4b59ffebb9d3321f469ba653af6032e1b5aa3e27ffc"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D02.BLAN.DP1.10058.001.div_10m2Data100m2Data.2023-05.basic.20251206T142604Z.csv.metadata.csv": {
+      "bytes": 3509,
+      "sha256": "66f5d3a5190c59f0f1233381aa4fd99907d603282032ffb270b7ecfe86d04b80"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D02.BLAN.DP1.10058.001.div_10m2Data100m2Data.2023-05.basic.20251206T142604Z.csv.metadata.receipt.json": {
+      "bytes": 628,
+      "sha256": "a2aa27e91ef99e2fcec742847345363044ec22f093b09787c35d7c8221bbf1c1"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D02.BLAN.DP1.10058.001.div_10m2Data100m2Data.2023-06.basic.20251206T085733Z.csv.metadata.csv": {
+      "bytes": 8776,
+      "sha256": "937978e36ddbd47ceaa96663c9e0638c9f5932c91f872b589329fba15bdc36c1"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D02.BLAN.DP1.10058.001.div_10m2Data100m2Data.2023-06.basic.20251206T085733Z.csv.metadata.receipt.json": {
+      "bytes": 629,
+      "sha256": "5afb16e32089cf7cff83bb92b0c4141dbc412df5639cea210640abb5e6f821fb"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D02.BLAN.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T151820Z.csv.metadata.csv": {
+      "bytes": 26044,
+      "sha256": "462a17c8c45b1473ca489f240b04605d739faccda5184e1540043233c61bf925"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D02.BLAN.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T151820Z.csv.metadata.receipt.json": {
+      "bytes": 630,
+      "sha256": "473b6492eee34fe213a53d9ac00b4fae3808347eeb11507d26f6f278f70397a1"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D02.BLAN.DP1.10058.001.div_1m2Data.2023-05.basic.20251206T142604Z.csv.metadata.csv": {
+      "bytes": 2185,
+      "sha256": "fc93b8fc2e2edc0343c8e98e0a61c35e61008cd512895751950e0a3e1a1b0961"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D02.BLAN.DP1.10058.001.div_1m2Data.2023-05.basic.20251206T142604Z.csv.metadata.receipt.json": {
+      "bytes": 598,
+      "sha256": "bd0e5a4f186b3abedd8ce3f91a2d9c20adeee5240d18de1ff2a0b4ad6c162580"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D02.BLAN.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T085733Z.csv.metadata.csv": {
+      "bytes": 5301,
+      "sha256": "8d0e67cf84cf10589bcacc1f3d10b55bb771666dbd547b275d437f8e2fc1a9a1"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D02.BLAN.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T085733Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "e44294814ac3d25f6bb8500b8463a8e31408e7e0ff76be286d2775ea9f726007"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D02.BLAN.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T151820Z.csv.metadata.csv": {
+      "bytes": 15689,
+      "sha256": "1c408ba33dc4b65fd252fe6e366a06a2ae683118c79cad685c44eae5eb8b4250"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D02.BLAN.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T151820Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "9c2713789f2b99ffebc4c7c7743a91ad200b2bab89021b54a9307ae710722588"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D02.SCBI.DP1.10058.001.div_1m2Data.2023-05.basic.20251206T140733Z.csv.metadata.csv": {
+      "bytes": 13885,
+      "sha256": "20ecbd224a89d357d740b9da7f505965cbaed27a971973054f476e9d8b3ea9aa"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D02.SCBI.DP1.10058.001.div_1m2Data.2023-05.basic.20251206T140733Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "329b4499fdfb5f130021a412a971b830bb80aef4bce33c08d08b9fe089e206eb"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D02.SCBI.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T102040Z.csv.metadata.csv": {
+      "bytes": 1201,
+      "sha256": "fad5b7921beaca640b9f6d93c15e6d2c4405fa2d5f393b400a8cc5f3a2d7a9ee"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D02.SCBI.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T102040Z.csv.metadata.receipt.json": {
+      "bytes": 598,
+      "sha256": "7ce579ad2bf4f3482c6104c71687c0405069fb123b3cecf41eea0eb9496a8748"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D02.SCBI.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T152322Z.csv.metadata.csv": {
+      "bytes": 8026,
+      "sha256": "5b5f09c4247c33dad3b63780b9dca4a47ee1b4be5de830b054fb1cca55ebbdc3"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D02.SCBI.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T152322Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "796e694c3292ec2fb5516d8351fb2a556fe110c478ad62fcc91cf7d3fc1dca9e"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D02.SCBI.DP1.10058.001.div_1m2Data.2023-12.basic.20251206T140725Z.csv.metadata.csv": {
+      "bytes": 1105,
+      "sha256": "e5003ca73dba577db4107b93be551d83daff6203fdccbcbdc82faab3831bf76c"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D02.SCBI.DP1.10058.001.div_1m2Data.2023-12.basic.20251206T140725Z.csv.metadata.receipt.json": {
+      "bytes": 597,
+      "sha256": "c1b5663a6905e27fa11c75c16d0e49de75350ff8fbc552ac2492316150919cde"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D02.SERC.DP1.10058.001.div_10m2Data100m2Data.2023-06.basic.20251206T125944Z.csv.metadata.csv": {
+      "bytes": 22955,
+      "sha256": "b4335bbc9d9dba6d141aa75313221c29206ce328e1c19848a010905ac32b7ff2"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D02.SERC.DP1.10058.001.div_10m2Data100m2Data.2023-06.basic.20251206T125944Z.csv.metadata.receipt.json": {
+      "bytes": 630,
+      "sha256": "9ce2f5381d6bc29ad8ae0d182f5e5e834fa1d46475ca8aadbfa5a693d573e960"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D02.SERC.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T135516Z.csv.metadata.csv": {
+      "bytes": 17335,
+      "sha256": "e059188731ec38764d1ee77a76b014b630093ddeaa18ae4d694634a9c7c99fc9"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D02.SERC.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T135516Z.csv.metadata.receipt.json": {
+      "bytes": 630,
+      "sha256": "1648d5865996dfaa7c52fd86b025575e931196b062638011ad543d38424bbdb1"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D02.SERC.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T111336Z.csv.metadata.csv": {
+      "bytes": 14352,
+      "sha256": "16e602d6b66ccf1808e70ec2ef8e1fd6025d6d7ad874203348b6b5911fa6f469"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D02.SERC.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T111336Z.csv.metadata.receipt.json": {
+      "bytes": 630,
+      "sha256": "1997bfccb252e33c9d14eafc1410b3eda233071b8d48eb91b476698a8dab1785"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D02.SERC.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T125944Z.csv.metadata.csv": {
+      "bytes": 13801,
+      "sha256": "b14b7cd84166ee1ad07bffaf227f798ed63e0f4418524aa0b4a47c666710eec3"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D02.SERC.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T125944Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "bde603ac30da6d104f3b7cf3b36c8b1a47f5d49b999691715c7815bf67a3f444"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D02.SERC.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T135516Z.csv.metadata.csv": {
+      "bytes": 10385,
+      "sha256": "1781366b9131b97799298b716467c338ef79b3d45f59f4ffc2d79b9150ed6e65"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D02.SERC.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T135516Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "26c47811ff2ce800f513a96883281d1b8be04a596a8974b3298c2e2411560529"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D02.SERC.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T111336Z.csv.metadata.csv": {
+      "bytes": 8724,
+      "sha256": "f38bf89d369fb92f74d4c18f292e609275115810b7116e46bdab80ec88ea4e54"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D02.SERC.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T111336Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "2890d6be90696353f885b257f0785c3c280da1346b76d344a161032cb4ea6718"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D03.DSNY.DP1.10058.001.div_1m2Data.2023-10.basic.20251206T092515Z.csv.metadata.csv": {
+      "bytes": 26413,
+      "sha256": "09245a8d6534c52450e2e0242bc0d9c868427ac29520af23c94e284ab1eacf15"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D03.DSNY.DP1.10058.001.div_1m2Data.2023-10.basic.20251206T092515Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "282a91ef86dd5f865f824e69be696e0ab37c18f6451e5d78d87f17cb386e6e8b"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D03.DSNY.DP1.10058.001.div_1m2Data.2023-11.basic.20251206T085625Z.csv.metadata.csv": {
+      "bytes": 5137,
+      "sha256": "1b65f7dbff66e435c2038665b71b9d122d39551259c7232178e2b29faa0fd964"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D03.DSNY.DP1.10058.001.div_1m2Data.2023-11.basic.20251206T085625Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "5fbbb91c301d21bcf1700d0ea417d2be67b0e9ab0552b638b582e73ab7545df0"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D03.JERC.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T095123Z.csv.metadata.csv": {
+      "bytes": 11619,
+      "sha256": "d4e1b8d01dbae0104905784e536c69b596897f1fc34e1fe7d1c4c4e4b3c07f27"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D03.JERC.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T095123Z.csv.metadata.receipt.json": {
+      "bytes": 630,
+      "sha256": "c87e58b3b2e6c9f356d5c5d1090660be3079ab6066ec22a8438f9e9927a859a9"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D03.JERC.DP1.10058.001.div_10m2Data100m2Data.2023-09.basic.20251206T142316Z.csv.metadata.csv": {
+      "bytes": 13325,
+      "sha256": "1ef0a712c0c4c3a115688eecaa110a732b9fdd92cc86c92c6688c58f7cc71acd"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D03.JERC.DP1.10058.001.div_10m2Data100m2Data.2023-09.basic.20251206T142316Z.csv.metadata.receipt.json": {
+      "bytes": 630,
+      "sha256": "11b20d5e3908db087e71001cf0a0f2a36f8a26a70bf2ef80709d2ffa512f98c7"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D03.JERC.DP1.10058.001.div_10m2Data100m2Data.2023-10.basic.20251206T134435Z.csv.metadata.csv": {
+      "bytes": 27765,
+      "sha256": "abb29614118868d40ba30bb6fd0aa5bfe36dc8f1edc4ab6ab9eac281cf554bc8"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D03.JERC.DP1.10058.001.div_10m2Data100m2Data.2023-10.basic.20251206T134435Z.csv.metadata.receipt.json": {
+      "bytes": 630,
+      "sha256": "1dfe8cc01d6e8df39ca463e40911258d7a03a149e65f8c058bf38e19d95103a3"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D03.JERC.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T095123Z.csv.metadata.csv": {
+      "bytes": 7033,
+      "sha256": "b07e018ec59908d88e2814389c3b641392960f01949ad8728c46fdb197c36e24"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D03.JERC.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T095123Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "c54a6491d2ca35996f6d0a7a3ef0d57e13e63aa5ab7c64d83a2fb18f0519b88c"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D03.JERC.DP1.10058.001.div_1m2Data.2023-09.basic.20251206T142316Z.csv.metadata.csv": {
+      "bytes": 8053,
+      "sha256": "80f40ce54a7a696046879150e77d0fda6ee9f5aeb43280f3c1d645c700002ebf"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D03.JERC.DP1.10058.001.div_1m2Data.2023-09.basic.20251206T142316Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "ad1d934a16f1c8c6d4eafacfe52a579828ade13302584456e51e4407f9fda04c"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D03.JERC.DP1.10058.001.div_1m2Data.2023-10.basic.20251206T134435Z.csv.metadata.csv": {
+      "bytes": 16681,
+      "sha256": "9720cafc6738262ee99e1062092b738239ddd131ea2b33f91778d0362f53d4c6"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D03.JERC.DP1.10058.001.div_1m2Data.2023-10.basic.20251206T134435Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "9b0383678e3ab1c77b56f027c77e670248c7b1be92c546078ca61ef509f1cd01"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D03.OSBS.DP1.10058.001.div_1m2Data.2023-09.basic.20251206T121342Z.csv.metadata.csv": {
+      "bytes": 11917,
+      "sha256": "97c35ae6e476c27773c1da8e72aed9a76cc26342fecd5c6c75dac3f3c157b2ab"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D03.OSBS.DP1.10058.001.div_1m2Data.2023-09.basic.20251206T121342Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "14bbdfaf7bc01faa2c7c37b6d014ef5110823734aefefb4ffd7cf77b7be3da63"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D03.OSBS.DP1.10058.001.div_1m2Data.2023-10.basic.20251206T111937Z.csv.metadata.csv": {
+      "bytes": 19633,
+      "sha256": "699e31d9b95745b7276cbf7d46dc0109e72e8e5018b1101f0dded1f6695c849b"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D03.OSBS.DP1.10058.001.div_1m2Data.2023-10.basic.20251206T111937Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "519f596d2e90f09f3928417c46d5e47c5cab083e71fa791c9cc9f642b6d93622"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D04.GUAN.DP1.10058.001.div_1m2Data.2023-10.basic.20251206T084622Z.csv.metadata.csv": {
+      "bytes": 26485,
+      "sha256": "67fbd1510453a7bba201f2051f748e4f337f3996d2b21b1ab351a6982faf0160"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D04.GUAN.DP1.10058.001.div_1m2Data.2023-10.basic.20251206T084622Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "7d158e47b6229509bfcba2743c45c848cf3b1bc9220a527efa8a4c27a3233f2f"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D04.LAJA.DP1.10058.001.div_10m2Data100m2Data.2023-09.basic.20251210T225755Z.csv.metadata.csv": {
+      "bytes": 53435,
+      "sha256": "3619fa29c17092968ebe8e99d878c326e75ce190a627d28c2abd151254d09326"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D04.LAJA.DP1.10058.001.div_10m2Data100m2Data.2023-09.basic.20251210T225755Z.csv.metadata.receipt.json": {
+      "bytes": 630,
+      "sha256": "8e6e863cfdf72a661f05518136676678d199a4d50e17052c90404e5e99a94a7a"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D04.LAJA.DP1.10058.001.div_1m2Data.2023-09.basic.20251210T225755Z.csv.metadata.csv": {
+      "bytes": 32027,
+      "sha256": "41739b9e83273ab05c8b9fb3302b8c437d035e238fb432ea1d3d42ce15700b56"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D04.LAJA.DP1.10058.001.div_1m2Data.2023-09.basic.20251210T225755Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "d967b272dce80f004199613ce9788682e65f81b223043e3e51a531b6113449f5"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D05.STEI.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T134018Z.csv.metadata.csv": {
+      "bytes": 14851,
+      "sha256": "51295e208270033d11c8f4ac24c0a8210b6dfa0968b9d4febb7ced0c3d73cd5b"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D05.STEI.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T134018Z.csv.metadata.receipt.json": {
+      "bytes": 630,
+      "sha256": "a2cb2913b47067f6586bfc8ab44eb848f812043d841a779925127341139ba3db"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D05.STEI.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T114552Z.csv.metadata.csv": {
+      "bytes": 1863,
+      "sha256": "bb9f8c1e88370bd01bc985db0c3da43bedfc92c0420b1706cea6935fb3ba2926"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D05.STEI.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T114552Z.csv.metadata.receipt.json": {
+      "bytes": 628,
+      "sha256": "bb43598133bb389f4ec9dbda896fddb57049bd8ec3a74ac3c4316393f9405a52"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D05.STEI.DP1.10058.001.div_10m2Data100m2Data.2023-12.basic.20251206T093238Z.csv.metadata.csv": {
+      "bytes": 34395,
+      "sha256": "78be43c65451b7da2bb0f6ab9e8e1c9e50d6d4861611caa39fde280a12c6e63a"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D05.STEI.DP1.10058.001.div_10m2Data100m2Data.2023-12.basic.20251206T093238Z.csv.metadata.receipt.json": {
+      "bytes": 629,
+      "sha256": "e18c79242c4c60f6e90e8bb8ad93ced29fedc351d89730bb6f5ec1e57066d82f"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D05.STEI.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T134018Z.csv.metadata.csv": {
+      "bytes": 8965,
+      "sha256": "31771218db4de2c5cad82e277d0c3c74bdc9a99d59c1999ce5910b5b3ecae0ae"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D05.STEI.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T134018Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "f5ba935615a43d8b002b873c0d53e5f395837aacf737d84dfd0681d54ae3a741"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D05.STEI.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T114552Z.csv.metadata.csv": {
+      "bytes": 1201,
+      "sha256": "92a4989f6eb58fde44f769a2aca0f4b95e2b1334e28159cd4f47dcd4aa0712c4"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D05.STEI.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T114552Z.csv.metadata.receipt.json": {
+      "bytes": 598,
+      "sha256": "ac1ebaf201e0a1f740e443ae4eb10c2ac1b389849792c39fb5caa06152ae8922"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D05.STEI.DP1.10058.001.div_1m2Data.2023-12.basic.20251206T093238Z.csv.metadata.csv": {
+      "bytes": 20641,
+      "sha256": "b8dbf71e7bb5511c28c79dff8b11243a148ea4ba5867d9170892d17ad32b53c2"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D05.STEI.DP1.10058.001.div_1m2Data.2023-12.basic.20251206T093238Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "5c75f67cf6ba7ba1fd14af9abf68fd75d5211b9606d71170a0edc4e238c21e62"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D05.TREE.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T142058Z.csv.metadata.csv": {
+      "bytes": 8965,
+      "sha256": "d21184d99debe31cb385035f278bfcdc5effb482effb6e6a9d182e93c0bcd00c"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D05.TREE.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T142058Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "1094cc826f963414f588b8992a9a195538848b4cbf4ea777fd5388c597e39fe2"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D05.TREE.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T152507Z.csv.metadata.csv": {
+      "bytes": 1201,
+      "sha256": "2ce9b5ac36ed04c40e1a9673741368ffdb04ecfcbac9902c2788fba81e09e2b5"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D05.TREE.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T152507Z.csv.metadata.receipt.json": {
+      "bytes": 598,
+      "sha256": "ab9d8837b056360d8afb06f6058dbddebaed62e9fd3842a924b5331c1a9c56cf"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D05.TREE.DP1.10058.001.div_1m2Data.2023-12.basic.20251206T100112Z.csv.metadata.csv": {
+      "bytes": 20641,
+      "sha256": "4ce6b08a46bfdaf21ad0f1554246a66900510d487eb47cf2aede2d7dee36434b"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D05.TREE.DP1.10058.001.div_1m2Data.2023-12.basic.20251206T100112Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "f0d9e92cabf1f1b71429aacbdd1083920e03aab208422c3efc941f01309b1556"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D05.UNDE.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T141836Z.csv.metadata.csv": {
+      "bytes": 10933,
+      "sha256": "1513deb9dfe94244e748ddd654b6beda3cd87bd52ad66225ed514708e6c5bfff"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D05.UNDE.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T141836Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "6ae359cedb915c9ca8064cc53d6e64a630943a7fd41e4724adabd211dc1dc487"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D05.UNDE.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T112609Z.csv.metadata.csv": {
+      "bytes": 1201,
+      "sha256": "b5520367db14eb67392e382d846bfb2bf2cd1689c7b516b8de3efad539208651"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D05.UNDE.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T112609Z.csv.metadata.receipt.json": {
+      "bytes": 598,
+      "sha256": "509bf8802a5f69281e0834203bf4df989b57abe73ce4582556b7845c393c1724"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D05.UNDE.DP1.10058.001.div_1m2Data.2023-12.basic.20251206T153119Z.csv.metadata.csv": {
+      "bytes": 18865,
+      "sha256": "773acdc6faae0c2a45434a1f4a97e7116cb8665b4f741721a0e914b37aa3dc7a"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D05.UNDE.DP1.10058.001.div_1m2Data.2023-12.basic.20251206T153119Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "37b5e760da8f5e67a2ee6fdcda781758c8f98797d67c038e7398e1380e4052e1"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D06.KONA.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T103534Z.csv.metadata.csv": {
+      "bytes": 32581,
+      "sha256": "393b0ca7fc55c7559ab1ea8e594cd7c51bfc549e23a0ece8e63db2f1b72bb18b"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D06.KONA.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T103534Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "0a08dc7e5a2395ad6d92f8525af6c2248166135067ea670181ea404286ac5ab9"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D06.KONZ.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T090300Z.csv.metadata.csv": {
+      "bytes": 3389,
+      "sha256": "c6f00fd198051d6141b25f10574f3d61cfab6d10079fc935bc9c6085cc7076f7"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D06.KONZ.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T090300Z.csv.metadata.receipt.json": {
+      "bytes": 628,
+      "sha256": "7705c17e2ca81fac4581f94681af7c5db964bbfbb8342c2978bff28babf0c8bc"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D06.KONZ.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T095245Z.csv.metadata.csv": {
+      "bytes": 13325,
+      "sha256": "861e34093ea53e6e9749a70c9278ce3b36161e8adae9699720d3009283a117e5"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D06.KONZ.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T095245Z.csv.metadata.receipt.json": {
+      "bytes": 630,
+      "sha256": "03e389faaa35a75c74237aa803cf90d3df0e48a4dacf6f3bad7ae813a681221f"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D06.KONZ.DP1.10058.001.div_10m2Data100m2Data.2023-09.basic.20251206T110845Z.csv.metadata.csv": {
+      "bytes": 35521,
+      "sha256": "aa634f114af85b7a2481276f2dbd909fe71f026913b3c744c5f98732114207db"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D06.KONZ.DP1.10058.001.div_10m2Data100m2Data.2023-09.basic.20251206T110845Z.csv.metadata.receipt.json": {
+      "bytes": 630,
+      "sha256": "9e02809845b96e7bf5480924b28b18a843bc8b458d05e444d9131e303b8b24c3"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D06.KONZ.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T090300Z.csv.metadata.csv": {
+      "bytes": 2113,
+      "sha256": "8a0baba7df4e31d558940cb4287a2aa2c5857422e99a3f61a2010a09431e3eab"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D06.KONZ.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T090300Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "bcdc05a9a2505dc21643415e2713e4ecbaa00c1b126a4de6efd5ece50e5f3f65"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D06.KONZ.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T095245Z.csv.metadata.csv": {
+      "bytes": 8053,
+      "sha256": "d9523d1634ae5a08fbfac6964539f7edfba69e3c21fd166fcb90eb417505da35"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D06.KONZ.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T095245Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "c6e0c1c89a681eafb7a6420af9ba4209d9f31c3beeec9c529758f5cadcd67140"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D06.KONZ.DP1.10058.001.div_1m2Data.2023-09.basic.20251206T110845Z.csv.metadata.csv": {
+      "bytes": 21313,
+      "sha256": "1fa21e608c3426624cd327aabda5df6c3a7b9027f66bcbad0df3f38d53e194e9"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D06.KONZ.DP1.10058.001.div_1m2Data.2023-09.basic.20251206T110845Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "1d371a7fac3d8aa504e8f5f276a4535a4a4c036e7d9f5e5824b0d63dc853a0fb"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D06.UKFS.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T090235Z.csv.metadata.csv": {
+      "bytes": 2113,
+      "sha256": "d8baa00e1153e929781620cefe90c316ee2a186573c3f3b5acac100dbda7a091"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D06.UKFS.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T090235Z.csv.metadata.receipt.json": {
+      "bytes": 598,
+      "sha256": "d956d83434ae9e6a5d4eaa3d780e20f22fd5c6c36f08c40a42fbae766505fe65"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D06.UKFS.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T133922Z.csv.metadata.csv": {
+      "bytes": 28477,
+      "sha256": "6a6e6fe15cf0183836be97cd3766b2a150f622f3bdeb0ba09071d8c1aaf6a259"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D06.UKFS.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T133922Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "2577716cf7569c3f90ac59f1a1f25a40c4f5a9af12199c0e91ad85eaf1c825d0"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D07.GRSM.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T100102Z.csv.metadata.csv": {
+      "bytes": 24520,
+      "sha256": "6f19d9984f8708817e454355999d99f962f0679922b55030dae27e0ceb7d2cf5"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D07.GRSM.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T100102Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "b840d06d7b318057097095b8b8ecde3d1df8ac848574c1e1ba7bcdcfdf797d4f"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D07.GRSM.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T130745Z.csv.metadata.csv": {
+      "bytes": 8089,
+      "sha256": "aaecd3fb4e61b8a8a006025c2c0566a942d232bd48078b89f4ff874f60957068"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D07.GRSM.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T130745Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "9f14a556fa9eac63d00718f224dfa9f1d6212d503d0e11752d226c65128063d2"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D07.MLBS.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T131917Z.csv.metadata.csv": {
+      "bytes": 16826,
+      "sha256": "fb5ee7e7fdca8da9be84fe5b06be15000792aa086e9a2cc728fabc2709d2e1c8"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D07.MLBS.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T131917Z.csv.metadata.receipt.json": {
+      "bytes": 630,
+      "sha256": "f2737a0d12cb4941b4449ca3b9e68ab8842c4423bb28c7bc3a87b0db6ead289b"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D07.MLBS.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T122817Z.csv.metadata.csv": {
+      "bytes": 22895,
+      "sha256": "13b083d6edcb19738d32b459ff161920144b6b2a5533c41a16355797e29e1135"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D07.MLBS.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T122817Z.csv.metadata.receipt.json": {
+      "bytes": 630,
+      "sha256": "e1929d40857fb9de5c19bd4b4256fe5720d2a8d12745d64564530705ab3821b3"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D07.MLBS.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T131917Z.csv.metadata.csv": {
+      "bytes": 10113,
+      "sha256": "264277c5ca212b32278c7ab4cfcd38d405e220d1786a2d5217a0a11895545584"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D07.MLBS.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T131917Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "3c1328c670488ee459196d6536b9d658b1cce920c6b8cf8d6a367f7a9dc36590"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D07.MLBS.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T122817Z.csv.metadata.csv": {
+      "bytes": 13813,
+      "sha256": "f580ec388c6fd095a26e9ac411b43a757e4dcc2b8cd9115f453b88ddf10dae32"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D07.MLBS.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T122817Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "540b9b284d11a25399b38272996cc81d01afbb0a0253ef2e8a938fab52b62282"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D07.ORNL.DP1.10058.001.div_10m2Data100m2Data.2023-06.basic.20251206T084138Z.csv.metadata.csv": {
+      "bytes": 32134,
+      "sha256": "8929a50fecf7e588e340fc946ea2c5868b5c3a993bb52a2d85e433a4a1f45ddd"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D07.ORNL.DP1.10058.001.div_10m2Data100m2Data.2023-06.basic.20251206T084138Z.csv.metadata.receipt.json": {
+      "bytes": 631,
+      "sha256": "37a18b925a3fc196e4d576b23787def0f2b7533b12bf2cd04a5bf8d6bfeeee24"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D07.ORNL.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T141806Z.csv.metadata.csv": {
+      "bytes": 7654,
+      "sha256": "797ed4cf6004d5807d5d44c9230d491541814bd160f47ffe94fe5280eee1d8c7"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D07.ORNL.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T141806Z.csv.metadata.receipt.json": {
+      "bytes": 629,
+      "sha256": "672d13ec8735d1dff36094e8b0a3a52bf87ab56d3146b29e7347bf722d32010a"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D07.ORNL.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T094049Z.csv.metadata.csv": {
+      "bytes": 5072,
+      "sha256": "ae3a1caf42a29bbb587bbc625fbbf4b06fa7850984339b2c9eb1c41ee7dd7afc"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D07.ORNL.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T094049Z.csv.metadata.receipt.json": {
+      "bytes": 628,
+      "sha256": "aab95571331fed4339fb9c2db862aa9ab2a6c1070072747f6e5dbad937ef0b4d"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D07.ORNL.DP1.10058.001.div_10m2Data100m2Data.2023-09.basic.20251206T081002Z.csv.metadata.csv": {
+      "bytes": 1863,
+      "sha256": "10156955b0faf01623e14dfffa5a9424d399708ca11224419b72f4a4cd7e1fb9"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D07.ORNL.DP1.10058.001.div_10m2Data100m2Data.2023-09.basic.20251206T081002Z.csv.metadata.receipt.json": {
+      "bytes": 628,
+      "sha256": "bd4b2f69cbb476288f54bdee8cd0d2f3e88101260c4ae4227a91c346cd487ad3"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D07.ORNL.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T084138Z.csv.metadata.csv": {
+      "bytes": 19297,
+      "sha256": "6221fe05d8eb02433fcd7ca14226501d77e7dd5b393ee1ef4cfea90ed80cfea4"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D07.ORNL.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T084138Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "d6177ff259572f4e77fdb025a88290e4f31c12692db9cdcafc3ff18b3fe3e4d7"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D07.ORNL.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T141806Z.csv.metadata.csv": {
+      "bytes": 4663,
+      "sha256": "65fc6fc8e74ba1d150f1f3ff949c394ef9aebe083089c2f348e3dc002f54399f"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D07.ORNL.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T141806Z.csv.metadata.receipt.json": {
+      "bytes": 598,
+      "sha256": "b5c2a5672ba53a8d4825a86880cc31398daf09f8e2a8934cae5a396dd28b5ac2"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D07.ORNL.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T094049Z.csv.metadata.csv": {
+      "bytes": 3121,
+      "sha256": "967d6e0618648b5321b17ad4c2ec9988c53a9b3633811e7b2eca32f761b4d9f5"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D07.ORNL.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T094049Z.csv.metadata.receipt.json": {
+      "bytes": 598,
+      "sha256": "6feda63d5d3ce281e3aba167704859ef0c08884bc0d5218056c7f674af3179b6"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D07.ORNL.DP1.10058.001.div_1m2Data.2023-09.basic.20251206T081002Z.csv.metadata.csv": {
+      "bytes": 1201,
+      "sha256": "c7e38ebd4555ffdc1d2f9613bd8f865e84149d4783121462e956cca4c17bcd63"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D07.ORNL.DP1.10058.001.div_1m2Data.2023-09.basic.20251206T081002Z.csv.metadata.receipt.json": {
+      "bytes": 598,
+      "sha256": "4207a892f6b9ba479176ef6aac4a428f4cfed4c57fd8c72577ab676308405c92"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D08.DELA.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T103119Z.csv.metadata.csv": {
+      "bytes": 7981,
+      "sha256": "f6704ae0635f89fcc023a0be9c3841e4600bdeaf83706b87c52a237cc371d40d"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D08.DELA.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T103119Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "e9d0e16724b164bf2203ee1ad4190e16a24579e2edea5cd05b8bc06d220a2968"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D08.DELA.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T112907Z.csv.metadata.csv": {
+      "bytes": 24817,
+      "sha256": "d6b7b867b728e1b2289a3ab3975a5a6e29a9534f40b0911e0df87500e40b9b63"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D08.DELA.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T112907Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "525de192e46a218297b6d4081d8a88b5f4a9b8587b93ebd70598781b9b3cca29"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D08.LENO.DP1.10058.001.div_10m2Data100m2Data.2023-06.basic.20251206T081149Z.csv.metadata.csv": {
+      "bytes": 19849,
+      "sha256": "602d83faa13432387a1ef48ddd772e0445f2e55ef76463e33dea016d52c141c9"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D08.LENO.DP1.10058.001.div_10m2Data100m2Data.2023-06.basic.20251206T081149Z.csv.metadata.receipt.json": {
+      "bytes": 630,
+      "sha256": "e9d79df9764d0ae5579b1cff6248b549e5879838ea12dfd4b4084e473998f686"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D08.LENO.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T110117Z.csv.metadata.csv": {
+      "bytes": 26493,
+      "sha256": "ef9f9bd3f29f326b16842c8503d1ef2feb055b48cc91daf18568ec9e14a9991e"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D08.LENO.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T110117Z.csv.metadata.receipt.json": {
+      "bytes": 630,
+      "sha256": "7c1b10652e26b4d30803d8a860b7d18c0951e9a977ef5226872c48c2f3d8b945"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D08.LENO.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T153703Z.csv.metadata.csv": {
+      "bytes": 8447,
+      "sha256": "af9c306199976aa6d1000b1d6f47a71637a472871a4c70f6ea7996efc2081328"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D08.LENO.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T153703Z.csv.metadata.receipt.json": {
+      "bytes": 629,
+      "sha256": "fb247a939b1fbb747d21dab7781c9947d83fadf9280f3e0acab4bd4a3df4c115"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D08.LENO.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T081149Z.csv.metadata.csv": {
+      "bytes": 11953,
+      "sha256": "b921ab7d071a590ecc36508cc10e8b61279f700df987db7c445e78e7d286ff41"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D08.LENO.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T081149Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "b289f7c8aeb6e1b21796242d1fe1d84f66e724b2162bd7f99bace52bd7348b44"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D08.LENO.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T110117Z.csv.metadata.csv": {
+      "bytes": 15925,
+      "sha256": "43bdd7824bb00872fae81c81cc77edab533b16d94034944742bccd3c48692075"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D08.LENO.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T110117Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "e14363e8bf33b7c701a01a5436e5faa862e2231deb8a810664fed7c78f0afc8e"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D08.LENO.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T153703Z.csv.metadata.csv": {
+      "bytes": 5137,
+      "sha256": "cbeaa583b813093e326bd3d2900d01b1e3b720309b120b3a4883b65d59ab9f44"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D08.LENO.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T153703Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "d07518400358ea26c2dcc9defab6cc90f19649434d2b3f35acf0dc48cb363d2e"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D08.TALL.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T113409Z.csv.metadata.csv": {
+      "bytes": 4182,
+      "sha256": "805078a6fb4bf1aeac8e4955839578ac681077c2b890bd3d97500df76e0dd47d"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D08.TALL.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T113409Z.csv.metadata.receipt.json": {
+      "bytes": 629,
+      "sha256": "54ed150a973e47ba3cdf536c3fb0fe45129c66289f1d5cb3aa9cb3a189b5ebd8"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D08.TALL.DP1.10058.001.div_10m2Data100m2Data.2023-09.basic.20251206T140345Z.csv.metadata.csv": {
+      "bytes": 28992,
+      "sha256": "a91218e244ae0b641236561a9a661e4b7c0e8d03d310e9b30b1e0b6f30467003"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D08.TALL.DP1.10058.001.div_10m2Data100m2Data.2023-09.basic.20251206T140345Z.csv.metadata.receipt.json": {
+      "bytes": 631,
+      "sha256": "6d475117f25176465d83dcb644dcd67606f069579759084883414ae27389e5db"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D08.TALL.DP1.10058.001.div_10m2Data100m2Data.2023-11.basic.20251206T080706Z.csv.metadata.csv": {
+      "bytes": 19535,
+      "sha256": "5f34a9699e37a2596f71aabca69b7ced8d211b39488a9164f7023a2db19f4165"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D08.TALL.DP1.10058.001.div_10m2Data100m2Data.2023-11.basic.20251206T080706Z.csv.metadata.receipt.json": {
+      "bytes": 629,
+      "sha256": "c8fb524e763210cc9b4ea408a813a310a6a2dc94d806e89e616e85ace953b333"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D08.TALL.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T113409Z.csv.metadata.csv": {
+      "bytes": 2587,
+      "sha256": "56f6eb13b93d09d727256b0e3f126b2c4ec524722f7d72de8e550152768e7ac2"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D08.TALL.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T113409Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "9085144c44db557cf6a506a90f952ed867d2b1412f4f43917a3c41b438809884"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D08.TALL.DP1.10058.001.div_1m2Data.2023-09.basic.20251206T140345Z.csv.metadata.csv": {
+      "bytes": 17419,
+      "sha256": "71eb0198343facd803ca0e5768744a82262bf4df05ec164728932cb561187d5a"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D08.TALL.DP1.10058.001.div_1m2Data.2023-09.basic.20251206T140345Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "36795a01387013642fc449b27a269e8069210c5ce3863b6c2a2fc395bfc23604"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D08.TALL.DP1.10058.001.div_1m2Data.2023-11.basic.20251206T080706Z.csv.metadata.csv": {
+      "bytes": 11761,
+      "sha256": "99fba202cef0404b6da6dcd9c8b06b8ff7a6c68879acc8d5f5c9acfba5f836d9"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D08.TALL.DP1.10058.001.div_1m2Data.2023-11.basic.20251206T080706Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "1c32dd4796e814c8a4a624872623357b373524cadd70fd12721ac536d6ae93a6"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D09.DCFS.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T115053Z.csv.metadata.csv": {
+      "bytes": 11559,
+      "sha256": "c25ffe2712286fc7817e2dfc54fdd9c3f88a42b4438f09d86e870000ecfe58f4"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D09.DCFS.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T115053Z.csv.metadata.receipt.json": {
+      "bytes": 630,
+      "sha256": "ab33a1cb7cc79c624c9164e2a91a2b8a0c6bc45cd57c34fe38fdf217a0fa7e52"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D09.DCFS.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T143109Z.csv.metadata.csv": {
+      "bytes": 39333,
+      "sha256": "9e53d38f52be207e9604788ffeed0eda783d1769adac8a21155f1c07bef3431c"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D09.DCFS.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T143109Z.csv.metadata.receipt.json": {
+      "bytes": 630,
+      "sha256": "46adb19e654ac3f655642eb6973eb7188857c90ce5d17a8c1db3443e684f5931"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D09.DCFS.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T115053Z.csv.metadata.csv": {
+      "bytes": 6997,
+      "sha256": "c00303b05ed2fb2ea8478c2db1be69e4a985c378ca1ff812541a2d4ce953d168"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D09.DCFS.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T115053Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "a1b8d182e270ded109cf89657c33c20b720338575dc09bae16344da5f2087318"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D09.DCFS.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T143109Z.csv.metadata.csv": {
+      "bytes": 23593,
+      "sha256": "ce407c99ee952affd218a22b6cc3679762e861f7687f3993032335721f482c27"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D09.DCFS.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T143109Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "6ac26adc4f6a5c8b826fecd1fb78e689b8bb92b9aa487e7597d2f96086bd0690"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D09.NOGP.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T152312Z.csv.metadata.csv": {
+      "bytes": 2326,
+      "sha256": "34759d79c5e4571e73e55c918bd5e04d23f9df135be26cdbb066c17d61622d19"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D09.NOGP.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T152312Z.csv.metadata.receipt.json": {
+      "bytes": 598,
+      "sha256": "6f38a30318971e747ed65c12b9dca9126e69d694cdbc6ffa67323e93a8f77d10"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D09.NOGP.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T095116Z.csv.metadata.csv": {
+      "bytes": 3187,
+      "sha256": "10f56e9721a8c0246be4c29b34097aeeebf62d3b1c6d12271df31f40f2bd31c7"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D09.NOGP.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T095116Z.csv.metadata.receipt.json": {
+      "bytes": 598,
+      "sha256": "efecf52b86d49bfe864267fe7d78c8be8d552503f8fcffcab07b2ca6ee8c915e"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D09.NOGP.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T102959Z.csv.metadata.csv": {
+      "bytes": 25588,
+      "sha256": "6099b60e4361444c5431644371c7bdabdc4154c5ad848be3064be6ac0e3ee396"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D09.NOGP.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T102959Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "3a05f2a5a610e70c90adec6457ff271d1c7cb5218affaba8edf7276a911936ce"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D09.WOOD.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T131740Z.csv.metadata.csv": {
+      "bytes": 4045,
+      "sha256": "cdeac62192819c7350ed627801cc5d5fe35b3601c14f701bd84ddd241f404077"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D09.WOOD.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T131740Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "4e8bfbad2fa6c8cbad7760f629f5854710d76d6502f033da2b70591c03b45d27"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D09.WOOD.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T093516Z.csv.metadata.csv": {
+      "bytes": 26545,
+      "sha256": "4df9ed3cdd3ffe9ab57ff35f161e3ab23bb8d699457424e71721ffd63ebc33d8"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D09.WOOD.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T093516Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "70aec720225db1672e8f91274b41baf31dffe0ba8a1a1259e555b1070c99d4d7"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D10.CPER.DP1.10058.001.div_1m2Data.2023-05.basic.20251206T090238Z.csv.metadata.csv": {
+      "bytes": 30469,
+      "sha256": "288072c72773174b1572e5fbe293814c8032a3823d2038ba45dd31736e6ce98a"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D10.CPER.DP1.10058.001.div_1m2Data.2023-05.basic.20251206T090238Z.csv.metadata.receipt.json": {
+      "bytes": 601,
+      "sha256": "4dc5148df9ae4c0e4740b23b4a7ef4ddf35b56c351d5bc8507f948a6c9669308"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D10.CPER.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T142826Z.csv.metadata.csv": {
+      "bytes": 2197,
+      "sha256": "8aaf922520b3bbf7e67ed49e97f9e58e2e3033217763e14cb244012e47d46f9f"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D10.CPER.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T142826Z.csv.metadata.receipt.json": {
+      "bytes": 598,
+      "sha256": "a06e761f35cfb85202b0237b1a7aa77b4eff145794e8f5739d74dc64ad7d7af5"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D10.RMNP.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T132922Z.csv.metadata.csv": {
+      "bytes": 32779,
+      "sha256": "5bcae996d115458a4b289735b27a72d159acba4e3c8914b4e2cb950b82c7b0b0"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D10.RMNP.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T132922Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "c89294125ac7102f8b61cf2610cf0e02c3103f22f1d6dfe442c1302f85e08859"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D10.STER.DP1.10058.001.div_10m2Data100m2Data.2023-05.basic.20251206T081542Z.csv.metadata.csv": {
+      "bytes": 5185,
+      "sha256": "c791c9f929ee4af40d809871b924f6f8210f588b305936079c56da174570520e"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D10.STER.DP1.10058.001.div_10m2Data100m2Data.2023-05.basic.20251206T081542Z.csv.metadata.receipt.json": {
+      "bytes": 628,
+      "sha256": "e0adc16444585eebff72edb6dfc7acade7fcac02363250a487b3d6068564d4db"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D10.STER.DP1.10058.001.div_10m2Data100m2Data.2023-06.basic.20251206T100437Z.csv.metadata.csv": {
+      "bytes": 9973,
+      "sha256": "253312a45762e47126f8697ad1f3feb51e62b748865f440880b249ea17a99f79"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D10.STER.DP1.10058.001.div_10m2Data100m2Data.2023-06.basic.20251206T100437Z.csv.metadata.receipt.json": {
+      "bytes": 628,
+      "sha256": "807374da50230bc21a088c31d1ab8f213b2cfc18c624dd5309baa2d6f6b9a2f3"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D10.STER.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T144455Z.csv.metadata.csv": {
+      "bytes": 1873,
+      "sha256": "aebe9b3cfeaeaaeeb836e9f90ad44a7f65f96686e326b3975756444ef982140a"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D10.STER.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T144455Z.csv.metadata.receipt.json": {
+      "bytes": 627,
+      "sha256": "c71ccb9f4c871f0c2ec17f5dbeefea9d71d88883567ef3b19a15f2e8e18386f4"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D10.STER.DP1.10058.001.div_1m2Data.2023-05.basic.20251206T081542Z.csv.metadata.csv": {
+      "bytes": 3187,
+      "sha256": "248cdd11d7105645619d3f27d72529b7d74d05ee389cb8c1e669a22474c855e9"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D10.STER.DP1.10058.001.div_1m2Data.2023-05.basic.20251206T081542Z.csv.metadata.receipt.json": {
+      "bytes": 598,
+      "sha256": "03a42e096560f5bc358d53d0066d3f6757b3fb25ddf0450ced80bfeb8aef909e"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D10.STER.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T100437Z.csv.metadata.csv": {
+      "bytes": 6049,
+      "sha256": "0f6a0278b470f0de914a45c04018d4f30b8e671f8a9b10535054062e044f1c39"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D10.STER.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T100437Z.csv.metadata.receipt.json": {
+      "bytes": 598,
+      "sha256": "95d0dfdfaef04af61b88f093425077949b11a32adb005103c4831ddae222dd93"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D10.STER.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T144455Z.csv.metadata.csv": {
+      "bytes": 1207,
+      "sha256": "e80503280286d1d019e3e595193bf4184534fce21142b63bfc7b35975d91bf5e"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D10.STER.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T144455Z.csv.metadata.receipt.json": {
+      "bytes": 598,
+      "sha256": "82f21f7c51d1fd275339f24b210b8be5f638e31782f23da48a5019a4e30f21f7"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.CLBJ.DP1.10058.001.div_1m2Data.2023-05.basic.20251206T125600Z.csv.metadata.csv": {
+      "bytes": 3133,
+      "sha256": "a02222c71430e0a2438743036ef410d29f480976b2d4934a70f73c8b61a2940d"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.CLBJ.DP1.10058.001.div_1m2Data.2023-05.basic.20251206T125600Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "8c3963c26117def9732e42a026d6bff5ff34f809040b9a8d65d4370a01b6860f"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.CLBJ.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T085355Z.csv.metadata.csv": {
+      "bytes": 6213,
+      "sha256": "e7ebab3cef6ca084fa09d231ee4c4343401bce591378f6ffcfc7fb4ab4ecab07"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.CLBJ.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T085355Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "cc3641522ee2ed83c94ca154d798c1d68766d6a0490c0756eed72207d8b636bf"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.CLBJ.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T113236Z.csv.metadata.csv": {
+      "bytes": 4973,
+      "sha256": "3605d53b7089ab0af00321c706c91920ec7de08b5d05eac7eb758d9b95e5560e"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.CLBJ.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T113236Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "1967cc219656c2dd3231239bb385b81a43e1c36b7606cd2c0b9540512f51322e"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.CLBJ.DP1.10058.001.div_1m2Data.2023-09.basic.20251206T134956Z.csv.metadata.csv": {
+      "bytes": 16225,
+      "sha256": "14af4b8109e83f60ac91a6867d38f29970efb0f28a6140a0a998e5e4d0f06158"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.CLBJ.DP1.10058.001.div_1m2Data.2023-09.basic.20251206T134956Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "63441586a8833e9f35f9ad805d90f588e806d1b9c3c926c9ff937e452c253397"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.CLBJ.DP1.10058.001.div_1m2Data.2023-12.basic.20251206T144014Z.csv.metadata.csv": {
+      "bytes": 1105,
+      "sha256": "ffc274081065f8d9e2f142f507774e55570f57f627b5276bd7956e76140cab0c"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.CLBJ.DP1.10058.001.div_1m2Data.2023-12.basic.20251206T144014Z.csv.metadata.receipt.json": {
+      "bytes": 597,
+      "sha256": "9ec9d02b99b119e589309f024784c9cbad2423d97bb9558aa0f829b1f2199639"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.OAES.DP1.10058.001.div_10m2Data100m2Data.2023-04.basic.20251206T082939Z.csv.metadata.csv": {
+      "bytes": 8267,
+      "sha256": "014784cbf2f33a93038ad2db09681ea4905aa8e6beb0351b5cd70d22511bceee"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.OAES.DP1.10058.001.div_10m2Data100m2Data.2023-04.basic.20251206T082939Z.csv.metadata.receipt.json": {
+      "bytes": 629,
+      "sha256": "504cc16b88b4786f52a83bc76933a382eae40d2a0c11978b22eea1d51d0520db"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.OAES.DP1.10058.001.div_10m2Data100m2Data.2023-05.basic.20251206T152849Z.csv.metadata.csv": {
+      "bytes": 3838,
+      "sha256": "2b55d2d554123ad2522d5ffbb6e853968e2a5d5847afd8a30c58dcde01d06beb"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.OAES.DP1.10058.001.div_10m2Data100m2Data.2023-05.basic.20251206T152849Z.csv.metadata.receipt.json": {
+      "bytes": 629,
+      "sha256": "b0f93421535b6cb0d57350e0cc9021b67aa85db1557356d4e8f536e2655ea86d"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.OAES.DP1.10058.001.div_10m2Data100m2Data.2023-06.basic.20251206T150919Z.csv.metadata.csv": {
+      "bytes": 4826,
+      "sha256": "8ac3f78c4475c45c22d8e1347aa8af9c192de2f546615f756df56b26f6d416f0"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.OAES.DP1.10058.001.div_10m2Data100m2Data.2023-06.basic.20251206T150919Z.csv.metadata.receipt.json": {
+      "bytes": 629,
+      "sha256": "c8560836ce3586e37d593698aecaba43f6e0ac2c1f14866418cbed0d5480f2ae"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.OAES.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T140337Z.csv.metadata.csv": {
+      "bytes": 3389,
+      "sha256": "c4bdc55443b9c449cf0b3bb5c376e79d854387f3f63c568af894fec17995b4de"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.OAES.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T140337Z.csv.metadata.receipt.json": {
+      "bytes": 628,
+      "sha256": "d8dab7faa037fc2b9ae4fc074df5f25d4111577b0f7691015458ec22f1868d3e"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.OAES.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T140700Z.csv.metadata.csv": {
+      "bytes": 13325,
+      "sha256": "850c68a8aa2d08dc828cef09c14e375004698e4ae16caf8b56f3e2b1b6011fbc"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.OAES.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T140700Z.csv.metadata.receipt.json": {
+      "bytes": 630,
+      "sha256": "c9f9c8fd4df0a977238aa639c86ce11de8d71a3d3bfd2c0f41251253b01924a8"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.OAES.DP1.10058.001.div_10m2Data100m2Data.2023-09.basic.20251206T093925Z.csv.metadata.csv": {
+      "bytes": 19861,
+      "sha256": "7c77a570dc02bb318b31689d884451b9887985bd9cd8fae72444486a239e865d"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.OAES.DP1.10058.001.div_10m2Data100m2Data.2023-09.basic.20251206T093925Z.csv.metadata.receipt.json": {
+      "bytes": 630,
+      "sha256": "9293636a073fa5427b4f140403114d078871d37763541c1c3865add57b83953e"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.OAES.DP1.10058.001.div_10m2Data100m2Data.2023-12.basic.20251206T124651Z.csv.metadata.csv": {
+      "bytes": 49255,
+      "sha256": "b669ac7c2003c003c253a25b78b99f99786d13c1f79328c47c2c51c72a25c2eb"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.OAES.DP1.10058.001.div_10m2Data100m2Data.2023-12.basic.20251206T124651Z.csv.metadata.receipt.json": {
+      "bytes": 629,
+      "sha256": "6f018b8f4d2b9748e61bbb539ff6a761af6c364ab476a7e09ba8974cab10d00d"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.OAES.DP1.10058.001.div_1m2Data.2023-04.basic.20251206T082939Z.csv.metadata.csv": {
+      "bytes": 5029,
+      "sha256": "42e08a36d571e0e52a808886d8a9a83902f26b682d9866e679c72243769e1c7b"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.OAES.DP1.10058.001.div_1m2Data.2023-04.basic.20251206T082939Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "38081cdcfc0b1d74c3ac08398a4a43a6f619f84eeea1094d23a43a78e42a4dd9"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.OAES.DP1.10058.001.div_1m2Data.2023-05.basic.20251206T152849Z.csv.metadata.csv": {
+      "bytes": 2349,
+      "sha256": "d3666ca5b2ab163a9b8c76ff2389ef28a174a66d43c16d1bd4721b22b226d89d"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.OAES.DP1.10058.001.div_1m2Data.2023-05.basic.20251206T152849Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "4b44ca699afd505ec018ab7c1e756a82401a83a9c44be68e2699ff5307d5d13d"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.OAES.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T150919Z.csv.metadata.csv": {
+      "bytes": 3005,
+      "sha256": "ef371a961e7fd8748fad012ce432e2e51f64c93d137c143692482fb7cad17a70"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.OAES.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T150919Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "6e8995d8b23a2338de17afb85d79241b6ead89d206ffdb24facd8416503af02b"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.OAES.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T140337Z.csv.metadata.csv": {
+      "bytes": 2113,
+      "sha256": "dca91fdb9745b460d37ffdac147b82639602f531911250bf5703c7edb6416d20"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.OAES.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T140337Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "9732bfe646143843395112d606cdb0cae35bedab06dedfb1a2077e8de66cdc38"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.OAES.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T140700Z.csv.metadata.csv": {
+      "bytes": 8053,
+      "sha256": "fbd8ee10c2b20919441bb8c76f341c1cb995aaf5f4ba1e95e9911df0d261d9ed"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.OAES.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T140700Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "123479c12f16637a2dc74d3e2725ba5d04e3b37ded23a9165cd75a5ff1f05067"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.OAES.DP1.10058.001.div_1m2Data.2023-09.basic.20251206T093925Z.csv.metadata.csv": {
+      "bytes": 11959,
+      "sha256": "bf135b8b0718264ccfb38c127cb7f3cc6675880baefa768db970a8b1aa713087"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.OAES.DP1.10058.001.div_1m2Data.2023-09.basic.20251206T093925Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "8039953261f6fb007c2ee5f3923e355e34519ca62a3b8595bcf11bd32228336f"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.OAES.DP1.10058.001.div_1m2Data.2023-12.basic.20251206T124651Z.csv.metadata.csv": {
+      "bytes": 29521,
+      "sha256": "f7f3ae9a8132d4a94ea829a99ef15b169805ac4527113f580d8d33385bbbe819"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D11.OAES.DP1.10058.001.div_1m2Data.2023-12.basic.20251206T124651Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "e90bbb89978a57e232471e6eacd19233ddcd23656e7d732556f5f3f55b12c669"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D12.YELL.DP1.10058.001.div_10m2Data100m2Data.2023-06.basic.20251206T152817Z.csv.metadata.csv": {
+      "bytes": 16777,
+      "sha256": "2751f98c725ade90368eea4e606e8180b0ba15ec419890dc2bc012363c56bc13"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D12.YELL.DP1.10058.001.div_10m2Data100m2Data.2023-06.basic.20251206T152817Z.csv.metadata.receipt.json": {
+      "bytes": 630,
+      "sha256": "74cfd9e9f52e66f376c64c6f255eed9f6a89c8a7348a7a1a25cbda6cf79c7a3d"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D12.YELL.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T110805Z.csv.metadata.csv": {
+      "bytes": 8317,
+      "sha256": "3056092be7489a230ed89e2d514d31cd6931b9947bdc1dcf40a6e2ee7ec18c93"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D12.YELL.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T110805Z.csv.metadata.receipt.json": {
+      "bytes": 629,
+      "sha256": "c75cbd298968bd3876b8848cc1aeb3611a32571279c2bac769038fb8f89241f7"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D12.YELL.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T102049Z.csv.metadata.csv": {
+      "bytes": 516,
+      "sha256": "91c7e2b9247f83e2f959d5bc47b248ed7ef85f52245e471044a2670f7a4d2adb"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D12.YELL.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T102049Z.csv.metadata.receipt.json": {
+      "bytes": 626,
+      "sha256": "83f75a595c23ad6dce519ea91940f16a6b36203a8ad4ccafcf09c49ea1b51adc"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D12.YELL.DP1.10058.001.div_10m2Data100m2Data.2023-09.basic.20251206T082413Z.csv.metadata.csv": {
+      "bytes": 20862,
+      "sha256": "d2bf82802ffb97f9d1a4f3a78635953182cd62d123e124351b089ec34321ea3a"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D12.YELL.DP1.10058.001.div_10m2Data100m2Data.2023-09.basic.20251206T082413Z.csv.metadata.receipt.json": {
+      "bytes": 629,
+      "sha256": "69b2de1d45ea0ccf9ff4ef83ea1367e61b962b3595df24bbd16768832e600a7f"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D12.YELL.DP1.10058.001.div_10m2Data100m2Data.2023-12.basic.20251206T101200Z.csv.metadata.csv": {
+      "bytes": 6201,
+      "sha256": "a95e746f203cbd018d340973b10b647fd1ca328846bd4ddad9cc449007e3010c"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D12.YELL.DP1.10058.001.div_10m2Data100m2Data.2023-12.basic.20251206T101200Z.csv.metadata.receipt.json": {
+      "bytes": 628,
+      "sha256": "ace72b4ea458af0308349b29d8f1440cab4db32bd7fa0be2a92c6056c488c823"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D12.YELL.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T152817Z.csv.metadata.csv": {
+      "bytes": 10117,
+      "sha256": "ecb8ae29eb285a9147f47e55f0da85c7f696c6e6be945bc7beee6934f0206702"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D12.YELL.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T152817Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "e3ce834a853d7beb366491c713290a2ad112b8f4e736947a0afe207e5d4ca1ee"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D12.YELL.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T110805Z.csv.metadata.csv": {
+      "bytes": 5059,
+      "sha256": "b72b663fbb4ac13390057dea613bfeeffd739d4a57689b220d70a4fa20288970"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D12.YELL.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T110805Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "1456ee8566b3ec2322e02c3d23ad3ebfcbdde6ddbb66781eb52d8ff0a4076073"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D12.YELL.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T102049Z.csv.metadata.csv": {
+      "bytes": 366,
+      "sha256": "e7010c82e18136f5616c25016447cfea4853f2cc2fdf9e10cc6e0c381e81f89b"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D12.YELL.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T102049Z.csv.metadata.receipt.json": {
+      "bytes": 595,
+      "sha256": "0814a488cdd22d2e60b523cf1b6a8acc8899c0fecdf1f97a678fa35407c4a3f3"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D12.YELL.DP1.10058.001.div_1m2Data.2023-09.basic.20251206T082413Z.csv.metadata.csv": {
+      "bytes": 12608,
+      "sha256": "77cafe473e58c5fc7810bf952c31e3c996cb0622d6805af85df44829b13db072"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D12.YELL.DP1.10058.001.div_1m2Data.2023-09.basic.20251206T082413Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "9c7fc6f9ac28967e5ad859d7bc280466478814e7af0397b6d14b0dbf92cd04d3"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D12.YELL.DP1.10058.001.div_1m2Data.2023-12.basic.20251206T101200Z.csv.metadata.csv": {
+      "bytes": 3793,
+      "sha256": "9bb05950b75ea0a0381ceb2cab88f02e10673c77b64ee7f00280d97667fec056"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D12.YELL.DP1.10058.001.div_1m2Data.2023-12.basic.20251206T101200Z.csv.metadata.receipt.json": {
+      "bytes": 597,
+      "sha256": "46b0ba757e8f33cb0245027611662995f779e59d6acdc633bcc40af2d363d3b3"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D13.MOAB.DP1.10058.001.div_1m2Data.2023-05.basic.20251206T113351Z.csv.metadata.csv": {
+      "bytes": 32758,
+      "sha256": "7138caeda29f5a30d3c12e4701f366b64091885fd193b5a2a8ce1b09df75e5f8"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D13.MOAB.DP1.10058.001.div_1m2Data.2023-05.basic.20251206T113351Z.csv.metadata.receipt.json": {
+      "bytes": 601,
+      "sha256": "36aaeb65770fb5fd5f4606e4f6919f24de68b8218528792aed5a49c28a9a7680"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D13.NIWO.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T153623Z.csv.metadata.csv": {
+      "bytes": 38125,
+      "sha256": "6ede6b0c39d00199c0cba14d13839024274f7bc71ad9e3a09ad5e8942ea071ff"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D13.NIWO.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T153623Z.csv.metadata.receipt.json": {
+      "bytes": 630,
+      "sha256": "2eb9d6f810ae2b352b95d58c045bf6edbfc4f7a6dec9b462763c651910efe008"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D13.NIWO.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T130413Z.csv.metadata.csv": {
+      "bytes": 16777,
+      "sha256": "b359e474c0cef5e1a6fecf9b1d6fecf6e6b2150a185a2fb42d066651a14e786a"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D13.NIWO.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T130413Z.csv.metadata.receipt.json": {
+      "bytes": 630,
+      "sha256": "b96490606fc682d1a233ff776fd2f3e6fa5d2aec0c10888c2f92db7901c79d2a"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D13.NIWO.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T153623Z.csv.metadata.csv": {
+      "bytes": 22893,
+      "sha256": "7fcd36b4499264aea26a2919f6623f38925dea397fad6809119c013c28c84b9a"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D13.NIWO.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T153623Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "90e7d21c685503a2b2a0d38d15e9e1f26ee7a541dc828e8da8a2611215a6bd82"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D13.NIWO.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T130413Z.csv.metadata.csv": {
+      "bytes": 10117,
+      "sha256": "a518c37f94deaccd0a2c81890903af3c3b484359de58914b1619399e0a15b832"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D13.NIWO.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T130413Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "5835c3c2abc9139a5cd855c93bf8b8a79333bf30065a231e9066d3199abdce00"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D14.JORN.DP1.10058.001.div_1m2Data.2023-04.basic.20251206T110838Z.csv.metadata.csv": {
+      "bytes": 32779,
+      "sha256": "c7c47e7e36e905d7b5ce5b60e1d22b4f32193979b14c7e4556d02d87388e8253"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D14.JORN.DP1.10058.001.div_1m2Data.2023-04.basic.20251206T110838Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "301377565f20a91445d3f70be39205ed6ebb6afb7730aaf86399c9f269d6b470"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D14.JORN.DP1.10058.001.div_1m2Data.2023-09.basic.20251206T105027Z.csv.metadata.csv": {
+      "bytes": 32779,
+      "sha256": "63685d80171363edc30795b3c679d75313fe065446d0e4178b2d96191afb64be"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D14.JORN.DP1.10058.001.div_1m2Data.2023-09.basic.20251206T105027Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "a018e9b485e0fd999f028719db4199a3e3bdef8186537a6e04ff45dcd2840f2b"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D14.JORN.DP1.10058.001.div_1m2Data.2023-12.basic.20251206T134510Z.csv.metadata.csv": {
+      "bytes": 366,
+      "sha256": "1f6a29b755dcb48812255769604797d7f8e5be50da6b5171355be08f0ff7aa25"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D14.JORN.DP1.10058.001.div_1m2Data.2023-12.basic.20251206T134510Z.csv.metadata.receipt.json": {
+      "bytes": 595,
+      "sha256": "c205e34ec1f140144b4276f8d3a36a7b88e24903599753f4d2a4c10ec6d7d6e6"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D14.SRER.DP1.10058.001.div_10m2Data100m2Data.2023-03.basic.20251206T080713Z.csv.metadata.csv": {
+      "bytes": 36469,
+      "sha256": "f4854f4b8d9af4cedcdbb2e70f63da609f988f8911269167d29fa699a39af513"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D14.SRER.DP1.10058.001.div_10m2Data100m2Data.2023-03.basic.20251206T080713Z.csv.metadata.receipt.json": {
+      "bytes": 630,
+      "sha256": "33c42ff3097537928a3957d32e92b41d41a04d327b38c08e70c04a75bddf8b2c"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D14.SRER.DP1.10058.001.div_10m2Data100m2Data.2023-04.basic.20251206T102035Z.csv.metadata.csv": {
+      "bytes": 18433,
+      "sha256": "55643346906e673841d6b88d259b60af86ecf8bb6ee898cef2461ade902caad9"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D14.SRER.DP1.10058.001.div_10m2Data100m2Data.2023-04.basic.20251206T102035Z.csv.metadata.receipt.json": {
+      "bytes": 630,
+      "sha256": "553243a06407d96f0724f2fb31ab6635a66ad719b6593dfc3b10b024fd5ef637"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D14.SRER.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T092550Z.csv.metadata.csv": {
+      "bytes": 46405,
+      "sha256": "41e4df7f12ebd774fc105faf17f5cf8a4c47fa19067c7c2d29cb25a8be7b0da8"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D14.SRER.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T092550Z.csv.metadata.receipt.json": {
+      "bytes": 631,
+      "sha256": "af535df2f79b4e8ed607744a76ba2af9fccc0b207857b13f72469efeb8558153"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D14.SRER.DP1.10058.001.div_10m2Data100m2Data.2023-09.basic.20251206T132757Z.csv.metadata.csv": {
+      "bytes": 8497,
+      "sha256": "558294fb687f1f036022ecaf7ca769bace6544aaa94b6bbd4c6f79796cdcd254"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D14.SRER.DP1.10058.001.div_10m2Data100m2Data.2023-09.basic.20251206T132757Z.csv.metadata.receipt.json": {
+      "bytes": 629,
+      "sha256": "5d496d80a9a2cb13cb6448c10b425e57b2b35d636bcfe0f79e20932cb7271ed2"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D14.SRER.DP1.10058.001.div_10m2Data100m2Data.2023-12.basic.20251206T080615Z.csv.metadata.csv": {
+      "bytes": 1264,
+      "sha256": "c5351f91afcdea738414fd9c8e4b4392b7256ec3cb3251c00a3096c38ec806b3"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D14.SRER.DP1.10058.001.div_10m2Data100m2Data.2023-12.basic.20251206T080615Z.csv.metadata.receipt.json": {
+      "bytes": 627,
+      "sha256": "31d7b9be0a047bcea36e3f2ebed7d9d4606a0831a77f2cbd7b8c4d1e130f5446"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D14.SRER.DP1.10058.001.div_1m2Data.2023-03.basic.20251206T080713Z.csv.metadata.csv": {
+      "bytes": 21889,
+      "sha256": "2c95e1935d6ddb214afcf81349ed2c2b6e7569c66a27f59339d3ed34f7fa0f52"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D14.SRER.DP1.10058.001.div_1m2Data.2023-03.basic.20251206T080713Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "6f15a76ac40639abc9f78d2365b2d39f8487bd0927549dbad292eb992c8ad148"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D14.SRER.DP1.10058.001.div_1m2Data.2023-04.basic.20251206T102035Z.csv.metadata.csv": {
+      "bytes": 11107,
+      "sha256": "f45c362e1fe1ec0a1975fdd9377a3fe1143f92214a4cf53dc1b7a169660f8506"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D14.SRER.DP1.10058.001.div_1m2Data.2023-04.basic.20251206T102035Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "3ee33b917e6d51403f0fe81548f64a82c0907ed5934493096fc1d32ed11c91d6"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D14.SRER.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T092550Z.csv.metadata.csv": {
+      "bytes": 27829,
+      "sha256": "987fc55b8f6a98153c33caaf37b45cbc023398fcb92c626d89b06b0d5c9b66d6"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D14.SRER.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T092550Z.csv.metadata.receipt.json": {
+      "bytes": 601,
+      "sha256": "348d67789fda75e5f7f7a10695ffa434e82c3c5b924f0f051823581ab4edff5a"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D14.SRER.DP1.10058.001.div_1m2Data.2023-09.basic.20251206T132757Z.csv.metadata.csv": {
+      "bytes": 5167,
+      "sha256": "d317dd25d400b5aa27402b55e5ec244dbe9f35c3d9bcf4573232c17237f2b0b2"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D14.SRER.DP1.10058.001.div_1m2Data.2023-09.basic.20251206T132757Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "89497c5ce587d2455e465f41884f7500469a41773cbb08fbd3e09e4750024465"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D14.SRER.DP1.10058.001.div_1m2Data.2023-12.basic.20251206T080615Z.csv.metadata.csv": {
+      "bytes": 813,
+      "sha256": "c61c05ed4903e07da2435860c1ffa254093de7f511a16d0903dfe6ee07ce370b"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D14.SRER.DP1.10058.001.div_1m2Data.2023-12.basic.20251206T080615Z.csv.metadata.receipt.json": {
+      "bytes": 596,
+      "sha256": "4eaa3415ebad854b0161a9a449a5ddde16226ab84415270c56c9bbae7a2bd7cd"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D15.ONAQ.DP1.10058.001.div_1m2Data.2023-05.basic.20251206T091002Z.csv.metadata.csv": {
+      "bytes": 6049,
+      "sha256": "715e422c391c9bd2046e0acb106aa6bba54b2db4ed77ddd30c8e688bba2f2288"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D15.ONAQ.DP1.10058.001.div_1m2Data.2023-05.basic.20251206T091002Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "b9ac5f2b01cf939b0dcf4655e8c4cfd00ad2eda8234bed078f705a19e0db7f9c"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D15.ONAQ.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T125721Z.csv.metadata.csv": {
+      "bytes": 26137,
+      "sha256": "ec4a79b51e2b883f4de7f242039e5d1f8b7c7dd37c8dfd9c486e4bb3895fab31"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D15.ONAQ.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T125721Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "f9c950cb21c81002582809efa1713d0410d92b42efd5d6d1e99cf36ac890e0af"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D16.ABBY.DP1.10058.001.div_10m2Data100m2Data.2023-06.basic.20251206T111038Z.csv.metadata.csv": {
+      "bytes": 7489,
+      "sha256": "cb7145260c7ff4cf3c170194d346a673ab2c7b8801c94968a6b8899374b4911b"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D16.ABBY.DP1.10058.001.div_10m2Data100m2Data.2023-06.basic.20251206T111038Z.csv.metadata.receipt.json": {
+      "bytes": 629,
+      "sha256": "cc9b42f18ade3d1605a6d0d5b9d17790e729e8f01e5d6d0b8c7999ea787bfe34"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D16.ABBY.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T095108Z.csv.metadata.csv": {
+      "bytes": 7669,
+      "sha256": "a73fd04549607d8bcc9f55b22f5b570591372ee3567d77b5b688bdee56243c8e"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D16.ABBY.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T095108Z.csv.metadata.receipt.json": {
+      "bytes": 629,
+      "sha256": "3e5de52f6ce0cc41d674af28a6d087a55f1665ea8e2428929d09343cb1c43aa4"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D16.ABBY.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T112733Z.csv.metadata.csv": {
+      "bytes": 3529,
+      "sha256": "a71a9b60c222ec6c015f8f1cf54e8ae9409d59e415ff26e7415e5673b9b6ab98"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D16.ABBY.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T112733Z.csv.metadata.receipt.json": {
+      "bytes": 628,
+      "sha256": "a5960e8f114d7683d68d46861cef087617ac7e945bec76af688c439f3cb9ccf1"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D16.ABBY.DP1.10058.001.div_10m2Data100m2Data.2023-11.basic.20251206T130229Z.csv.metadata.csv": {
+      "bytes": 33135,
+      "sha256": "a56307809c844d44a64be0b56a5accb00fc56d99366be44931be8807d2d467d0"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D16.ABBY.DP1.10058.001.div_10m2Data100m2Data.2023-11.basic.20251206T130229Z.csv.metadata.receipt.json": {
+      "bytes": 629,
+      "sha256": "2eda2a8448fc2dd13ab860312537ed5ac582693786e89ead26fd9ee8853a02c3"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D16.ABBY.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T111038Z.csv.metadata.csv": {
+      "bytes": 4539,
+      "sha256": "03451b994dab9c68bee1248cf7662c0dc0790d1cdbf100b6d37582e0d41f8a64"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D16.ABBY.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T111038Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "4e4fdec961afd74e40476e7adb1d5b685d9737297bdb422fc6ff5e5684e50dae"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D16.ABBY.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T095108Z.csv.metadata.csv": {
+      "bytes": 4672,
+      "sha256": "04981604d2ce745d20244152966dc83b40cd0034ec02c3728be6f47663ea515f"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D16.ABBY.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T095108Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "5e925f7872a7476b9f367eb71026e54bdce80838f8ada20c8d42414e11d6e4c5"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D16.ABBY.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T112733Z.csv.metadata.csv": {
+      "bytes": 2197,
+      "sha256": "079a0c0e9bb75b7a29baa8edf32ff114edc7c548b8691a4e72566f059582a9ea"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D16.ABBY.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T112733Z.csv.metadata.receipt.json": {
+      "bytes": 598,
+      "sha256": "8d5ed13de7fd4c1680e1cc5a680e15d6243304eba1cda9dc3b52b0a8f51b1135"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D16.ABBY.DP1.10058.001.div_1m2Data.2023-11.basic.20251206T130229Z.csv.metadata.csv": {
+      "bytes": 19885,
+      "sha256": "6ab8c1eaa5c57ee890defc747fe6b41636ea64d90f9267195e6c47d849274d3e"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D16.ABBY.DP1.10058.001.div_1m2Data.2023-11.basic.20251206T130229Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "a836bc1e81117a5ffdf8f3bcfa9c8bdafd6bbaff0188936daa058f9de3449b85"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D16.WREF.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T133925Z.csv.metadata.csv": {
+      "bytes": 9988,
+      "sha256": "ae8c68ad3c741103b6243f6865b99fbc10915b86d3847d4f0c9674dedce976df"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D16.WREF.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T133925Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "74485f97fb2d9be3ffe4fac72d7127f7ae4c4719922936e6c8110de5a4c68fe9"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D16.WREF.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T151438Z.csv.metadata.csv": {
+      "bytes": 5167,
+      "sha256": "6fd60ad841a5e1bcc52da1f95411e489c6897597d1d56f16a4dace415234443c"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D16.WREF.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T151438Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "eec297b8e68a04f38fbb4fbfd781d09e617d9c51909ca90b887345e1c2a8a153"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D16.WREF.DP1.10058.001.div_1m2Data.2023-12.basic.20251206T080955Z.csv.metadata.csv": {
+      "bytes": 16309,
+      "sha256": "a70301c834545fac94c2210d18d5b2a538ecd1c3b12bd0eb18f1e298ae3de51e"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D16.WREF.DP1.10058.001.div_1m2Data.2023-12.basic.20251206T080955Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "bd9b84dabb104bdfd3ca42dd24ba0d1b5cdbc26996b37bee98d32490ee88d41d"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D17.SJER.DP1.10058.001.div_10m2Data100m2Data.2023-02.basic.20251206T114945Z.csv.metadata.csv": {
+      "bytes": 12848,
+      "sha256": "3b59a58e6c0261fdbbd235399e7b94ac4244f7e89fc1195976f9a296e1ed5434"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D17.SJER.DP1.10058.001.div_10m2Data100m2Data.2023-02.basic.20251206T114945Z.csv.metadata.receipt.json": {
+      "bytes": 630,
+      "sha256": "76deacd36ae6c30c8069d2a0d53b19d42f9cf679eb39e48eb9bfbcafa3914640"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D17.SJER.DP1.10058.001.div_10m2Data100m2Data.2023-03.basic.20251206T114737Z.csv.metadata.csv": {
+      "bytes": 33774,
+      "sha256": "fa86e9c51dc8f8861d737e1b09f99c55c2e62bc7c5dac2b4a7e9ab4dc2408ccd"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D17.SJER.DP1.10058.001.div_10m2Data100m2Data.2023-03.basic.20251206T114737Z.csv.metadata.receipt.json": {
+      "bytes": 630,
+      "sha256": "00653315b35d3669e3cc5c664600f0415c9e3eec495170a2271638fa1855adf0"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D17.SJER.DP1.10058.001.div_10m2Data100m2Data.2023-04.basic.20251206T111750Z.csv.metadata.csv": {
+      "bytes": 8497,
+      "sha256": "889b4fd981b64ab1fd574c6a6fafe05ea557239ff004682a433f39556a3ecf28"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D17.SJER.DP1.10058.001.div_10m2Data100m2Data.2023-04.basic.20251206T111750Z.csv.metadata.receipt.json": {
+      "bytes": 629,
+      "sha256": "8593cca7427165e1cca69bc5519ee6811cec5afb9824fb2bb4f3bc1944444c71"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D17.SJER.DP1.10058.001.div_1m2Data.2023-02.basic.20251206T114945Z.csv.metadata.csv": {
+      "bytes": 7735,
+      "sha256": "57978c9d7564b19a1cd51fc9bee4524b6cdfb23343e23411160d4fc33b5d7ee8"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D17.SJER.DP1.10058.001.div_1m2Data.2023-02.basic.20251206T114945Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "3a40daef2de2310dc16fe2c7f95bdc28f9019ef5600f6310e845d2884e8fa8ba"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D17.SJER.DP1.10058.001.div_1m2Data.2023-03.basic.20251206T114737Z.csv.metadata.csv": {
+      "bytes": 20311,
+      "sha256": "c6657d0b19e6cd364cf6c78bcb785da569206c57b39aece8df2a458742d381da"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D17.SJER.DP1.10058.001.div_1m2Data.2023-03.basic.20251206T114737Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "627cb30a287399a84138eec6fa3c0993edf5644f5ae9106a51daeffe28bacd40"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D17.SJER.DP1.10058.001.div_1m2Data.2023-04.basic.20251206T111750Z.csv.metadata.csv": {
+      "bytes": 5167,
+      "sha256": "bad269bc6101b77f62bbe41adb964605b64d7056f6425e191bd32cb0feed4bd8"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D17.SJER.DP1.10058.001.div_1m2Data.2023-04.basic.20251206T111750Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "01c964c48d59866b3709ee649b8924f9c9d928494519d1b73d24ff9360ec9905"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D17.SOAP.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T095104Z.csv.metadata.csv": {
+      "bytes": 21889,
+      "sha256": "1d2338c895ffd668508c7c29e6cd6310076db7aaa5f8ca1b730c517c62cba0da"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D17.SOAP.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T095104Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "b1e98140241338cc3700f35680410afa03c9197fec2bf2a41d00ed31257eb4bb"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D17.SOAP.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T110129Z.csv.metadata.csv": {
+      "bytes": 4177,
+      "sha256": "3355a7909ecb1e141c257b51bfbe2a84f60cf5676cf67d09143643d4a092c48b"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D17.SOAP.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T110129Z.csv.metadata.receipt.json": {
+      "bytes": 598,
+      "sha256": "3e36ba54d59a6b8c65685dc40a852e355af423ddf6d974c856b34a11ee5beacb"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D17.SOAP.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T150427Z.csv.metadata.csv": {
+      "bytes": 5581,
+      "sha256": "f69282e065bf033781c6f719b266407b76981b701559e2f3a921e8743839a0b4"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D17.SOAP.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T150427Z.csv.metadata.receipt.json": {
+      "bytes": 598,
+      "sha256": "60cc0c42d3f546a0a52817b2fc2a80055a272e3e13fd9cc1039a833e151fa0e5"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D17.TEAK.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T123440Z.csv.metadata.csv": {
+      "bytes": 30011,
+      "sha256": "1f7df5d497092c995b06154a04c5bd89db13bda1c0f705f31d79cf2377d315f8"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D17.TEAK.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T123440Z.csv.metadata.receipt.json": {
+      "bytes": 630,
+      "sha256": "fb2d79e4e6a8673838d4db1c0dceb746a659b247a5e69cc4db8a805cb112de55"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D17.TEAK.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T135444Z.csv.metadata.csv": {
+      "bytes": 6521,
+      "sha256": "b5dfec9d2dc8782e3d50ead6ff3da89296dbfd6368b2a9e71be8902e200ba38a"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D17.TEAK.DP1.10058.001.div_10m2Data100m2Data.2023-08.basic.20251206T135444Z.csv.metadata.receipt.json": {
+      "bytes": 628,
+      "sha256": "8a000c91a796d6b630dab080186a9093f0ca1e53bb9805f7adbe3aafa9c9277c"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D17.TEAK.DP1.10058.001.div_10m2Data100m2Data.2023-12.basic.20251206T124424Z.csv.metadata.csv": {
+      "bytes": 16673,
+      "sha256": "59af3c06f0d019341fe940ca0e5d72d1732db12d1cddbadd38eda813fd03d50b"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D17.TEAK.DP1.10058.001.div_10m2Data100m2Data.2023-12.basic.20251206T124424Z.csv.metadata.receipt.json": {
+      "bytes": 629,
+      "sha256": "362df38854b00bdeaad13edb9d502a6cdaf57fd14558199d33b68c9ba04a8f85"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D17.TEAK.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T123440Z.csv.metadata.csv": {
+      "bytes": 18110,
+      "sha256": "9be0bc57a7ac0d1dd00452c112ae35008db6c1f90851a182fe7a9e4df676eee4"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D17.TEAK.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T123440Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "e24136735745204ce88b9d28c29ce6b31442b29a4e6172d8599db270d28d7a56"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D17.TEAK.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T135444Z.csv.metadata.csv": {
+      "bytes": 3985,
+      "sha256": "99fbcbae380752185e48f35f80dd0bcc18c5012957b3f480b7cf383db6cbe537"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D17.TEAK.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T135444Z.csv.metadata.receipt.json": {
+      "bytes": 598,
+      "sha256": "344e654e0a148bbf2b1e06b1877042daa2eb58f372f5f536a5fc26615586b121"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D17.TEAK.DP1.10058.001.div_1m2Data.2023-12.basic.20251206T124424Z.csv.metadata.csv": {
+      "bytes": 10051,
+      "sha256": "180e9419bb569dfe5dba96542bd9aa90d26fae3d1a7c74c32f853dcf07533edf"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D17.TEAK.DP1.10058.001.div_1m2Data.2023-12.basic.20251206T124424Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "9404e89c9412a59226ac4634db0d347ee340030434e2e86d214106fbbd48a71c"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D18.BARR.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T112839Z.csv.metadata.csv": {
+      "bytes": 32779,
+      "sha256": "75e8c3a9193e9785d514ae54e03db532f6623ce313b11aec4c8b6145af6d3660"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D18.BARR.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T112839Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "296bfe19615a6d87b384a32064d120114edb4317bea3eff56a41f8d334d05d56"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D18.TOOL.DP1.10058.001.div_10m2Data100m2Data.2023-06.basic.20251206T085858Z.csv.metadata.csv": {
+      "bytes": 18253,
+      "sha256": "c215e617a65408e199daefd1b10c53bfc243deb316877c479211529686aef605"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D18.TOOL.DP1.10058.001.div_10m2Data100m2Data.2023-06.basic.20251206T085858Z.csv.metadata.receipt.json": {
+      "bytes": 630,
+      "sha256": "b1884814fb5e205fd1b3ed675a4e9e488a31d43c6e196a94b668c616c8fdecf6"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D18.TOOL.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T103419Z.csv.metadata.csv": {
+      "bytes": 36649,
+      "sha256": "550b5cf2fa554e176772d6c9de4a957c05870ac3e442c81260d857e11b99f237"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D18.TOOL.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T103419Z.csv.metadata.receipt.json": {
+      "bytes": 630,
+      "sha256": "12efbdfa84ecda40e4faa5a1ce744355448b6831b6549d676097bdec8d9ad3e7"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D18.TOOL.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T085858Z.csv.metadata.csv": {
+      "bytes": 10999,
+      "sha256": "58cac757c36603388643982f3f9cdaeb8f4fdcec04c7847021e525c6afd96628"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D18.TOOL.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T085858Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "338077b8ffbad08a018b91d639989fe8761e7f82d9adce146776b7951c4bcfa0"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D18.TOOL.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T103419Z.csv.metadata.csv": {
+      "bytes": 21997,
+      "sha256": "87d27db7dc94fa7726b5f357b12f7c5e9725eaecf30a7c4ac1e00954b867ccf4"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D18.TOOL.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T103419Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "4be84b01663f36a6d1a57d12bb32b0a18e1cded39727683be0bb6ef299d1a68f"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D19.BONA.DP1.10058.001.div_10m2Data100m2Data.2023-06.basic.20251206T150533Z.csv.metadata.csv": {
+      "bytes": 36469,
+      "sha256": "98196cffa480ad5e8d55b3635932dc444094eeda7f1f2dc5360e863ac0ce0866"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D19.BONA.DP1.10058.001.div_10m2Data100m2Data.2023-06.basic.20251206T150533Z.csv.metadata.receipt.json": {
+      "bytes": 630,
+      "sha256": "784b659b492c91358f4d0f24f818dccf180f5b13fa4f4968fcdfe45f0f50abac"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D19.BONA.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T125728Z.csv.metadata.csv": {
+      "bytes": 18433,
+      "sha256": "3c1ceb9eeb6ea23ddad2b581f535aad380808095f6a14c137a130adb6067d986"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D19.BONA.DP1.10058.001.div_10m2Data100m2Data.2023-07.basic.20251206T125728Z.csv.metadata.receipt.json": {
+      "bytes": 630,
+      "sha256": "ad9895b80f828cf2da5fd0a1497363554bd8351fc106b10e876ff9d53d8a62a1"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D19.BONA.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T150533Z.csv.metadata.csv": {
+      "bytes": 21889,
+      "sha256": "9762436b3062796b7d06bcf9c400c388b7aee79fbdbeea9e9b54540f78c6fe5a"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D19.BONA.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T150533Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "c16ac0e5292917cdf30dc038dedb323b61ea1774bb4e9a061c2d601da29d936d"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D19.BONA.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T125728Z.csv.metadata.csv": {
+      "bytes": 11107,
+      "sha256": "9d13310a22df5141eed89000a65bb116c18b753ee1acbabef5926c44cc0e8fa6"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D19.BONA.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T125728Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "5fafdec0f034f9c79169894f1b58df3dc085c8f53a2b0693b5809d70a203047b"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D19.DEJU.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T122443Z.csv.metadata.csv": {
+      "bytes": 21889,
+      "sha256": "02202f171868dbec9897e39d7da37343a142bde7e386fd40cf9782f727896fd5"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D19.DEJU.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T122443Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "d9f67d6f3a082baf55135bafb93ea14a3e6493ba087bc2a0f06a47a79e8484e2"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D19.DEJU.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T150953Z.csv.metadata.csv": {
+      "bytes": 5167,
+      "sha256": "18cfeda263cb3a0b5a9de278bc2c94e1f5564b00ac7fd6c5e0ad0eb0067fc57f"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D19.DEJU.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T150953Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "b684f7893fea650247f1e6e4e45069ff5b763ad163650e4cb2f03630d9f825b1"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D19.DEJU.DP1.10058.001.div_1m2Data.2023-09.basic.20251206T080410Z.csv.metadata.csv": {
+      "bytes": 1111,
+      "sha256": "3bb72209166bef54972a704313a6702fb52c894d448a17153eb1af73ea09ffdc"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D19.DEJU.DP1.10058.001.div_1m2Data.2023-09.basic.20251206T080410Z.csv.metadata.receipt.json": {
+      "bytes": 597,
+      "sha256": "047013d7b589b1f8fb99a6c1fa7290f5450ad6405cf90831c19169353e0b055c"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D19.DEJU.DP1.10058.001.div_1m2Data.2023-10.basic.20251206T131222Z.csv.metadata.csv": {
+      "bytes": 4687,
+      "sha256": "cc68211834ad787d448883a0c34a4c231cc681b8c62b88594b48269011ddf1f0"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D19.DEJU.DP1.10058.001.div_1m2Data.2023-10.basic.20251206T131222Z.csv.metadata.receipt.json": {
+      "bytes": 598,
+      "sha256": "11ca0e33ef183ab3b3777321473084142cc4bff466e86b1751a302e12a218a60"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D19.HEAL.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T140704Z.csv.metadata.csv": {
+      "bytes": 19909,
+      "sha256": "7551b9db2323a519feb65d04ed3cf81aadbc40417d723d03829a6287f586ae3a"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D19.HEAL.DP1.10058.001.div_1m2Data.2023-07.basic.20251206T140704Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "70e0d9a1d14e12c415c5ce435cffa260385bc1a35837cffdcb7b1409c14c6a49"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D19.HEAL.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T085414Z.csv.metadata.csv": {
+      "bytes": 13087,
+      "sha256": "bb892aef632ba64db6d1aef4f296e8f6dc44b5129afbee68477466c937ef8fe1"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D19.HEAL.DP1.10058.001.div_1m2Data.2023-08.basic.20251206T085414Z.csv.metadata.receipt.json": {
+      "bytes": 600,
+      "sha256": "b0abd5bd52fa439ac188394e58ba2a3cfe117f9bdc568f7ca58ddc96663db8b1"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D20.PUUM.DP1.10058.001.div_10m2Data100m2Data.2023-05.basic.20251206T133527Z.csv.metadata.csv": {
+      "bytes": 15061,
+      "sha256": "e042efff173533171afb32b60f5ed2a48f70fbbec1f016db54c4984be021a959"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D20.PUUM.DP1.10058.001.div_10m2Data100m2Data.2023-05.basic.20251206T133527Z.csv.metadata.receipt.json": {
+      "bytes": 630,
+      "sha256": "b2a3b7540e9d55004069b364c207806ec7e98e5b107b8a0fe03f4d46b8defe0f"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D20.PUUM.DP1.10058.001.div_10m2Data100m2Data.2023-06.basic.20251206T145922Z.csv.metadata.csv": {
+      "bytes": 10033,
+      "sha256": "b087fbc463df7309574e992863eac01715a2e677f3f26d182c248527647d6774"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D20.PUUM.DP1.10058.001.div_10m2Data100m2Data.2023-06.basic.20251206T145922Z.csv.metadata.receipt.json": {
+      "bytes": 630,
+      "sha256": "bd7f98e15fc54f43f66d38517047741c4bfafeea0ce82f7e8bcef5232bda34bc"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D20.PUUM.DP1.10058.001.div_10m2Data100m2Data.2023-12.basic.20251206T082425Z.csv.metadata.csv": {
+      "bytes": 12185,
+      "sha256": "1a27012a26db5896dcaf6a26428a2d9167b054400708c8bc1e953849fddbfce9"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D20.PUUM.DP1.10058.001.div_10m2Data100m2Data.2023-12.basic.20251206T082425Z.csv.metadata.receipt.json": {
+      "bytes": 629,
+      "sha256": "717e0b3baf8e60cb670fff985981f7885ddab50f1f89bd6d016e353fec68fed2"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D20.PUUM.DP1.10058.001.div_1m2Data.2023-05.basic.20251206T133527Z.csv.metadata.csv": {
+      "bytes": 9091,
+      "sha256": "1953b9788181f92635d04f348990d34d32d8dc70495abf6b650f701a6e834ee8"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D20.PUUM.DP1.10058.001.div_1m2Data.2023-05.basic.20251206T133527Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "df00c01512dd06640fbd1851160a86f85bbdcf17b726e7d5273b7166723ab993"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D20.PUUM.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T145922Z.csv.metadata.csv": {
+      "bytes": 6085,
+      "sha256": "e13417d2bee32f92940f8851731e92e8cb5534190a4c882bd3d7b23a7ed6cd1a"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D20.PUUM.DP1.10058.001.div_1m2Data.2023-06.basic.20251206T145922Z.csv.metadata.receipt.json": {
+      "bytes": 599,
+      "sha256": "b3d9724010cf6858fa8536733650efeeafac7eef40785d3e04bf6fe51a498b99"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D20.PUUM.DP1.10058.001.div_1m2Data.2023-12.basic.20251206T082425Z.csv.metadata.csv": {
+      "bytes": 7369,
+      "sha256": "9e5720bf0627f682156ac1fc4b8ee72512d8c687eab0f56f1d4244a0e533957f"
+    },
+    "data/neon_bridge/survey_metadata/NEON.D20.PUUM.DP1.10058.001.div_1m2Data.2023-12.basic.20251206T082425Z.csv.metadata.receipt.json": {
+      "bytes": 598,
+      "sha256": "04b09f794c304aeea46ff061a9c2ce413fc66d5527ba8754d78cd326b9e49dda"
+    },
+    "data/neon_bridge/train_location_1km.h5": {
+      "bytes": 20703599,
+      "sha256": "194cab7983ca48bc33170da0f0276d010c7273f8fc67427c95a638bd8c85038f"
+    },
+    "docs/neon_bridge_status.md": {
+      "bytes": 9674,
+      "sha256": "b638041b33a43d83fae2dba48ffccc0571861efd3e62b56cb7f233844d246f9c"
+    },
+    "notebooks/sage_gpu_reference.ipynb": {
+      "bytes": 198702,
+      "sha256": "5b3dff66087fb03feb51a69713d4e7debbf456022968c991563203f40de3abbd"
+    },
+    "results/neon_bridge/artifact_retrieval.json": {
+      "bytes": 3073,
+      "sha256": "763fee21a0d941824e06c53562043cb38ed867d5b0466be516185adb35583696"
+    },
+    "results/neon_bridge/cpu_reference.json": {
+      "bytes": 3296,
+      "sha256": "cff2142bbd02e2ede53cc39d1a72f4abdfe1dedbbdcd2cd04ac56f9d8f9cdcb8"
+    },
+    "results/neon_bridge/cpu_reference_attempt1.json": {
+      "bytes": 3296,
+      "sha256": "cff2142bbd02e2ede53cc39d1a72f4abdfe1dedbbdcd2cd04ac56f9d8f9cdcb8"
+    },
+    "results/neon_bridge/environment.json": {
+      "bytes": 556,
+      "sha256": "3a03f0f7eb44747930d9fd78909c3028cd03e1ba8c44d813d11798992f66aba4"
+    },
+    "results/neon_bridge/focused_tests.xml": {
+      "bytes": 3069,
+      "sha256": "527b087bf53926601468f35edb3642a58e04f59004b521b43cf81ef165be9999"
+    },
+    "results/neon_bridge/gpu_reference_contract.json": {
+      "bytes": 738,
+      "sha256": "ab37473e4576c74b1319c95f00c66f5e190a7bbd6f0f63f5a501b735784c344d"
+    },
+    "results/neon_bridge/gpu_reference_validation.json": {
+      "bytes": 1181,
+      "sha256": "9c52a1a39457d18f4a8da1eedd9bfda128db8fe4dc314078d76d60b106dfef3e"
+    },
+    "results/neon_bridge/kaggle_gpu_state.json": {
+      "bytes": 946,
+      "sha256": "ddef09f42bfffde5f85ae18643304ef819ff5ce6d97f747e166062ba678d03a4"
+    },
+    "results/neon_bridge/metadata_projection_freeze.json": {
+      "bytes": 477,
+      "sha256": "c4b8dbfdaa1dc26e0ff414081b8a250e2477c9a077ad323af5da8c3ad6ea2153"
+    },
+    "results/neon_bridge/raster_access_probe.json": {
+      "bytes": 1937,
+      "sha256": "0deead9a37e2d33824d99d5e7c1c057ba0f4b90c6f46f2e042fcc4f902d4f720"
+    },
+    "results/neon_bridge/raster_reference_probe.json": {
+      "bytes": 3818,
+      "sha256": "83dc692f2a6bc9b290f89b4a0376a458a026c5d47e27b969668ae4e3d867d51f"
+    },
+    "results/neon_bridge/raster_reference_probe_direct.json": {
+      "bytes": 3073,
+      "sha256": "dc045d197263b9883c0bab4fa45fd1fe08cb50330542cb113d4aababb3dd4b9c"
+    },
+    "results/neon_bridge/survey_metadata_audit.json": {
+      "bytes": 1435,
+      "sha256": "11b5b08286a8f60fc5e514ddfe5aa437131e6563726a47febc38a3853949fde8"
+    },
+    "results/neon_bridge/survey_metadata_retrieval.json": {
+      "bytes": 131861,
+      "sha256": "eb53904cecdadb4e31bc0159e009d333e43a7f7fd4697b6e346e6042e7b146e6"
+    },
+    "results/neon_bridge/taxonomy_mapping.json": {
+      "bytes": 902,
+      "sha256": "76825efc9d1ceeb926b72c8b2b5b0bbfc957527ef799c2587b31ebb79acd7cc8"
+    },
+    "results/neon_bridge/taxonomy_retrieval.json": {
+      "bytes": 17724,
+      "sha256": "9c412248c4b85ad7ef26983d37f29a98a9ccac13214e948c41c682eff76a8c5b"
+    },
+    "results/neon_bridge/training_location_retrieval.json": {
+      "bytes": 401,
+      "sha256": "d29df163be9eeb985e2302612f5af8f3a34b8367c0fc39dad21411875bb72275"
+    },
+    "results/neon_bridge/training_overlap_audit.json": {
+      "bytes": 1341,
+      "sha256": "e8f7a94c596c85cdc8575094bf4d8fd9d9c03b38e8619124b32f9df3b0f7406f"
+    },
+    "results/neon_bridge/validation.json": {
+      "bytes": 957,
+      "sha256": "4ffd796709f17fe010b3393e449694165fc64683b2a6a15595e3130b81e2607a"
+    },
+    "scripts/audit_neon_survey_metadata.py": {
+      "bytes": 6378,
+      "sha256": "057231c67d42437dc986af48df5517e574036ab4394386c4b32934114103d3c0"
+    },
+    "scripts/audit_neon_training_overlap.py": {
+      "bytes": 3675,
+      "sha256": "a195456cdedfe07d15ea6e3735cd3614d46b3cd96f6751e7e132dd49bcb38d2c"
+    },
+    "scripts/build_sage_gpu_reference.py": {
+      "bytes": 7333,
+      "sha256": "c698ba6988fc65ad9a38e7720f647f34556d2dae65c81c7bdb813d3aff5f29ee"
+    },
+    "scripts/check_sage_reference.py": {
+      "bytes": 5871,
+      "sha256": "cfeffe214b82274f9f4533d8f9afdcb77811c5044b9d44fa0926c2a210423801"
+    },
+    "scripts/kaggle_research_job.py": {
+      "bytes": 9760,
+      "sha256": "e43e8eb3b02c8fff7b77be6d9b4fb7308162ff67146c8703ad6daf500dc54d40"
+    },
+    "scripts/map_neon_taxonomy.py": {
+      "bytes": 2742,
+      "sha256": "f4ffc28d9cad13a9a6dc5e747e645a6ea3b776d91fb9001f76e3c80350b83ec6"
+    },
+    "scripts/probe_sage_raster_reference.py": {
+      "bytes": 4709,
+      "sha256": "cbb50d5a9c76d0233b4ff231c03106ec7cb2e9d1e5478a712290e67157dff3f8"
+    },
+    "scripts/retrieve_neon_bridge.py": {
+      "bytes": 5845,
+      "sha256": "38caeef1bc23c0224215dda98d2e3509aa84e57bbc14c5f18d768bccfcd88e13"
+    },
+    "scripts/retrieve_neon_survey_metadata.py": {
+      "bytes": 6110,
+      "sha256": "2723547403cffb0586a9c53e1ecd77c4af227d7461e7d11146ec43ff585ff361"
+    },
+    "scripts/retrieve_neon_taxonomy.py": {
+      "bytes": 2913,
+      "sha256": "e408c4a305f82d4f37633d5d1480cb13399aee91d9c32c8c9c7dd0d9d5e8b253"
+    },
+    "scripts/validate_neon_bridge.py": {
+      "bytes": 9818,
+      "sha256": "77a4d48e9965127254d981ee97c7714bc78f6ef1748d5a076930740394719556"
+    },
+    "scripts/verify_sage_gpu_reference.py": {
+      "bytes": 3242,
+      "sha256": "118a5c19d1e78275960047a31807fcbe16c7f4ebb66c9236b2c92f466e347f76"
+    },
+    "src/geolifeclef/neon_metadata.py": {
+      "bytes": 2975,
+      "sha256": "691f6d4eacc9d5acabcc9f3b0ce6a9d2f6e2ba34bfc364ce220814f478a3802d"
+    },
+    "src/geolifeclef/neon_survey.py": {
+      "bytes": 1293,
+      "sha256": "3e53f70c10b31eb25c0118298c4a3372b00bee331122248bcae04b03c6687736"
+    },
+    "src/geolifeclef/range_io.py": {
+      "bytes": 3672,
+      "sha256": "425568a324787457078a7c584da4729bfe89e745d59e6d72fb650f84f9d03019"
+    },
+    "src/geolifeclef/raster_bridge.py": {
+      "bytes": 1372,
+      "sha256": "86fad6d4ef1d16f4c850c841fbb25c200d2592301790d1ad4a0d1928074ef316"
+    },
+    "src/geolifeclef/sage_inference.py": {
+      "bytes": 4371,
+      "sha256": "394374174d1ea1ce8ed0d67a93bc8129629f866dc5b1eb587ee04fc6bc1a9d95"
+    },
+    "src/geolifeclef/taxonomy_bridge.py": {
+      "bytes": 1545,
+      "sha256": "77e14c620abebf2c1b3e79e11a70cbb8e4d9f7f9c4a6d796e92d7d5a99881243"
+    },
+    "tests/test_neon_metadata.py": {
+      "bytes": 1953,
+      "sha256": "d576e9d91d5685f166157882c6ebcd4af68f15575ce53cefe50ef2683d49a1cd"
+    },
+    "tests/test_raster_bridge.py": {
+      "bytes": 821,
+      "sha256": "c3ffdb25fafa1efe0a418c0a11b9d6f9eea4f30ea3479ee3c1e594d95f291ef2"
+    },
+    "tests/test_sage_bridge.py": {
+      "bytes": 2989,
+      "sha256": "f6383197c050ce9ca90d1a1e8933bee0de83358cc50ec2d758f5f2a401fa244d"
+    },
+    "tests/test_taxonomy_bridge.py": {
+      "bytes": 1381,
+      "sha256": "fc72b0d5ff9641e71617b2eeee1eb6f132c22aa647e065b91e33c952dd145a50"
+    }
+  }
+}

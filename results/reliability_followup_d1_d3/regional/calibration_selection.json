@@ -1,0 +1,113 @@
+{
+  "chosen_variant": "country_balanced_lean",
+  "selection_role": "risk_calibration with spatial OOF predictions",
+  "scores": [
+    {
+      "fold": 0,
+      "variant": "global_lean",
+      "OOF_country_macro_F1": 0.3040274421305867,
+      "OOF_selected_F1": 0.3523512738797931,
+      "inner_blocks": [
+        7,
+        11,
+        25
+      ],
+      "calibration_surveys": 8691,
+      "supported_countries": 10
+    },
+    {
+      "fold": 0,
+      "variant": "country_balanced_lean",
+      "OOF_country_macro_F1": 0.305119609754179,
+      "OOF_selected_F1": 0.3540803433237802,
+      "inner_blocks": [
+        7,
+        11,
+        25
+      ],
+      "calibration_surveys": 8691,
+      "supported_countries": 10
+    },
+    {
+      "fold": 0,
+      "variant": "country_blend",
+      "OOF_country_macro_F1": 0.30297529896693226,
+      "OOF_selected_F1": 0.3512275140384708,
+      "inner_blocks": [
+        7,
+        11,
+        25
+      ],
+      "calibration_surveys": 8691,
+      "supported_countries": 10
+    },
+    {
+      "fold": 0,
+      "variant": "bioregion_blend",
+      "OOF_country_macro_F1": 0.3004178661080438,
+      "OOF_selected_F1": 0.35076637893928436,
+      "inner_blocks": [
+        7,
+        11,
+        25
+      ],
+      "calibration_surveys": 8691,
+      "supported_countries": 10
+    },
+    {
+      "fold": 1,
+      "variant": "global_lean",
+      "OOF_country_macro_F1": 0.29839134538812917,
+      "OOF_selected_F1": 0.34870230884535075,
+      "inner_blocks": [
+        7,
+        11,
+        25
+      ],
+      "calibration_surveys": 8691,
+      "supported_countries": 10
+    },
+    {
+      "fold": 1,
+      "variant": "country_balanced_lean",
+      "OOF_country_macro_F1": 0.3002577330227856,
+      "OOF_selected_F1": 0.3483531833395745,
+      "inner_blocks": [
+        7,
+        11,
+        25
+      ],
+      "calibration_surveys": 8691,
+      "supported_countries": 10
+    },
+    {
+      "fold": 1,
+      "variant": "country_blend",
+      "OOF_country_macro_F1": 0.29726675209108216,
+      "OOF_selected_F1": 0.34566423457723267,
+      "inner_blocks": [
+        7,
+        11,
+        25
+      ],
+      "calibration_surveys": 8691,
+      "supported_countries": 10
+    },
+    {
+      "fold": 1,
+      "variant": "bioregion_blend",
+      "OOF_country_macro_F1": 0.29754408551723344,
+      "OOF_selected_F1": 0.34640800323876997,
+      "inner_blocks": [
+        7,
+        11,
+        25
+      ],
+      "calibration_surveys": 8691,
+      "supported_countries": 10
+    }
+  ],
+  "assessment_outcomes_used": false,
+  "unique_calibration_surveys_per_fold": 8691,
+  "calibration_IDs_shared_between_outer_folds": true
+}

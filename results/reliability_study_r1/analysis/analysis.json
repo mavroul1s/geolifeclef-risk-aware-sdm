@@ -1,0 +1,167 @@
+{
+  "status": "completed_development_analysis",
+  "fresh_assessment": false,
+  "config_sha256": "a45db6144388fbc77dc2411cd56a29d6c66531ee5d67ccc78722f7ad2d695b69",
+  "verified_manifest_files": 18,
+  "assessment_surveys": 31570,
+  "primary_candidate": "metadata_distance_model_risk",
+  "primary_baseline": "metadata_distance",
+  "primary_policy": "country_area",
+  "primary_coverage": 0.8,
+  "candidate_F1": 0.3753821045551074,
+  "baseline_F1": 0.36064067265753463,
+  "primary": {
+    "gain": 0.014741431897572765,
+    "ci95": [
+      0.011134305532508267,
+      0.01802528999768109
+    ],
+    "clusters": 109,
+    "valid_repetitions": 2000,
+    "repetitions": 2000,
+    "interpretation": "conditional descriptive spatial interval on historically consumed data"
+  },
+  "fold_gains": [
+    {
+      "fold": 0,
+      "candidate_F1": 0.3672468596745668,
+      "baseline_F1": 0.35411424387857116,
+      "gain": 0.013132615795995617
+    },
+    {
+      "fold": 1,
+      "candidate_F1": 0.3835244386928521,
+      "baseline_F1": 0.3671727887308472,
+      "gain": 0.01635164996200489
+    }
+  ],
+  "minimum_supported_country_gain": -0.012164200347205556,
+  "gain_margin_met": true,
+  "country_regression_margin_met": false,
+  "all_supported_country_area_budgets_match": true,
+  "both_fold_gains_positive": true,
+  "full_coverage_F1": 0.3526878286926852,
+  "secondary_expected_F1_decoder_F1": 0.36451347111335564,
+  "fixed_top18_count_MAE": 7.631770668356034,
+  "secondary_expected_F1_decoder_count_MAE": 7.79398162812797,
+  "secondary_comparisons_exploratory": {
+    "metadata_distance_model_risk__vs__mean_top18_confidence": {
+      "gain": 0.00445548899701137,
+      "ci95": [
+        0.0015849732387730978,
+        0.00895416510876229
+      ],
+      "clusters": 109,
+      "valid_repetitions": 2000,
+      "repetitions": 2000,
+      "interpretation": "conditional descriptive spatial interval on historically consumed data"
+    },
+    "metadata_distance_model_risk__vs__model_only_risk": {
+      "gain": 0.0007025075650387569,
+      "ci95": [
+        -0.0002988508839211382,
+        0.001938164758092772
+      ],
+      "clusters": 109,
+      "valid_repetitions": 2000,
+      "repetitions": 2000,
+      "interpretation": "conditional descriptive spatial interval on historically consumed data"
+    },
+    "full_risk__vs__metadata_distance_model_risk": {
+      "gain": 5.593689068661423e-06,
+      "ci95": [
+        -0.00023764923329463035,
+        0.0002788274451268389
+      ],
+      "clusters": 109,
+      "valid_repetitions": 2000,
+      "repetitions": 2000,
+      "interpretation": "conditional descriptive spatial interval on historically consumed data"
+    }
+  },
+  "rare_definition": "1 to 25 positive PA surveys in the corresponding fold training role",
+  "rare_species_coverage": [
+    {
+      "method": "full_coverage",
+      "retained_surveys": 31570,
+      "rare_true_occurrences": 18191,
+      "rare_true_positives": 528,
+      "conditional_rare_recall": 0.029025342202187894,
+      "rare_occurrence_coverage": 1.0,
+      "rare_recovery_over_full_cohort": 0.029025342202187894
+    },
+    {
+      "method": "metadata_distance_model_risk",
+      "retained_surveys": 25257,
+      "rare_true_occurrences": 13415,
+      "rare_true_positives": 439,
+      "conditional_rare_recall": 0.03272456205739843,
+      "rare_occurrence_coverage": 0.7374525864438458,
+      "rare_recovery_over_full_cohort": 0.02413281292947062
+    },
+    {
+      "method": "metadata_distance",
+      "retained_surveys": 25257,
+      "rare_true_occurrences": 13792,
+      "rare_true_positives": 420,
+      "conditional_rare_recall": 0.030452436194895592,
+      "rare_occurrence_coverage": 0.7581771205541201,
+      "rare_recovery_over_full_cohort": 0.023088340388104006
+    },
+    {
+      "method": "mean_top18_confidence",
+      "retained_surveys": 25257,
+      "rare_true_occurrences": 13959,
+      "rare_true_positives": 439,
+      "conditional_rare_recall": 0.03144924421520166,
+      "rare_occurrence_coverage": 0.7673574844703425,
+      "rare_recovery_over_full_cohort": 0.02413281292947062
+    }
+  ],
+  "spearman_correlations": {
+    "top18_entropy_vs_mean_top18_confidence": 0.9344803005867591,
+    "top18_entropy_vs_F1": 0.3194048848500294,
+    "mean_top18_confidence_vs_F1": 0.4089920954496039
+  },
+  "single_seed_quality": [
+    {
+      "fold": 0,
+      "seed": 2026111301,
+      "sample_F1": 0.3382817523670147
+    },
+    {
+      "fold": 0,
+      "seed": 2026111302,
+      "sample_F1": 0.33671050995737234
+    },
+    {
+      "fold": 0,
+      "seed": 2026111303,
+      "sample_F1": 0.33277665881081864
+    },
+    {
+      "fold": 1,
+      "seed": 2026111301,
+      "sample_F1": 0.35462823084183476
+    },
+    {
+      "fold": 1,
+      "seed": 2026111302,
+      "sample_F1": 0.35591909002618904
+    },
+    {
+      "fold": 1,
+      "seed": 2026111303,
+      "sample_F1": 0.35624229719906064
+    }
+  ],
+  "runtime_hours": 1.1575099575969445,
+  "interpretation_limits": [
+    "Reused adaptive development data, no independent confirmation.",
+    "One three-member ensemble per fold; three individual members are not three independent ensemble trials.",
+    "Spatial intervals condition on saved fits and fixed selection rules.",
+    "Exported full mean probabilities are float16; exact primary scores and selection features are in CSV.",
+    "Selective F1 is not a full-coverage competition result."
+  ],
+  "practical_primary_criteria_met": false
+}

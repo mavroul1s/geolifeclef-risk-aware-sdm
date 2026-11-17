@@ -1,0 +1,59 @@
+{
+  "status": "complete",
+  "kernel": "nmavros/glc25-reliability-r1-smoke",
+  "url": "https://www.kaggle.com/code/nmavros/glc25-reliability-r1-smoke",
+  "private": true,
+  "GPU_requested": true,
+  "competition_submission_made": false,
+  "requested_at_utc": "2026-11-13T17:19:41.521008+00:00",
+  "notebook_sha256": "b6f7bea4ee58beab906142959ad9626c2aecf3fcd3e337bdcdbe327bf509c8d0",
+  "checked_at_utc": "2026-11-13T17:23:38.714529+00:00",
+  "output_files": [
+    {
+      "name": "r1_export/country_coverage.csv",
+      "bytes": 308105,
+      "sha256": "d3a7f8ca2a99a23c2980ea869be07116927217542ca1348bcd8e2a97e193192e"
+    },
+    {
+      "name": "r1_export/fold0_assessment.csv",
+      "bytes": 513103,
+      "sha256": "8fadaf1c45525a8b74bf49ce71dea9a70613549546e41543bad22b2792ca434f"
+    },
+    {
+      "name": "r1_export/fold0_confidence_roles.csv",
+      "bytes": 435357,
+      "sha256": "5fc1df6e54de15d8cfba130f023376cfb05ca49c790a357a22a170893fb18b6d"
+    },
+    {
+      "name": "r1_export/fold0_predictions.npz",
+      "bytes": 11451447,
+      "sha256": "0c1348a608183a78bb3bde25b4b85eb039e190cd98cd7c87c01a4b8e52290c65"
+    },
+    {
+      "name": "r1_export/fold0_report.json",
+      "bytes": 1317468,
+      "sha256": "5db5bd927602e0cb8ac6418850c5adf5fd759b09d0102d90f6327e8567d1d849"
+    },
+    {
+      "name": "r1_export/r1_manifest.json",
+      "bytes": 2385,
+      "sha256": "551972d80802eb72f361b4f4db983e3c9634adb8f2adbda9c8708ac84c286bf2"
+    },
+    {
+      "name": "r1_export/r1_report.json",
+      "bytes": 14269,
+      "sha256": "2e16028ec9a2e9ad7e6821708593c558d6d82a42e9a364a3c11326918a42dbfd"
+    },
+    {
+      "name": "r1_export/risk_coverage.csv",
+      "bytes": 56007,
+      "sha256": "16dfeec4e1e4f820fd352fed436e640acdf57d8415710738d84e95b34c591ea6"
+    },
+    {
+      "name": "r1_export/species_ids.npy",
+      "bytes": 40256,
+      "sha256": "eef8a61d8caea7add0937382d1370f885a8fbfb623796893a22bc54c70ef154d"
+    }
+  ],
+  "output_bytes": 14138397
+}

@@ -1,0 +1,25 @@
+{
+  "status": "inputs_and_roles_prepared_outcomes_closed",
+  "source_roles": {
+    "probability_calibration": 1165,
+    "risk_calibration": 1061
+  },
+  "NEON_assessment_cells": 163,
+  "NEON_plots": 301,
+  "NEON_sites": 16,
+  "minimum_distance_probability_calibration_km": 133.7901971712127,
+  "label_universe_classes": 2453,
+  "native_eligible_class_range": [
+    28,
+    717
+  ],
+  "source_assessment_rows_included": false,
+  "NEON_composition_values_read": false,
+  "files": {
+    "input_bundle.npz": "4d31fbdbe01b217aa5042b9109e3e84bc1de9782a656b81594f84f97d10a05e1",
+    "label_contract.npz": "b6cba9b42fa7d0fbb61939b7303bef09672b55853af5583a513d0e26bb00be38",
+    "neon_assessment_roles.csv": "90a9bb1f77d042dafc33b66b7e86f1fe375a092fa2c51e32548d46c594be4645",
+    "selected_plots.csv": "a6650c8916b89adb7d1b404fdd56d1726e85269c27f0a84cda32af7567a1c5b4",
+    "source_calibration_roles.csv": "599a5167cbe979db6bf747692523ce9ed1a605ddc2ab8732cb3023e8e385d019"
+  }
+}

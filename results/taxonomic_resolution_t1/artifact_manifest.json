@@ -1,0 +1,287 @@
+{
+  "at_utc": "2026-11-17T08:15:06.547275+00:00",
+  "path_base": "repository root",
+  "files": {
+    "configs/taxonomic_resolution_t1.json": {
+      "bytes": 2354,
+      "sha256": "cd42af8335cdd6d2f489f902b28d6206562871a5000e09642ffdf432516294cc"
+    },
+    "data/taxonomic_resolution_t1/assessment_probabilities.npz": {
+      "bytes": 115857160,
+      "sha256": "758008e7dda28dcf514683e4d94b0cb68686e54293cacd758fff15317060c9e7"
+    },
+    "data/taxonomic_resolution_t1/assessment_roles.csv": {
+      "bytes": 775882,
+      "sha256": "91ff13097628f53561c56c7bdd836f576ea30ae6a18c046ebea3b3a9bf3a9097"
+    },
+    "data/taxonomic_resolution_t1/contract.npz": {
+      "bytes": 886822,
+      "sha256": "fae27a9c81cd30abfc1e468b5d46ab3d0815e29a923376c533cb068bb1bdd0a2"
+    },
+    "data/taxonomic_resolution_t1/features.csv": {
+      "bytes": 886977,
+      "sha256": "470c0708b9156f096945c1a38b818ca860b95ef6256857d844fdcdc737b09fcb"
+    },
+    "data/taxonomic_resolution_t1/fixed_policy.npz": {
+      "bytes": 687393,
+      "sha256": "b1cf2dbaaacc3411fdb26c556bae686e3a5941b55cd3e953892a519eaa6f7154"
+    },
+    "data/taxonomic_resolution_t1/oracle.npz": {
+      "bytes": 975703,
+      "sha256": "a8450a377af5331d698d5799288c79c97b07ba8211dcb2634d5c31929f2f5864"
+    },
+    "data/taxonomic_resolution_t1/posthoc_genus_bounds.npz": {
+      "bytes": 870787,
+      "sha256": "21faabee9388c9814361505c0bfe8d006f935b6721bf7d21bc5b1a54989f5cca"
+    },
+    "data/taxonomic_resolution_t1/replay_cells.npz": {
+      "bytes": 2330455,
+      "sha256": "4862b31f81eef286c178f4080861155a80ece5f9d9f0d23f000e5203015502de"
+    },
+    "docs/taxonomic_resolution_t1_protocol.md": {
+      "bytes": 6617,
+      "sha256": "3f14a799419f0156ddd6fbd7cf18d3b065cb1c6754bebace8b518b13e55eed8c"
+    },
+    "docs/taxonomic_resolution_t1_results.md": {
+      "bytes": 11595,
+      "sha256": "88e17971fe83d380ba728c544524d9a1305a5e1d22f4461a61ab3754f8d09a79"
+    },
+    "results/taxonomic_resolution_t1/assessment_access.json": {
+      "bytes": 275,
+      "sha256": "895c78b1ac8cf7af0facd28a6dab4c05b12e5839d1eb69eba625eeb07401ba0e"
+    },
+    "results/taxonomic_resolution_t1/country_admission.csv": {
+      "bytes": 126250,
+      "sha256": "eaf593f84f6cf0527cdae498e86a7b72e90442834b4096a63c5e0fdbab929079"
+    },
+    "results/taxonomic_resolution_t1/focused_tests.xml": {
+      "bytes": 5206,
+      "sha256": "f6915ca5341c294522165ac4d7ae890035065e87e31eacfe2ebc01cc8676bbbf"
+    },
+    "results/taxonomic_resolution_t1/genus_weights.csv": {
+      "bytes": 40489,
+      "sha256": "3120954c77c7a7672a362807b889916bf04b20fa925fc1642a6ff911942db4db"
+    },
+    "results/taxonomic_resolution_t1/inference_validation.json": {
+      "bytes": 653,
+      "sha256": "eb51f687ff924a2384ceeb0c8a38695980f54e7a3d8c6c9b49aabf8ab00a6d0c"
+    },
+    "results/taxonomic_resolution_t1/mask_receipts.json": {
+      "bytes": 11343,
+      "sha256": "852e0de64fb7eda8fcb5b8db5416b5faa4919aa88952159f5abfb89dce918838"
+    },
+    "results/taxonomic_resolution_t1/obsidian_update.json": {
+      "bytes": 353,
+      "sha256": "7ef91624558d576847fccb6dbc4243d0f56fafc654f100987a37036a14915537"
+    },
+    "results/taxonomic_resolution_t1/oracle_summary.json": {
+      "bytes": 1147,
+      "sha256": "f25418180857a00d52a7c21e597e8e12fc9109c734952758dffb1b54ad167487"
+    },
+    "results/taxonomic_resolution_t1/policy_freeze.json": {
+      "bytes": 819,
+      "sha256": "f258566da0c022fb2ed7cd3b3239693bea27a0c300d3890b4cb49f9bdba74789"
+    },
+    "results/taxonomic_resolution_t1/posthoc/analysis_lock.json": {
+      "bytes": 1576,
+      "sha256": "2986e55860faa08319b6cc0ec4fc168cb2b727cc20e0d7f0fafa3df05e2118ec"
+    },
+    "results/taxonomic_resolution_t1/posthoc/replay_summary.csv": {
+      "bytes": 24219,
+      "sha256": "ab58a8200110332aa075488b46dd28644ca3f32b19a2d93d8d850ae9e722c79c"
+    },
+    "results/taxonomic_resolution_t1/posthoc/source_snapshot/docs/taxonomic_resolution_t1_posthoc.md": {
+      "bytes": 3003,
+      "sha256": "f6011a52f65958bd7021c0672f72d1d449c4cac5c034e8aef5d273f1b5fb3760"
+    },
+    "results/taxonomic_resolution_t1/posthoc/source_snapshot/scripts/analyze_taxonomic_resolution_t1.py": {
+      "bytes": 12509,
+      "sha256": "92db9e62eb22f129f2f14c77a5f2c6a5e0b5ab607974abbeb6445477c41ac0d5"
+    },
+    "results/taxonomic_resolution_t1/posthoc/source_snapshot/src/geolifeclef/genus_completion_bounds.py": {
+      "bytes": 2485,
+      "sha256": "66feb66cfa1f4f39ed46e14efc49e5347577b5a9b9082312144935622e7480c9"
+    },
+    "results/taxonomic_resolution_t1/posthoc/source_snapshot/tests/test_genus_completion_bounds.py": {
+      "bytes": 1739,
+      "sha256": "7d4ec583b3809f86cdd0a112397d736816d46c5319da3352185e9eb92b9c5647"
+    },
+    "results/taxonomic_resolution_t1/posthoc/summary.json": {
+      "bytes": 35964,
+      "sha256": "18ddcfe5adc56e42fd3a681b12c3dc001addf67bb4d7a36d7bf2eaa3955211dc"
+    },
+    "results/taxonomic_resolution_t1/posthoc/validation.json": {
+      "bytes": 399,
+      "sha256": "480a93d8415490c601ce41b681a6996058761983257fac3051e45986100e2f56"
+    },
+    "results/taxonomic_resolution_t1/posthoc_tests.xml": {
+      "bytes": 1147,
+      "sha256": "cb576ef42117cb3caaf257d8528f221da839a31b447663276242b38a9382dd9c"
+    },
+    "results/taxonomic_resolution_t1/protocol_freeze.json": {
+      "bytes": 4978,
+      "sha256": "9d714ca49bc87340ead3909ba64072535d72498dae158b857114f9cd204e4767"
+    },
+    "results/taxonomic_resolution_t1/replay_summary.csv": {
+      "bytes": 52838,
+      "sha256": "608fbe1ca9b6822dd6895fa49316455323748cd2f305b3f7345a39a616d65038"
+    },
+    "results/taxonomic_resolution_t1/source_snapshot/configs/taxonomic_resolution_t1.json": {
+      "bytes": 2354,
+      "sha256": "cd42af8335cdd6d2f489f902b28d6206562871a5000e09642ffdf432516294cc"
+    },
+    "results/taxonomic_resolution_t1/source_snapshot/docs/taxonomic_resolution_t1_protocol.md": {
+      "bytes": 6617,
+      "sha256": "3f14a799419f0156ddd6fbd7cf18d3b065cb1c6754bebace8b518b13e55eed8c"
+    },
+    "results/taxonomic_resolution_t1/source_snapshot/scripts/run_taxonomic_resolution_t1.py": {
+      "bytes": 25140,
+      "sha256": "88fbc9536fac1565c1cc820e36d36ba4ba6fe6b4c91d79b94a411c084b29fd94"
+    },
+    "results/taxonomic_resolution_t1/source_snapshot/scripts/validate_taxonomic_resolution_t1.py": {
+      "bytes": 7782,
+      "sha256": "2318be22d529a8792bdeb2aa7ca07b9eaf20d3ad03acc11dd1b807107b9fc947"
+    },
+    "results/taxonomic_resolution_t1/source_snapshot/src/geolifeclef/ecological_selection.py": {
+      "bytes": 5282,
+      "sha256": "67e646fb011f987c05aec1a174f06c6d95805de3aa8f08dd72e0bbdddafd9685"
+    },
+    "results/taxonomic_resolution_t1/source_snapshot/src/geolifeclef/external_reliability.py": {
+      "bytes": 9673,
+      "sha256": "7ba86d1501dfbcd415ccbebca8f0258c8e85ca6ab1de5bb2cac7b8c98653d296"
+    },
+    "results/taxonomic_resolution_t1/source_snapshot/src/geolifeclef/neon_assessment.py": {
+      "bytes": 7733,
+      "sha256": "8215215e423b29ad1cb6665cc477d8647b6ab550635b77575701e5bcf80e6605"
+    },
+    "results/taxonomic_resolution_t1/source_snapshot/src/geolifeclef/partial_set_bounds.py": {
+      "bytes": 2284,
+      "sha256": "558cccd4598e3d8413623f94d18f2802a857e049d72dea82f196b49b9e1cf920"
+    },
+    "results/taxonomic_resolution_t1/source_snapshot/src/geolifeclef/reliability.py": {
+      "bytes": 9084,
+      "sha256": "3a34882cdf7ff14c31af08b405fdaaed42fca420b35241ecf9d800b52dfeeb1c"
+    },
+    "results/taxonomic_resolution_t1/source_snapshot/src/geolifeclef/sage_inference.py": {
+      "bytes": 4371,
+      "sha256": "394374174d1ea1ce8ed0d67a93bc8129629f866dc5b1eb587ee04fc6bc1a9d95"
+    },
+    "results/taxonomic_resolution_t1/source_snapshot/src/geolifeclef/taxonomic_censoring.py": {
+      "bytes": 4551,
+      "sha256": "3fb02877dfa379c24813bc86bef6f0333eb3f7fa8459914b6e39dfecb13f103a"
+    },
+    "results/taxonomic_resolution_t1/source_snapshot/tests/test_taxonomic_censoring.py": {
+      "bytes": 4231,
+      "sha256": "76b9a30c6052fe3a7a2a74de8c1cf88af7c032319282f62c7f7cb1a428bf5d0f"
+    },
+    "results/taxonomic_resolution_t1/source_target_access.json": {
+      "bytes": 145,
+      "sha256": "7c574b988a9ad344d6224a8d9538565468502b7ba07cab392497c52a36850258"
+    },
+    "results/taxonomic_resolution_t1/summary.json": {
+      "bytes": 70800,
+      "sha256": "eacf95ac624664b2b9ee8e4b79f2ce4e95ccad7b70d49c8bdeb8259a165f3cb0"
+    },
+    "results/taxonomic_resolution_t1/supporting_snapshot/docs/taxonomic_evaluation_prior_work.md": {
+      "bytes": 4696,
+      "sha256": "48ad623ce374363035b02886e762c61e6d9ea24e9ec41458cd79567ae776ea7c"
+    },
+    "results/taxonomic_resolution_t1/supporting_snapshot/docs/taxonomic_resolution_t1_posthoc.md": {
+      "bytes": 3003,
+      "sha256": "f6011a52f65958bd7021c0672f72d1d449c4cac5c034e8aef5d273f1b5fb3760"
+    },
+    "results/taxonomic_resolution_t1/supporting_snapshot/scripts/analyze_taxonomic_resolution_t1.py": {
+      "bytes": 12509,
+      "sha256": "92db9e62eb22f129f2f14c77a5f2c6a5e0b5ab607974abbeb6445477c41ac0d5"
+    },
+    "results/taxonomic_resolution_t1/supporting_snapshot/scripts/validate_taxonomic_resolution_t1_posthoc.py": {
+      "bytes": 4366,
+      "sha256": "684b652072e508abd0adf59122d83fc22937dee8fbff47437000f38e3e682809"
+    },
+    "results/taxonomic_resolution_t1/supporting_snapshot/src/geolifeclef/genus_completion_bounds.py": {
+      "bytes": 2485,
+      "sha256": "66feb66cfa1f4f39ed46e14efc49e5347577b5a9b9082312144935622e7480c9"
+    },
+    "results/taxonomic_resolution_t1/supporting_snapshot/tests/test_genus_completion_bounds.py": {
+      "bytes": 1739,
+      "sha256": "7d4ec583b3809f86cdd0a112397d736816d46c5319da3352185e9eb92b9c5647"
+    },
+    "results/taxonomic_resolution_t1/taxonomic_resolution_t1.pdf": {
+      "bytes": 32274,
+      "sha256": "fe0ff34f2448cd493416ef32b2600b1518c75f4f5b94b8d078ed03be8e8c1834"
+    },
+    "results/taxonomic_resolution_t1/taxonomic_resolution_t1.png": {
+      "bytes": 358651,
+      "sha256": "9786decb9598415e5f2abd94c069e8daaa97944838efb8d920e03eb7870cc124"
+    },
+    "results/taxonomic_resolution_t1/taxonomy_audit.json": {
+      "bytes": 440,
+      "sha256": "fd0c2585ca7f3324c822b34d45eb314d8b58df831bd54e428981bbc897384b75"
+    },
+    "results/taxonomic_resolution_t1/validation.json": {
+      "bytes": 1481,
+      "sha256": "f65f76e3f52c74e285486d64ed4c1bb291966c8d113dee88a8c540ba2e19ec91"
+    },
+    "scripts/run_taxonomic_resolution_t1.py": {
+      "bytes": 25140,
+      "sha256": "88fbc9536fac1565c1cc820e36d36ba4ba6fe6b4c91d79b94a411c084b29fd94"
+    },
+    "scripts/validate_taxonomic_resolution_t1.py": {
+      "bytes": 7782,
+      "sha256": "2318be22d529a8792bdeb2aa7ca07b9eaf20d3ad03acc11dd1b807107b9fc947"
+    },
+    "src/geolifeclef/ecological_selection.py": {
+      "bytes": 5282,
+      "sha256": "67e646fb011f987c05aec1a174f06c6d95805de3aa8f08dd72e0bbdddafd9685"
+    },
+    "src/geolifeclef/external_reliability.py": {
+      "bytes": 9673,
+      "sha256": "7ba86d1501dfbcd415ccbebca8f0258c8e85ca6ab1de5bb2cac7b8c98653d296"
+    },
+    "src/geolifeclef/neon_assessment.py": {
+      "bytes": 7733,
+      "sha256": "8215215e423b29ad1cb6665cc477d8647b6ab550635b77575701e5bcf80e6605"
+    },
+    "src/geolifeclef/partial_set_bounds.py": {
+      "bytes": 2284,
+      "sha256": "558cccd4598e3d8413623f94d18f2802a857e049d72dea82f196b49b9e1cf920"
+    },
+    "src/geolifeclef/reliability.py": {
+      "bytes": 9084,
+      "sha256": "3a34882cdf7ff14c31af08b405fdaaed42fca420b35241ecf9d800b52dfeeb1c"
+    },
+    "src/geolifeclef/sage_inference.py": {
+      "bytes": 4371,
+      "sha256": "394374174d1ea1ce8ed0d67a93bc8129629f866dc5b1eb587ee04fc6bc1a9d95"
+    },
+    "src/geolifeclef/taxonomic_censoring.py": {
+      "bytes": 4551,
+      "sha256": "3fb02877dfa379c24813bc86bef6f0333eb3f7fa8459914b6e39dfecb13f103a"
+    },
+    "tests/test_taxonomic_censoring.py": {
+      "bytes": 4231,
+      "sha256": "76b9a30c6052fe3a7a2a74de8c1cf88af7c032319282f62c7f7cb1a428bf5d0f"
+    },
+    "scripts/analyze_taxonomic_resolution_t1.py": {
+      "bytes": 12509,
+      "sha256": "92db9e62eb22f129f2f14c77a5f2c6a5e0b5ab607974abbeb6445477c41ac0d5"
+    },
+    "scripts/validate_taxonomic_resolution_t1_posthoc.py": {
+      "bytes": 4366,
+      "sha256": "684b652072e508abd0adf59122d83fc22937dee8fbff47437000f38e3e682809"
+    },
+    "src/geolifeclef/genus_completion_bounds.py": {
+      "bytes": 2485,
+      "sha256": "66feb66cfa1f4f39ed46e14efc49e5347577b5a9b9082312144935622e7480c9"
+    },
+    "tests/test_genus_completion_bounds.py": {
+      "bytes": 1739,
+      "sha256": "7d4ec583b3809f86cdd0a112397d736816d46c5319da3352185e9eb92b9c5647"
+    },
+    "docs/taxonomic_resolution_t1_posthoc.md": {
+      "bytes": 3003,
+      "sha256": "f6011a52f65958bd7021c0672f72d1d449c4cac5c034e8aef5d273f1b5fb3760"
+    }
+  },
+  "scope": "T1 frozen primary, separately labeled post-hoc diagnostics, source snapshots, input/output caches and saved Obsidian receipt; reviewed literature version is snapshotted while its maintained note remains editable"
+}

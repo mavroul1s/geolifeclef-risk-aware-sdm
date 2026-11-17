@@ -1,0 +1,21 @@
+{
+  "locked_at_utc": "2026-11-16T09:33:50.725946+00:00",
+  "assessment_targets_accessed": false,
+  "source_hashes": {
+    "configs/external_reliability_e1.json": "0944dbd2be33ebd39547e9c791545abde8bfad0fa07d3850c61ed571d3ebda99",
+    "docs/external_reliability_e1_protocol.md": "95d6a2cc33acc4f568370262370e8447bee857145cdc45c6361d63e0354be96c",
+    "scripts/run_external_e1.py": "07ab30ca72a6b4d19b056c113186c80e8af890d49ed529fec58056537f672da7",
+    "scripts/prepare_external_e1.py": "a83d1215a4e00fc4d1bdb404a46db478dc5e05546646cf5ae61cf41354f741c3",
+    "src/geolifeclef/external_reliability.py": "7ba86d1501dfbcd415ccbebca8f0258c8e85ca6ab1de5bb2cac7b8c98653d296",
+    "src/geolifeclef/ecological_selection.py": "67e646fb011f987c05aec1a174f06c6d95805de3aa8f08dd72e0bbdddafd9685",
+    "src/geolifeclef/reliability.py": "3a34882cdf7ff14c31af08b405fdaaed42fca420b35241ecf9d800b52dfeeb1c"
+  },
+  "input_hashes": {
+    "cohort_roles.csv": "246f71d750e590a81eb37c903ec8cab7f80931498c44f975d89c4381554cd4ef",
+    "eligible_species.npy": "f53a09dd18edaeed9275d1a24f7fdab37ac5398bfa858a587289ef8243406f0b",
+    "rare_species_mask.npy": "450022f589338ee0fa5cc83f7354c9dabd941fa63bf8a22bc76d01357e96e3ad",
+    "test_indices.npy": "47c7261ee36c216a49567792242a16ac05da345165355ceebd69c1ef6a601838",
+    "sealed_eval_test_targets.h5": "bf52746612d1d784d10a8696be94096d1162eaf3bb43a38011087d5af8730da6"
+  },
+  "scope": "local prospective lock after GLC development, not third-party registration"
+}

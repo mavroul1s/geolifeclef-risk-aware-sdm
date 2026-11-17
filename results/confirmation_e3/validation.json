@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "at_utc": "2026-11-16T11:06:25.903818+00:00",
+  "tests": {
+    "tests": "60",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0"
+  },
+  "policies_frozen_before_outcomes": true,
+  "source_and_cohort_hashes_verified": true,
+  "no_consumed_cells_plots_or_blocks": true,
+  "minimum_distance_consumed_SAGE_km": 107.50687020404816,
+  "minimum_linked_plot_distance_existing_GLC_PA_km": 710.059214801715,
+  "target_coordinate_and_area_alignment": true,
+  "native_target_mask_check_passed_at_assessment": true,
+  "verified_policy_settings": 100,
+  "all_group_quotas_exact": true,
+  "primary_numbers_exactly_reproduced": true,
+  "previous_manifests_unchanged": {
+    "external_replication_e1": 44,
+    "ranking_study_e2": 24
+  },
+  "scientific_primary_success": false,
+  "GPU_job_launched": false,
+  "new_neural_backbone_fits": 0
+}

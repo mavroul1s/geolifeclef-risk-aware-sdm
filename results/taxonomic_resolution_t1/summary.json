@@ -1,0 +1,2144 @@
+{
+  "status": "controlled_development_complete",
+  "at_utc": "2026-11-17T07:50:36.901075+00:00",
+  "oracle": {
+    "full_F1": 0.2537972586033498,
+    "cells": 5251,
+    "spatial_blocks": 73,
+    "countries": 32,
+    "rare_occurrences": 3653,
+    "selected_F1": {
+      "HGB": 0.2660883648178761,
+      "SDC": 0.2706366411728781,
+      "random": 0.25326780545004923,
+      "mean_confidence": 0.2711990765033977,
+      "entropy": 0.2439955552159931
+    },
+    "accepted_cells": {
+      "HGB": 4201,
+      "SDC": 4201,
+      "random": 4201,
+      "mean_confidence": 4201,
+      "entropy": 4201
+    },
+    "contrasts": {
+      "HGB_SDC": {
+        "point": -0.00454827635500199,
+        "interval": [
+          -0.011808964823713136,
+          0.00318075684800728
+        ],
+        "clusters": 73,
+        "valid_draws": 4000,
+        "confidence": 0.975
+      },
+      "HGB_random": {
+        "point": 0.01282055936782689,
+        "interval": [
+          0.005674011634566869,
+          0.023802463102303717
+        ],
+        "clusters": 73,
+        "valid_draws": 4000,
+        "confidence": 0.975
+      },
+      "SDC_random": {
+        "point": 0.01736883572282888,
+        "interval": [
+          0.00978628277714696,
+          0.02805345960189775
+        ],
+        "clusters": 73,
+        "valid_draws": 4000,
+        "confidence": 0.975
+      }
+    }
+  },
+  "replay_settings": 60,
+  "nonzero_settings": 40,
+  "unique_zero_dose_control": 1,
+  "new_backbone_fits": 0,
+  "new_GPU_jobs": 0,
+  "reconstructed_HGB_fits": 1,
+  "practical_score_bias_criterion_met": false,
+  "sections": [
+    {
+      "mechanism": "uniform_positive_genera",
+      "dose": 0.0,
+      "seeds": 10,
+      "treatments": {
+        "unknown_as_absence": {
+          "bias": {
+            "point": -1.7317502306361498e-18,
+            "interval": [
+              -3.597313295526927e-18,
+              -1.6777084444432894e-19
+            ],
+            "clusters": 73,
+            "valid_draws": 4000,
+            "confidence": 0.975
+          },
+          "F1": {
+            "mean": 0.2537972586033498,
+            "seed_min": 0.2537972586033498,
+            "seed_max": 0.2537972586033498
+          },
+          "bias_seed_variability": {
+            "mean": 0.0,
+            "seed_min": 0.0,
+            "seed_max": 0.0
+          },
+          "admitted_bias": {
+            "mean": 0.0,
+            "seed_min": 0.0,
+            "seed_max": 0.0
+          },
+          "contrasts": {
+            "HGB_SDC": {
+              "observed": {
+                "point": -0.00454827635500199,
+                "interval": [
+                  -0.011808964823713136,
+                  0.00318075684800728
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 2.5766899524149655e-19,
+                "interval": [
+                  -4.0287454390374136e-19,
+                  8.685219172235679e-19
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion_seed_variability": {
+                "mean": 0.0,
+                "seed_min": 0.0,
+                "seed_max": 0.0
+              },
+              "sign_reversals_of_practical_oracle": 0,
+              "completion_lower": {
+                "mean": -0.004548276355002038,
+                "seed_min": -0.004548276355002038,
+                "seed_max": -0.004548276355002038
+              },
+              "completion_upper": {
+                "mean": -0.004548276355002038,
+                "seed_min": -0.004548276355002038,
+                "seed_max": -0.004548276355002038
+              },
+              "completion_sign_identified_seeds": 10
+            },
+            "HGB_random": {
+              "observed": {
+                "point": 0.01282055936782689,
+                "interval": [
+                  0.005674011634566869,
+                  0.023802463102303717
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": -2.5932071956996784e-19,
+                "interval": [
+                  -8.395099142090774e-19,
+                  4.55036149585107e-19
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion_seed_variability": {
+                "mean": 0.0,
+                "seed_min": 0.0,
+                "seed_max": 0.0
+              },
+              "sign_reversals_of_practical_oracle": 0,
+              "completion_lower": {
+                "mean": 0.012820559367826861,
+                "seed_min": 0.012820559367826861,
+                "seed_max": 0.012820559367826861
+              },
+              "completion_upper": {
+                "mean": 0.012820559367826861,
+                "seed_min": 0.012820559367826861,
+                "seed_max": 0.012820559367826861
+              },
+              "completion_sign_identified_seeds": 10
+            },
+            "SDC_random": {
+              "observed": {
+                "point": 0.01736883572282888,
+                "interval": [
+                  0.00978628277714696,
+                  0.02805345960189775
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": -5.169897148114644e-19,
+                "interval": [
+                  -1.192435527095566e-18,
+                  4.2285977054363095e-19
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion_seed_variability": {
+                "mean": 0.0,
+                "seed_min": 0.0,
+                "seed_max": 0.0
+              },
+              "sign_reversals_of_practical_oracle": 0,
+              "completion_lower": {
+                "mean": 0.0173688357228289,
+                "seed_min": 0.0173688357228289,
+                "seed_max": 0.0173688357228289
+              },
+              "completion_upper": {
+                "mean": 0.0173688357228289,
+                "seed_min": 0.0173688357228289,
+                "seed_max": 0.0173688357228289
+              },
+              "completion_sign_identified_seeds": 10
+            }
+          }
+        },
+        "known_labels_only": {
+          "bias": {
+            "point": -1.7317502306361498e-18,
+            "interval": [
+              -3.597313295526927e-18,
+              -1.6777084444432894e-19
+            ],
+            "clusters": 73,
+            "valid_draws": 4000,
+            "confidence": 0.975
+          },
+          "F1": {
+            "mean": 0.2537972586033498,
+            "seed_min": 0.2537972586033498,
+            "seed_max": 0.2537972586033498
+          },
+          "bias_seed_variability": {
+            "mean": 0.0,
+            "seed_min": 0.0,
+            "seed_max": 0.0
+          },
+          "admitted_bias": {
+            "mean": 0.0,
+            "seed_min": 0.0,
+            "seed_max": 0.0
+          },
+          "contrasts": {
+            "HGB_SDC": {
+              "observed": {
+                "point": -0.00454827635500199,
+                "interval": [
+                  -0.011808964823713136,
+                  0.00318075684800728
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 2.5766899524149655e-19,
+                "interval": [
+                  -4.0287454390374136e-19,
+                  8.685219172235679e-19
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion_seed_variability": {
+                "mean": 0.0,
+                "seed_min": 0.0,
+                "seed_max": 0.0
+              },
+              "sign_reversals_of_practical_oracle": 0,
+              "completion_lower": {
+                "mean": -0.004548276355002038,
+                "seed_min": -0.004548276355002038,
+                "seed_max": -0.004548276355002038
+              },
+              "completion_upper": {
+                "mean": -0.004548276355002038,
+                "seed_min": -0.004548276355002038,
+                "seed_max": -0.004548276355002038
+              },
+              "completion_sign_identified_seeds": 10
+            },
+            "HGB_random": {
+              "observed": {
+                "point": 0.01282055936782689,
+                "interval": [
+                  0.005674011634566869,
+                  0.023802463102303717
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": -2.5932071956996784e-19,
+                "interval": [
+                  -8.395099142090774e-19,
+                  4.55036149585107e-19
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion_seed_variability": {
+                "mean": 0.0,
+                "seed_min": 0.0,
+                "seed_max": 0.0
+              },
+              "sign_reversals_of_practical_oracle": 0,
+              "completion_lower": {
+                "mean": 0.012820559367826861,
+                "seed_min": 0.012820559367826861,
+                "seed_max": 0.012820559367826861
+              },
+              "completion_upper": {
+                "mean": 0.012820559367826861,
+                "seed_min": 0.012820559367826861,
+                "seed_max": 0.012820559367826861
+              },
+              "completion_sign_identified_seeds": 10
+            },
+            "SDC_random": {
+              "observed": {
+                "point": 0.01736883572282888,
+                "interval": [
+                  0.00978628277714696,
+                  0.02805345960189775
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": -5.169897148114644e-19,
+                "interval": [
+                  -1.192435527095566e-18,
+                  4.2285977054363095e-19
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion_seed_variability": {
+                "mean": 0.0,
+                "seed_min": 0.0,
+                "seed_max": 0.0
+              },
+              "sign_reversals_of_practical_oracle": 0,
+              "completion_lower": {
+                "mean": 0.0173688357228289,
+                "seed_min": 0.0173688357228289,
+                "seed_max": 0.0173688357228289
+              },
+              "completion_upper": {
+                "mean": 0.0173688357228289,
+                "seed_min": 0.0173688357228289,
+                "seed_max": 0.0173688357228289
+              },
+              "completion_sign_identified_seeds": 10
+            }
+          }
+        }
+      },
+      "diagnostics": {
+        "known_fraction_mean": {
+          "mean": 1.0,
+          "seed_min": 1.0,
+          "seed_max": 1.0
+        },
+        "hidden_positive_occurrence_fraction": {
+          "mean": 0.0,
+          "seed_min": 0.0,
+          "seed_max": 0.0
+        },
+        "realized_genus_fraction_mean": {
+          "mean": 0.0,
+          "seed_min": 0.0,
+          "seed_max": 0.0
+        },
+        "bound_width_mean": {
+          "mean": 0.0,
+          "seed_min": 0.0,
+          "seed_max": 0.0
+        },
+        "admitted_cells": {
+          "mean": 5251.0,
+          "seed_min": 5251.0,
+          "seed_max": 5251.0
+        },
+        "admitted_countries": {
+          "mean": 32.0,
+          "seed_min": 32.0,
+          "seed_max": 32.0
+        },
+        "admitted_blocks": {
+          "mean": 73.0,
+          "seed_min": 73.0,
+          "seed_max": 73.0
+        },
+        "admitted_rare_occurrence_retention": {
+          "mean": 1.0,
+          "seed_min": 1.0,
+          "seed_max": 1.0
+        },
+        "admitted_oracle_F1_shift": {
+          "mean": 0.0,
+          "seed_min": 0.0,
+          "seed_max": 0.0
+        }
+      }
+    },
+    {
+      "mechanism": "uniform_positive_genera",
+      "dose": 0.2,
+      "seeds": 10,
+      "treatments": {
+        "unknown_as_absence": {
+          "bias": {
+            "point": 0.01267805561735428,
+            "interval": [
+              -0.02276732754141613,
+              0.068072728593281
+            ],
+            "clusters": 73,
+            "valid_draws": 4000,
+            "confidence": 0.975
+          },
+          "F1": {
+            "mean": 0.26647531422070403,
+            "seed_min": 0.26564981137703875,
+            "seed_max": 0.26746301460877425
+          },
+          "bias_seed_variability": {
+            "mean": 0.012678055617354276,
+            "seed_min": 0.011852552773688949,
+            "seed_max": 0.013665756005424468
+          },
+          "admitted_bias": {
+            "mean": 0.012678055617354276,
+            "seed_min": 0.011852552773688949,
+            "seed_max": 0.013665756005424468
+          },
+          "contrasts": {
+            "HGB_SDC": {
+              "observed": {
+                "point": -0.003150820656426412,
+                "interval": [
+                  -0.012453078855361809,
+                  0.007081342021946115
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 0.001397455698575585,
+                "interval": [
+                  -0.004291479835917305,
+                  0.006697554715415093
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion_seed_variability": {
+                "mean": 0.001397455698575517,
+                "seed_min": 0.0008376102903807081,
+                "seed_max": 0.001965694287051123
+              },
+              "sign_reversals_of_practical_oracle": 0,
+              "completion_lower": {
+                "mean": -0.022071335139184748,
+                "seed_min": -0.022345828579094406,
+                "seed_max": -0.021776514660680008
+              },
+              "completion_upper": {
+                "mean": 0.014381071697791431,
+                "seed_min": 0.013930422003553392,
+                "seed_max": 0.014734902762670416
+              },
+              "completion_sign_identified_seeds": 0
+            },
+            "HGB_random": {
+              "observed": {
+                "point": 0.015578981914004086,
+                "interval": [
+                  0.006002353724388861,
+                  0.03146966647150688
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 0.002758422546177159,
+                "interval": [
+                  -0.0032925028618596606,
+                  0.010624927452842393
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion_seed_variability": {
+                "mean": 0.0027584225461771417,
+                "seed_min": 0.0022627303722950742,
+                "seed_max": 0.0032520683945166384
+              },
+              "sign_reversals_of_practical_oracle": 0,
+              "completion_lower": {
+                "mean": -0.010408159516965405,
+                "seed_min": -0.010993256288405515,
+                "seed_max": -0.009868025241878218
+              },
+              "completion_upper": {
+                "mean": 0.039085073734800156,
+                "seed_min": 0.038763482697136774,
+                "seed_max": 0.03933865649886976
+              },
+              "completion_sign_identified_seeds": 0
+            },
+            "SDC_random": {
+              "observed": {
+                "point": 0.018729802570430498,
+                "interval": [
+                  0.008479598409496563,
+                  0.035988091751583066
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 0.001360966847601574,
+                "interval": [
+                  -0.005262471626665875,
+                  0.009774493092162112
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion_seed_variability": {
+                "mean": 0.0013609668476016246,
+                "seed_min": 0.0004690881694944804,
+                "seed_max": 0.0017410553165249643
+              },
+              "sign_reversals_of_practical_oracle": 0,
+              "completion_lower": {
+                "mean": -0.006655071455798059,
+                "seed_min": -0.007403240414527552,
+                "seed_max": -0.006135662962553142
+              },
+              "completion_upper": {
+                "mean": 0.043022249115026126,
+                "seed_min": 0.04276240515097661,
+                "seed_max": 0.043310055660778404
+              },
+              "completion_sign_identified_seeds": 0
+            }
+          }
+        },
+        "known_labels_only": {
+          "bias": {
+            "point": 0.019383289952114857,
+            "interval": [
+              -0.014867209515511874,
+              0.07307915797634139
+            ],
+            "clusters": 73,
+            "valid_draws": 4000,
+            "confidence": 0.975
+          },
+          "F1": {
+            "mean": 0.2731805485554647,
+            "seed_min": 0.27246104509233376,
+            "seed_max": 0.27401202239034367
+          },
+          "bias_seed_variability": {
+            "mean": 0.019383289952114857,
+            "seed_min": 0.01866378648898397,
+            "seed_max": 0.020214763786993883
+          },
+          "admitted_bias": {
+            "mean": 0.019383289952114857,
+            "seed_min": 0.01866378648898397,
+            "seed_max": 0.020214763786993883
+          },
+          "contrasts": {
+            "HGB_SDC": {
+              "observed": {
+                "point": -0.003586040570442761,
+                "interval": [
+                  -0.012950694670404045,
+                  0.00673084401295543
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 0.0009622357845592774,
+                "interval": [
+                  -0.004685180274934262,
+                  0.006111227008656577
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion_seed_variability": {
+                "mean": 0.0009622357845592178,
+                "seed_min": 0.00047461697477463316,
+                "seed_max": 0.0015076077324982506
+              },
+              "sign_reversals_of_practical_oracle": 0,
+              "completion_lower": {
+                "mean": -0.022071335139184748,
+                "seed_min": -0.022345828579094406,
+                "seed_max": -0.021776514660680008
+              },
+              "completion_upper": {
+                "mean": 0.014381071697791431,
+                "seed_min": 0.013930422003553392,
+                "seed_max": 0.014734902762670416
+              },
+              "completion_sign_identified_seeds": 0
+            },
+            "HGB_random": {
+              "observed": {
+                "point": 0.01581100968426169,
+                "interval": [
+                  0.0061979817398395785,
+                  0.031667438964020606
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 0.00299045031643478,
+                "interval": [
+                  -0.0031114043579015477,
+                  0.010793377839206954
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion_seed_variability": {
+                "mean": 0.0029904503164347395,
+                "seed_min": 0.0026027125849301114,
+                "seed_max": 0.0034959440325688096
+              },
+              "sign_reversals_of_practical_oracle": 0,
+              "completion_lower": {
+                "mean": -0.010408159516965405,
+                "seed_min": -0.010993256288405515,
+                "seed_max": -0.009868025241878218
+              },
+              "completion_upper": {
+                "mean": 0.039085073734800156,
+                "seed_min": 0.038763482697136774,
+                "seed_max": 0.03933865649886976
+              },
+              "completion_sign_identified_seeds": 0
+            },
+            "SDC_random": {
+              "observed": {
+                "point": 0.01939705025470445,
+                "interval": [
+                  0.009183842965339181,
+                  0.036465664650069306
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 0.0020282145318755024,
+                "interval": [
+                  -0.004320836837599906,
+                  0.01018580891477204
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion_seed_variability": {
+                "mean": 0.002028214531875522,
+                "seed_min": 0.001167284587205164,
+                "seed_max": 0.0025220725155666868
+              },
+              "sign_reversals_of_practical_oracle": 0,
+              "completion_lower": {
+                "mean": -0.006655071455798059,
+                "seed_min": -0.007403240414527552,
+                "seed_max": -0.006135662962553142
+              },
+              "completion_upper": {
+                "mean": 0.043022249115026126,
+                "seed_min": 0.04276240515097661,
+                "seed_max": 0.043310055660778404
+              },
+              "completion_sign_identified_seeds": 0
+            }
+          }
+        }
+      },
+      "diagnostics": {
+        "known_fraction_mean": {
+          "mean": 0.9842010305439345,
+          "seed_min": 0.9839740297812064,
+          "seed_max": 0.9845235291737399
+        },
+        "hidden_positive_occurrence_fraction": {
+          "mean": 0.260156849373455,
+          "seed_min": 0.25931293154888757,
+          "seed_max": 0.26155769613275365
+        },
+        "realized_genus_fraction_mean": {
+          "mean": 0.3391530263164704,
+          "seed_min": 0.3391530263164704,
+          "seed_max": 0.3391530263164704
+        },
+        "bound_width_mean": {
+          "mean": 0.1229583768780095,
+          "seed_min": 0.12170925146922873,
+          "seed_max": 0.12416853554894629
+        },
+        "admitted_cells": {
+          "mean": 5251.0,
+          "seed_min": 5251.0,
+          "seed_max": 5251.0
+        },
+        "admitted_countries": {
+          "mean": 32.0,
+          "seed_min": 32.0,
+          "seed_max": 32.0
+        },
+        "admitted_blocks": {
+          "mean": 73.0,
+          "seed_min": 73.0,
+          "seed_max": 73.0
+        },
+        "admitted_rare_occurrence_retention": {
+          "mean": 1.0,
+          "seed_min": 1.0,
+          "seed_max": 1.0
+        },
+        "admitted_oracle_F1_shift": {
+          "mean": 0.0,
+          "seed_min": 0.0,
+          "seed_max": 0.0
+        }
+      }
+    },
+    {
+      "mechanism": "uniform_positive_genera",
+      "dose": 0.5,
+      "seeds": 10,
+      "treatments": {
+        "unknown_as_absence": {
+          "bias": {
+            "point": -0.02077022913495189,
+            "interval": [
+              -0.0621069577772628,
+              0.045546845854313234
+            ],
+            "clusters": 73,
+            "valid_draws": 4000,
+            "confidence": 0.975
+          },
+          "F1": {
+            "mean": 0.2330270294683979,
+            "seed_min": 0.23183129514000414,
+            "seed_max": 0.23455003531597868
+          },
+          "bias_seed_variability": {
+            "mean": -0.02077022913495189,
+            "seed_min": -0.021965963463345638,
+            "seed_max": -0.019247223287371096
+          },
+          "admitted_bias": {
+            "mean": -0.020720691240013658,
+            "seed_min": -0.02189988329139751,
+            "seed_max": -0.01920160696268441
+          },
+          "contrasts": {
+            "HGB_SDC": {
+              "observed": {
+                "point": -0.0014702622875904792,
+                "interval": [
+                  -0.010795506801485548,
+                  0.008839745508445403
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 0.0030780140674115317,
+                "interval": [
+                  -0.003171463129202266,
+                  0.009233118967473773
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion_seed_variability": {
+                "mean": 0.0030780140674114887,
+                "seed_min": 0.002096353530385897,
+                "seed_max": 0.004040000497058299
+              },
+              "sign_reversals_of_practical_oracle": 0,
+              "completion_lower": {
+                "mean": -0.030613117982676012,
+                "seed_min": -0.03100611068385372,
+                "seed_max": -0.03023716924807961
+              },
+              "completion_upper": {
+                "mean": 0.025022377182695826,
+                "seed_min": 0.024598766992064085,
+                "seed_max": 0.025468435526307447
+              },
+              "completion_sign_identified_seeds": 0
+            },
+            "HGB_random": {
+              "observed": {
+                "point": 0.01500883892626026,
+                "interval": [
+                  0.00510485226060879,
+                  0.03199900296934671
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 0.0021882795584334154,
+                "interval": [
+                  -0.004779442677723943,
+                  0.011387000654143196
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion_seed_variability": {
+                "mean": 0.002188279558433373,
+                "seed_min": 0.0013907265016047665,
+                "seed_max": 0.0026477735393563573
+              },
+              "sign_reversals_of_practical_oracle": 0,
+              "completion_lower": {
+                "mean": -0.022338173684322206,
+                "seed_min": -0.022752489149088662,
+                "seed_max": -0.021977920722424216
+              },
+              "completion_upper": {
+                "mean": 0.05069177596703759,
+                "seed_min": 0.05023127369864577,
+                "seed_max": 0.05125171754257583
+              },
+              "completion_sign_identified_seeds": 0
+            },
+            "SDC_random": {
+              "observed": {
+                "point": 0.01647910121385074,
+                "interval": [
+                  0.005998497975028017,
+                  0.034784961769740566
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": -0.0008897345089781163,
+                "interval": [
+                  -0.008346726758239224,
+                  0.008763291260487636
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion_seed_variability": {
+                "mean": -0.0008897345089781156,
+                "seed_min": -0.0015071783714795672,
+                "seed_max": -0.00040915186831566586
+              },
+              "sign_reversals_of_practical_oracle": 0,
+              "completion_lower": {
+                "mean": -0.01937242992994685,
+                "seed_min": -0.019745165814241496,
+                "seed_max": -0.018953734910985662
+              },
+              "completion_upper": {
+                "mean": 0.053316773012642406,
+                "seed_min": 0.05302061922940802,
+                "seed_max": 0.05357625083571291
+              },
+              "completion_sign_identified_seeds": 0
+            }
+          }
+        },
+        "known_labels_only": {
+          "bias": {
+            "point": -0.00860849757091253,
+            "interval": [
+              -0.047690495385193446,
+              0.05387056649676325
+            ],
+            "clusters": 73,
+            "valid_draws": 4000,
+            "confidence": 0.975
+          },
+          "F1": {
+            "mean": 0.24518876103243725,
+            "seed_min": 0.24401838857518063,
+            "seed_max": 0.2467787222864182
+          },
+          "bias_seed_variability": {
+            "mean": -0.008608497570912536,
+            "seed_min": -0.00977887002816917,
+            "seed_max": -0.00701853631693163
+          },
+          "admitted_bias": {
+            "mean": -0.00859118260702305,
+            "seed_min": -0.00976575361417696,
+            "seed_max": -0.006993941260124019
+          },
+          "contrasts": {
+            "HGB_SDC": {
+              "observed": {
+                "point": -0.0021826096850763865,
+                "interval": [
+                  -0.011523522172824052,
+                  0.008305456546932181
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 0.0023656666699256824,
+                "interval": [
+                  -0.0036993191873328337,
+                  0.008043991015415329
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion_seed_variability": {
+                "mean": 0.00236566666992562,
+                "seed_min": 0.0013887422265054794,
+                "seed_max": 0.0033310651707366135
+              },
+              "sign_reversals_of_practical_oracle": 0,
+              "completion_lower": {
+                "mean": -0.030613117982676012,
+                "seed_min": -0.03100611068385372,
+                "seed_max": -0.03023716924807961
+              },
+              "completion_upper": {
+                "mean": 0.025022377182695826,
+                "seed_min": 0.024598766992064085,
+                "seed_max": 0.025468435526307447
+              },
+              "completion_sign_identified_seeds": 0
+            },
+            "HGB_random": {
+              "observed": {
+                "point": 0.015484335622787726,
+                "interval": [
+                  0.005464345104181258,
+                  0.032292362298091966
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 0.00266377625496085,
+                "interval": [
+                  -0.003906328602921962,
+                  0.011436482108617033
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion_seed_variability": {
+                "mean": 0.002663776254960823,
+                "seed_min": 0.0019035692230452705,
+                "seed_max": 0.0031584930264286493
+              },
+              "sign_reversals_of_practical_oracle": 0,
+              "completion_lower": {
+                "mean": -0.022338173684322206,
+                "seed_min": -0.022752489149088662,
+                "seed_max": -0.021977920722424216
+              },
+              "completion_upper": {
+                "mean": 0.05069177596703759,
+                "seed_min": 0.05023127369864577,
+                "seed_max": 0.05125171754257583
+              },
+              "completion_sign_identified_seeds": 0
+            },
+            "SDC_random": {
+              "observed": {
+                "point": 0.017666945307864113,
+                "interval": [
+                  0.00716186522571196,
+                  0.035660899910017904
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 0.0002981095850351674,
+                "interval": [
+                  -0.006509077501869447,
+                  0.009507467028921893
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion_seed_variability": {
+                "mean": 0.0002981095850352028,
+                "seed_min": -0.0003937526129420832,
+                "seed_max": 0.0007554384954327475
+              },
+              "sign_reversals_of_practical_oracle": 0,
+              "completion_lower": {
+                "mean": -0.01937242992994685,
+                "seed_min": -0.019745165814241496,
+                "seed_max": -0.018953734910985662
+              },
+              "completion_upper": {
+                "mean": 0.053316773012642406,
+                "seed_min": 0.05302061922940802,
+                "seed_max": 0.05357625083571291
+              },
+              "completion_sign_identified_seeds": 0
+            }
+          }
+        }
+      },
+      "diagnostics": {
+        "known_fraction_mean": {
+          "mean": 0.9690385599079917,
+          "seed_min": 0.9687244961228701,
+          "seed_max": 0.9695283847325034
+        },
+        "hidden_positive_occurrence_fraction": {
+          "mean": 0.5364021254226692,
+          "seed_min": 0.5355042195891229,
+          "seed_max": 0.5380615463302362
+        },
+        "realized_genus_fraction_mean": {
+          "mean": 0.5121389964512859,
+          "seed_min": 0.5121389964512859,
+          "seed_max": 0.5121389964512859
+        },
+        "bound_width_mean": {
+          "mean": 0.18033829662778508,
+          "seed_min": 0.17906437913446507,
+          "seed_max": 0.1813233686889794
+        },
+        "admitted_cells": {
+          "mean": 5249.4,
+          "seed_min": 5248.0,
+          "seed_max": 5251.0
+        },
+        "admitted_countries": {
+          "mean": 32.0,
+          "seed_min": 32.0,
+          "seed_max": 32.0
+        },
+        "admitted_blocks": {
+          "mean": 73.0,
+          "seed_min": 73.0,
+          "seed_max": 73.0
+        },
+        "admitted_rare_occurrence_retention": {
+          "mean": 0.9976183958390363,
+          "seed_min": 0.9956200383246646,
+          "seed_max": 1.0
+        },
+        "admitted_oracle_F1_shift": {
+          "mean": -5.1036646386859454e-05,
+          "seed_min": -9.795096460812891e-05,
+          "seed_max": 1.8847275388700346e-06
+        }
+      }
+    },
+    {
+      "mechanism": "rarity_weighted_positive_genera",
+      "dose": 0.0,
+      "seeds": 10,
+      "treatments": {
+        "unknown_as_absence": {
+          "bias": {
+            "point": -1.7317502306361498e-18,
+            "interval": [
+              -3.597313295526927e-18,
+              -1.6777084444432894e-19
+            ],
+            "clusters": 73,
+            "valid_draws": 4000,
+            "confidence": 0.975
+          },
+          "F1": {
+            "mean": 0.2537972586033498,
+            "seed_min": 0.2537972586033498,
+            "seed_max": 0.2537972586033498
+          },
+          "bias_seed_variability": {
+            "mean": 0.0,
+            "seed_min": 0.0,
+            "seed_max": 0.0
+          },
+          "admitted_bias": {
+            "mean": 0.0,
+            "seed_min": 0.0,
+            "seed_max": 0.0
+          },
+          "contrasts": {
+            "HGB_SDC": {
+              "observed": {
+                "point": -0.00454827635500199,
+                "interval": [
+                  -0.011808964823713136,
+                  0.00318075684800728
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 2.5766899524149655e-19,
+                "interval": [
+                  -4.0287454390374136e-19,
+                  8.685219172235679e-19
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion_seed_variability": {
+                "mean": 0.0,
+                "seed_min": 0.0,
+                "seed_max": 0.0
+              },
+              "sign_reversals_of_practical_oracle": 0,
+              "completion_lower": {
+                "mean": -0.004548276355002038,
+                "seed_min": -0.004548276355002038,
+                "seed_max": -0.004548276355002038
+              },
+              "completion_upper": {
+                "mean": -0.004548276355002038,
+                "seed_min": -0.004548276355002038,
+                "seed_max": -0.004548276355002038
+              },
+              "completion_sign_identified_seeds": 10
+            },
+            "HGB_random": {
+              "observed": {
+                "point": 0.01282055936782689,
+                "interval": [
+                  0.005674011634566869,
+                  0.023802463102303717
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": -2.5932071956996784e-19,
+                "interval": [
+                  -8.395099142090774e-19,
+                  4.55036149585107e-19
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion_seed_variability": {
+                "mean": 0.0,
+                "seed_min": 0.0,
+                "seed_max": 0.0
+              },
+              "sign_reversals_of_practical_oracle": 0,
+              "completion_lower": {
+                "mean": 0.012820559367826861,
+                "seed_min": 0.012820559367826861,
+                "seed_max": 0.012820559367826861
+              },
+              "completion_upper": {
+                "mean": 0.012820559367826861,
+                "seed_min": 0.012820559367826861,
+                "seed_max": 0.012820559367826861
+              },
+              "completion_sign_identified_seeds": 10
+            },
+            "SDC_random": {
+              "observed": {
+                "point": 0.01736883572282888,
+                "interval": [
+                  0.00978628277714696,
+                  0.02805345960189775
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": -5.169897148114644e-19,
+                "interval": [
+                  -1.192435527095566e-18,
+                  4.2285977054363095e-19
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion_seed_variability": {
+                "mean": 0.0,
+                "seed_min": 0.0,
+                "seed_max": 0.0
+              },
+              "sign_reversals_of_practical_oracle": 0,
+              "completion_lower": {
+                "mean": 0.0173688357228289,
+                "seed_min": 0.0173688357228289,
+                "seed_max": 0.0173688357228289
+              },
+              "completion_upper": {
+                "mean": 0.0173688357228289,
+                "seed_min": 0.0173688357228289,
+                "seed_max": 0.0173688357228289
+              },
+              "completion_sign_identified_seeds": 10
+            }
+          }
+        },
+        "known_labels_only": {
+          "bias": {
+            "point": -1.7317502306361498e-18,
+            "interval": [
+              -3.597313295526927e-18,
+              -1.6777084444432894e-19
+            ],
+            "clusters": 73,
+            "valid_draws": 4000,
+            "confidence": 0.975
+          },
+          "F1": {
+            "mean": 0.2537972586033498,
+            "seed_min": 0.2537972586033498,
+            "seed_max": 0.2537972586033498
+          },
+          "bias_seed_variability": {
+            "mean": 0.0,
+            "seed_min": 0.0,
+            "seed_max": 0.0
+          },
+          "admitted_bias": {
+            "mean": 0.0,
+            "seed_min": 0.0,
+            "seed_max": 0.0
+          },
+          "contrasts": {
+            "HGB_SDC": {
+              "observed": {
+                "point": -0.00454827635500199,
+                "interval": [
+                  -0.011808964823713136,
+                  0.00318075684800728
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 2.5766899524149655e-19,
+                "interval": [
+                  -4.0287454390374136e-19,
+                  8.685219172235679e-19
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion_seed_variability": {
+                "mean": 0.0,
+                "seed_min": 0.0,
+                "seed_max": 0.0
+              },
+              "sign_reversals_of_practical_oracle": 0,
+              "completion_lower": {
+                "mean": -0.004548276355002038,
+                "seed_min": -0.004548276355002038,
+                "seed_max": -0.004548276355002038
+              },
+              "completion_upper": {
+                "mean": -0.004548276355002038,
+                "seed_min": -0.004548276355002038,
+                "seed_max": -0.004548276355002038
+              },
+              "completion_sign_identified_seeds": 10
+            },
+            "HGB_random": {
+              "observed": {
+                "point": 0.01282055936782689,
+                "interval": [
+                  0.005674011634566869,
+                  0.023802463102303717
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": -2.5932071956996784e-19,
+                "interval": [
+                  -8.395099142090774e-19,
+                  4.55036149585107e-19
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion_seed_variability": {
+                "mean": 0.0,
+                "seed_min": 0.0,
+                "seed_max": 0.0
+              },
+              "sign_reversals_of_practical_oracle": 0,
+              "completion_lower": {
+                "mean": 0.012820559367826861,
+                "seed_min": 0.012820559367826861,
+                "seed_max": 0.012820559367826861
+              },
+              "completion_upper": {
+                "mean": 0.012820559367826861,
+                "seed_min": 0.012820559367826861,
+                "seed_max": 0.012820559367826861
+              },
+              "completion_sign_identified_seeds": 10
+            },
+            "SDC_random": {
+              "observed": {
+                "point": 0.01736883572282888,
+                "interval": [
+                  0.00978628277714696,
+                  0.02805345960189775
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": -5.169897148114644e-19,
+                "interval": [
+                  -1.192435527095566e-18,
+                  4.2285977054363095e-19
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion_seed_variability": {
+                "mean": 0.0,
+                "seed_min": 0.0,
+                "seed_max": 0.0
+              },
+              "sign_reversals_of_practical_oracle": 0,
+              "completion_lower": {
+                "mean": 0.0173688357228289,
+                "seed_min": 0.0173688357228289,
+                "seed_max": 0.0173688357228289
+              },
+              "completion_upper": {
+                "mean": 0.0173688357228289,
+                "seed_min": 0.0173688357228289,
+                "seed_max": 0.0173688357228289
+              },
+              "completion_sign_identified_seeds": 10
+            }
+          }
+        }
+      },
+      "diagnostics": {
+        "known_fraction_mean": {
+          "mean": 1.0,
+          "seed_min": 1.0,
+          "seed_max": 1.0
+        },
+        "hidden_positive_occurrence_fraction": {
+          "mean": 0.0,
+          "seed_min": 0.0,
+          "seed_max": 0.0
+        },
+        "realized_genus_fraction_mean": {
+          "mean": 0.0,
+          "seed_min": 0.0,
+          "seed_max": 0.0
+        },
+        "bound_width_mean": {
+          "mean": 0.0,
+          "seed_min": 0.0,
+          "seed_max": 0.0
+        },
+        "admitted_cells": {
+          "mean": 5251.0,
+          "seed_min": 5251.0,
+          "seed_max": 5251.0
+        },
+        "admitted_countries": {
+          "mean": 32.0,
+          "seed_min": 32.0,
+          "seed_max": 32.0
+        },
+        "admitted_blocks": {
+          "mean": 73.0,
+          "seed_min": 73.0,
+          "seed_max": 73.0
+        },
+        "admitted_rare_occurrence_retention": {
+          "mean": 1.0,
+          "seed_min": 1.0,
+          "seed_max": 1.0
+        },
+        "admitted_oracle_F1_shift": {
+          "mean": 0.0,
+          "seed_min": 0.0,
+          "seed_max": 0.0
+        }
+      }
+    },
+    {
+      "mechanism": "rarity_weighted_positive_genera",
+      "dose": 0.2,
+      "seeds": 10,
+      "treatments": {
+        "unknown_as_absence": {
+          "bias": {
+            "point": 0.016565292384861652,
+            "interval": [
+              -0.01831290403171906,
+              0.07059432656372543
+            ],
+            "clusters": 73,
+            "valid_draws": 4000,
+            "confidence": 0.975
+          },
+          "F1": {
+            "mean": 0.2703625509882115,
+            "seed_min": 0.26924749180923635,
+            "seed_max": 0.27149576302582556
+          },
+          "bias_seed_variability": {
+            "mean": 0.016565292384861645,
+            "seed_min": 0.015450233205886536,
+            "seed_max": 0.01769850442247578
+          },
+          "admitted_bias": {
+            "mean": 0.016565292384861645,
+            "seed_min": 0.015450233205886536,
+            "seed_max": 0.01769850442247578
+          },
+          "contrasts": {
+            "HGB_SDC": {
+              "observed": {
+                "point": -0.003499874930169733,
+                "interval": [
+                  -0.012744844651508925,
+                  0.006840094986929
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 0.001048401424832368,
+                "interval": [
+                  -0.004559843082883606,
+                  0.006256301834345173
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion_seed_variability": {
+                "mean": 0.0010484014248323015,
+                "seed_min": 0.0005018124841070226,
+                "seed_max": 0.0014880224828178745
+              },
+              "sign_reversals_of_practical_oracle": 0,
+              "completion_lower": {
+                "mean": -0.022112597291294306,
+                "seed_min": -0.022528607266390072,
+                "seed_max": -0.021782049031159788
+              },
+              "completion_upper": {
+                "mean": 0.01415686418470996,
+                "seed_min": 0.013784966603908232,
+                "seed_max": 0.014492677463145906
+              },
+              "completion_sign_identified_seeds": 0
+            },
+            "HGB_random": {
+              "observed": {
+                "point": 0.015672918772619893,
+                "interval": [
+                  0.0060594960440340006,
+                  0.031559441893700226
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 0.0028523594047930763,
+                "interval": [
+                  -0.0033068692857915996,
+                  0.01066036231041746
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion_seed_variability": {
+                "mean": 0.00285235940479302,
+                "seed_min": 0.002124185773584364,
+                "seed_max": 0.00343045400702946
+              },
+              "sign_reversals_of_practical_oracle": 0,
+              "completion_lower": {
+                "mean": -0.010186540257342357,
+                "seed_min": -0.010746333201874769,
+                "seed_max": -0.009586611112952746
+              },
+              "completion_upper": {
+                "mean": 0.03895151531257916,
+                "seed_min": 0.03872056684632567,
+                "seed_max": 0.039200761710559716
+              },
+              "completion_sign_identified_seeds": 0
+            },
+            "SDC_random": {
+              "observed": {
+                "point": 0.019172793702789626,
+                "interval": [
+                  0.008821169232320337,
+                  0.036367483158778566
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 0.0018039579799607082,
+                "interval": [
+                  -0.004828525352388723,
+                  0.010077856276795926
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion_seed_variability": {
+                "mean": 0.0018039579799607186,
+                "seed_min": 0.0011826414833409071,
+                "seed_max": 0.002183034433685116
+              },
+              "sign_reversals_of_practical_oracle": 0,
+              "completion_lower": {
+                "mean": -0.006448754164056279,
+                "seed_min": -0.007216654516036581,
+                "seed_max": -0.005917392881970413
+              },
+              "completion_upper": {
+                "mean": 0.04316946232587742,
+                "seed_min": 0.042987502448654416,
+                "seed_max": 0.04331138305063276
+              },
+              "completion_sign_identified_seeds": 0
+            }
+          }
+        },
+        "known_labels_only": {
+          "bias": {
+            "point": 0.02298160632890954,
+            "interval": [
+              -0.010589472095323911,
+              0.07536307048987159
+            ],
+            "clusters": 73,
+            "valid_draws": 4000,
+            "confidence": 0.975
+          },
+          "F1": {
+            "mean": 0.27677886493225934,
+            "seed_min": 0.27583369360403676,
+            "seed_max": 0.27781053233818825
+          },
+          "bias_seed_variability": {
+            "mean": 0.02298160632890954,
+            "seed_min": 0.022036435000686937,
+            "seed_max": 0.024013273734838452
+          },
+          "admitted_bias": {
+            "mean": 0.02298160632890954,
+            "seed_min": 0.022036435000686937,
+            "seed_max": 0.024013273734838452
+          },
+          "contrasts": {
+            "HGB_SDC": {
+              "observed": {
+                "point": -0.003902872929274215,
+                "interval": [
+                  -0.01318217899795121,
+                  0.006483088175023137
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 0.0006454034257278377,
+                "interval": [
+                  -0.004927101388574793,
+                  0.0058037710632115585
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion_seed_variability": {
+                "mean": 0.0006454034257277919,
+                "seed_min": 0.00013012234693043911,
+                "seed_max": 0.001098055960101374
+              },
+              "sign_reversals_of_practical_oracle": 0,
+              "completion_lower": {
+                "mean": -0.022112597291294306,
+                "seed_min": -0.022528607266390072,
+                "seed_max": -0.021782049031159788
+              },
+              "completion_upper": {
+                "mean": 0.01415686418470996,
+                "seed_min": 0.013784966603908232,
+                "seed_max": 0.014492677463145906
+              },
+              "completion_sign_identified_seeds": 0
+            },
+            "HGB_random": {
+              "observed": {
+                "point": 0.015905652504241197,
+                "interval": [
+                  0.006210157142317608,
+                  0.03159366719724697
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 0.0030850931364144116,
+                "interval": [
+                  -0.0029078007986630032,
+                  0.010839304479959773
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion_seed_variability": {
+                "mean": 0.0030850931364143964,
+                "seed_min": 0.0024643904982176723,
+                "seed_max": 0.0035552161190516296
+              },
+              "sign_reversals_of_practical_oracle": 0,
+              "completion_lower": {
+                "mean": -0.010186540257342357,
+                "seed_min": -0.010746333201874769,
+                "seed_max": -0.009586611112952746
+              },
+              "completion_upper": {
+                "mean": 0.03895151531257916,
+                "seed_min": 0.03872056684632567,
+                "seed_max": 0.039200761710559716
+              },
+              "completion_sign_identified_seeds": 0
+            },
+            "SDC_random": {
+              "observed": {
+                "point": 0.01980852543351541,
+                "interval": [
+                  0.009556939643903275,
+                  0.0367881184880436
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 0.002439689710686574,
+                "interval": [
+                  -0.003825520661362084,
+                  0.010425646134034143
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion_seed_variability": {
+                "mean": 0.0024396897106866043,
+                "seed_min": 0.0018895623426676278,
+                "seed_max": 0.0028797662685956515
+              },
+              "sign_reversals_of_practical_oracle": 0,
+              "completion_lower": {
+                "mean": -0.006448754164056279,
+                "seed_min": -0.007216654516036581,
+                "seed_max": -0.005917392881970413
+              },
+              "completion_upper": {
+                "mean": 0.04316946232587742,
+                "seed_min": 0.042987502448654416,
+                "seed_max": 0.04331138305063276
+              },
+              "completion_sign_identified_seeds": 0
+            }
+          }
+        }
+      },
+      "diagnostics": {
+        "known_fraction_mean": {
+          "mean": 0.9829097106677367,
+          "seed_min": 0.9827173195908948,
+          "seed_max": 0.9832133196842416
+        },
+        "hidden_positive_occurrence_fraction": {
+          "mean": 0.2613644758900918,
+          "seed_min": 0.26039269172846874,
+          "seed_max": 0.2631205069189896
+        },
+        "realized_genus_fraction_mean": {
+          "mean": 0.3391530263164704,
+          "seed_min": 0.3391530263164704,
+          "seed_max": 0.3391530263164704
+        },
+        "bound_width_mean": {
+          "mean": 0.12261834936374486,
+          "seed_min": 0.12162822635627349,
+          "seed_max": 0.12350700634010792
+        },
+        "admitted_cells": {
+          "mean": 5251.0,
+          "seed_min": 5251.0,
+          "seed_max": 5251.0
+        },
+        "admitted_countries": {
+          "mean": 32.0,
+          "seed_min": 32.0,
+          "seed_max": 32.0
+        },
+        "admitted_blocks": {
+          "mean": 73.0,
+          "seed_min": 73.0,
+          "seed_max": 73.0
+        },
+        "admitted_rare_occurrence_retention": {
+          "mean": 1.0,
+          "seed_min": 1.0,
+          "seed_max": 1.0
+        },
+        "admitted_oracle_F1_shift": {
+          "mean": 0.0,
+          "seed_min": 0.0,
+          "seed_max": 0.0
+        }
+      }
+    },
+    {
+      "mechanism": "rarity_weighted_positive_genera",
+      "dose": 0.5,
+      "seeds": 10,
+      "treatments": {
+        "unknown_as_absence": {
+          "bias": {
+            "point": -0.014217979981153544,
+            "interval": [
+              -0.05465403804009129,
+              0.05017983430776302
+            ],
+            "clusters": 73,
+            "valid_draws": 4000,
+            "confidence": 0.975
+          },
+          "F1": {
+            "mean": 0.23957927862219625,
+            "seed_min": 0.23890135731063467,
+            "seed_max": 0.2408110770576458
+          },
+          "bias_seed_variability": {
+            "mean": -0.014217979981153539,
+            "seed_min": -0.014895901292715116,
+            "seed_max": -0.01298618154570403
+          },
+          "admitted_bias": {
+            "mean": -0.01416093913959841,
+            "seed_min": -0.014804509810355174,
+            "seed_max": -0.012963684166676178
+          },
+          "contrasts": {
+            "HGB_SDC": {
+              "observed": {
+                "point": -0.0018481665004215775,
+                "interval": [
+                  -0.011143253092509162,
+                  0.008604530410661195
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 0.0027001098545804576,
+                "interval": [
+                  -0.0033769220055517714,
+                  0.008778527719301689
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion_seed_variability": {
+                "mean": 0.002700109854580429,
+                "seed_min": 0.0019223621561438864,
+                "seed_max": 0.0034084812493684336
+              },
+              "sign_reversals_of_practical_oracle": 0,
+              "completion_lower": {
+                "mean": -0.03057886161779908,
+                "seed_min": -0.03119040961701487,
+                "seed_max": -0.030098674173044765
+              },
+              "completion_upper": {
+                "mean": 0.024641789321883885,
+                "seed_min": 0.0243549413045693,
+                "seed_max": 0.025068109317803212
+              },
+              "completion_sign_identified_seeds": 0
+            },
+            "HGB_random": {
+              "observed": {
+                "point": 0.015247295555997548,
+                "interval": [
+                  0.005241522243201681,
+                  0.0319909452632295
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 0.0024267361881706844,
+                "interval": [
+                  -0.0042932816293359995,
+                  0.011588435597710939
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion_seed_variability": {
+                "mean": 0.0024267361881706584,
+                "seed_min": 0.0015081979224193243,
+                "seed_max": 0.0029404255413538194
+              },
+              "sign_reversals_of_practical_oracle": 0,
+              "completion_lower": {
+                "mean": -0.021867794491868996,
+                "seed_min": -0.02243563071998004,
+                "seed_max": -0.021378664492148616
+              },
+              "completion_upper": {
+                "mean": 0.05042836843258432,
+                "seed_min": 0.05010608469532446,
+                "seed_max": 0.05072975858291702
+              },
+              "completion_sign_identified_seeds": 0
+            },
+            "SDC_random": {
+              "observed": {
+                "point": 0.017095462056419125,
+                "interval": [
+                  0.00637683020022382,
+                  0.03538697544991853
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": -0.0002733736664097732,
+                "interval": [
+                  -0.007713240930420116,
+                  0.009198529668540567
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion_seed_variability": {
+                "mean": -0.0002733736664097708,
+                "seed_min": -0.0010993829037423963,
+                "seed_max": 0.00035464365882756366
+              },
+              "sign_reversals_of_practical_oracle": 0,
+              "completion_lower": {
+                "mean": -0.018845560698126432,
+                "seed_min": -0.01942153825592123,
+                "seed_max": -0.01832161248681059
+              },
+              "completion_upper": {
+                "mean": 0.05334320693475693,
+                "seed_min": 0.05310658395932631,
+                "seed_max": 0.05382397487163071
+              },
+              "completion_sign_identified_seeds": 0
+            }
+          }
+        },
+        "known_labels_only": {
+          "bias": {
+            "point": -0.001887318863430367,
+            "interval": [
+              -0.04029034358346996,
+              0.059064912878125514
+            ],
+            "clusters": 73,
+            "valid_draws": 4000,
+            "confidence": 0.975
+          },
+          "F1": {
+            "mean": 0.25190993973991943,
+            "seed_min": 0.2511864927147454,
+            "seed_max": 0.2531896422235056
+          },
+          "bias_seed_variability": {
+            "mean": -0.001887318863430364,
+            "seed_min": -0.0026107658886043677,
+            "seed_max": -0.0006076163798442169
+          },
+          "admitted_bias": {
+            "mean": -0.0018697476290319552,
+            "seed_min": -0.0025777718454298507,
+            "seed_max": -0.0006120246580372083
+          },
+          "contrasts": {
+            "HGB_SDC": {
+              "observed": {
+                "point": -0.0025738619322149825,
+                "interval": [
+                  -0.011803310732755118,
+                  0.007941864866394253
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 0.0019744144227871194,
+                "interval": [
+                  -0.0038455290305227574,
+                  0.007540742895390395
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion_seed_variability": {
+                "mean": 0.0019744144227870687,
+                "seed_min": 0.0012290442361272969,
+                "seed_max": 0.002758211938530153
+              },
+              "sign_reversals_of_practical_oracle": 0,
+              "completion_lower": {
+                "mean": -0.03057886161779908,
+                "seed_min": -0.03119040961701487,
+                "seed_max": -0.030098674173044765
+              },
+              "completion_upper": {
+                "mean": 0.024641789321883885,
+                "seed_min": 0.0243549413045693,
+                "seed_max": 0.025068109317803212
+              },
+              "completion_sign_identified_seeds": 0
+            },
+            "HGB_random": {
+              "observed": {
+                "point": 0.015731120529060394,
+                "interval": [
+                  0.005661835992506555,
+                  0.03229747499754832
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 0.0029105611612335845,
+                "interval": [
+                  -0.0036127952453707426,
+                  0.011684300999660413
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion_seed_variability": {
+                "mean": 0.0029105611612335715,
+                "seed_min": 0.0020459227411483982,
+                "seed_max": 0.0034354078729339488
+              },
+              "sign_reversals_of_practical_oracle": 0,
+              "completion_lower": {
+                "mean": -0.021867794491868996,
+                "seed_min": -0.02243563071998004,
+                "seed_max": -0.021378664492148616
+              },
+              "completion_upper": {
+                "mean": 0.05042836843258432,
+                "seed_min": 0.05010608469532446,
+                "seed_max": 0.05072975858291702
+              },
+              "completion_sign_identified_seeds": 0
+            },
+            "SDC_random": {
+              "observed": {
+                "point": 0.018304982461275376,
+                "interval": [
+                  0.007686400528371324,
+                  0.03620029252461418
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion": {
+                "point": 0.0009361467384464647,
+                "interval": [
+                  -0.00590873077994821,
+                  0.00977715310139787
+                ],
+                "clusters": 73,
+                "valid_draws": 4000,
+                "confidence": 0.975
+              },
+              "distortion_seed_variability": {
+                "mean": 0.0009361467384465027,
+                "seed_min": -1.2414619263489968e-05,
+                "seed_max": 0.001614139806951631
+              },
+              "sign_reversals_of_practical_oracle": 0,
+              "completion_lower": {
+                "mean": -0.018845560698126432,
+                "seed_min": -0.01942153825592123,
+                "seed_max": -0.01832161248681059
+              },
+              "completion_upper": {
+                "mean": 0.05334320693475693,
+                "seed_min": 0.05310658395932631,
+                "seed_max": 0.05382397487163071
+              },
+              "completion_sign_identified_seeds": 0
+            }
+          }
+        }
+      },
+      "diagnostics": {
+        "known_fraction_mean": {
+          "mean": 0.9669545136132566,
+          "seed_min": 0.966580395071282,
+          "seed_max": 0.9672904088799352
+        },
+        "hidden_positive_occurrence_fraction": {
+          "mean": 0.5388713664649221,
+          "seed_min": 0.5370386156337909,
+          "seed_max": 0.5402210666893985
+        },
+        "realized_genus_fraction_mean": {
+          "mean": 0.5121389964512859,
+          "seed_min": 0.5121389964512859,
+          "seed_max": 0.5121389964512859
+        },
+        "bound_width_mean": {
+          "mean": 0.17915654296337152,
+          "seed_min": 0.17849339546173768,
+          "seed_max": 0.17987266621515338
+        },
+        "admitted_cells": {
+          "mean": 5248.3,
+          "seed_min": 5246.0,
+          "seed_max": 5251.0
+        },
+        "admitted_countries": {
+          "mean": 32.0,
+          "seed_min": 32.0,
+          "seed_max": 32.0
+        },
+        "admitted_blocks": {
+          "mean": 73.0,
+          "seed_min": 73.0,
+          "seed_max": 73.0
+        },
+        "admitted_rare_occurrence_retention": {
+          "mean": 0.996085409252669,
+          "seed_min": 0.9915138242540378,
+          "seed_max": 1.0
+        },
+        "admitted_oracle_F1_shift": {
+          "mean": -5.8860597714699427e-05,
+          "seed_min": -9.932853916244655e-05,
+          "seed_max": 1.2604536861304805e-05
+        }
+      }
+    }
+  ],
+  "new_method_or_independent_confirmation": false,
+  "interpretation": "synthetic informative genus censoring of consumed recorded benchmark labels; spatial intervals conditional on fixed policies; mask seeds are not independent ecological samples"
+}

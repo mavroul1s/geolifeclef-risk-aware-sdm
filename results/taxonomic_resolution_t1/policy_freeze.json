@@ -1,0 +1,12 @@
+{
+  "at_utc": "2026-11-17T07:49:42.635581+00:00",
+  "T1_assessment_labels_accessed": false,
+  "protocol_freeze_sha256": "9d714ca49bc87340ead3909ba64072535d72498dae158b857114f9cd204e4767",
+  "files": {
+    "data/taxonomic_resolution_t1/assessment_probabilities.npz": "758008e7dda28dcf514683e4d94b0cb68686e54293cacd758fff15317060c9e7",
+    "data/taxonomic_resolution_t1/fixed_policy.npz": "b1cf2dbaaacc3411fdb26c556bae686e3a5941b55cd3e953892a519eaa6f7154",
+    "data/taxonomic_resolution_t1/contract.npz": "fae27a9c81cd30abfc1e468b5d46ab3d0815e29a923376c533cb068bb1bdd0a2",
+    "data/taxonomic_resolution_t1/features.csv": "470c0708b9156f096945c1a38b818ca860b95ef6256857d844fdcdc737b09fcb",
+    "data/taxonomic_resolution_t1/assessment_roles.csv": "91ff13097628f53561c56c7bdd836f576ea30ae6a18c046ebea3b3a9bf3a9097"
+  }
+}
