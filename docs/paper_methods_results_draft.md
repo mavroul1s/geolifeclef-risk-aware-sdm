@@ -10,6 +10,34 @@ abstract. Prospective and development evidence must retain the labels below.
 Primary-source positioning and claim limits are in
 [the evidence matrix](paper_claim_evidence_matrix.md).
 
+## T2: verification cost under a shared-concept observation contract
+
+On the same 5,251 consumed benchmark cells, we reuse the fixed model, target
+universe, decoder and 4,201-cell quota-constrained HGB/SDC sets. Ten masks hide
+block/species concepts independently at probability .5; all 5,771 native recorded
+classes generate records, including outside-target species. Shared and local
+query costs describe identical hidden records. A query reveals a species identity
+or an outside-target outcome; other compatible absences remain unknown until
+remaining records resolve. We compare five fixed batch orders in 100 trajectories.
+Independent-binary outer ranges omit cross-cell consistency and are not CIs.
+
+At 25% budget, shared paired-width priority narrows mean contrast width to .002658
+versus .006387 for global width, .008107 for incidence and .029649 for support-
+uniform. Local support controls and the candidate already reach zero width, so
+the frozen joint practical target fails. We preserve all arms and that failure.
+The predeclared secondary cost to identify an ordering beyond .001 F1 is median
+766.5 shared queries versus 1,060.5 for the best control, and 4,071 local queries
+versus 6,733.5: reductions of 27.7% and 39.5%. All ten masks favor the candidate
+on this secondary endpoint. Mask-bootstrap variation is conditional on the fixed
+cohort; it is not spatial-population inference or measured annotation time.
+
+At shared 25% budget, candidate query coverage averages 24.3 countries versus
+29.6 for global width; inventory completeness and recovered rare labels are
+also lower. Comparison efficiency and broad inventory service differ. Reliable
+linkage/free propagation and complete benchmark records require robustness and
+field validation. Active model comparison is established; a general new-method
+claim is unsupported. See [T2 results](taxonomic_verification_t2_results.md).
+
 ## A2/A3/A3u: current records, uncertainty masks and exact synonyms
 
 We audit only the consumed 301 plots/163 NEON cells. The old morphospecies labels

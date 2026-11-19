@@ -1,0 +1,9 @@
+{
+  "synthetic_only": true,
+  "cells": 1000,
+  "classes": 100,
+  "trajectories": 10,
+  "charged_queries": 11577,
+  "seconds": 1.126674004999586,
+  "benchmark_or_field_outcomes_read": false
+}

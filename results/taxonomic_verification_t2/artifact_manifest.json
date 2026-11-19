@@ -1,0 +1,366 @@
+{
+  "scope": "completed development audits; no fresh confirmation",
+  "path_base": "repository root; ignored caches are hashes only",
+  "files": {
+    "configs/taxonomic_verification_t2.json": {
+      "bytes": 1012,
+      "sha256": "47cffeb66933730d366fd270ebc77e251964b7ff9b4d1a1b6538b52bd0221d97"
+    },
+    "data/external_replication_e1/cohort_roles.csv": {
+      "bytes": 1114371,
+      "sha256": "246f71d750e590a81eb37c903ec8cab7f80931498c44f975d89c4381554cd4ef"
+    },
+    "data/external_replication_e1/eligible_species.npy": {
+      "bytes": 43149895,
+      "sha256": "f53a09dd18edaeed9275d1a24f7fdab37ac5398bfa858a587289ef8243406f0b"
+    },
+    "data/external_replication_e1/sealed_eval_test_targets.h5": {
+      "bytes": 43412687,
+      "sha256": "bf52746612d1d784d10a8696be94096d1162eaf3bb43a38011087d5af8730da6"
+    },
+    "data/taxonomic_resolution_t1/assessment_roles.csv": {
+      "bytes": 775882,
+      "sha256": "91ff13097628f53561c56c7bdd836f576ea30ae6a18c046ebea3b3a9bf3a9097"
+    },
+    "data/taxonomic_resolution_t1/contract.npz": {
+      "bytes": 886822,
+      "sha256": "fae27a9c81cd30abfc1e468b5d46ab3d0815e29a923376c533cb068bb1bdd0a2"
+    },
+    "data/taxonomic_resolution_t1/fixed_policy.npz": {
+      "bytes": 687393,
+      "sha256": "b1cf2dbaaacc3411fdb26c556bae686e3a5941b55cd3e953892a519eaa6f7154"
+    },
+    "data/taxonomic_resolution_t1/oracle.npz": {
+      "bytes": 975703,
+      "sha256": "a8450a377af5331d698d5799288c79c97b07ba8211dcb2634d5c31929f2f5864"
+    },
+    "data/taxonomic_verification_t2/case_202611190_block_shared.npz": {
+      "bytes": 139695,
+      "sha256": "1d75e896503408cfdc7bd658169acb84a43fca43c0eef1a215ed15a5222eaa3b"
+    },
+    "data/taxonomic_verification_t2/case_202611190_cell_local.npz": {
+      "bytes": 631680,
+      "sha256": "03de30ca817d9f036ac50fec535bcc6017fd026bdc1aab0d1ff4557fbf3fc6fe"
+    },
+    "data/taxonomic_verification_t2/case_202611191_block_shared.npz": {
+      "bytes": 140732,
+      "sha256": "79ce9d1370436f4d3f9187e0e58c044821819d1656ab5efb6ba7a2d9fb85e69c"
+    },
+    "data/taxonomic_verification_t2/case_202611191_cell_local.npz": {
+      "bytes": 625321,
+      "sha256": "838097a11553d002a7a9c8f7b91482719c91598e26486a1ffabdea989a9542d0"
+    },
+    "data/taxonomic_verification_t2/case_202611192_block_shared.npz": {
+      "bytes": 138032,
+      "sha256": "83655eb0d956ed648a83472ac43f62c059ee7e6aae94b69bae57efff08facc12"
+    },
+    "data/taxonomic_verification_t2/case_202611192_cell_local.npz": {
+      "bytes": 617820,
+      "sha256": "24d20a31324c0b145eeb5b70bc6470186f8cfedd06e85da73b855ec626f861ea"
+    },
+    "data/taxonomic_verification_t2/case_202611193_block_shared.npz": {
+      "bytes": 136601,
+      "sha256": "13544f0a631dea581daf9300512d73a604242fe7125c2e9fba95997548de5de5"
+    },
+    "data/taxonomic_verification_t2/case_202611193_cell_local.npz": {
+      "bytes": 616339,
+      "sha256": "ed65ea37e6a5148db9a8dbabcf476d0d9e89ad8a90e60de723729a58080f3439"
+    },
+    "data/taxonomic_verification_t2/case_202611194_block_shared.npz": {
+      "bytes": 139794,
+      "sha256": "96dcb36d0e80166df3d66801e119f34fab0a80fa70b9c9c28d4f9418594a6c43"
+    },
+    "data/taxonomic_verification_t2/case_202611194_cell_local.npz": {
+      "bytes": 633552,
+      "sha256": "7eb8fd7b75234cc10c9f3e9b5d15fd5574dec23ff0cff894e8736d8cf541c04d"
+    },
+    "data/taxonomic_verification_t2/case_202611195_block_shared.npz": {
+      "bytes": 138350,
+      "sha256": "9a6be7177d19a39c7dc483e266f50a74d5f21d6cf3a8fad6b6f27c268b4d588c"
+    },
+    "data/taxonomic_verification_t2/case_202611195_cell_local.npz": {
+      "bytes": 619858,
+      "sha256": "a3024f0772af8bd443a519c11c389b62f2d6e29ff37c71aaeb2ac6449255b1df"
+    },
+    "data/taxonomic_verification_t2/case_202611196_block_shared.npz": {
+      "bytes": 140304,
+      "sha256": "3e8fe7ff63b2f363d386d31d37863c0389a4a39a67bab7b3e37af919471f7dd8"
+    },
+    "data/taxonomic_verification_t2/case_202611196_cell_local.npz": {
+      "bytes": 639896,
+      "sha256": "97a7c7130707cd13e1a6a4006148e318cfc45df69466512f4b30899222ee19b7"
+    },
+    "data/taxonomic_verification_t2/case_202611197_block_shared.npz": {
+      "bytes": 139069,
+      "sha256": "10b5f409c23b82aca2da36bd52c356b7e360ec76969783c81c2ab7d317fdf6df"
+    },
+    "data/taxonomic_verification_t2/case_202611197_cell_local.npz": {
+      "bytes": 631862,
+      "sha256": "1d66cb181b653e9cf7760ed4563bb1b9d694e6bfd97f0a2734b08eb8ea21e836"
+    },
+    "data/taxonomic_verification_t2/case_202611198_block_shared.npz": {
+      "bytes": 139330,
+      "sha256": "d8412aec02334d235eb9d1a9e612a562029bfa05e223bfdf8dca573b1edd7440"
+    },
+    "data/taxonomic_verification_t2/case_202611198_cell_local.npz": {
+      "bytes": 629115,
+      "sha256": "437047628b35505a6f6695bc1060817fa62735d002704537acdc4f45167569c6"
+    },
+    "data/taxonomic_verification_t2/case_202611199_block_shared.npz": {
+      "bytes": 142139,
+      "sha256": "b2c75fb19359dfaa968038ef89bf2c6efa659cb617e9c00064f483a8363781f3"
+    },
+    "data/taxonomic_verification_t2/case_202611199_cell_local.npz": {
+      "bytes": 646250,
+      "sha256": "58a14f976c37b1b7dab85e55bd82e28798d47292d02e626d79fc3964d9b44ede"
+    },
+    "data/taxonomic_verification_t2/initial_202611190.npz": {
+      "bytes": 46258,
+      "sha256": "d08f82642855851c3034807773babcaaf4732c65b8ba2e2b7be4898b1248fb30"
+    },
+    "data/taxonomic_verification_t2/initial_202611191.npz": {
+      "bytes": 45968,
+      "sha256": "08d24b05adf8d8dbf4f5803be215ba52318d48fa22bc2e9cc2b1df9811a49e73"
+    },
+    "data/taxonomic_verification_t2/initial_202611192.npz": {
+      "bytes": 47537,
+      "sha256": "cae06ee44348c99578b4be16fc8e58b8c15270ffacfcb911c27761b054996536"
+    },
+    "data/taxonomic_verification_t2/initial_202611193.npz": {
+      "bytes": 46281,
+      "sha256": "dc4327ac85dba7187f8f8f14b5f6539a9f4906a0e968ac142838b0da72bae790"
+    },
+    "data/taxonomic_verification_t2/initial_202611194.npz": {
+      "bytes": 46400,
+      "sha256": "2f49ec24422de8646a238d7df62166fc2abf45b1117df5536e7d339525db144f"
+    },
+    "data/taxonomic_verification_t2/initial_202611195.npz": {
+      "bytes": 45785,
+      "sha256": "679f5785ebe17c6a6a8380b86f3e5537156144d26d1c8228bc4c3ab6a5eb26b5"
+    },
+    "data/taxonomic_verification_t2/initial_202611196.npz": {
+      "bytes": 45766,
+      "sha256": "cab5b33890f2b4f3e1def9314b17c9b3ee5fa67dc5827cf52b9a2efeb11f6fb4"
+    },
+    "data/taxonomic_verification_t2/initial_202611197.npz": {
+      "bytes": 47077,
+      "sha256": "c731bbea2bd8e43225cc36a9871e98c1c2d2bf64236bf3e7675481a58826b65c"
+    },
+    "data/taxonomic_verification_t2/initial_202611198.npz": {
+      "bytes": 47045,
+      "sha256": "b3f4578c36e3c9d0bd5dadf5be0b2bbbf7198e6764688b67ca96bb6422d43f21"
+    },
+    "data/taxonomic_verification_t2/initial_202611199.npz": {
+      "bytes": 47021,
+      "sha256": "8baa9180625c54da2b2d95926c5e36259295854c60e09712f56c80d36242213f"
+    },
+    "data/taxonomic_verification_t2/oracle_contract.npz": {
+      "bytes": 1185004,
+      "sha256": "840438814578f2e7a7a6ef71d7c03ec1747e60284e6529c15671024e2941d41d"
+    },
+    "docs/taxonomic_verification_t2_prior_work.md": {
+      "bytes": 2002,
+      "sha256": "79050f925f2088b18872b97bf7d8b6ebe2e156cbff24ed3b5fbed772a4442282"
+    },
+    "docs/taxonomic_verification_t2_protocol.md": {
+      "bytes": 6109,
+      "sha256": "d152a280a36c95d27bd0b8bb90e1fd5b522ffe552b719a8337601506473848e4"
+    },
+    "docs/taxonomic_verification_t2_results.md": {
+      "bytes": 10148,
+      "sha256": "20810ed65ac67e1dc84cfb40f68f897c73ec00ede932e2f8ecc322f93ac6c0b3"
+    },
+    "results/taxonomic_resolution_t1/policy_freeze.json": {
+      "bytes": 819,
+      "sha256": "f258566da0c022fb2ed7cd3b3239693bea27a0c300d3890b4cb49f9bdba74789"
+    },
+    "results/taxonomic_verification_t2/case_metadata.csv": {
+      "bytes": 1681,
+      "sha256": "7344c4de1e1d3f250dd630d1fdaa811753a6571e0607902936565735a697065d"
+    },
+    "results/taxonomic_verification_t2/curve_means.csv": {
+      "bytes": 8542,
+      "sha256": "fdc666b238d12dc1074fcd65f98b3ce9781ec7e07a109d450dd3b266df38739e"
+    },
+    "results/taxonomic_verification_t2/curves.csv": {
+      "bytes": 117832,
+      "sha256": "c8dd503864e2ee2ca71b65dd7f363b8ed2c9723001aea8734da46bfbd3f857ee"
+    },
+    "results/taxonomic_verification_t2/documentation_snapshot/README.md": {
+      "bytes": 11987,
+      "sha256": "092ad24fa219e093ecf9a7d5b7a166b625eca2011df45b647a7a7c04313085b2"
+    },
+    "results/taxonomic_verification_t2/documentation_snapshot/docs/next_experiment_budget.md": {
+      "bytes": 20405,
+      "sha256": "80418456756c7a2cbc77162d9032a05e383cbb16e15eaafc09afb5b9dbd0eb12"
+    },
+    "results/taxonomic_verification_t2/documentation_snapshot/docs/paper_claim_evidence_matrix.md": {
+      "bytes": 12112,
+      "sha256": "59790c9320e62d070b2a3e1111e930d5120919312647c2d495121c8f5fe51a91"
+    },
+    "results/taxonomic_verification_t2/documentation_snapshot/docs/paper_methods_results_draft.md": {
+      "bytes": 19246,
+      "sha256": "882fdbcd677b3b77d7fcbd452e5dd748bc42ac7cf4959872af2841e64f82fe98"
+    },
+    "results/taxonomic_verification_t2/documentation_snapshot/docs/paper_outline_working.md": {
+      "bytes": 10557,
+      "sha256": "f9a2d1225268487e348738eec275781787e693bde52c946d70116cfe943ee87b"
+    },
+    "results/taxonomic_verification_t2/documentation_snapshot/docs/taxonomic_verification_t2_plan.md": {
+      "bytes": 4412,
+      "sha256": "b23ded91ce9081f7909a3dbc41654da0607c749ee126ae1f37a946d3e11bed74"
+    },
+    "results/taxonomic_verification_t2/documentation_snapshot/results/README.md": {
+      "bytes": 12305,
+      "sha256": "ccfa2b5b400aa482d50d061fe3adb81f0f6324052e4baeb8e6610b125546dcef"
+    },
+    "results/taxonomic_verification_t2/event_validation.json": {
+      "bytes": 339,
+      "sha256": "e6b48d3060706873096f1379bff1996185409ff2dda600de551feed3b2dd1cfe"
+    },
+    "results/taxonomic_verification_t2/focused_tests.xml": {
+      "bytes": 1557,
+      "sha256": "b513eb92028f92fd1d8613a5b02f507e38e710a36e4ff4a641162d523189ef8b"
+    },
+    "results/taxonomic_verification_t2/full_tests.xml": {
+      "bytes": 53188,
+      "sha256": "9f76ee1a07621e7546c0f3d012d0aec4a8ac8ea77b5e922746dacea7c182927c"
+    },
+    "results/taxonomic_verification_t2/integrity_validation.json": {
+      "bytes": 1807,
+      "sha256": "db9ed392c08a7e51b5799b24ac8e6556edb62281baad6552cd623abcea2c7204"
+    },
+    "results/taxonomic_verification_t2/protocol_freeze.json": {
+      "bytes": 4330,
+      "sha256": "d9b09c1d80e34410aa58a050142f5d117f3dc4c8556a676faab75a1b13df51b6"
+    },
+    "results/taxonomic_verification_t2/query_events.csv": {
+      "bytes": 12271,
+      "sha256": "1d9dea534e235cdc4faea7cbc3c8671fe211467bd1c76b56bebdacee3eb67b33"
+    },
+    "results/taxonomic_verification_t2/replay_access.json": {
+      "bytes": 181,
+      "sha256": "25a01952f2a2dcbc3ef9dfb11b96bae85a1c1af29e4da33256ef78090f1d4acf"
+    },
+    "results/taxonomic_verification_t2/reporting_scope.json": {
+      "bytes": 253,
+      "sha256": "b50ce68c4dd3d2e7f8fd1b3e53296c2c3f9ce185879884316cda1e04d31eab15"
+    },
+    "results/taxonomic_verification_t2/resident_checkpoints.json": {
+      "bytes": 325,
+      "sha256": "02eca0030ba3bc5510fab5cda72722247727a137e5d2c49299dbb87bf537caf9"
+    },
+    "results/taxonomic_verification_t2/resident_events.json": {
+      "bytes": 332,
+      "sha256": "3a485b174e2d0eff674b0d2026564969a4a3edb424a84b776e3b3e440d8287ff"
+    },
+    "results/taxonomic_verification_t2/secondary_cost_comparisons.csv": {
+      "bytes": 1656,
+      "sha256": "d81a4478dc7e61d33d338a6e1c70a099064e709bdfeb959c695eb9a706963cf2"
+    },
+    "results/taxonomic_verification_t2/source_snapshot/configs/taxonomic_verification_t2.json": {
+      "bytes": 1012,
+      "sha256": "47cffeb66933730d366fd270ebc77e251964b7ff9b4d1a1b6538b52bd0221d97"
+    },
+    "results/taxonomic_verification_t2/source_snapshot/docs/taxonomic_verification_t2_prior_work.md": {
+      "bytes": 2002,
+      "sha256": "79050f925f2088b18872b97bf7d8b6ebe2e156cbff24ed3b5fbed772a4442282"
+    },
+    "results/taxonomic_verification_t2/source_snapshot/docs/taxonomic_verification_t2_protocol.md": {
+      "bytes": 6109,
+      "sha256": "d152a280a36c95d27bd0b8bb90e1fd5b522ffe552b719a8337601506473848e4"
+    },
+    "results/taxonomic_verification_t2/source_snapshot/scripts/plot_taxonomic_verification_t2.py": {
+      "bytes": 2266,
+      "sha256": "a97621dc868c8bdd8a968d9fdf2e31902754dd09c2a099be9cbbc9a0a30c1239"
+    },
+    "results/taxonomic_verification_t2/source_snapshot/scripts/run_taxonomic_verification_t2.py": {
+      "bytes": 13563,
+      "sha256": "f8d7fbd3c8447e447068a6192fade19919b9a7931d032249e671c993e325f168"
+    },
+    "results/taxonomic_verification_t2/source_snapshot/scripts/validate_taxonomic_verification_t2.py": {
+      "bytes": 8566,
+      "sha256": "a2fc9b91bf1dd0751b2ddd3a8570895a6e30a2d6ea7f92e0a186f4265274dbd7"
+    },
+    "results/taxonomic_verification_t2/source_snapshot/src/geolifeclef/taxonomic_queries.py": {
+      "bytes": 9232,
+      "sha256": "9649f48f81ce3b401736e2b0e551761bcfb5c974474764f944f966a2694a9fa9"
+    },
+    "results/taxonomic_verification_t2/source_snapshot/tests/test_taxonomic_queries.py": {
+      "bytes": 6530,
+      "sha256": "0d77c4f6e05cdefa00210969447224cc9a6cdc8dc12ecc057c56e237e8ead775"
+    },
+    "results/taxonomic_verification_t2/stopping_costs.csv": {
+      "bytes": 1227,
+      "sha256": "7c6f8b17900ffd39f3b2eb46557a4bceac89b365f55d24ce90f07d7952809cf5"
+    },
+    "results/taxonomic_verification_t2/summary.json": {
+      "bytes": 2581,
+      "sha256": "b490e6ed7906b07c17ebc2ae4e687cc02222cc70f259c09f8fc9f6d37e6dfc82"
+    },
+    "results/taxonomic_verification_t2/synthetic_feasibility.json": {
+      "bytes": 191,
+      "sha256": "c88c325330cab0088f39448eeebfdc74aaac689a63fe548de55232e3bd39bcf9"
+    },
+    "results/taxonomic_verification_t2/validation.json": {
+      "bytes": 4528,
+      "sha256": "105b76964aa7a4266f80af9c2ca4b82e78aa0e82c4cf72a2920de115a0270c59"
+    },
+    "results/taxonomic_verification_t2/verification_cost_t2.pdf": {
+      "bytes": 27623,
+      "sha256": "9a5cd84701e37718f695dd47c26e4262c5d84e1424d8b1800f7c5a6cf2662cef"
+    },
+    "results/taxonomic_verification_t2/verification_cost_t2.png": {
+      "bytes": 189896,
+      "sha256": "b4530062a6991668b64bf348ce599ca67decdb868fc0e5f149bb55128a1d93e2"
+    },
+    "scripts/plot_taxonomic_verification_t2.py": {
+      "bytes": 2266,
+      "sha256": "a97621dc868c8bdd8a968d9fdf2e31902754dd09c2a099be9cbbc9a0a30c1239"
+    },
+    "scripts/run_taxonomic_resolution_t1.py": {
+      "bytes": 25140,
+      "sha256": "88fbc9536fac1565c1cc820e36d36ba4ba6fe6b4c91d79b94a411c084b29fd94"
+    },
+    "scripts/run_taxonomic_verification_t2.py": {
+      "bytes": 13563,
+      "sha256": "f8d7fbd3c8447e447068a6192fade19919b9a7931d032249e671c993e325f168"
+    },
+    "scripts/summarize_taxonomic_verification_t2.py": {
+      "bytes": 2600,
+      "sha256": "012ee3d2436df548c0ba09f67764b00c0e7c473624483b299d602da567678fc3"
+    },
+    "scripts/validate_taxonomic_verification_t2.py": {
+      "bytes": 8566,
+      "sha256": "a2fc9b91bf1dd0751b2ddd3a8570895a6e30a2d6ea7f92e0a186f4265274dbd7"
+    },
+    "scripts/validate_taxonomic_verification_t2_events.py": {
+      "bytes": 2933,
+      "sha256": "40c4d10fa5cf31602d18d1b4e2dc7ff22ce2538881130dda86fa706ebe9f268b"
+    },
+    "scripts/validate_taxonomic_verification_t2_resident.py": {
+      "bytes": 1732,
+      "sha256": "2a29bad45ab7f59af2b672db335fe386f6b814d9d371f06039e3a4f5b53f5807"
+    },
+    "scripts/validate_taxonomy_audits.py": {
+      "bytes": 5211,
+      "sha256": "dd62719dcec3d7ad5ba4c3b3a687ab4a1fb3c885a58cad9efb20a7c1e1284ffc"
+    },
+    "scripts/verify_taxonomic_verification_t2.py": {
+      "bytes": 3557,
+      "sha256": "a3196ee68c5849d49a2ce3866b9fb110b45aace1142df3f8816e7162e96d2546"
+    },
+    "src/geolifeclef/external_reliability.py": {
+      "bytes": 9673,
+      "sha256": "7ba86d1501dfbcd415ccbebca8f0258c8e85ca6ab1de5bb2cac7b8c98653d296"
+    },
+    "src/geolifeclef/taxonomic_queries.py": {
+      "bytes": 9232,
+      "sha256": "9649f48f81ce3b401736e2b0e551761bcfb5c974474764f944f966a2694a9fa9"
+    },
+    "tests/test_taxonomic_queries.py": {
+      "bytes": 6530,
+      "sha256": "0d77c4f6e05cdefa00210969447224cc9a6cdc8dc12ecc057c56e237e8ead775"
+    }
+  }
+}

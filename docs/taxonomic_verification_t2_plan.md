@@ -1,6 +1,11 @@
-# Proposed T2: cost of resolving paired ecological utility
+# T2 plan: cost of resolving paired ecological utility
 
-**Proposed, not executed.** A2/A3/A3u complete a bounded current-record, exact-
+**Completed 19 November 2026:** see [executed results](taxonomic_verification_t2_results.md)
+and [the frozen protocol](taxonomic_verification_t2_protocol.md). The original
+conceptual plan below is retained; the executed protocol specifies the actual
+budget and primary criterion. No fresh confirmation or method novelty is claimed.
+
+**Original proposal:** A2/A3/A3u complete a bounded current-record, exact-
 synonym and alias-uncertainty audit; the guarded contract leaves only 33
 cells/six sites above the field completeness
 cutoff. A further generic model sweep does not address the remaining question:

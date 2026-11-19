@@ -1,0 +1,13 @@
+unit,endpoint,control,median_candidate_queries,median_control_queries,ratio_of_median_cost_reduction,mean_paired_query_saving,better_seeds,descriptive_mask_interval_low,descriptive_mask_interval_high,secondary_endpoint
+block_shared,first_width_queries,uniform_support,1150.5,1835.5,0.3731953146281667,692.8,10,680.9,705.60125,True
+block_shared,first_width_queries,incidence_support,1150.5,1687.5,0.3182222222222222,529.9,10,498.0,561.10125,True
+block_shared,first_width_queries,global_width,1150.5,1610.5,0.2856255821173549,454.6,10,443.79875000000004,463.8,True
+block_shared,first_practical_sign_queries,uniform_support,766.5,1705.5,0.5505716798592788,943.4,10,922.4975000000001,965.7,True
+block_shared,first_practical_sign_queries,incidence_support,766.5,1263.5,0.39335180055401664,498.6,10,466.69875,529.0,True
+block_shared,first_practical_sign_queries,global_width,766.5,1060.5,0.27722772277227725,300.7,10,283.4,323.70125,True
+cell_local,first_width_queries,uniform_support,5260.0,7265.5,0.27603055536439336,1973.3,10,1922.2,2023.10625,True
+cell_local,first_width_queries,incidence_support,5260.0,7265.5,0.27603055536439336,1973.3,10,1922.2,2023.10625,True
+cell_local,first_width_queries,global_width,5260.0,17987.0,0.7075665758603435,12837.4,10,12589.3975,13111.33875,True
+cell_local,first_practical_sign_queries,uniform_support,4071.0,6733.5,0.395411004678102,2677.8,10,2600.59625,2753.6025,True
+cell_local,first_practical_sign_queries,incidence_support,4071.0,6733.5,0.395411004678102,2677.8,10,2600.59625,2753.6025,True
+cell_local,first_practical_sign_queries,global_width,4071.0,14495.5,0.7191542202752579,10405.3,10,10244.88875,10580.10125,True

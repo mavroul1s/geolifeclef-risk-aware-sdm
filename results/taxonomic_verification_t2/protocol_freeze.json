@@ -1,0 +1,76 @@
+{
+  "at_utc": "2026-11-19T13:35:57.496431+00:00",
+  "identity": {
+    "configs/taxonomic_verification_t2.json": "47cffeb66933730d366fd270ebc77e251964b7ff9b4d1a1b6538b52bd0221d97",
+    "docs/taxonomic_verification_t2_protocol.md": "d152a280a36c95d27bd0b8bb90e1fd5b522ffe552b719a8337601506473848e4",
+    "docs/taxonomic_verification_t2_prior_work.md": "79050f925f2088b18872b97bf7d8b6ebe2e156cbff24ed3b5fbed772a4442282",
+    "src/geolifeclef/taxonomic_queries.py": "9649f48f81ce3b401736e2b0e551761bcfb5c974474764f944f966a2694a9fa9",
+    "tests/test_taxonomic_queries.py": "0d77c4f6e05cdefa00210969447224cc9a6cdc8dc12ecc057c56e237e8ead775",
+    "scripts/run_taxonomic_verification_t2.py": "f8d7fbd3c8447e447068a6192fade19919b9a7931d032249e671c993e325f168",
+    "scripts/validate_taxonomic_verification_t2.py": "a2fc9b91bf1dd0751b2ddd3a8570895a6e30a2d6ea7f92e0a186f4265274dbd7",
+    "scripts/plot_taxonomic_verification_t2.py": "a97621dc868c8bdd8a968d9fdf2e31902754dd09c2a099be9cbbc9a0a30c1239",
+    "data/taxonomic_resolution_t1/fixed_policy.npz": "b1cf2dbaaacc3411fdb26c556bae686e3a5941b55cd3e953892a519eaa6f7154",
+    "data/taxonomic_resolution_t1/contract.npz": "fae27a9c81cd30abfc1e468b5d46ab3d0815e29a923376c533cb068bb1bdd0a2",
+    "data/taxonomic_resolution_t1/assessment_roles.csv": "91ff13097628f53561c56c7bdd836f576ea30ae6a18c046ebea3b3a9bf3a9097",
+    "data/taxonomic_resolution_t1/oracle.npz": "a8450a377af5331d698d5799288c79c97b07ba8211dcb2634d5c31929f2f5864",
+    "data/external_replication_e1/cohort_roles.csv": "246f71d750e590a81eb37c903ec8cab7f80931498c44f975d89c4381554cd4ef",
+    "data/external_replication_e1/eligible_species.npy": "f53a09dd18edaeed9275d1a24f7fdab37ac5398bfa858a587289ef8243406f0b",
+    "data/external_replication_e1/sealed_eval_test_targets.h5": "bf52746612d1d784d10a8696be94096d1162eaf3bb43a38011087d5af8730da6",
+    "src/geolifeclef/external_reliability.py": "7ba86d1501dfbcd415ccbebca8f0258c8e85ca6ab1de5bb2cac7b8c98653d296",
+    "scripts/run_taxonomic_resolution_t1.py": "88fbc9536fac1565c1cc820e36d36ba4ba6fe6b4c91d79b94a411c084b29fd94",
+    "scripts/validate_taxonomy_audits.py": "dd62719dcec3d7ad5ba4c3b3a687ab4a1fb3c885a58cad9efb20a7c1e1284ffc",
+    "results/taxonomic_resolution_t1/policy_freeze.json": "f258566da0c022fb2ed7cd3b3239693bea27a0c300d3890b4cb49f9bdba74789"
+  },
+  "earlier_artifacts": {
+    "external_replication_e1": {
+      "files_verified": 44,
+      "manifest_sha256": "7944e637cab4cef53215dbd5476e6106d8d2a179944909ac103a77f90a6fff57"
+    },
+    "ranking_study_e2": {
+      "files_verified": 24,
+      "manifest_sha256": "c760f223caca3497634983dbc2764c91f9fe48b861b252ffa92ba8c8b01c0cd6"
+    },
+    "confirmation_e3": {
+      "files_verified": 48,
+      "manifest_sha256": "a1477d4d4e8cadd2cc0ac55c9a7e1c983d8e5fbdd71ed790833028c418b765e5"
+    },
+    "neon_confirmation_feasibility": {
+      "files_verified": 3,
+      "manifest_sha256": "c1d2589a1128ee851e58295fabb7efd1dd3c0cb1a0821f4417bdf43cb0e5482f"
+    },
+    "neon_bridge": {
+      "files_verified": 665,
+      "manifest_sha256": "b295a90f12bc6699b2b979e5ab8a682a0711d217d6280749452a515a1930cdbe"
+    },
+    "confirmation_e4": {
+      "files_verified": 249,
+      "manifest_sha256": "968c557c73a9e7fb2a37e2bb6f8602d13e2d208aa488e5606b101d9a3ce8a3a9"
+    },
+    "taxonomic_resolution_t1": {
+      "files_verified": 70,
+      "manifest_sha256": "b4a868655444eb3167634ea8075a30a2936a5401b314a80aa5baf142f5d2074e"
+    },
+    "neon_taxonomy_a1": {
+      "files_verified": 11,
+      "manifest_sha256": "3bd3a21764be40ba7c572c31466fe4d046946c2a8212a2357a1b42d0a4c9fa39"
+    },
+    "neon_taxonomy_a2": {
+      "files_verified": 150,
+      "manifest_sha256": "7c4ebff1e4c157dec57abb441668578c170bb2d37eec935d36c3e50a3d2fa3a9"
+    },
+    "neon_taxonomy_a3": {
+      "files_verified": 135,
+      "manifest_sha256": "a02d918250ebe490063c11e05692c21c073ecb7015a225f904590cc4b74e346e"
+    },
+    "neon_taxonomy_a3u": {
+      "files_verified": 141,
+      "manifest_sha256": "9989c30618401270563348faa7991744d44136b8716141d3374e39a612d46649"
+    },
+    "publication_validation_2026_11_19": {
+      "files_verified": 15,
+      "manifest_sha256": "acc28edd84f76bcaa88e222eb049356ba642276a30600e5a21a3ff57a7a13137"
+    }
+  },
+  "role": "consumed-cohort development; no fresh outcomes or new fitting",
+  "T2_replay_started": false
+}

@@ -1,5 +1,21 @@
 # Proposed next studies and experiment budget
 
+**Latest T2 update, 19 November:** [the verification-cost study](taxonomic_verification_t2_results.md)
+completes 100 CPU trajectories / 700 checkpoints in 260.14 seconds, zero fits or
+GPU jobs. Ten masks and identical censored records compare shared-concept and
+local-record costs. The frozen 25% criterion fails: local support controls
+already reach zero range width. Predeclared secondary practical-ordering costs
+fall 27.7% / 39.5% in median queries versus the strongest tested controls; these
+conditional findings do not replace the primary. Geographic query coverage and
+inventory/rare-label completeness can worsen under comparison-focused queries.
+
+**Next admitted direction, not yet run or numerically budgeted:** one separate
+robustness study of reliable-linkage assumptions, charged linkage verification,
+controlled linkage failures and stronger matched acquisition controls. Freeze
+its synthetic error/cost mechanisms and budget after semantic/feasibility tests,
+before replay. Do not add neural fits, treat synthetic time units as field time,
+change T2's primary budget, or call consumed outcomes independent confirmation.
+
 **Latest A2/A3/A3u update, 19 November:** [selected-record and exact-alias replays](neon_taxonomy_a2_a3_results.md)
 are completed with zero new model fits/GPU jobs. Six selected history keys do
 not supply replacement labels. A2's eight component controls isolate the
@@ -10,7 +26,7 @@ uncertainty by 199 cell–class pairs across synonym links; final eligibility is
 33 cells/six sites (original A3: 34), still below the historical field rule. These are consumed-cohort development corrections,
 not a new method or rescued confirmation.
 
-**Next:** one [bounded T2 verification-cost development study](taxonomic_verification_t2_plan.md),
+**Earlier proposed next step, now completed:** one [bounded T2 verification-cost development study](taxonomic_verification_t2_plan.md),
 after fixing/test-validating the query unit, outside-target option, shared-key
 semantics, strong controls and practical margins. Reuse the verified backbone;
 zero new neural fits are needed. The number of query settings and CPU budget

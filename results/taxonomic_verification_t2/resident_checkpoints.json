@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "original_validator_sha256": "a2fc9b91bf1dd0751b2ddd3a8570895a6e30a2d6ea7f92e0a186f4265274dbd7",
+  "validator_file": "scripts/validate_taxonomic_verification_t2.py",
+  "I_O_only_adapter": true,
+  "elapsed_seconds": 17.87555717699979,
+  "npz_files_materialized": 31,
+  "decoded_array_bytes": 158654354
+}

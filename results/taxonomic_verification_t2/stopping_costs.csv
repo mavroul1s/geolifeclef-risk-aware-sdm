@@ -1,0 +1,13 @@
+,,first_width_queries,first_width_queries,first_width_queries,first_width_queries,first_practical_sign_queries,first_practical_sign_queries,first_practical_sign_queries,first_practical_sign_queries,available_keys,available_keys,available_keys,available_keys
+,,median,min,max,count,median,min,max,count,median,min,max,count
+unit,policy,,,,,,,,,,,,
+block_shared,global_width,1610.5,1565,1644,10,1060.5,1024,1139,10,4302.0,4232,4415,10
+block_shared,incidence_support,1687.5,1601,1760,10,1263.5,1159,1384,10,4302.0,4232,4415,10
+block_shared,paired_width,1150.5,1113,1204,10,766.5,740,834,10,4302.0,4232,4415,10
+block_shared,uniform,4177.5,4110,4322,10,3887.0,3800,4044,10,4302.0,4232,4415,10
+block_shared,uniform_support,1835.5,1792,1898,10,1705.5,1672,1770,10,4302.0,4232,4415,10
+cell_local,global_width,17987.0,17401,18936,10,14495.5,14083,15276,10,46006.5,44876,47555,10
+cell_local,incidence_support,7265.5,7022,7396,10,6733.5,6563,6974,10,46006.5,44876,47555,10
+cell_local,paired_width,5260.0,5051,5494,10,4071.0,3922,4340,10,46006.5,44876,47555,10
+cell_local,uniform,44700.0,43921,46366,10,41686.5,40391,43719,10,46006.5,44876,47555,10
+cell_local,uniform_support,7265.5,7022,7396,10,6733.5,6563,6974,10,46006.5,44876,47555,10

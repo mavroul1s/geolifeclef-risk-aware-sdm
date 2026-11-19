@@ -1,0 +1,7 @@
+{
+  "scope": "all predeclared endpoints and strong controls; descriptive reporting",
+  "primary_criterion_unchanged": true,
+  "secondary_cost_endpoint_promoted_to_primary": false,
+  "spatial_or_population_inference": false,
+  "new_queries_or_fits": 0
+}

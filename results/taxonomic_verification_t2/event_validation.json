@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "at_utc": "2026-11-19T13:46:42.722551+00:00",
+  "dense_prefix_checks": 400,
+  "trajectory_events_verified": 100,
+  "secondary_costs_verified": 200,
+  "cell_rows_per_check": 5251,
+  "incremental_query_state_reused": false,
+  "role": "post-replay validation; frozen source/outcomes and practical criterion unchanged"
+}

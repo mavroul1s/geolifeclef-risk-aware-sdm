@@ -1,0 +1,85 @@
+{
+  "status": "completed_development",
+  "at_utc": "2026-11-19T13:40:34.128085+00:00",
+  "cells": 5251,
+  "countries": 32,
+  "spatial_blocks": 73,
+  "trajectories": 100,
+  "checkpoints": 700,
+  "oracle_contrast": -0.004548276355002037,
+  "primary_comparisons": {
+    "block_shared": {
+      "uniform_support": {
+        "mean_absolute_width_reduction": 0.026990847942670426,
+        "relative_mean_width_reduction": 0.910335687905037,
+        "better_seeds": 10,
+        "mask_bootstrap_interval": [
+          0.025353264518360303,
+          0.029199862514999952
+        ],
+        "practical_target_passed": true
+      },
+      "incidence_support": {
+        "mean_absolute_width_reduction": 0.005448227223309819,
+        "relative_mean_width_reduction": 0.6720635401167145,
+        "better_seeds": 10,
+        "mask_bootstrap_interval": [
+          0.005125356298144952,
+          0.005782019089876244
+        ],
+        "practical_target_passed": true
+      },
+      "global_width": {
+        "mean_absolute_width_reduction": 0.0037281105089306695,
+        "relative_mean_width_reduction": 0.5837396769642389,
+        "better_seeds": 10,
+        "mask_bootstrap_interval": [
+          0.003566315246321175,
+          0.003897004039828739
+        ],
+        "practical_target_passed": true
+      }
+    },
+    "cell_local": {
+      "uniform_support": {
+        "mean_absolute_width_reduction": 0.0,
+        "relative_mean_width_reduction": 0.0,
+        "better_seeds": 0,
+        "mask_bootstrap_interval": [
+          0.0,
+          0.0
+        ],
+        "practical_target_passed": false
+      },
+      "incidence_support": {
+        "mean_absolute_width_reduction": 0.0,
+        "relative_mean_width_reduction": 0.0,
+        "better_seeds": 0,
+        "mask_bootstrap_interval": [
+          0.0,
+          0.0
+        ],
+        "practical_target_passed": false
+      },
+      "global_width": {
+        "mean_absolute_width_reduction": 0.01101733805963916,
+        "relative_mean_width_reduction": 1.0,
+        "better_seeds": 10,
+        "mask_bootstrap_interval": [
+          0.010585548028076871,
+          0.01145502118757578
+        ],
+        "practical_target_passed": true
+      }
+    }
+  },
+  "practical_target_passed": false,
+  "wrong_sign_declarations": 0,
+  "oracle_containment_failures": 0,
+  "same_initial_information_across_cost_units": true,
+  "elapsed_replay_seconds": 260.1417247979998,
+  "new_model_fits": 0,
+  "new_GPU_jobs": 0,
+  "fresh_confirmation": false,
+  "ranges": "conservative independent-binary outer ranges; not sharp shared-key bounds or CIs"
+}

@@ -1,0 +1,63 @@
+{
+  "earlier_manifests": {
+    "external_replication_e1": {
+      "files_verified": 44,
+      "manifest_sha256": "7944e637cab4cef53215dbd5476e6106d8d2a179944909ac103a77f90a6fff57"
+    },
+    "ranking_study_e2": {
+      "files_verified": 24,
+      "manifest_sha256": "c760f223caca3497634983dbc2764c91f9fe48b861b252ffa92ba8c8b01c0cd6"
+    },
+    "confirmation_e3": {
+      "files_verified": 48,
+      "manifest_sha256": "a1477d4d4e8cadd2cc0ac55c9a7e1c983d8e5fbdd71ed790833028c418b765e5"
+    },
+    "neon_confirmation_feasibility": {
+      "files_verified": 3,
+      "manifest_sha256": "c1d2589a1128ee851e58295fabb7efd1dd3c0cb1a0821f4417bdf43cb0e5482f"
+    },
+    "neon_bridge": {
+      "files_verified": 665,
+      "manifest_sha256": "b295a90f12bc6699b2b979e5ab8a682a0711d217d6280749452a515a1930cdbe"
+    },
+    "confirmation_e4": {
+      "files_verified": 249,
+      "manifest_sha256": "968c557c73a9e7fb2a37e2bb6f8602d13e2d208aa488e5606b101d9a3ce8a3a9"
+    },
+    "taxonomic_resolution_t1": {
+      "files_verified": 70
+    },
+    "neon_taxonomy_a1": {
+      "files_verified": 11
+    },
+    "neon_taxonomy_a2": {
+      "files_verified": 150
+    },
+    "neon_taxonomy_a3": {
+      "files_verified": 135
+    },
+    "neon_taxonomy_a3u": {
+      "files_verified": 141
+    },
+    "publication_validation_2026_11_19": {
+      "files_verified": 15
+    }
+  },
+  "full_tests": {
+    "tests": 407,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "trajectories": 100,
+  "checkpoints": 700,
+  "independent_dense_checkpoints": 60,
+  "independent_acquisition_orders": 20,
+  "secondary_stopping_costs_verified": 200,
+  "dense_stopping_prefixes": 400,
+  "practical_target_passed": false,
+  "secondary_endpoints_remain_secondary": true,
+  "new_model_fits": 0,
+  "new_GPU_jobs": 0,
+  "fresh_confirmation": false
+}

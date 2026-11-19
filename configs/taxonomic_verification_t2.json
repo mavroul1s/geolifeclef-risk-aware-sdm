@@ -1,0 +1,22 @@
+{
+  "study": "T2_shared_concept_verification_development",
+  "date": "2026-11-19",
+  "mask_seeds": [202611190, 202611191, 202611192, 202611193, 202611194, 202611195, 202611196, 202611197, 202611198, 202611199],
+  "hidden_concept_probability": 0.5,
+  "query_units": ["block_shared", "cell_local"],
+  "policies": ["uniform", "uniform_support", "incidence_support", "global_width", "paired_width"],
+  "budget_fractions": [0.0, 0.01, 0.05, 0.1, 0.25, 0.5, 1.0],
+  "primary_budget_fraction": 0.25,
+  "primary_controls": ["uniform_support", "incidence_support", "global_width"],
+  "minimum_relative_width_reduction": 0.1,
+  "minimum_better_seeds": 8,
+  "width_tolerance": 0.002,
+  "practical_contrast_margin": 0.001,
+  "bootstrap": {"repetitions": 4000, "confidence": 0.975, "seed": 20261119},
+  "maximum_replay_seconds": 3600,
+  "independent_validation_seeds": [202611190, 202611191],
+  "independent_validation_fractions": [0.0, 0.25, 1.0],
+  "new_model_fits": 0,
+  "new_GPU_jobs": 0,
+  "fresh_confirmation": false
+}

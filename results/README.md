@@ -1,5 +1,15 @@
 # Results index
 
+`taxonomic_verification_t2/` contains the completed 100-trajectory / 700-checkpoint
+CPU study with zero new fits/GPU jobs. The frozen 25% criterion fails through
+local-control saturation; predeclared secondary ordering-query costs improve
+27.7% / 39.5% in median counts against the best tested controls. These findings
+are conditional on a synthetic observation/linkage/cost contract. The directory
+preserves source/input locks, compact curves/events, independent dense and
+stopping-boundary validation, 407-test report and visually inspected PNG/PDF.
+See `docs/taxonomic_verification_t2_results.md`. Working query-answer caches stay
+ignored; agent notes/worklogs and credentials remain local.
+
 `neon_taxonomy_a2/`, `neon_taxonomy_a3/` and `neon_taxonomy_a3u/` contain the completed selected-record
 history/current-concept audit and exact accepted-species synonym extension.
 A2 preserves/reproduces earlier labels, then reports a conservative corrected

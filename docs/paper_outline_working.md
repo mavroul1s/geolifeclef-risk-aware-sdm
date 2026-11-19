@@ -1,13 +1,23 @@
 # Working paper outline — 19 November 2026
 
+**Current paper direction:** observation contracts and verification costs in
+selective species-distribution evaluation. T2 adds 100 query trajectories under
+shared/local cost units. Its primary fails through local-control saturation;
+predeclared secondary ordering costs fall 27.7% / 39.5% versus the strongest
+controls, conditional on the synthetic contract. A focused comparison can reduce
+geographic query coverage and inventory service. These measured tradeoffs can
+anchor an empirical paper; successful general-method novelty and field cost
+savings remain unestablished. Next is linkage/cost robustness, not another
+benchmark/GPU sweep. See [T2](taxonomic_verification_t2_results.md).
+
 **Latest A2/A3/A3u evidence:** [current-record and exact-synonym audits](neon_taxonomy_a2_a3_results.md)
 show that observed F1 can rise on fixed cells/predictions solely through reduced
 observability. A3 recovers 123 modeled presences; the A3u uncertainty guard
 preserves those positives but leaves only 33 cells/six sites eligible. The field cohort still
 fails completeness/sample-size admission. This sharpens an empirical
 measurement/decision-utility paper; it is not a new algorithm or rescued E4.
-Next is a [proposed controlled verification-cost study](taxonomic_verification_t2_plan.md)
-with shared concepts, an outside-target option and strong paired-policy controls.
+The [controlled verification-cost study](taxonomic_verification_t2_plan.md)
+is now completed as T2, including outside-target records and strong controls.
 
 **Latest T1 evidence:** [60 controlled taxonomic-mask settings](taxonomic_resolution_t1_results.md)
 are complete, with zero new neural/GPU fits. They quantify how class-known
