@@ -1,0 +1,23 @@
+{
+  "study": "A2_selected_record_history_and_accepted_concept_development",
+  "date": "2026-11-17",
+  "cohort": "same 301 consumed plots / 163 E4 cells; no new plot or bout outcomes",
+  "release": "RELEASE-2026",
+  "mapping": "existing exact species matches plus consistent explicit accepted-name chains ending at a uniquely matched species; no lexical parent collapse",
+  "morphospecies": "latest dated published resolution; conflicting current named concepts or equal-date resolutions remain unknown; no choice based on model coverage",
+  "history": "selected identificationHistoryID keys for provenance only; archived taxa never replace current labels",
+  "history_identity_access": "decode historical taxon/accepted IDs only for keys whose current selected records all have species/infraspecific rank; otherwise metadata only",
+  "unresolved_names": "remain compatible-genus/family/all-class unknowns; unmatched names are not proven outside-universe absences",
+  "universe": "unchanged E4 2453-class native subset; do not expand universe or change predictions",
+  "qualified_or_bad_quality": "remain unknown; preserve nonzero current record quality flags through joins",
+  "assessment": "fixed original 65-cell, posthoc-morphospecies 77-cell, all-163 and revised >=80%-known diagnostic cohorts; identical 80% site/area-group quotas within each cohort",
+  "scoring": "known-label-only F1 and independent-binary-completion bounds; no forced positive genus facts for real unresolved records",
+  "bootstrap": {"repetitions": 4000, "confidence": 0.975, "seed": 20261117, "cluster": "site"},
+  "minimum_known_fraction": 0.8,
+  "coverage": 0.8,
+  "download_max_bytes": 100000000,
+  "download_workers": 2,
+  "new_model_fits": 0,
+  "new_GPU_jobs": 0,
+  "fresh_confirmation": false
+}

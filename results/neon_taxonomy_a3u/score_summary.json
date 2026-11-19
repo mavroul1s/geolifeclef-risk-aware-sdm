@@ -1,0 +1,246 @@
+{
+  "status": "alias_mask_correctness_replay_complete",
+  "at_utc": "2026-11-19T12:50:46.001343+00:00",
+  "cohorts": {
+    "original_65": {
+      "cells": 65,
+      "sites": 10,
+      "known_F1": 0.45867594618473406,
+      "A2_known_F1_same_cells": 0.45260283150179315,
+      "score_change_from_A2_same_cells": 0.006073114682940927,
+      "mean_known_fraction": 0.7677625421544454,
+      "mean_F1_identification_width": 0.3806278092038706,
+      "F1_identification_range": [
+        0.1728246050022207,
+        0.5534524142060911
+      ],
+      "HGB_minus_SDC_identification_range": [
+        -0.09415793437244449,
+        0.09721318790443827
+      ],
+      "descriptive_comparison": {
+        "MSE_gain_mean_minus_HGB": -0.0632967566853191,
+        "HGB_minus_SDC_selective_F1": 0.009670103815009101,
+        "MSE_gain_interval": [
+          -0.08590370383183883,
+          -0.03244666037875878
+        ],
+        "F1_difference_interval": [
+          -0.012373804058213422,
+          0.03463198889040006
+        ],
+        "sites": 10,
+        "cells": 65,
+        "valid_draws": 4000,
+        "confidence": 0.975
+      },
+      "quality_MSE": {
+        "training_mean": 0.06381217967303998,
+        "HGB": 0.12710893635835907,
+        "affine_SDC": 0.06554051963301331,
+        "raw_SDC": 0.05937207738845253
+      },
+      "selective_F1": {
+        "HGB": 0.4636088358630695,
+        "SDC": 0.4539387320480604,
+        "mean_confidence": 0.45594542101127106,
+        "entropy": 0.4526403083560805,
+        "random": 0.4710111693185588
+      },
+      "meets_historical_100cell_12site_reference": false
+    },
+    "previous_morphospecies_77": {
+      "cells": 77,
+      "sites": 11,
+      "known_F1": 0.44377009221394254,
+      "A2_known_F1_same_cells": 0.4361216118457195,
+      "score_change_from_A2_same_cells": 0.00764848036822305,
+      "mean_known_fraction": 0.7745429522432448,
+      "mean_F1_identification_width": 0.3797050824600167,
+      "F1_identification_range": [
+        0.16264846895798443,
+        0.5423535514180011
+      ],
+      "HGB_minus_SDC_identification_range": [
+        -0.09555290429016731,
+        0.09378670775143054
+      ],
+      "descriptive_comparison": {
+        "MSE_gain_mean_minus_HGB": -0.057071580293055334,
+        "HGB_minus_SDC_selective_F1": 0.003955145588947218,
+        "MSE_gain_interval": [
+          -0.08233593415960298,
+          -0.027628238712716743
+        ],
+        "F1_difference_interval": [
+          -0.02038660735986632,
+          0.027625917915540386
+        ],
+        "sites": 11,
+        "cells": 77,
+        "valid_draws": 4000,
+        "confidence": 0.975
+      },
+      "quality_MSE": {
+        "training_mean": 0.05812503584444011,
+        "HGB": 0.11519661613749546,
+        "affine_SDC": 0.06231813677518682,
+        "raw_SDC": 0.05751864636386153
+      },
+      "selective_F1": {
+        "HGB": 0.4424964564074774,
+        "SDC": 0.4385413108185302,
+        "mean_confidence": 0.43923178444028005,
+        "entropy": 0.4358998794883198,
+        "random": 0.4556932549527633
+      },
+      "meets_historical_100cell_12site_reference": false
+    },
+    "all_163": {
+      "cells": 163,
+      "sites": 16,
+      "known_F1": 0.5335651281558165,
+      "A2_known_F1_same_cells": 0.5257002754233182,
+      "score_change_from_A2_same_cells": 0.007864852732498278,
+      "mean_known_fraction": 0.47919820164743454,
+      "mean_F1_identification_width": 0.5549815672801743,
+      "F1_identification_range": [
+        0.10842642205308485,
+        0.6634079893332592
+      ],
+      "HGB_minus_SDC_identification_range": [
+        -0.12991569656879864,
+        0.12310882261920561
+      ],
+      "descriptive_comparison": {
+        "MSE_gain_mean_minus_HGB": -0.07548413386474274,
+        "HGB_minus_SDC_selective_F1": -0.003472453634731143,
+        "MSE_gain_interval": [
+          -0.09710553603937865,
+          -0.05040532611442398
+        ],
+        "F1_difference_interval": [
+          -0.013359472241023218,
+          0.006614511173990122
+        ],
+        "sites": 16,
+        "cells": 163,
+        "valid_draws": 4000,
+        "confidence": 0.975
+      },
+      "quality_MSE": {
+        "training_mean": 0.12263379007913934,
+        "HGB": 0.19811792394388208,
+        "affine_SDC": 0.13384536800735322,
+        "raw_SDC": 0.12742215699219683
+      },
+      "selective_F1": {
+        "HGB": 0.5326827002324547,
+        "SDC": 0.5361551538671858,
+        "mean_confidence": 0.5412189283101705,
+        "entropy": 0.5226345130404864,
+        "random": 0.5373083271667483
+      },
+      "meets_historical_100cell_12site_reference": true
+    },
+    "A2_fixed31": {
+      "cells": 31,
+      "sites": 6,
+      "known_F1": 0.41125784579782954,
+      "A2_known_F1_same_cells": 0.40842648424023253,
+      "score_change_from_A2_same_cells": 0.0028313615575970455,
+      "mean_known_fraction": 0.8968947417887321,
+      "mean_F1_identification_width": 0.28700199859512326,
+      "F1_identification_range": [
+        0.20332388903874204,
+        0.49032588763386536
+      ],
+      "HGB_minus_SDC_identification_range": [
+        -0.07204656064377415,
+        0.06681642874968191
+      ],
+      "descriptive_comparison": {
+        "MSE_gain_mean_minus_HGB": -0.03758871854530939,
+        "HGB_minus_SDC_selective_F1": 0.0025040766057359276,
+        "MSE_gain_interval": [
+          -0.08597681509875554,
+          -0.003654879907319156
+        ],
+        "F1_difference_interval": [
+          -0.017056884425062036,
+          0.013939763939763872
+        ],
+        "sites": 6,
+        "cells": 31,
+        "valid_draws": 4000,
+        "confidence": 0.975
+      },
+      "quality_MSE": {
+        "training_mean": 0.052804111657040305,
+        "HGB": 0.09039283020234969,
+        "affine_SDC": 0.06355697716306519,
+        "raw_SDC": 0.06185280074073536
+      },
+      "selective_F1": {
+        "HGB": 0.40740065037233447,
+        "SDC": 0.40489657376659854,
+        "mean_confidence": 0.4250704868100768,
+        "entropy": 0.3997816027532869,
+        "random": 0.4199542077403094
+      },
+      "meets_historical_100cell_12site_reference": false
+    },
+    "A3u_80pct_known": {
+      "cells": 33,
+      "sites": 6,
+      "known_F1": 0.4047169662545268,
+      "A2_known_F1_same_cells": 0.40217001884354,
+      "score_change_from_A2_same_cells": 0.002546947410986809,
+      "mean_known_fraction": 0.8917520169710526,
+      "mean_F1_identification_width": 0.29053442745977776,
+      "F1_identification_range": [
+        0.19783181869801628,
+        0.48836624615779395
+      ],
+      "HGB_minus_SDC_identification_range": [
+        -0.06670977837386496,
+        0.06186706365711285
+      ],
+      "descriptive_comparison": {
+        "MSE_gain_mean_minus_HGB": -0.03758051432207051,
+        "HGB_minus_SDC_selective_F1": 0.0023185894497554926,
+        "MSE_gain_interval": [
+          -0.08219459455957892,
+          -0.00981830336774491
+        ],
+        "F1_difference_interval": [
+          -0.015017440591299664,
+          0.013259775454897316
+        ],
+        "sites": 6,
+        "cells": 33,
+        "valid_draws": 4000,
+        "confidence": 0.975
+      },
+      "quality_MSE": {
+        "training_mean": 0.05090420926953909,
+        "HGB": 0.0884847235916096,
+        "affine_SDC": 0.06010590983425891,
+        "raw_SDC": 0.05821445024517894
+      },
+      "selective_F1": {
+        "HGB": 0.3996919602212974,
+        "SDC": 0.3973733707715419,
+        "mean_confidence": 0.4160529198858736,
+        "entropy": 0.39263728649995705,
+        "random": 0.4113156244509038
+      },
+      "meets_historical_100cell_12site_reference": false
+    }
+  },
+  "new_model_fits": 0,
+  "new_GPU_jobs": 0,
+  "original_E4_primary_changed": false,
+  "fresh_confirmation": false,
+  "scope": "A3 alias-equivalence mapping with a conservative uncertainty overlay; no merged ontology, complete-field oracle or new-method success claim"
+}

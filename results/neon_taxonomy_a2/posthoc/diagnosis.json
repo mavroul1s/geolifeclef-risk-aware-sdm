@@ -1,0 +1,21 @@
+{
+  "at_utc": "2026-11-17T09:48:52.464635+00:00",
+  "posthoc": true,
+  "all_eight_components_reported_no_contract_chosen_by_F1": true,
+  "original_and_A2_label_endpoints_reproduced": true,
+  "newly_unknown_pairs": 6782,
+  "newly_unscored_previously_negative_predictions": 262,
+  "newly_unscored_negative_predictions_on_fixed77": 234,
+  "positive_labels_and_prediction_sets_unchanged": true,
+  "cells_with_strict_known_F1_increase": 77,
+  "mean_F1_change_fixed77": 0.026839137015177303,
+  "reverse_alias_metadata_screen": {
+    "unmatched_current_species_records_with_terminal_species": 15793,
+    "records_with_one_model_class_alias_candidate": 736,
+    "distinct_cell_concept_candidates": 166,
+    "records_with_multiple_model_aliases": 0,
+    "distinct_ambiguous_cell_concepts": 0,
+    "candidates_applied_to_labels": 0,
+    "scope": "dictionary-equivalence development screen; requires a new conflict-aware contract, not guessed genus parents"
+  }
+}

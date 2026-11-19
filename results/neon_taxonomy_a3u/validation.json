@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "at_utc": "2026-11-19T12:51:02.580996+00:00",
+  "alias_links_independently_verified": 553,
+  "independent_confusion_rows": 163,
+  "independent_selector_rankings": 25,
+  "positive_current_record_witnesses": 4284,
+  "existing_A2_positives_preserved": true,
+  "original_A3_positives_unchanged": true,
+  "unknown_masks_only_expanded": true,
+  "uncertain_records_checked": 24040,
+  "supported_uncertain_alias_pairs": 25286,
+  "confident_absences_contradicting_alias_uncertainty": 0,
+  "extra_unknown_pairs_from_A3": 199,
+  "global_uniqueness_before_eligibility_filtering": true,
+  "chronology_and_frozen_inputs_verified": true
+}

@@ -1,8 +1,20 @@
-# Paper claim and prior-work matrix — 17 November 2026
+# Paper claim and prior-work matrix — 19 November 2026
 
 Working title: **Decision Confidence and Ecological Service under Survey Source
 Shift**. This matrix distinguishes empirical evidence from novelty. It is not an
 exhaustive literature review or a claim that a venue will accept the paper.
+
+**A2/A3/A3u update:** [the selected-record replay](neon_taxonomy_a2_a3_results.md)
+reproduces prior labels exactly, audits six history keys and leaves all archived
+labels out of current targets. A2 changes only uncertainty masks on confirmed
+labels, raising fixed-77-cell observed F1 by .026839 while eligibility drops
+77→31. Eight component controls attribute this to the mask implementation.
+A3's exact accepted-species aliases recover 123 cell–species presences. The
+separately preserved A3u alias-uncertainty guard keeps all positives and marks
+199 additional pairs unknown; only 33 cells/six sites pass the final cutoff
+(original A3: 34). No new-method success or field
+confirmation. The next proposed experiment concerns shared-concept verification
+cost; active-evaluation novelty still requires review and evidence.
 
 **A1 update:** [the dictionary/metadata audit](neon_taxonomy_a1.md) is complete,
 while the field label contract remains partial. Accepted-name links are not
@@ -58,6 +70,7 @@ not be sold as useful confidence skill or general transfer dominance. See
 | Entropy alignment | Selective prediction on multi-label decisions is prior work | GLC and E1 predicted-set entropy underperform matched random; operational result replicated across fixed decoders/settings | Only this entropy definition and these settings. Not all entropy or uncertainty methods |
 | Remaining selection headroom | Label-oracle ceilings are standard diagnostics | Post-hoc E2 country/area oracle gains .0255–.0326 F1 | Nondeployable, no rare constraint; cannot call it achieved accuracy or proof that a real learner will close the gap |
 | Metadata/provenance quality | SAGE upstream plot/area pipeline | Area inconsistencies excluded before E1 labels; native masks and source exclusions checked | Audit and reproducibility contribution; differences do not establish upstream error or full independence |
+| Apparent quality versus observation contract | Standard F1 algebra, taxonomic curation and partial-identification evaluation | A2: fixed cells/predictions/confirmed positives, +.026839 known-F1 change through uncertainty masks; A3 adds 123 supported presence labels via exact aliases | Quantified implementation/measurement audit, not new theory or predictive improvement. Distinct contracts change the observed-label estimand |
 | Taxonomic observability and fixed policy comparisons | Taxonstand/OCCUR; missing-label learning; [active testing](https://proceedings.mlr.press/v139/kossen21a.html); [performance partial identification](https://papers.neurips.cc/paper_files/paper/2024/hash/f4c6bec746b0aeca8c2cd15096f1ad1f-Abstract-Conference.html) | T1: 60 settings; class-known admission misses substantial positive loss; primary criterion fails; no ordering reversals; post-hoc genus facts tighten ranges and recover some signs | Application-specific controlled development. Standard bounds and active evaluation are established; no empirical NEON mechanism or field-positive-genus contract established |
 
 ## Rejected generalization and current empirical scope

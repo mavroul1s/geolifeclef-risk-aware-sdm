@@ -1,5 +1,24 @@
 # Proposed next studies and experiment budget
 
+**Latest A2/A3/A3u update, 19 November:** [selected-record and exact-alias replays](neon_taxonomy_a2_a3_results.md)
+are completed with zero new model fits/GPU jobs. Six selected history keys do
+not supply replacement labels. A2's eight component controls isolate the
+uncertainty-mask effect: 77→31 eligible cells while observed-label F1 increases
+on fixed predictions. A3 recovers 123 modeled cell–species presences through
+unique accepted-species aliases. A3u preserves all positives while expanding
+uncertainty by 199 cell–class pairs across synonym links; final eligibility is
+33 cells/six sites (original A3: 34), still below the historical field rule. These are consumed-cohort development corrections,
+not a new method or rescued confirmation.
+
+**Next:** one [bounded T2 verification-cost development study](taxonomic_verification_t2_plan.md),
+after fixing/test-validating the query unit, outside-target option, shared-key
+semantics, strong controls and practical margins. Reuse the verified backbone;
+zero new neural fits are needed. The number of query settings and CPU budget
+must be frozen after feasibility checks, not expanded after seeing scores.
+Remaining botanical parent/name authority work stays explicit and bounded;
+do not wait for perfect field taxonomy before testing valid controlled query
+semantics, and do not invent observed absences or field guarantees.
+
 **17 November A1 update:** the [metadata taxonomy audit](neon_taxonomy_a1.md)
 verifies all 93,698 dictionary entries, separates accepted species concepts from
 lexical parent candidates, and screens 44,721 eligible cell–genus pairs. Only
@@ -18,7 +37,7 @@ post-hoc diagnosis isolates empty-set scoring and shows that retaining
 simulator-supported genus facts tightens identification ranges. These are
 development findings, not a new successful method. Forty-two focused tests pass.
 
-**Next bounded work:** finish one NEON taxonomy/observation-contract audit
+**Earlier next step, now completed as A2/A3/A3u above:** one bounded NEON taxonomy/observation-contract audit
 (species-parent/name/history semantics and outside-universe possibilities),
 using metadata and logged rules. Existing E4 replays remain development. In
 parallel with that audit, complete the prior-work comparison begun in

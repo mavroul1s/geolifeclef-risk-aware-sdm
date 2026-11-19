@@ -1,6 +1,6 @@
-# Methods and results draft — 17 November 2026
+# Methods and results draft — 19 November 2026
 
-Revised after E3/E4 and T1 development. Working title: **Decision Confidence,
+Revised after E3/E4, T1 and A2/A3/A3u development. Working title: **Decision Confidence,
 Error Calibration and Ecological Service Across Survey Domains**. The empirical
 argument concerns distinct objectives and transport, not a globally superior
 scalar or learned method. Post-primary mean controls are labeled explicitly.
@@ -9,6 +9,33 @@ Working text for supervisor review. This is not a completed manuscript or final
 abstract. Prospective and development evidence must retain the labels below.
 Primary-source positioning and claim limits are in
 [the evidence matrix](paper_claim_evidence_matrix.md).
+
+## A2/A3/A3u: current records, uncertainty masks and exact synonyms
+
+We audit only the consumed 301 plots/163 NEON cells. The old morphospecies labels
+reproduce bit for bit before a stricter development contract is applied. Six
+linked history records are used for provenance, never as replacement labels;
+unselected/protected higher-rank identities are not reverse-resolved. Full
+accepted-chain compatibility with conservative genus/family fallback adds 6,782
+unknown label pairs, leaving predictions and 4,161 confirmed positive pairs
+unchanged. On the same previous 77 cells, known-label F1 rises .409282→.436122,
+while the >=80%-known subset shrinks 77→31 cells. A post-hoc eight-arm component
+ablation identifies the mask implementation as the cause of this attrition.
+This is an observed-target change, not a predictive gain or bias against a
+complete-field oracle.
+
+A separate frozen development extension matches current named taxa to a unique
+model alias through explicit accepted-species equivalence, before native-mask
+filtering. It adds 553 dictionary links and 123 modeled native cell–species
+presence labels, preserving existing positives. Eligibility recovers only to
+34 cells/six sites before the alias-uncertainty guard. The separately frozen
+A3u overlay expands masks by 199 cell–class pairs while preserving all 4,284
+positive pairs. Final eligibility is 33 cells/six sites, HGB MSE .088485 versus
+training mean .050904, and HGB-minus-SDC +.002319 with descriptive 97.5% site
+interval [−.015017,+.013260]. All paired HGB-minus-SDC site intervals remain inconclusive;
+full-set identification ranges still span both signs. These standard taxonomy
+corrections strengthen the measurement audit but do not establish a new method,
+biological discovery or fresh confirmation. See [A2/A3](neon_taxonomy_a2_a3_results.md).
 
 ## A1 metadata extension: applicability of genus information
 
@@ -21,8 +48,9 @@ under the conservative parser. These are dictionary counts, not observation
 coverage. In 44,721 eligible cell–genus metadata pairs, 4,995 pass a necessary
 species-only catalog condition. Passing is not a field guarantee: catalog,
 infraspecific and outside-universe uncertainty remains. We do not read new
-composition values, refit predictors or revise E4 labels. Selected-key history
-and authority-backed parent/name reconciliation remain pending. See
+composition values, refit predictors or revise E4 labels. A2 subsequently audits selected-key history, and A3/A3u add exact synonyms and
+conservative alias masks. Authority-backed parent reconciliation remains bounded
+and unresolved where not supported. See
 [A1](neon_taxonomy_a1.md).
 
 ## T1 extension: controlled observability and scoring semantics

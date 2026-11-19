@@ -1,0 +1,228 @@
+{
+  "status": "corrected_contract_development_replay_complete",
+  "at_utc": "2026-11-17T09:43:51.686005+00:00",
+  "cohorts": {
+    "original_65": {
+      "cells": 65,
+      "sites": 10,
+      "known_F1": 0.45260283150179315,
+      "previous_contract_known_F1_same_cells": 0.4248015542569359,
+      "known_score_change_same_cells": 0.027801277244857207,
+      "mean_known_fraction": 0.7396924052784645,
+      "mean_F1_identification_width": 0.4040730901573461,
+      "mean_F1_identification_range": [
+        0.15696497417352115,
+        0.5610380643308672
+      ],
+      "HGB_minus_SDC_identification_range": [
+        -0.10000682613853246,
+        0.10314846669378042
+      ],
+      "descriptive_comparison": {
+        "MSE_gain_mean_minus_HGB": -0.061588842789922604,
+        "HGB_minus_SDC_selective_F1": 0.007931606336904318,
+        "MSE_gain_interval": [
+          -0.08314895964021558,
+          -0.03100561880008263
+        ],
+        "F1_difference_interval": [
+          -0.013032037563222557,
+          0.03206471669104722
+        ],
+        "sites": 10,
+        "cells": 65,
+        "valid_draws": 4000,
+        "confidence": 0.975
+      },
+      "quality_MSE": {
+        "training_mean": 0.06092790832244648,
+        "HGB": 0.1225167511123691,
+        "affine_SDC": 0.06305472284895833,
+        "raw_SDC": 0.05733021690712236
+      },
+      "selective_F1": {
+        "HGB": 0.4563958384907002,
+        "SDC": 0.4484642321537959,
+        "mean_confidence": 0.45047092111700654,
+        "entropy": 0.44647553312505067,
+        "random": 0.4644553500544581
+      },
+      "previous_contract_selective_F1_same_cells_and_acceptance": {
+        "HGB": 0.4278298724684744,
+        "SDC": 0.42035211119169574,
+        "mean_confidence": 0.42218361302319757,
+        "entropy": 0.4182981770072143,
+        "random": 0.43566619290731
+      },
+      "meets_historical_100cell_12site_reference": false
+    },
+    "previous_morphospecies_77": {
+      "cells": 77,
+      "sites": 11,
+      "known_F1": 0.4361216118457195,
+      "previous_contract_known_F1_same_cells": 0.4092824748305422,
+      "known_score_change_same_cells": 0.026839137015177303,
+      "mean_known_fraction": 0.744811485177039,
+      "mean_F1_identification_width": 0.4054033769870758,
+      "mean_F1_identification_range": [
+        0.14614508889759995,
+        0.5515484658846758
+      ],
+      "HGB_minus_SDC_identification_range": [
+        -0.10217246090517926,
+        0.09988955446413587
+      ],
+      "descriptive_comparison": {
+        "MSE_gain_mean_minus_HGB": -0.054978055848025745,
+        "HGB_minus_SDC_selective_F1": 0.0012650007566772925,
+        "MSE_gain_interval": [
+          -0.07882273545670479,
+          -0.026577109742741356
+        ],
+        "F1_difference_interval": [
+          -0.0239966598436781,
+          0.02517908023376923
+        ],
+        "sites": 11,
+        "cells": 77,
+        "valid_draws": 4000,
+        "confidence": 0.975
+      },
+      "quality_MSE": {
+        "training_mean": 0.05490801776485607,
+        "HGB": 0.1098860736128818,
+        "affine_SDC": 0.05950413862933488,
+        "raw_SDC": 0.05522128440881013
+      },
+      "selective_F1": {
+        "HGB": 0.4341449336813303,
+        "SDC": 0.432879932924653,
+        "mean_confidence": 0.43280531142646905,
+        "entropy": 0.4284275108161995,
+        "random": 0.4480669684314082
+      },
+      "previous_contract_selective_F1_same_cells_and_acceptance": {
+        "HGB": 0.4073897102699761,
+        "SDC": 0.4055899398526987,
+        "mean_confidence": 0.4061151016681831,
+        "entropy": 0.40208355708741383,
+        "random": 0.42008576345152654
+      },
+      "meets_historical_100cell_12site_reference": false
+    },
+    "all_163": {
+      "cells": 163,
+      "sites": 16,
+      "known_F1": 0.5257002754233182,
+      "previous_contract_known_F1_same_cells": 0.5108145540425246,
+      "known_score_change_same_cells": 0.014885721380793483,
+      "mean_known_fraction": 0.4591871307879021,
+      "mean_F1_identification_width": 0.5732496964029749,
+      "mean_F1_identification_range": [
+        0.09870402768211509,
+        0.67195372408509
+      ],
+      "HGB_minus_SDC_identification_range": [
+        -0.13532165885873093,
+        0.12808286390963436
+      ],
+      "descriptive_comparison": {
+        "MSE_gain_mean_minus_HGB": -0.07314001921694707,
+        "HGB_minus_SDC_selective_F1": -0.004573352555758303,
+        "MSE_gain_interval": [
+          -0.09525933353486467,
+          -0.04890819269778606
+        ],
+        "F1_difference_interval": [
+          -0.015436294788051542,
+          0.006219004139604726
+        ],
+        "sites": 16,
+        "cells": 163,
+        "valid_draws": 4000,
+        "confidence": 0.975
+      },
+      "quality_MSE": {
+        "training_mean": 0.11974475701759571,
+        "HGB": 0.19288477623454278,
+        "affine_SDC": 0.131684321751986,
+        "raw_SDC": 0.12592708461365124
+      },
+      "selective_F1": {
+        "HGB": 0.5238579416301522,
+        "SDC": 0.5284312941859105,
+        "mean_confidence": 0.5338383671923211,
+        "entropy": 0.5154126810994795,
+        "random": 0.5293510608604024
+      },
+      "previous_contract_selective_F1_same_cells_and_acceptance": {
+        "HGB": 0.5095799345986263,
+        "SDC": 0.514122899666312,
+        "mean_confidence": 0.5192348860588542,
+        "entropy": 0.5002839892064931,
+        "random": 0.5135749520737273
+      },
+      "meets_historical_100cell_12site_reference": true
+    },
+    "revised_80pct_known": {
+      "cells": 31,
+      "sites": 6,
+      "known_F1": 0.40842648424023253,
+      "previous_contract_known_F1_same_cells": 0.395491352689671,
+      "known_score_change_same_cells": 0.012935131550561516,
+      "mean_known_fraction": 0.8673648278299342,
+      "mean_F1_identification_width": 0.31811861141340436,
+      "mean_F1_identification_range": [
+        0.17950816003590092,
+        0.4976267714493053
+      ],
+      "HGB_minus_SDC_identification_range": [
+        -0.07749955481188386,
+        0.07446782805923079
+      ],
+      "descriptive_comparison": {
+        "MSE_gain_mean_minus_HGB": -0.037272114693772854,
+        "HGB_minus_SDC_selective_F1": 0.001618585771508474,
+        "MSE_gain_interval": [
+          -0.08549268983386447,
+          -0.004400100204987846
+        ],
+        "F1_difference_interval": [
+          -0.019082235347569282,
+          0.013479774392646082
+        ],
+        "sites": 6,
+        "cells": 31,
+        "valid_draws": 4000,
+        "confidence": 0.975
+      },
+      "quality_MSE": {
+        "training_mean": 0.050676270687280325,
+        "HGB": 0.08794838538105318,
+        "affine_SDC": 0.06115663662630581,
+        "raw_SDC": 0.05946253343178062
+      },
+      "selective_F1": {
+        "HGB": 0.40337576111850837,
+        "SDC": 0.4017571753469999,
+        "mean_confidence": 0.42193108839047816,
+        "entropy": 0.3970372653063283,
+        "random": 0.4167702041260377
+      },
+      "previous_contract_selective_F1_same_cells_and_acceptance": {
+        "HGB": 0.3888569126867159,
+        "SDC": 0.38943175515283934,
+        "mean_confidence": 0.4067477724688567,
+        "entropy": 0.38347984512293687,
+        "random": 0.4026189230884998
+      },
+      "meets_historical_100cell_12site_reference": false
+    }
+  },
+  "new_model_fits": 0,
+  "new_GPU_jobs": 0,
+  "fresh_confirmation": false,
+  "original_E4_primary_changed": false,
+  "new_method_success_established": false,
+  "interpretation": "known-label scores change their observed-label estimand; no complete-field oracle or rescued E4 confirmation"
+}

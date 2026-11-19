@@ -6,7 +6,7 @@ preserves geographic and rare-species service. The project combines a
 GeoLifeCLEF 2025 competition pipeline with separate reliability studies using
 released SAGE models and NEON data.
 
-**Current status — 17 November 2026:** the competition models and controlled
+**Current status — 19 November 2026:** the competition models and controlled
 reliability studies are implemented. Several proposed improvements failed their
 declared targets. The current paper direction is a reproducible empirical study
 of decision confidence, ecological service and taxonomic observability.
@@ -23,6 +23,8 @@ A successful new method and publication-level novelty remain unestablished.
 | NEON E4 | Verified MLP CPU/T4 inference; 163 evaluated cells. Original contract admits 65 cells/10 sites; corrected morphospecies replay 77/11, below 100/12 | Scientific admission fails. Corrections do not turn consumed outcomes into fresh confirmation |
 | Taxonomic study T1 | **60 mask settings**, fixed predictions, 5,251 consumed cells, zero new backbone fits | About 98.3–98.4% known class labels coexist with ~26% hidden positive occurrences at nominal 20% censoring. Statistical criterion fails; no policy ordering reverses |
 | Taxonomy audit A1 | **93,698 dictionary entries / 94 verified pages**, 44,721 cell–genus metadata screens | Accepted-name links, parent candidates and unresolved concepts are distinguished. Field-level genus guarantees remain unestablished |
+| A2 selected-record audit | Six linked history records; eight component controls; unchanged predictions/positive labels | Conservative uncertainty masks reduce eligible cells 77→31 while known-label F1 rises +.026839 on the same 77 cells; this is an observation-contract effect |
+| A3 / A3u exact synonyms and uncertainty guard | 553 dictionary links; **123 additional modeled cell–species presences**; alias uncertainty propagated conservatively | Original A3 admits 34 cells; guarded A3u admits **33 cells / six sites**, still below the original field rule; no model is retrained |
 
 T1 separately diagnoses 268 nonempty recorded inventories receiving apparent
 perfect scores after censoring under empty/empty F1 = one. Retaining the
@@ -32,28 +34,34 @@ are not automatically valid for real NEON observations.
 
 ## What we are doing now
 
-We are auditing the **NEON taxonomy and observation contract**, before building
-another reliability or verification method. A1 checks accepted-name chains and
-infraspecific records without reading new plot composition, evaluating new F1
-scores, changing labels or fitting a model. Of 44,721 eligible cell–genus pairs,
-4,995 pass a necessary species-catalog screen; that screen still does not prove
-a complete field inventory or a positive modeled-species guarantee.
+We have completed a bounded **current-record, history and exact-synonym audit**
+on the consumed NEON cohort. A2 reproduces the previous labels exactly, then
+checks stricter current-record/uncertainty rules. A3 uses explicit accepted-name
+equivalence, without guessed parents or archived replacement labels. The A3u
+correctness guard propagates uncertainty across synonym genera and preserves
+all recovered presences. The field
+contract remains incomplete, and the original E4 failure remains unchanged.
+
+The next contribution candidate concerns **the cost of making paired policy
+utility identifiable**, rather than another general accuracy sweep. The
+[proposed T2 study](docs/taxonomic_verification_t2_plan.md) is not yet executed.
 
 The next steps are:
 
-1. Audit the consumed plots' selected identification-history links and validate
-   species-parent/name mappings. Keep unresolved and protected taxa unresolved;
-   distinguish named outside-universe species from unmatched names.
-2. Freeze a corrected observation contract before further replay. E1/E3/E4
-   reanalysis remains development, with all original failures preserved.
-3. If real records justify useful constraints, define one cost-matched
-   taxonomic-verification study with strong active-evaluation controls. Check
-   rounding/low-richness sensitivity before broad claims about T1.
+1. Specify and test a shared taxon-concept query model using fully recorded SAGE
+   labels as a development oracle, including outside-target species and explicit
+   assumptions about record linkage and inventory completeness.
+2. Freeze one cost-matched CPU verification study with strong controls, including
+   random queries restricted to policy-disagreement support. No new backbone
+   fits are required. Separate finite-cohort identification from population CIs.
+3. Keep remaining species-parent/authority validation bounded and unresolved
+   taxa explicit. Do not treat unmatched names as proven absences, reuse consumed
+   outcomes as fresh confirmation or promote T1's simulator assumptions to NEON.
 4. Develop the manuscript and review novelty against existing SDM, missing-label,
    partial-identification and active-testing work. Any later confirmation needs
    uninspected outcomes and an audited role split.
 
-The immediate audit needs no new GPU training. Architecture and seed sweeps are
+The completed audits needed no new GPU training. Architecture and seed sweeps are
 not the current research priority.
 
 ## Research reports and evidence
@@ -66,6 +74,11 @@ not the current research priority.
   [post-hoc diagnosis](docs/taxonomic_resolution_t1_posthoc.md).
 - [A1 taxonomy audit](docs/neon_taxonomy_a1.md) and
   [evaluation prior work](docs/taxonomic_evaluation_prior_work.md).
+- [A2/A3 results and figure](docs/neon_taxonomy_a2_a3_results.md),
+  [A2 protocol](docs/neon_taxonomy_a2_protocol.md),
+  [A3 protocol](docs/neon_taxonomy_a3_protocol.md),
+  [A3u uncertainty guard](docs/neon_taxonomy_a3u_protocol.md) and
+  [proposed verification study](docs/taxonomic_verification_t2_plan.md).
 - [E1](docs/external_reliability_e1_results.md),
   [E2](docs/ranking_study_e2_results.md),
   [E3](docs/confirmation_e3_results.md),
@@ -82,9 +95,10 @@ training support limits independence claims.
 
 ## Installation and tests
 
-The 17 November research snapshot passes **all 376 local tests**, including
-artifact-backed checks after restoring the documented inputs. See the
-[reproduction/portability report](docs/reproduction_validation_2026_11_17.md).
+The current snapshot passes **all 397 local tests**, including artifact-backed
+checks after restoring the documented inputs, plus independent A2/A3/A3u
+validation. See the [current audit/release checks](docs/taxonomy_audits_validation_2026_11_19.md)
+and the earlier [reproduction/portability report](docs/reproduction_validation_2026_11_17.md).
 
 Use **Python 3.12** for research. The original competition package supports
 Python 3.10–3.12; research plotting dependencies require >=3.11.
@@ -125,7 +139,9 @@ python scripts/download_data.py
 Research entry points include `scripts/run_external_e1.py`,
 `scripts/study_ranking_e2.py`, `scripts/run_confirmation_e3.py`,
 `scripts/run_neon_e4.py`, `scripts/run_taxonomic_resolution_t1.py` and
-`scripts/audit_neon_taxonomy_contract.py`. Read each protocol and CLI help first.
+`scripts/audit_neon_taxonomy_contract.py`, `scripts/run_neon_taxonomy_a2.py`,
+`scripts/run_neon_taxonomy_a3.py` and `scripts/run_neon_taxonomy_a3u.py`. Read each
+protocol and CLI help first.
 Completed frozen phases refuse overwrites. Restoring inputs requires the original
 sources; a hash manifest does not include ignored local data.
 

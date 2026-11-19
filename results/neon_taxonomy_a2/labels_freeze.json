@@ -1,0 +1,13 @@
+{
+  "at_utc": "2026-11-17T09:41:34.679790+00:00",
+  "protocol_freeze_sha256": "e8b506b4f3e459e8d91d02eaf8266812eaf1df30620f505d0357f0cf3840ca5e",
+  "files": {
+    "data/neon_taxonomy_a2/selected_observations.json.gz": "c09be5063cca574afd3f66e2c939054d52fd1d2e98fcdde38a6d0182a25cb7ba",
+    "data/neon_taxonomy_a2/selected_morphospecies.json.gz": "6914771c69539012f5db4284f74ea5c23d0cd9152c59ee13762dc114c4a6f5e7",
+    "data/neon_taxonomy_a2/baseline_labels.npz": "5c19cb49465f2e5c0cb78ec34aa7a55977c2a1cf7381ee0906cda2534005e0ee",
+    "data/neon_taxonomy_a2/selected_history.json.gz": "97c798a5f8fe2909bccfbcfb1af4e6c44048e87057f8a7e3995c8cef2dd341f5",
+    "data/neon_taxonomy_a2/revised_labels.npz": "7123cc2566981004f61f54982946db6f51aaf441818217b0214940a7309d47ba",
+    "data/neon_taxonomy_a2/label_changes.npz": "64fcb7b04a54cd52e85410af65db67c0db43640b879708ac503bebfa566a8a4b"
+  },
+  "A2_F1_not_evaluated": true
+}

@@ -1,4 +1,13 @@
-# Working paper outline — 17 November 2026
+# Working paper outline — 19 November 2026
+
+**Latest A2/A3/A3u evidence:** [current-record and exact-synonym audits](neon_taxonomy_a2_a3_results.md)
+show that observed F1 can rise on fixed cells/predictions solely through reduced
+observability. A3 recovers 123 modeled presences; the A3u uncertainty guard
+preserves those positives but leaves only 33 cells/six sites eligible. The field cohort still
+fails completeness/sample-size admission. This sharpens an empirical
+measurement/decision-utility paper; it is not a new algorithm or rescued E4.
+Next is a [proposed controlled verification-cost study](taxonomic_verification_t2_plan.md)
+with shared concepts, an outside-target option and strong paired-policy controls.
 
 **Latest T1 evidence:** [60 controlled taxonomic-mask settings](taxonomic_resolution_t1_results.md)
 are complete, with zero new neural/GPU fits. They quantify how class-known
@@ -7,7 +16,8 @@ fails and no tested policy ordering reverses. Post-hoc empty-set and positive-
 genus diagnostics sharpen the observation-contract question; they do not supply
 a new successful method or fresh confirmation. The [primary-source review](taxonomic_evaluation_prior_work.md)
 rules out broad novelty claims for active testing or partial identification.
-Next is a field taxonomy/observation-contract audit, not a generic model sweep.
+The field taxonomy/observation-contract audit is now completed as A2/A3/A3u;
+shared-concept verification cost is the next proposed study.
 
 **Earlier E4 evidence:** [the NEON study](confirmation_e4_results.md) is complete
 but fails admission and joint success. Its first conservative pass omits a

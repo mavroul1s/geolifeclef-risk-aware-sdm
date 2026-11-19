@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "at_utc": "2026-11-17T09:58:50.869719+00:00",
+  "alias_links_independently_verified": 553,
+  "independent_confusion_rows": 163,
+  "independent_selector_rankings": 25,
+  "positive_current_record_witnesses": 4284,
+  "existing_A2_positives_preserved": true,
+  "global_uniqueness_before_eligibility_filtering": true,
+  "chronology_and_frozen_inputs_verified": true
+}

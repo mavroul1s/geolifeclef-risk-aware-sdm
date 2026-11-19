@@ -1,0 +1,39 @@
+{
+  "at_utc": "2026-11-17T09:55:59.414381+00:00",
+  "dictionary_added_taxon_links": 553,
+  "dictionary_extension_status": {
+    "higher_rank_not_resolved": 11002,
+    "no_exact_model_alias": 53147,
+    "existing_exact_mapping": 5883,
+    "non_species_terminal_requires_parent_evidence": 23087,
+    "unique_explicit_species_alias": 553,
+    "multiple_model_class_aliases": 26
+  },
+  "selected_record_extension": {
+    "clean_new_alias_records": 736,
+    "inside_fixed_eligible": 556,
+    "outside_fixed_eligible": 180,
+    "qualified_new_alias_records": 31
+  },
+  "reducer_record_counts": {
+    "selected_plant_records": 45730,
+    "uncertain_or_unmapped_records": 23956,
+    "mapped_resolved_records": 21727,
+    "positive_without_taxon_id": 44,
+    "mapped_outside_native_universe": 1983
+  },
+  "cells": 163,
+  "scorable_cells": 34,
+  "scorable_sites": 6,
+  "known_fraction_median": 0.6193693693693694,
+  "newly_known_pairs": 1740,
+  "newly_unknown_pairs": 0,
+  "added_positive_pairs": 123,
+  "removed_positive_pairs": 0,
+  "lexical_parents_applied": 0,
+  "new_HTTP_composition_requests": 0,
+  "new_model_fits": 0,
+  "new_GPU_jobs": 0,
+  "A3_labels_not_yet_scored": true,
+  "existing_exact_mappings_retained": true
+}

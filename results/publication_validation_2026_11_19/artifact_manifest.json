@@ -1,0 +1,66 @@
+{
+  "scope": "completed development audits; no fresh confirmation",
+  "path_base": "repository root; ignored caches are hashes only",
+  "files": {
+    "results/neon_taxonomy_a2/artifact_manifest.json": {
+      "bytes": 25714,
+      "sha256": "7c4ebff1e4c157dec57abb441668578c170bb2d37eec935d36c3e50a3d2fa3a9"
+    },
+    "results/neon_taxonomy_a3/artifact_manifest.json": {
+      "bytes": 23186,
+      "sha256": "a02d918250ebe490063c11e05692c21c073ecb7015a225f904590cc4b74e346e"
+    },
+    "results/neon_taxonomy_a3u/artifact_manifest.json": {
+      "bytes": 24255,
+      "sha256": "9989c30618401270563348faa7991744d44136b8716141d3374e39a612d46649"
+    },
+    "results/publication_validation_2026_11_19/documentation_snapshot/README.md": {
+      "bytes": 10924,
+      "sha256": "47958b0ecd62866688055f92957439fa54b88a01563d8acff040eb621a7334b2"
+    },
+    "results/publication_validation_2026_11_19/documentation_snapshot/docs/neon_taxonomy_a2_a3_results.md": {
+      "bytes": 12493,
+      "sha256": "6a01f5af702fa79042207bbe0410a71f9e22d96632746022aaa766ae3e30e5c5"
+    },
+    "results/publication_validation_2026_11_19/documentation_snapshot/docs/next_experiment_budget.md": {
+      "bytes": 19232,
+      "sha256": "d45975b35a810f17de41871c3c91175260106aa67ea2c7a9de9752c1cffb6dcf"
+    },
+    "results/publication_validation_2026_11_19/documentation_snapshot/docs/paper_claim_evidence_matrix.md": {
+      "bytes": 10819,
+      "sha256": "d22d087a66fff7e7dc683d5737c9454e02388db9c23a5e386dfec26fee476cd0"
+    },
+    "results/publication_validation_2026_11_19/documentation_snapshot/docs/paper_methods_results_draft.md": {
+      "bytes": 17347,
+      "sha256": "3d9efe1a4e47b6db4bd1dc7b16f39b71a20c5e6fff0b6843a2319bde84d7e367"
+    },
+    "results/publication_validation_2026_11_19/documentation_snapshot/docs/paper_outline_working.md": {
+      "bytes": 9885,
+      "sha256": "a9b90e4be194cb1be273a36aa869fe82b35427f92f0b1b542dc43b7bea2dd972"
+    },
+    "results/publication_validation_2026_11_19/documentation_snapshot/docs/taxonomic_verification_t2_plan.md": {
+      "bytes": 4088,
+      "sha256": "e80217f2e77fae7f8215b1349b65bdc9d11eff812f867e58d70e5b9d605ddaaf"
+    },
+    "results/publication_validation_2026_11_19/documentation_snapshot/docs/taxonomy_audits_validation_2026_11_19.md": {
+      "bytes": 2465,
+      "sha256": "420b31d1f590276ae59410cf9d0d295b62dc8aeec6b7379ba38c320ab4ec76cc"
+    },
+    "results/publication_validation_2026_11_19/documentation_snapshot/results/README.md": {
+      "bytes": 11610,
+      "sha256": "8db754ef800ad457f9dd8d1e21c3d4cb5c8f9e3f2d3b3681bee2c258ceb7939d"
+    },
+    "results/publication_validation_2026_11_19/full_tests.xml": {
+      "bytes": 51848,
+      "sha256": "46e62756d49e1298f566ddf7ca973c1d096aee4b55d21ef8a6e565643a8f6426"
+    },
+    "results/publication_validation_2026_11_19/validation.json": {
+      "bytes": 1863,
+      "sha256": "4ff74cf28f9411080ce3c164456e4eb7eac807aa79d132e9c55b5b82450c2d5b"
+    },
+    "scripts/validate_taxonomy_audits.py": {
+      "bytes": 5211,
+      "sha256": "dd62719dcec3d7ad5ba4c3b3a687ab4a1fb3c885a58cad9efb20a7c1e1284ffc"
+    }
+  }
+}

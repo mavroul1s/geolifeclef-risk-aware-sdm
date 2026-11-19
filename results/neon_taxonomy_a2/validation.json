@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "at_utc": "2026-11-17T09:44:29.435070+00:00",
+  "baseline_bit_identical": true,
+  "independent_confusion_rows": 163,
+  "current_positive_witnesses": 4161,
+  "independent_selector_rankings": 20,
+  "selected_scope_and_history_identity_guards": true,
+  "archived_taxon_labels_used_as_replacements": false,
+  "chronology_and_frozen_inputs_verified": true,
+  "historical_files_verified": {
+    "external_replication_e1": 44,
+    "ranking_study_e2": 24,
+    "confirmation_e3": 48,
+    "neon_confirmation_feasibility": 3,
+    "neon_bridge": 665,
+    "confirmation_e4": 249
+  },
+  "additional_frozen_files_verified": {
+    "taxonomic_resolution_t1": 70,
+    "neon_taxonomy_a1": 11
+  }
+}

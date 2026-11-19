@@ -1,5 +1,20 @@
 # Results index
 
+`neon_taxonomy_a2/`, `neon_taxonomy_a3/` and `neon_taxonomy_a3u/` contain the completed selected-record
+history/current-concept audit and exact accepted-species synonym extension.
+A2 preserves/reproduces earlier labels, then reports a conservative corrected
+contract and separate eight-arm post-hoc component controls. A3 recovers 123
+modeled native presence pairs. A3u preserves all positives while conservatively
+propagating alias uncertainty: 199 more pairs are unknown and **33 cells/six
+sites** remain scorable (original A3: 34). Predictions
+and all original primary results remain unchanged. Separate protocols,
+chronology, current-record witnesses, independent scores and figures are
+documented in `docs/neon_taxonomy_a2_a3_results.md`. These are development, not
+new independent confirmation or neural-model experiments.
+`publication_validation_2026_11_19/` preserves the 397-test report, frozen
+documentation snapshot and artifact checks. Verify with
+`python scripts/validate_taxonomy_audits.py` after restoring local study inputs.
+
 `neon_taxonomy_a1/` contains the metadata-only audit of 93,698 dictionary entries
 and 44,721 eligible cell–genus pairs. It does not establish field-positive-genus
 guarantees or change E4 outcomes; the field label contract remains partial.

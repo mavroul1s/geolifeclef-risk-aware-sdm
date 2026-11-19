@@ -1,0 +1,63 @@
+{
+  "status": "selected_record_audit_complete",
+  "at_utc": "2026-11-17T09:41:34.676921+00:00",
+  "baseline_reproduced_bit_for_bit": true,
+  "selected_plots": 301,
+  "cells": 163,
+  "selected_rows": 55380,
+  "morphospecies_keys": 389,
+  "morphospecies_resolution_status": {
+    "dated_resolution": 349,
+    "no_dated_resolution": 40
+  },
+  "history_linked_keys": 6,
+  "history_unique_selected_rows": 6,
+  "history_linkage": {
+    "keys_with_history_rows": 6,
+    "current_rows_with_table_matched_history": 6
+  },
+  "history_keys_restricted_to_metadata": 0,
+  "history_keys_permitting_identity_audit": 6,
+  "past_current_same_ID_pairs": 0,
+  "past_current_different_ID_pairs": 6,
+  "archived_labels_used_as_replacements": 0,
+  "unselected_taxon_values_decoded": false,
+  "current_resolution_decisions": {
+    "original_current_record": 45201,
+    "published_current_resolution": 529,
+    "conflicting_current_named_concepts": 20
+  },
+  "current_mapping_status": {
+    "unmatched_named_concept": 18463,
+    "exact_species": 22236,
+    "higher_rank_or_unknown": 4984,
+    "missing_dictionary_identity": 47
+  },
+  "infraspecific_current_record_status": {
+    "nomenclatural_candidates_require_validation": 1610
+  },
+  "reducer_record_counts": {
+    "selected_plant_records": 45730,
+    "uncertain_or_unmapped_records": 24692,
+    "mapped_resolved_records": 20991,
+    "positive_without_taxon_id": 44,
+    "mapped_outside_native_universe": 1803
+  },
+  "plots_with_multiple_event_IDs": 0,
+  "baseline_scorable_cells": 77,
+  "revised_scorable_cells": 31,
+  "revised_scorable_sites": 6,
+  "baseline_known_fraction_median": 0.7680180180180181,
+  "revised_known_fraction_median": 0.5743243243243243,
+  "newly_known_pairs": 0,
+  "newly_unknown_pairs": 6782,
+  "added_modeled_native_positives": 0,
+  "removed_modeled_native_positives": 0,
+  "lexical_parent_candidates_applied": 0,
+  "field_positive_genus_constraints_applied": 0,
+  "new_model_fits": 0,
+  "new_GPU_jobs": 0,
+  "new_plot_or_bout_outcomes": false,
+  "fresh_confirmation": false,
+  "labels_not_yet_scored_by_A2": true
+}

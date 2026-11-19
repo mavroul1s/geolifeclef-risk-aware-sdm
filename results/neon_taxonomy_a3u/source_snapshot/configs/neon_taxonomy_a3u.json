@@ -1,0 +1,21 @@
+{
+  "study": "A3u_alias_uncertainty_soundness_guard",
+  "date": "2026-11-19",
+  "role": "correctness follow-up preserving original A3 results",
+  "cohort": "same consumed 301 plots / 163 cells; reuse A2 selected caches",
+  "extension": "previously unmatched named taxon requires one exact SAGE species alias in its explicit terminal accepted-species equivalence class",
+  "uniqueness": "all 5771 model classes, before native or 2453-universe filtering; multiple class aliases remain ambiguous",
+  "unchanged": "A2 current-record conflict/rank/quality guards, full-chain uncertainty fallback, E4 prediction sets/calibration/reliability scores and target universe",
+  "limits": "existing exact class-name mappings retained; no merged label ontology, fuzzy matching, lexical rank parents, archived replacements or positive-genus assumptions",
+  "coverage": 0.8,
+  "minimum_known_fraction": 0.8,
+  "bootstrap": {
+    "repetitions": 4000,
+    "confidence": 0.975,
+    "seed": 20261117,
+    "cluster": "site"
+  },
+  "new_model_fits": 0,
+  "new_GPU_jobs": 0,
+  "uncertainty_overlay": "superset of A2 masks plus all explicit same-genus/family model aliases; no higher-rank resolution"
+}
