@@ -1,4 +1,4 @@
-# Methods and results draft — 19 November 2026
+# Methods and results draft — 21 November 2026
 
 Revised after E3/E4, T1 and A2/A3/A3u development. Working title: **Decision Confidence,
 Error Calibration and Ecological Service Across Survey Domains**. The empirical
@@ -9,6 +9,33 @@ Working text for supervisor review. This is not a completed manuscript or final
 abstract. Prospective and development evidence must retain the labels below.
 Primary-source positioning and claim limits are in
 [the evidence matrix](paper_claim_evidence_matrix.md).
+
+## T3: linkage validity and charged verification
+
+T3 preserves each cell's hidden genus/target-label-category multiset and initial
+information while swapping proposed memberships within block/genus at nominal
+0/1/5% error. On the same fixed predictions, 360 trajectories compare unchecked
+propagation, full follower auditing and comparison-focused auditing. A perfect
+binary target-compatibility audit and additional mismatch identification are
+separately charged; prices are normalized sensitivity assumptions, not measured
+annotation time. Other unresolved records continue to mask compatible absences.
+
+At both nonzero error doses, all 40 unchecked trajectories have a contrast
+oracle-exclusion at some checkpoint (80/280 and 82/280 checkpoints). No wrong
+ordering is observed. Both ideal audited procedures retain valid labels/ranges.
+At reference audit price .1, comparison-focused paired acquisition costs mean
+1,379.06 / 1,792.69 versus 1,521.15 / 1,942.44 for the strongest matched shared
+control, giving 9.34% / 7.71% reductions. The declared >=10% criterion fails.
+Against the best saved local reference (mean 4,094.70), conditional reductions
+are 66.3% / 56.2%. These are different comparisons, not a rescued primary.
+
+At 5% error, median break-even audit prices versus local verification are .072
+for auditing all members and .611 for comparison-focused auditing. Scope and
+representative choice change together. Cost advantages reverse at higher prices;
+full-inventory/representation goals differ from fixed-contrast identification.
+This is conditional empirical evidence under complete benchmark inventories,
+correct genera and perfect audits, not a new general algorithm or real-world
+time saving. See [T3 results](linkage_robustness_t3_results.md).
 
 ## T2: verification cost under a shared-concept observation contract
 

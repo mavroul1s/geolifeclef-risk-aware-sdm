@@ -1,5 +1,15 @@
 # Results index
 
+`linkage_robustness_t3/` contains 360 completed CPU trajectories / 2,520 checkpoints
+and 1,440 audit-price evaluations with zero new fits/inference/GPU jobs. The
+reference practical criterion fails. Unchecked memberships invalidate contrast
+ranges under synthetic errors; ideal charged audits preserve validity, while
+sharing advantages depend on audit price and scope. Preserve the perfect-audit
+and recorded-inventory assumptions. The directory includes 417-test evidence,
+108 independent dense checkpoints, 240 primary stopping prefixes, 720 operation
+cost endpoints, source/input locks, original/final PNG/PDF and compact frontiers.
+See `docs/linkage_robustness_t3_results.md` and `docs/thesis_paper_status.md`.
+
 `taxonomic_verification_t2/` contains the completed 100-trajectory / 700-checkpoint
 CPU study with zero new fits/GPU jobs. The frozen 25% criterion fails through
 local-control saturation; predeclared secondary ordering-query costs improve

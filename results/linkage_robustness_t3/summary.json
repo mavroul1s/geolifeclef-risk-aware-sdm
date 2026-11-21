@@ -1,0 +1,114 @@
+{
+  "status": "completed_development",
+  "at_utc": "2026-11-21T13:23:21.867657+00:00",
+  "trajectories": 360,
+  "checkpoints": 2520,
+  "price_evaluations": 1440,
+  "oracle_contrast": -0.004548276355002037,
+  "reference_robustness_criterion_passed": false,
+  "primary_comparisons": [
+    {
+      "error_rate": 0.01,
+      "control": "uniform_support",
+      "relative_mean_cost_reduction": 0.42254529618913234,
+      "better_seeds": 10,
+      "mean_cost_saving": 1009.1100000000002,
+      "mask_interval": [
+        980.0591250000001,
+        1042.5610000000001
+      ],
+      "criterion_passed": true
+    },
+    {
+      "error_rate": 0.01,
+      "control": "incidence_support",
+      "relative_mean_cost_reduction": 0.3215691290487622,
+      "better_seeds": 10,
+      "mean_cost_saving": 653.6600000000001,
+      "mask_interval": [
+        608.3262500000001,
+        697.6002500000001
+      ],
+      "criterion_passed": true
+    },
+    {
+      "error_rate": 0.01,
+      "control": "global_width",
+      "relative_mean_cost_reduction": 0.0934095914275384,
+      "better_seeds": 10,
+      "mean_cost_saving": 142.09000000000003,
+      "mask_interval": [
+        123.54975000000005,
+        162.62062500000008
+      ],
+      "criterion_passed": false
+    },
+    {
+      "error_rate": 0.01,
+      "control": "best_local_including_paired",
+      "relative_mean_cost_reduction": 0.6632085378660221,
+      "better_seeds": 10,
+      "mean_cost_saving": 2715.6400000000003,
+      "mask_interval": [
+        2649.7785000000003,
+        2786.525125
+      ],
+      "criterion_passed": true
+    },
+    {
+      "error_rate": 0.05,
+      "control": "uniform_support",
+      "relative_mean_cost_reduction": 0.36265802983546414,
+      "better_seeds": 10,
+      "mean_cost_saving": 1020.0700000000003,
+      "mask_interval": [
+        982.7395000000001,
+        1059.140875
+      ],
+      "criterion_passed": true
+    },
+    {
+      "error_rate": 0.05,
+      "control": "incidence_support",
+      "relative_mean_cost_reduction": 0.2836575346844831,
+      "better_seeds": 10,
+      "mean_cost_saving": 709.8700000000001,
+      "mask_interval": [
+        669.458875,
+        752.2020000000001
+      ],
+      "criterion_passed": true
+    },
+    {
+      "error_rate": 0.05,
+      "control": "global_width",
+      "relative_mean_cost_reduction": 0.07709375836576676,
+      "better_seeds": 10,
+      "mean_cost_saving": 149.75,
+      "mask_interval": [
+        130.54925,
+        174.38225000000006
+      ],
+      "criterion_passed": false
+    },
+    {
+      "error_rate": 0.05,
+      "control": "best_local_including_paired",
+      "relative_mean_cost_reduction": 0.5621925904217648,
+      "better_seeds": 10,
+      "mean_cost_saving": 2302.01,
+      "mask_interval": [
+        2230.042375,
+        2382.46
+      ],
+      "criterion_passed": true
+    }
+  ],
+  "guarded_contrast_failures": 0,
+  "unchecked_contrast_failures": 162,
+  "elapsed_replay_seconds": 536.0454997979978,
+  "new_model_fits": 0,
+  "new_GPU_jobs": 0,
+  "fresh_confirmation": false,
+  "perfect_audit_oracle_assumed": true
+}

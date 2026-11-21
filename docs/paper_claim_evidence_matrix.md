@@ -1,8 +1,18 @@
-# Paper claim and prior-work matrix — 19 November 2026
+# Paper claim and prior-work matrix — 21 November 2026
 
 Working title: **Decision Confidence and Ecological Service under Survey Source
 Shift**. This matrix distinguishes empirical evidence from novelty. It is not an
 exhaustive literature review or a claim that a venue will accept the paper.
+
+**T3 update:** [charged linkage verification](linkage_robustness_t3_results.md)
+runs 360 trajectories with invariant inventories. Unchecked propagation creates
+invalid contrast ranges under both nonzero membership-error doses; no tested
+ordering reverses. Ideal audits preserve validity, with cost frontiers that
+depend on scope and price. The reference criterion fails: 9.34% / 7.71% versus
+the strongest matched shared control, below 10%. Conditional savings against
+local verification remain at low prices. Perfect audit/category assumptions,
+fixed cohort/model and synthetic costs prevent a field-time or general-method
+claim. See [paper readiness](thesis_paper_status.md).
 
 **T2 update:** [shared-concept verification costs](taxonomic_verification_t2_results.md)
 are evaluated in 100 fixed CPU trajectories. The primary criterion fails through
@@ -79,6 +89,7 @@ not be sold as useful confidence skill or general transfer dominance. See
 | Entropy alignment | Selective prediction on multi-label decisions is prior work | GLC and E1 predicted-set entropy underperform matched random; operational result replicated across fixed decoders/settings | Only this entropy definition and these settings. Not all entropy or uncertainty methods |
 | Remaining selection headroom | Label-oracle ceilings are standard diagnostics | Post-hoc E2 country/area oracle gains .0255–.0326 F1 | Nondeployable, no rare constraint; cannot call it achieved accuracy or proof that a real learner will close the gap |
 | Metadata/provenance quality | SAGE upstream plot/area pipeline | Area inconsistencies excluded before E1 labels; native masks and source exclusions checked | Audit and reproducibility contribution; differences do not establish upstream error or full independence |
+| Link validity versus verification price/scope | Active vetting, paired comparison and [linkage-quality analysis](https://discovery.ucl.ac.uk/id/eprint/10036697/) | T3: 360 trajectories; unchecked ranges exclude truth; ideal paid audits restore validity; cost/scope frontiers measured; 10% reference acquisition target fails | Synthetic target-label compatibility oracle, not a field procedure. No observed wrong ordering, universal sharing benefit or new theorem. Stronger baselines/replication/field grounding remain |
 | Taxon-query cost and paired utility identification | [Active vetting](https://proceedings.mlr.press/v80/nguyen18d.html), [active testing](https://proceedings.mlr.press/v139/kossen21a.html), [paired variance minimization](https://link.springer.com/article/10.1007/s10994-024-06603-1) | T2: 100 trajectories; primary fails; secondary median query costs fall 27.7% / 39.5% against strongest controls under two cost units; representation tradeoffs | Conditional synthetic query/observation model. No VMA/LURE superiority or new general theory. Audit linkage/error/cost assumptions before promotion |
 | Apparent quality versus observation contract | Standard F1 algebra, taxonomic curation and partial-identification evaluation | A2: fixed cells/predictions/confirmed positives, +.026839 known-F1 change through uncertainty masks; A3 adds 123 supported presence labels via exact aliases | Quantified implementation/measurement audit, not new theory or predictive improvement. Distinct contracts change the observed-label estimand |
 | Taxonomic observability and fixed policy comparisons | Taxonstand/OCCUR; missing-label learning; [active testing](https://proceedings.mlr.press/v139/kossen21a.html); [performance partial identification](https://papers.neurips.cc/paper_files/paper/2024/hash/f4c6bec746b0aeca8c2cd15096f1ad1f-Abstract-Conference.html) | T1: 60 settings; class-known admission misses substantial positive loss; primary criterion fails; no ordering reversals; post-hoc genus facts tighten ranges and recover some signs | Application-specific controlled development. Standard bounds and active evaluation are established; no empirical NEON mechanism or field-positive-genus contract established |

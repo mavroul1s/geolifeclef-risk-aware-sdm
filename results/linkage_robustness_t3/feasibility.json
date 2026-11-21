@@ -1,0 +1,126 @@
+{
+  "role": "construction feasibility only; no F1/policy outcomes inspected",
+  "seconds": 1.1216789719983353,
+  "cases": [
+    {
+      "seed": 202611190,
+      "records": 46100,
+      "requested_rate": 0.05,
+      "requested_swaps": 1152,
+      "realized_swaps": 1152,
+      "realized_rate": 0.04997830802603037,
+      "maximum_feasible_swaps_found": 1152,
+      "attempts": 5964,
+      "same_block_genus_category_pairs": 599,
+      "record_permutation_sha256": "305fdc330748b2ad9b949eabb6da254ca69ba2b2ad16893e433e95a2ef819b38"
+    },
+    {
+      "seed": 202611191,
+      "records": 45672,
+      "requested_rate": 0.05,
+      "requested_swaps": 1141,
+      "realized_swaps": 1141,
+      "realized_rate": 0.049964967595025396,
+      "maximum_feasible_swaps_found": 1141,
+      "attempts": 4706,
+      "same_block_genus_category_pairs": 678,
+      "record_permutation_sha256": "b3d31ddf52822e34cdea47a50c3f36c06346887e24c6fd4172f4642d2785dd5c"
+    },
+    {
+      "seed": 202611192,
+      "records": 45069,
+      "requested_rate": 0.05,
+      "requested_swaps": 1126,
+      "realized_swaps": 1126,
+      "realized_rate": 0.049967827109543145,
+      "maximum_feasible_swaps_found": 1126,
+      "attempts": 6533,
+      "same_block_genus_category_pairs": 668,
+      "record_permutation_sha256": "d63c9e26924abd9cb6878924fa66b378b6e9861ecd456a6347dd0807564a7562"
+    },
+    {
+      "seed": 202611193,
+      "records": 44876,
+      "requested_rate": 0.05,
+      "requested_swaps": 1121,
+      "realized_swaps": 1121,
+      "realized_rate": 0.04995988947321508,
+      "maximum_feasible_swaps_found": 1121,
+      "attempts": 5505,
+      "same_block_genus_category_pairs": 554,
+      "record_permutation_sha256": "8ece3fd66d786b7097bb7e1ea23dbf22162f6576a0394724209812c0d33f8558"
+    },
+    {
+      "seed": 202611194,
+      "records": 46399,
+      "requested_rate": 0.05,
+      "requested_swaps": 1159,
+      "realized_swaps": 1159,
+      "realized_rate": 0.04995797323218173,
+      "maximum_feasible_swaps_found": 1159,
+      "attempts": 6211,
+      "same_block_genus_category_pairs": 630,
+      "record_permutation_sha256": "50bc4dafb6d198742ac785098760f9e0f2f5375257064ff6a8af146988662241"
+    },
+    {
+      "seed": 202611195,
+      "records": 45025,
+      "requested_rate": 0.05,
+      "requested_swaps": 1125,
+      "realized_swaps": 1125,
+      "realized_rate": 0.04997223764575236,
+      "maximum_feasible_swaps_found": 1125,
+      "attempts": 4828,
+      "same_block_genus_category_pairs": 711,
+      "record_permutation_sha256": "0b77e2487a735275d0fe7772e1071a10e5e883177f1b8546f0774b36f393de8a"
+    },
+    {
+      "seed": 202611196,
+      "records": 46680,
+      "requested_rate": 0.05,
+      "requested_swaps": 1167,
+      "realized_swaps": 1167,
+      "realized_rate": 0.05,
+      "maximum_feasible_swaps_found": 1167,
+      "attempts": 5372,
+      "same_block_genus_category_pairs": 663,
+      "record_permutation_sha256": "2887fcd2dd603b6facb35da89b7c4b389a0cb739d5aee2f356c1fb842f246dd3"
+    },
+    {
+      "seed": 202611197,
+      "records": 46379,
+      "requested_rate": 0.05,
+      "requested_swaps": 1159,
+      "realized_swaps": 1159,
+      "realized_rate": 0.04997951659156084,
+      "maximum_feasible_swaps_found": 1159,
+      "attempts": 6151,
+      "same_block_genus_category_pairs": 547,
+      "record_permutation_sha256": "70f327bf62181cf51f27e91920501abcff2521b8e0e2da987943d94b47d91ac6"
+    },
+    {
+      "seed": 202611198,
+      "records": 45913,
+      "requested_rate": 0.05,
+      "requested_swaps": 1147,
+      "realized_swaps": 1147,
+      "realized_rate": 0.04996406246596825,
+      "maximum_feasible_swaps_found": 1147,
+      "attempts": 6192,
+      "same_block_genus_category_pairs": 640,
+      "record_permutation_sha256": "e1059b242ec4816067324cb200788b5dd14368a4ec68e41e7a9fdc1840d087e7"
+    },
+    {
+      "seed": 202611199,
+      "records": 47555,
+      "requested_rate": 0.05,
+      "requested_swaps": 1188,
+      "realized_swaps": 1188,
+      "realized_rate": 0.04996320050467879,
+      "maximum_feasible_swaps_found": 1188,
+      "attempts": 5642,
+      "same_block_genus_category_pairs": 600,
+      "record_permutation_sha256": "337d578e5ee516b331f3efeab533d9522f18324997dcae01fcc35791d6cf2c08"
+    }
+  ]
+}

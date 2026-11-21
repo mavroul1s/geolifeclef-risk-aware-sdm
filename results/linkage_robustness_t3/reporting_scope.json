@@ -1,0 +1,8 @@
+{
+  "all_predeclared_prices_reported": true,
+  "unchecked_costs_excluded_from_valid_superiority": true,
+  "reference_price_is_not_measured_field_cost": true,
+  "prior_T2_primary_and_secondary_roles_unchanged": true,
+  "cost_frontier_assumes_fixed_batch_orders": true,
+  "new_queries_or_fits": 0
+}

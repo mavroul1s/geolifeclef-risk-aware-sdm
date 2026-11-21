@@ -1,4 +1,13 @@
-# Working paper outline — 19 November 2026
+# Working paper outline — 21 November 2026
+
+**Latest T3 evidence:** [linkage/cost robustness](linkage_robustness_t3_results.md)
+completes 360 trajectories. Unchecked assumptions can invalidate ranges without
+reversing the observed ordering. Perfect charged verification restores validity;
+shared cost advantages depend on scope/price. The 10% reference criterion fails
+(9.34% / 7.71% against the strongest matched shared control). This supports a
+precise measurement/cost story while narrowing the acquisition-method claim.
+[Overall thesis and paper status](thesis_paper_status.md) records achievements,
+remaining three evidence packages and the limits of a publication assessment.
 
 **Current paper direction:** observation contracts and verification costs in
 selective species-distribution evaluation. T2 adds 100 query trajectories under

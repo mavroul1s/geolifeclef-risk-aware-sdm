@@ -1,5 +1,22 @@
 # Proposed next studies and experiment budget
 
+**Latest T3 update, 21 November:** [linkage/cost robustness](linkage_robustness_t3_results.md)
+completes 360 CPU trajectories / 2,520 checkpoints in 536.05 seconds, with zero
+new fits/inference/GPU jobs. Ideal audited procedures preserve validity under
+0/1/5% membership stress; every unchecked nonzero-error trajectory excludes the
+true contrast at some checkpoint, while no wrong ordering is observed. Costs
+depend on price and scope. The reference criterion fails: paired acquisition
+saves 9.34% / 7.71% against the strongest matched shared-query control, below 10%.
+At the assumed audit price .1, audited comparison-focused sharing remains
+66.3% / 56.2% cheaper on average than the best local reference, but that advantage
+reverses at higher prices. These are conditional simulations, not field times.
+
+**Remaining proposed packages:** stronger matched adaptive/cost-aware baselines
+and ablations; model/source replication; separately uninspected external
+confirmation and a real record/cost audit. Review the method case after the
+stronger-baseline package, before broader expansion. No exact future replay or
+neural-fit allocation is admitted yet. See [the overall status](thesis_paper_status.md).
+
 **Latest T2 update, 19 November:** [the verification-cost study](taxonomic_verification_t2_results.md)
 completes 100 CPU trajectories / 700 checkpoints in 260.14 seconds, zero fits or
 GPU jobs. Ten masks and identical censored records compare shared-concept and
@@ -9,7 +26,7 @@ fall 27.7% / 39.5% in median queries versus the strongest tested controls; these
 conditional findings do not replace the primary. Geographic query coverage and
 inventory/rare-label completeness can worsen under comparison-focused queries.
 
-**Next admitted direction, not yet run or numerically budgeted:** one separate
+**Earlier next direction, now completed as T3:** one separate
 robustness study of reliable-linkage assumptions, charged linkage verification,
 controlled linkage failures and stronger matched acquisition controls. Freeze
 its synthetic error/cost mechanisms and budget after semantic/feasibility tests,

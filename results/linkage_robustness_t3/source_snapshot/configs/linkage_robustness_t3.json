@@ -1,0 +1,23 @@
+{
+  "study": "T3_linkage_and_verification_cost_robustness",
+  "date": "2026-11-21",
+  "mask_seeds": [202611190, 202611191, 202611192, 202611193, 202611194, 202611195, 202611196, 202611197, 202611198, 202611199],
+  "membership_error_rates": [0.0, 0.01, 0.05],
+  "corruption_seed_offset": 2100,
+  "audit_prices": [0.0, 0.1, 0.5, 1.0],
+  "reference_audit_price": 0.1,
+  "modes": ["unchecked_all", "audit_all", "audit_support"],
+  "policies": ["uniform_support", "incidence_support", "global_width", "paired_width"],
+  "budget_fractions": [0.0, 0.01, 0.05, 0.1, 0.25, 0.5, 1.0],
+  "width_tolerance": 0.002,
+  "practical_margin": 0.001,
+  "minimum_relative_cost_reduction": 0.1,
+  "minimum_better_seeds": 8,
+  "bootstrap": {"repetitions": 4000, "confidence": 0.975, "seed": 20261121},
+  "maximum_replay_seconds": 3600,
+  "independent_validation_seed": 202611190,
+  "independent_validation_fractions": [0.0, 0.25, 1.0],
+  "new_model_fits": 0,
+  "new_GPU_jobs": 0,
+  "fresh_confirmation": false
+}
