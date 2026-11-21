@@ -1,0 +1,21 @@
+{
+  "study": "T4_scope_matched_adaptive_baseline_audit",
+  "date": "2026-11-21",
+  "mask_seeds": [202611190, 202611191, 202611192, 202611193, 202611194, 202611195, 202611196, 202611197, 202611198, 202611199],
+  "error_rates": [0.0, 0.01, 0.05],
+  "audit_prices": [0.1, 0.5],
+  "policies": ["static_scope_width", "static_scope_width_per_cost", "adaptive_scope_width", "adaptive_scope_width_per_cost_fixed", "adaptive_scope_width_per_cost", "adaptive_incidence_per_cost"],
+  "batch_size": 32,
+  "mismatch_prior": {"alpha": 1.0, "beta": 19.0},
+  "width_tolerance": 0.002,
+  "practical_margin": 0.001,
+  "minimum_relative_cost_reduction": 0.1,
+  "minimum_better_seeds": 8,
+  "bootstrap": {"repetitions": 4000, "confidence": 0.975, "seed": 202611214},
+  "maximum_replay_seconds": 3600,
+  "independent_endpoint_seeds": [202611190, 202611191],
+  "independent_priority_seed": 202611190,
+  "new_model_fits": 0,
+  "new_GPU_jobs": 0,
+  "fresh_confirmation": false
+}

@@ -1,14 +1,53 @@
 # Methods and results draft — 21 November 2026
 
-Revised after E3/E4, T1 and A2/A3/A3u development. Working title: **Decision Confidence,
-Error Calibration and Ecological Service Across Survey Domains**. The empirical
-argument concerns distinct objectives and transport, not a globally superior
-scalar or learned method. Post-primary mean controls are labeled explicitly.
+Revised after T4. Working title: **Observation Contracts and Verification Costs
+in Ecological Model Evaluation**. The central empirical argument concerns
+observability, valid comparisons and charged verification. Reliability, service
+and transport studies supply supporting context. No new static acquisition
+score or uniformly superior adaptive control is established. Post-primary
+diagnostics and consumed-data development are labeled explicitly.
 
 Working text for supervisor review. This is not a completed manuscript or final
 abstract. Prospective and development evidence must retain the labels below.
 Primary-source positioning and claim limits are in
 [the evidence matrix](paper_claim_evidence_matrix.md).
+
+## T4: matched scope, generic adaptation and cost forecasts
+
+Both fixed selectors accept 4,201 cells. Absolute nonzero contrast weights equal
+1/4201, so a paired width sum is ordinary width over the same actual verification
+scope multiplied by a positive constant. The identity holds under the same cost
+denominator and revealed public state. This elementary observation closes the
+standalone static-score novelty claim for this setting. Maximum unscaled score
+discrepancy across 30 catalogs is 3.553e-15; canonical unscaled arithmetic avoids
+claiming rescaled floating-point tie differences as gains. Sixty static endpoint
+costs exactly match the frozen repriced T3 paired endpoints.
+
+Six generic controls hold the initial verification scope, representative choice,
+perfect target-label audits and actual resolution/audit charges fixed. They
+isolate static versus batch-adaptive widths, fixed/learned mismatch forecasts,
+expected-cost division and incidence credit. Three synthetic error doses, two
+audit prices and ten saved masks produce 360 priced paths; 60 reuse unpriced
+orders, so 300 trajectories are actually executed. No fits/inference/GPU jobs
+are added. Main replay runtime is 365.26 CPU seconds.
+
+Against the per-mask oracle minimum of the two static controls, learned adaptive
+width/cost reduces mean first-practical-ordering costs by 7.68%, 9.03%, 4.25%
+and 8.26% at (1%,.1), (1%,.5), (5%,.1), (5%,.5). All ten masks favor adaptation
+in every stratum, but all four miss the frozen 10% reference target. Width
+updating helps; simpler adaptive width is cheapest at .1 audit price, while
+fixed-forecast cost normalization is competitive at .5. Learned-minus-fixed
+mean costs are −4.18, +1.30, +36.06 and 0.00 units, without consistent incremental
+benefit. Full arm/secondary tables are retained, rather than selecting the best
+post-hoc winner as the original candidate.
+
+No oracle-containment failure or incorrect endpoint label is observed under the
+ideal audit contract. Independent validation reconstructs 288 dense stopping
+prefixes, 108 batch choices and 720 operation-cost endpoints; 426 tests pass.
+These results condition on consumed data, complete recorded inventories,
+correct genus/category semantics, perfect audits and assumed price ratios.
+Generic heuristics are not new algorithms or VMA/LURE reproductions. No field
+time saving or external confirmation is established. See [T4 results](adaptive_baselines_t4_results.md).
 
 ## T3: linkage validity and charged verification
 
@@ -313,10 +352,12 @@ a successful new algorithm, biological causality or guaranteed risk control.
 A new primary confirmation requires an audited source/domain and fixed claim.
 
 E3 supplies a failed locally locked domain confirmation, and those outcomes are
-now consumed. It does not provide a separate independent data release. The next
-candidate field source is NEON: official metadata for 47 sites and released
-neural input contracts are audited, but plot completeness, taxonomy, predictor
-extraction and reference inference remain pending. No NEON outcomes or new model
-performance are claimed. A neutral inference study may use the authorized GPU
-after these input/reference checks; scientific outcomes need not be favorable
-to admit that study. Novelty and a successful new algorithm remain unestablished.
+now consumed. It does not provide a separate independent data release. NEON
+reference inference and field outcomes are now evaluated as E4/A2/A3/A3u above;
+final admission is 33 cells/six sites, below the original 100/12 rule. It cannot
+serve as rescued confirmation. The two proposed next packages are replication
+of measurement/cost findings across supported prediction settings/sources, and
+separately uninspected outcomes with a record/cost audit. Their availability and
+exact budgets are unresolved. Additional inference may use existing bounded GPU
+authorization after reference checks; the current simulations need no GPU.
+Novelty and a successful new algorithm remain unestablished.

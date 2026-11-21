@@ -1,0 +1,8 @@
+{
+  "static_paired_novelty_branch_closed_by_equal_weight_identity": true,
+  "generic_adaptive_controls_not_claimed_as_new_methods": true,
+  "all_control_arms_reported": true,
+  "no_VMA_or_LURE_reproduction_claim": true,
+  "new_queries_or_fits": 0,
+  "prices_and_errors_are_sensitivity_scenarios": true
+}

@@ -1,5 +1,17 @@
 # Results index
 
+`adaptive_baselines_t4/` contains 300 executed CPU query trajectories / 360 priced
+paths (60 reprices), six matched generic controls and 14,835 recorded curve
+points. Thirty cases verify that the equal-quota static paired score is ordinary
+width on the same scope up to a constant. The learned adaptive-cost control
+reduces mean cost 4.25–9.03% against the best static reference, missing the frozen
+10% criterion in all four nonzero-error/price strata. Simpler adaptive controls
+are competitive; no new algorithm or field-time saving is established. The
+directory includes 426-test evidence, 288 independent dense prefixes, 108 batch
+choices, 720 cost endpoints, source/input locks, documentation snapshots,
+compact all-control tables and visually inspected PNG/PDF. Zero fits, inference
+or GPU jobs. See `docs/adaptive_baselines_t4_results.md`.
+
 `linkage_robustness_t3/` contains 360 completed CPU trajectories / 2,520 checkpoints
 and 1,440 audit-price evaluations with zero new fits/inference/GPU jobs. The
 reference practical criterion fails. Unchecked memberships invalidate contrast

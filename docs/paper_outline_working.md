@@ -1,153 +1,104 @@
 # Working paper outline — 21 November 2026
 
-**Latest T3 evidence:** [linkage/cost robustness](linkage_robustness_t3_results.md)
-completes 360 trajectories. Unchecked assumptions can invalidate ranges without
-reversing the observed ordering. Perfect charged verification restores validity;
-shared cost advantages depend on scope/price. The 10% reference criterion fails
-(9.34% / 7.71% against the strongest matched shared control). This supports a
-precise measurement/cost story while narrowing the acquisition-method claim.
-[Overall thesis and paper status](thesis_paper_status.md) records achievements,
-remaining three evidence packages and the limits of a publication assessment.
+Working title: **Observation Contracts and Verification Costs in Ecological
+Model Evaluation**. Planning artifact for supervisor review, not a completed
+manuscript or a claim of publication readiness.
 
-**Current paper direction:** observation contracts and verification costs in
-selective species-distribution evaluation. T2 adds 100 query trajectories under
-shared/local cost units. Its primary fails through local-control saturation;
-predeclared secondary ordering costs fall 27.7% / 39.5% versus the strongest
-controls, conditional on the synthetic contract. A focused comparison can reduce
-geographic query coverage and inventory service. These measured tradeoffs can
-anchor an empirical paper; successful general-method novelty and field cost
-savings remain unestablished. Next is linkage/cost robustness, not another
-benchmark/GPU sweep. See [T2](taxonomic_verification_t2_results.md).
+## Research question and contribution candidate
 
-**Latest A2/A3/A3u evidence:** [current-record and exact-synonym audits](neon_taxonomy_a2_a3_results.md)
-show that observed F1 can rise on fixed cells/predictions solely through reduced
-observability. A3 recovers 123 modeled presences; the A3u uncertainty guard
-preserves those positives but leaves only 33 cells/six sites eligible. The field cohort still
-fails completeness/sample-size admission. This sharpens an empirical
-measurement/decision-utility paper; it is not a new algorithm or rescued E4.
-The [controlled verification-cost study](taxonomic_verification_t2_plan.md)
-is now completed as T2, including outside-target records and strong controls.
+How do known-label definitions, taxonomic uncertainty, shared-record linkage
+and the information/cost of verification change apparent predictive quality
+and the ability to compare fixed ecological decision policies?
 
-**Latest T1 evidence:** [60 controlled taxonomic-mask settings](taxonomic_resolution_t1_results.md)
-are complete, with zero new neural/GPU fits. They quantify how class-known
-admission can miss positive-record loss, but the declared spatial-bias criterion
-fails and no tested policy ordering reverses. Post-hoc empty-set and positive-
-genus diagnostics sharpen the observation-contract question; they do not supply
-a new successful method or fresh confirmation. The [primary-source review](taxonomic_evaluation_prior_work.md)
-rules out broad novelty claims for active testing or partial identification.
-The field taxonomy/observation-contract audit is now completed as A2/A3/A3u;
-shared-concept verification cost is the next proposed study.
+The contribution candidate is a reproducible empirical evaluation with explicit
+observation contracts, fair verification costs and documented failure modes.
+[T4](adaptive_baselines_t4_results.md) closes the standalone static-score novelty
+branch: equal-quota paired width is ordinary width restricted to the same scope
+up to a constant. Generic adaptive controls reduce costs but miss the frozen
+10% gate. We should not invent an algorithm contribution around a redundant
+score or describe simple adaptive/cost heuristics as new methods.
 
-**Earlier E4 evidence:** [the NEON study](confirmation_e4_results.md) is complete
-but fails admission and joint success. Its first conservative pass omits a
-documented morphospecies join; the separately labeled correction improves label
-coverage but remains below the required cells/sites. Do not sell attrition as
-intrinsic dataset failure. A controlled taxonomic-resolution/paired-policy audit
-is the next proposed study, with zero new backbone fits and novelty unestablished.
+The thesis contains substantial competition/reliability engineering. A focused
+paper should use that foundation without trying to make every archived study a
+main contribution. [Overall status](thesis_paper_status.md), [claim matrix](paper_claim_evidence_matrix.md)
+and [methods/results draft](paper_methods_results_draft.md) retain the measured
+scope and failed hypotheses.
 
-**Latest implementation/provenance update:** [NEON bridge checks](neon_bridge_status.md)
-verify the MLP on CPU/T4 and leave the ResNet excluded after failed reproduction.
-Candidate plots overlap original PO training support, so a fresh source test
-would concern reliability-calibration transport, not unseen backbone-training
-locations. No NEON ecological result or new scientific contribution is established.
+## Main evidence and claim limits
 
-**Latest evidence, E3:** [the locked larger-plot confirmation](confirmation_e3_results.md)
-fails joint superiority and reverses E2's magnitude-MSE point ordering. A post-hoc
-training-mean reference is better than scalar SDC on E2. Revise the manuscript
-around distinct evaluation objectives and domain-dependent transport; do not
-promote scalar confidence calibration as a generally successful method. The
-methods/results draft and matrix include this falsification. NEON metadata and
-input contracts are audited; prediction compatibility remains pending.
-
-**E2 follow-up completed:** [ranking/source results](ranking_study_e2_results.md)
-reject the tested ranking family in nested calibration utility validation.
-Monotone-affine SDC provides a stronger magnitude-calibration baseline: source-
-study MSE .017511 versus HGB .024551, while preserving SDC's better decisions.
-This narrows the earlier raw-SDC MSE interpretation. These are development
-findings; no successful new algorithm or fresh E2 assessment is claimed.
-[Claim/evidence matrix](paper_claim_evidence_matrix.md) and
-[methods/results draft](paper_methods_results_draft.md) are prepared for review;
-the complete manuscript and new primary confirmation remain pending.
-E2's scientific promotion criteria fail, so its proposed GPU replay is not run.
-
-Planning artifact, not a finished manuscript or a publication claim.
-Current measured outcomes are in [R1 results](reliability_study_r1_results.md) and
-the D1–D3 follow-up, plus [completed locked E1](external_reliability_e1_results.md).
-Historical benchmark gains remain supporting context. E1 tests new reliability
-roles on a public benchmark; pretrained PO models can include evaluation cells.
-
-**New evidence:** the proposed rare-count constraint failed its practical
-external improvement target. Do not present it as a successful new algorithm.
-The tested learned selector loses F1 to SDC across four frozen model settings;
-predicted-set entropy loses to random across settings/decoders. An explanatory
-spatial-CV diagnostic finds weak ranking despite strong in-sample error fit, and
-assessment error MSE improvements do not yield better quota-constrained F1.
-The defensible candidate is a specific empirical evaluation contribution, with
-negative results included. Novelty must be assessed against SDC and SAGE.
-
-**Candidate title:** *Decision-Aligned Reliability for Plant Community Prediction
-under Geographic and Survey Shift*.
-
-**Central question:** does a model identify reliable species-set predictions
-beyond favorable survey conditions, while preserving service to geographic groups
-and rare taxa?
-
-## Intended claims and present status
-
-| Candidate claim | Current evidence | What must be earned |
+| Evidence | Potential paper role | Boundary |
 |---|---|---|
-| Model confidence contains information beyond metadata/distance at equal geographic/area coverage | R1: +0.014741 F1, both development folds positive | Comparison to stronger confidence controls; multiple models and independent data |
-| Unconstrained selective gains can substantially reflect cohort composition | R1 exact descriptive decomposition; earlier excluded-country example | Replication under other geographic units/survey strata; no causal interpretation of a reweighting identity |
-| Generic uncertainty scores can be misaligned with the species-set decision | D1 completed: entropy loses to random under three decoders; lean-versus-simple confidence gain shrinks from 0.004585 to 0.000885 with decision alignment, interval spans zero | Cross-model/domain replication and controls for probability calibration; numerical sensitivity is disclosed; no universal entropy-failure claim |
-| A proposed regional/ecological method improves reliability without losing service | Not established; R1 safeguard fails, D3 negative, E1 rare constraint fails primary improvement | Abandon success claims for these prototypes; a new objective requires calibration-only practical gain and new confirmation |
-| Reliability selection benefits conservation or rare taxa | E1 service metric is explicit; mean gain only +0.536 points, 97.5% interval [-0.357,+1.388], versus a +3-point target | Report failure; occurrence service and rare predictive recall are different; neither establishes conservation causality |
+| T1: 60 controlled mask settings | High class-known rates can coexist with substantial positive-record loss; scoring/constraint diagnostics | Spatial primary fails; no policy point reversals; empty-set/genus diagnostics are post-hoc and synthetic |
+| A1/A2/A3/A3u | Native/current-record/taxonomic contract audit; +.026839 apparent known-F1 from masks alone; 123 supported presences recovered | No prediction gain, biological discovery or rescued E4; final field admission 33 cells/six sites fails |
+| T2: 100 trajectories | Shared versus local query units and comparison-versus-inventory tradeoffs | Primary fails through saturation; secondary 27.7%/39.5% median-query reductions are conditional on the tested controls |
+| T3: 360 trajectories | Unchecked linkage can invalidate ranges; charged audits change cost frontier | No observed wrong ordering; perfect audits and assumed costs; 10% reference criterion fails |
+| T4: 300 executed / 360 priced paths | Scope-equivalence diagnosis; six generic controls and dynamic-width/cost ablations | Static-score novelty closed; learned-cost 4.25–9.03% gains miss 10%; no consistent forecast-learning benefit or new-method claim |
+| Model/source replication | Test which measurement/cost effects transport | Proposed; no results yet |
+| Uninspected external record/cost audit | Ground the query contract and test a frozen narrow claim | Proposed; admission, data access and sample/cost adequacy unresolved |
 
-The paper may become a replicated empirical study rather than a new-method paper.
-Do not invent an algorithm contribution to fit a preferred narrative. SAGE and
-existing selective prediction/F-measure literature must be treated as substantive
-prior work. The contribution needs a specific result that survives strong controls.
+Preserve the labels on every result. A local protocol freeze on consumed data
+improves chronology and reproducibility; it does not create fresh confirmation.
+Identification ranges are not confidence intervals. Recorded inventories are
+not perfect ecological occupancy truth. Tests and GPU reproduction establish
+implementation checks, not scientific novelty.
 
-## Structure to develop
+## Manuscript structure
 
-1. **Introduction:** why site-level community decisions and abstention matter;
-   explain geographic/survey imbalance and the distinction between predictive
-   confidence, species-set utility and service coverage. State the narrow question
-   and bounded claims. No promise of beating the historical competition winner.
-2. **Related work:** multimodal SDMs/GeoPlant; geographic applicability and spatial
-   validation; species-level sampling-aware SAGE evaluation; F-measure decisions;
-   selective/fair prediction and risk-control assumptions. Explain the distinction
-   between site-level selection and species-level performance stratification.
-3. **Data and provenance:** GeoLifeCLEF inputs, observed surveys, anonymity,
-   training/calibration/assessment roles, prior label consumption, and external
-   source/cohort overlap audit. Label development evidence and independent
-   confirmation separately throughout the paper.
-4. **Evaluation design:** freeze predictors and decision rules; equal geographic
-   and plot-area budgets; metadata/distance and strong confidence baselines;
-   decomposition of composition/within-stratum gain; regional and rare-occurrence
-   service; explicit hypothetical referral-cost assumptions.
-5. **Results:** controlled model-signal contrast, stronger-baseline comparisons,
-   decoder diagnosis, individual versus ensemble utility, negative regional
-   extensions, then replication. Keep exploratory findings separate from a later
-   locked confirmation. Include all prespecified primary outcomes, including failures.
-6. **Discussion:** practical implications and limits; conditional intervals versus
-   adaptive reuse; sparse-country uncertainty; observed prevalence versus threatened
-   status; lack of taxon identities in GeoPlant; spatial/temporal support; no
-   guarantee that abstention improves conservation.
-7. **Reproducibility:** source/notebook digests, fixed roles, manifests, compute
-   history and actual versus planned execution. Keep credentials and protected
-   identities out of artifacts. Preserve failed candidates and selection counts.
+1. **Introduction:** describe the practical model-comparison problem when surveys
+   differ in label resolution and a verification can resolve overlapping records.
+   State the narrow empirical question. Do not promise a new acquisition method,
+   real annotation savings or a GeoLifeCLEF benchmark victory.
+2. **Related work:** taxonomic/record linkage and uncertainty; missing-label and
+   partial-identification evaluation; active vetting/testing and paired model
+   selection; sampling-aware ecological evaluation. Explain what this audit
+   measures beyond established concepts. Review novelty before choosing a venue.
+3. **Data and provenance:** fixed predictors/decoders/acceptance sets; native and
+   target species universes; current-record/history/alias semantics; spatial
+   support and original training overlap; prior outcome consumption and study
+   roles. Explain NEON's failed admission rather than hiding it.
+4. **Observation and verification contracts:** distinguish known classes from
+   recorded positives, valid completions from observed-label scores, and group
+   membership assumptions from validated links. Define atomic query scope,
+   representative, perfect-audit assumption, mismatch fallback and actual cost.
+5. **Evaluation design:** frozen primary/secondary criteria; static, adaptive,
+   cost and incidence controls with equal information/scope; practical contrast
+   margins; independent replay checks; conditional mask variation. Include the
+   equal-weight identity as a baseline audit, not a new theorem.
+6. **Results:** observation-mask artifacts and supported-label recovery, then
+   linkage validity/cost frontier and matched adaptive ablations. Report every
+   failed primary. Add model/source replication and eligible fresh validation
+   only when actually completed. Avoid combining replay counts as independent
+   sample size or selecting a post-hoc strongest arm as the original proposal.
+7. **Discussion:** validity versus efficiency, comparison versus broad inventory
+   service, unsupported genus/completeness assumptions, real audit errors/costs,
+   spatial/model uncertainty and transport. Explain what narrower conclusions
+   survive if field admission or replication fails.
+8. **Reproducibility:** public code/protocols/compact outputs, immutable history,
+   source/input locks, documentation snapshots and actual compute. Protected
+   arrays, credentials and local agent notes remain excluded.
 
-## Proposed main figures and tables
+## Main displays and supplementary material
 
-- Data/domain/survey coverage and a clear role/provenance diagram.
-- Full-coverage F1 versus count MAE for the same predictor under different decoders.
-- Risk/coverage under unconstrained and matched geographic/survey retention, with
-  composition decomposition and strong confidence baselines.
-- Regional utility and rare-occurrence coverage alongside retained-survey F1.
-- Main table: all fixed methods across models/domains, with independent results
-  visibly separated from reused development results.
-- Appendix: competitive version history, calibration diagnostics, small-group
-  counts, computational resources and negative ablations.
+- Observation-contract table: what is known, hidden, assumed and actually queried.
+- Fixed-prediction score/eligibility changes and positive-loss versus class-known
+  curves; distinguish primary tests from post-hoc diagnostics.
+- Validity and audit-price/scope frontier, retaining unchecked-range failures.
+- Scope-matched static/adaptive all-control cost plot and ablation table, with
+  the 10% gate and equal-weight redundancy stated explicitly.
+- Replication table across admitted prediction/cohort blocks, including failed
+  effects and consumed-versus-uninspected roles.
+- Supplement: competition history (v32 private .21514), R1/D1–D3/E1/E2/E3
+  decision/service findings, negative prototypes, full taxonomy audit, numerical
+  ties, source/reference checks and computational resources.
 
-Avoid an abstract with unsupported numerical promises. Draft its final result
-sentences only after the locked replication determines the defensible scope.
+## Remaining work and stopping point
+
+Two evidence packages remain proposed: model/source replication and separately
+uninspected external confirmation with a record/cost audit. Start with an input
+and contract inventory; freeze exact settings/budgets after feasibility checks.
+No new backbone sweep is allocated. If stronger costs/controls or replication
+remove a claimed advantage, report it and narrow the empirical case with the
+supervisor. Do not retune failed primaries or add seeds to manufacture novelty.
+A carefully positioned empirical paper is plausible; a strong new-method paper
+is not supported by the present score. Publication depends on the contribution,
+replication, realistic evidence and venue fit, not the number of runs.

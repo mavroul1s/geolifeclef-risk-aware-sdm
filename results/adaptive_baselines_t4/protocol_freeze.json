@@ -1,0 +1,120 @@
+{
+  "at_utc": "2026-11-21T15:48:14.246223+00:00",
+  "identity": {
+    "configs/adaptive_baselines_t4.json": "85b8141e6467517551eecf4c0f567df2ad2e53c640eafea9a6e19019b90a9145",
+    "docs/adaptive_baselines_t4_protocol.md": "b203d8a9d4dab5c40faed228c77b3cef163a8c9228a1c59cc812a201f83dd1cd",
+    "src/geolifeclef/adaptive_verification.py": "d5b83d17bc18db1096d36cc7b10e1afb007b26165d4457a855f65fb1843d8b29",
+    "tests/test_adaptive_verification.py": "4b914fcae477dc3fb41496424f24b6af397b9e15f233553611ce1ab964a5778a",
+    "scripts/run_adaptive_baselines_t4.py": "3f7d713d3e2c2f0d76c87b2e1a98b2e92de4f0523a6a61024d8e1e8cdef2fec9",
+    "scripts/validate_adaptive_baselines_t4.py": "9290da1bc8ae5e8824861b8634ae5a300c7b65376e02ce72e78ac0118c725693",
+    "scripts/plot_adaptive_baselines_t4.py": "5c824e8b6957be81c8ba4a5e6dfd090c1dcc30bfec5156649af1726f5a4dd868",
+    "src/geolifeclef/taxonomic_queries.py": "9649f48f81ce3b401736e2b0e551761bcfb5c974474764f944f966a2694a9fa9",
+    "src/geolifeclef/linkage_verification.py": "1db311dc72ad704e997174c0e4c6cb109cb35f634d9a3052fcdcb29504af4032",
+    "scripts/run_linkage_robustness_t3.py": "05e982ffb9a75201870265f25456f8d347b402ef93acba4c986b770b1db2ce05",
+    "scripts/validate_linkage_robustness_t3.py": "7d6767e0936495e98664ff8b2506eb278d2968d604aba4a95c0c2d56490a6033",
+    "scripts/run_taxonomic_resolution_t1.py": "88fbc9536fac1565c1cc820e36d36ba4ba6fe6b4c91d79b94a411c084b29fd94",
+    "scripts/validate_taxonomy_audits.py": "dd62719dcec3d7ad5ba4c3b3a687ab4a1fb3c885a58cad9efb20a7c1e1284ffc",
+    "data/taxonomic_verification_t2/oracle_contract.npz": "840438814578f2e7a7a6ef71d7c03ec1747e60284e6529c15671024e2941d41d",
+    "results/linkage_robustness_t3/artifact_manifest.json": "5e50f5ebc2f27196ee100542b90673b8f99d52bc684af4f6fcacaa7f140233b5",
+    "data/linkage_robustness_t3/case_202611190_0.npz": "9bd52a5e8b33619f3eaafec1c99f1334028e9f07ec1f797d2804793a518da809",
+    "data/linkage_robustness_t3/case_202611190_10.npz": "fdd43534282fcdb44f684107599da272b706558e9267a28fe49458098007472a",
+    "data/linkage_robustness_t3/case_202611190_50.npz": "151e59d3bf5e41bb334e5fc936e4d09d77f652a643b0d5c41dc1cfe6ae38eb5f",
+    "data/linkage_robustness_t3/case_202611191_0.npz": "84cabff5f95683c2cc4c93790d0d4caebe3ece6dc55fa75294dcdd621119ecb3",
+    "data/linkage_robustness_t3/case_202611191_10.npz": "9a305ec2a53c1fcee55c41a00eca351c4723c236a2664af2d277903f541f166d",
+    "data/linkage_robustness_t3/case_202611191_50.npz": "969811fe190cd5370ed3e1f7243ec19cfef2f7cc7b132e911ddd54ff92464f90",
+    "data/linkage_robustness_t3/case_202611192_0.npz": "15ac15ba99a754bfccbc7efba0dc6bf71d48a26b11a879704b512b753137644b",
+    "data/linkage_robustness_t3/case_202611192_10.npz": "27ecbf1b85af15d0f4f10beb10d66c814ae76c1d340fa9592ce564abfaa45a08",
+    "data/linkage_robustness_t3/case_202611192_50.npz": "075d9bf405e1677ab840e48f2e84aa81a2fa2ca495de1fdbb19f4d7231ed7b48",
+    "data/linkage_robustness_t3/case_202611193_0.npz": "16f82f708cecfb36d0db803ce51ac8147199c0649313f3709bc36d80807f5d79",
+    "data/linkage_robustness_t3/case_202611193_10.npz": "40f81e20151b1e71268e99fdb0cf45a42b868260ab4f399193b63019d0151400",
+    "data/linkage_robustness_t3/case_202611193_50.npz": "587b4a39db792bad0c7ccbe50dd160d8c7592e558b0ba6542cac822d02cececd",
+    "data/linkage_robustness_t3/case_202611194_0.npz": "8555d0413809844fdfb1dbe0d3af5a7f397f8ddff87455a84418c7e4773a5bcd",
+    "data/linkage_robustness_t3/case_202611194_10.npz": "6f951623d75611e00191423814c693df405801fb1debe18c5ddba86eb869310b",
+    "data/linkage_robustness_t3/case_202611194_50.npz": "69139b5c1a72e4162dbc1e0e50a2370fd5dc8a87a537c3ee63ebf05fa31c8b21",
+    "data/linkage_robustness_t3/case_202611195_0.npz": "f0b83c01745f1e453d4ce282bd46d7092a8a14e4929515ef13a9e50eebb35d9a",
+    "data/linkage_robustness_t3/case_202611195_10.npz": "3ae866588a797fea45683167b69f20ce473c26023b3d6c4632133f1f975f420e",
+    "data/linkage_robustness_t3/case_202611195_50.npz": "211fcf3a2a043305734fbabff0c2b533430d312c10025cdc692bcb81d6ce58b2",
+    "data/linkage_robustness_t3/case_202611196_0.npz": "af20ea3f80dc9357f9e0f8fbb66e996f276f73c3343979c4fa7efb32f719ff66",
+    "data/linkage_robustness_t3/case_202611196_10.npz": "76860656eedf790821d7662c0903312cb9d0e43369ee8f287db21d55cb05e6db",
+    "data/linkage_robustness_t3/case_202611196_50.npz": "d5a2683c6ce3171df601054fb7dbb84db04c1826fc31502fed28b13a4839b0d5",
+    "data/linkage_robustness_t3/case_202611197_0.npz": "47daafd51d9d6ef4ddf84e8e6d4e88f98ca24eabb1fd50d86e3d0c88922ffb4e",
+    "data/linkage_robustness_t3/case_202611197_10.npz": "d2c5c2c4d0073915824912cd9b9f6ff9fba2df41ba36e21c27a340830d0cf621",
+    "data/linkage_robustness_t3/case_202611197_50.npz": "8c7ed5f48d208e2bfd2f3ff6a1fd1bddb78df08232af321f034004de1df37c87",
+    "data/linkage_robustness_t3/case_202611198_0.npz": "b78c462adb22071ba56b66e8d19f9b3e8e9f151f5ce1e38450e5779a9ccba12f",
+    "data/linkage_robustness_t3/case_202611198_10.npz": "089aef94d47b585e6cbe182b650f3146b5f7a2c81aafd5765487ae8c165d7633",
+    "data/linkage_robustness_t3/case_202611198_50.npz": "c02db0f7caa5d3215c4ffd8a2e555a013d59f4ca297de231fc41f0248d20f6d4",
+    "data/linkage_robustness_t3/case_202611199_0.npz": "66b9e1c85148243692661349daa2d390cee93069e3ffe3fc7c5dee0169b8a364",
+    "data/linkage_robustness_t3/case_202611199_10.npz": "10d2f2f12877ac889e8e47a3a8f081b7c89327049f623a4d52bc79b7cbe9019e",
+    "data/linkage_robustness_t3/case_202611199_50.npz": "300f1d4c46d35a588cf860dfd818e798cd0c30168de46de3061b08aa1b078a55",
+    "data/taxonomic_verification_t2/initial_202611190.npz": "d08f82642855851c3034807773babcaaf4732c65b8ba2e2b7be4898b1248fb30",
+    "data/taxonomic_verification_t2/initial_202611191.npz": "08d24b05adf8d8dbf4f5803be215ba52318d48fa22bc2e9cc2b1df9811a49e73",
+    "data/taxonomic_verification_t2/initial_202611192.npz": "cae06ee44348c99578b4be16fc8e58b8c15270ffacfcb911c27761b054996536",
+    "data/taxonomic_verification_t2/initial_202611193.npz": "dc4327ac85dba7187f8f8f14b5f6539a9f4906a0e968ac142838b0da72bae790",
+    "data/taxonomic_verification_t2/initial_202611194.npz": "2f49ec24422de8646a238d7df62166fc2abf45b1117df5536e7d339525db144f",
+    "data/taxonomic_verification_t2/initial_202611195.npz": "679f5785ebe17c6a6a8380b86f3e5537156144d26d1c8228bc4c3ab6a5eb26b5",
+    "data/taxonomic_verification_t2/initial_202611196.npz": "cab5b33890f2b4f3e1def9314b17c9b3ee5fa67dc5827cf52b9a2efeb11f6fb4",
+    "data/taxonomic_verification_t2/initial_202611197.npz": "c731bbea2bd8e43225cc36a9871e98c1c2d2bf64236bf3e7675481a58826b65c",
+    "data/taxonomic_verification_t2/initial_202611198.npz": "b3f4578c36e3c9d0bd5dadf5be0b2bbbf7198e6764688b67ca96bb6422d43f21",
+    "data/taxonomic_verification_t2/initial_202611199.npz": "8baa9180625c54da2b2d95926c5e36259295854c60e09712f56c80d36242213f"
+  },
+  "earlier_manifests": {
+    "external_replication_e1": {
+      "files_verified": 44,
+      "manifest_sha256": "7944e637cab4cef53215dbd5476e6106d8d2a179944909ac103a77f90a6fff57"
+    },
+    "ranking_study_e2": {
+      "files_verified": 24,
+      "manifest_sha256": "c760f223caca3497634983dbc2764c91f9fe48b861b252ffa92ba8c8b01c0cd6"
+    },
+    "confirmation_e3": {
+      "files_verified": 48,
+      "manifest_sha256": "a1477d4d4e8cadd2cc0ac55c9a7e1c983d8e5fbdd71ed790833028c418b765e5"
+    },
+    "neon_confirmation_feasibility": {
+      "files_verified": 3,
+      "manifest_sha256": "c1d2589a1128ee851e58295fabb7efd1dd3c0cb1a0821f4417bdf43cb0e5482f"
+    },
+    "neon_bridge": {
+      "files_verified": 665,
+      "manifest_sha256": "b295a90f12bc6699b2b979e5ab8a682a0711d217d6280749452a515a1930cdbe"
+    },
+    "confirmation_e4": {
+      "files_verified": 249,
+      "manifest_sha256": "968c557c73a9e7fb2a37e2bb6f8602d13e2d208aa488e5606b101d9a3ce8a3a9"
+    },
+    "taxonomic_resolution_t1": {
+      "files_verified": 70,
+      "manifest_sha256": "b4a868655444eb3167634ea8075a30a2936a5401b314a80aa5baf142f5d2074e"
+    },
+    "neon_taxonomy_a1": {
+      "files_verified": 11,
+      "manifest_sha256": "3bd3a21764be40ba7c572c31466fe4d046946c2a8212a2357a1b42d0a4c9fa39"
+    },
+    "neon_taxonomy_a2": {
+      "files_verified": 150,
+      "manifest_sha256": "7c4ebff1e4c157dec57abb441668578c170bb2d37eec935d36c3e50a3d2fa3a9"
+    },
+    "neon_taxonomy_a3": {
+      "files_verified": 135,
+      "manifest_sha256": "a02d918250ebe490063c11e05692c21c073ecb7015a225f904590cc4b74e346e"
+    },
+    "neon_taxonomy_a3u": {
+      "files_verified": 141,
+      "manifest_sha256": "9989c30618401270563348faa7991744d44136b8716141d3374e39a612d46649"
+    },
+    "publication_validation_2026_11_19": {
+      "files_verified": 15,
+      "manifest_sha256": "acc28edd84f76bcaa88e222eb049356ba642276a30600e5a21a3ff57a7a13137"
+    },
+    "taxonomic_verification_t2": {
+      "files_verified": 90,
+      "manifest_sha256": "ba8e903f3e057ff1d57fd4c0cc7cf0c883339bf166112e7bab6212a53fc7bec1"
+    },
+    "linkage_robustness_t3": {
+      "files_verified": 104,
+      "manifest_sha256": "5e50f5ebc2f27196ee100542b90673b8f99d52bc684af4f6fcacaa7f140233b5"
+    }
+  },
+  "role": "consumed-record development; analytical equivalence precedes query replay",
+  "replay_started": false
+}

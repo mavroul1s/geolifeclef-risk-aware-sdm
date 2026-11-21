@@ -27,6 +27,7 @@ A successful new method and publication-level novelty remain unestablished.
 | A3 / A3u exact synonyms and uncertainty guard | 553 dictionary links; **123 additional modeled cell–species presences**; alias uncertainty propagated conservatively | Original A3 admits 34 cells; guarded A3u admits **33 cells / six sites**, still below the original field rule; no model is retrained |
 | Verification-cost study T2 | **100 CPU query trajectories**, 700 checkpoints, identical censored records under shared/local costs | Frozen 25% criterion fails through local-control saturation. Predeclared secondary ordering costs fall 27.7% / 39.5% versus the best tested controls, conditional on the synthetic contract |
 | Linkage/cost robustness T3 | **360 CPU trajectories**, 2,520 checkpoints, 1,440 price evaluations; invariant recorded inventories | Unchecked links invalidate ranges under synthetic errors. Ideal audits preserve validity; sharing savings depend on audit price/scope. Reference criterion fails: 9.34% / 7.71% versus strongest matched shared control, below 10% |
+| Matched adaptive controls T4 | **300 executed CPU trajectories / 360 priced paths**, six controls, 30 score-equivalence cases | Static paired width is ordinary scope-restricted width up to a constant. Generic adaptation reduces mean charged costs 4.25–9.03% versus best static controls; the 10% gate fails. No new acquisition algorithm is established |
 
 T1 separately diagnoses 268 nonempty recorded inventories receiving apparent
 perfect scores after censoring under empty/empty F1 = one. Retaining the
@@ -36,50 +37,43 @@ are not automatically valid for real NEON observations.
 
 ## What we are doing now
 
-We have completed a bounded **current-record, history and exact-synonym audit**
-on the consumed NEON cohort. A2 reproduces the previous labels exactly, then
-checks stricter current-record/uncertainty rules. A3 uses explicit accepted-name
-equivalence, without guessed parents or archived replacement labels. The A3u
-correctness guard propagates uncertainty across synonym genera and preserves
-all recovered presences. The field contract remains incomplete, and the original E4 failure remains unchanged.
+The [T4 baseline audit](docs/adaptive_baselines_t4_results.md) is completed. In
+this equal-quota setting, the old paired-width score is a constant multiple of
+ordinary width restricted to the same verification scope. That removes the
+standalone score-novelty claim. Six generic controls hold information, audit
+scope and actual costs equal. The named learned-cost control is cheaper than
+the best static reference on every mask, but misses the declared 10% gain in
+all four nonzero-error/price comparisons. Updating widths helps; learning the
+cost forecast has little consistent incremental value. No new GPU job is needed.
 
-The [T2 verification-cost study](docs/taxonomic_verification_t2_results.md) is
-now completed. It compares five fixed acquisition orders under two cost units,
-including outside-target records and overlapping unknown identities. Its frozen
-primary criterion fails because support-focused local controls already exhaust
-relevant records at 25% budget. The predeclared secondary endpoint shows fewer
-queries to identify a practical finite-cohort ordering. This is conditional
-measurement evidence; it does not establish a new general algorithm or field
-annotation-time savings.
-
-The [T3 linkage/cost study](docs/linkage_robustness_t3_results.md) is completed.
-Unchecked propagation gives invalid contrast ranges in every nonzero-error
-trajectory at some checkpoint, while no wrong ordering is observed. Perfect
-charged audits preserve validity. Comparison-focused sharing can be cheaper
-than local verification under low audit prices, but loses that advantage at
-higher prices. The candidate's incremental acquisition gain misses the frozen
-10% reference target. These are controlled sensitivity findings, not field
-error-rate or annotation-time estimates.
+Earlier results remain useful: T1/A2 quantify score changes from observability;
+A3/A3u recover supported labels while preserving the failed NEON admission;
+T2/T3 expose query-cost and linkage-validity tradeoffs. T4 narrows the paper to
+an empirical study of **observation contracts and verification costs**, with
+conditional findings and explicit failed criteria. These studies use consumed
+outcomes and synthetic costs; they do not establish field-time savings.
 
 The next steps are:
 
-1. Complete the stronger-baseline package with matched adaptive/cost-aware
-   acquisition and targeted ablations. Reassess the method contribution before
-   expanding; preserve all failed T2/T3 criteria and secondary labels.
-2. Replicate on additional verified prediction settings and another survey
+1. Replicate the measurement/cost findings and frozen generic controls on at
+   least two additional verified prediction settings and another survey
    source, reusing valid outputs. No new backbone-training sweep is allocated.
-3. Seek separately uninspected external outcomes and a record/cost audit, with
+2. Seek separately uninspected external outcomes and a record/cost audit, with
    source/training overlap, completeness and sample adequacy checked before
    confirmation. Availability remains unresolved; consumed data stay consumed.
-4. Write the manuscript around observation contracts, valid comparisons and
+3. Write the manuscript around observation contracts, valid comparisons and
    verification costs. See the [overall thesis/paper status](docs/thesis_paper_status.md)
-   for completed findings, limitations and the remaining three study packages.
+   for completed findings, limitations and the remaining **two evidence packages**.
+   The standalone acquisition-method branch is closed for the current score;
+   an empirical paper remains plausible, subject to replication and novelty review.
 
 ## Research reports and evidence
 
 - [Claim/evidence matrix](docs/paper_claim_evidence_matrix.md),
   [methods/results draft](docs/paper_methods_results_draft.md) and
   [working outline](docs/paper_outline_working.md).
+- [T4 matched adaptive-control results and figure](docs/adaptive_baselines_t4_results.md)
+  and [frozen protocol](docs/adaptive_baselines_t4_protocol.md).
 - [T1 results and figure](docs/taxonomic_resolution_t1_results.md),
   [frozen protocol](docs/taxonomic_resolution_t1_protocol.md) and
   [post-hoc diagnosis](docs/taxonomic_resolution_t1_posthoc.md).
@@ -112,9 +106,11 @@ training support limits independence claims.
 
 ## Installation and tests
 
-The current snapshot passes **all 417 local tests**, including artifact-backed
-checks after restoring the documented inputs, plus independent A2/A3/A3u/T2/T3
-validation. T3 independently checks 108 dense checkpoints, 240 primary stopping
+The current snapshot passes **all 426 local tests**, including artifact-backed
+checks after restoring the documented inputs, plus independent A2/A3/A3u/T2/T3/T4
+validation. T4 independently checks 288 dense stopping prefixes, 108 batch choices
+and 720 charged-operation endpoints, including the score-equivalence/repricing
+audit. T3 independently checks 108 dense checkpoints, 240 primary stopping
 prefixes, 720 charged-operation endpoints and 12 acquisition orders. T2 independently reconstructs 60 dense checkpoints, 20 acquisition
 orders and 400 stopping-boundary prefixes; see the [T2 report](docs/taxonomic_verification_t2_results.md).
 Earlier checks are preserved in the [A2/A3 release report](docs/taxonomy_audits_validation_2026_11_19.md)
@@ -161,7 +157,8 @@ Research entry points include `scripts/run_external_e1.py`,
 `scripts/run_neon_e4.py`, `scripts/run_taxonomic_resolution_t1.py` and
 `scripts/audit_neon_taxonomy_contract.py`, `scripts/run_neon_taxonomy_a2.py`,
 `scripts/run_neon_taxonomy_a3.py`, `scripts/run_neon_taxonomy_a3u.py` and
-`scripts/run_taxonomic_verification_t2.py` and `scripts/run_linkage_robustness_t3.py`. Read each
+`scripts/run_taxonomic_verification_t2.py`, `scripts/run_linkage_robustness_t3.py`
+and `scripts/run_adaptive_baselines_t4.py`. Read each
 protocol and CLI help first.
 Completed frozen phases refuse overwrites. Restoring inputs requires the original
 sources; a hash manifest does not include ignored local data.

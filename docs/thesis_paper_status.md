@@ -71,6 +71,21 @@ are preserved; no new general-method success is claimed.
 
 ## What a paper could contribute
 
+The [T4 stronger-baseline package](adaptive_baselines_t4_results.md) is now
+completed: **300 executed CPU trajectories / 360 priced paths**, six generic
+controls, zero fits/inference/GPU jobs. It establishes that equal-quota static
+paired width is ordinary width restricted to the same verification scope up to
+a constant. That closes the standalone score-novelty branch. Canonical static
+first-ordering costs exactly match all 60 repriced saved T3 paired costs.
+
+Generic learned-cost adaptation reduces mean charged cost **4.25–9.03%** against
+the per-mask best static reference and is cheaper on every mask. The frozen 10%
+gate nevertheless fails in all four nonzero-error/price strata. Width updates
+help, but learning the mismatch forecast adds little consistent value; simpler
+adaptive controls are competitive. No new algorithm or published-method
+superiority follows. **426 tests**, 288 independent dense prefixes, 108 batch
+choices and 720 cost endpoints validate the implementation, not external truth.
+
 The strongest current direction is **observation contracts and verification costs
 in ecological model evaluation**: quantify how apparent quality, policy ordering
 and verification effort depend on what labels are known and what a query truly
@@ -78,8 +93,10 @@ reveals. The paper should connect the measurement diagnosis to a valid, fairly
 costed procedure and its limitations.
 
 Active testing, paired model selection, linkage-error propagation and performance
-partial identification already have prior art. A general new algorithm or a new
-theory is not established by the current static heuristic and elementary bounds.
+partial identification already have prior art. The current static heuristic is
+mathematically redundant with a matched generic baseline; it cannot anchor a
+new-method claim in this setting. Neither the adaptive controls nor elementary
+bounds establish new theory.
 The empirical combination still requires careful novelty review and replication.
 See the [claim matrix](paper_claim_evidence_matrix.md) and
 [T2 prior-work review](taxonomic_verification_t2_prior_work.md).
@@ -91,29 +108,29 @@ adequate validation. No acceptance or venue-level guarantee follows here.
 
 ## Remaining evidence and stopping points
 
-The first package in the proposed four-package roadmap, linkage/cost robustness,
-is now completed. Three proposed packages remain:
+The linkage/cost and stronger-baseline packages in the earlier four-package
+roadmap are completed. **Two proposed packages remain:**
 
-1. **Stronger acquisition comparison:** matched adaptive/active-evaluation
-   baselines and targeted ablations. Keep query information and charged costs
-   equal. Reassess whether a method contribution survives before more expansion.
-2. **Model/source replication:** at least two additional verified prediction
-   settings and another survey source, reusing valid saved outputs. Historically
-   inspected outcomes remain development, even with another model.
-3. **Fresh external confirmation:** freeze procedure/endpoints before opening
+1. **Model/source replication:** at least two additional verified prediction
+   settings and another survey source, reusing valid saved outputs. Replicate
+   measurement/cost effects and frozen generic controls, rather than searching
+   for a new-score claim. Historically inspected outcomes remain development,
+   even with another model.
+2. **Fresh external confirmation:** freeze procedure/endpoints before opening
    separately uninspected outcomes; audit training overlap, record completeness,
    linkage and adequate clustered sample size. A real record/cost audit would
    help ground the synthetic assumptions. Its availability is unresolved.
 
-These are evidence packages, not four individual training runs. Exact future
+These are evidence packages, not two individual training runs. Exact future
 replay counts and compute ceilings require semantic/feasibility checks before
 protocol freezes. No new backbone-training sweep is currently justified; any
 needed inference follows reference checks and existing bounded GPU authorization.
 
-If realistic costs or stronger controls remove the advantage, do not add seeds
-or change the primary budget to recover success. Reassess a narrower empirical
-measurement-audit paper with the supervisor. Replication and suitable validation
-remain important for that scope too.
+The stronger control has already removed the static-score distinction. Continue
+with the narrower empirical measurement-audit paper and discuss its contribution
+with the supervisor. Do not add seeds, tune cost priors or change old primary
+budgets to recover success. Replication and suitable validation remain important
+for that scope too; data and field-cost access are not yet established.
 
 Write the manuscript alongside the remaining work. Use one coherent research
 question; retain competition engineering and less central experiments as
