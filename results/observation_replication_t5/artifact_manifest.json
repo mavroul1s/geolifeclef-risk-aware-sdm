@@ -1,0 +1,236 @@
+{
+  "at_utc": "2026-11-22T15:12:49.260275+00:00",
+  "tests": {
+    "tests": 426,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "additional_T6_exhaustive_tests": 2
+  },
+  "files": {
+    "results/observation_replication_t5/cohort_admission.csv": {
+      "bytes": 177,
+      "sha256": "c6c5a1b2723d66a49bc4fb42f4e9dad7026176d2bb1403737b60fa4e0312b17c"
+    },
+    "results/observation_replication_t5/corruption_receipts.csv": {
+      "bytes": 4488,
+      "sha256": "3f793a12ccfd93275711cd2cd3d436ab0c09c837304394d76dc2ce1d0f5366f7"
+    },
+    "results/observation_replication_t5/model_ordering.csv": {
+      "bytes": 387980,
+      "sha256": "275241ad107b040598558df548ba825fa1e921afd331d5257ea07a88efdab9ce"
+    },
+    "results/observation_replication_t5/observation_and_verification.png": {
+      "bytes": 142004,
+      "sha256": "b6e9f76bf7e7d96ca72d7df44ce639807c76e382d322dd829f4923bb79f4d56a"
+    },
+    "results/observation_replication_t5/prediction_validation.json": {
+      "bytes": 287,
+      "sha256": "636b784425da53d23e11e81580a42adcf2dfb9a4e8c6c8237a73fafa933f29be"
+    },
+    "results/observation_replication_t5/score_intervals.csv": {
+      "bytes": 46063,
+      "sha256": "0432d66f129e6f6b070042a5297da73f45e44a59cd1f8ccf82dd6498beadfe5a"
+    },
+    "results/observation_replication_t5/score_masks.csv": {
+      "bytes": 574793,
+      "sha256": "f40631e4f1f8ad000a8d7e7b69f7335388217d217953a38fe82b453b9a33d3e7"
+    },
+    "results/observation_replication_t5/scores_access.json": {
+      "bytes": 166,
+      "sha256": "25d393a604ee9ca8ad56d8d11683586aa0650f3ae4a902f91fb76f61ccf743c1"
+    },
+    "results/observation_replication_t5/scores_complete.json": {
+      "bytes": 269,
+      "sha256": "41c68cb51f3f1a9992dd7e484e50de1fdfa2b8a2f8e53aa62f9898aa89df91fd"
+    },
+    "results/observation_replication_t5/scores_freeze.json": {
+      "bytes": 3126,
+      "sha256": "89164c2654edfad2c4154d5f1f217c9c3040142356e45816c4bd2c9441ebf76f"
+    },
+    "results/observation_replication_t5/scores_source_snapshot/configs/observation_replication_t5.json": {
+      "bytes": 806,
+      "sha256": "374e4e16288f0fa2191202d3afb80a45c28b287b8ebd35308c758a4a7f6af156"
+    },
+    "results/observation_replication_t5/scores_source_snapshot/docs/observation_replication_t5_protocol.md": {
+      "bytes": 4863,
+      "sha256": "8f9a76b3fcc724acdfcc648345b71f3d59804f6ff221cd470314620c81eea349"
+    },
+    "results/observation_replication_t5/scores_source_snapshot/scripts/run_observation_replication_t5.py": {
+      "bytes": 15855,
+      "sha256": "1e0f9a978115b0ef5cc01d4cfd4d361daac6e1e82d615ea15ab9893035e88a7e"
+    },
+    "results/observation_replication_t5/scores_source_snapshot/scripts/run_taxonomic_resolution_t1.py": {
+      "bytes": 25140,
+      "sha256": "88fbc9536fac1565c1cc820e36d36ba4ba6fe6b4c91d79b94a411c084b29fd94"
+    },
+    "results/observation_replication_t5/scores_source_snapshot/src/geolifeclef/ecological_selection.py": {
+      "bytes": 5282,
+      "sha256": "67e646fb011f987c05aec1a174f06c6d95805de3aa8f08dd72e0bbdddafd9685"
+    },
+    "results/observation_replication_t5/scores_source_snapshot/src/geolifeclef/external_reliability.py": {
+      "bytes": 9673,
+      "sha256": "7ba86d1501dfbcd415ccbebca8f0258c8e85ca6ab1de5bb2cac7b8c98653d296"
+    },
+    "results/observation_replication_t5/scores_source_snapshot/src/geolifeclef/reliability.py": {
+      "bytes": 9084,
+      "sha256": "3a34882cdf7ff14c31af08b405fdaaed42fca420b35241ecf9d800b52dfeeb1c"
+    },
+    "results/observation_replication_t5/scores_source_snapshot/src/geolifeclef/taxonomic_censoring.py": {
+      "bytes": 4551,
+      "sha256": "3fb02877dfa379c24813bc86bef6f0333eb3f7fa8459914b6e39dfecb13f103a"
+    },
+    "results/observation_replication_t5/test_report.xml": {
+      "bytes": 55839,
+      "sha256": "261397804b6fc0b92426538f93dea76f827463e9dd25e00e436aefae99006607"
+    },
+    "results/observation_replication_t5/unchecked_checkpoints.csv": {
+      "bytes": 30478,
+      "sha256": "536d98c03735a3c4fceb30139dfb49282f5333bcc6c757b885c7467b898e2f7b"
+    },
+    "results/observation_replication_t5/verification_access.json": {
+      "bytes": 166,
+      "sha256": "7351848dee6f7086dc5670988688b32b2e048efa42ae53d617c3894f3bd41e79"
+    },
+    "results/observation_replication_t5/verification_complete.json": {
+      "bytes": 598,
+      "sha256": "6158a74e309ac80194ae34c15a7a72d8b8bf99984816aa5833357c8703328d38"
+    },
+    "results/observation_replication_t5/verification_endpoints.csv": {
+      "bytes": 206262,
+      "sha256": "62c6eff37c643b584d4bef3e40688b6f19c22912231ddfac3c02f7eac9eba441"
+    },
+    "results/observation_replication_t5/verification_freeze.json": {
+      "bytes": 3379,
+      "sha256": "1872e7b96d47aeda67ebc4e6640a6f1d9a93be6a9f284d94e594f95370c1e898"
+    },
+    "results/observation_replication_t5/verification_source_snapshot/configs/observation_replication_t5.json": {
+      "bytes": 806,
+      "sha256": "374e4e16288f0fa2191202d3afb80a45c28b287b8ebd35308c758a4a7f6af156"
+    },
+    "results/observation_replication_t5/verification_source_snapshot/docs/observation_replication_t5_protocol.md": {
+      "bytes": 4863,
+      "sha256": "8f9a76b3fcc724acdfcc648345b71f3d59804f6ff221cd470314620c81eea349"
+    },
+    "results/observation_replication_t5/verification_source_snapshot/scripts/run_observation_replication_t5.py": {
+      "bytes": 15855,
+      "sha256": "1e0f9a978115b0ef5cc01d4cfd4d361daac6e1e82d615ea15ab9893035e88a7e"
+    },
+    "results/observation_replication_t5/verification_source_snapshot/scripts/run_taxonomic_resolution_t1.py": {
+      "bytes": 25140,
+      "sha256": "88fbc9536fac1565c1cc820e36d36ba4ba6fe6b4c91d79b94a411c084b29fd94"
+    },
+    "results/observation_replication_t5/verification_source_snapshot/scripts/run_verification_replication_t5.py": {
+      "bytes": 15682,
+      "sha256": "72b969786fd6e183607fecaa414fb51abf0f3fc04c6d74ef0af7312303a0f383"
+    },
+    "results/observation_replication_t5/verification_source_snapshot/scripts/validate_linkage_robustness_t3.py": {
+      "bytes": 11010,
+      "sha256": "7d6767e0936495e98664ff8b2506eb278d2968d604aba4a95c0c2d56490a6033"
+    },
+    "results/observation_replication_t5/verification_source_snapshot/scripts/validate_taxonomic_verification_t2.py": {
+      "bytes": 8566,
+      "sha256": "a2fc9b91bf1dd0751b2ddd3a8570895a6e30a2d6ea7f92e0a186f4265274dbd7"
+    },
+    "results/observation_replication_t5/verification_source_snapshot/src/geolifeclef/adaptive_verification.py": {
+      "bytes": 4747,
+      "sha256": "d5b83d17bc18db1096d36cc7b10e1afb007b26165d4457a855f65fb1843d8b29"
+    },
+    "results/observation_replication_t5/verification_source_snapshot/src/geolifeclef/ecological_selection.py": {
+      "bytes": 5282,
+      "sha256": "67e646fb011f987c05aec1a174f06c6d95805de3aa8f08dd72e0bbdddafd9685"
+    },
+    "results/observation_replication_t5/verification_source_snapshot/src/geolifeclef/external_reliability.py": {
+      "bytes": 9673,
+      "sha256": "7ba86d1501dfbcd415ccbebca8f0258c8e85ca6ab1de5bb2cac7b8c98653d296"
+    },
+    "results/observation_replication_t5/verification_source_snapshot/src/geolifeclef/linkage_verification.py": {
+      "bytes": 6369,
+      "sha256": "1db311dc72ad704e997174c0e4c6cb109cb35f634d9a3052fcdcb29504af4032"
+    },
+    "results/observation_replication_t5/verification_source_snapshot/src/geolifeclef/reliability.py": {
+      "bytes": 9084,
+      "sha256": "3a34882cdf7ff14c31af08b405fdaaed42fca420b35241ecf9d800b52dfeeb1c"
+    },
+    "results/observation_replication_t5/verification_source_snapshot/src/geolifeclef/taxonomic_censoring.py": {
+      "bytes": 4551,
+      "sha256": "3fb02877dfa379c24813bc86bef6f0333eb3f7fa8459914b6e39dfecb13f103a"
+    },
+    "results/observation_replication_t5/verification_source_snapshot/src/geolifeclef/taxonomic_queries.py": {
+      "bytes": 9232,
+      "sha256": "9649f48f81ce3b401736e2b0e551761bcfb5c974474764f944f966a2694a9fa9"
+    },
+    "results/observation_replication_t5/verification_summary.csv": {
+      "bytes": 19278,
+      "sha256": "8f3bbb22e4b6f78c05470500972fbecb4367d1c52e76b8d7aac20d502b939b39"
+    },
+    "results/paired_completion_t6/endpoints.csv": {
+      "bytes": 58839,
+      "sha256": "33c1f2394c624f74f27543415ace566e41d8ce13ce493ee527e658100feee48e"
+    },
+    "results/paired_completion_t6/focused_tests.xml": {
+      "bytes": 480,
+      "sha256": "69165c880b2c427c19531344ab5cab1043828a7a1a0cca1913a241633608db7c"
+    },
+    "results/paired_completion_t6/freeze.json": {
+      "bytes": 1220,
+      "sha256": "0b2bbfb5d5f06e025cf42ff7c3fd724707484941afd4ffa53f6556d5a350f52a"
+    },
+    "results/paired_completion_t6/source_snapshot/docs/paired_completion_t6_protocol.md": {
+      "bytes": 2431,
+      "sha256": "16b27a80f82fa9a234285b12a47addcb6db8359c49bbcc2905e38a6474016227"
+    },
+    "results/paired_completion_t6/source_snapshot/scripts/run_paired_completion_t6.py": {
+      "bytes": 5906,
+      "sha256": "a6a8c0d6b7a87a855172453784eebca0a1606e6299bf67dec9249338a09f414f"
+    },
+    "results/paired_completion_t6/source_snapshot/src/geolifeclef/paired_completion.py": {
+      "bytes": 2693,
+      "sha256": "24fbacad5d93d518dad7611bdafcdebb6132c451feb8adb62a38cb9f7c7c4508"
+    },
+    "results/paired_completion_t6/source_snapshot/tests/test_paired_completion.py": {
+      "bytes": 1877,
+      "sha256": "651091ab1806bf72912e919f1c1b3d3caafbc28b35cfd177176846d32d9e1932"
+    },
+    "results/paired_completion_t6/summary.json": {
+      "bytes": 473,
+      "sha256": "225369a63018ee081e7da08afe58c2b9f56f97051fef1e79ddf7b73dcdcd697f"
+    },
+    "results/paired_completion_t6/vegbank_ordering_under_missing_labels.png": {
+      "bytes": 107116,
+      "sha256": "d3de310905bc90e1cf0c22c8cc78c3415b2d77df0aadc8ca1d9ccfd6a9427e15"
+    },
+    "data/observation_replication_t5/fixed_predictions.npz": {
+      "bytes": 325749,
+      "sha256": "5fc67fabb5697290389519f64e490979728ead0eb17fe36642ea8c59336dabf9"
+    },
+    "data/observation_replication_t5/verification_orders.npz": {
+      "bytes": 1444302,
+      "sha256": "bd951b5edc6796c09dc3bd7b8e685a10ab6ee99afc0894ce86f7e53a6599d4e8"
+    },
+    "scripts/summarize_observation_replication_t5.py": {
+      "bytes": 6298,
+      "sha256": "7643a98c30fbc99973980b8a00f6252ac8d0a33b07435f4492fc0ddda0c514d6"
+    },
+    "scripts/plot_paired_completion_t6.py": {
+      "bytes": 2195,
+      "sha256": "eea3f361bd7c0917ee8b9aed78f4e0c992250a5630d5372b977583982a26b177"
+    },
+    "scripts/verify_observation_replication.py": {
+      "bytes": 3671,
+      "sha256": "a4aeac63b0da54359185e2774642ca12b0cc10f823f4990d8e639dcf43e1c422"
+    },
+    "docs/observation_replication_t5_results.md": {
+      "bytes": 7151,
+      "sha256": "866a8fccc9335e3ed2cf997237df3ff3d94745fa487b093015ee8642ea87e2f1"
+    },
+    "docs/paired_completion_t6_results.md": {
+      "bytes": 3485,
+      "sha256": "f60029427051fe63a2a7a0eb722b0e5bf99876f19eaa3dff977a23175d6e5c3b"
+    },
+    "docs/external_confirmation_tern_feasibility.md": {
+      "bytes": 3322,
+      "sha256": "027b14579e2c552301c63db7d2e6e587d0a4c3df8c5b481ffbe61e4883a616e2"
+    }
+  }
+}

@@ -1,4 +1,4 @@
-# Thesis progress and paper path — 21 November 2026
+# Thesis progress and paper path — 22 November 2026
 
 This note separates completed evidence from a proposed paper contribution and
 future validation. More runs, software tests or new split names cannot by
@@ -106,33 +106,51 @@ is not yet earned by the experiment count. Its credibility must come from a
 precise contribution, fair comparisons, realistic assumptions, robustness and
 adequate validation. No acceptance or venue-level guarantee follows here.
 
-## Remaining evidence and stopping points
+## New model and survey-contributor evidence
 
-The linkage/cost and stronger-baseline packages in the earlier four-package
-roadmap are completed. **Two proposed packages remain:**
+T5 uses a shared taxonomic universe and the same known labels for the MLP and
+two additional verified SAGE prediction settings. It covers all 5,251 cells
+and three distinct contributing survey inventories within that cohort. At
+moderate synthetic censoring about 98% of class pairs stay known while 26% of
+positive occurrences disappear. Known-only F1 increases for the original MLP
+under the empty=1 convention, decreases for both additional models and
+decreases for all three under empty=0. The VegBank rarity-weighted masks
+reverse the small MLP–DeepSDM point ordering in all ten repetitions.
+[T5 results](observation_replication_t5_results.md).
 
-1. **Model/source replication:** at least two additional verified prediction
-   settings and another survey source, reusing valid saved outputs. Replicate
-   measurement/cost effects and frozen generic controls, rather than searching
-   for a new-score claim. Historically inspected outcomes remain development,
-   even with another model.
-2. **Fresh external confirmation:** freeze procedure/endpoints before opening
-   separately uninspected outcomes; audit training overlap, record completeness,
-   linkage and adequate clustered sample size. A real record/cost audit would
-   help ground the synthetic assumptions. Its availability is unresolved.
+T6 carries the same unknown species labels into the scores of both models.
+Compared with subtracting separate score ranges, this reduces mean width by
+59.3% and identifies a practical order in 80/240 evaluated cases versus 0/240.
+All ten VegBank reversals remain indeterminate under the shared inventory.
+This is a finite-cohort result under binary completion and correct known
+labels. Existing work gives sharp F1 comparison bounds for binary classifiers
+after disagreement labeling. In this thesis the ecological estimand is mean
+per-cell species-set F1 and arbitrary species can be unresolved.
+[T6 results](paired_completion_t6_results.md) ·
+[Related F1 work](https://arxiv.org/abs/2611.01712).
 
-These are evidence packages, not two individual training runs. Exact future
-replay counts and compute ceilings require semantic/feasibility checks before
-protocol freezes. No new backbone-training sweep is currently justified; any
-needed inference follows reference checks and existing bounded GPU authorization.
+T5 also replays six shared verification controls and two local controls. At
+5% nominal link error, an audit price of .1 saves 38.6–67.2% across the six
+model/cohort settings at the same .002 target width. Raising the price to .5
+makes AEKOS 10.7% costlier than local identification. Unchecked propagation
+excludes the benchmark contrast in all 48 paths at some checkpoint. Ideal
+paid audits preserve the tested endpoint validity. These are normalized
+synthetic costs.
 
-The stronger control has already removed the static-score distinction. Continue
-with the narrower empirical measurement-audit paper and discuss its contribution
-with the supervisor. Do not add seeds, tune cost priors or change old primary
-budgets to recover success. Replication and suitable validation remain important
-for that scope too; data and field-cost access are not yet established.
+## What remains for the paper
 
-Write the manuscript alongside the remaining work. Use one coherent research
-question; retain competition engineering and less central experiments as
-supporting thesis material or supplementary results. All consumed E1/E3/E4/T1/T2
-outcomes stay consumed, and new local freezes do not make them fresh.
+Lead with the effect of unresolved species on **which ecological model
+comparisons the observations support**. Use charged verification and the
+NEON taxonomy audit to explain how that uncertainty arises and what resolving
+it could cost. Put the competition and earlier confidence experiments in the
+thesis background or paper supplement. Separately report old failed primary
+criteria and the exploratory T6 status.
+
+Within-benchmark replication is complete. The outcome-blinded AusPlots screen
+found 151 visits across 119 cells outside the historical AEKOS buffer and
+published training grid. Region-validated native masks cover 113 candidate
+cells. No candidate has an exact released feature-location match, and a
+separate voucher-inventory contract and reference-validated comparison model
+are needed. Field effort and external outcome confirmation remain open.
+[AusPlots results](ausplots_metadata_audit_results.md) ·
+[Next evidence packages](next_experiment_budget.md).

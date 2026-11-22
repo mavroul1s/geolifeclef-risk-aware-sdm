@@ -1,0 +1,17 @@
+{
+  "at_utc": "2026-11-22T15:05:15.316365+00:00",
+  "identity": {
+    "docs/paired_completion_t6_protocol.md": "16b27a80f82fa9a234285b12a47addcb6db8359c49bbcc2905e38a6474016227",
+    "scripts/run_paired_completion_t6.py": "a6a8c0d6b7a87a855172453784eebca0a1606e6299bf67dec9249338a09f414f",
+    "src/geolifeclef/paired_completion.py": "24fbacad5d93d518dad7611bdafcdebb6132c451feb8adb62a38cb9f7c7c4508",
+    "tests/test_paired_completion.py": "651091ab1806bf72912e919f1c1b3d3caafbc28b35cfd177176846d32d9e1932",
+    "results/observation_replication_t5/scores_freeze.json": "89164c2654edfad2c4154d5f1f217c9c3040142356e45816c4bd2c9441ebf76f",
+    "results/observation_replication_t5/model_ordering.csv": "275241ad107b040598558df548ba825fa1e921afd331d5257ea07a88efdab9ce",
+    "results/observation_replication_t5/scores_complete.json": "41c68cb51f3f1a9992dd7e484e50de1fdfa2b8a2f8e53aa62f9898aa89df91fd",
+    "data/observation_replication_t5/fixed_predictions.npz": "5fc67fabb5697290389519f64e490979728ead0eb17fe36642ea8c59336dabf9",
+    "scripts/validate_taxonomic_verification_t2.py": "a2fc9b91bf1dd0751b2ddd3a8570895a6e30a2d6ea7f92e0a186f4265274dbd7"
+  },
+  "dose": 0.2,
+  "margin": 0.001,
+  "historically_consumed": true
+}

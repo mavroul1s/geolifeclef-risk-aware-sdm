@@ -1,0 +1,15 @@
+{
+  "at_utc": "2026-11-22T15:05:47.696835+00:00",
+  "seconds": 32.3803264110029,
+  "case_count": 240,
+  "recorded_oracle_exclusions": 0,
+  "mean_shared_width": 0.08851079123291979,
+  "mean_separate_width": 0.2175066538618361,
+  "relative_mean_width_reduction": 0.5930662825186794,
+  "shared_sign_identified": 80,
+  "separate_sign_identified": 0,
+  "T5_reversals_included": 10,
+  "T5_reversals_with_both_signs_feasible": 10,
+  "new_fits": 0,
+  "fresh_confirmation": false
+}

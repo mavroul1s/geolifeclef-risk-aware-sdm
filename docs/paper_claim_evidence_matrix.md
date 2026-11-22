@@ -1,8 +1,28 @@
-# Paper claim and prior-work matrix — 21 November 2026
+# Paper claim and prior-work matrix — 22 November 2026
 
 Working title: **Observation Contracts and Verification Costs in Ecological
 Model Evaluation**. This matrix distinguishes empirical evidence from novelty. It is not an
 exhaustive literature review or a claim that a venue will accept the paper.
+
+**External-data update:** public, outcome-blinded AusPlots metadata identify
+119 cells after the historical AEKOS buffer and published PO training-grid
+exclusions. Same-region native masks support 113 cells. None has matching
+feature-location inputs. This supports source feasibility and gives a
+quantified limit on a stricter >10 km training buffer, with seven blocks
+remaining. [AusPlots audit](ausplots_metadata_audit_results.md).
+
+**T5/T6 update:** fixed-prediction replay exposes model- and score-convention-dependent
+bias, including a VegBank MLP/DeepSDM point-order reversal under the moderate
+rarity-weighted mask. Paired completion of the same per-cell inventory reduces
+mean contrast width by 59.3% versus subtracting separate score ranges, identifies
+80/240 practical orderings versus 0/240, and correctly leaves all ten reversed
+VegBank orderings open. These are empirical results on consumed SAGE records.
+Existing work gives sharp shared-label F1 bounds for binary prediction after
+disagreement labeling. Here the estimand is the average of per-cell species-set
+F1 differences under genus-level censoring. Position it as an ecological
+measurement and verification study.
+[T5](observation_replication_t5_results.md) · [T6](paired_completion_t6_results.md) ·
+[Fernández-Barrios et al.](https://arxiv.org/abs/2611.01712).
 
 **T4 update:** [matched static/adaptive controls](adaptive_baselines_t4_results.md)
 complete 300 executed CPU trajectories / 360 priced paths. Equal-quota static
@@ -11,9 +31,8 @@ novel-score branch. Learned-cost adaptation saves 4.25–9.03% against the best
 static reference, below the 10% target in all four nonzero-error/price strata.
 Dynamic widths help; the learned forecast has little consistent incremental
 value. Simpler adaptive controls are competitive. These are generic heuristics,
-not new methods or faithful published VMA/LURE implementations. Model/source
-replication and external record/cost validation are the two remaining proposed
-packages. All 426 tests and independent reconstruction pass; this establishes
+not new methods or faithful published VMA/LURE implementations. T5 completes the within-benchmark replication. External record/cost
+validation remains pending. All 426 tests and independent reconstruction pass; this establishes
 execution correctness, not scientific novelty or field time savings.
 
 **T3 update:** [charged linkage verification](linkage_robustness_t3_results.md)
@@ -101,8 +120,8 @@ not be sold as useful confidence skill or general transfer dominance. See
 | Entropy alignment | Selective prediction on multi-label decisions is prior work | GLC and E1 predicted-set entropy underperform matched random; operational result replicated across fixed decoders/settings | Only this entropy definition and these settings. Not all entropy or uncertainty methods |
 | Remaining selection headroom | Label-oracle ceilings are standard diagnostics | Post-hoc E2 country/area oracle gains .0255–.0326 F1 | Nondeployable, no rare constraint; cannot call it achieved accuracy or proof that a real learner will close the gap |
 | Metadata/provenance quality | SAGE upstream plot/area pipeline | Area inconsistencies excluded before E1 labels; native masks and source exclusions checked | Audit and reproducibility contribution; differences do not establish upstream error or full independence |
-| Scope-matched static score and adaptive controls | Elementary equal-weight algebra; active testing and paired comparison precedents below | T4: 30 score-identity cases; 300 executed/360 priced paths; generic adaptation saves 4.25–9.03% vs best static reference; 10% gate fails; learned forecast adds little consistent value | Static paired-score novelty closed for this setting. No new algorithm/theorem or VMA/LURE superiority. Model/source replication and field grounding remain |
-| Link validity versus verification price/scope | Active vetting, paired comparison and [linkage-quality analysis](https://discovery.ucl.ac.uk/id/eprint/10036697/) | T3: 360 trajectories; unchecked ranges exclude truth; ideal paid audits restore validity; cost/scope frontiers measured; 10% reference acquisition target fails | Synthetic target-label compatibility oracle, not a field procedure. No observed wrong ordering, universal sharing benefit or new theorem. T4 completes stronger generic baselines; replication/field grounding remain |
+| Scope-matched static score and adaptive controls | Elementary equal-weight algebra; active testing and paired comparison precedents below | T4: 30 score-identity cases; 300 executed/360 priced paths; generic adaptation saves 4.25–9.03% vs best static reference; 10% gate fails; learned forecast adds little consistent value | Static paired-score novelty closed for this setting. No new algorithm/theorem or VMA/LURE superiority. T5 replicates within SAGE. Field grounding remains |
+| Link validity versus verification price/scope | Active vetting, paired comparison and [linkage-quality analysis](https://discovery.ucl.ac.uk/id/eprint/10036697/) | T3: 360 trajectories; unchecked ranges exclude truth; ideal paid audits restore validity; cost/scope frontiers measured; 10% reference acquisition target fails | Synthetic target-label compatibility oracle, not a field procedure. No observed wrong ordering, universal sharing benefit or new theorem. T4 and T5 add matched controls and replication within SAGE. Field grounding remains |
 | Taxon-query cost and paired utility identification | [Active vetting](https://proceedings.mlr.press/v80/nguyen18d.html), [active testing](https://proceedings.mlr.press/v139/kossen21a.html), [paired variance minimization](https://link.springer.com/article/10.1007/s10994-024-06603-1) | T2: 100 trajectories; primary fails; secondary median query costs fall 27.7% / 39.5% against strongest controls under two cost units; representation tradeoffs | Conditional synthetic query/observation model. No VMA/LURE superiority or new general theory. Audit linkage/error/cost assumptions before promotion |
 | Apparent quality versus observation contract | Standard F1 algebra, taxonomic curation and partial-identification evaluation | A2: fixed cells/predictions/confirmed positives, +.026839 known-F1 change through uncertainty masks; A3 adds 123 supported presence labels via exact aliases | Quantified implementation/measurement audit, not new theory or predictive improvement. Distinct contracts change the observed-label estimand |
 | Taxonomic observability and fixed policy comparisons | Taxonstand/OCCUR; missing-label learning; [active testing](https://proceedings.mlr.press/v139/kossen21a.html); [performance partial identification](https://papers.neurips.cc/paper_files/paper/2024/hash/f4c6bec746b0aeca8c2cd15096f1ad1f-Abstract-Conference.html) | T1: 60 settings; class-known admission misses substantial positive loss; primary criterion fails; no ordering reversals; post-hoc genus facts tighten ranges and recover some signs | Application-specific controlled development. Standard bounds and active evaluation are established; no empirical NEON mechanism or field-positive-genus contract established |

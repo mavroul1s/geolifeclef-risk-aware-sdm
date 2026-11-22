@@ -1,0 +1,13 @@
+{
+  "aggregation_s0": {
+    "saved_T1_prediction_exact": true
+  },
+  "optimized_deepsdm_s0": {
+    "published_receipt_match": true,
+    "original_rank_and_count_exact": true
+  },
+  "randomforest_s0": {
+    "published_receipt_match": true,
+    "original_rank_and_count_exact": true
+  }
+}

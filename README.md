@@ -6,11 +6,11 @@ preserves geographic and rare-species service. The project combines a
 GeoLifeCLEF 2025 competition pipeline with separate reliability studies using
 released SAGE models and NEON data.
 
-**Current status — 21 November 2026:** the competition models and controlled
-reliability studies are implemented. Several proposed improvements failed their
-declared targets. The current paper direction is a reproducible empirical study
-of decision confidence, ecological service and taxonomic observability.
-A successful new method and publication-level novelty remain unestablished.
+**Current status — 22 November 2026:** the strongest paper direction is
+taxonomic observability and verification in ecological model evaluation.
+Fixed-prediction replays show model-dependent F1 bias, and shared inventory
+completions clarify which model orderings survive missing labels. The competition
+pipeline and selective-reliability studies supply supporting thesis evidence.
 
 ## What we have achieved
 
@@ -37,35 +37,24 @@ are not automatically valid for real NEON observations.
 
 ## What we are doing now
 
-The [T4 baseline audit](docs/adaptive_baselines_t4_results.md) is completed. In
-this equal-quota setting, the old paired-width score is a constant multiple of
-ordinary width restricted to the same verification scope. That removes the
-standalone score-novelty claim. Six generic controls hold information, audit
-scope and actual costs equal. The named learned-cost control is cheaper than
-the best static reference on every mask, but misses the declared 10% gain in
-all four nonzero-error/price comparisons. Updating widths helps; learning the
-cost forecast has little consistent incremental value. No new GPU job is needed.
-
-Earlier results remain useful: T1/A2 quantify score changes from observability;
-A3/A3u recover supported labels while preserving the failed NEON admission;
-T2/T3 expose query-cost and linkage-validity tradeoffs. T4 narrows the paper to
-an empirical study of **observation contracts and verification costs**, with
-conditional findings and explicit failed criteria. These studies use consumed
-outcomes and synthetic costs; they do not establish field-time savings.
-
-The next steps are:
-
-1. Replicate the measurement/cost findings and frozen generic controls on at
-   least two additional verified prediction settings and another survey
-   source, reusing valid outputs. No new backbone-training sweep is allocated.
-2. Seek separately uninspected external outcomes and a record/cost audit, with
-   source/training overlap, completeness and sample adequacy checked before
-   confirmation. Availability remains unresolved; consumed data stay consumed.
-3. Write the manuscript around observation contracts, valid comparisons and
-   verification costs. See the [overall thesis/paper status](docs/thesis_paper_status.md)
-   for completed findings, limitations and the remaining **two evidence packages**.
-   The standalone acquisition-method branch is closed for the current score;
-   an empirical paper remains plausible, subject to replication and novelty review.
+- **T5** reuses three verified model settings and three survey contributors
+  within SAGE. At nominal 20% genus censoring, roughly 98% of eligible
+  class pairs remain known while 26% of recorded positives are hidden.
+  Known-only F1 can rise or fall across fixed model predictions. One small
+  MLP–DeepSDM ordering reverses in ten VegBank censoring masks.
+  [T5 results](docs/observation_replication_t5_results.md).
+- **T6** scores both models against the same possible per-cell inventory.
+  Mean F1 contrast ranges narrow by 59.3%. A practical ordering is identified
+  in 80/240 cases versus 0/240 when separate bounds are subtracted. Both
+  orderings remain feasible for all ten reversed VegBank examples.
+  [T6 results](docs/paired_completion_t6_results.md).
+- **AusPlots metadata audit** identifies 151 candidate visits across 119 cells
+  beyond the legacy AEKOS screen and outside the published training grid.
+  Published same-region masks support 113 cells. Fresh confirmation requires
+  the 52-feature environmental bridge, a complete voucher-inventory contract,
+  and measured verification effort.
+  [AusPlots audit](docs/ausplots_metadata_audit_results.md) ·
+  [Thesis status](docs/thesis_paper_status.md).
 
 ## Research reports and evidence
 

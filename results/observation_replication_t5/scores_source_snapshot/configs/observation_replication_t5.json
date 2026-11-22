@@ -1,0 +1,22 @@
+{
+  "models": ["aggregation_s0", "optimized_deepsdm_s0", "randomforest_s0"],
+  "sources": ["AU-AU-002", "NA-US-002", "AS-RU-002"],
+  "minimum_source_cells": 500,
+  "minimum_source_blocks": 8,
+  "minimum_disagreement_cells": 40,
+  "censor_seeds": [202611170, 202611171, 202611172, 202611173, 202611174, 202611175, 202611176, 202611177, 202611178, 202611179],
+  "censor_doses": [0.0, 0.2, 0.5],
+  "mask_seeds": [202611190, 202611191, 202611192, 202611193],
+  "error_rates": [0.01, 0.05],
+  "audit_prices": [0.1, 0.5],
+  "hidden_probability": 0.5,
+  "corruption_seed_offset": 2100,
+  "coverage": 0.8,
+  "batch_size": 32,
+  "mismatch_prior": {"alpha": 1, "beta": 19},
+  "width_tolerance": 0.002,
+  "practical_margin": 0.001,
+  "bootstrap_draws": 4000,
+  "bootstrap_seed": 20261122,
+  "maximum_seconds": 3600
+}

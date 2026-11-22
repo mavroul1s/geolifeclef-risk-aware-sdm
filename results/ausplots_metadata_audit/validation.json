@@ -1,0 +1,9 @@
+{
+  "source_count_checked": 1152,
+  "post_cutoff_visit_keys_checked": 753,
+  "great_circle_distances_checked": 16,
+  "training_grid_memberships_checked": 753,
+  "mask_reference_rows": 53336,
+  "source_and_input_hashes_verified": true,
+  "independent_outcome_opened": false
+}

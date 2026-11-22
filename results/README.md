@@ -1,5 +1,18 @@
 # Results index
 
+`ausplots_metadata_audit/` records the 1,152-visit source screen, training-grid
+overlap, same-region native-mask coverage and validation. No fresh species
+outcome or fitted prediction was used. See `docs/ausplots_metadata_audit_results.md`.
+
+`observation_replication_t5/` contains a fixed-prediction replay on three SAGE
+models and three source contributors. It includes 60 censoring masks, score
+sensitivity and ranking contrasts, a charged-verification comparison, validation
+and frozen sources. See `docs/observation_replication_t5_results.md`.
+
+`paired_completion_t6/` contains 240 shared-vs-separate completion comparisons.
+Shared ranges are 59.3% narrower on average and establish 80 practical model
+orderings versus zero. See `docs/paired_completion_t6_results.md`.
+
 `adaptive_baselines_t4/` contains 300 executed CPU query trajectories / 360 priced
 paths (60 reprices), six matched generic controls and 14,835 recorded curve
 points. Thirty cases verify that the equal-quota static paired score is ordinary

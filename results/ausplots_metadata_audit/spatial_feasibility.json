@@ -1,0 +1,89 @@
+{
+  "source": "ausplotsR public site API, five metadata fields only",
+  "species_outcomes_read": false,
+  "server_count_matches_payload": true,
+  "metadata_visits": 1152,
+  "metadata_sites": 824,
+  "unparseable_visit_dates": 0,
+  "invalid_visit_locations": 0,
+  "late_visits_with_invalid_coordinates": 0,
+  "aekos_evaluation_plot_rows": 8431,
+  "aekos_evaluation_cells": 7530,
+  "aekos_unparseable_dates": 4,
+  "aekos_invalid_plot_locations": 0,
+  "aekos_last_parseable_date": "2014-09-03",
+  "published_train_location_rows": 4100969,
+  "published_eval_input_location_rows": 53336,
+  "candidate_diagnostics": {
+    "post_cutoff_valid": {
+      "visits": 753,
+      "sites": 610,
+      "cells_1km": 577,
+      "blocks_100km": 150,
+      "possible_existing_eval_input_rows": 92,
+      "possible_existing_train_input_rows": 585
+    },
+    "outside_legacy_grid_and_1km_buffer": {
+      "visits": 657,
+      "sites": 521,
+      "cells_1km": 495,
+      "blocks_100km": 146,
+      "possible_existing_eval_input_rows": 0,
+      "possible_existing_train_input_rows": 505
+    },
+    "also_outside_training_grid": {
+      "visits": 151,
+      "sites": 123,
+      "cells_1km": 119,
+      "blocks_100km": 58,
+      "possible_existing_eval_input_rows": 0,
+      "possible_existing_train_input_rows": 0
+    },
+    "also_more_than_1km_from_training": {
+      "visits": 121,
+      "sites": 97,
+      "cells_1km": 93,
+      "blocks_100km": 48,
+      "possible_existing_eval_input_rows": 0,
+      "possible_existing_train_input_rows": 0
+    },
+    "also_more_than_10km_from_training": {
+      "visits": 17,
+      "sites": 17,
+      "cells_1km": 16,
+      "blocks_100km": 7,
+      "possible_existing_eval_input_rows": 0,
+      "possible_existing_train_input_rows": 0
+    },
+    "post_cutoff_site_history_only": {
+      "visits": 527,
+      "sites": 427,
+      "cells_1km": 404,
+      "blocks_100km": 124,
+      "possible_existing_eval_input_rows": 5,
+      "possible_existing_train_input_rows": 394
+    },
+    "outside_legacy_buffer_and_training_grid_with_post_cutoff_site_history": {
+      "visits": 132,
+      "sites": 107,
+      "cells_1km": 103,
+      "blocks_100km": 51,
+      "possible_existing_eval_input_rows": 0,
+      "possible_existing_train_input_rows": 0
+    }
+  },
+  "post_cutoff_visits_in_legacy_grid": 92,
+  "post_cutoff_visits_in_training_grid": 586,
+  "post_cutoff_visits_at_sites_with_earlier_visits": 226,
+  "median_distance_to_training_km": 0.4547980121328229,
+  "final_cohort_admitted": false,
+  "sha256": {
+    "data/ausplots_metadata_audit/site_visits.json": "ed069320c84d28869651cdccf3360aa83f546f73b54593e018101b9dc3947f41",
+    "data/independent_data_audit/sage_eval_plot_metadata.csv": "27118ac038e31e5096c99ce2b5d9fb2ba4cdd2261a0e55fd1ed10a96074577a4",
+    "data/neon_bridge/train_location_1km.h5": "194cab7983ca48bc33170da0f0276d010c7273f8fc67427c95a638bd8c85038f",
+    "data/external_replication_e1/predictors/eval_location.h5": "8c3c25bac22eab9b7c445d9620e1545f795e71c84a6f5bffcf798874040ee71f",
+    "docs/ausplots_metadata_audit_protocol.md": "c7802700e6af68bbb2f75812aab217fb372ab14555a121b44f40bca570050b60",
+    "scripts/audit_ausplots_metadata.py": "b3264345940aea040e05ba9ac1601584e2de75c836303e4fd320baadbbabadc7"
+  },
+  "site_response_server_date": "Sun, 22 Nov 2026 15:28:39 GMT"
+}

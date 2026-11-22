@@ -1,6 +1,6 @@
-# Methods and results draft — 21 November 2026
+# Methods and results draft — 22 November 2026
 
-Revised after T4. Working title: **Observation Contracts and Verification Costs
+Revised after T5 and T6. Working title: **Observation Contracts and Verification Costs
 in Ecological Model Evaluation**. The central empirical argument concerns
 observability, valid comparisons and charged verification. Reliability, service
 and transport studies supply supporting context. No new static acquisition
@@ -11,6 +11,39 @@ Working text for supervisor review. This is not a completed manuscript or final
 abstract. Prospective and development evidence must retain the labels below.
 Primary-source positioning and claim limits are in
 [the evidence matrix](paper_claim_evidence_matrix.md).
+
+## Taxonomic observability, paired F1 and charged verification
+
+Three verified fixed SAGE model settings share identical eligible labels, genus
+masks and fixed acceptance policies. At nominal 20% censoring roughly 98% of
+eligible class pairs remain observable while 26% of positive occurrences are
+hidden. The full-cohort known-only F1 error is positive for the aggregation MLP
+and negative for DeepSDM and random forest under the empty/empty=1 convention.
+With empty/empty=0 the errors are negative for all three. Under rarity-weighted
+censoring, known-only F1 reverses the small full-recorded MLP–DeepSDM point
+ordering on VegBank in all ten masks. The change is caused by the labels seen
+by the scorer, with the predicted sets held fixed.
+
+For a model pair, each candidate completion has a single shared true species
+set in each cell. The difference of separately optimized F1 ranges permits
+different unknown inventories for the two models. Conditioning on the number
+of additional positives makes the F1 denominators fixed. Allocate positives to
+the four classes of prediction agreement/disagreement to obtain sharp cellwise
+extrema, then average extrema over cells. This contracts mean range width by
+59.3% and identifies practical model order in 80/240 cases, compared with
+0/240 from the separate ranges. The shared ranges retain both signs for all ten
+reversed VegBank masks. The ranges concern finite recorded cohorts under correct
+known labels. Cite the related binary F1 bounds after disagreement labeling.
+[T5](observation_replication_t5_results.md) · [T6](paired_completion_t6_results.md) ·
+[Fernández-Barrios et al.](https://arxiv.org/abs/2611.01712).
+
+In T5, we matched six shared acquisition orders and two local orders at a
+common .002 contrast width. At 5% nominal linkage error and audit price .1,
+scope-matched static audited sharing reduced cost by 38.6–67.2% across six
+model/cohort settings. At price .5, AEKOS cost exceeded local identification by
+10.7%. At least one range excluded the complete-record contrast on every
+unchecked path. Guarded endpoint validity uses perfect compatibility checks
+and explicit charges for follower audits and full determinations.
 
 ## T4: matched scope, generic adaptation and cost forecasts
 
@@ -355,9 +388,12 @@ E3 supplies a failed locally locked domain confirmation, and those outcomes are
 now consumed. It does not provide a separate independent data release. NEON
 reference inference and field outcomes are now evaluated as E4/A2/A3/A3u above;
 final admission is 33 cells/six sites, below the original 100/12 rule. It cannot
-serve as rescued confirmation. The two proposed next packages are replication
-of measurement/cost findings across supported prediction settings/sources, and
-separately uninspected outcomes with a record/cost audit. Their availability and
-exact budgets are unresolved. Additional inference may use existing bounded GPU
-authorization after reference checks; the current simulations need no GPU.
-Novelty and a successful new algorithm remain unestablished.
+meet the field admission rule. T5 replicates measurement and cost findings
+across verified prediction settings and contributors within SAGE. The main
+scientific gap is separately uninspected outcomes with a record/cost audit.
+An outcome-blinded AusPlots site-visit screen leaves 119 candidate cells
+outside the historical AEKOS buffer and published PO training grid. Strict,
+same-region native masks support 113 of these cells. All require fresh
+environmental feature vectors, and the >10 km training buffer leaves only
+seven spatial blocks. Voucher-inventory coverage and statistical adequacy
+remain unresolved. [AusPlots audit](ausplots_metadata_audit_results.md).

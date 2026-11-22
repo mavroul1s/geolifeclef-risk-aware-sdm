@@ -1,0 +1,43 @@
+{
+  "spatial_candidate_visits": 151,
+  "candidate_cells": 119,
+  "strict_same_region_mask_cells": 113,
+  "polygon_fallback_cells": 3,
+  "candidate_cells_in_unrepresented_or_inconsistent_regions": 3,
+  "candidate_regions": {
+    "NSW": 4,
+    "NTA": 29,
+    "QLD": 6,
+    "SOA": 45,
+    "TAS": 3,
+    "VIC": 1,
+    "WAU": 31
+  },
+  "published_eval_masks_per_candidate_region": {
+    "NSW": 2919,
+    "NTA": 68,
+    "QLD": 4234,
+    "SOA": 230,
+    "TAS": 0,
+    "VIC": 2,
+    "WAU": 76
+  },
+  "inconsistent_regions": [],
+  "strict_native_species_count_range": [
+    410,
+    1105
+  ],
+  "covariate_feature_vectors_built": 0,
+  "species_outcomes_read": false,
+  "final_cohort_admitted": false,
+  "sha256": {
+    "results/ausplots_metadata_audit/spatial_feasibility.json": "a4c8396b2dbda062bb8768f26d69896c8e90eb5c3279dcfb4c9b270c4fd945a4",
+    "data/ausplots_metadata_audit/post_cutoff_visit_geometry.csv": "dd6238bf8d0ca6991f90a625e94d0eb8b8bc434da959eca4e398db7fc9b73883",
+    "data/external_replication_e1/predictors/eval_location.h5": "8c3c25bac22eab9b7c445d9620e1545f795e71c84a6f5bffcf798874040ee71f",
+    "data/external_replication_e1/range_masks_1km/eval_range_mask.h5": "1884580b462204743b162759051f2fdfc8954ee68fe95bad18ef38d64e6dfee4",
+    "data/neon_input_followup/tdwg_level3/level3.shp": "df202da01ea58a46c6f7a7674bd61f438fbef6c43f3ca1f05855852fab6eb8a5",
+    "data/neon_input_followup/tdwg_level3/level3.shx": "664641ae7afd886367f380d92bb3ba7ae0b380546ab1884d3cb11c9b163d568a",
+    "data/neon_input_followup/tdwg_level3/level3.dbf": "c9509d9678ffd118922651d129dc15f2af34052fcf988080449ff5905c759506",
+    "data/neon_input_followup/tdwg_level3/level3.prj": "a02a27b1d1982c8516d83398e85a3c8b1aef1713c13ef4d84d7bde17430c07c4"
+  }
+}

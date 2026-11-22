@@ -1,0 +1,30 @@
+{
+  "at_utc": "2026-11-22T15:01:08.184232+00:00",
+  "identity": {
+    "configs/observation_replication_t5.json": "374e4e16288f0fa2191202d3afb80a45c28b287b8ebd35308c758a4a7f6af156",
+    "docs/observation_replication_t5_protocol.md": "8f9a76b3fcc724acdfcc648345b71f3d59804f6ff221cd470314620c81eea349",
+    "scripts/run_observation_replication_t5.py": "1e0f9a978115b0ef5cc01d4cfd4d361daac6e1e82d615ea15ab9893035e88a7e",
+    "scripts/run_taxonomic_resolution_t1.py": "88fbc9536fac1565c1cc820e36d36ba4ba6fe6b4c91d79b94a411c084b29fd94",
+    "src/geolifeclef/taxonomic_censoring.py": "3fb02877dfa379c24813bc86bef6f0333eb3f7fa8459914b6e39dfecb13f103a",
+    "src/geolifeclef/external_reliability.py": "7ba86d1501dfbcd415ccbebca8f0258c8e85ca6ab1de5bb2cac7b8c98653d296",
+    "src/geolifeclef/ecological_selection.py": "67e646fb011f987c05aec1a174f06c6d95805de3aa8f08dd72e0bbdddafd9685",
+    "src/geolifeclef/reliability.py": "3a34882cdf7ff14c31af08b405fdaaed42fca420b35241ecf9d800b52dfeeb1c",
+    "data/taxonomic_resolution_t1/assessment_roles.csv": "91ff13097628f53561c56c7bdd836f576ea30ae6a18c046ebea3b3a9bf3a9097",
+    "data/taxonomic_resolution_t1/fixed_policy.npz": "b1cf2dbaaacc3411fdb26c556bae686e3a5941b55cd3e953892a519eaa6f7154",
+    "data/taxonomic_resolution_t1/contract.npz": "fae27a9c81cd30abfc1e468b5d46ab3d0815e29a923376c533cb068bb1bdd0a2",
+    "data/external_replication_e1/cohort_roles.csv": "246f71d750e590a81eb37c903ec8cab7f80931498c44f975d89c4381554cd4ef",
+    "data/external_replication_e1/eligible_species.npy": "f53a09dd18edaeed9275d1a24f7fdab37ac5398bfa858a587289ef8243406f0b",
+    "data/external_replication_e1/sealed_eval_test_targets.h5": "bf52746612d1d784d10a8696be94096d1162eaf3bb43a38011087d5af8730da6",
+    "results/external_replication_e1/retrieval_predictions.json": "9eb1c7b6fb41183f0ef00199d1b0a4a8b467385c4795e475f0710ea383cab630",
+    "data/independent_data_audit/sage_eval_plot_metadata.csv": "27118ac038e31e5096c99ce2b5d9fb2ba4cdd2261a0e55fd1ed10a96074577a4",
+    "data/taxonomic_verification_t2/oracle_contract.npz": "840438814578f2e7a7a6ef71d7c03ec1747e60284e6529c15671024e2941d41d",
+    "results/adaptive_baselines_t4/artifact_manifest.json": "81f2c49eb283a80ab47b0ee44dac9f6b69cb0b99d18b77774e879851115db21c",
+    "data/external_replication_e1/optimized_deepsdm_s0/test_predictions.h5": "372f2248df97ee6c2a800263ea83e6fc465f5a52662a094efff35cf610502607",
+    "results/external_replication_e1/policies/optimized_deepsdm_s0.json": "49a11a87fe784abd09082ef1460d520ab079936d491c59920ea909777ad746c8",
+    "results/external_replication_e1/policies/optimized_deepsdm_s0.npz": "c9160a15498a249035b9a584a452fdd9f1b0d564324c10b4b370a1de9ced6697",
+    "data/external_replication_e1/randomforest_s0/test_predictions.h5": "49b44d467f2e225105f41494d517d28786019fdcf9ced4e68687d11251ce0ee1",
+    "results/external_replication_e1/policies/randomforest_s0.json": "eaa7e10fc09e5dbb36c10387793093a88dedbaf4436f484a31f5b2fdc1064049",
+    "results/external_replication_e1/policies/randomforest_s0.npz": "318c4ce65764673d5aa66383ea97ef91963d451623f6a817870181bd6ac12e82"
+  },
+  "design": "consumed E1 development"
+}

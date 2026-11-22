@@ -1,4 +1,4 @@
-# Working paper outline — 21 November 2026
+# Working paper outline — 22 November 2026
 
 Working title: **Observation Contracts and Verification Costs in Ecological
 Model Evaluation**. Planning artifact for supervisor review, not a completed
@@ -7,8 +7,8 @@ manuscript or a claim of publication readiness.
 ## Research question and contribution candidate
 
 How do known-label definitions, taxonomic uncertainty, shared-record linkage
-and the information/cost of verification change apparent predictive quality
-and the ability to compare fixed ecological decision policies?
+and the cost of verification change apparent predictive quality and the
+ability to compare ecological models and their fixed survey-selection policies?
 
 The contribution candidate is a reproducible empirical evaluation with explicit
 observation contracts, fair verification costs and documented failure modes.
@@ -33,7 +33,8 @@ scope and failed hypotheses.
 | T2: 100 trajectories | Shared versus local query units and comparison-versus-inventory tradeoffs | Primary fails through saturation; secondary 27.7%/39.5% median-query reductions are conditional on the tested controls |
 | T3: 360 trajectories | Unchecked linkage can invalidate ranges; charged audits change cost frontier | No observed wrong ordering; perfect audits and assumed costs; 10% reference criterion fails |
 | T4: 300 executed / 360 priced paths | Scope-equivalence diagnosis; six generic controls and dynamic-width/cost ablations | Static-score novelty closed; learned-cost 4.25–9.03% gains miss 10%; no consistent forecast-learning benefit or new-method claim |
-| Model/source replication | Test which measurement/cost effects transport | Proposed; no results yet |
+| T5 model and contributor replay | Bias direction, ranking reversals and charged cost responses across fixed settings | SAGE development only, with simulated missingness/charges |
+| T6 shared model-comparison bounds | Identify rankable and indeterminate cohorts under the same latent inventory | 80/240 practical signs and 59.3% narrower mean bounds. Existing shared-completion literature |
 | Uninspected external record/cost audit | Ground the query contract and test a frozen narrow claim | Proposed; admission, data access and sample/cost adequacy unresolved |
 
 Preserve the labels on every result. A local protocol freeze on consumed data
@@ -93,12 +94,17 @@ implementation checks, not scientific novelty.
 
 ## Remaining work and stopping point
 
-Two evidence packages remain proposed: model/source replication and separately
-uninspected external confirmation with a record/cost audit. Start with an input
-and contract inventory; freeze exact settings/budgets after feasibility checks.
-No new backbone sweep is allocated. If stronger costs/controls or replication
-remove a claimed advantage, report it and narrow the empirical case with the
-supervisor. Do not retune failed primaries or add seeds to manufacture novelty.
-A carefully positioned empirical paper is plausible; a strong new-method paper
-is not supported by the present score. Publication depends on the contribution,
-replication, realistic evidence and venue fit, not the number of runs.
+T5 completes within-SAGE replication across saved model settings and survey
+contributors. T6 tests shared-inventory model comparison. Make the central
+results figures show positive-occurrence loss, ranking uncertainty and
+verification cost at a fixed precision target. Use the competition and
+reliability history as supporting thesis evidence.
+
+External confirmation remains open. The [AusPlots metadata audit](ausplots_metadata_audit_results.md) yields
+119 candidate cells outside the legacy buffer and training grid. Build exact
+predictors and check the plot-voucher contract before freezing an outcome test.
+A paired, timed voucher audit with adjudication can estimate the cost ratio and
+false-compatible rate that matter for the simulation. Freeze eligibility and
+endpoints before a supervisor-held release of uninspected inventories. An
+independent source that fails the record contract supports a feasibility report
+and a narrower empirical case study.

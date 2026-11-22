@@ -1,0 +1,12 @@
+{
+  "at_utc": "2026-11-22T15:02:11.959854+00:00",
+  "seconds": 63.77533054000014,
+  "score_rows": 2880,
+  "ordering_rows": 2880,
+  "interval_rows": 288,
+  "distinct_masks": 60,
+  "fresh_confirmation": false,
+  "new_fits": 0,
+  "new_inference": 0,
+  "new_gpu_jobs": 0
+}
