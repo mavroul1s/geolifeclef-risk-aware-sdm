@@ -100,9 +100,11 @@ results figures show positive-occurrence loss, ranking uncertainty and
 verification cost at a fixed precision target. Use the competition and
 reliability history as supporting thesis evidence.
 
-External confirmation remains open. The [AusPlots metadata audit](ausplots_metadata_audit_results.md) yields
-119 candidate cells outside the legacy buffer and training grid. Build exact
-predictors and check the plot-voucher contract before freezing an outcome test.
+External confirmation remains open. The [AusPlots follow-up](ausplots_followup_results.md)
+leaves 87 candidate sites in 45 blocks after the combined record and spatial
+screen. Both model settings pass the published CPU reference, and 44 of 52
+predictors reproduce the reference panel. Obtain the eight missing layers and
+finish the species-level label contract before freezing an outcome test.
 A paired, timed voucher audit with adjudication can estimate the cost ratio and
 false-compatible rate that matter for the simulation. Freeze eligibility and
 endpoints before a supervisor-held release of uninspected inventories. An

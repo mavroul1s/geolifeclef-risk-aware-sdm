@@ -1,0 +1,22 @@
+{
+  "status_at_utc": "2026-11-28T11:42:55+00:00",
+  "status": "queued",
+  "platform": "Kaggle",
+  "submitted_versions": 1,
+  "queue_minutes_approximate": 34,
+  "private": true,
+  "released_reference_data_only": true,
+  "gpu_probabilities_collected": false,
+  "full_local_comparison_passed": null,
+  "competition_submissions": 0,
+  "execution_contract": {
+    "prepared_at_utc": "2026-11-28T11:08:14.854287+00:00",
+    "job_limit": 1,
+    "notebook_time_limit_seconds": 1200,
+    "notebook_sha256": "d7333a4ca64f25a0c17a3ad2465e0ce34da01ca5969ffa717abadd957aa7482f",
+    "public_bundle_checked": true,
+    "template_sha256": "5b3dff66087fb03feb51a69713d4e7debbf456022968c991563203f40de3abbd",
+    "cpu_report_sha256": "fcf0ff4f69abda3f2197b7df5b1dce3fbb2c50bc536576ba06420468659dbf13",
+    "new_field_coordinates_covariates_or_labels_included": false
+  }
+}

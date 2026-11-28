@@ -1,0 +1,16 @@
+{
+  "pytest": {
+    "tests": 428,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "pytest_report_sha256": "661bc98e31fcdfc73a1e27f49dcdc8be08350233b61f282580dcfa654edafd48",
+  "old_T5_T6_manifest_entries_verified": 56,
+  "old_T4_manifest_entries_verified": 450,
+  "source_receipts_reconciled": true,
+  "candidate_features_verified": 44,
+  "candidate_complete_52_feature_vectors": 0,
+  "new_noisy_audit_validation_passed": true,
+  "new_AusPlots_species_outcomes_accessed": false
+}

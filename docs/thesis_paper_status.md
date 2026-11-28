@@ -1,4 +1,4 @@
-# Thesis progress and paper path — 22 November 2026
+# Thesis progress and paper path — 28 November 2026
 
 This note separates completed evidence from a proposed paper contribution and
 future validation. More runs, software tests or new split names cannot by
@@ -137,6 +137,12 @@ excludes the benchmark contrast in all 48 paths at some checkpoint. Ideal
 paid audits preserve the tested endpoint validity. These are normalized
 synthetic costs.
 
+In a separate imperfect-audit replay, double review reduces benchmark
+exclusions from 74/80 to 44/80 noisy paths. All first endpoints retain the
+benchmark. Reviewers who share errors give a smaller benefit, and the higher
+assumed audit price increases cost relative to local identification.
+[Imperfect-audit results](imperfect_audit_results.md).
+
 ## What remains for the paper
 
 Lead with the effect of unresolved species on **which ecological model
@@ -146,11 +152,12 @@ it could cost. Put the competition and earlier confidence experiments in the
 thesis background or paper supplement. Separately report old failed primary
 criteria and the exploratory T6 status.
 
-Within-benchmark replication is complete. The outcome-blinded AusPlots screen
-found 151 visits across 119 cells outside the historical AEKOS buffer and
-published training grid. Region-validated native masks cover 113 candidate
-cells. No candidate has an exact released feature-location match, and a
-separate voucher-inventory contract and reference-validated comparison model
-are needed. Field effort and external outcome confirmation remain open.
-[AusPlots results](ausplots_metadata_audit_results.md) ·
+Within-benchmark replication is complete. The outcome-blinded AusPlots follow-up
+checks 151 visits against both released presence-only training grids. The
+combined record, region and >1 km screen leaves 87 sites across 84 input cells
+and 45 blocks. A second model passes its prediction reference, and 44 of 52
+features reproduce exactly on fixed released rows. The eight Human Footprint
+components still require the original archive. The species-level observation
+contract, external outcome comparison and measured verification effort remain
+open. [AusPlots follow-up](ausplots_followup_results.md) ·
 [Next evidence packages](next_experiment_budget.md).

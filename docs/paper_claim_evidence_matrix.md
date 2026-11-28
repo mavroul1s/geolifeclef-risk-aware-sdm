@@ -4,12 +4,20 @@ Working title: **Observation Contracts and Verification Costs in Ecological
 Model Evaluation**. This matrix distinguishes empirical evidence from novelty. It is not an
 exhaustive literature review or a claim that a venue will accept the paper.
 
-**External-data update:** public, outcome-blinded AusPlots metadata identify
-119 cells after the historical AEKOS buffer and published PO training-grid
-exclusions. Same-region native masks support 113 cells. None has matching
-feature-location inputs. This supports source feasibility and gives a
-quantified limit on a stricter >10 km training buffer, with seven blocks
-remaining. [AusPlots audit](ausplots_metadata_audit_results.md).
+**External-data update.** The outcome-blinded AusPlots record and spatial screen
+leaves 87 sites in 45 blocks after selecting the earliest qualifying visit at
+each site. The strict >10 km sensitivity stratum has only five blocks after
+the combined screen. Two published prediction settings pass CPU reference
+reproduction. Forty-four of the 52 environmental inputs match all 32 fixed
+reference rows. The eight Human Footprint components still required for fresh
+inference and the species-level observation contract remain open.
+[AusPlots follow-up](ausplots_followup_results.md).
+
+**Imperfect-audit update.** On 200 matched T3 trajectories, double review cuts
+paths with benchmark exclusions from 74/80 to 44/80. All first endpoints retain
+the benchmark. Correlated errors reduce benefits, and higher assumed audit
+prices make double review costlier than matched local verification. This is
+simulation evidence on consumed records. [Imperfect-audit sensitivity](imperfect_audit_results.md).
 
 **T5/T6 update:** fixed-prediction replay exposes model- and score-convention-dependent
 bias, including a VegBank MLP/DeepSDM point-order reversal under the moderate

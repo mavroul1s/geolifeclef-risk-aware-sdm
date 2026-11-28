@@ -1,0 +1,75 @@
+{
+  "source_archive": {
+    "source": "WCS author download of the 2009 cumulative map",
+    "url": "https://hii-v2-downloads.wcshumanfootprint.org/data/HFP2009.zip",
+    "archive_bytes": 267278974,
+    "archive_sha256": "f1b6d9daa64be83c799d878410593c80ade2df77fde8ef3702f0a92976de39d2",
+    "member": "HFP2009.tif",
+    "member_bytes": 233084809,
+    "member_sha256": "6731cd1720aec96a0176c87df89f41721a6bf4a67a553c0659afe6bc27457f41"
+  },
+  "reference_row_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7,
+    8,
+    44853,
+    46470,
+    47159,
+    47846,
+    48530,
+    49215,
+    49899,
+    50589,
+    51274,
+    51959,
+    52643,
+    53328,
+    6,
+    4854,
+    9701,
+    14548,
+    19395,
+    24242,
+    29088,
+    33935,
+    38782,
+    43629,
+    48480,
+    53335
+  ],
+  "layer": {
+    "group": "human_footprint",
+    "file": "HFP2009.tif",
+    "source_url": null,
+    "status": "verified_and_sampled",
+    "local_raster_sha256": "6731cd1720aec96a0176c87df89f41721a6bf4a67a553c0659afe6bc27457f41",
+    "crs": "ESRI:54009",
+    "shape": [
+      16382,
+      36081
+    ],
+    "dtype": "float32",
+    "reference": {
+      "nearest_fills": 0,
+      "unfilled_nodata": 0,
+      "nan_values": 0
+    },
+    "reference_matches": 32,
+    "reference_rows": 32,
+    "reference_nan_pattern_disagreements": 0,
+    "reference_max_finite_absolute_error": 0.0,
+    "reference_mismatched_positions": [],
+    "candidate": {
+      "nearest_fills": 2,
+      "unfilled_nodata": 0,
+      "nan_values": 0
+    },
+    "candidate_finite": 119,
+    "candidate_value_sha256": "72a8ff333ce1cad7ef4cd57d4546839fa1d079aad325d95905eea36b9059fceb"
+  }
+}

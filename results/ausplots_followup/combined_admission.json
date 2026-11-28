@@ -1,0 +1,56 @@
+{
+  "all_candidate_visits_checked": 151,
+  "strict_same_region_and_records": {
+    "visits": 139,
+    "sites": 116,
+    "cells_1km": 112,
+    "blocks_100km": 53
+  },
+  "primary_metadata_screen_gt_1km_both_models": {
+    "visits": 103,
+    "sites": 87,
+    "cells_1km": 84,
+    "blocks_100km": 45
+  },
+  "earliest_per_site_after_primary_metadata_screen": {
+    "visits": 87,
+    "sites": 87,
+    "cells_1km": 84,
+    "blocks_100km": 45
+  },
+  "strict_gt_10km_both_models": {
+    "visits": 15,
+    "sites": 15,
+    "cells_1km": 14,
+    "blocks_100km": 5
+  },
+  "primary_visits_without_legacy_site_history": {
+    "visits": 90,
+    "sites": 75,
+    "cells_1km": 72,
+    "blocks_100km": 39
+  },
+  "primary_voucher_rows": 5812,
+  "primary_vouchers_uncertain": 626,
+  "primary_vouchers_flag_missing": 194,
+  "predictor_run": "predictors_reference_v1",
+  "verified_sampled_features": 43,
+  "complete_52_finite_vectors": 0,
+  "second_model_cpu_reference_passed": true,
+  "final_cohort_admitted": false,
+  "species_outcomes_read": false,
+  "source_sha256": {
+    "scripts/validate_ausplots_followup.py": "9fd67a08d477901025e686b69db325efdbcbe75d49db0f167bfa7f626f938a58",
+    "data/external_replication_e1/range_masks_1km/eval_range_mask.h5": "1884580b462204743b162759051f2fdfc8954ee68fe95bad18ef38d64e6dfee4",
+    "data/external_replication_e1/predictors/eval_location.h5": "8c3c25bac22eab9b7c445d9620e1545f795e71c84a6f5bffcf798874040ee71f",
+    "data/ausplots_followup/training_overlap/screened_visits.csv": "240805467fcd23b59fce84b565060dfafbd513e0b79160b2dc6b67bf3620609c",
+    "results/ausplots_followup/voucher_metadata.json": "68d6725dd538c3627b0f2c48dbc57bc3dd04adb0b38498722d074e00a424bd1d",
+    "results/ausplots_followup/second_model_reference.json": "fcf0ff4f69abda3f2197b7df5b1dce3fbb2c50bc536576ba06420468659dbf13",
+    "results/ausplots_followup/nonaggregated_training_overlap.json": "2298b6aa6e38ad40d3beb350a15b3c9c8512090de70c4deb1a919ce44091bd2c",
+    "results/ausplots_followup/predictors_reference_v1/predictors.json": "fba0fa40ade5f516ba7de863eb34e7d34c4bcce37a560fdd50daa4ccea0d3b2e",
+    "data/neon_input_followup/tdwg_level3/level3.shp": "df202da01ea58a46c6f7a7674bd61f438fbef6c43f3ca1f05855852fab6eb8a5",
+    "data/neon_input_followup/tdwg_level3/level3.shx": "664641ae7afd886367f380d92bb3ba7ae0b380546ab1884d3cb11c9b163d568a",
+    "data/neon_input_followup/tdwg_level3/level3.dbf": "c9509d9678ffd118922651d129dc15f2af34052fcf988080449ff5905c759506",
+    "data/neon_input_followup/tdwg_level3/level3.prj": "a02a27b1d1982c8516d83398e85a3c8b1aef1713c13ef4d84d7bde17430c07c4"
+  }
+}

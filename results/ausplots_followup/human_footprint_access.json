@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-28",
+  "source_doi": "10.5061/dryad.052q5",
+  "dryad_files": [
+    {
+      "file_id": 97261,
+      "name": "HumanFootprint.7z",
+      "bytes": 823500928,
+      "declared_md5": "157a1d080449308d54003cec5830000d",
+      "public_file_http_status": 403,
+      "normal_get_without_range_http_status": 403,
+      "version_archive_api_http_status": 405
+    },
+    {
+      "file_id": 100086,
+      "name": "HumanFootprintv2.7z",
+      "bytes": 897404747,
+      "declared_md5": "64f400c1b50ddd8cab445d97e05fb877",
+      "public_file_http_status": 403,
+      "file_api_http_status": 401
+    }
+  ],
+  "dataone_exact_doi_matches": 0,
+  "wcs_author_archive_keys_under_data": ["data/HFP1993.zip", "data/HFP2009.zip"],
+  "wcs_2009_reference_receipt": "human_footprint_wcs_probe.json",
+  "missing_components": [
+    "Built2009.tif", "croplands2005.tif", "Lights2009.tif", "NavWater2009.tif",
+    "Pasture2009.tif", "Popdensity2010.tif", "Railways.tif", "Roads.tif"
+  ]
+}

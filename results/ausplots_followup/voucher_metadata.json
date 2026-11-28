@@ -1,0 +1,164 @@
+{
+  "strata": {
+    "all_candidates": {
+      "visits": 151,
+      "sites": 123,
+      "cells_1km": 119,
+      "blocks_100km": 58
+    },
+    "positive_one_hectare_flag": {
+      "visits": 151,
+      "sites": 123,
+      "cells_1km": 119,
+      "blocks_100km": 58
+    },
+    "enhanced_point_effort": {
+      "visits": 146,
+      "sites": 122,
+      "cells_1km": 118,
+      "blocks_100km": 57
+    },
+    "standard_point_effort": {
+      "visits": 0,
+      "sites": 0,
+      "cells_1km": 0,
+      "blocks_100km": 0
+    },
+    "any_voucher": {
+      "visits": 149,
+      "sites": 123,
+      "cells_1km": 119,
+      "blocks_100km": 58
+    },
+    "valid_voucher_date_and_unique_keys": {
+      "visits": 149,
+      "sites": 123,
+      "cells_1km": 119,
+      "blocks_100km": 58
+    },
+    "strict_record_provenance": {
+      "visits": 145,
+      "sites": 122,
+      "cells_1km": 118,
+      "blocks_100km": 57
+    },
+    "strict_records_gt_1km": {
+      "visits": 116,
+      "sites": 97,
+      "cells_1km": 93,
+      "blocks_100km": 48
+    },
+    "strict_records_gt_10km": {
+      "visits": 17,
+      "sites": 17,
+      "cells_1km": 16,
+      "blocks_100km": 7
+    },
+    "strict_records_gt_1km_earliest_per_site": {
+      "visits": 97,
+      "sites": 97,
+      "cells_1km": 93,
+      "blocks_100km": 48
+    }
+  },
+  "record_totals": {
+    "point_records": 180864,
+    "voucher_rows": 8371,
+    "voucher_date_disagreements": 0,
+    "voucher_uncertain_true": 921,
+    "voucher_uncertainty_missing": 326,
+    "voucher_uncertain_false": 7124,
+    "point_records_with_barcode": 104966,
+    "point_barcodes_distinct": 4314,
+    "point_barcodes_unlinked": 1,
+    "point_barcodes_ambiguous": 0,
+    "point_records_uniquely_linked": 104965,
+    "invalid_point_keys": 0,
+    "blank_voucher_barcodes": 0,
+    "duplicate_voucher_keys": 0
+  },
+  "plot_size_flag_missing_visits": 0,
+  "visits_without_point_rows": 2,
+  "point_effort_counts": {
+    "0": 2,
+    "910": 1,
+    "1009": 1,
+    "1010": 146,
+    "1011": 1
+  },
+  "species_outcomes_requested": false,
+  "inventory_absence_established": false,
+  "completed_at_utc": "2026-11-28T11:04:32.194882+00:00",
+  "retrieval": {
+    "site": {
+      "rows": 151,
+      "bytes": 14790,
+      "response_dates": [
+        "Sat, 28 Nov 2026 11:03:57 GMT"
+      ],
+      "batches": 4,
+      "sha256": "ba230414e3b28d4e951e6f5a3422a6da8c5b7cf43c2e66696f2af537b6f5cbda",
+      "columns": [
+        "site_location_name",
+        "site_location_visit_id",
+        "plot_is_100m_by_100m"
+      ]
+    },
+    "veg_voucher": {
+      "rows": 8371,
+      "bytes": 1445901,
+      "response_dates": [
+        "Sat, 28 Nov 2026 11:03:58 GMT"
+      ],
+      "batches": 4,
+      "sha256": "77e55f30d8e2a2468678fd1aa65fef257c17c221794e87643ea9f6be2dc92892",
+      "columns": [
+        "site_location_name",
+        "site_location_visit_id",
+        "veg_barcode",
+        "is_uncertain_determination",
+        "visit_start_date"
+      ]
+    },
+    "veg_pi": {
+      "rows": 180864,
+      "bytes": 23527497,
+      "response_dates": [
+        "Sat, 28 Nov 2026 11:04:02 GMT",
+        "Sat, 28 Nov 2026 11:04:06 GMT",
+        "Sat, 28 Nov 2026 11:04:07 GMT",
+        "Sat, 28 Nov 2026 11:04:10 GMT",
+        "Sat, 28 Nov 2026 11:04:11 GMT",
+        "Sat, 28 Nov 2026 11:04:13 GMT",
+        "Sat, 28 Nov 2026 11:04:14 GMT",
+        "Sat, 28 Nov 2026 11:04:15 GMT",
+        "Sat, 28 Nov 2026 11:04:16 GMT",
+        "Sat, 28 Nov 2026 11:04:18 GMT",
+        "Sat, 28 Nov 2026 11:04:19 GMT",
+        "Sat, 28 Nov 2026 11:04:20 GMT",
+        "Sat, 28 Nov 2026 11:04:22 GMT",
+        "Sat, 28 Nov 2026 11:04:23 GMT",
+        "Sat, 28 Nov 2026 11:04:25 GMT",
+        "Sat, 28 Nov 2026 11:04:26 GMT",
+        "Sat, 28 Nov 2026 11:04:27 GMT",
+        "Sat, 28 Nov 2026 11:04:29 GMT"
+      ],
+      "batches": 38,
+      "sha256": "15c1fd8acd99c0a6b4b177b15bb495abeb9b23a08eb9f3a206bce0d1f4077f33",
+      "columns": [
+        "site_location_name",
+        "site_location_visit_id",
+        "transect",
+        "point_number",
+        "veg_barcode"
+      ]
+    }
+  },
+  "per_visit_sha256": "85d4486f4a884ae3f1e16cf8ec59a519de6d8340b6bd0c26f2dd7d8c76be1935",
+  "endpoint": "http://swarmapi.ausplots.aekos.org.au:80",
+  "source_sha256": {
+    "data/ausplots_metadata_audit/post_cutoff_visit_geometry.csv": "dd6238bf8d0ca6991f90a625e94d0eb8b8bc434da959eca4e398db7fc9b73883",
+    "docs/ausplots_followup_protocol.md": "539006e8c325dfe160d0f1f548ffcb23a3777c277a9b05e16726644f63a95692",
+    "scripts/audit_ausplots_voucher_metadata.py": "b6b8d9604ab994e0927bf38a63edbe191202ad9365dc9744dd353a87add18998"
+  }
+}

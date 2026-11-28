@@ -45,6 +45,18 @@ model/cohort settings. At price .5, AEKOS cost exceeded local identification by
 unchecked path. Guarded endpoint validity uses perfect compatibility checks
 and explicit charges for follower audits and full determinations.
 
+A separate 200-trajectory replay fixes the T3 comparison-support schedule and
+permits erroneous and abstaining compatibility reviewers. With one review,
+74/80 trajectories exclude the recorded benchmark contrast at a checkpoint.
+With two reviews, 44/80 do so. All first precision and practical-ordering
+endpoints contain the benchmark in this replay. At 5% nominal linkage error
+under the higher reviewer-error profile, the second review reduces wrong
+propagations from 663 to 64 with independent errors and from 662 to 341 with
+correlated errors. At audit price .5, double review costs 6.6–19.8% more than
+local resolution on the same scope and schedule. These sensitivity results
+use assumed error rates and normalized charges.
+[Imperfect-audit replay](imperfect_audit_results.md).
+
 ## T4: matched scope, generic adaptation and cost forecasts
 
 Both fixed selectors accept 4,201 cells. Absolute nonzero contrast weights equal
@@ -391,9 +403,14 @@ final admission is 33 cells/six sites, below the original 100/12 rule. It cannot
 meet the field admission rule. T5 replicates measurement and cost findings
 across verified prediction settings and contributors within SAGE. The main
 scientific gap is separately uninspected outcomes with a record/cost audit.
-An outcome-blinded AusPlots site-visit screen leaves 119 candidate cells
-outside the historical AEKOS buffer and published PO training grid. Strict,
-same-region native masks support 113 of these cells. All require fresh
-environmental feature vectors, and the >10 km training buffer leaves only
-seven spatial blocks. Voucher-inventory coverage and statistical adequacy
-remain unresolved. [AusPlots audit](ausplots_metadata_audit_results.md).
+The outcome-blinded AusPlots follow-up checks 151 candidate visits against
+both published presence-only training grids. Complete structural sampling and
+barcode checks, same-region native masks, and a >1 km distance to both training
+sets leave 103 visits across 87 sites, 84 input cells and 45 spatial blocks.
+The >10 km stratum leaves 15 sites in five blocks. A second pretrained setting
+reproduces published probabilities, and 44/52 environmental predictors exactly
+reproduce a 32-row reference panel. Eight original Human Footprint components
+remain unavailable. Reference-input stress tests show sensitivity to replacing
+the unavailable inputs by training means. Species-level completeness, the
+paired F1 outcome and measured verification time remain pending.
+[AusPlots follow-up](ausplots_followup_results.md).

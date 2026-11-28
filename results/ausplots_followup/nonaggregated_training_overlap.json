@@ -1,0 +1,49 @@
+{
+  "original_training_locations_checked": 30138089,
+  "locations_inside_search_buffer": 816149,
+  "omitted_location_distance_lower_bound_km": 81.3676991172299,
+  "max_candidate_nearest_distance_km": 27.83555688775556,
+  "median_candidate_nearest_distance_km": 1.7726973648159048,
+  "visits_in_nonaggregated_training_cell": 0,
+  "outside_both_presence_training_grids": {
+    "visits": 151,
+    "sites": 123,
+    "cells_1km": 119,
+    "blocks_100km": 58
+  },
+  "outside_1km_of_both_presence_training_sets": {
+    "visits": 110,
+    "sites": 89,
+    "cells_1km": 86,
+    "blocks_100km": 46
+  },
+  "outside_10km_of_both_presence_training_sets": {
+    "visits": 17,
+    "sites": 17,
+    "cells_1km": 16,
+    "blocks_100km": 7
+  },
+  "independent_distance_checks": 16,
+  "independent_max_difference_km": 0.0,
+  "completed_at_utc": "2026-11-28T11:07:50.317870+00:00",
+  "retrieval": {
+    "file": "data/ausplots_followup/training_overlap/train_location.h5",
+    "archive": "sage_po_records_nonaggregated.tar",
+    "member": "predictors/train_location.h5",
+    "bytes": 122232704,
+    "sha256": "e640d7b105da4666b385686d50269f0b6a5fce817e8b35c1692b1b6868886c1d",
+    "whole_archive_checksum_recomputed": false,
+    "archive_declared_checksum": "md5:0f3c8ac8b269ee150ac5a88d33c437d7",
+    "range_and_tar_header_checked": true,
+    "header_sha256": "29cad55db1ae683355ac2418c95650eba3e4d03d8b0fad2e1801aa62a65896ca",
+    "header_bytes_checked": 1024,
+    "data_offset": 354749440
+  },
+  "species_outcomes_read": false,
+  "screened_visits_sha256": "240805467fcd23b59fce84b565060dfafbd513e0b79160b2dc6b67bf3620609c",
+  "source_sha256": {
+    "data/external_replication_e1/zenodo_21297133.json": "9fd120fb7a8ef10c0295c601623b6d7fff94daf9c34b863cd6378511256a5188",
+    "data/ausplots_metadata_audit/post_cutoff_visit_geometry.csv": "dd6238bf8d0ca6991f90a625e94d0eb8b8bc434da959eca4e398db7fc9b73883",
+    "scripts/check_ausplots_training_overlap.py": "9125f46cdd38bd8ce69cbbcfb0389bb90a213343852d6634629ba81ec69aaf41"
+  }
+}

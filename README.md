@@ -48,13 +48,17 @@ are not automatically valid for real NEON observations.
   in 80/240 cases versus 0/240 when separate bounds are subtracted. Both
   orderings remain feasible for all ten reversed VegBank examples.
   [T6 results](docs/paired_completion_t6_results.md).
-- **AusPlots metadata audit** identifies 151 candidate visits across 119 cells
-  beyond the legacy AEKOS screen and outside the published training grid.
-  Published same-region masks support 113 cells. Fresh confirmation requires
-  the 52-feature environmental bridge, a complete voucher-inventory contract,
-  and measured verification effort.
-  [AusPlots audit](docs/ausplots_metadata_audit_results.md) ·
+- **AusPlots follow-up** reproduces 44 of 52 environmental inputs and verifies a
+  second released SAGE model. Record and spatial checks leave 87 candidate sites
+  in 45 blocks. The remaining eight Human Footprint inputs and species-level
+  inventory checks are needed for field confirmation.
+  [Follow-up results](docs/ausplots_followup_results.md) ·
+  [Initial metadata audit](docs/ausplots_metadata_audit_results.md) ·
   [Thesis status](docs/thesis_paper_status.md).
+- **Imperfect verification** replays 200 trajectories with single and double
+  review, abstention and correlated errors. Double review reduces later range
+  exclusions, with cost depending on the price of an audit.
+  [Sensitivity results](docs/imperfect_audit_results.md).
 
 ## Research reports and evidence
 

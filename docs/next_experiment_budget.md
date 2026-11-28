@@ -1,4 +1,4 @@
-# Next evidence packages and experiment budget — 22 November 2026
+# Next evidence packages and experiment budget — 28 November 2026
 
 [T5](observation_replication_t5_results.md) replicates score sensitivity and
 verification costs across verified models and survey contributors within SAGE.
@@ -12,18 +12,16 @@ outcomes as originally reported.
 
 ## 1. External recorded-inventory confirmation
 
-The [AusPlots metadata audit](ausplots_metadata_audit_results.md) screens
-1,152 visits and finds 151 visits across 119 cells beyond the legacy AEKOS
-screen and outside the SAGE presence-only training grid. Only 17 visits
-across seven blocks are more than 10 km from training. Preserve both facts when
-scoping geographic generalization. Published same-region native masks support
-113 of the 119 cells. None of the 119 has an exact cached predictor location.
-Prioritize the published 52-feature environmental pipeline and validation of a
-second frozen prediction setting, then resolve plot footprint and direct
-voucher-link completeness. Group repeated visits by site. Record archive
-overlap and provenance. Define the unit of observation, minimum clusters,
-model pair, .001 comparison margin or a justified replacement, and resampling
-before opening labels.
+The [AusPlots follow-up](ausplots_followup_results.md) checks record effort,
+barcode linkage and both models' released presence-only coordinates. The
+combined strict native-mask and >1 km screen leaves 87 candidate sites in 45
+blocks after retaining the earliest qualifying visit. The >10 km stratum has
+15 sites in five blocks. Both model settings reproduce released probabilities
+on CPU. Forty-four of the 52 environmental predictors match the fixed reference.
+Obtain and verify the eight remaining Human Footprint layers before frozen
+inference. Finalize the accepted-name and uncertainty rules, the decoder and
+site-block inference in the [field protocol](ausplots_followup_protocol.md)
+before opening species records. The practical margin remains .001.
 
 The proposed primary tests whether paired completion yields a credible
 evaluated-cohort ranking in practice at the declared margin. Report coverage,
@@ -43,13 +41,12 @@ adjudication and context access. Treat calendar turnaround as a separate
 measure. Compare the observed audit-to-ID ratios with T3/T5 break-even
 scenarios.
 
-If time or adjudicated identities are inaccessible, run a separately
-prespecified imperfect-audit sensitivity with false-compatible errors and
-an abstain-to-identify rule. Compare routine audits, full local identification
-and double review under matched costs. Check oracle coverage, practical sign
-errors and cost at fixed width. Correlated errors and an uncertain audit error
-bound deserve an explicit scenario. A simulated audit cannot establish
-human time, human accuracy or field coverage.
+The [imperfect-audit sensitivity](imperfect_audit_results.md) is complete. It
+compares one review, two reviews, ideal compatibility and local identification
+under matched scope and prices. The correlated-error case still excludes the
+benchmark at some checkpoint in all ten high-error, 5%-wrong-link trajectories
+with double review. Timed human verification and measured error rates remain
+the next evidence package.
 
 ## 3. Optional paired-verification follow-up
 

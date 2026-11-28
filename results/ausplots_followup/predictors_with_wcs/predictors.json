@@ -1,0 +1,1690 @@
+{
+  "completed_at_utc": "2026-11-28T11:15:24.808848+00:00",
+  "reference_row_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7,
+    8,
+    44853,
+    46470,
+    47159,
+    47846,
+    48530,
+    49215,
+    49899,
+    50589,
+    51274,
+    51959,
+    52643,
+    53328,
+    6,
+    4854,
+    9701,
+    14548,
+    19395,
+    24242,
+    29088,
+    33935,
+    38782,
+    43629,
+    48480,
+    53335
+  ],
+  "candidate_cells": 119,
+  "verified_sampled_features": 44,
+  "full_reference_match_and_sampled": false,
+  "candidate_cells_all_52_finite": 0,
+  "species_outcomes_read": false,
+  "candidate_features_sha256": "c73d6cf752c2148d460314d031ae8950d5825ad08ce54aaee159c3ff91231535",
+  "range_block_bytes": 262144,
+  "max_range_bytes_per_layer": 150994944,
+  "source_sha256": {
+    "data/ausplots_metadata_audit/post_cutoff_visit_geometry.csv": "dd6238bf8d0ca6991f90a625e94d0eb8b8bc434da959eca4e398db7fc9b73883",
+    "results/ausplots_metadata_audit/native_mask_feasibility.json": "e1283a1545d15c0aaab0e4b1452447d797a9d278f08359e27bea0790b7abdf86",
+    "data/external_replication_e1/predictors/eval_location.h5": "8c3c25bac22eab9b7c445d9620e1545f795e71c84a6f5bffcf798874040ee71f",
+    "data/independent_data_audit/sage_eval_plot_metadata.csv": "27118ac038e31e5096c99ce2b5d9fb2ba4cdd2261a0e55fd1ed10a96074577a4",
+    "data/neon_bridge/published_source/scripts/data_prep_scripts/predictors.py": "cfb62f0da5870438becd23797129efc77a62e2da26e6848fedf74d24aa86ac6d",
+    "docs/ausplots_followup_protocol.md": "539006e8c325dfe160d0f1f548ffcb23a3777c277a9b05e16726644f63a95692",
+    "scripts/check_ausplots_predictors.py": "46f83d71a4eeb6690e9f932f16117a89ed78431a6a931f07cedf1da8759e42a8",
+    "data/neon_bridge/reference_predictors/eval_chelsa.h5": "49483d07b275fc3f7d7942b39fe656daa40b7c47c2e533eca833023498bffa41",
+    "data/neon_bridge/reference_predictors/eval_soilgrids.h5": "05114ad7f9f53411310c9f9a09ecc4e693f25621cc2cbaa38f5d7049788abfc2",
+    "data/neon_bridge/reference_predictors/eval_topography.h5": "3ff8c6cdd8ca1c60b3053a40722342bd1f2139616643a6e07f864fd3965ace2e",
+    "data/neon_bridge/reference_predictors/eval_human_footprint.h5": "3f9b6c2a088b7f835a912b39946bf23ec5ba4308f4df351663b219b8c0d803e2",
+    "data/external_replication_e1/test_indices.npy": "47c7261ee36c216a49567792242a16ac05da345165355ceebd69c1ef6a601838",
+    "src/geolifeclef/range_io.py": "425568a324787457078a7c584da4729bfe89e745d59e6d72fb650f84f9d03019",
+    "src/geolifeclef/raster_bridge.py": "86fad6d4ef1d16f4c850c841fbb25c200d2592301790d1ad4a0d1928074ef316",
+    "data/ausplots_followup/human_footprint_wcs/provenance.json": "43e570d4e43434287cdab1f727ca630acc77d67f0e48f8b106972eca10bdeac0"
+  },
+  "layers": [
+    {
+      "group": "chelsa",
+      "file": "CHELSA_bio01_1981-2010_V.2.1.tif",
+      "source_url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/bioclim/bio01/1981-2010/CHELSA_bio01_1981-2010_V.2.1.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 152228318,
+        "etag": "\"3379aa16d29ba9c4fe1a342f4a7ca170-14\"",
+        "last_modified": "Sun, 07 Sep 2025 10:21:04 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        20880,
+        43200
+      ],
+      "dtype": "uint16",
+      "reference": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "99067c97075872e2c38ee45db4c911225369fd5d94e42da86d2e26f502d66fdf",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "chelsa",
+      "file": "CHELSA_bio02_1981-2010_V.2.1.tif",
+      "source_url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/bioclim/bio02/1981-2010/CHELSA_bio02_1981-2010_V.2.1.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 90552291,
+        "etag": "\"23aa3c80b5d159f6bac88bfbfd910dec-8\"",
+        "last_modified": "Sun, 07 Sep 2025 10:21:05 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        20880,
+        43200
+      ],
+      "dtype": "uint16",
+      "reference": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "3b77c6a995c37afec1747fea800829c16ce19b76cb858465c2e482101d81f5be",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "chelsa",
+      "file": "CHELSA_bio03_1981-2010_V.2.1.tif",
+      "source_url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/bioclim/bio03/1981-2010/CHELSA_bio03_1981-2010_V.2.1.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 362083710,
+        "etag": "\"4c0210b1f3ea8d0203468bf237832d4b-34\"",
+        "last_modified": "Sun, 07 Sep 2025 10:21:10 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        20880,
+        43200
+      ],
+      "dtype": "uint16",
+      "reference": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "b9f9238ae8b68db5434fa8647222a74f5f30af82d52f5b435a506ba8d61d180e",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "chelsa",
+      "file": "CHELSA_bio04_1981-2010_V.2.1.tif",
+      "source_url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/bioclim/bio04/1981-2010/CHELSA_bio04_1981-2010_V.2.1.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 621474726,
+        "etag": "\"3dc64acb03777db057dfe3aec95df447-59\"",
+        "last_modified": "Sun, 07 Sep 2025 10:21:17 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        20880,
+        43200
+      ],
+      "dtype": "uint16",
+      "reference": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "1d251670ba0b50285e5a6fc529b519769f939fdca8172d16ca58fe54fcd0c84f",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "chelsa",
+      "file": "CHELSA_bio05_1981-2010_V.2.1.tif",
+      "source_url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/bioclim/bio05/1981-2010/CHELSA_bio05_1981-2010_V.2.1.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 165253968,
+        "etag": "\"623e41da0fc5aaa8dc1c602902c71d1d-15\"",
+        "last_modified": "Sun, 07 Sep 2025 10:21:20 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        20880,
+        43200
+      ],
+      "dtype": "uint16",
+      "reference": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "fe43fe486fa8e51e3ebc9cee1b3b772fd353df6ef786854d0a09fc31b33b6655",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "chelsa",
+      "file": "CHELSA_bio06_1981-2010_V.2.1.tif",
+      "source_url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/bioclim/bio06/1981-2010/CHELSA_bio06_1981-2010_V.2.1.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 155691034,
+        "etag": "\"0003ccc8b449c047975f8ba4916d7013-14\"",
+        "last_modified": "Sun, 07 Sep 2025 10:21:23 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        20880,
+        43200
+      ],
+      "dtype": "uint16",
+      "reference": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "90c4d31382342c9caed6c131fdeeaec8ba9b82c0ca302791415b650b0cfa8271",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "chelsa",
+      "file": "CHELSA_bio07_1981-2010_V.2.1.tif",
+      "source_url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/bioclim/bio07/1981-2010/CHELSA_bio07_1981-2010_V.2.1.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 169284638,
+        "etag": "\"e1b3f20aea955542ae258e1e88b7feda-16\"",
+        "last_modified": "Sun, 07 Sep 2025 10:21:27 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        20880,
+        43200
+      ],
+      "dtype": "uint16",
+      "reference": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "83636cf205367251f30b486014e6d650a16bff46745b90593926f751d59a1026",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "chelsa",
+      "file": "CHELSA_bio08_1981-2010_V.2.1.tif",
+      "source_url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/bioclim/bio08/1981-2010/CHELSA_bio08_1981-2010_V.2.1.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 172537551,
+        "etag": "\"645869c1184718a08435e11424edaeae-16\"",
+        "last_modified": "Sun, 07 Sep 2025 10:21:32 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        20880,
+        43200
+      ],
+      "dtype": "uint16",
+      "reference": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "76697523c05f21d42bfb15859021694b32ac019f3e5dacdc6ae4dc1eb0013ab3",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "chelsa",
+      "file": "CHELSA_bio09_1981-2010_V.2.1.tif",
+      "source_url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/bioclim/bio09/1981-2010/CHELSA_bio09_1981-2010_V.2.1.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 164431047,
+        "etag": "\"cbd557fb9e60f98a64b2c495d0d03978-15\"",
+        "last_modified": "Sun, 07 Sep 2025 10:21:35 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        20880,
+        43200
+      ],
+      "dtype": "uint16",
+      "reference": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "11987a4eb15abcba4620f3091a67c702f61d1cb7cf12d80255e1a2c9e6dc4e74",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "chelsa",
+      "file": "CHELSA_bio10_1981-2010_V.2.1.tif",
+      "source_url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/bioclim/bio10/1981-2010/CHELSA_bio10_1981-2010_V.2.1.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 161375656,
+        "etag": "\"c04fb7b2efa50d6b554b3d39cdec1040-15\"",
+        "last_modified": "Sun, 07 Sep 2025 10:21:37 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        20880,
+        43200
+      ],
+      "dtype": "uint16",
+      "reference": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "43313cf64c43c6f5e331b8abc1e4bc2956abceb873da1a67f29ffdc5d57a31a3",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "chelsa",
+      "file": "CHELSA_bio11_1981-2010_V.2.1.tif",
+      "source_url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/bioclim/bio11/1981-2010/CHELSA_bio11_1981-2010_V.2.1.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 151513880,
+        "etag": "\"c5d9ac8cf89d56c05c860fbfb2468300-14\"",
+        "last_modified": "Sun, 07 Sep 2025 10:21:41 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        20880,
+        43200
+      ],
+      "dtype": "uint16",
+      "reference": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "771ab915e5511a20ce02c4a332f7c7fff62cf2560872aa54599d048d874052a3",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "chelsa",
+      "file": "CHELSA_bio12_1981-2010_V.2.1.tif",
+      "source_url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/bioclim/bio12/1981-2010/CHELSA_bio12_1981-2010_V.2.1.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 349254899,
+        "etag": "\"767eceef94e3bcc39d5ad154a29e2425-33\"",
+        "last_modified": "Sun, 07 Sep 2025 10:21:48 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        20880,
+        43200
+      ],
+      "dtype": "uint16",
+      "reference": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "9703c52cea0ba69e5d2f956e7637d4970af640d9c6a26777353628e27a6cd126",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "chelsa",
+      "file": "CHELSA_bio13_1981-2010_V.2.1.tif",
+      "source_url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/bioclim/bio13/1981-2010/CHELSA_bio13_1981-2010_V.2.1.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 392966767,
+        "etag": "\"d53d25ca8a206f4962b59c27a2136766-37\"",
+        "last_modified": "Sun, 07 Sep 2025 10:21:57 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        20880,
+        43200
+      ],
+      "dtype": "uint16",
+      "reference": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "9173bd138e912dbfbc7a38c68c23034b6399bd4ce14debd2285f82f1412836bd",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "chelsa",
+      "file": "CHELSA_bio14_1981-2010_V.2.1.tif",
+      "source_url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/bioclim/bio14/1981-2010/CHELSA_bio14_1981-2010_V.2.1.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 241288374,
+        "etag": "\"7f33aecbad154e29cbec2c561e08f7c6-23\"",
+        "last_modified": "Sun, 07 Sep 2025 10:22:04 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        20880,
+        43200
+      ],
+      "dtype": "uint16",
+      "reference": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "5f1dc29212b4a82fa43e334dce3925c07c963361ab58dc51388544d96cb06d81",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "chelsa",
+      "file": "CHELSA_bio15_1981-2010_V.2.1.tif",
+      "source_url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/bioclim/bio15/1981-2010/CHELSA_bio15_1981-2010_V.2.1.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 250165892,
+        "etag": "\"e4761a5340b1c22770c2714284edf864-23\"",
+        "last_modified": "Sun, 07 Sep 2025 10:22:10 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        20880,
+        43200
+      ],
+      "dtype": "uint16",
+      "reference": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "e5360fce069587dc01fdf058d64875a3afbad49d015cb75a4e2cffe2bc4e0fa3",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "chelsa",
+      "file": "CHELSA_bio16_1981-2010_V.2.1.tif",
+      "source_url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/bioclim/bio16/1981-2010/CHELSA_bio16_1981-2010_V.2.1.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 584628073,
+        "etag": "\"d37bd0c98067829206b37746b9b1e4fe-55\"",
+        "last_modified": "Sun, 07 Sep 2025 10:22:22 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        20880,
+        43200
+      ],
+      "dtype": "uint16",
+      "reference": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "9a6a8d1e7e686c663dcfb1cef7d459bd77f5d45ddc639db9b1889eb445d73ee4",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "chelsa",
+      "file": "CHELSA_bio17_1981-2010_V.2.1.tif",
+      "source_url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/bioclim/bio17/1981-2010/CHELSA_bio17_1981-2010_V.2.1.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 430500740,
+        "etag": "\"1bb3837add07c23d24db99fafb472d7a-41\"",
+        "last_modified": "Sun, 07 Sep 2025 10:22:28 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        20880,
+        43200
+      ],
+      "dtype": "uint16",
+      "reference": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "7a31e7e1675d9f407103efefc41ee4ab93edb44d72a3fb4a90590f8ba0fd3e8c",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "chelsa",
+      "file": "CHELSA_bio18_1981-2010_V.2.1.tif",
+      "source_url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/bioclim/bio18/1981-2010/CHELSA_bio18_1981-2010_V.2.1.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 549240986,
+        "etag": "\"22741bb9bad5f938c00364ad5b725f8f-52\"",
+        "last_modified": "Sun, 07 Sep 2025 10:22:35 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        20880,
+        43200
+      ],
+      "dtype": "uint16",
+      "reference": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "2d458d9fb8784538137b4adeb9679872825f88d3c6bbccccaf8bf5f1e727f40b",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "chelsa",
+      "file": "CHELSA_bio19_1981-2010_V.2.1.tif",
+      "source_url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/bioclim/bio19/1981-2010/CHELSA_bio19_1981-2010_V.2.1.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 496674789,
+        "etag": "\"a3c397c58e35867fb12fcba52a7853fb-47\"",
+        "last_modified": "Sun, 07 Sep 2025 10:22:44 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        20880,
+        43200
+      ],
+      "dtype": "uint16",
+      "reference": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "628c5a6011800ff70f10c9bd8de7f4e7795ba669aae3c8bb52a9ff64c272b5be",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "soilgrids",
+      "file": "BDTICM_M_250m_ll.tif",
+      "source_url": "https://files.isric.org/soilgrids/former/2017-03-10/data/BDTICM_M_250m_ll.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 8480439859,
+        "etag": "\"10771069791-1492505508-8480439859\"",
+        "last_modified": "Tue, 18 Apr 2017 08:51:48 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        67200,
+        172800
+      ],
+      "dtype": "int32",
+      "reference": {
+        "nearest_fills": 2,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 8,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "b35e407f999bf9813ea28f046320013a187159b922fa44532b4f934354b58a7d",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "soilgrids",
+      "file": "BLDFIE_M_sl3_250m_ll.tif",
+      "source_url": "https://files.isric.org/soilgrids/former/2017-03-10/data/BLDFIE_M_sl3_250m_ll.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 5380277784,
+        "etag": "\"10770757150-1492504601-5380277784\"",
+        "last_modified": "Tue, 18 Apr 2017 08:36:41 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        67200,
+        172800
+      ],
+      "dtype": "int16",
+      "reference": {
+        "nearest_fills": 2,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 8,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "a7af534a2a5f4fb2129b6c939119d508fde7fb9507a8e96404abd7c75e3e692f",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "soilgrids",
+      "file": "CECSOL_M_sl3_250m_ll.tif",
+      "source_url": "https://files.isric.org/soilgrids/former/2017-03-10/data/CECSOL_M_sl3_250m_ll.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 2565337488,
+        "etag": "\"10771500063-1492502230-2565337488\"",
+        "last_modified": "Tue, 18 Apr 2017 07:57:10 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        67200,
+        172800
+      ],
+      "dtype": "int16",
+      "reference": {
+        "nearest_fills": 2,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 8,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "26d906e454c082687a7fdf7831ee200f509340b37c3bb6204fb5866bbacb66e7",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "soilgrids",
+      "file": "CLYPPT_M_sl3_250m_ll.tif",
+      "source_url": "https://files.isric.org/soilgrids/former/2017-03-10/data/CLYPPT_M_sl3_250m_ll.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 1956039997,
+        "etag": "\"10770893405-1492501330-1956039997\"",
+        "last_modified": "Tue, 18 Apr 2017 07:42:10 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        67200,
+        172800
+      ],
+      "dtype": "uint8",
+      "reference": {
+        "nearest_fills": 2,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 8,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "bffcbfaa17306cc2aaad7fb4d1147a8c13819842ad6809e30e249c63d0874973",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "soilgrids",
+      "file": "ORCDRC_M_sl3_250m_ll.tif",
+      "source_url": "https://files.isric.org/soilgrids/former/2017-03-10/data/ORCDRC_M_sl3_250m_ll.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 3304277948,
+        "etag": "\"10770757286-1492491684-3304277948\"",
+        "last_modified": "Tue, 18 Apr 2017 05:01:24 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        67200,
+        172800
+      ],
+      "dtype": "int16",
+      "reference": {
+        "nearest_fills": 2,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 8,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "2123b8a2a9f13531b2b6f9b325af30ff7407940125b7a4e2c5a8700abb472f79",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "soilgrids",
+      "file": "PHIHOX_M_sl3_250m_ll.tif",
+      "source_url": "https://files.isric.org/soilgrids/former/2017-03-10/data/PHIHOX_M_sl3_250m_ll.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 1609152692,
+        "etag": "\"10771069910-1492493448-1609152692\"",
+        "last_modified": "Tue, 18 Apr 2017 05:30:48 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        67200,
+        172800
+      ],
+      "dtype": "uint8",
+      "reference": {
+        "nearest_fills": 2,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 8,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "f9067a98195f8ac725ae308c17b9cb2a5d56c63e483be8f623a6d80e9508b0b2",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "soilgrids",
+      "file": "SLTPPT_M_sl3_250m_ll.tif",
+      "source_url": "https://files.isric.org/soilgrids/former/2017-03-10/data/SLTPPT_M_sl3_250m_ll.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 1970792586,
+        "etag": "\"10770757334-1492499525-1970792586\"",
+        "last_modified": "Tue, 18 Apr 2017 07:12:05 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        67200,
+        172800
+      ],
+      "dtype": "uint8",
+      "reference": {
+        "nearest_fills": 2,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 8,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "87832bf07aecf7317b3a04c193b495b5655759371a9fd901736cad6fac57ce2d",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "soilgrids",
+      "file": "SNDPPT_M_sl3_250m_ll.tif",
+      "source_url": "https://files.isric.org/soilgrids/former/2017-03-10/data/SNDPPT_M_sl3_250m_ll.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 2317903905,
+        "etag": "\"10770599694-1492498735-2317903905\"",
+        "last_modified": "Tue, 18 Apr 2017 06:58:55 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        67200,
+        172800
+      ],
+      "dtype": "uint8",
+      "reference": {
+        "nearest_fills": 2,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 8,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "c4142ce46a49b6ca63a71a4f11f8395b1696682956ac334a94814cb4eaf695cd",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "topography",
+      "file": "elevation_1KMmd_GMTEDmd.tif",
+      "source_url": "https://data.earthenv.org/topography/elevation_1KMmd_GMTEDmd.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 397232066,
+        "etag": "\"c9d63d8f1e75577320f754912be64a8b\"",
+        "last_modified": "Mon, 16 May 2016 18:37:51 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        16800,
+        43200
+      ],
+      "dtype": "float32",
+      "reference": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "ce852a6c15e822acab54f34e29b961402b54c2db2a3e08466909e4da4efffef5",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "topography",
+      "file": "roughness_1KMmd_GMTEDmd.tif",
+      "source_url": "https://data.earthenv.org/topography/roughness_1KMmd_GMTEDmd.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 273796178,
+        "etag": "\"8487ed3c01593e7da135d7141d01cb32\"",
+        "last_modified": "Mon, 16 May 2016 18:44:40 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        16800,
+        43200
+      ],
+      "dtype": "float32",
+      "reference": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "fc06dd4c42e32b18f4879a8368749c8c2dbf40b6ac47f40a519dafba897b0562",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "topography",
+      "file": "tri_1KMmd_GMTEDmd.tif",
+      "source_url": "https://data.earthenv.org/topography/tri_1KMmd_GMTEDmd.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 340181706,
+        "etag": "\"5c64cb64cdd914d0cf13e7ff63c48e01\"",
+        "last_modified": "Mon, 16 May 2016 19:00:05 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        16800,
+        43200
+      ],
+      "dtype": "float32",
+      "reference": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "e6d533455539a021a4a5182f55bfa416b4b85a5b54859440dee0ff4d74848e6b",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "topography",
+      "file": "tpi_1KMmd_GMTEDmd.tif",
+      "source_url": "https://data.earthenv.org/topography/tpi_1KMmd_GMTEDmd.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 305780540,
+        "etag": "\"9c8c5ffbd7a457053662c421c2322d6a\"",
+        "last_modified": "Mon, 16 May 2016 18:58:11 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        16800,
+        43200
+      ],
+      "dtype": "float32",
+      "reference": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "264e1ba1da84ea625441b8811e67d6621f450b53a8d493046e691935d8937012",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "topography",
+      "file": "vrm_1KMmd_GMTEDmd.tif",
+      "source_url": "https://data.earthenv.org/topography/vrm_1KMmd_GMTEDmd.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 818136450,
+        "etag": "\"bfe582399eb4b1c2066347e936ddfd11\"",
+        "last_modified": "Mon, 16 May 2016 19:01:53 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        16800,
+        43200
+      ],
+      "dtype": "float32",
+      "reference": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "66a27cd05564c1fbe777e84d38339b06801edfb7fd39b297109a9655bc7537d7",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "topography",
+      "file": "aspectcosine_1KMmd_GMTEDmd.tif",
+      "source_url": "https://data.earthenv.org/topography/aspectcosine_1KMmd_GMTEDmd.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 738120252,
+        "etag": "\"b8fdafc5e0aefbbc2bb92b5c199d8b24\"",
+        "last_modified": "Thu, 01 Sep 2016 21:37:52 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        16800,
+        43200
+      ],
+      "dtype": "float32",
+      "reference": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "ea4320b6cd2b61686fbcd853f700d3d119ee441a93b0619c561e09d997df5f4b",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "topography",
+      "file": "aspectsine_1KMmd_GMTEDmd.tif",
+      "source_url": "https://data.earthenv.org/topography/aspectsine_1KMmd_GMTEDmd.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 745429600,
+        "etag": "\"ba55c93dfaa5ca1e6cac76a3be6e4f12\"",
+        "last_modified": "Fri, 09 Sep 2016 19:24:45 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        16800,
+        43200
+      ],
+      "dtype": "float32",
+      "reference": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "78aa1a94ee928cf537a2cc9291abbe1294097fde5933b897bab36671f01d2651",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "topography",
+      "file": "slope_1KMmd_GMTEDmd.tif",
+      "source_url": "https://data.earthenv.org/topography/slope_1KMmd_GMTEDmd.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 693325186,
+        "etag": "\"d0f18549a8d9258e14e3dbfa0364d9cf\"",
+        "last_modified": "Mon, 16 May 2016 18:48:21 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        16800,
+        43200
+      ],
+      "dtype": "float32",
+      "reference": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "148121a2ffba66c435bb4b81bb2c18276d49616fe135b50fa23586450d2b82eb",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "topography",
+      "file": "eastness_1KMmd_GMTEDmd.tif",
+      "source_url": "https://data.earthenv.org/topography/eastness_1KMmd_GMTEDmd.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 775129150,
+        "etag": "\"8e2a6a9375390a8349572b16df50849d\"",
+        "last_modified": "Mon, 16 May 2016 18:04:41 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        16800,
+        43200
+      ],
+      "dtype": "float32",
+      "reference": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "a2cace6f2153b6b75884f9644b77789cd2930b882746daa22bb6c7c6d66582b1",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "topography",
+      "file": "northness_1KMmd_GMTEDmd.tif",
+      "source_url": "https://data.earthenv.org/topography/northness_1KMmd_GMTEDmd.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 779557568,
+        "etag": "\"983568d4fbfaa9587896a330e2b353a1\"",
+        "last_modified": "Mon, 16 May 2016 18:08:00 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        16800,
+        43200
+      ],
+      "dtype": "float32",
+      "reference": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "5c50a138aa1ccee137519e3cdfbcb54ad60c00c020180a4d95abf0af059f8540",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "topography",
+      "file": "pcurv_1KMmd_GMTEDmd.tif",
+      "source_url": "https://data.earthenv.org/topography/pcurv_1KMmd_GMTEDmd.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 793995402,
+        "etag": "\"272f4fa16a3c44749d02191dcaafc3c6\"",
+        "last_modified": "Mon, 16 May 2016 18:38:41 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        16800,
+        43200
+      ],
+      "dtype": "float32",
+      "reference": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "4ec4c65b1a5d299dc2fcf9cd5a9c84c1c6d064bc5039be8bbc5507e942a6c8bd",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "topography",
+      "file": "tcurv_1KMmd_GMTEDmd.tif",
+      "source_url": "https://data.earthenv.org/topography/tcurv_1KMmd_GMTEDmd.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 782125150,
+        "etag": "\"b1635a69ee689bdb7c694e84255709b2\"",
+        "last_modified": "Mon, 16 May 2016 18:53:45 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        16800,
+        43200
+      ],
+      "dtype": "float32",
+      "reference": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "15e83a70de0dfd9d0cdc2997edcaa61795a8e2ad004e3f754733921772d7f964",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "topography",
+      "file": "dx_1KMmd_GMTEDmd.tif",
+      "source_url": "https://data.earthenv.org/topography/dx_1KMmd_GMTEDmd.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 618949944,
+        "etag": "\"2a93ba5aa2b645f63e6534e1c531f56e\"",
+        "last_modified": "Mon, 16 May 2016 18:19:00 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        16800,
+        43200
+      ],
+      "dtype": "float32",
+      "reference": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "a3461608bae6a3ed78debca78daa3c800afca7964676930533620c200b818b02",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "topography",
+      "file": "dy_1KMmd_GMTEDmd.tif",
+      "source_url": "https://data.earthenv.org/topography/dy_1KMmd_GMTEDmd.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 554037066,
+        "etag": "\"5344fff7dbc2012534d2bbef26d08b15\"",
+        "last_modified": "Mon, 16 May 2016 18:31:23 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        16800,
+        43200
+      ],
+      "dtype": "float32",
+      "reference": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "e64a92e22b00357f8d78b82c9353afee36fba74c9cf8e9fa585fffb6f6ff1371",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "topography",
+      "file": "dxx_1KMmd_GMTEDmd.tif",
+      "source_url": "https://data.earthenv.org/topography/dxx_1KMmd_GMTEDmd.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 546050186,
+        "etag": "\"3e99835197c317b3601e0b4a48eb2a38\"",
+        "last_modified": "Mon, 16 May 2016 18:23:28 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        16800,
+        43200
+      ],
+      "dtype": "float32",
+      "reference": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "271df713e1a07c60532fa9b9d087e49df8b0ac8796f572b96fd35b7321f10205",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "topography",
+      "file": "dyy_1KMmd_GMTEDmd.tif",
+      "source_url": "https://data.earthenv.org/topography/dyy_1KMmd_GMTEDmd.tif",
+      "status": "verified_and_sampled",
+      "source_identity": {
+        "size": 528845398,
+        "etag": "\"aa0a3e298439abb0388271d9625ef7dc\"",
+        "last_modified": "Mon, 16 May 2016 18:34:23 GMT"
+      },
+      "crs": "EPSG:4326",
+      "shape": [
+        16800,
+        43200
+      ],
+      "dtype": "float32",
+      "reference": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "6b52278a93b1731b1b996b50e62d6e1d4a12dbad8db76230caf1579799cef872",
+      "range_bytes": 0,
+      "range_requests": 0
+    },
+    {
+      "group": "human_footprint",
+      "file": "HFP2009.tif",
+      "source_url": null,
+      "status": "verified_and_sampled",
+      "local_raster_sha256": "6731cd1720aec96a0176c87df89f41721a6bf4a67a553c0659afe6bc27457f41",
+      "crs": "ESRI:54009",
+      "shape": [
+        16382,
+        36081
+      ],
+      "dtype": "float32",
+      "reference": {
+        "nearest_fills": 0,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "reference_matches": 32,
+      "reference_rows": 32,
+      "reference_nan_pattern_disagreements": 0,
+      "reference_max_finite_absolute_error": 0.0,
+      "reference_mismatched_positions": [],
+      "candidate": {
+        "nearest_fills": 2,
+        "unfilled_nodata": 0,
+        "nan_values": 0
+      },
+      "candidate_finite": 119,
+      "candidate_value_sha256": "72a8ff333ce1cad7ef4cd57d4546839fa1d079aad325d95905eea36b9059fceb"
+    },
+    {
+      "group": "human_footprint",
+      "file": "Built2009.tif",
+      "source_url": null,
+      "status": "source_unavailable"
+    },
+    {
+      "group": "human_footprint",
+      "file": "croplands2005.tif",
+      "source_url": null,
+      "status": "source_unavailable"
+    },
+    {
+      "group": "human_footprint",
+      "file": "Lights2009.tif",
+      "source_url": null,
+      "status": "source_unavailable"
+    },
+    {
+      "group": "human_footprint",
+      "file": "NavWater2009.tif",
+      "source_url": null,
+      "status": "source_unavailable"
+    },
+    {
+      "group": "human_footprint",
+      "file": "Pasture2009.tif",
+      "source_url": null,
+      "status": "source_unavailable"
+    },
+    {
+      "group": "human_footprint",
+      "file": "Popdensity2010.tif",
+      "source_url": null,
+      "status": "source_unavailable"
+    },
+    {
+      "group": "human_footprint",
+      "file": "Railways.tif",
+      "source_url": null,
+      "status": "source_unavailable"
+    },
+    {
+      "group": "human_footprint",
+      "file": "Roads.tif",
+      "source_url": null,
+      "status": "source_unavailable"
+    }
+  ]
+}

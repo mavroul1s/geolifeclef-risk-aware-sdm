@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "freeze_and_output_hashes_checked": true,
+  "all_priced_rows_checked": 1600,
+  "independent_charge_checkpoints": 160,
+  "dense_prefix_checks": 200,
+  "perfect_endpoints_reproduced": 40,
+  "summary_rows": 20,
+  "summary_sha256": "d9a6078b87514e4e60deff5046118c1b367e5c332d3a59a7077d53bdcdca5a56",
+  "source_sha256": "23488661316ef802951ef7b71685f03557c08ec23a92cf177f3a1297113bbb5f"
+}

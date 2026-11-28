@@ -1,0 +1,75 @@
+{
+  "completed_at_utc": "2026-11-28T11:11:05.708857+00:00",
+  "AEKOS_cells": 7530,
+  "stress_development_only": true,
+  "target_labels_read": false,
+  "AusPlots_predictions_generated": false,
+  "runs": {
+    "aggregation_s0": {
+      "top_k": {
+        "5": {
+          "changed_sets": 7364,
+          "fraction_changed_sets": 0.9779548472775564,
+          "median_jaccard": 0.25,
+          "tenth_percentile_jaccard": 0.0
+        },
+        "10": {
+          "changed_sets": 7504,
+          "fraction_changed_sets": 0.996547144754316,
+          "median_jaccard": 0.3333333333333333,
+          "tenth_percentile_jaccard": 0.1111111111111111
+        },
+        "20": {
+          "changed_sets": 7528,
+          "fraction_changed_sets": 0.999734395750332,
+          "median_jaccard": 0.42857142857142855,
+          "tenth_percentile_jaccard": 0.17647058823529413
+        }
+      },
+      "native_probability_entries": 7246502,
+      "mean_absolute_probability_change": 0.012070401581122046,
+      "maximum_absolute_probability_change": 0.8355683740228415
+    },
+    "baseline_deepsdm_s0": {
+      "top_k": {
+        "5": {
+          "changed_sets": 7145,
+          "fraction_changed_sets": 0.9488711819389111,
+          "median_jaccard": 0.42857142857142855,
+          "tenth_percentile_jaccard": 0.1111111111111111
+        },
+        "10": {
+          "changed_sets": 7430,
+          "fraction_changed_sets": 0.9867197875166003,
+          "median_jaccard": 0.42857142857142855,
+          "tenth_percentile_jaccard": 0.17647058823529413
+        },
+        "20": {
+          "changed_sets": 7505,
+          "fraction_changed_sets": 0.9966799468791501,
+          "median_jaccard": 0.48148148148148145,
+          "tenth_percentile_jaccard": 0.25
+        }
+      },
+      "native_probability_entries": 7246502,
+      "mean_absolute_probability_change": 0.0022125336514729056,
+      "maximum_absolute_probability_change": 0.7682159543037415
+    }
+  },
+  "source_sha256": {
+    "data/independent_data_audit/sage_eval_plot_metadata.csv": "27118ac038e31e5096c99ce2b5d9fb2ba4cdd2261a0e55fd1ed10a96074577a4",
+    "data/external_replication_e1/range_masks_1km/eval_range_mask.h5": "1884580b462204743b162759051f2fdfc8954ee68fe95bad18ef38d64e6dfee4",
+    "data/neon_bridge/published_source/src/data_modules/datamodule.py": "bf8d4de519498aadb51390820cf5a1514e85ee179c79e7be9aa55ce5d1f108ef",
+    "data/neon_confirmation_feasibility/sage_configs.tar": "09c0f6604d3f31dafa28a490e6bdec6b74cfd0c4cf7c77df5b82daebcd940a0f",
+    "scripts/stress_ausplots_human_footprint.py": "ebba53eb0eac71c3a67bc096fa60e99140b1024e2c5a1b77145204cfe48e4438",
+    "docs/ausplots_predictor_stress_protocol.md": "bcb1d469f42e6b5a334c15a2118769b248c91ec53c13056b74d1a8c2abe0fb91",
+    "data/neon_bridge/checkpoints/aggregation_s0/best.ckpt": "771055f5ab82d32f2923d1c2aeb78b0e534697b01a67a32c80a27279c7659454",
+    "results/neon_bridge/cpu_reference.json": "cff2142bbd02e2ede53cc39d1a72f4abdfe1dedbbdcd2cd04ac56f9d8f9cdcb8",
+    "data/neon_bridge/reference_predictors/eval_chelsa.h5": "49483d07b275fc3f7d7942b39fe656daa40b7c47c2e533eca833023498bffa41",
+    "data/neon_bridge/reference_predictors/eval_soilgrids.h5": "05114ad7f9f53411310c9f9a09ecc4e693f25621cc2cbaa38f5d7049788abfc2",
+    "data/neon_bridge/reference_predictors/eval_topography.h5": "3ff8c6cdd8ca1c60b3053a40722342bd1f2139616643a6e07f864fd3965ace2e",
+    "data/neon_bridge/reference_predictors/eval_human_footprint.h5": "3f9b6c2a088b7f835a912b39946bf23ec5ba4308f4df351663b219b8c0d803e2",
+    "data/ausplots_followup/model_reference/best.ckpt": "7e2fbeaa4000c058c83ad7af0f9454592bbe847f58be40210a1a8daab9aacc66",
+    "results/ausplots_followup/second_model_reference.json": "fcf0ff4f69abda3f2197b7df5b1dce3fbb2c50bc536576ba06420468659dbf13"
+  }
+}

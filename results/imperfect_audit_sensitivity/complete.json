@@ -1,0 +1,15 @@
+{
+  "at_utc": "2026-11-28T11:34:22.012276+00:00",
+  "seconds": 235.52494899799967,
+  "trajectories": 200,
+  "checkpoints": 1200,
+  "endpoint_rows": 400,
+  "dense_prefix_checks": 200,
+  "perfect_endpoints_reproduced": 40,
+  "new_model_fits": 0,
+  "new_field_outcomes": false,
+  "output_sha256": {
+    "checkpoints.csv": "d2df4aa1838100b84f4dbca527956532bf4343ea50203c004c680cbc9f02cd32",
+    "endpoints.csv": "87c55215a696e60d8caf13ec343b9e90715dbd95a49a90d81d539d7ab7f72f2c"
+  }
+}
