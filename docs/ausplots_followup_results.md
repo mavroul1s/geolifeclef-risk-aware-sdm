@@ -39,10 +39,14 @@ and mean error **5.52e-10** within the fixed 1e-5/1e-6 tolerances. The earlier
 was refitted. [CPU reference](../results/ausplots_followup/second_model_reference.json) ·
 [Earlier model checks](neon_bridge_status.md).
 
-One private Kaggle GPU reference job was submitted using only the released
-SAGE reference arrays and checkpoint. Kaggle still reported it queued after
-about 34 minutes, so GPU probability comparison remains pending.
-[GPU job state](../results/ausplots_followup/gpu_reference_job_state.json).
+The first private Kaggle submission remained queued and was deleted after an
+identical private submission started on a second account. The second completed
+on a Tesla T4 in 42.46 seconds inside the notebook. All 738,688 probabilities
+passed comparison with the CPU and published references. Maximum absolute
+error against publication was 1.34e-6. Both submissions used the same notebook
+bytes and published SAGE inputs.
+[GPU verification](../results/ausplots_followup/second_model_gpu_reference.json) ·
+[Original queue receipt](../results/ausplots_followup/gpu_reference_job_state.json).
 
 We checked all **30,138,089** released original-resolution presence-only
 training coordinates. Each of the 151 candidates stays outside the grid of both

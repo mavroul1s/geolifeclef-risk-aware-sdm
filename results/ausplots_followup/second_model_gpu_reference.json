@@ -1,0 +1,39 @@
+{
+  "verified_at_utc": "2026-11-28T12:15:45.522790+00:00",
+  "model": "baseline_deepsdm_s0",
+  "passed": true,
+  "probabilities_compared": 738688,
+  "comparisons": {
+    "cpu": {
+      "maximum_absolute_error": 5.662441253662109e-07,
+      "mean_absolute_error": 3.096618807361665e-10,
+      "passed": true
+    },
+    "published": {
+      "maximum_absolute_error": 1.341104507446289e-06,
+      "mean_absolute_error": 5.593101311159222e-10,
+      "passed": true
+    }
+  },
+  "gpu": "Tesla T4",
+  "torch_version": "2.11.0+cu130",
+  "cuda_version": "13.0",
+  "notebook_seconds": 42.46243365699999,
+  "inference_seconds": 0.14973787699997843,
+  "frozen_execution": {
+    "prepared_at_utc": "2026-11-28T11:08:14.854287+00:00",
+    "job_limit": 1,
+    "notebook_time_limit_seconds": 1200,
+    "notebook_sha256": "d7333a4ca64f25a0c17a3ad2465e0ce34da01ca5969ffa717abadd957aa7482f",
+    "public_bundle_checked": true,
+    "template_sha256": "5b3dff66087fb03feb51a69713d4e7debbf456022968c991563203f40de3abbd",
+    "cpu_report_sha256": "fcf0ff4f69abda3f2197b7df5b1dce3fbb2c50bc536576ba06420468659dbf13",
+    "new_field_coordinates_covariates_or_labels_included": false
+  },
+  "local_output_sha256": {
+    "gpu_report.json": "26feafd58f1dbf7c4cbb84acfa3b870f8546bc942dc3001295ea20c737a67dd2",
+    "gpu_probabilities.npz": "e8ea5174de1826c7e98c99a0fdf56ec18d5ee2d5680049864738dbeb08c03400"
+  },
+  "public_reference_inputs_only": true,
+  "source_sha256": "d4e4632462de1d625cc0092bd138c232f10028782feb288d16d298064fa06f42"
+}
